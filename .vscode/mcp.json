@@ -1,0 +1,15 @@
+{
+  "servers": {
+    "shadcn": {
+      "type": "stdio",
+      "command": "node",
+      "args": [
+        "${workspaceFolder}/node_modules/shadcn/dist/index.js",
+        "mcp",
+        "--cwd",
+        "${workspaceFolder}"
+      ],
+      "cwd": "${workspaceFolder}"
+    }
+  }
+}

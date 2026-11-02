@@ -1,0 +1,4 @@
+# Start Codex from the Wishu project root after installing dependencies with pnpm.
+[mcp_servers.shadcn]
+command = "node"
+args = ["./node_modules/shadcn/dist/index.js", "mcp"]
