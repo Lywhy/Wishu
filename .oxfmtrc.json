@@ -10,13 +10,17 @@
   "endOfLine": "lf",
   "sortTailwindcss": {
     "stylesheet": "./src/index.css",
-    "functions": ["cn", "clsx", "cva"]
+    "functions": [
+      "cn",
+      "clsx",
+      "cva"
+    ]
   },
   "ignorePatterns": [
-    "node_modules/**",
-    "dist/**",
-    "dist-ssr/**",
-    "coverage/**",
+    "**/node_modules/**",
+    "**/dist/**",
+    "**/dist-ssr/**",
+    "**/coverage/**",
     "pnpm-lock.yaml"
   ]
 }

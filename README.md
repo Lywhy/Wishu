@@ -79,3 +79,29 @@ shadcn/ui дополнительные настройки и токены не �
 Настройки добавлены без запуска MCP-сервера; подключение проверяет пользователь.
 
 Документация: https://ui.shadcn.com/docs/mcp
+
+## Серверная часть
+
+В `server/` добавлена основа NestJS с PostgreSQL, проверкой окружения,
+CORS, валидацией DTO и маршрутами `/api/health`, `/api/health/ready`.
+Frontend и сервер объединены через pnpm workspace; frontend остался в `src/`.
+
+Инструкция настройки окружения, локального запуска, Docker и ручной проверки:
+[server/README.md](server/README.md).
+
+Основные команды из корня: `pnpm dev:server`, `pnpm build:server`,
+`pnpm start:server`, `pnpm typecheck:server`. Прежние `pnpm dev` и `pnpm build`
+относятся к frontend.
+
+## Совместный запуск UI и API
+
+После настройки окружения и запуска PostgreSQL выполните из корня проекта:
+
+```sh
+pnpm dev:all
+```
+
+Команда параллельно запускает Vite и NestJS в режиме разработки, помечая
+сообщения как UI и API. Ctrl+C останавливает оба процесса; завершение одного
+процесса также останавливает второй. PostgreSQL запускается отдельно командой
+`docker compose up -d postgres` и продолжает работать после остановки UI/API.

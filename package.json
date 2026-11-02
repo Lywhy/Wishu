@@ -10,7 +10,12 @@
     "preview": "vite preview",
     "lint:fix": "oxlint --fix .",
     "format": "oxfmt --write .",
-    "format:check": "oxfmt --check ."
+    "format:check": "oxfmt --check .",
+    "dev:server": "pnpm --filter @wishu/server dev",
+    "build:server": "pnpm --filter @wishu/server build",
+    "start:server": "pnpm --filter @wishu/server start",
+    "typecheck:server": "pnpm --filter @wishu/server typecheck",
+    "dev:all": "concurrently --kill-others --names UI,API \"pnpm dev\" \"pnpm dev:server\""
   },
   "dependencies": {
     "@base-ui/react": "^1.9.0",
@@ -36,9 +41,11 @@
     "@types/react-dom": "^19.3.0",
     "@vitejs/plugin-react": "^6.1.2",
     "babel-plugin-react-compiler": "^1.0.0",
+    "concurrently": "^10.0.6",
     "oxfmt": "^0.75.0",
     "oxlint": "^1.90.0",
     "typescript": "~7.0.2",
     "vite": "^8.3.5"
-  }
+  },
+  "packageManager": "pnpm@12.11.2"
 }

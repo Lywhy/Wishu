@@ -28,3 +28,10 @@ dist-ssr
 # Share project MCP configuration; keep other local Codex files untracked
 .codex/*
 !.codex/config.toml
+
+# Server environment and build artifacts
+.env
+.env.*
+!.env.example
+coverage
+*.tsbuildinfo
