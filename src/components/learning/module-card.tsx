@@ -1,0 +1,93 @@
+import { BookOpen, Braces, Check, Clock3 } from "lucide-react"
+import { Badge } from "@/components/ui/badge"
+import { Button } from "@/components/ui/button"
+import { Card, CardContent, CardFooter } from "@/components/ui/card"
+import type { LearningModule } from "@/data/learning-modules"
+import { cn } from "@/lib/utils"
+
+interface ModuleCardProps {
+  module: LearningModule
+  saved: boolean
+  onOpen: () => void
+  onSave: () => void
+}
+
+export function ModuleCard({ module, saved, onOpen, onSave }: ModuleCardProps) {
+  return (
+    <Card className="group h-full gap-0 rounded-2xl p-0 shadow-none transition-shadow hover:shadow-md hover:shadow-stone-200/40 dark:hover:shadow-black/20">
+      <CardContent className="flex flex-1 flex-col p-5">
+        <div className="mb-5 flex items-start justify-between">
+          <span
+            aria-hidden="true"
+            className={cn(
+              "flex size-12 items-center justify-center rounded-xl font-mono text-xl font-bold tracking-tighter",
+              module.color,
+            )}
+          >
+            {module.mark}
+          </span>
+          <Button
+            variant="ghost"
+            size="sm"
+            aria-label={
+              saved ? `Убрать «${module.title}» из плана` : `Добавить «${module.title}» в план`
+            }
+            aria-pressed={saved}
+            onClick={onSave}
+            className={cn(
+              "text-muted-foreground",
+              saved && "bg-orange-50 text-primary dark:bg-orange-500/10",
+            )}
+          >
+            {saved ? "В плане" : "В план"}
+          </Button>
+        </div>
+        <div className="mb-2.5 flex items-center gap-2 text-[11px] text-muted-foreground">
+          <span>{module.category}</span>
+          <span aria-hidden="true">·</span>
+          <span>{module.level}</span>
+        </div>
+        <h4 className="text-[17px] leading-6 font-semibold tracking-tight">
+          <button
+            onClick={onOpen}
+            className="cursor-pointer rounded text-left transition-colors outline-none group-hover:text-primary focus-visible:ring-2 focus-visible:ring-ring"
+          >
+            {module.title}
+          </button>
+        </h4>
+        <p className="mt-2.5 flex-1 text-[13px] leading-6 text-muted-foreground">
+          {module.description}
+        </p>
+        <div className="mt-5 flex flex-wrap items-center gap-x-4 gap-y-2 text-[11px] text-muted-foreground">
+          <span className="flex items-center gap-1.5">
+            <BookOpen className="size-3.5" aria-hidden="true" />
+            {module.topics.length} тем
+          </span>
+          <span className="flex items-center gap-1.5">
+            <Braces className="size-3.5" aria-hidden="true" />
+            {module.tasks} {module.tasks === 4 ? "задачи" : "задач"}
+          </span>
+          <span className="flex items-center gap-1.5">
+            <Clock3 className="size-3.5" aria-hidden="true" />
+            {module.duration}
+          </span>
+        </div>
+      </CardContent>
+      <CardFooter className="justify-between bg-transparent px-5 py-3">
+        {saved ? (
+          <Badge
+            variant="secondary"
+            className="gap-1 bg-orange-50 text-primary dark:bg-orange-500/10"
+          >
+            <Check className="size-3" aria-hidden="true" />В моём плане
+          </Badge>
+        ) : (
+          <span className="text-xs text-muted-foreground">Теория + практика</span>
+        )}
+        <Button variant="ghost" size="sm" onClick={onOpen} className="-mr-2 gap-1.5 text-xs">
+          Программа
+        </Button>
+      </CardFooter>
+    </Card>
+  )
+}
