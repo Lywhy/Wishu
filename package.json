@@ -1,7 +1,7 @@
 {
   "name": "wishu",
-  "private": true,
   "version": "0.0.0",
+  "private": true,
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -15,7 +15,10 @@
     "build:server": "pnpm --filter @wishu/server build",
     "start:server": "pnpm --filter @wishu/server start",
     "typecheck:server": "pnpm --filter @wishu/server typecheck",
-    "dev:all": "concurrently --kill-others --names UI,API \"pnpm dev\" \"pnpm dev:server\""
+    "dev:all": "concurrently --kill-others --names UI,API \"pnpm dev\" \"pnpm dev:server\"",
+    "db:init": "pnpm --filter @wishu/server db:init",
+    "db:migrate": "pnpm --filter @wishu/server db:migrate",
+    "db:seed": "pnpm --filter @wishu/server db:seed"
   },
   "dependencies": {
     "@base-ui/react": "^1.9.0",
@@ -28,6 +31,7 @@
     "react-dom": "^19.3.1",
     "react-router-dom": "^7.18.5",
     "shadcn": "^4.23.0",
+    "shiki": "^4.6.0",
     "tailwindcss": "^4.3.3",
     "tw-animate-css": "^1.4.0",
     "zustand": "^5.0.16"

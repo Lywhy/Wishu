@@ -11,7 +11,7 @@ async function bootstrap() {
 
   app.setGlobalPrefix("api")
   app.use(helmet())
-  app.enableCors({ origin: config.getOrThrow<string>("CORS_ORIGIN") })
+  app.enableCors({ origin: config.getOrThrow<string>("CORS_ORIGIN"), credentials: true })
   app.useGlobalPipes(
     new ValidationPipe({
       whitelist: true,

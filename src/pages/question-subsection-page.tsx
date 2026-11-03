@@ -1,14 +1,16 @@
+import { useQuestionCatalog } from "@/lib/question-catalog-context"
 import { Link, useParams } from "react-router-dom"
 import { Button } from "@/components/ui/button"
 import { CatalogControls, EmptyResults } from "@/components/practice/catalog-controls"
 import { QuestionBreadcrumbs } from "@/components/questions/question-breadcrumbs"
 import { QuestionCard, QuestionStudyAside } from "@/components/questions/question-study"
-import { questionSections, getSubsectionQuestions, sectionPath } from "@/data/question-catalog"
+import { sectionPath } from "@/data/question-catalog"
 import { useCatalogFilters } from "@/hooks/use-catalog-filters"
 import { usePracticeProgress } from "@/stores/practice-progress"
 import { MissingQuestionPage } from "@/pages/question-section-page"
 
 export function QuestionSubsectionPage() {
+  const { questionSections, getSubsectionQuestions } = useQuestionCatalog()
   const { sectionId, subsectionId } = useParams()
   const filter = useCatalogFilters()
   const statuses = usePracticeProgress((state) => state.questionStatuses)
@@ -56,7 +58,7 @@ export function QuestionSubsectionPage() {
               { value: "saved", label: "Избранное" },
             ]}
           />
-          <p role="status" className="text-xs text-muted-foreground">
+          <p className="text-xs text-muted-foreground">
             Показано: {visible.length} из {questions.length}
           </p>
           {visible.length ? (

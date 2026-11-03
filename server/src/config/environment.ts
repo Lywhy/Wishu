@@ -24,6 +24,10 @@ export function validateEnvironment(config: Record<string, unknown>) {
     throw new Error("Environment variable NODE_ENV must be development, production or test")
   }
 
+  const cookieSecure = String(config.COOKIE_SECURE ?? (nodeEnv === "production" ? "true" : "false"))
+  if (!["true", "false"].includes(cookieSecure))
+    throw new Error("Environment variable COOKIE_SECURE must be true or false")
+
   const corsOrigin = requiredString(config, "CORS_ORIGIN")
   let parsedOrigin: URL
   try {
@@ -31,16 +35,14 @@ export function validateEnvironment(config: Record<string, unknown>) {
   } catch {
     throw new Error("Environment variable CORS_ORIGIN must be an HTTP(S) origin")
   }
-  if (
-    !["http:", "https:"].includes(parsedOrigin.protocol) ||
-    parsedOrigin.origin !== corsOrigin
-  ) {
+  if (!["http:", "https:"].includes(parsedOrigin.protocol) || parsedOrigin.origin !== corsOrigin) {
     throw new Error("Environment variable CORS_ORIGIN must contain only an HTTP(S) origin")
   }
 
   return {
     ...config,
     NODE_ENV: nodeEnv,
+    COOKIE_SECURE: cookieSecure === "true",
     PORT: portNumber(config, "PORT", 3000),
     CORS_ORIGIN: corsOrigin,
     PGHOST: requiredString(config, "PGHOST"),

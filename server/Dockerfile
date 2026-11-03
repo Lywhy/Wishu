@@ -18,6 +18,7 @@ WORKDIR /app
 COPY --from=production-dependencies --chown=node:node /app/node_modules ./node_modules
 COPY --from=production-dependencies --chown=node:node /app/server/node_modules ./server/node_modules
 COPY --from=build --chown=node:node /app/server/dist ./server/dist
+COPY --from=build --chown=node:node /app/server/database ./server/database
 COPY --from=build --chown=node:node /app/server/package.json ./server/package.json
 USER node
 WORKDIR /app/server

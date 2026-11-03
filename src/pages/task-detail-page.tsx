@@ -1,3 +1,4 @@
+import { codeLanguageFor } from "@/lib/syntax-highlighter"
 import { useState } from "react"
 import { Link, useParams } from "react-router-dom"
 import { Badge } from "@/components/ui/badge"
@@ -62,7 +63,11 @@ function TaskView({ task }: { task: PracticeTask }) {
                   ))}
                 </ul>
               </div>
-              <CodeBlock code={task.example} label="Входные данные и ожидаемый результат" />
+              <CodeBlock
+                code={task.example}
+                language={codeLanguageFor(task.topic, task.example)}
+                label="Входные данные и ожидаемый результат"
+              />
             </CardContent>
           </Card>
           <RelatedModule moduleId={task.moduleId} />
@@ -131,7 +136,11 @@ function TaskView({ task }: { task: PracticeTask }) {
           {revealed && (
             <section id="task-solution" className="space-y-4 rounded-2xl border bg-card p-5">
               <h2 className="text-lg font-semibold">Один из вариантов решения</h2>
-              <CodeBlock code={task.solution} label="Решение" />
+              <CodeBlock
+                code={task.solution}
+                language={codeLanguageFor(task.topic, task.solution)}
+                label="Решение"
+              />
               <p className="text-sm leading-7 text-muted-foreground">{task.explanation}</p>
               <p className="text-xs leading-6 text-muted-foreground">
                 Это не единственный допустимый подход. Сравните ограничения, поведение и сложность
@@ -139,7 +148,7 @@ function TaskView({ task }: { task: PracticeTask }) {
               </p>
             </section>
           )}
-          <p role="status" className="text-xs text-muted-foreground">
+          <p className="text-xs text-muted-foreground">
             {reviewed ? "Вы отметили задачу разобранной." : "Задача ещё не отмечена разобранной."}
           </p>
           {next && (

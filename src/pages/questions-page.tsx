@@ -1,3 +1,4 @@
+import { useQuestionCatalog } from "@/lib/question-catalog-context"
 import { Search } from "lucide-react"
 import { Link } from "react-router-dom"
 import { Card } from "@/components/ui/card"
@@ -7,13 +8,17 @@ import { EmptyResults } from "@/components/practice/catalog-controls"
 import { QuestionBreadcrumbs } from "@/components/questions/question-breadcrumbs"
 import { QuestionStudyAside } from "@/components/questions/question-study"
 import { StudyProgress } from "@/components/questions/study-progress"
-import { questions } from "@/data/interview-content"
-import { learningGroups } from "@/data/learning-modules"
-import { questionSections, getSectionQuestions, sectionPath } from "@/data/question-catalog"
+import { sectionPath } from "@/data/question-catalog"
 import { useCatalogFilters } from "@/hooks/use-catalog-filters"
 import { cn } from "@/lib/utils"
 
 export function QuestionsPage() {
+  const {
+    questions,
+    questionSections,
+    groups: learningGroups,
+    getSectionQuestions,
+  } = useQuestionCatalog()
   const filter = useCatalogFilters()
   const query = filter.query.trim().toLocaleLowerCase("ru")
   const sections = questionSections.filter((section) =>

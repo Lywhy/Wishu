@@ -26,16 +26,7 @@ export function DifficultyBadge({ level }: { level: Difficulty }) {
   )
 }
 
-export function CodeBlock({ code, label = "Пример" }: { code: string; label?: string }) {
-  return (
-    <div className="min-w-0 overflow-hidden rounded-xl border bg-muted/40">
-      <div className="border-b px-4 py-2 text-[11px] text-muted-foreground">{label}</div>
-      <pre className="overflow-x-auto p-4 font-mono text-xs leading-6 sm:text-[13px]">
-        <code>{code}</code>
-      </pre>
-    </div>
-  )
-}
+export { CodeBlock } from "@/components/practice/code-block"
 
 export function ProgressAside({
   title,
@@ -75,7 +66,7 @@ export function ProgressAside({
 
 export function RelatedModule({ moduleId }: { moduleId: string }) {
   return (
-    <div className="rounded-2xl border bg-orange-50/60 p-5 dark:border-orange-900/40 dark:bg-orange-950/20">
+    <div className="rounded-2xl border bg-card p-5 text-card-foreground shadow-none">
       <p className="text-sm font-semibold">Нужно освежить теорию?</p>
       <p className="mt-2 text-xs leading-6 text-muted-foreground">
         Вернитесь к материалу по теме, а затем попробуйте ещё раз.

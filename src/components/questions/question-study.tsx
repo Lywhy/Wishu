@@ -1,3 +1,6 @@
+import { Badge } from "@/components/ui/badge"
+import { codeLanguageFor } from "@/lib/syntax-highlighter"
+import { QuestionFavoriteBadge } from "@/components/questions/question-favorite"
 import { useId, useState } from "react"
 import { Check, RotateCcw, SkipForward } from "lucide-react"
 import { Link } from "react-router-dom"
@@ -37,6 +40,7 @@ const statuses = [
 
 export function AnswerPreference() {
   const id = useId()
+  const saving = usePracticeProgress((state) => state.pendingQuestionWrites > 0)
   const checked = usePracticeProgress((state) => state.autoRevealAnswers)
   const setChecked = usePracticeProgress((state) => state.setAutoRevealAnswers)
   return (
@@ -49,22 +53,24 @@ export function AnswerPreference() {
           Общая настройка для всех вопросов.
         </p>
       </div>
-      <Switch id={id} checked={checked} onCheckedChange={setChecked} />
+      <Switch id={id} disabled={saving} checked={checked} onCheckedChange={setChecked} />
     </div>
   )
 }
 
 export function QuestionStatusControls({ questionId }: { questionId: string }) {
+  const saving = usePracticeProgress((state) => state.pendingQuestionWrites > 0)
   const current = usePracticeProgress((state) => state.questionStatuses[questionId])
   const setStatus = usePracticeProgress((state) => state.setQuestionStatus)
   return (
-    <div role="group" aria-label="Отметка изучения вопроса" className="flex flex-wrap gap-2">
+    <div aria-label="Отметка изучения вопроса" className="flex flex-wrap gap-2">
       {statuses.map(({ value, label, icon: Icon, selected }) => (
         <Button
           key={value}
           variant="outline"
           size="sm"
           aria-pressed={current === value}
+          disabled={saving}
           onClick={() => setStatus(questionId, current === value ? null : value)}
           className={cn("gap-1.5 text-xs", current === value && selected)}
         >
@@ -107,7 +113,12 @@ function AnswerDisclosure({ question, defaultOpen }: { question: Question; defau
             {paragraph}
           </p>
         ))}
-        {question.code && <CodeBlock code={question.code} />}
+        {question.code && (
+          <CodeBlock
+            code={question.code}
+            language={codeLanguageFor(question.topic, question.code)}
+          />
+        )}
         <div className="rounded-xl bg-orange-50 p-4 dark:bg-orange-500/10">
           <p className="text-xs font-semibold text-primary">Главная мысль</p>
           <p className="mt-2 text-sm leading-7">{question.takeaway}</p>
@@ -119,51 +130,33 @@ function AnswerDisclosure({ question, defaultOpen }: { question: Question; defau
 
 export function QuestionCard({ question }: { question: Question }) {
   const saved = usePracticeProgress((state) => state.savedQuestionIds.includes(question.id))
-  const toggleSaved = usePracticeProgress((state) => state.toggleSaved)
   const status = usePracticeProgress((state) => state.questionStatuses[question.id])
+  const currentStatus = statuses.find((item) => item.value === status)
   return (
     <Card className="gap-0 rounded-xl p-5 shadow-none">
-      <div className="mb-3 flex flex-wrap items-center justify-between gap-2">
-        <DifficultyBadge level={question.difficulty} />
-        <Button
-          variant="ghost"
-          size="sm"
-          aria-pressed={saved}
-          onClick={() => toggleSaved(question.id)}
-          className="text-xs text-muted-foreground"
+      <div className="flex items-start justify-between gap-3">
+        <Link
+          to={"/questions/" + question.id}
+          className="group min-w-0 flex-1 rounded outline-none focus-visible:ring-2 focus-visible:ring-ring"
         >
-          {saved ? "В избранном" : "В избранное"}
-        </Button>
+          <h2 className="text-base leading-7 font-semibold group-hover:text-primary">
+            {question.title}
+          </h2>
+        </Link>
       </div>
-      <Link
-        to={"/questions/" + question.id}
-        className="group block rounded outline-none focus-visible:ring-2 focus-visible:ring-ring"
-      >
-        <h2 className="text-base leading-7 font-semibold group-hover:text-primary">
-          {question.title}
-        </h2>
-        <p className="mt-1.5 text-sm leading-6 text-muted-foreground">{question.summary}</p>
-      </Link>
-      <p
-        className={cn(
-          "mt-4 text-xs",
-          status === "repeat"
-            ? "text-amber-700 dark:text-amber-300"
-            : status === "learned"
-              ? "text-emerald-700 dark:text-emerald-300"
-              : status === "skipped"
-                ? "text-violet-700 dark:text-violet-300"
-                : "text-muted-foreground",
+      <div className="mt-3 flex min-h-6 flex-wrap items-center gap-2">
+        <DifficultyBadge level={question.difficulty} />
+        {currentStatus && (
+          <Badge
+            variant="outline"
+            className={cn("text-[11px] font-normal", currentStatus.selected)}
+          >
+            {currentStatus.label}
+          </Badge>
         )}
-      >
-        {status === "repeat"
-          ? "Повторить"
-          : status === "learned"
-            ? "Изучил"
-            : status === "skipped"
-              ? "Пропустить"
-              : "Без отметки"}
-      </p>
+        {saved && <QuestionFavoriteBadge />}
+      </div>
+      <p className="mt-3 text-sm leading-6 text-muted-foreground">{question.summary}</p>
     </Card>
   )
 }
@@ -181,7 +174,7 @@ export function QuestionStudyAside({
       <StudyProgress questionIds={questionIds} />
       <p className="mt-5 text-[11px] leading-6 text-muted-foreground">
         Неотмеченные вопросы остаются серыми. Повторное нажатие на выбранную отметку снимает её.
-        Прогресс сохраняется в этом браузере.
+        Отметки сохраняются автоматически.
       </p>
     </Card>
   )

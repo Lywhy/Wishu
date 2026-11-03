@@ -1,19 +1,20 @@
+import { useQuestionCatalog } from "@/lib/question-catalog-context"
 import { Link, useParams } from "react-router-dom"
 import { Card } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { QuestionBreadcrumbs } from "@/components/questions/question-breadcrumbs"
 import { QuestionStudyAside } from "@/components/questions/question-study"
 import { StudyProgress } from "@/components/questions/study-progress"
-import {
-  questionSections,
-  getSectionQuestions,
-  getSubsectionQuestions,
-  subsectionPath,
-} from "@/data/question-catalog"
-import { learningGroups } from "@/data/learning-modules"
+import { subsectionPath } from "@/data/question-catalog"
 import { cn } from "@/lib/utils"
 
 export function QuestionSectionPage() {
+  const {
+    questionSections,
+    groups: learningGroups,
+    getSectionQuestions,
+    getSubsectionQuestions,
+  } = useQuestionCatalog()
   const { sectionId } = useParams()
   const section = questionSections.find((item) => item.id === sectionId)
   if (!section) return <MissingQuestionPage />

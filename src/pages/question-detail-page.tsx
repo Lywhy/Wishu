@@ -1,3 +1,5 @@
+import { QuestionFavoriteButton } from "@/components/questions/question-favorite"
+import { useQuestionCatalog } from "@/lib/question-catalog-context"
 import { useEffect } from "react"
 import { Link, useParams } from "react-router-dom"
 import { Badge } from "@/components/ui/badge"
@@ -12,27 +14,18 @@ import {
   QuestionStatusControls,
   QuestionStudyAside,
 } from "@/components/questions/question-study"
-import { questions } from "@/data/interview-content"
-import {
-  findQuestionLocation,
-  getSubsectionQuestions,
-  sectionPath,
-  subsectionPath,
-} from "@/data/question-catalog"
+import { sectionPath, subsectionPath } from "@/data/question-catalog"
 import { usePracticeProgress } from "@/stores/practice-progress"
 import { MissingQuestionPage } from "@/pages/question-section-page"
 
 export function QuestionDetailPage() {
+  const { questions, findQuestionLocation, getSubsectionQuestions } = useQuestionCatalog()
   const { questionId } = useParams()
   useEffect(() => {
     window.scrollTo(0, 0)
   }, [questionId])
   const question = questions.find((item) => item.id === questionId)
   const location = question ? findQuestionLocation(question.id) : undefined
-  const saved = usePracticeProgress((state) =>
-    question ? state.savedQuestionIds.includes(question.id) : false,
-  )
-  const toggleSaved = usePracticeProgress((state) => state.toggleSaved)
   const status = usePracticeProgress((state) =>
     question ? state.questionStatuses[question.id] : undefined,
   )
@@ -61,9 +54,11 @@ export function QuestionDetailPage() {
               <Badge variant="secondary">{question.topic}</Badge>
               <DifficultyBadge level={question.difficulty} />
             </div>
-            <h1 className="text-3xl leading-tight font-semibold tracking-tight sm:text-4xl">
-              {question.title}
-            </h1>
+            <div className="flex items-start justify-between gap-4">
+              <h1 className="min-w-0 flex-1 text-3xl leading-tight font-semibold tracking-tight sm:text-4xl">
+                {question.title}
+              </h1>
+            </div>
             <p className="mt-4 text-sm leading-7 text-muted-foreground">{question.summary}</p>
           </div>
           <AnswerPreference />
@@ -77,8 +72,11 @@ export function QuestionDetailPage() {
             <QuestionAnswer question={question} />
           </Card>
           <div className="space-y-3">
-            <QuestionStatusControls questionId={question.id} />
-            <p role="status" className="text-xs text-muted-foreground">
+            <div className="flex flex-wrap items-center gap-2">
+              <QuestionStatusControls questionId={question.id} />
+              <QuestionFavoriteButton questionId={question.id} />
+            </div>
+            <p className="min-h-10 text-xs leading-5 text-muted-foreground sm:min-h-5">
               {status === "repeat"
                 ? "Вопрос отмечен для повторения."
                 : status === "learned"
@@ -135,14 +133,6 @@ export function QuestionDetailPage() {
             questionIds={siblings.map((item) => item.id)}
             title="Прогресс подраздела"
           />
-          <Button
-            variant="outline"
-            className="w-full"
-            aria-pressed={saved}
-            onClick={() => toggleSaved(question.id)}
-          >
-            {saved ? "Убрать из избранного" : "Добавить в избранное"}
-          </Button>
           <RelatedModule moduleId={question.moduleId} />
         </aside>
       </div>

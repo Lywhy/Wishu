@@ -195,7 +195,7 @@ export function LearningPage() {
                 </Button>
               )}
             </div>
-            <p role="status" className="sr-only">
+            <p className="sr-only">
               Найдено модулей: {visibleModules.length}
             </p>
             {visibleModules.length ? (
@@ -347,7 +347,7 @@ export function LearningPage() {
                     {index < 2 && (
                       <span
                         aria-hidden="true"
-                        className="absolute top-7 bottom-[-20px] left-3.5 border-l border-dashed"
+                        className="absolute top-7 -bottom-5 left-3.5 border-l border-dashed"
                       />
                     )}
                     <span className="relative flex size-7 shrink-0 items-center justify-center rounded-full border bg-background text-muted-foreground">

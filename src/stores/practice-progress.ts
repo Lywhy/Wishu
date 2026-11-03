@@ -1,16 +1,19 @@
 import { create } from "zustand"
 import { persist } from "zustand/middleware"
 import type { QuestionStatus } from "@/data/question-catalog"
+import { questionApi, type ProgressEntry, type ServerQuestionProgress } from "@/lib/question-api"
 
-interface PracticeProgressData {
-  questionStatuses: Record<string, QuestionStatus>
-  autoRevealAnswers: boolean
-  savedQuestionIds: string[]
+interface PracticeProgressData extends ServerQuestionProgress {
   reviewedTaskIds: string[]
   drafts: Record<string, string>
 }
 
 interface PracticeProgress extends PracticeProgressData {
+  questionSyncReady: boolean
+  questionSyncError: string | null
+  pendingQuestionWrites: number
+  hydrateQuestions: (progress: ServerQuestionProgress) => void
+  flushQuestionWrites: () => Promise<void>
   setQuestionStatus: (id: string, status: QuestionStatus | null) => void
   setAutoRevealAnswers: (enabled: boolean) => void
   toggleSaved: (id: string) => void
@@ -24,32 +27,75 @@ const toggle = (items: string[], id: string) =>
 
 export const usePracticeProgress = create<PracticeProgress>()(
   persist<PracticeProgress, [], [], PracticeProgressData>(
-    (set) => ({
-      questionStatuses: {},
-      autoRevealAnswers: false,
-      savedQuestionIds: [],
-      reviewedTaskIds: [],
-      drafts: {},
-      setQuestionStatus: (id, status) =>
+    (set, get) => {
+      let writes = Promise.resolve()
+      const enqueue = (job: () => Promise<void>) => {
+        if (!get().questionSyncReady) return
+        set((state) => ({
+          pendingQuestionWrites: state.pendingQuestionWrites + 1,
+          questionSyncError: null,
+        }))
+        writes = writes
+          .then(job)
+          .catch((error: unknown) => {
+            set({
+              questionSyncError:
+                error instanceof Error ? error.message : "Не удалось сохранить изменение.",
+            })
+          })
+          .finally(() =>
+            set((state) => ({ pendingQuestionWrites: state.pendingQuestionWrites - 1 })),
+          )
+      }
+      const applyEntry = (entry: ProgressEntry) =>
         set((state) => {
           const questionStatuses = { ...state.questionStatuses }
-          if (status === null) delete questionStatuses[id]
-          else questionStatuses[id] = status
-          return { questionStatuses }
-        }),
-      setAutoRevealAnswers: (autoRevealAnswers) => set({ autoRevealAnswers }),
-      toggleSaved: (id) =>
-        set((state) => ({ savedQuestionIds: toggle(state.savedQuestionIds, id) })),
-      toggleReviewed: (id) =>
-        set((state) => ({ reviewedTaskIds: toggle(state.reviewedTaskIds, id) })),
-      saveDraft: (id, code) => set((state) => ({ drafts: { ...state.drafts, [id]: code } })),
-      resetDraft: (id) =>
-        set((state) => {
-          const drafts = { ...state.drafts }
-          delete drafts[id]
-          return { drafts }
-        }),
-    }),
+          if (entry.status === null) delete questionStatuses[entry.questionId]
+          else questionStatuses[entry.questionId] = entry.status
+          const without = state.savedQuestionIds.filter((id) => id !== entry.questionId)
+          return {
+            questionStatuses,
+            savedQuestionIds: entry.saved ? [...without, entry.questionId] : without,
+          }
+        })
+
+      return {
+        questionStatuses: {},
+        autoRevealAnswers: false,
+        savedQuestionIds: [],
+        reviewedTaskIds: [],
+        drafts: {},
+        questionSyncReady: false,
+        questionSyncError: null,
+        pendingQuestionWrites: 0,
+        hydrateQuestions: (progress) =>
+          set({ ...progress, questionSyncReady: true, questionSyncError: null }),
+        flushQuestionWrites: () => writes,
+        setQuestionStatus: (id, status) =>
+          enqueue(async () => {
+            applyEntry(await questionApi.patchProgress(id, { status }))
+          }),
+        setAutoRevealAnswers: (enabled) =>
+          enqueue(async () => {
+            set(await questionApi.settings(enabled))
+          }),
+        toggleSaved: (id) =>
+          enqueue(async () => {
+            applyEntry(
+              await questionApi.patchProgress(id, { saved: !get().savedQuestionIds.includes(id) }),
+            )
+          }),
+        toggleReviewed: (id) =>
+          set((state) => ({ reviewedTaskIds: toggle(state.reviewedTaskIds, id) })),
+        saveDraft: (id, code) => set((state) => ({ drafts: { ...state.drafts, [id]: code } })),
+        resetDraft: (id) =>
+          set((state) => {
+            const drafts = { ...state.drafts }
+            delete drafts[id]
+            return { drafts }
+          }),
+      }
+    },
     {
       name: "wishu-practice",
       version: 2,
