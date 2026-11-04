@@ -74,13 +74,6 @@ export function LearningPage() {
             Разбирайтесь в темах, закрепляйте практикой и готовьтесь к следующему собеседованию.
           </p>
         </div>
-        <Badge
-          variant="outline"
-          className="gap-1.5 rounded-full bg-background px-3 py-1.5 font-normal"
-        >
-          <span className="size-1.5 rounded-full bg-emerald-500" />
-          Разработка приложений
-        </Badge>
       </div>
 
       <div className="grid items-start gap-7 lg:grid-cols-[minmax(0,1fr)_280px]">
@@ -195,9 +188,7 @@ export function LearningPage() {
                 </Button>
               )}
             </div>
-            <p className="sr-only">
-              Найдено модулей: {visibleModules.length}
-            </p>
+            <p className="sr-only">Найдено модулей: {visibleModules.length}</p>
             {visibleModules.length ? (
               <div className="space-y-9">
                 {learningGroups.map((group) => {
@@ -370,7 +361,7 @@ export function LearningPage() {
             </span>
             <p className="mt-3 text-xs leading-6 text-stone-600 dark:text-stone-300">
               В каталоге {learningModules.length} модулей и {totalTopics} тем. Выберите то, что
-              интересно сейчас — строгого порядка нет.
+              интересно сейчас - строгого порядка нет.
             </p>
             <button
               onClick={() => {

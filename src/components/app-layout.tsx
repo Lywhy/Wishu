@@ -26,7 +26,7 @@ export function AppLayout() {
         <div className="mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-x-4 gap-y-3 px-5 pt-5 sm:px-8 lg:h-20 lg:flex-nowrap lg:gap-x-8 lg:gap-y-0 lg:pt-0">
           <Link
             to="/learn"
-            aria-label="Wishu — главная"
+            aria-label="Wishu - главная"
             className="rounded-md outline-none focus-visible:ring-2 focus-visible:ring-ring"
           >
             <span className="text-2xl font-bold tracking-tight">
@@ -64,12 +64,6 @@ export function AppLayout() {
             >
               {theme === "dark" ? <Sun aria-hidden="true" /> : <Moon aria-hidden="true" />}
             </Button>
-            <span
-              aria-label="Личный учебный план"
-              className="hidden size-9 items-center justify-center rounded-full border border-orange-200 bg-orange-50 text-xs font-semibold text-orange-800 sm:flex dark:border-orange-900/60 dark:bg-orange-500/10 dark:text-orange-300"
-            >
-              W
-            </span>
           </div>
         </div>
       </header>
@@ -78,7 +72,7 @@ export function AppLayout() {
       </main>
       <footer className="mx-auto flex max-w-7xl flex-col gap-2 px-5 py-7 text-xs text-muted-foreground sm:flex-row sm:items-center sm:justify-between sm:px-8">
         <span className="font-medium">
-          wishu. <span className="ml-2 font-normal">Каждый день — на шаг увереннее.</span>
+          wishu. <span className="ml-2 font-normal">Каждый день - на шаг увереннее.</span>
         </span>
         <span>Изучайте. Разбирайтесь. Практикуйтесь.</span>
       </footer>

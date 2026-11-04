@@ -5,6 +5,7 @@ export interface Question {
   title: string
   topic: string
   difficulty: Difficulty
+  popular: boolean
   summary: string
   answer: string[]
   code?: string
@@ -47,7 +48,7 @@ export const practiceTasks: PracticeTask[] = [
     starter: "function unique(numbers) {\n  // Ваше решение\n}\n",
     solution: "function unique(numbers) {\n  return [...new Set(numbers)]\n}",
     explanation:
-      "Set хранит уникальные значения в порядке добавления. Spread создаёт новый массив. Ожидаемая сложность по времени — O(n), дополнительная память — O(n).",
+      "Set хранит уникальные значения в порядке добавления. Spread создаёт новый массив. Ожидаемая сложность по времени - O(n), дополнительная память - O(n).",
     moduleId: "javascript",
   },
   {
@@ -133,7 +134,7 @@ export const practiceTasks: PracticeTask[] = [
       "Создайте компонент Counter с пропсом step. Кнопки увеличивают и уменьшают значение на заданный шаг, а отдельная кнопка сбрасывает его в ноль.",
     requirements: [
       "По умолчанию step равен 1.",
-      "Начальное значение — 0.",
+      "Начальное значение - 0.",
       "Используйте функциональное обновление состояния.",
       "Кнопки должны иметь понятные текстовые подписи.",
     ],

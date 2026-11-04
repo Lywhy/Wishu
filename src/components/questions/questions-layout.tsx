@@ -100,7 +100,6 @@ export function QuestionsLayout() {
           </p>
         ) : pending > 0 ? (
           <p
-            role="status"
             className="rounded-xl border bg-background px-4 py-3 text-xs text-muted-foreground shadow-lg"
           >
             Сохраняем изменения…

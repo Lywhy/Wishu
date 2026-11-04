@@ -7,20 +7,18 @@ import { Progress } from "@/components/ui/progress"
 import type { Difficulty } from "@/data/interview-content"
 import { cn } from "@/lib/utils"
 
+const difficultyColors: Record<Difficulty, string> = {
+  Базовый:
+    "border-emerald-200 bg-emerald-50 text-emerald-800 dark:border-emerald-800 dark:bg-emerald-500/10 dark:text-emerald-300",
+  Средний:
+    "border-amber-200 bg-amber-50 text-amber-800 dark:border-amber-800 dark:bg-amber-500/10 dark:text-amber-300",
+  Продвинутый:
+    "border-red-200 bg-red-50 text-red-800 dark:border-red-800 dark:bg-red-500/10 dark:text-red-300",
+}
+
 export function DifficultyBadge({ level }: { level: Difficulty }) {
   return (
-    <Badge
-      variant="outline"
-      className={cn(
-        "text-[11px] font-normal",
-        level === "Базовый" &&
-          "border-emerald-200 bg-emerald-50 text-emerald-800 dark:border-emerald-900 dark:bg-emerald-500/10 dark:text-emerald-300",
-        level === "Средний" &&
-          "border-amber-200 bg-amber-50 text-amber-800 dark:border-amber-900 dark:bg-amber-500/10 dark:text-amber-300",
-        level === "Продвинутый" &&
-          "border-violet-200 bg-violet-50 text-violet-800 dark:border-violet-900 dark:bg-violet-500/10 dark:text-violet-300",
-      )}
-    >
+    <Badge variant="outline" className={cn("text-[11px] font-normal", difficultyColors[level])}>
       {level}
     </Badge>
   )

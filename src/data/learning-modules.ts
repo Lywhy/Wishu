@@ -27,7 +27,7 @@ export const learningModules: LearningModule[] = [
     id: "javascript",
     group: "frontend",
     title: "JavaScript: прочный фундамент",
-    description: "Разберитесь, как работает язык — от типов данных до замыканий и асинхронности.",
+    description: "Разберитесь, как работает язык - от типов данных до замыканий и асинхронности.",
     category: "JavaScript",
     level: "Базовый",
     duration: "3 часа",

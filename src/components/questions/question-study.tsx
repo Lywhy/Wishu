@@ -1,3 +1,4 @@
+import { QuestionPopularBadge } from "@/components/questions/question-popular"
 import { Badge } from "@/components/ui/badge"
 import { codeLanguageFor } from "@/lib/syntax-highlighter"
 import { QuestionFavoriteBadge } from "@/components/questions/question-favorite"
@@ -107,9 +108,9 @@ function AnswerDisclosure({ question, defaultOpen }: { question: Question; defau
       >
         {open ? "Скрыть ответ" : "Показать ответ"}
       </Button>
-      <div id={id} hidden={!open} className="space-y-4 border-t pt-4">
+      <div id={id} hidden={!open} className="space-y-6 border-t pt-5">
         {question.answer.map((paragraph) => (
-          <p key={paragraph} className="text-sm leading-7 text-muted-foreground">
+          <p key={paragraph} className="text-base leading-8 text-foreground">
             {paragraph}
           </p>
         ))}
@@ -119,8 +120,8 @@ function AnswerDisclosure({ question, defaultOpen }: { question: Question; defau
             language={codeLanguageFor(question.topic, question.code)}
           />
         )}
-        <div className="rounded-xl bg-orange-50 p-4 dark:bg-orange-500/10">
-          <p className="text-xs font-semibold text-primary">Главная мысль</p>
+        <div className="rounded-xl border bg-orange-50 p-4 dark:bg-orange-500/10">
+          <p className="text-xs font-semibold">Главная мысль</p>
           <p className="mt-2 text-sm leading-7">{question.takeaway}</p>
         </div>
       </div>
@@ -146,6 +147,7 @@ export function QuestionCard({ question }: { question: Question }) {
       </div>
       <div className="mt-3 flex min-h-6 flex-wrap items-center gap-2">
         <DifficultyBadge level={question.difficulty} />
+        {question.popular && <QuestionPopularBadge />}
         {currentStatus && (
           <Badge
             variant="outline"

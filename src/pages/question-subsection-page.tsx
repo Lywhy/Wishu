@@ -1,6 +1,5 @@
 import { useQuestionCatalog } from "@/lib/question-catalog-context"
-import { Link, useParams } from "react-router-dom"
-import { Button } from "@/components/ui/button"
+import { useParams } from "react-router-dom"
 import { CatalogControls, EmptyResults } from "@/components/practice/catalog-controls"
 import { QuestionBreadcrumbs } from "@/components/questions/question-breadcrumbs"
 import { QuestionCard, QuestionStudyAside } from "@/components/questions/question-study"
@@ -17,7 +16,7 @@ export function QuestionSubsectionPage() {
   const saved = usePracticeProgress((state) => state.savedQuestionIds)
   const section = questionSections.find((item) => item.id === sectionId)
   const subsection = section?.subsections.find((item) => item.id === subsectionId)
-  if (!section || !subsection) return <MissingQuestionPage />
+  if (!section || section.inDevelopment || !subsection) return <MissingQuestionPage />
   const questions = getSubsectionQuestions(subsection)
   const visible = questions.filter(
     (question) =>
@@ -76,14 +75,6 @@ export function QuestionSubsectionPage() {
             questionIds={questions.map((question) => question.id)}
             title="Прогресс подраздела"
           />
-          <Button
-            nativeButton={false}
-            variant="outline"
-            className="w-full"
-            render={<Link to={sectionPath(section.id)} />}
-          >
-            Все подразделы {section.title}
-          </Button>
         </aside>
       </div>
     </>

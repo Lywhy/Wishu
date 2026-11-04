@@ -15,6 +15,7 @@ export interface QuestionSection {
   title: string
   description: string
   moduleId: string
+  inDevelopment: boolean
   mark: string
   color: string
   subsections: QuestionSubsection[]

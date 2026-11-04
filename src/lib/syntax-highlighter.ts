@@ -8,6 +8,10 @@ import html from "shiki/langs/html.mjs"
 import css from "shiki/langs/css.mjs"
 import json from "shiki/langs/json.mjs"
 import sql from "shiki/langs/sql.mjs"
+import java from "shiki/langs/java.mjs"
+import vue from "shiki/langs/vue.mjs"
+import dockerfile from "shiki/langs/dockerfile.mjs"
+import shellscript from "shiki/langs/shellscript.mjs"
 import light from "shiki/themes/github-light.mjs"
 import dark from "shiki/themes/github-dark.mjs"
 
@@ -20,6 +24,10 @@ export type CodeLanguage =
   | "css"
   | "json"
   | "sql"
+  | "java"
+  | "vue"
+  | "dockerfile"
+  | "shellscript"
 
 let highlighter: ReturnType<typeof createHighlighterCoreSync> | undefined
 
@@ -27,7 +35,20 @@ export function highlightCode(code: string, language: CodeLanguage, theme: "ligh
   highlighter ??= createHighlighterCoreSync({
     engine: createJavaScriptRegexEngine(),
     themes: [light, dark],
-    langs: [javascript, typescript, jsx, tsx, html, css, json, sql],
+    langs: [
+      javascript,
+      typescript,
+      jsx,
+      tsx,
+      html,
+      css,
+      json,
+      sql,
+      java,
+      vue,
+      dockerfile,
+      shellscript,
+    ],
   })
   return highlighter.codeToTokens(code, {
     lang: language,
@@ -36,9 +57,18 @@ export function highlightCode(code: string, language: CodeLanguage, theme: "ligh
 }
 
 export function codeLanguageFor(topic: string, code: string): CodeLanguage {
-  if (topic === "React") return "tsx"
-  if (topic === "TypeScript") return "typescript"
+  if (topic === "React" || topic === "Next.js") return "tsx"
+  if (topic === "TypeScript" || topic === "NestJS") return "typescript"
+  if (topic === "Java") return "java"
+  if (topic === "Vue") return code.trimStart().startsWith("<") ? "vue" : "javascript"
+  if (topic === "Git" || topic === "Redis") return "shellscript"
+  if (topic === "Docker")
+    return /^\s*(?:FROM|RUN|COPY|CMD|ENTRYPOINT|WORKDIR|EXPOSE|ENV|ARG)\b/.test(code)
+      ? "dockerfile"
+      : "shellscript"
+  if (topic === "SQL" && code.trimStart().startsWith("//")) return "javascript"
   if (
+    topic === "SQL" ||
     topic === "PostgreSQL" ||
     /^\s*(?:SELECT|INSERT|UPDATE|DELETE|CREATE|ALTER|WITH)\b/i.test(code)
   )

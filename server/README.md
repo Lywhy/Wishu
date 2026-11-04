@@ -75,11 +75,11 @@ Invoke-RestMethod http://localhost:3000/api/health/ready
 
 ## Структура
 
-- `src/config` — проверка переменных окружения при запуске.
-- `src/database` — пул `pg`, таймауты и закрытие соединений при завершении.
-- `src/modules/health` — состояние процесса и готовность базы.
-- `src/modules/questions` — API каталога и прогресса вопросов.
-- `src/modules/learning`, `tasks` — основы остальных предметных модулей.
+- `src/config` - проверка переменных окружения при запуске.
+- `src/database` - пул `pg`, таймауты и закрытие соединений при завершении.
+- `src/modules/health` - состояние процесса и готовность базы.
+- `src/modules/questions` - API каталога и прогресса вопросов.
+- `src/modules/learning`, `tasks` - основы остальных предметных модулей.
 
 Все маршруты имеют префикс `/api`. Включены Helmet, CORS для заданного origin
 и глобальная `ValidationPipe` для будущих DTO с декораторами class-validator.
@@ -96,7 +96,7 @@ ORM, аккаунты и выполнение пользовательского
 ## Порт PostgreSQL на Windows
 
 Для локального подключения используется `127.0.0.1:15432`: в корневом `.env`
-указан `POSTGRES_PORT=15432`, в `server/.env` — `PGPORT=15432`.
+указан `POSTGRES_PORT=15432`, в `server/.env` - `PGPORT=15432`.
 Внутри Docker PostgreSQL по-прежнему слушает `5432`; API в Docker подключается
 к `postgres:5432`.
 

@@ -11,6 +11,7 @@ interface SeedData {
     title: string
     description: string
     moduleId: string
+    inDevelopment?: boolean
     mark: string
     order: number
   }[]
@@ -28,6 +29,7 @@ interface SeedData {
     title: string
     topic: string
     difficulty: string
+    popular?: boolean
     summary: string
     answer: string[]
     code?: string
@@ -54,7 +56,7 @@ export class QuestionsSeedService {
       }
       for (const section of seed.sections) {
         await client.query(
-          "INSERT INTO question_sections (id, group_id, title, description, module_id, mark, sort_order) VALUES ($1, $2, $3, $4, $5, $6, $7) ON CONFLICT (id) DO UPDATE SET group_id = EXCLUDED.group_id, title = EXCLUDED.title, description = EXCLUDED.description, module_id = EXCLUDED.module_id, mark = EXCLUDED.mark, sort_order = EXCLUDED.sort_order",
+          "INSERT INTO question_sections (id, group_id, title, description, module_id, mark, sort_order, in_development) VALUES ($1, $2, $3, $4, $5, $6, $7, $8) ON CONFLICT (id) DO UPDATE SET group_id = EXCLUDED.group_id, title = EXCLUDED.title, description = EXCLUDED.description, module_id = EXCLUDED.module_id, mark = EXCLUDED.mark, sort_order = EXCLUDED.sort_order, in_development = EXCLUDED.in_development",
           [
             section.id,
             section.groupId,
@@ -63,6 +65,7 @@ export class QuestionsSeedService {
             section.moduleId,
             section.mark,
             section.order,
+            section.inDevelopment ?? false,
           ],
         )
       }
@@ -80,7 +83,7 @@ export class QuestionsSeedService {
       }
       for (const question of seed.questions) {
         await client.query(
-          "INSERT INTO questions (id, section_id, subsection_id, title, topic, difficulty, summary, answer, code, takeaway, sort_order) VALUES ($1,$2,$3,$4,$5,$6,$7,$8::jsonb,$9,$10,$11) ON CONFLICT (id) DO UPDATE SET section_id = EXCLUDED.section_id, subsection_id = EXCLUDED.subsection_id, title = EXCLUDED.title, topic = EXCLUDED.topic, difficulty = EXCLUDED.difficulty, summary = EXCLUDED.summary, answer = EXCLUDED.answer, code = EXCLUDED.code, takeaway = EXCLUDED.takeaway, sort_order = EXCLUDED.sort_order",
+          "INSERT INTO questions (id, section_id, subsection_id, title, topic, difficulty, summary, answer, code, takeaway, sort_order, popular) VALUES ($1,$2,$3,$4,$5,$6,$7,$8::jsonb,$9,$10,$11,$12) ON CONFLICT (id) DO UPDATE SET section_id = EXCLUDED.section_id, subsection_id = EXCLUDED.subsection_id, title = EXCLUDED.title, topic = EXCLUDED.topic, difficulty = EXCLUDED.difficulty, summary = EXCLUDED.summary, answer = EXCLUDED.answer, code = EXCLUDED.code, takeaway = EXCLUDED.takeaway, sort_order = EXCLUDED.sort_order, popular = EXCLUDED.popular",
           [
             question.id,
             question.sectionId,
@@ -93,6 +96,7 @@ export class QuestionsSeedService {
             question.code ?? null,
             question.takeaway,
             question.order,
+            question.popular ?? false,
           ],
         )
       }

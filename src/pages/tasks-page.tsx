@@ -40,7 +40,7 @@ export function TasksPage() {
       <div className="mb-8 flex flex-wrap items-end justify-between gap-4">
         <div>
           <h1 className="text-3xl font-semibold tracking-tight sm:text-4xl">
-            От понимания — к практике.
+            От понимания - к практике.
           </h1>
           <p className="mt-3 max-w-2xl text-sm leading-6 text-muted-foreground">
             Небольшие задачи с собеседований. Продумайте решение, напишите код и сравните свой

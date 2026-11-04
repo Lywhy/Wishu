@@ -12,6 +12,7 @@ interface SectionRow {
   title: string
   description: string
   moduleId: string
+  inDevelopment: boolean
   mark: string
 }
 interface SubsectionRow {
@@ -27,6 +28,7 @@ interface QuestionRow {
   title: string
   topic: string
   difficulty: "Базовый" | "Средний" | "Продвинутый"
+  popular: boolean
   summary: string
   answer: string[]
   code: string | null
@@ -34,7 +36,7 @@ interface QuestionRow {
   moduleId: string
 }
 
-const questionColumns = `q.id, q.section_id AS "sectionId", q.subsection_id AS "subsectionId", q.title, q.topic, q.difficulty, q.summary, q.answer, q.code, q.takeaway, s.module_id AS "moduleId"`
+const questionColumns = `q.id, q.section_id AS "sectionId", q.subsection_id AS "subsectionId", q.title, q.topic, q.difficulty, q.popular, q.summary, q.answer, q.code, q.takeaway, s.module_id AS "moduleId"`
 
 @Injectable()
 export class QuestionsService {
@@ -47,7 +49,7 @@ export class QuestionsService {
         "SELECT id, title, description FROM question_groups ORDER BY sort_order, id",
       )
       const sections = await client.query<SectionRow>(
-        'SELECT id, group_id AS "group", title, description, module_id AS "moduleId", mark FROM question_sections ORDER BY sort_order, id',
+        'SELECT id, group_id AS "group", title, description, module_id AS "moduleId", mark, in_development AS "inDevelopment" FROM question_sections ORDER BY sort_order, id',
       )
       const subsections = await client.query<SubsectionRow>(
         'SELECT id, section_id AS "sectionId", title, description FROM question_subsections ORDER BY sort_order, id',

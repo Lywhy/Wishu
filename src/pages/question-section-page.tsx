@@ -17,7 +17,7 @@ export function QuestionSectionPage() {
   } = useQuestionCatalog()
   const { sectionId } = useParams()
   const section = questionSections.find((item) => item.id === sectionId)
-  if (!section) return <MissingQuestionPage />
+  if (!section || section.inDevelopment) return <MissingQuestionPage />
   const group = learningGroups.find((item) => item.id === section.group)
   return (
     <>
@@ -76,14 +76,6 @@ export function QuestionSectionPage() {
             questionIds={getSectionQuestions(section).map((question) => question.id)}
             title={`Прогресс: ${section.title}`}
           />
-          <Button
-            nativeButton={false}
-            variant="outline"
-            className="w-full"
-            render={<Link to="/questions" />}
-          >
-            Все разделы
-          </Button>
         </aside>
       </div>
     </>

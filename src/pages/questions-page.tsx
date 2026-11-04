@@ -1,6 +1,7 @@
 import { useQuestionCatalog } from "@/lib/question-catalog-context"
 import { Search } from "lucide-react"
 import { Link } from "react-router-dom"
+import { Badge } from "@/components/ui/badge"
 import { Card } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
 import { Button } from "@/components/ui/button"
@@ -83,39 +84,75 @@ export function QuestionsPage() {
                     </p>
                   </div>
                   <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-3">
-                    {groupSections.map((section) => (
-                      <Link
-                        key={section.id}
-                        to={sectionPath(section.id)}
-                        className="group block h-full rounded-2xl outline-none focus-visible:ring-2 focus-visible:ring-ring"
-                      >
-                        <Card className="h-full gap-0 rounded-2xl p-5 shadow-none transition-shadow group-hover:shadow-md dark:group-hover:shadow-black/20">
+                    {groupSections.map((section) => {
+                      const content = (
+                        <Card
+                          className={cn(
+                            "h-full gap-0 rounded-2xl p-5 shadow-none",
+                            section.inDevelopment
+                              ? "bg-muted/30"
+                              : "transition-shadow group-hover:shadow-md dark:group-hover:shadow-black/20",
+                          )}
+                        >
                           <span
                             aria-hidden="true"
                             className={cn(
-                              "mb-5 flex size-12 items-center justify-center rounded-xl font-mono text-xl font-bold",
-                              section.color,
+                              "mb-5 flex size-12 items-center justify-center rounded-xl font-mono text-lg font-bold",
+                              section.inDevelopment
+                                ? "bg-muted text-muted-foreground"
+                                : section.color,
                             )}
                           >
                             {section.mark}
                           </span>
-                          <h3 className="text-lg font-semibold group-hover:text-primary">
+                          <h3
+                            className={cn(
+                              "text-lg font-semibold",
+                              !section.inDevelopment && "group-hover:text-primary",
+                            )}
+                          >
                             {section.title}
                           </h3>
                           <p className="mt-2 flex-1 text-[13px] leading-6 text-muted-foreground">
                             {section.description}
                           </p>
                           <div className="mt-5 border-t pt-4">
-                            <StudyProgress
-                              questionIds={getSectionQuestions(section).map(
-                                (question) => question.id,
-                              )}
-                              compact
-                            />
+                            {section.inDevelopment ? (
+                              <Badge
+                                variant="outline"
+                                className="border-dashed text-muted-foreground"
+                              >
+                                В разработке
+                              </Badge>
+                            ) : (
+                              <StudyProgress
+                                questionIds={getSectionQuestions(section).map(
+                                  (question) => question.id,
+                                )}
+                                compact
+                              />
+                            )}
                           </div>
                         </Card>
-                      </Link>
-                    ))}
+                      )
+                      return section.inDevelopment ? (
+                        <div
+                          key={section.id}
+                          aria-disabled="true"
+                          className="h-full cursor-not-allowed rounded-2xl"
+                        >
+                          {content}
+                        </div>
+                      ) : (
+                        <Link
+                          key={section.id}
+                          to={sectionPath(section.id)}
+                          className="group block h-full rounded-2xl outline-none focus-visible:ring-2 focus-visible:ring-ring"
+                        >
+                          {content}
+                        </Link>
+                      )
+                    })}
                   </div>
                 </section>
               )

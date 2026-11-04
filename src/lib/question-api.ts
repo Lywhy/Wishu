@@ -1,5 +1,5 @@
 import type { QuestionCatalog, QuestionStatus } from "@/data/question-catalog"
-import { learningModules } from "@/data/learning-modules"
+import { questionSectionColors } from "@/data/question-section-colors"
 
 export interface ServerQuestionProgress {
   questionStatuses: Record<string, QuestionStatus>
@@ -54,9 +54,7 @@ export const questionApi = {
       groups: catalog.groups,
       sections: catalog.sections.map((section) => ({
         ...section,
-        color:
-          learningModules.find((module) => module.id === section.moduleId)?.color ??
-          "bg-muted text-foreground",
+        color: questionSectionColors[section.id] ?? "bg-muted text-foreground",
       })),
       questions: catalog.questions.map((question) => ({
         ...question,

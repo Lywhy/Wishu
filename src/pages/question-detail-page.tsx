@@ -1,3 +1,4 @@
+import { QuestionPopularBadge } from "@/components/questions/question-popular"
 import { QuestionFavoriteButton } from "@/components/questions/question-favorite"
 import { useQuestionCatalog } from "@/lib/question-catalog-context"
 import { useEffect } from "react"
@@ -53,6 +54,7 @@ export function QuestionDetailPage() {
             <div className="mb-4 flex flex-wrap gap-2">
               <Badge variant="secondary">{question.topic}</Badge>
               <DifficultyBadge level={question.difficulty} />
+              {question.popular && <QuestionPopularBadge />}
             </div>
             <div className="flex items-start justify-between gap-4">
               <h1 className="min-w-0 flex-1 text-3xl leading-tight font-semibold tracking-tight sm:text-4xl">
@@ -83,7 +85,7 @@ export function QuestionDetailPage() {
                   ? "Вопрос отмечен изученным."
                   : status === "skipped"
                     ? "Вопрос отмечен пропущенным."
-                    : "Выберите отметку после знакомства с вопросом."}
+                    : ""}
             </p>
           </div>
           <nav
@@ -120,12 +122,6 @@ export function QuestionDetailPage() {
               </Button>
             )}
           </nav>
-          <Link
-            to={back}
-            className="inline-block rounded text-xs text-muted-foreground outline-none hover:text-primary focus-visible:ring-2 focus-visible:ring-ring"
-          >
-            Все вопросы подраздела
-          </Link>
         </article>
         <aside className="space-y-5 lg:sticky lg:top-7">
           <QuestionNavigation questions={siblings} title={subsection.title} />
