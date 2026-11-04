@@ -1,3 +1,4 @@
+import { CategoryMark } from "@/components/catalog/catalog-primitives"
 import { useQuestionCatalog } from "@/lib/question-catalog-context"
 import { Link, useParams } from "react-router-dom"
 import { Card } from "@/components/ui/card"
@@ -6,7 +7,6 @@ import { QuestionBreadcrumbs } from "@/components/questions/question-breadcrumbs
 import { QuestionStudyAside } from "@/components/questions/question-study"
 import { StudyProgress } from "@/components/questions/study-progress"
 import { subsectionPath } from "@/data/question-catalog"
-import { cn } from "@/lib/utils"
 import { rememberedQuestionList } from "@/stores/question-experience"
 
 export function QuestionSectionPage() {
@@ -30,15 +30,7 @@ export function QuestionSectionPage() {
         ]}
       />
       <header className="mb-6">
-        <span
-          aria-hidden="true"
-          className={cn(
-            "mb-3 flex size-10 items-center justify-center rounded-lg font-mono text-base font-bold",
-            section.color,
-          )}
-        >
-          {section.mark}
-        </span>
+        <CategoryMark mark={section.mark} color={section.color} className="mb-3" />
         <h1
           data-question-heading
           tabIndex={-1}

@@ -1,3 +1,4 @@
+import { AnimatedText } from "@/components/catalog/catalog-primitives"
 import Markdown from "react-markdown"
 import remarkGfm from "remark-gfm"
 import { CodeBlock } from "@/components/practice/practice-elements"
@@ -14,21 +15,28 @@ export function LearningMarkdown({ content, topic }: { content: string; topic: s
         remarkPlugins={[remarkGfm]}
         components={{
           h1: (props) => (
-            <h2 className="mt-8 text-2xl font-semibold" {...htmlProps(props)}>
+            <h2 className="mt-8 text-2xl font-semibold first:mt-0" {...htmlProps(props)}>
               {props.children}
             </h2>
           ),
           h2: (props) => (
-            <h2 className="mt-8 border-b pb-3 text-xl font-semibold" {...htmlProps(props)}>
+            <h2
+              className="mt-8 border-b pb-3 text-xl font-semibold first:mt-0"
+              {...htmlProps(props)}
+            >
               {props.children}
             </h2>
           ),
           h3: (props) => (
-            <h3 className="mt-6 text-base font-semibold" {...htmlProps(props)}>
+            <h3 className="mt-6 text-base font-semibold first:mt-0" {...htmlProps(props)}>
               {props.children}
             </h3>
           ),
-          p: (props) => <p className="leading-7" {...htmlProps(props)} />,
+          p: (props) => (
+            <p className="leading-7" {...htmlProps(props)}>
+              <AnimatedText>{props.children}</AnimatedText>
+            </p>
+          ),
           strong: (props) => (
             <strong className="font-semibold text-foreground" {...htmlProps(props)} />
           ),

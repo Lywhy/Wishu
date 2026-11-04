@@ -1,8 +1,11 @@
 import { Fragment } from "react"
 import { Link, useLocation } from "react-router-dom"
-import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
-import { Card } from "@/components/ui/card"
+import {
+  AnimatedCard as Card,
+  CatalogHeader,
+  TaskStatusBadge,
+} from "@/components/catalog/catalog-primitives"
 import {
   Pagination,
   PaginationContent,
@@ -67,18 +70,15 @@ export function TasksPage() {
       <QuestionBreadcrumbs
         items={[{ label: "Подготовка к собеседованию", to: "/learn" }, { label: "Задачи" }]}
       />
-      <header className="mb-6">
-        <h1 className="text-3xl font-semibold tracking-tight sm:text-4xl">
-          Задачи для собеседований
-        </h1>
-        <p className="mt-2 max-w-2xl text-sm leading-6 text-muted-foreground">
-          Выберите задачу, продумайте подход и напишите решение. Черновик останется в этом браузере.
-        </p>
-      </header>
+      <CatalogHeader
+        title="Задачи для собеседований"
+        description="Выберите задачу, проверьте решение на тестах и разберите результат. Черновик сохранится автоматически."
+        eyebrow="Практика и проверка"
+      />
       <div className="grid items-start gap-6 lg:grid-cols-[minmax(0,1fr)_280px]">
         <div className="min-w-0 space-y-5">
           {resume && !active && (
-            <Card className="gap-3 rounded-xl p-4 shadow-none sm:flex-row sm:items-center sm:justify-between">
+            <Card className="gap-3 rounded-xl bg-primary/5 p-5 shadow-none ring-primary/15 sm:flex-row sm:items-center sm:justify-between">
               <div>
                 <p className="text-xs font-medium text-primary">
                   {resume.id === lastId || Object.hasOwn(drafts, resume.id)
@@ -106,7 +106,7 @@ export function TasksPage() {
             statuses={[
               { value: "all", label: "Все задачи" },
               { value: "new", label: "Не начаты" },
-              { value: "draft", label: "Есть черновик" },
+              { value: "draft", label: "В работе" },
               { value: "reviewed", label: "Решены" },
             ]}
           />
@@ -130,26 +130,30 @@ export function TasksPage() {
                   state={{ taskList }}
                   className="group rounded-xl outline-none focus-visible:ring-2 focus-visible:ring-ring"
                 >
-                  <Card className="h-full gap-3 rounded-xl p-4 shadow-none transition-colors group-hover:bg-muted/40">
+                  <Card className="h-full gap-3 rounded-xl p-5 shadow-none transition-[background-color,box-shadow] duration-200 group-hover:bg-muted/40 group-hover:ring-primary/25">
                     <div className="flex flex-wrap items-center justify-between gap-2">
-                      <span className="font-mono text-xs text-muted-foreground">{task.number}</span>
+                      <TaskStatusBadge
+                        status={
+                          reviewed.includes(task.id)
+                            ? "solved"
+                            : Object.hasOwn(drafts, task.id)
+                              ? "draft"
+                              : "new"
+                        }
+                      />
                       <DifficultyBadge level={task.difficulty} />
                     </div>
                     <h2 className="text-base leading-6 font-semibold group-hover:text-primary">
                       {task.title}
                     </h2>
-                    <p className="line-clamp-2 flex-1 text-xs leading-5 text-muted-foreground">
+                    <p className="line-clamp-2 flex-1 text-xs leading-6 text-muted-foreground">
                       {task.description}
                     </p>
                     <div className="flex flex-wrap items-center justify-between gap-2 border-t pt-3">
-                      <span className="text-xs text-muted-foreground">{task.topic}</span>
-                      <Badge variant="outline">
-                        {reviewed.includes(task.id)
-                          ? "Решена"
-                          : Object.hasOwn(drafts, task.id)
-                            ? "В работе"
-                            : "Не начата"}
-                      </Badge>
+                      <span className="text-xs text-muted-foreground">
+                        {task.topic} · #{task.number}
+                      </span>
+
                       <span className="text-xs text-muted-foreground">Около {task.duration}</span>
                     </div>
                   </Card>
@@ -159,47 +163,49 @@ export function TasksPage() {
           ) : (
             <EmptyResults onReset={filter.reset} />
           )}
-          <Pagination aria-label="Страницы задач" className="pt-2">
-            <PaginationContent>
-              <PaginationItem>
-                <PaginationPrevious
-                  size="sm"
-                  disabled={page === 1}
-                  render={page > 1 ? <Link to={pageLink(page - 1)} /> : undefined}
-                />
-              </PaginationItem>
-              {Array.from({ length: totalPages }, (_, index) => index + 1)
-                .filter(
-                  (value) => value === 1 || value === totalPages || Math.abs(value - page) <= 1,
-                )
-                .map((value, index, pages) => (
-                  <Fragment key={value}>
-                    {index > 0 && value - pages[index - 1] > 1 && (
+          {items.length > 0 && (
+            <Pagination aria-label="Страницы задач" className="pt-2">
+              <PaginationContent>
+                <PaginationItem>
+                  <PaginationPrevious
+                    size="sm"
+                    disabled={page === 1}
+                    render={page > 1 ? <Link to={pageLink(page - 1)} /> : undefined}
+                  />
+                </PaginationItem>
+                {Array.from({ length: totalPages }, (_, index) => index + 1)
+                  .filter(
+                    (value) => value === 1 || value === totalPages || Math.abs(value - page) <= 1,
+                  )
+                  .map((value, index, pages) => (
+                    <Fragment key={value}>
+                      {index > 0 && value - pages[index - 1] > 1 && (
+                        <PaginationItem>
+                          <PaginationEllipsis />
+                        </PaginationItem>
+                      )}
                       <PaginationItem>
-                        <PaginationEllipsis />
+                        <PaginationLink
+                          isActive={value === page}
+                          size="icon"
+                          aria-label={`Страница ${value}`}
+                          render={<Link to={pageLink(value)} />}
+                        >
+                          {value}
+                        </PaginationLink>
                       </PaginationItem>
-                    )}
-                    <PaginationItem>
-                      <PaginationLink
-                        isActive={value === page}
-                        size="icon"
-                        aria-label={`Страница ${value}`}
-                        render={<Link to={pageLink(value)} />}
-                      >
-                        {value}
-                      </PaginationLink>
-                    </PaginationItem>
-                  </Fragment>
-                ))}
-              <PaginationItem>
-                <PaginationNext
-                  size="sm"
-                  disabled={page === totalPages}
-                  render={page < totalPages ? <Link to={pageLink(page + 1)} /> : undefined}
-                />
-              </PaginationItem>
-            </PaginationContent>
-          </Pagination>
+                    </Fragment>
+                  ))}
+                <PaginationItem>
+                  <PaginationNext
+                    size="sm"
+                    disabled={page === totalPages}
+                    render={page < totalPages ? <Link to={pageLink(page + 1)} /> : undefined}
+                  />
+                </PaginationItem>
+              </PaginationContent>
+            </Pagination>
+          )}
         </div>
         <aside className="space-y-4 lg:sticky lg:top-6">
           <ProgressAside

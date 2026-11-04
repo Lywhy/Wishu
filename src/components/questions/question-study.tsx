@@ -1,3 +1,4 @@
+import { LearningMarkdown } from "@/components/learning/learning-markdown"
 import { useId, useState } from "react"
 import { Check, RotateCcw, SkipForward } from "lucide-react"
 import { Link } from "react-router-dom"
@@ -127,27 +128,19 @@ function AnswerDisclosure({ question, defaultOpen }: { question: Question; defau
         </Button>
       </div>
       <div id={id} hidden={!open} className="space-y-6 border-t pt-5">
-        <section aria-labelledby={`${id}-short`} className="space-y-2">
-          <h3 id={`${id}-short`} className="text-sm font-semibold">
-            Короткий ответ
-          </h3>
-          <p className="max-w-[70ch] text-base leading-8 text-foreground">{question.answer[0]}</p>
-        </section>
-        {question.answer.length > 1 && (
-          <section aria-labelledby={`${id}-details`} className="space-y-3">
-            <h3 id={`${id}-details`} className="text-sm font-semibold">
-              Подробности
-            </h3>
-            {question.answer.slice(1).map((paragraph, index) => (
-              <p
-                key={`${question.id}-${index}`}
-                className="max-w-[70ch] text-base leading-8 text-foreground"
-              >
-                {paragraph}
-              </p>
-            ))}
-          </section>
-        )}
+        <div className="max-w-[72ch]">
+          <LearningMarkdown
+            key={String(open)}
+            content={[
+              "### Короткий ответ",
+              question.answer[0] ?? "",
+              ...(question.answer.length > 1
+                ? ["### Подробности", ...question.answer.slice(1)]
+                : []),
+            ].join("\n\n")}
+            topic={question.topic}
+          />
+        </div>
         {question.code && (
           <CodeBlock
             code={question.code}
@@ -162,14 +155,18 @@ function AnswerDisclosure({ question, defaultOpen }: { question: Question; defau
             <h3 id={`${id}-pitfall`} className="text-sm font-semibold">
               Частая ошибка
             </h3>
-            <p className="mt-2 max-w-[70ch] text-sm leading-7">{question.pitfall}</p>
+            <div className="mt-2 max-w-[72ch]">
+              <LearningMarkdown content={question.pitfall} topic={question.topic} />
+            </div>
           </section>
         )}
         <section aria-labelledby={`${id}-takeaway`} className="rounded-xl border bg-muted/40 p-4">
           <h3 id={`${id}-takeaway`} className="text-sm font-semibold">
             Главная мысль
           </h3>
-          <p className="mt-2 max-w-[70ch] text-sm leading-7">{question.takeaway}</p>
+          <div className="mt-2 max-w-[72ch]">
+            <LearningMarkdown content={question.takeaway} topic={question.topic} />
+          </div>
         </section>
       </div>
     </div>

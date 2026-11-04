@@ -39,7 +39,7 @@ export function ProgressAside({
   children?: ReactNode
 }) {
   return (
-    <Card className="gap-0 rounded-2xl py-0 shadow-none">
+    <Card className="gap-0 rounded-xl py-0 shadow-none">
       <CardHeader className="p-5 pb-4">
         <CardTitle className="text-sm font-semibold">{title}</CardTitle>
       </CardHeader>
@@ -63,7 +63,7 @@ export function ProgressAside({
 
 export function RelatedModule({ moduleId }: { moduleId: string }) {
   return (
-    <div className="rounded-2xl border bg-card p-5 text-card-foreground shadow-none">
+    <div className="rounded-xl border bg-card p-5 text-card-foreground shadow-none">
       <p className="text-sm font-semibold">Нужно освежить теорию?</p>
       <p className="mt-2 text-xs leading-6 text-muted-foreground">
         Вернитесь к материалу по теме, а затем попробуйте ещё раз.

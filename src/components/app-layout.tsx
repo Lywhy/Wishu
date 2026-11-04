@@ -25,7 +25,7 @@ export function AppLayout() {
         К содержимому
       </a>
       <header className="border-b bg-background">
-        <div className="mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-x-4 gap-y-3 px-5 pt-5 sm:px-8 lg:h-20 lg:flex-nowrap lg:gap-x-8 lg:gap-y-0 lg:pt-0">
+        <div className="mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-x-4 gap-y-3 px-5 pt-5 sm:px-8 lg:h-14 lg:flex-nowrap lg:gap-x-8 lg:gap-y-0 lg:pt-0">
           <Link
             to="/learn"
             aria-label="Wishu - главная"
@@ -37,7 +37,7 @@ export function AppLayout() {
           </Link>
           <nav
             aria-label="Главная навигация"
-            className="order-3 -mb-px flex w-full gap-5 overflow-x-auto sm:gap-8 lg:order-none lg:h-full lg:w-auto"
+            className="order-3 -mb-px flex w-full gap-5 overflow-x-auto sm:gap-8 lg:order-0 lg:h-full lg:w-auto"
           >
             {navigation.map(({ to, title }) => (
               <NavLink

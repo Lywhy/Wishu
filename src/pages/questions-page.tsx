@@ -1,6 +1,10 @@
 import { Link, useLocation } from "react-router-dom"
 import { Badge } from "@/components/ui/badge"
-import { Card } from "@/components/ui/card"
+import {
+  AnimatedCard as Card,
+  CatalogHeader,
+  CategoryMark,
+} from "@/components/catalog/catalog-primitives"
 import { Button } from "@/components/ui/button"
 import { CatalogControls, EmptyResults } from "@/components/practice/catalog-controls"
 import { QuestionBreadcrumbs } from "@/components/questions/question-breadcrumbs"
@@ -24,14 +28,12 @@ export function QuestionsPage() {
     useQuestionCatalog()
   const statuses = usePracticeProgress((state) => state.questionStatuses)
   const saved = usePracticeProgress((state) => state.savedQuestionIds)
-  const filter = useCatalogFilters()
+  const rawFilter = useCatalogFilters()
+  const filter = { ...rawFilter, popular: false }
   const route = useLocation()
   const query = filter.query.trim().toLocaleLowerCase("ru")
   const searching =
-    Boolean(query) ||
-    filter.difficulty !== "Любой уровень" ||
-    filter.status !== "all" ||
-    filter.popular
+    Boolean(query) || filter.difficulty !== "Любой уровень" || filter.status !== "all"
   const sections = questionSections.filter((section) =>
     `${section.title} ${section.description} ${section.group} ${section.subsections.map((sub) => sub.title).join(" ")}`
       .toLocaleLowerCase("ru")
@@ -69,18 +71,12 @@ export function QuestionsPage() {
       <QuestionBreadcrumbs
         items={[{ label: "Подготовка к собеседованию", to: "/learn" }, { label: "Вопросы" }]}
       />
-      <header className="mb-6">
-        <h1
-          data-question-heading
-          tabIndex={-1}
-          className="text-3xl font-semibold tracking-tight outline-none sm:text-4xl"
-        >
-          Вопросы для собеседований
-        </h1>
-        <p className="mt-2 text-sm leading-6 text-muted-foreground">
-          Продолжайте подготовку или найдите нужный вопрос во всём каталоге.
-        </p>
-      </header>
+      <CatalogHeader
+        title="Вопросы для собеседований"
+        description="Продолжайте подготовку или найдите нужный вопрос во всём каталоге."
+        eyebrow="Подготовка и повторение"
+        questionHeading
+      />
       <div className="grid items-start gap-6 lg:grid-cols-[minmax(0,1fr)_280px]">
         <div className="min-w-0 space-y-5">
           {!searching && (
@@ -107,16 +103,6 @@ export function QuestionsPage() {
             >
               Избранное ({savedCount})
             </Button>
-            {!searching && (
-              <Button
-                nativeButton={false}
-                variant="outline"
-                className="h-10"
-                render={<Link to="/questions?popular=1" />}
-              >
-                Популярные
-              </Button>
-            )}
             {searching && (
               <Button
                 nativeButton={false}
@@ -132,15 +118,12 @@ export function QuestionsPage() {
             filter={filter}
             placeholder="Найти вопрос, раздел или подраздел"
             statuses={questionFilterStatuses}
-            showPopular={searching}
           />
           {searching && (
             <section aria-label="Результаты поиска" className="space-y-3">
               <div className="flex flex-wrap items-center justify-between gap-2">
                 <h2 className="text-lg font-semibold">{mode}</h2>
-                <p className="text-xs text-muted-foreground">
-                  Найдено вопросов: {matches.length}
-                </p>
+                <p className="text-xs text-muted-foreground">Найдено вопросов: {matches.length}</p>
               </div>
               {matches.length ? (
                 matches.map(({ question, location }) => (
@@ -171,7 +154,7 @@ export function QuestionsPage() {
                       >
                         {group.title}
                       </h2>
-                      <p className="mt-1 text-xs leading-5 text-muted-foreground">
+                      <p className="mt-1 text-xs leading-6 text-muted-foreground">
                         {group.description}
                       </p>
                     </div>
@@ -180,27 +163,21 @@ export function QuestionsPage() {
                         const content = (
                           <Card
                             className={cn(
-                              "h-full gap-0 rounded-xl p-4 shadow-none",
+                              "h-full gap-0 rounded-xl p-5 shadow-none",
                               section.inDevelopment
                                 ? "bg-muted/30"
-                                : "transition-shadow group-hover:shadow-md dark:group-hover:shadow-black/20",
+                                : "transition-[background-color,box-shadow] duration-200 group-hover:bg-muted/40 group-hover:ring-primary/25",
                             )}
                           >
-                            <span
-                              aria-hidden="true"
-                              className={cn(
-                                "mb-3 flex size-10 items-center justify-center rounded-lg font-mono text-base font-bold",
-                                section.inDevelopment
-                                  ? "bg-muted text-muted-foreground"
-                                  : section.color,
-                              )}
-                            >
-                              {section.mark}
-                            </span>
+                            <CategoryMark
+                              mark={section.mark}
+                              color={section.color}
+                              className="mb-3"
+                            />
                             <h3 className="text-base font-semibold group-hover:text-primary">
                               {section.title}
                             </h3>
-                            <p className="mt-1.5 line-clamp-2 text-xs leading-5 text-muted-foreground">
+                            <p className="mt-1.5 line-clamp-2 text-xs leading-6 text-muted-foreground">
                               {section.description}
                             </p>
                             <div className="mt-3 border-t pt-3">

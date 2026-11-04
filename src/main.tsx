@@ -1,3 +1,4 @@
+import { InterfaceMotion } from "@/components/catalog/catalog-primitives"
 import { StrictMode } from "react"
 import { createRoot } from "react-dom/client"
 import "./index.css"
@@ -7,7 +8,9 @@ import { ThemeProvider } from "./components/theme-provider"
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
     <ThemeProvider>
-      <App />
+      <InterfaceMotion>
+        <App />
+      </InterfaceMotion>
     </ThemeProvider>
   </StrictMode>,
 )

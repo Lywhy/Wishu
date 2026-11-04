@@ -8,6 +8,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select"
+import { cn } from "@/lib/utils"
 import type { useCatalogFilters } from "@/hooks/use-catalog-filters"
 
 export function CatalogControls({
@@ -24,9 +25,16 @@ export function CatalogControls({
   showPopular?: boolean
 }) {
   return (
-    <div className="space-y-4">
-      <div className="grid gap-3 sm:grid-cols-[minmax(0,1fr)_180px_170px]">
-        <div className="relative">
+    <div className="space-y-4 rounded-xl border bg-card p-4">
+      <div
+        className={cn(
+          "grid gap-3 sm:grid-cols-2",
+          showPopular
+            ? "lg:grid-cols-[minmax(9rem,1fr)_9rem_8.5rem_auto]"
+            : "lg:grid-cols-[minmax(0,1fr)_10rem_9rem]",
+        )}
+      >
+        <div className="relative sm:col-span-2 lg:col-span-1">
           <Search
             className="pointer-events-none absolute top-1/2 left-3.5 size-4 -translate-y-1/2 text-muted-foreground"
             aria-hidden="true"
@@ -84,28 +92,29 @@ export function CatalogControls({
             ))}
           </SelectContent>
         </Select>
-      </div>
-      {showPopular && (
-        <div className="flex min-h-9 flex-wrap items-center gap-2">
+        {showPopular && (
           <Button
             type="button"
             variant={filter.popular ? "secondary" : "outline"}
-            className="h-9"
+            className="h-10 sm:col-span-2 lg:col-span-1"
             aria-pressed={filter.popular}
             onClick={() => filter.update("popular", filter.popular ? "" : "1")}
           >
             Популярные
           </Button>
-          {(filter.query ||
-            filter.difficulty !== "Любой уровень" ||
-            filter.status !== "all" ||
-            filter.popular) && (
-            <Button type="button" variant="ghost" className="h-9" onClick={filter.reset}>
+        )}
+      </div>
+      {showPopular &&
+        (filter.query ||
+          filter.difficulty !== "Любой уровень" ||
+          filter.status !== "all" ||
+          filter.popular) && (
+          <div className="flex justify-end">
+            <Button type="button" variant="ghost" size="sm" onClick={filter.reset}>
               Сбросить фильтры
             </Button>
-          )}
-        </div>
-      )}
+          </div>
+        )}
       {topics.length > 0 && (
         <div aria-label="Темы" className="flex flex-wrap gap-2">
           {["Все темы", ...topics].map((topic) => (

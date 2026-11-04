@@ -1,6 +1,11 @@
 import { useState } from "react"
 import { Link } from "react-router-dom"
-import { Card } from "@/components/ui/card"
+import {
+  AnimatedCard as Card,
+  CatalogHeader,
+  CategoryMark,
+  CompletedBadge,
+} from "@/components/catalog/catalog-primitives"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Badge } from "@/components/ui/badge"
@@ -10,7 +15,6 @@ import { useQuestionCatalog } from "@/lib/question-catalog-context"
 import { useLearningPlan } from "@/stores/learning-plan"
 import { useLearningProgress } from "@/stores/learning-progress"
 import { courseSteps, stepCompleted } from "@/data/learning-course"
-import { cn } from "@/lib/utils"
 export function LearningPage() {
   const { questionSections, groups, questions } = useQuestionCatalog()
   const [query, setQuery] = useState("")
@@ -25,18 +29,40 @@ export function LearningPage() {
         .toLocaleLowerCase("ru")
         .includes(query.trim().toLocaleLowerCase("ru")),
   )
+  const resume = questionSections.flatMap((section) => {
+    if (section.inDevelopment) return []
+    const steps = courseSteps(section, questions)
+    const next = steps.find((step) => !stepCompleted(section.id, step, completed))
+    return next && steps.some((step) => stepCompleted(section.id, step, completed))
+      ? [{ section, next }]
+      : []
+  })[0]
   return (
     <>
       <QuestionBreadcrumbs items={[{ label: "Обучение" }]} />
-      <header className="mb-7">
-        <p className="mb-2 text-xs font-medium text-primary">Теория, которая становится навыком</p>
-        <h1 className="text-3xl font-semibold tracking-tight sm:text-4xl">Обучение по шагам</h1>
-        <p className="mt-3 max-w-2xl text-sm leading-7 text-muted-foreground">
-          Выберите направление. Изучайте короткие лекции, закрепляйте материал задачами и сохраняйте
-          свой прогресс.
-        </p>
-      </header>
-      <div className="mb-8 flex flex-wrap items-center gap-3">
+      <CatalogHeader
+        title="Обучение по шагам"
+        description="Выберите направление. Изучайте короткие лекции, закрепляйте материал задачами и сохраняйте свой прогресс."
+        eyebrow="Теория и закрепление"
+      />
+      {resume && (
+        <Card className="mb-5 gap-3 rounded-xl bg-primary/5 p-5 shadow-none ring-primary/15 sm:flex-row sm:items-center sm:justify-between">
+          <div>
+            <p className="text-xs font-medium text-primary">Продолжить обучение</p>
+            <p className="mt-1 text-sm font-semibold">
+              {resume.section.title} · {resume.next.title}
+            </p>
+          </div>
+          <Button
+            nativeButton={false}
+            className="h-10"
+            render={<Link to={`/learn/${resume.section.id}/${resume.next.id}`} />}
+          >
+            Продолжить
+          </Button>
+        </Card>
+      )}
+      <div className="mb-8 flex flex-wrap items-center gap-3 rounded-xl border bg-card p-4">
         <Input
           className="h-10 flex-1 basis-60"
           aria-label="Поиск модулей обучения"
@@ -72,20 +98,16 @@ export function LearningPage() {
                   const next =
                     steps.find((step) => !stepCompleted(section.id, step, completed)) ?? steps[0]
                   return (
-                    <Card key={section.id} className="gap-4 rounded-xl p-5 shadow-none">
+                    <Card
+                      key={section.id}
+                      className={`gap-4 rounded-xl p-5 shadow-none ${disabled ? "bg-muted/30" : "transition-[background-color,box-shadow] duration-200 hover:bg-muted/40 hover:ring-primary/25"}`}
+                    >
                       <div className="flex items-center justify-between gap-3">
-                        <span
-                          className={cn(
-                            "flex size-12 shrink-0 items-center justify-center rounded-xl border border-current/25 font-mono text-lg font-semibold",
-                            section.color,
-                          )}
-                        >
-                          {section.mark}
-                        </span>
+                        <CategoryMark mark={section.mark} color={section.color} />
                         {disabled ? (
                           <Badge variant="secondary">В разработке</Badge>
                         ) : done === steps.length ? (
-                          <Badge variant="secondary">Пройдено</Badge>
+                          <CompletedBadge>Пройдено</CompletedBadge>
                         ) : (
                           <span className="text-xs text-muted-foreground">
                             {done} / {steps.length} этапов
@@ -93,16 +115,16 @@ export function LearningPage() {
                         )}
                       </div>
                       {disabled ? (
-                        <h3 className="text-lg font-semibold">{section.title}</h3>
+                        <h3 className="text-base font-semibold">{section.title}</h3>
                       ) : (
                         <Link
-                          className="text-lg font-semibold outline-none hover:text-primary focus-visible:ring-2 focus-visible:ring-ring"
+                          className="text-base font-semibold outline-none hover:text-primary focus-visible:ring-2 focus-visible:ring-ring"
                           to={`/learn/${section.id}/${next.id}`}
                         >
                           {section.title}
                         </Link>
                       )}
-                      <p className="flex-1 text-xs leading-6 text-muted-foreground">
+                      <p className="line-clamp-2 flex-1 text-xs leading-6 text-muted-foreground">
                         {section.description}
                       </p>
                       {!disabled && (
@@ -139,9 +161,18 @@ export function LearningPage() {
         })}
       </div>
       {!visible.length && (
-        <p className="py-12 text-center text-sm text-muted-foreground">
-          Модули не найдены. Измените поиск или отключите «Мой план».
-        </p>
+        <div className="space-y-4 py-12 text-center text-sm text-muted-foreground">
+          <p>Модули не найдены. Измените поиск или отключите «Мой план».</p>
+          <Button
+            variant="outline"
+            onClick={() => {
+              setQuery("")
+              setSavedOnly(false)
+            }}
+          >
+            Сбросить фильтры
+          </Button>
+        </div>
       )}
     </>
   )
