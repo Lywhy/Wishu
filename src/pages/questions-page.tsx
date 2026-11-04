@@ -1,178 +1,258 @@
-import { useQuestionCatalog } from "@/lib/question-catalog-context"
-import { Search } from "lucide-react"
-import { Link } from "react-router-dom"
+import { Link, useLocation } from "react-router-dom"
 import { Badge } from "@/components/ui/badge"
 import { Card } from "@/components/ui/card"
-import { Input } from "@/components/ui/input"
 import { Button } from "@/components/ui/button"
-import { EmptyResults } from "@/components/practice/catalog-controls"
+import { CatalogControls, EmptyResults } from "@/components/practice/catalog-controls"
 import { QuestionBreadcrumbs } from "@/components/questions/question-breadcrumbs"
-import { QuestionStudyAside } from "@/components/questions/question-study"
+import { QuestionCard, QuestionStudyAside } from "@/components/questions/question-study"
+import { QuestionPracticeActions } from "@/components/questions/question-practice-actions"
 import { StudyProgress } from "@/components/questions/study-progress"
 import { sectionPath } from "@/data/question-catalog"
+import type { QuestionSession } from "@/data/question-session"
 import { useCatalogFilters } from "@/hooks/use-catalog-filters"
+import { useQuestionCatalog } from "@/lib/question-catalog-context"
+import {
+  matchesQuestionFilters,
+  questionEmptyState,
+  questionFilterStatuses,
+} from "@/lib/filter-questions"
+import { usePracticeProgress } from "@/stores/practice-progress"
 import { cn } from "@/lib/utils"
 
 export function QuestionsPage() {
-  const {
-    questions,
-    questionSections,
-    groups: learningGroups,
-    getSectionQuestions,
-  } = useQuestionCatalog()
+  const { questions, questionSections, groups, getSectionQuestions, findQuestionLocation } =
+    useQuestionCatalog()
+  const statuses = usePracticeProgress((state) => state.questionStatuses)
+  const saved = usePracticeProgress((state) => state.savedQuestionIds)
   const filter = useCatalogFilters()
+  const route = useLocation()
   const query = filter.query.trim().toLocaleLowerCase("ru")
+  const searching =
+    Boolean(query) ||
+    filter.difficulty !== "Любой уровень" ||
+    filter.status !== "all" ||
+    filter.popular
   const sections = questionSections.filter((section) =>
-    `${section.title} ${section.description} ${section.group} ${section.subsections.map((subsection) => subsection.title).join(" ")}`
+    `${section.title} ${section.description} ${section.group} ${section.subsections.map((sub) => sub.title).join(" ")}`
       .toLocaleLowerCase("ru")
       .includes(query),
   )
+  const matches = searching
+    ? questions.flatMap((question) => {
+        const location = findQuestionLocation(question.id)
+        if (!location || location.section.inDevelopment) return []
+        const text =
+          `${question.title} ${question.summary} ${question.topic} ${location.section.title} ${location.subsection.title}`.toLocaleLowerCase(
+            "ru",
+          )
+        return text.includes(query) && matchesQuestionFilters(question, filter, statuses, saved)
+          ? [{ question, location }]
+          : []
+      })
+    : []
+  const mode =
+    filter.status === "repeat"
+      ? "Повторение"
+      : filter.status === "saved"
+        ? "Избранное"
+        : "Результаты поиска"
+  const session: QuestionSession = {
+    questionIds: matches.map(({ question }) => question.id),
+    returnTo: route.pathname + route.search,
+    title: mode,
+  }
+  const repeatCount = questions.filter((question) => statuses[question.id] === "repeat").length
+  const savedCount = questions.filter((question) => saved.includes(question.id)).length
+  const emptyState = questionEmptyState(questions, filter, statuses, saved)
   return (
     <>
       <QuestionBreadcrumbs
         items={[{ label: "Подготовка к собеседованию", to: "/learn" }, { label: "Вопросы" }]}
       />
-      <header className="mb-8">
-        <h1 className="text-3xl font-semibold tracking-tight sm:text-4xl">
+      <header className="mb-6">
+        <h1
+          data-question-heading
+          tabIndex={-1}
+          className="text-3xl font-semibold tracking-tight outline-none sm:text-4xl"
+        >
           Вопросы для собеседований
         </h1>
-        <p className="mt-3 max-w-2xl text-sm leading-7 text-muted-foreground">
-          Выберите раздел, затем подраздел. Повторяйте знакомое и постепенно закрывайте пробелы в
-          знаниях.
+        <p className="mt-2 text-sm leading-6 text-muted-foreground">
+          Продолжайте подготовку или найдите нужный вопрос во всём каталоге.
         </p>
       </header>
-      <div className="grid items-start gap-7 lg:grid-cols-[minmax(0,1fr)_280px]">
-        <div className="min-w-0 space-y-7">
-          <div className="relative">
-            <Search
-              className="pointer-events-none absolute top-1/2 left-3.5 size-4 -translate-y-1/2 text-muted-foreground"
-              aria-hidden="true"
+      <div className="grid items-start gap-6 lg:grid-cols-[minmax(0,1fr)_280px]">
+        <div className="min-w-0 space-y-5">
+          {!searching && (
+            <QuestionPracticeActions
+              questionIds={questions.map((question) => question.id)}
+              title="Все вопросы"
+              prominent
             />
-            <Input
-              aria-label="Поиск разделов"
-              placeholder="Найти раздел или подраздел"
-              value={filter.query}
-              onChange={(event) => filter.update("q", event.target.value)}
-              className="h-11 bg-background pr-24 pl-10"
-            />
-            {filter.query && (
+          )}
+          <div className="flex flex-wrap gap-2" aria-label="Быстрые подборки">
+            <Button
+              nativeButton={false}
+              variant={filter.status === "repeat" ? "secondary" : "outline"}
+              className="h-10"
+              render={<Link to="/questions?status=repeat" />}
+            >
+              Повторить ({repeatCount})
+            </Button>
+            <Button
+              nativeButton={false}
+              variant={filter.status === "saved" ? "secondary" : "outline"}
+              className="h-10"
+              render={<Link to="/questions?status=saved" />}
+            >
+              Избранное ({savedCount})
+            </Button>
+            {!searching && (
               <Button
-                variant="ghost"
-                size="sm"
-                className="absolute top-1/2 right-2 -translate-y-1/2"
-                onClick={() => filter.update("q", "")}
+                nativeButton={false}
+                variant="outline"
+                className="h-10"
+                render={<Link to="/questions?popular=1" />}
               >
-                Очистить
+                Популярные
+              </Button>
+            )}
+            {searching && (
+              <Button
+                nativeButton={false}
+                variant="ghost"
+                className="h-10"
+                render={<Link to="/questions" />}
+              >
+                Каталог разделов
               </Button>
             )}
           </div>
-          {sections.length ? (
-            learningGroups.map((group) => {
-              const groupSections = sections.filter((section) => section.group === group.id)
-              if (!groupSections.length) return null
-              return (
-                <section key={group.id} aria-labelledby={`questions-group-${group.id}`}>
-                  <div className="mb-4 border-b pb-4">
-                    <h2
-                      id={`questions-group-${group.id}`}
-                      className="text-lg font-semibold tracking-tight"
-                    >
-                      {group.title}
-                    </h2>
-                    <p className="mt-1.5 text-xs leading-6 text-muted-foreground">
-                      {group.description}
-                    </p>
-                  </div>
-                  <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-3">
-                    {groupSections.map((section) => {
-                      const content = (
-                        <Card
-                          className={cn(
-                            "h-full gap-0 rounded-2xl p-5 shadow-none",
-                            section.inDevelopment
-                              ? "bg-muted/30"
-                              : "transition-shadow group-hover:shadow-md dark:group-hover:shadow-black/20",
-                          )}
-                        >
-                          <span
-                            aria-hidden="true"
+          <CatalogControls
+            filter={filter}
+            placeholder="Найти вопрос, раздел или подраздел"
+            statuses={questionFilterStatuses}
+            showPopular={searching}
+          />
+          {searching && (
+            <section aria-label="Результаты поиска" className="space-y-3">
+              <div className="flex flex-wrap items-center justify-between gap-2">
+                <h2 className="text-lg font-semibold">{mode}</h2>
+                <p className="text-xs text-muted-foreground">
+                  Найдено вопросов: {matches.length}
+                </p>
+              </div>
+              {matches.length ? (
+                matches.map(({ question, location }) => (
+                  <QuestionCard
+                    key={question.id}
+                    question={question}
+                    session={session}
+                    context={`${location.section.title} / ${location.subsection.title}`}
+                  />
+                ))
+              ) : (
+                <EmptyResults onReset={filter.reset} {...emptyState} />
+              )}
+            </section>
+          )}
+          {(!searching || (query && sections.length > 0)) && (
+            <div className="space-y-6">
+              {searching && <h2 className="text-lg font-semibold">Разделы и подразделы</h2>}
+              {groups.map((group) => {
+                const groupSections = sections.filter((section) => section.group === group.id)
+                if (!groupSections.length) return null
+                return (
+                  <section key={group.id} aria-labelledby={`questions-group-${group.id}`}>
+                    <div className="mb-3 border-b pb-3">
+                      <h2
+                        id={`questions-group-${group.id}`}
+                        className="text-lg font-semibold tracking-tight"
+                      >
+                        {group.title}
+                      </h2>
+                      <p className="mt-1 text-xs leading-5 text-muted-foreground">
+                        {group.description}
+                      </p>
+                    </div>
+                    <div className="grid gap-3 sm:grid-cols-2 xl:grid-cols-3">
+                      {groupSections.map((section) => {
+                        const content = (
+                          <Card
                             className={cn(
-                              "mb-5 flex size-12 items-center justify-center rounded-xl font-mono text-lg font-bold",
+                              "h-full gap-0 rounded-xl p-4 shadow-none",
                               section.inDevelopment
-                                ? "bg-muted text-muted-foreground"
-                                : section.color,
+                                ? "bg-muted/30"
+                                : "transition-shadow group-hover:shadow-md dark:group-hover:shadow-black/20",
                             )}
                           >
-                            {section.mark}
-                          </span>
-                          <h3
-                            className={cn(
-                              "text-lg font-semibold",
-                              !section.inDevelopment && "group-hover:text-primary",
-                            )}
+                            <span
+                              aria-hidden="true"
+                              className={cn(
+                                "mb-3 flex size-10 items-center justify-center rounded-lg font-mono text-base font-bold",
+                                section.inDevelopment
+                                  ? "bg-muted text-muted-foreground"
+                                  : section.color,
+                              )}
+                            >
+                              {section.mark}
+                            </span>
+                            <h3 className="text-base font-semibold group-hover:text-primary">
+                              {section.title}
+                            </h3>
+                            <p className="mt-1.5 line-clamp-2 text-xs leading-5 text-muted-foreground">
+                              {section.description}
+                            </p>
+                            <div className="mt-3 border-t pt-3">
+                              {section.inDevelopment ? (
+                                <Badge
+                                  variant="outline"
+                                  className="border-dashed text-muted-foreground"
+                                >
+                                  В разработке
+                                </Badge>
+                              ) : (
+                                <StudyProgress
+                                  questionIds={getSectionQuestions(section).map(
+                                    (question) => question.id,
+                                  )}
+                                  compact
+                                />
+                              )}
+                            </div>
+                          </Card>
+                        )
+                        return section.inDevelopment ? (
+                          <div
+                            key={section.id}
+                            aria-disabled="true"
+                            className="h-full cursor-not-allowed rounded-xl"
                           >
-                            {section.title}
-                          </h3>
-                          <p className="mt-2 flex-1 text-[13px] leading-6 text-muted-foreground">
-                            {section.description}
-                          </p>
-                          <div className="mt-5 border-t pt-4">
-                            {section.inDevelopment ? (
-                              <Badge
-                                variant="outline"
-                                className="border-dashed text-muted-foreground"
-                              >
-                                В разработке
-                              </Badge>
-                            ) : (
-                              <StudyProgress
-                                questionIds={getSectionQuestions(section).map(
-                                  (question) => question.id,
-                                )}
-                                compact
-                              />
-                            )}
+                            {content}
                           </div>
-                        </Card>
-                      )
-                      return section.inDevelopment ? (
-                        <div
-                          key={section.id}
-                          aria-disabled="true"
-                          className="h-full cursor-not-allowed rounded-2xl"
-                        >
-                          {content}
-                        </div>
-                      ) : (
-                        <Link
-                          key={section.id}
-                          to={sectionPath(section.id)}
-                          className="group block h-full rounded-2xl outline-none focus-visible:ring-2 focus-visible:ring-ring"
-                        >
-                          {content}
-                        </Link>
-                      )
-                    })}
-                  </div>
-                </section>
-              )
-            })
-          ) : (
-            <EmptyResults onReset={filter.reset} />
+                        ) : (
+                          <Link
+                            key={section.id}
+                            to={sectionPath(section.id)}
+                            className="group block h-full rounded-xl outline-none focus-visible:ring-2 focus-visible:ring-ring"
+                          >
+                            {content}
+                          </Link>
+                        )
+                      })}
+                    </div>
+                  </section>
+                )
+              })}
+            </div>
           )}
         </div>
-        <aside className="space-y-5 lg:sticky lg:top-7">
+        <aside className="space-y-4 lg:sticky lg:top-6">
           <QuestionStudyAside
             questionIds={questions.map((question) => question.id)}
             title="Общий прогресс"
+            actions={false}
           />
-          <div className="rounded-2xl border border-dashed p-5">
-            <h2 className="text-sm font-semibold">Начните с одной темы</h2>
-            <p className="mt-3 text-xs leading-6 text-muted-foreground">
-              Не обязательно идти по порядку. Выберите знакомый раздел и отметьте вопросы, к которым
-              хотите вернуться.
-            </p>
-          </div>
         </aside>
       </div>
     </>

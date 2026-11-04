@@ -4,6 +4,7 @@ import type { QuestionStatus } from "@/data/question-catalog"
 import { questionApi, type ProgressEntry, type ServerQuestionProgress } from "@/lib/question-api"
 
 interface PracticeProgressData extends ServerQuestionProgress {
+  solvedTaskIds: string[]
   reviewedTaskIds: string[]
   drafts: Record<string, string>
 }
@@ -18,6 +19,7 @@ interface PracticeProgress extends PracticeProgressData {
   setAutoRevealAnswers: (enabled: boolean) => void
   toggleSaved: (id: string) => void
   toggleReviewed: (id: string) => void
+  setTaskSolved: (id: string, solved: boolean) => void
   saveDraft: (id: string, code: string) => void
   resetDraft: (id: string) => void
 }
@@ -63,6 +65,7 @@ export const usePracticeProgress = create<PracticeProgress>()(
         questionStatuses: {},
         autoRevealAnswers: false,
         savedQuestionIds: [],
+        solvedTaskIds: [],
         reviewedTaskIds: [],
         drafts: {},
         questionSyncReady: false,
@@ -85,6 +88,12 @@ export const usePracticeProgress = create<PracticeProgress>()(
               await questionApi.patchProgress(id, { saved: !get().savedQuestionIds.includes(id) }),
             )
           }),
+        setTaskSolved: (id, solved) =>
+          set((state) => ({
+            solvedTaskIds: solved
+              ? [...new Set([...state.solvedTaskIds, id])]
+              : state.solvedTaskIds.filter((item) => item !== id),
+          })),
         toggleReviewed: (id) =>
           set((state) => ({ reviewedTaskIds: toggle(state.reviewedTaskIds, id) })),
         saveDraft: (id, code) => set((state) => ({ drafts: { ...state.drafts, [id]: code } })),
@@ -98,14 +107,22 @@ export const usePracticeProgress = create<PracticeProgress>()(
     },
     {
       name: "wishu-practice",
-      version: 2,
+      version: 3,
       partialize: ({
         questionStatuses,
         autoRevealAnswers,
         savedQuestionIds,
+        solvedTaskIds,
         reviewedTaskIds,
         drafts,
-      }) => ({ questionStatuses, autoRevealAnswers, savedQuestionIds, reviewedTaskIds, drafts }),
+      }) => ({
+        questionStatuses,
+        autoRevealAnswers,
+        savedQuestionIds,
+        solvedTaskIds,
+        reviewedTaskIds,
+        drafts,
+      }),
       migrate: (persistedState) => {
         const previous = (persistedState ?? {}) as Partial<PracticeProgressData> & {
           knownQuestionIds?: string[]
@@ -117,6 +134,7 @@ export const usePracticeProgress = create<PracticeProgress>()(
           questionStatuses,
           autoRevealAnswers: previous.autoRevealAnswers ?? false,
           savedQuestionIds: previous.savedQuestionIds ?? [],
+          solvedTaskIds: previous.solvedTaskIds ?? [],
           reviewedTaskIds: previous.reviewedTaskIds ?? [],
           drafts: previous.drafts ?? {},
         }

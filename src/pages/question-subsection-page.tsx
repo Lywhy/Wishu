@@ -1,16 +1,23 @@
-import { useQuestionCatalog } from "@/lib/question-catalog-context"
-import { useParams } from "react-router-dom"
+import { useLocation, useParams } from "react-router-dom"
 import { CatalogControls, EmptyResults } from "@/components/practice/catalog-controls"
 import { QuestionBreadcrumbs } from "@/components/questions/question-breadcrumbs"
 import { QuestionCard, QuestionStudyAside } from "@/components/questions/question-study"
 import { sectionPath } from "@/data/question-catalog"
+import type { QuestionSession } from "@/data/question-session"
 import { useCatalogFilters } from "@/hooks/use-catalog-filters"
+import { useQuestionCatalog } from "@/lib/question-catalog-context"
+import {
+  matchesQuestionFilters,
+  questionEmptyState,
+  questionFilterStatuses,
+} from "@/lib/filter-questions"
 import { usePracticeProgress } from "@/stores/practice-progress"
 import { MissingQuestionPage } from "@/pages/question-section-page"
 
 export function QuestionSubsectionPage() {
   const { questionSections, getSubsectionQuestions } = useQuestionCatalog()
   const { sectionId, subsectionId } = useParams()
+  const location = useLocation()
   const filter = useCatalogFilters()
   const statuses = usePracticeProgress((state) => state.questionStatuses)
   const saved = usePracticeProgress((state) => state.savedQuestionIds)
@@ -20,15 +27,16 @@ export function QuestionSubsectionPage() {
   const questions = getSubsectionQuestions(subsection)
   const visible = questions.filter(
     (question) =>
-      (filter.difficulty === "Любой уровень" || question.difficulty === filter.difficulty) &&
-      (filter.status !== "new" || !statuses[question.id]) &&
-      (!["repeat", "learned", "skipped"].includes(filter.status) ||
-        statuses[question.id] === filter.status) &&
-      (filter.status !== "saved" || saved.includes(question.id)) &&
+      matchesQuestionFilters(question, filter, statuses, saved) &&
       `${question.title} ${question.summary}`
         .toLocaleLowerCase("ru")
         .includes(filter.query.trim().toLocaleLowerCase("ru")),
   )
+  const session: QuestionSession = {
+    questionIds: visible.map((question) => question.id),
+    returnTo: location.pathname + location.search,
+    title: `${section.title} / ${subsection.title}`,
+  }
   return (
     <>
       <QuestionBreadcrumbs
@@ -38,39 +46,42 @@ export function QuestionSubsectionPage() {
           { label: subsection.title },
         ]}
       />
-      <header className="mb-8">
-        <p className="mb-3 text-xs font-medium text-primary">{section.title}</p>
-        <h1 className="text-3xl font-semibold tracking-tight sm:text-4xl">{subsection.title}</h1>
-        <p className="mt-3 text-sm leading-7 text-muted-foreground">{subsection.description}</p>
+      <header className="mb-6">
+        <p className="mb-2 text-xs font-medium text-primary">{section.title}</p>
+        <h1
+          data-question-heading
+          tabIndex={-1}
+          className="text-3xl font-semibold tracking-tight outline-none sm:text-4xl"
+        >
+          {subsection.title}
+        </h1>
+        <p className="mt-2 text-sm leading-6 text-muted-foreground">{subsection.description}</p>
       </header>
-      <div className="grid items-start gap-7 lg:grid-cols-[minmax(0,1fr)_280px]">
-        <div className="min-w-0 space-y-5">
+      <div className="grid items-start gap-6 lg:grid-cols-[minmax(0,1fr)_280px]">
+        <div className="min-w-0 space-y-3">
           <CatalogControls
             filter={filter}
             placeholder="Найти вопрос в подразделе"
-            statuses={[
-              { value: "all", label: "Все вопросы" },
-              { value: "new", label: "Без отметки" },
-              { value: "repeat", label: "Повторить" },
-              { value: "learned", label: "Изучил" },
-              { value: "skipped", label: "Пропустить" },
-              { value: "saved", label: "Избранное" },
-            ]}
+            statuses={questionFilterStatuses}
+            showPopular
           />
           <p className="text-xs text-muted-foreground">
             Показано: {visible.length} из {questions.length}
           </p>
           {visible.length ? (
-            <div className="space-y-4">
+            <div className="space-y-3">
               {visible.map((question) => (
-                <QuestionCard key={question.id} question={question} />
+                <QuestionCard key={question.id} question={question} session={session} />
               ))}
             </div>
           ) : (
-            <EmptyResults onReset={filter.reset} />
+            <EmptyResults
+              onReset={filter.reset}
+              {...questionEmptyState(questions, filter, statuses, saved)}
+            />
           )}
         </div>
-        <aside className="space-y-5 lg:sticky lg:top-7">
+        <aside className="space-y-4 lg:sticky lg:top-6">
           <QuestionStudyAside
             questionIds={questions.map((question) => question.id)}
             title="Прогресс подраздела"

@@ -9,11 +9,10 @@ import { cn } from "@/lib/utils"
 
 const difficultyColors: Record<Difficulty, string> = {
   Базовый:
-    "border-emerald-200 bg-emerald-50 text-emerald-800 dark:border-emerald-800 dark:bg-emerald-500/10 dark:text-emerald-300",
+    "border-emerald-300 bg-transparent text-emerald-800 dark:border-emerald-700 dark:text-emerald-300",
   Средний:
-    "border-amber-200 bg-amber-50 text-amber-800 dark:border-amber-800 dark:bg-amber-500/10 dark:text-amber-300",
-  Продвинутый:
-    "border-red-200 bg-red-50 text-red-800 dark:border-red-800 dark:bg-red-500/10 dark:text-red-300",
+    "border-amber-300 bg-transparent text-amber-800 dark:border-amber-700 dark:text-amber-300",
+  Продвинутый: "border-red-300 bg-transparent text-red-800 dark:border-red-700 dark:text-red-300",
 }
 
 export function DifficultyBadge({ level }: { level: Difficulty }) {
@@ -74,7 +73,7 @@ export function RelatedModule({ moduleId }: { moduleId: string }) {
         variant="outline"
         size="sm"
         className="mt-4"
-        render={<Link to={`/learn?module=${moduleId}`} />}
+        render={<Link to={`/learn/${moduleId}`} />}
       >
         К учебным модулям
       </Button>

@@ -34,6 +34,7 @@ interface SeedData {
     answer: string[]
     code?: string
     takeaway: string
+    pitfall?: string
     order: number
   }[]
 }
@@ -83,7 +84,7 @@ export class QuestionsSeedService {
       }
       for (const question of seed.questions) {
         await client.query(
-          "INSERT INTO questions (id, section_id, subsection_id, title, topic, difficulty, summary, answer, code, takeaway, sort_order, popular) VALUES ($1,$2,$3,$4,$5,$6,$7,$8::jsonb,$9,$10,$11,$12) ON CONFLICT (id) DO UPDATE SET section_id = EXCLUDED.section_id, subsection_id = EXCLUDED.subsection_id, title = EXCLUDED.title, topic = EXCLUDED.topic, difficulty = EXCLUDED.difficulty, summary = EXCLUDED.summary, answer = EXCLUDED.answer, code = EXCLUDED.code, takeaway = EXCLUDED.takeaway, sort_order = EXCLUDED.sort_order, popular = EXCLUDED.popular",
+          "INSERT INTO questions (id, section_id, subsection_id, title, topic, difficulty, summary, answer, code, takeaway, sort_order, popular, pitfall) VALUES ($1,$2,$3,$4,$5,$6,$7,$8::jsonb,$9,$10,$11,$12,$13) ON CONFLICT (id) DO UPDATE SET section_id = EXCLUDED.section_id, subsection_id = EXCLUDED.subsection_id, title = EXCLUDED.title, topic = EXCLUDED.topic, difficulty = EXCLUDED.difficulty, summary = EXCLUDED.summary, answer = EXCLUDED.answer, code = EXCLUDED.code, takeaway = EXCLUDED.takeaway, sort_order = EXCLUDED.sort_order, popular = EXCLUDED.popular, pitfall = EXCLUDED.pitfall",
           [
             question.id,
             question.sectionId,
@@ -97,6 +98,7 @@ export class QuestionsSeedService {
             question.takeaway,
             question.order,
             question.popular ?? false,
+            question.pitfall ?? null,
           ],
         )
       }

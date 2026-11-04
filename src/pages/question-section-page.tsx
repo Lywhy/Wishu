@@ -7,6 +7,7 @@ import { QuestionStudyAside } from "@/components/questions/question-study"
 import { StudyProgress } from "@/components/questions/study-progress"
 import { subsectionPath } from "@/data/question-catalog"
 import { cn } from "@/lib/utils"
+import { rememberedQuestionList } from "@/stores/question-experience"
 
 export function QuestionSectionPage() {
   const {
@@ -28,40 +29,46 @@ export function QuestionSectionPage() {
           { label: section.title },
         ]}
       />
-      <header className="mb-8">
+      <header className="mb-6">
         <span
           aria-hidden="true"
           className={cn(
-            "mb-5 flex size-12 items-center justify-center rounded-xl font-mono text-xl font-bold",
+            "mb-3 flex size-10 items-center justify-center rounded-lg font-mono text-base font-bold",
             section.color,
           )}
         >
           {section.mark}
         </span>
-        <h1 className="text-3xl font-semibold tracking-tight sm:text-4xl">{section.title}</h1>
-        <p className="mt-3 max-w-2xl text-sm leading-7 text-muted-foreground">
+        <h1
+          data-question-heading
+          tabIndex={-1}
+          className="text-3xl font-semibold tracking-tight outline-none sm:text-4xl"
+        >
+          {section.title}
+        </h1>
+        <p className="mt-2 max-w-2xl text-sm leading-6 text-muted-foreground">
           {section.description} Выберите подраздел для повторения.
         </p>
       </header>
       <div className="grid items-start gap-7 lg:grid-cols-[minmax(0,1fr)_280px]">
-        <section aria-label="Подразделы" className="grid gap-4 sm:grid-cols-2">
+        <section aria-label="Подразделы" className="grid gap-3 sm:grid-cols-2">
           {section.subsections.map((subsection, index) => (
             <Link
               key={subsection.id}
-              to={subsectionPath(section.id, subsection.id)}
+              to={rememberedQuestionList(subsectionPath(section.id, subsection.id))}
               className="group block rounded-2xl outline-none focus-visible:ring-2 focus-visible:ring-ring"
             >
-              <Card className="h-full gap-0 rounded-2xl p-5 shadow-none transition-shadow group-hover:shadow-md dark:group-hover:shadow-black/20">
-                <span className="mb-4 font-mono text-xs text-muted-foreground">
+              <Card className="h-full gap-0 rounded-2xl p-4 shadow-none transition-shadow group-hover:shadow-md dark:group-hover:shadow-black/20">
+                <span className="mb-2 font-mono text-xs text-muted-foreground">
                   {String(index + 1).padStart(2, "0")}
                 </span>
                 <h2 className="text-lg font-semibold group-hover:text-primary">
                   {subsection.title}
                 </h2>
-                <p className="mt-2 flex-1 text-[13px] leading-6 text-muted-foreground">
+                <p className="mt-1.5 flex-1 text-xs leading-5 text-muted-foreground">
                   {subsection.description}
                 </p>
-                <div className="mt-5 border-t pt-4">
+                <div className="mt-3 border-t pt-3">
                   <StudyProgress
                     questionIds={getSubsectionQuestions(subsection).map((question) => question.id)}
                     compact

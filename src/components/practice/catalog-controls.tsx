@@ -15,11 +15,13 @@ export function CatalogControls({
   filter,
   placeholder,
   statuses,
+  showPopular = false,
 }: {
   topics?: string[]
   filter: ReturnType<typeof useCatalogFilters>
   placeholder: string
   statuses: { value: string; label: string }[]
+  showPopular?: boolean
 }) {
   return (
     <div className="space-y-4">
@@ -83,6 +85,27 @@ export function CatalogControls({
           </SelectContent>
         </Select>
       </div>
+      {showPopular && (
+        <div className="flex min-h-9 flex-wrap items-center gap-2">
+          <Button
+            type="button"
+            variant={filter.popular ? "secondary" : "outline"}
+            className="h-9"
+            aria-pressed={filter.popular}
+            onClick={() => filter.update("popular", filter.popular ? "" : "1")}
+          >
+            Популярные
+          </Button>
+          {(filter.query ||
+            filter.difficulty !== "Любой уровень" ||
+            filter.status !== "all" ||
+            filter.popular) && (
+            <Button type="button" variant="ghost" className="h-9" onClick={filter.reset}>
+              Сбросить фильтры
+            </Button>
+          )}
+        </div>
+      )}
       {topics.length > 0 && (
         <div aria-label="Темы" className="flex flex-wrap gap-2">
           {["Все темы", ...topics].map((topic) => (
@@ -103,13 +126,19 @@ export function CatalogControls({
   )
 }
 
-export function EmptyResults({ onReset }: { onReset: () => void }) {
+export function EmptyResults({
+  onReset,
+  title = "Ничего не нашлось",
+  description = "Измените запрос или сбросьте фильтры, чтобы увидеть весь каталог.",
+}: {
+  onReset: () => void
+  title?: string
+  description?: string
+}) {
   return (
     <div className="rounded-2xl border border-dashed px-6 py-16 text-center">
-      <h2 className="font-semibold">Ничего не нашлось</h2>
-      <p className="mt-2 text-sm leading-6 text-muted-foreground">
-        Измените запрос или сбросьте фильтры, чтобы увидеть весь каталог.
-      </p>
+      <h2 className="font-semibold">{title}</h2>
+      <p className="mt-2 text-sm leading-6 text-muted-foreground">{description}</p>
       <Button variant="outline" className="mt-5" onClick={onReset}>
         Сбросить фильтры
       </Button>

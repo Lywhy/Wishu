@@ -839,7 +839,8 @@
       "sectionId": "javascript",
       "subsectionId": "fundamentals",
       "order": 0,
-      "popular": false
+      "popular": false,
+      "pitfall": "Считать null объектным значением только из-за результата typeof null. Null является отдельным примитивным типом."
     },
     {
       "id": "equality",
@@ -2810,7 +2811,8 @@
       "sectionId": "typescript",
       "subsectionId": "types",
       "order": 3,
-      "popular": false
+      "popular": false,
+      "pitfall": "Считать, что приведение as проверяет внешние данные во время выполнения. Оно меняет представление типов для компилятора, а не валидирует значение."
     },
     {
       "id": "generics",
@@ -2882,7 +2884,8 @@
       "sectionId": "html-css",
       "subsectionId": "semantics",
       "order": 0,
-      "popular": false
+      "popular": false,
+      "pitfall": "Добавить div только role=\"button\" и считать поведение кнопки готовым. Клавиатурную активацию и фокус пришлось бы реализовывать отдельно."
     },
     {
       "id": "http-cache",
@@ -2899,7 +2902,8 @@
       "sectionId": "browser",
       "subsectionId": "http",
       "order": 0,
-      "popular": false
+      "popular": false,
+      "pitfall": "Путать no-cache с запретом хранения. No-cache требует проверки перед повторным использованием, no-store запрещает хранение кешем."
     },
     {
       "id": "nestjs-dependencies",
@@ -2916,7 +2920,8 @@
       "sectionId": "nestjs",
       "subsectionId": "architecture",
       "order": 0,
-      "popular": false
+      "popular": false,
+      "pitfall": "Ожидать внедрения зависимости по интерфейсу TypeScript без runtime-токена. Интерфейс отсутствует после компиляции."
     },
     {
       "id": "postgresql-indexes",
@@ -2934,7 +2939,8 @@
       "sectionId": "postgresql",
       "subsectionId": "indexes",
       "order": 0,
-      "popular": false
+      "popular": false,
+      "pitfall": "Добавлять индекс на каждый столбец и ожидать ускорения любого запроса. Индексы увеличивают стоимость записи и выбираются планировщиком по стоимости."
     },
     {
       "id": "git-rebase",
@@ -2951,7 +2957,8 @@
       "sectionId": "git",
       "subsectionId": "history",
       "order": 0,
-      "popular": false
+      "popular": false,
+      "pitfall": "Без согласования переписать историю ветки, на которой другие участники уже построили свои коммиты."
     },
     {
       "id": "async-model",
@@ -5704,7 +5711,8 @@
       "sectionId": "react",
       "subsectionId": "state",
       "order": 0,
-      "popular": false
+      "popular": false,
+      "pitfall": "Пытаться дождаться обновления через await setCount(...). Setter useState не возвращает Promise завершения рендера."
     },
     {
       "id": "react-state-queue",
@@ -6919,7 +6927,8 @@
       "sectionId": "vue",
       "subsectionId": "reactivity",
       "order": 0,
-      "popular": false
+      "popular": false,
+      "pitfall": "Передать примитив в reactive или потерять связь со свойством, извлекая его текущее примитивное значение. Для самостоятельного значения используйте ref."
     },
     {
       "id": "vue-computed",
@@ -7125,7 +7134,8 @@
       "sectionId": "nextjs",
       "subsectionId": "boundaries",
       "order": 0,
-      "popular": false
+      "popular": false,
+      "pitfall": "Считать, что use client отключает любой серверный рендеринг компонента. Директива задаёт клиентскую границу модулей, но не равна отключению предварительного HTML."
     },
     {
       "id": "next-server-data",
@@ -7296,7 +7306,8 @@
       "sectionId": "seo",
       "subsectionId": "indexing",
       "order": 1,
-      "popular": false
+      "popular": false,
+      "pitfall": "Использовать robots.txt как защиту приватного содержимого или одновременно запрещать обход и ожидать чтения noindex. Доступ защищают авторизацией."
     },
     {
       "id": "seo-javascript",
@@ -7638,7 +7649,8 @@
       "subsectionId": "environment",
       "order": 0,
       "popular": false,
-      "code": "const apiUrl = import.meta.env.VITE_API_URL\n// Это публичная настройка клиента, а не место для приватного токена."
+      "code": "const apiUrl = import.meta.env.VITE_API_URL\n// Это публичная настройка клиента, а не место для приватного токена.",
+      "pitfall": "Поместить приватный токен в VITE_* и рассчитывать, что файл .env скроет его от браузера. Клиентская настройка попадает в публичный bundle."
     },
     {
       "id": "tools-dev-proxy",
@@ -7929,7 +7941,8 @@
       "sectionId": "nodejs",
       "subsectionId": "async",
       "order": 0,
-      "popular": false
+      "popular": false,
+      "pitfall": "Объявить тяжёлое вычисление async и считать, что оно автоматически перенеслось в отдельный поток."
     },
     {
       "id": "node-libuv-pool",
@@ -8120,7 +8133,8 @@
       "sectionId": "java",
       "subsectionId": "language",
       "order": 2,
-      "popular": false
+      "popular": false,
+      "pitfall": "Использовать одинаковый hashCode как доказательство равенства. Коллизии возможны, равенство определяет equals."
     },
     {
       "id": "java-interface-abstract",
@@ -8584,7 +8598,8 @@
       "sectionId": "docker",
       "subsectionId": "resources",
       "order": 0,
-      "popular": false
+      "popular": false,
+      "pitfall": "Считать volume резервной копией. Он отделяет данные от контейнера, но сам может быть удалён или повреждён."
     },
     {
       "id": "docker-compose-dns",
@@ -8705,7 +8720,8 @@
       "sectionId": "sql",
       "subsectionId": "model",
       "order": 1,
-      "popular": false
+      "popular": false,
+      "pitfall": "Проверять отсутствие значения через = NULL вместо IS NULL. В WHERE сохраняются только строки с истинным условием."
     },
     {
       "id": "sql-parameters",
@@ -9176,7 +9192,8 @@
       "sectionId": "redis",
       "subsectionId": "commands",
       "order": 2,
-      "popular": false
+      "popular": false,
+      "pitfall": "Ожидать SQL-подобного rollback при ошибке одной команды EXEC. Выполненные команды не откатываются автоматически."
     },
     {
       "id": "redis-ttl-eviction",

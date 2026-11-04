@@ -1,4 +1,5 @@
 import { Badge } from "@/components/ui/badge"
+import { Star } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { cn } from "@/lib/utils"
 import { usePracticeProgress } from "@/stores/practice-progress"
@@ -12,19 +13,19 @@ export function QuestionFavoriteButton({ questionId }: { questionId: string }) {
   return (
     <Button
       variant="outline"
-      size="sm"
+      size="icon"
       title={label}
       aria-label={label}
       aria-pressed={saved}
       disabled={saving}
       onClick={() => toggleSaved(questionId)}
       className={cn(
-        "min-w-44 justify-center text-xs",
+        "size-8",
         saved &&
           "border-blue-200 bg-blue-50 text-blue-800 dark:border-blue-900 dark:bg-blue-500/10 dark:text-blue-300",
       )}
     >
-      {label}
+      <Star className={cn("size-4", saved && "fill-current")} aria-hidden="true" />
     </Button>
   )
 }

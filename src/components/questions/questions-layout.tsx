@@ -5,6 +5,7 @@ import type { QuestionCatalog } from "@/data/question-catalog"
 import { questionApi } from "@/lib/question-api"
 import { QuestionCatalogContext } from "@/lib/question-catalog-context"
 import { usePracticeProgress } from "@/stores/practice-progress"
+import { QuestionRouteHistory } from "@/components/questions/question-route-history"
 
 let startup: Promise<QuestionCatalog> | undefined
 
@@ -86,10 +87,14 @@ export function QuestionsLayout() {
     )
   return (
     <QuestionCatalogContext.Provider value={catalog}>
+      <QuestionRouteHistory />
       <div className="[overflow-anchor:none]">
         <Outlet />
       </div>
-      <div className="pointer-events-none fixed right-4 bottom-4 z-50 w-[calc(100%-2rem)] max-w-sm">
+      <div
+        className="pointer-events-none fixed top-4 right-4 z-50 w-[calc(100%-2rem)] max-w-sm"
+        aria-live="polite"
+      >
         {saveError ? (
           <p
             role="alert"
@@ -99,9 +104,7 @@ export function QuestionsLayout() {
             страницу.
           </p>
         ) : pending > 0 ? (
-          <p
-            className="rounded-xl border bg-background px-4 py-3 text-xs text-muted-foreground shadow-lg"
-          >
+          <p className="rounded-xl border bg-background px-4 py-3 text-xs text-muted-foreground shadow-lg">
             Сохраняем изменения…
           </p>
         ) : null}

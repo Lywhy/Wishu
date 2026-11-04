@@ -1,17 +1,19 @@
-import { QuestionPopularBadge } from "@/components/questions/question-popular"
-import { Badge } from "@/components/ui/badge"
-import { codeLanguageFor } from "@/lib/syntax-highlighter"
-import { QuestionFavoriteBadge } from "@/components/questions/question-favorite"
 import { useId, useState } from "react"
 import { Check, RotateCcw, SkipForward } from "lucide-react"
 import { Link } from "react-router-dom"
+import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
 import { Switch } from "@/components/ui/switch"
 import { CodeBlock, DifficultyBadge } from "@/components/practice/practice-elements"
+import { QuestionPopularBadge } from "@/components/questions/question-popular"
+import { QuestionFavoriteBadge } from "@/components/questions/question-favorite"
+import { QuestionPracticeActions } from "@/components/questions/question-practice-actions"
 import { StudyProgress } from "@/components/questions/study-progress"
 import type { Question } from "@/data/interview-content"
 import type { QuestionStatus } from "@/data/question-catalog"
+import type { QuestionSession } from "@/data/question-session"
+import { codeLanguageFor } from "@/lib/syntax-highlighter"
 import { cn } from "@/lib/utils"
 import { usePracticeProgress } from "@/stores/practice-progress"
 
@@ -21,21 +23,21 @@ const statuses = [
     label: "Повторить",
     icon: RotateCcw,
     selected:
-      "border-amber-400 bg-amber-50 text-amber-800 dark:border-amber-800 dark:bg-amber-500/15 dark:text-amber-300",
+      "border-amber-400 bg-amber-100 text-amber-900 dark:border-amber-800 dark:bg-amber-500/20 dark:text-amber-300",
   },
   {
     value: "learned",
     label: "Изучил",
     icon: Check,
     selected:
-      "border-emerald-400 bg-emerald-50 text-emerald-800 dark:border-emerald-800 dark:bg-emerald-500/15 dark:text-emerald-300",
+      "border-emerald-400 bg-emerald-100 text-emerald-900 dark:border-emerald-800 dark:bg-emerald-500/20 dark:text-emerald-300",
   },
   {
     value: "skipped",
     label: "Пропустить",
     icon: SkipForward,
     selected:
-      "border-violet-400 bg-violet-50 text-violet-800 dark:border-violet-800 dark:bg-violet-500/15 dark:text-violet-300",
+      "border-violet-400 bg-violet-100 text-violet-900 dark:border-violet-800 dark:bg-violet-500/20 dark:text-violet-300",
   },
 ] satisfies { value: QuestionStatus; label: string; icon: typeof Check; selected: string }[]
 
@@ -45,16 +47,24 @@ export function AnswerPreference() {
   const checked = usePracticeProgress((state) => state.autoRevealAnswers)
   const setChecked = usePracticeProgress((state) => state.setAutoRevealAnswers)
   return (
-    <div className="flex items-center justify-between gap-5 rounded-xl border bg-card px-4 py-3">
-      <div>
-        <label htmlFor={id} className="cursor-pointer text-xs font-medium">
-          Раскрывать ответы сразу
-        </label>
-        <p className="mt-1 text-[11px] leading-5 text-muted-foreground">
-          Общая настройка для всех вопросов.
-        </p>
-      </div>
-      <Switch id={id} disabled={saving} checked={checked} onCheckedChange={setChecked} />
+    <div className="flex min-h-10 items-center gap-3">
+      <label
+        htmlFor={id}
+        title="Общая настройка для всех вопросов"
+        className="cursor-pointer text-xs text-muted-foreground"
+      >
+        Раскрывать ответы сразу
+      </label>
+      <Switch
+        id={id}
+        disabled={saving}
+        checked={checked}
+        onCheckedChange={setChecked}
+        aria-describedby={`${id}-hint`}
+      />
+      <span id={`${id}-hint`} className="sr-only">
+        Общая настройка для всех вопросов
+      </span>
     </div>
   )
 }
@@ -69,14 +79,15 @@ export function QuestionStatusControls({ questionId }: { questionId: string }) {
         <Button
           key={value}
           variant="outline"
-          size="sm"
+          size="icon"
+          title={label}
+          aria-label={label}
           aria-pressed={current === value}
           disabled={saving}
           onClick={() => setStatus(questionId, current === value ? null : value)}
-          className={cn("gap-1.5 text-xs", current === value && selected)}
+          className={cn("size-8", current === value && selected)}
         >
-          <Icon className="size-3.5" aria-hidden="true" />
-          {label}
+          <Icon className="size-4" aria-hidden="true" />
         </Button>
       ))}
     </div>
@@ -86,11 +97,16 @@ export function QuestionStatusControls({ questionId }: { questionId: string }) {
 export function QuestionAnswer({ question }: { question: Question }) {
   const defaultOpen = usePracticeProgress((state) => state.autoRevealAnswers)
   return (
-    <AnswerDisclosure
-      key={`${question.id}-${defaultOpen}`}
-      question={question}
-      defaultOpen={defaultOpen}
-    />
+    <div className="relative">
+      <div className="mb-2 sm:absolute sm:top-0 sm:right-0 sm:mb-0">
+        <AnswerPreference />
+      </div>
+      <AnswerDisclosure
+        key={`${question.id}-${defaultOpen}`}
+        question={question}
+        defaultOpen={defaultOpen}
+      />
+    </div>
   )
 }
 
@@ -99,85 +115,132 @@ function AnswerDisclosure({ question, defaultOpen }: { question: Question; defau
   const id = useId()
   return (
     <div className="space-y-4">
-      <Button
-        variant="outline"
-        size="sm"
-        aria-expanded={open}
-        aria-controls={id}
-        onClick={() => setOpen(!open)}
-      >
-        {open ? "Скрыть ответ" : "Показать ответ"}
-      </Button>
+      <div className="flex min-h-10 items-center sm:pr-64">
+        <Button
+          variant="outline"
+          className="h-10"
+          aria-expanded={open}
+          aria-controls={id}
+          onClick={() => setOpen(!open)}
+        >
+          {open ? "Скрыть ответ" : "Показать ответ"}
+        </Button>
+      </div>
       <div id={id} hidden={!open} className="space-y-6 border-t pt-5">
-        {question.answer.map((paragraph) => (
-          <p key={paragraph} className="text-base leading-8 text-foreground">
-            {paragraph}
-          </p>
-        ))}
+        <section aria-labelledby={`${id}-short`} className="space-y-2">
+          <h3 id={`${id}-short`} className="text-sm font-semibold">
+            Короткий ответ
+          </h3>
+          <p className="max-w-[70ch] text-base leading-8 text-foreground">{question.answer[0]}</p>
+        </section>
+        {question.answer.length > 1 && (
+          <section aria-labelledby={`${id}-details`} className="space-y-3">
+            <h3 id={`${id}-details`} className="text-sm font-semibold">
+              Подробности
+            </h3>
+            {question.answer.slice(1).map((paragraph, index) => (
+              <p
+                key={`${question.id}-${index}`}
+                className="max-w-[70ch] text-base leading-8 text-foreground"
+              >
+                {paragraph}
+              </p>
+            ))}
+          </section>
+        )}
         {question.code && (
           <CodeBlock
             code={question.code}
             language={codeLanguageFor(question.topic, question.code)}
           />
         )}
-        <div className="rounded-xl border bg-orange-50 p-4 dark:bg-orange-500/10">
-          <p className="text-xs font-semibold">Главная мысль</p>
-          <p className="mt-2 text-sm leading-7">{question.takeaway}</p>
-        </div>
+        {question.pitfall && (
+          <section
+            aria-labelledby={`${id}-pitfall`}
+            className="rounded-xl border border-amber-200 bg-amber-50/50 p-4 dark:border-amber-800/50 dark:bg-amber-500/5"
+          >
+            <h3 id={`${id}-pitfall`} className="text-sm font-semibold">
+              Частая ошибка
+            </h3>
+            <p className="mt-2 max-w-[70ch] text-sm leading-7">{question.pitfall}</p>
+          </section>
+        )}
+        <section aria-labelledby={`${id}-takeaway`} className="rounded-xl border bg-muted/40 p-4">
+          <h3 id={`${id}-takeaway`} className="text-sm font-semibold">
+            Главная мысль
+          </h3>
+          <p className="mt-2 max-w-[70ch] text-sm leading-7">{question.takeaway}</p>
+        </section>
       </div>
     </div>
   )
 }
 
-export function QuestionCard({ question }: { question: Question }) {
+export function QuestionCard({
+  question,
+  session,
+  context,
+}: {
+  question: Question
+  session: QuestionSession
+  context?: string
+}) {
   const saved = usePracticeProgress((state) => state.savedQuestionIds.includes(question.id))
   const status = usePracticeProgress((state) => state.questionStatuses[question.id])
   const currentStatus = statuses.find((item) => item.value === status)
   return (
-    <Card className="gap-0 rounded-xl p-5 shadow-none">
-      <div className="flex items-start justify-between gap-3">
-        <Link
-          to={"/questions/" + question.id}
-          className="group min-w-0 flex-1 rounded outline-none focus-visible:ring-2 focus-visible:ring-ring"
-        >
-          <h2 className="text-base leading-7 font-semibold group-hover:text-primary">
-            {question.title}
-          </h2>
-        </Link>
-      </div>
-      <div className="mt-3 flex min-h-6 flex-wrap items-center gap-2">
-        <DifficultyBadge level={question.difficulty} />
-        {question.popular && <QuestionPopularBadge />}
-        {currentStatus && (
-          <Badge
-            variant="outline"
-            className={cn("text-[11px] font-normal", currentStatus.selected)}
-          >
-            {currentStatus.label}
-          </Badge>
-        )}
-        {saved && <QuestionFavoriteBadge />}
-      </div>
-      <p className="mt-3 text-sm leading-6 text-muted-foreground">{question.summary}</p>
-    </Card>
+    <Link
+      to={`/questions/${question.id}`}
+      state={{ questionSession: session }}
+      className="group block rounded-xl outline-none focus-visible:ring-2 focus-visible:ring-ring"
+    >
+      <Card className="gap-2 rounded-xl p-4 shadow-none transition-colors group-hover:bg-muted/40">
+        {context && <p className="text-xs text-muted-foreground">{context}</p>}
+        <h2 className="text-[15px] leading-6 font-semibold group-hover:text-primary">
+          {question.title}
+        </h2>
+        <div className="flex min-h-5 flex-wrap items-center gap-1.5">
+          <DifficultyBadge level={question.difficulty} />
+          {question.popular && <QuestionPopularBadge />}
+          {currentStatus && (
+            <Badge
+              variant="outline"
+              className={cn("text-[11px] font-normal", currentStatus.selected)}
+            >
+              {currentStatus.label}
+            </Badge>
+          )}
+          {saved && <QuestionFavoriteBadge />}
+        </div>
+        <p className="line-clamp-2 text-xs leading-5 text-muted-foreground">{question.summary}</p>
+      </Card>
+    </Link>
   )
 }
 
 export function QuestionStudyAside({
   questionIds,
   title = "Ваш прогресс",
+  actions = true,
 }: {
   questionIds: string[]
   title?: string
+  actions?: boolean
 }) {
   return (
-    <Card className="gap-0 rounded-2xl p-5 shadow-none">
-      <h2 className="mb-5 text-sm font-semibold">{title}</h2>
+    <Card className="gap-0 rounded-xl p-4 shadow-none">
+      <h2 className="mb-4 text-sm font-semibold">{title}</h2>
       <StudyProgress questionIds={questionIds} />
-      <p className="mt-5 text-[11px] leading-6 text-muted-foreground">
-        Неотмеченные вопросы остаются серыми. Повторное нажатие на выбранную отметку снимает её.
-        Отметки сохраняются автоматически.
-      </p>
+      {actions && <QuestionPracticeActions questionIds={questionIds} title={title} />}
+      <details className="mt-4 border-t pt-3 text-xs text-muted-foreground">
+        <summary className="min-h-8 cursor-pointer rounded leading-8 outline-none focus-visible:ring-2 focus-visible:ring-ring">
+          Как работают отметки
+        </summary>
+        <p className="mt-2 leading-6">
+          Неотмеченные вопросы остаются серыми. Повторное нажатие на выбранную отметку снимает её.
+          Отметки сохраняются автоматически.
+        </p>
+      </details>
     </Card>
   )
 }

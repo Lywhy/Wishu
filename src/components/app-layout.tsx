@@ -1,5 +1,5 @@
 import { Braces, Moon, Sun } from "lucide-react"
-import { Link, NavLink, Outlet } from "react-router-dom"
+import { Link, NavLink, Outlet, useLocation } from "react-router-dom"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { cn } from "@/lib/utils"
@@ -13,9 +13,11 @@ const navigation = [
 
 export function AppLayout() {
   const { theme, setTheme } = useTheme()
+  const { pathname } = useLocation()
+  const showFooter = ["/learn", "/questions", "/tasks"].includes(pathname.replace(/\/+$/, ""))
 
   return (
-    <div className="min-h-screen bg-muted/20 text-foreground">
+    <div className="flex min-h-dvh flex-col bg-muted/20 text-foreground">
       <a
         href="#main"
         className="sr-only fixed top-3 left-3 z-50 rounded-lg bg-background p-3 focus:not-sr-only"
@@ -67,15 +69,17 @@ export function AppLayout() {
           </div>
         </div>
       </header>
-      <main id="main" className="mx-auto max-w-7xl px-5 py-8 sm:px-8 lg:py-10">
+      <main id="main" className="mx-auto w-full max-w-7xl flex-1 px-5 py-8 sm:px-8 lg:py-10">
         <Outlet />
       </main>
-      <footer className="mx-auto flex max-w-7xl flex-col gap-2 px-5 py-7 text-xs text-muted-foreground sm:flex-row sm:items-center sm:justify-between sm:px-8">
-        <span className="font-medium">
-          wishu. <span className="ml-2 font-normal">Каждый день - на шаг увереннее.</span>
-        </span>
-        <span>Изучайте. Разбирайтесь. Практикуйтесь.</span>
-      </footer>
+      {showFooter && (
+        <footer className="mx-auto flex w-full max-w-7xl shrink-0 flex-col gap-2 px-5 py-7 text-xs text-muted-foreground sm:flex-row sm:items-center sm:justify-between sm:px-8">
+          <span className="font-medium">
+            wishu. <span className="ml-2 font-normal">Каждый день - на шаг увереннее.</span>
+          </span>
+          <span>Изучайте. Разбирайтесь. Практикуйтесь.</span>
+        </footer>
+      )}
     </div>
   )
 }

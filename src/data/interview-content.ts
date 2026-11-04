@@ -1,3 +1,5 @@
+import { additionalTasks } from "./additional-tasks"
+
 export type Difficulty = "Базовый" | "Средний" | "Продвинутый"
 
 export interface Question {
@@ -10,6 +12,7 @@ export interface Question {
   answer: string[]
   code?: string
   takeaway: string
+  pitfall?: string | null
   moduleId: string
 }
 
@@ -172,4 +175,5 @@ export const practiceTasks: PracticeTask[] = [
       "Событие всплывает от вложенного элемента к списку. closest находит кнопку среди предков, а contains ограничивает обработку текущим контейнером.",
     moduleId: "browser",
   },
+  ...additionalTasks,
 ]

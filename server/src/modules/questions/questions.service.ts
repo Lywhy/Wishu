@@ -33,10 +33,11 @@ interface QuestionRow {
   answer: string[]
   code: string | null
   takeaway: string
+  pitfall: string | null
   moduleId: string
 }
 
-const questionColumns = `q.id, q.section_id AS "sectionId", q.subsection_id AS "subsectionId", q.title, q.topic, q.difficulty, q.popular, q.summary, q.answer, q.code, q.takeaway, s.module_id AS "moduleId"`
+const questionColumns = `q.id, q.section_id AS "sectionId", q.subsection_id AS "subsectionId", q.title, q.topic, q.difficulty, q.popular, q.summary, q.answer, q.code, q.takeaway, q.pitfall, s.module_id AS "moduleId"`
 
 @Injectable()
 export class QuestionsService {

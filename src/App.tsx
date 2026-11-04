@@ -1,3 +1,5 @@
+import { LearningLayout } from "@/components/learning/learning-layout"
+import { LearningCoursePage } from "@/pages/learning-course-page"
 import { QuestionsLayout } from "@/components/questions/questions-layout"
 import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom"
 import { AppLayout, ComingSoonPage } from "@/components/app-layout"
@@ -15,7 +17,11 @@ function App() {
       <Routes>
         <Route path="/" element={<Navigate to="/learn" replace />} />
         <Route element={<AppLayout />}>
-          <Route path="/learn" element={<LearningPage />} />
+          <Route element={<LearningLayout />}>
+            <Route path="/learn" element={<LearningPage />} />
+            <Route path="/learn/:sectionId" element={<LearningCoursePage />} />
+            <Route path="/learn/:sectionId/:stepId" element={<LearningCoursePage />} />
+          </Route>
           <Route element={<QuestionsLayout />}>
             <Route path="/questions" element={<QuestionsPage />} />
             <Route path="/questions/sections/:sectionId" element={<QuestionSectionPage />} />
