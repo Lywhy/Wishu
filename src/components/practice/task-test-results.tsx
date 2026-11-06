@@ -1,3 +1,4 @@
+import { ResultDifferences } from "@/components/experience/result-differences"
 import { useState } from "react"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
@@ -19,12 +20,15 @@ export function TaskTestResults({
   checks,
   solved,
   testCount = 5,
+  onCancel,
 }: {
   checking: boolean
   checks: TaskCheckResult[] | null
+  onCancel?: () => void
   testCount?: number
   solved: boolean
 }) {
+  const [failuresOnly, setFailuresOnly] = useState(false)
   const [tab, setTab] = useState<"tests" | "console">("tests")
   const cases = checks?.filter((result) => result.level) ?? []
   const logs =
@@ -65,6 +69,28 @@ export function TaskTestResults({
               : "Ожидает проверки"}
         </output>
       </div>
+      {!checking && checks && tab === "tests" && (
+        <div className="flex items-center justify-between gap-2 border-b px-3 py-2">
+          <span className="text-xs text-muted-foreground">
+            Ошибок: {checks.filter((result) => !result.passed).length}
+          </span>
+          <Button
+            size="sm"
+            variant={failuresOnly ? "secondary" : "ghost"}
+            aria-pressed={failuresOnly}
+            onClick={() => setFailuresOnly((value) => !value)}
+          >
+            Только ошибки
+          </Button>
+        </div>
+      )}
+      {checking && onCancel && (
+        <div className="border-b px-3 py-2">
+          <Button size="sm" variant="outline" onClick={onCancel}>
+            Отменить проверку
+          </Button>
+        </div>
+      )}
       <div className="max-h-[32rem] overflow-y-auto p-3">
         {checking ? (
           <p className="p-3 text-sm text-muted-foreground">
@@ -76,45 +102,57 @@ export function TaskTestResults({
           <pre className="min-h-24 font-mono text-xs leading-6 wrap-anywhere whitespace-pre-wrap">
             {logs.length
               ? logs.join("\n")
-              : "Вывод console.log, info, warn, error и debug появится здесь после проверки. Лимит - 80 записей на тест."}
+              : checks
+                ? "Консоль пуста: в этой проверке сообщений нет."
+                : "Вывод console.log, info, warn, error и debug появится здесь после проверки. Лимит - 80 записей на тест."}
           </pre>
         ) : checks ? (
           <div className="space-y-2">
-            {checks.map((result, index) => (
-              <details key={index} className="group rounded-lg border" open={!result.passed}>
-                <summary className="flex cursor-pointer flex-wrap items-center gap-2 p-3 text-xs focus-visible:outline-2 focus-visible:outline-ring">
-                  <span className="mr-auto font-medium">{result.name}</span>
-                  {result.level && <Badge variant="secondary">{result.level}</Badge>}
-                  <span
-                    className={
-                      result.passed ? "text-emerald-700 dark:text-emerald-400" : "text-destructive"
-                    }
-                  >
-                    {result.passed ? "Пройден" : "Ошибка"}
-                  </span>
-                  <span className="text-muted-foreground group-open:hidden">Раскрыть</span>
-                </summary>
-                <div className="space-y-3 border-t p-3">
-                  {result.message && (
-                    <p className="text-xs leading-6 wrap-anywhere whitespace-pre-wrap text-destructive">
-                      {result.message}
-                    </p>
-                  )}
-                  {result.input !== undefined && (
-                    <>
-                      <Value label="Входные данные / действия" value={result.input} />
-                      <div className="grid gap-3 sm:grid-cols-2">
-                        <Value label="Ожидаемый результат" value={result.expected} />
-                        <Value label="Ваш результат" value={result.actual} />
-                      </div>
-                    </>
-                  )}
-                  {!!result.logs?.length && (
-                    <Value label="Консоль этого теста" value={result.logs.join("\n")} />
-                  )}
-                </div>
-              </details>
-            ))}
+            {failuresOnly && solved && (
+              <p className="p-3 text-sm text-emerald-700 dark:text-emerald-400">
+                Ошибок нет. Все тесты пройдены.
+              </p>
+            )}
+            {checks
+              .filter((result) => !failuresOnly || !result.passed)
+              .map((result, index) => (
+                <details key={index} className="group rounded-lg border" open={!result.passed}>
+                  <summary className="flex cursor-pointer flex-wrap items-center gap-2 p-3 text-xs focus-visible:outline-2 focus-visible:outline-ring">
+                    <span className="mr-auto font-medium">{result.name}</span>
+                    {result.level && <Badge variant="secondary">{result.level}</Badge>}
+                    <span
+                      className={
+                        result.passed
+                          ? "text-emerald-700 dark:text-emerald-400"
+                          : "text-destructive"
+                      }
+                    >
+                      {result.passed ? "Пройден" : "Ошибка"}
+                    </span>
+                    <span className="text-muted-foreground group-open:hidden">Раскрыть</span>
+                  </summary>
+                  <div className="space-y-3 border-t p-3">
+                    {result.message && (
+                      <p className="text-xs leading-6 wrap-anywhere whitespace-pre-wrap text-destructive">
+                        {result.message}
+                      </p>
+                    )}
+                    {result.input !== undefined && (
+                      <>
+                        <Value label="Входные данные / действия" value={result.input} />
+                        {!result.passed && <ResultDifferences expected={result.expected} actual={result.actual} />}
+                        <div className="grid gap-3 sm:grid-cols-2">
+                          <Value label="Ожидаемый результат" value={result.expected} />
+                          <Value label="Ваш результат" value={result.actual} />
+                        </div>
+                      </>
+                    )}
+                    {!!result.logs?.length && (
+                      <Value label="Консоль этого теста" value={result.logs.join("\n")} />
+                    )}
+                  </div>
+                </details>
+              ))}
           </div>
         ) : (
           <p className="p-3 text-xs leading-6 text-muted-foreground">

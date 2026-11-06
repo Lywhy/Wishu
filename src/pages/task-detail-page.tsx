@@ -1,3 +1,14 @@
+import type { CSSProperties } from "react"
+import { useWorkspace } from "@/stores/workspace"
+import {
+  WorkspaceControls,
+  PersonalNote,
+  DraftStatus,
+  AttemptHistory,
+  TaskHints,
+  RelatedStudy,
+} from "@/components/experience/study-tools"
+import { ContentFeedback } from "@/components/experience/content-feedback"
 import { lazy, Suspense, useEffect, useRef, useState } from "react"
 import { Link, useLocation, useParams } from "react-router-dom"
 import { Badge } from "@/components/ui/badge"
@@ -55,6 +66,8 @@ export function TaskDetailPage() {
 }
 
 function TaskView({ task }: { task: PracticeTask }) {
+  const focus = useWorkspace((s) => s.focus),
+    split = useWorkspace((s) => s.split)
   const route = useLocation()
   const [solutionOpen, setSolutionOpen] = useState(false)
   const [resetOpen, setResetOpen] = useState(false)
@@ -103,10 +116,24 @@ function TaskView({ task }: { task: PracticeTask }) {
       if (current.signal.aborted) return
       const cases = results.filter((result) => result.level)
       const passed = cases.length === 5 && results.every((result) => result.passed)
+      useWorkspace.getState().attempt(task.id, {
+        code,
+        passed,
+        summary:
+          results.filter((result) => result.passed).length +
+          "/" +
+          results.length +
+          " проверок пройдено",
+      })
       setChecks(results)
       setSolved(task.id, passed)
     } catch (error) {
       if (!current.signal.aborted) {
+        useWorkspace.getState().attempt(task.id, {
+          code,
+          passed: false,
+          summary: error instanceof Error ? error.message : "Ошибка проверки",
+        })
         setChecks([
           {
             name: "Проверка решения",
@@ -143,14 +170,27 @@ function TaskView({ task }: { task: PracticeTask }) {
           </span>
         </div>
         <h1 className="text-2xl font-semibold tracking-tight sm:text-3xl">{task.title}</h1>
+        <Button
+          nativeButton={false}
+          variant="outline"
+          size="sm"
+          className="mt-4"
+          render={<a href="#task-editor" aria-label="К редактору решения" />}
+        >
+          К редактору решения
+        </Button>
       </header>
-      <div className="grid items-start gap-5 xl:grid-cols-[minmax(0,0.85fr)_minmax(0,1.15fr)]">
+      <WorkspaceControls split />
+      <div
+        style={{ "--study-columns": `${split}% minmax(0,1fr)` } as CSSProperties}
+        className={`grid items-start gap-5 ${focus ? "xl:grid-cols-1" : "xl:grid-cols-(--study-columns)"}`}
+      >
         <div className="min-w-0 space-y-4">
           <Card className="gap-4 rounded-xl p-4 shadow-none sm:p-5">
             <div className="flex items-center justify-between gap-3 border-b pb-3">
               <h2 className="text-sm font-semibold">Условие задачи</h2>
               <Button variant="outline" size="sm" onClick={() => setSolutionOpen(true)}>
-                Разбор решения
+                Подсказки и разбор
               </Button>
             </div>
             <section id="task-condition" className="space-y-5">
@@ -204,7 +244,7 @@ function TaskView({ task }: { task: PracticeTask }) {
             )}
           </nav>
         </div>
-        <div className="min-w-0 space-y-3">
+        <div id="task-editor" tabIndex={-1} className="min-w-0 scroll-mt-5 space-y-3 outline-none">
           <Card className="gap-0 overflow-hidden rounded-xl py-0 shadow-none">
             <div className="flex flex-wrap items-center justify-between gap-3 border-b p-4">
               <h2 className="text-sm font-semibold">Ваше решение</h2>
@@ -241,6 +281,12 @@ function TaskView({ task }: { task: PracticeTask }) {
                 </>
               )}
             </div>
+            <DraftStatus
+              storageKey="wishu-practice"
+              draftKey={task.id}
+              code={code}
+              hasDraft={draft !== undefined}
+            />
             <TaskEditorBoundary value={code} onChange={updateCode}>
               <Suspense
                 fallback={
@@ -257,24 +303,32 @@ function TaskView({ task }: { task: PracticeTask }) {
                 />
               </Suspense>
             </TaskEditorBoundary>
-            <TaskTestResults checking={checking} checks={checks} solved={solved} />
+            <TaskTestResults
+              checking={checking}
+              checks={checks}
+              solved={solved}
+              onCancel={() => {
+                controller.current?.abort()
+                setChecking(false)
+                setChecks(null)
+              }}
+            />
           </Card>
         </div>
       </div>
       <Sheet open={solutionOpen} onOpenChange={setSolutionOpen}>
         <SheetContent className="w-[min(96vw,48rem)]">
-          <SheetTitle>Разбор: {task.title}</SheetTitle>
-          <SheetDescription>
-            Один из корректных подходов. Сравните его со своим решением и требованиями.
-          </SheetDescription>
-          <CodeBlock
-            code={task.solution}
-            language={codeLanguageFor(task.topic, task.solution)}
-            label="Пример решения"
-          />
-          <p className="text-sm leading-7">{task.explanation}</p>
+          <SheetTitle>Подсказки и разбор: {task.title}</SheetTitle>
+          <SheetDescription>От направления мысли к полному решению.</SheetDescription>
+          <TaskHints task={task} />
         </SheetContent>
       </Sheet>
+      <div className="mt-6 space-y-4">
+        <AttemptHistory contentKey={task.id} code={code} onRestore={updateCode} />
+        <PersonalNote contentKey={"task:" + task.id} />
+        <RelatedStudy moduleId={task.moduleId} from={"/tasks/" + task.id} />
+        <ContentFeedback contentKey={"task:" + task.id} />
+      </div>
       <Dialog open={resetOpen} onOpenChange={setResetOpen}>
         <DialogContent showCloseButton={false}>
           <DialogHeader>

@@ -1,6 +1,25 @@
 import type { QuestionCatalog, QuestionStatus } from "@/data/question-catalog"
 import { questionSectionColors } from "@/data/question-section-colors"
 
+export interface CreateQuestionInput {
+  requestId: string
+  sectionId: string
+  subsectionId: string
+  title: string
+  difficulty: "Базовый" | "Средний" | "Продвинутый"
+  popular: boolean
+  summary: string
+  shortAnswer: string
+  details: string
+  code: string
+  pitfall: string
+  takeaway: string
+}
+export type CreatedQuestion = QuestionCatalog["questions"][number] & {
+  sectionId: string
+  subsectionId: string
+}
+
 export interface ServerQuestionProgress {
   questionStatuses: Record<string, QuestionStatus>
   savedQuestionIds: string[]
@@ -31,12 +50,16 @@ async function request<T>(path: string, method = "GET", body?: unknown): Promise
       headers: body === undefined ? undefined : { "Content-Type": "application/json" },
       body: body === undefined ? undefined : JSON.stringify(body),
     })
-    if (!response.ok)
+    if (!response.ok) {
+      const problem = (await response.json().catch(() => null)) as { message?: unknown } | null
       throw new Error(
-        response.status === 401
-          ? "Сессия истекла. Обновите страницу."
-          : "Не удалось выполнить запрос. Попробуйте ещё раз.",
+        (response.status === 400 || response.status === 409) && typeof problem?.message === "string"
+          ? problem.message
+          : response.status === 401
+            ? "Сессия истекла. Обновите страницу."
+            : "Не удалось выполнить запрос. Попробуйте ещё раз.",
       )
+    }
     return (await response.json()) as T
   } catch (error) {
     if (controller.signal.aborted) throw new Error("Сервер не ответил вовремя.")
@@ -48,6 +71,14 @@ async function request<T>(path: string, method = "GET", body?: unknown): Promise
 }
 
 export const questionApi = {
+  async create(body: CreateQuestionInput): Promise<CreatedQuestion> {
+    const question = await request<Omit<CreatedQuestion, "code"> & { code: string | null }>(
+      "",
+      "POST",
+      body,
+    )
+    return { ...question, code: question.code ?? undefined }
+  },
   async catalog(): Promise<QuestionCatalog> {
     const catalog = await request<RawCatalog>("/catalog")
     return {

@@ -8,27 +8,60 @@ function htmlProps<T extends { node?: unknown }>(props: T) {
   delete next.node
   return next
 }
-export function LearningMarkdown({ content, topic }: { content: string; topic: string }) {
+export function LearningMarkdown({
+  content,
+  topic,
+  anchorPrefix,
+}: {
+  content: string
+  topic: string
+  anchorPrefix?: string
+}) {
   return (
     <div className="space-y-5 text-sm leading-7 wrap-anywhere">
       <Markdown
         remarkPlugins={[remarkGfm]}
+        remarkRehypeOptions={{
+          footnoteLabel: "Примечания",
+          footnoteBackLabel: "Вернуться к сноске",
+        }}
         components={{
           h1: (props) => (
-            <h2 className="mt-8 text-2xl font-semibold first:mt-0" {...htmlProps(props)}>
+            <h2
+              className="mt-8 text-2xl font-semibold first:mt-0"
+              {...htmlProps(props)}
+              id={
+                anchorPrefix && props.node?.position
+                  ? `${anchorPrefix}-line-${props.node.position.start.line}`
+                  : props.id
+              }
+            >
               {props.children}
             </h2>
           ),
           h2: (props) => (
             <h2
-              className="mt-8 border-b pb-3 text-xl font-semibold first:mt-0"
+              className="mt-8 scroll-mt-6 border-b pb-3 text-xl font-semibold first:mt-0"
               {...htmlProps(props)}
+              id={
+                anchorPrefix && props.node?.position
+                  ? `${anchorPrefix}-line-${props.node.position.start.line}`
+                  : props.id
+              }
             >
               {props.children}
             </h2>
           ),
           h3: (props) => (
-            <h3 className="mt-6 text-base font-semibold first:mt-0" {...htmlProps(props)}>
+            <h3
+              className="mt-6 scroll-mt-6 text-base font-semibold first:mt-0"
+              {...htmlProps(props)}
+              id={
+                anchorPrefix && props.node?.position
+                  ? `${anchorPrefix}-line-${props.node.position.start.line}`
+                  : props.id
+              }
+            >
               {props.children}
             </h3>
           ),

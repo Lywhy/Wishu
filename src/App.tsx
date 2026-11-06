@@ -1,3 +1,6 @@
+import { QuestionCreatePage } from "@/pages/question-create-page"
+import { InterviewsPage } from "@/pages/interviews-page"
+import { StudySessionPage } from "@/pages/study-session-page"
 import { LearningLayout } from "@/components/learning/learning-layout"
 import { LearningCoursePage } from "@/pages/learning-course-page"
 import { QuestionsLayout } from "@/components/questions/questions-layout"
@@ -23,14 +26,17 @@ function App() {
             <Route path="/learn/:sectionId/:stepId" element={<LearningCoursePage />} />
           </Route>
           <Route element={<QuestionsLayout />}>
+            <Route path="/session" element={<StudySessionPage />} />
             <Route path="/questions" element={<QuestionsPage />} />
             <Route path="/questions/sections/:sectionId" element={<QuestionSectionPage />} />
             <Route
               path="/questions/sections/:sectionId/:subsectionId"
               element={<QuestionSubsectionPage />}
             />
+            <Route path="/questions/new" element={<QuestionCreatePage />} />
             <Route path="/questions/:questionId" element={<QuestionDetailPage />} />
           </Route>
+          <Route path="/interviews" element={<InterviewsPage />} />
           <Route path="/tasks" element={<TasksPage />} />
           <Route path="/tasks/:taskId" element={<TaskDetailPage />} />
           <Route

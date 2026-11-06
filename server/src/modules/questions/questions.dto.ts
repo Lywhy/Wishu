@@ -1,4 +1,4 @@
-import { Type } from "class-transformer"
+import { Transform, Type } from "class-transformer"
 import {
   ArrayMaxSize,
   IsArray,
@@ -7,6 +7,9 @@ import {
   IsString,
   Matches,
   MaxLength,
+  MinLength,
+  IsOptional,
+  IsUUID,
   ValidateIf,
   ValidateNested,
 } from "class-validator"
@@ -45,4 +48,62 @@ export class QuestionImportDto extends QuestionSettingsDto {
   @ValidateNested({ each: true })
   @Type(() => QuestionImportEntryDto)
   entries!: QuestionImportEntryDto[]
+}
+
+export class CreateQuestionDto {
+  @IsUUID("4")
+  requestId!: string
+
+  @IsString()
+  @MaxLength(120)
+  sectionId!: string
+
+  @IsString()
+  @MaxLength(120)
+  subsectionId!: string
+
+  @Transform(({ value }) => (typeof value === "string" ? value.trim() : value))
+  @IsString()
+  @MinLength(5)
+  @MaxLength(200)
+  title!: string
+
+  @IsIn(["Базовый", "Средний", "Продвинутый"])
+  difficulty!: "Базовый" | "Средний" | "Продвинутый"
+
+  @IsBoolean()
+  popular!: boolean
+
+  @Transform(({ value }) => (typeof value === "string" ? value.trim() : value))
+  @IsString()
+  @MinLength(5)
+  @MaxLength(500)
+  summary!: string
+
+  @Transform(({ value }) => (typeof value === "string" ? value.trim() : value))
+  @IsString()
+  @MinLength(10)
+  @MaxLength(5000)
+  shortAnswer!: string
+
+  @IsOptional()
+  @IsString()
+  @MaxLength(20000)
+  details?: string
+
+  @IsOptional()
+  @IsString()
+  @MaxLength(20000)
+  code?: string
+
+  @IsOptional()
+  @IsString()
+  @MaxLength(3000)
+  pitfall?: string
+
+  @Transform(({ value }) => (typeof value === "string" ? value.trim() : value))
+  @IsString()
+  @MinLength(5)
+  @MaxLength(2000)
+  takeaway!: string
 }

@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom"
+import { Button } from "@/components/ui/button"
 import { useLocation, useParams } from "react-router-dom"
 import { CatalogControls, EmptyResults } from "@/components/practice/catalog-controls"
 import { QuestionBreadcrumbs } from "@/components/questions/question-breadcrumbs"
@@ -56,16 +58,47 @@ export function QuestionSubsectionPage() {
           {subsection.title}
         </h1>
         <p className="mt-2 text-sm leading-6 text-muted-foreground">{subsection.description}</p>
+        <Button
+          className="mt-4"
+          nativeButton={false}
+          variant="outline"
+          render={
+            <Link
+              to={
+                "/questions/new?section=" +
+                encodeURIComponent(section.id) +
+                "&subsection=" +
+                encodeURIComponent(subsection.id)
+              }
+            />
+          }
+        >
+          Добавить вопрос
+        </Button>
       </header>
       <div className="grid items-start gap-6 lg:grid-cols-[minmax(0,1fr)_280px]">
         <div className="min-w-0 space-y-3">
+          {!!questions.length &&
+            questions.every((question) => statuses[question.id] === "learned") && (
+              <div className="space-y-3 rounded-xl border border-emerald-500/30 bg-emerald-500/5 p-4">
+                <h2 className="font-semibold">Подраздел изучен</h2>
+                <p className="text-sm">Можно повторить вопросы или выбрать следующую тему.</p>
+                <Button
+                  nativeButton={false}
+                  variant="outline"
+                  render={<Link to={sectionPath(section.id)} />}
+                >
+                  Выбрать следующую тему
+                </Button>
+              </div>
+            )}
           <CatalogControls
             filter={filter}
             placeholder="Найти вопрос в подразделе"
             statuses={questionFilterStatuses}
             showPopular
           />
-          <p className="text-xs text-muted-foreground">
+          <p aria-live="polite" aria-atomic="true" className="text-xs text-muted-foreground">
             Показано: {visible.length} из {questions.length}
           </p>
           {visible.length ? (

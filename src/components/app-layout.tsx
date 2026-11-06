@@ -1,3 +1,5 @@
+import { SessionBanner } from "@/pages/study-session-page"
+import { CatalogScrollRestoration } from "@/components/experience/catalog-scroll-restoration"
 import { Braces, Moon, Sun } from "lucide-react"
 import { Link, NavLink, Outlet, useLocation } from "react-router-dom"
 import { Badge } from "@/components/ui/badge"
@@ -9,12 +11,23 @@ const navigation = [
   { to: "/learn", title: "Обучение" },
   { to: "/questions", title: "Вопросы" },
   { to: "/tasks", title: "Задачи" },
+  { to: "/interviews", title: "Собеседования" },
 ]
 
 export function AppLayout() {
   const { theme, setTheme } = useTheme()
-  const { pathname } = useLocation()
-  const showFooter = ["/learn", "/questions", "/tasks"].includes(pathname.replace(/\/+$/, ""))
+  const route = useLocation()
+  const { pathname } = route
+  const returnTo =
+    route.state &&
+    typeof route.state === "object" &&
+    typeof route.state.returnTo === "string" &&
+    /^\/(learn|tasks|questions)(?:\/|\?|$)/.test(route.state.returnTo)
+      ? route.state.returnTo
+      : null
+  const showFooter = ["/learn", "/questions", "/tasks", "/interviews"].includes(
+    pathname.replace(/\/+$/, ""),
+  )
 
   return (
     <div className="flex min-h-dvh flex-col bg-muted/20 text-foreground">
@@ -57,6 +70,9 @@ export function AppLayout() {
             ))}
           </nav>
           <div className="flex items-center gap-3">
+            <Button nativeButton={false} variant="ghost" size="sm" render={<Link to="/session" />}>
+              Короткая подготовка
+            </Button>
             <Button
               variant="outline"
               size="icon"
@@ -70,6 +86,13 @@ export function AppLayout() {
         </div>
       </header>
       <main id="main" className="mx-auto w-full max-w-7xl flex-1 px-5 py-8 sm:px-8 lg:py-10">
+        <CatalogScrollRestoration />
+        <SessionBanner />
+        {returnTo && (
+          <Link className="mb-4 block text-xs text-primary underline" to={returnTo}>
+            Вернуться к исходному материалу
+          </Link>
+        )}
         <Outlet />
       </main>
       {showFooter && (

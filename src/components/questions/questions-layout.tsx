@@ -3,17 +3,19 @@ import { Outlet } from "react-router-dom"
 import { Button } from "@/components/ui/button"
 import type { QuestionCatalog } from "@/data/question-catalog"
 import { questionApi } from "@/lib/question-api"
-import { QuestionCatalogContext } from "@/lib/question-catalog-context"
+import { AddQuestionContext, QuestionCatalogContext } from "@/lib/question-catalog-context"
 import { usePracticeProgress } from "@/stores/practice-progress"
 import { QuestionRouteHistory } from "@/components/questions/question-route-history"
 
+let cachedCatalog: QuestionCatalog | undefined
 let startup: Promise<QuestionCatalog> | undefined
 
 async function loadQuestions(): Promise<QuestionCatalog> {
   if (startup) return startup
   startup = (async () => {
     await usePracticeProgress.getState().flushQuestionWrites()
-    const catalog = await questionApi.catalog()
+    const catalog = cachedCatalog ?? (await questionApi.catalog())
+    cachedCatalog = catalog
     const session = await questionApi.session()
     let progress = session.progress
     if (session.requiresImport) {
@@ -87,10 +89,40 @@ export function QuestionsLayout() {
     )
   return (
     <QuestionCatalogContext.Provider value={catalog}>
-      <QuestionRouteHistory />
-      <div className="[overflow-anchor:none]">
-        <Outlet />
-      </div>
+      <AddQuestionContext.Provider
+        value={(question) => {
+          setCatalog((current) => {
+            if (!current || current.questions.some((item) => item.id === question.id))
+              return current
+            const next = {
+              ...current,
+              questions: [...current.questions, question],
+              sections: current.sections.map((section) =>
+                section.id !== question.sectionId
+                  ? section
+                  : {
+                      ...section,
+                      subsections: section.subsections.map((sub) =>
+                        sub.id !== question.subsectionId
+                          ? sub
+                          : {
+                              ...sub,
+                              questionIds: [...sub.questionIds, question.id],
+                            },
+                      ),
+                    },
+              ),
+            }
+            cachedCatalog = next
+            return next
+          })
+        }}
+      >
+        <QuestionRouteHistory />
+        <div className="[overflow-anchor:none]">
+          <Outlet />
+        </div>
+      </AddQuestionContext.Provider>
       <div
         className="pointer-events-none fixed top-4 right-4 z-50 w-[calc(100%-2rem)] max-w-sm"
         aria-live="polite"
@@ -100,8 +132,14 @@ export function QuestionsLayout() {
             role="alert"
             className="rounded-xl border border-destructive/30 bg-background p-4 text-xs leading-6 text-destructive shadow-lg"
           >
-            {saveError} Изменение не сохранено. Повторите действие; если сессия истекла, обновите
-            страницу.
+            {saveError} Изменение не сохранено.
+            <Button
+              className="pointer-events-auto mt-3"
+              size="sm"
+              onClick={() => usePracticeProgress.getState().retryQuestionWrite()}
+            >
+              Повторить сохранение
+            </Button>
           </p>
         ) : pending > 0 ? (
           <p className="rounded-xl border bg-background px-4 py-3 text-xs text-muted-foreground shadow-lg">

@@ -77,6 +77,11 @@ export function QuestionsPage() {
         eyebrow="Подготовка и повторение"
         questionHeading
       />
+      <div className="mb-6 flex justify-end">
+        <Button nativeButton={false} render={<Link to="/questions/new" />}>
+          Добавить вопрос
+        </Button>
+      </div>
       <div className="grid items-start gap-6 lg:grid-cols-[minmax(0,1fr)_280px]">
         <div className="min-w-0 space-y-5">
           {!searching && (
@@ -123,7 +128,9 @@ export function QuestionsPage() {
             <section aria-label="Результаты поиска" className="space-y-3">
               <div className="flex flex-wrap items-center justify-between gap-2">
                 <h2 className="text-lg font-semibold">{mode}</h2>
-                <p className="text-xs text-muted-foreground">Найдено вопросов: {matches.length}</p>
+                <p aria-live="polite" aria-atomic="true" className="text-xs text-muted-foreground">
+                  Найдено вопросов: {matches.length}
+                </p>
               </div>
               {matches.length ? (
                 matches.map(({ question, location }) => (

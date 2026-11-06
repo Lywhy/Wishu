@@ -1,3 +1,4 @@
+import { useShortSession } from "@/stores/short-session"
 import { create } from "zustand"
 import { persist } from "zustand/middleware"
 import type { QuestionStatus } from "@/data/question-catalog"
@@ -10,12 +11,13 @@ interface PracticeProgressData extends ServerQuestionProgress {
 }
 
 interface PracticeProgress extends PracticeProgressData {
+  retryQuestionWrite: () => void
   questionSyncReady: boolean
   questionSyncError: string | null
   pendingQuestionWrites: number
   hydrateQuestions: (progress: ServerQuestionProgress) => void
   flushQuestionWrites: () => Promise<void>
-  setQuestionStatus: (id: string, status: QuestionStatus | null) => void
+  setQuestionStatus: (id: string, status: QuestionStatus | null, sessionDone?: boolean) => void
   setAutoRevealAnswers: (enabled: boolean) => void
   toggleSaved: (id: string) => void
   toggleReviewed: (id: string) => void
@@ -31,6 +33,7 @@ export const usePracticeProgress = create<PracticeProgress>()(
   persist<PracticeProgress, [], [], PracticeProgressData>(
     (set, get) => {
       let writes = Promise.resolve()
+      let failedJob: (() => Promise<void>) | null = null
       const enqueue = (job: () => Promise<void>) => {
         if (!get().questionSyncReady) return
         set((state) => ({
@@ -40,6 +43,7 @@ export const usePracticeProgress = create<PracticeProgress>()(
         writes = writes
           .then(job)
           .catch((error: unknown) => {
+            failedJob = job
             set({
               questionSyncError:
                 error instanceof Error ? error.message : "Не удалось сохранить изменение.",
@@ -69,14 +73,22 @@ export const usePracticeProgress = create<PracticeProgress>()(
         reviewedTaskIds: [],
         drafts: {},
         questionSyncReady: false,
+        retryQuestionWrite: () => {
+          if (failedJob) {
+            const job = failedJob
+            failedJob = null
+            enqueue(job)
+          }
+        },
         questionSyncError: null,
         pendingQuestionWrites: 0,
         hydrateQuestions: (progress) =>
           set({ ...progress, questionSyncReady: true, questionSyncError: null }),
         flushQuestionWrites: () => writes,
-        setQuestionStatus: (id, status) =>
+        setQuestionStatus: (id, status, sessionDone) =>
           enqueue(async () => {
             applyEntry(await questionApi.patchProgress(id, { status }))
+            useShortSession.getState().mark(id, sessionDone ?? status !== null)
           }),
         setAutoRevealAnswers: (enabled) =>
           enqueue(async () => {

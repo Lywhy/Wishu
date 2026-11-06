@@ -1,3 +1,9 @@
+import { WorkspaceControls, PersonalNote, RelatedStudy } from "@/components/experience/study-tools"
+import { UndoQuestionMark, QuestionShortcuts } from "@/components/experience/question-actions"
+import { ContentFeedback } from "@/components/experience/content-feedback"
+import { useWorkspace } from "@/stores/workspace"
+import { QuestionStatusControls } from "@/components/questions/question-study"
+import { QuestionFavoriteButton } from "@/components/questions/question-favorite"
 import { useEffect, useMemo } from "react"
 import { useLocation, useParams } from "react-router-dom"
 import { Badge } from "@/components/ui/badge"
@@ -20,6 +26,7 @@ import { MissingQuestionPage } from "@/pages/question-section-page"
 export function QuestionDetailPage() {
   const { questions, questionSections } = useQuestionCatalog()
   const { questionId } = useParams()
+  const focus = useWorkspace((s) => s.focus)
   const route = useLocation()
   const study = useMemo(() => {
     const resolved = resolveQuestionSession(questionId, questions, questionSections, route.state)
@@ -81,7 +88,10 @@ export function QuestionDetailPage() {
         <span className="text-xs text-muted-foreground">Раздел вопросов</span>
         <QuestionSectionPicker sectionId={section.id} />
       </div>
-      <div className="grid items-start gap-6 lg:grid-cols-[minmax(0,1fr)_280px]">
+      <WorkspaceControls />
+      <div
+        className={`grid items-start gap-6 ${focus ? "lg:grid-cols-1" : "lg:grid-cols-[minmax(0,1fr)_280px]"}`}
+      >
         <article className="min-w-0 space-y-5">
           <header>
             <div className="mb-3 flex flex-wrap items-center gap-2">
@@ -121,8 +131,24 @@ export function QuestionDetailPage() {
             <QuestionAnswer question={question} />
           </Card>
           <p className="sr-only">{note}</p>
+          {focus && (
+            <div className="flex gap-2">
+              <QuestionStatusControls questionId={question.id} />
+              <QuestionFavoriteButton questionId={question.id} />
+            </div>
+          )}
+          <UndoQuestionMark />
+          <QuestionShortcuts
+            id={question.id}
+            previous={siblings[index - 1] ? "/questions/" + siblings[index - 1].id : undefined}
+            next={siblings[index + 1] ? "/questions/" + siblings[index + 1].id : undefined}
+            onReveal={() => document.dispatchEvent(new Event("wishu-toggle-answer"))}
+          />
+          <PersonalNote contentKey={"question:" + question.id} />
+          <RelatedStudy moduleId={section.id} from={"/questions/" + question.id} />
+          <ContentFeedback key={question.id} contentKey={"question:" + question.id} />
         </article>
-        <aside className="hidden space-y-4 lg:sticky lg:top-6 lg:block">
+        <aside className={focus ? "hidden" : "hidden space-y-4 lg:sticky lg:top-6 lg:block"}>
           <QuestionSidebar
             questions={siblings}
             title={session.title}

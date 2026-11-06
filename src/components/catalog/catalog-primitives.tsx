@@ -72,18 +72,18 @@ export function CatalogHeader({
   questionHeading?: boolean
 }) {
   return (
-    <header className="mb-7 space-y-3">
-      <p className="text-xs font-medium tracking-wide text-primary">
+    <header className="mb-5 space-y-2 sm:mb-7 sm:space-y-3">
+      <p className="hidden text-xs font-medium tracking-wide text-primary sm:block">
         <AnimatedText>{eyebrow}</AnimatedText>
       </p>
       <h1
         data-question-heading={questionHeading || undefined}
         tabIndex={questionHeading ? -1 : undefined}
-        className="text-3xl font-semibold tracking-tight outline-none sm:text-4xl"
+        className="text-2xl font-semibold tracking-tight outline-none sm:text-4xl"
       >
         <AnimatedText delay={0.04}>{title}</AnimatedText>
       </h1>
-      <p className="max-w-2xl text-sm leading-7 text-muted-foreground">
+      <p className="max-w-2xl text-xs leading-6 text-muted-foreground sm:text-sm sm:leading-7">
         <AnimatedText delay={0.08}>{description}</AnimatedText>
       </p>
     </header>

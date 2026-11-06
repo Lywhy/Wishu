@@ -1,6 +1,5 @@
-import { Search } from "lucide-react"
+import { SearchField } from "@/components/experience/search-field"
 import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
 import {
   Select,
   SelectContent,
@@ -24,6 +23,22 @@ export function CatalogControls({
   statuses: { value: string; label: string }[]
   showPopular?: boolean
 }) {
+  const active = [
+    ...(filter.query ? [{ key: "q", label: "Поиск: " + filter.query }] : []),
+    ...(filter.difficulty !== "Любой уровень" ? [{ key: "level", label: filter.difficulty }] : []),
+    ...(filter.status !== "all"
+      ? [
+          {
+            key: "status",
+            label: statuses.find((item) => item.value === filter.status)?.label ?? filter.status,
+          },
+        ]
+      : []),
+    ...(showPopular && filter.popular ? [{ key: "popular", label: "Популярные" }] : []),
+    ...(topics.length && filter.topic !== "Все темы"
+      ? [{ key: "topic", label: filter.topic }]
+      : []),
+  ]
   return (
     <div className="space-y-4 rounded-xl border bg-card p-4">
       <div
@@ -34,19 +49,13 @@ export function CatalogControls({
             : "lg:grid-cols-[minmax(0,1fr)_10rem_9rem]",
         )}
       >
-        <div className="relative sm:col-span-2 lg:col-span-1">
-          <Search
-            className="pointer-events-none absolute top-1/2 left-3.5 size-4 -translate-y-1/2 text-muted-foreground"
-            aria-hidden="true"
-          />
-          <Input
-            value={filter.query}
-            onChange={(event) => filter.update("q", event.target.value)}
-            placeholder={placeholder}
-            aria-label={placeholder}
-            className="h-10 rounded-lg bg-background pl-10"
-          />
-        </div>
+        <SearchField
+          className="sm:col-span-2 lg:col-span-1"
+          value={filter.query}
+          onValueChange={(value) => filter.update("q", value)}
+          label={placeholder}
+          placeholder={placeholder}
+        />
         <Select
           value={filter.difficulty}
           items={["Любой уровень", "Базовый", "Средний", "Продвинутый"].map((level) => ({
@@ -115,6 +124,23 @@ export function CatalogControls({
             </Button>
           </div>
         )}
+      {!!active.length && (
+        <div aria-label="Активные фильтры" className="flex flex-wrap gap-2">
+          {active.map((item) => (
+            <Button
+              key={item.key}
+              size="sm"
+              variant="ghost"
+              className="max-w-full rounded-full border border-dashed text-xs"
+              aria-label={"Снять фильтр: " + item.label}
+              onClick={() => filter.update(item.key, "")}
+            >
+              <span className="truncate">{item.label}</span>
+              <span className="text-muted-foreground">· Снять</span>
+            </Button>
+          ))}
+        </div>
+      )}
       {topics.length > 0 && (
         <div aria-label="Темы" className="flex flex-wrap gap-2">
           {["Все темы", ...topics].map((topic) => (

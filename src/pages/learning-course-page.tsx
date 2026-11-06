@@ -1,5 +1,10 @@
+import { useWorkspace } from "@/stores/workspace"
+import { WorkspaceControls, PersonalNote, RelatedStudy } from "@/components/experience/study-tools"
+import { LectureOutline } from "@/components/experience/lecture-outline"
+import { ContentFeedback } from "@/components/experience/content-feedback"
+import { CourseContents } from "@/components/experience/course-contents"
 import { useEffect } from "react"
-import { Link, Navigate, useParams } from "react-router-dom"
+import { Link, Navigate, useParams, useLocation } from "react-router-dom"
 import { Card } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
@@ -13,12 +18,16 @@ import { courseSteps, stepKey, stepCompleted } from "@/data/learning-course"
 import { cn } from "@/lib/utils"
 export function LearningCoursePage() {
   const { sectionId, stepId } = useParams()
+  const route = useLocation()
+  const focus = useWorkspace((s) => s.focus)
   useEffect(() => {
+    if (sectionId && stepId) useLearningProgress.getState().rememberStep(sectionId, stepId)
     window.scrollTo({ top: 0, behavior: "instant" })
     document.getElementById("learning-heading")?.focus({ preventScroll: true })
   }, [sectionId, stepId])
   const { questionSections, questions } = useQuestionCatalog()
   const completed = useLearningProgress((state) => state.completed)
+  const lastSteps = useLearningProgress((state) => state.lastStepBySection)
   const mark = useLearningProgress((state) => state.setCompleted)
   const section = questionSections.find((item) => item.id === sectionId)
   if (!section || section.inDevelopment)
@@ -35,8 +44,9 @@ export function LearningCoursePage() {
   if (!stepId)
     return (
       <Navigate
-        to={`/learn/${section.id}/${steps.find((step) => !stepCompleted(section.id, step, completed))?.id ?? steps[0].id}`}
+        to={`/learn/${section.id}/${steps.find((step) => step.id === lastSteps[section.id])?.id ?? steps.find((step) => !stepCompleted(section.id, step, completed))?.id ?? steps[0].id}`}
         replace
+        state={route.state}
       />
     )
   const index = steps.findIndex((step) => step.id === stepId)
@@ -56,57 +66,65 @@ export function LearningCoursePage() {
           { label: step.title },
         ]}
       />
-      <div className="grid items-start gap-6 lg:grid-cols-[260px_minmax(0,1fr)]">
-        <aside className="min-w-0 lg:sticky lg:top-5">
-          <Card className="gap-4 rounded-xl p-4 shadow-none">
-            <div className="flex items-center gap-3">
-              <span
-                className={cn(
-                  "flex size-10 items-center justify-center rounded-lg border border-current/25 font-mono font-semibold",
-                  section.color,
-                )}
-              >
-                {section.mark}
-              </span>
-              <div>
-                <h2 className="text-sm font-semibold">{section.title}</h2>
-                <p className="text-xs text-muted-foreground">
-                  {doneCount} из {steps.length} этапов
-                </p>
+      <WorkspaceControls />
+      <div
+        className={`grid items-start gap-6 ${focus ? "lg:grid-cols-1" : "lg:grid-cols-[260px_minmax(0,1fr)]"}`}
+      >
+        <aside className={focus ? "hidden" : "min-w-0 lg:sticky lg:top-5"}>
+          <CourseContents title={section.title} done={doneCount} total={steps.length}>
+            <Card className="gap-4 rounded-xl p-4 shadow-none">
+              <div className="flex items-center gap-3">
+                <span
+                  className={cn(
+                    "flex size-10 items-center justify-center rounded-lg border border-current/25 font-mono font-semibold",
+                    section.color,
+                  )}
+                >
+                  {section.mark}
+                </span>
+                <div>
+                  <h2 className="text-sm font-semibold">{section.title}</h2>
+                  <p className="text-xs text-muted-foreground">
+                    {doneCount} из {steps.length} этапов
+                  </p>
+                </div>
               </div>
-            </div>
-            <Progress value={(100 * doneCount) / steps.length} aria-label="Прогресс обучения" />
-            <nav aria-label="Содержание модуля" className="max-h-[65vh] space-y-1 overflow-y-auto">
-              {steps.map((item, i) => {
-                const passed = stepCompleted(section.id, item, completed)
-                return (
-                  <Link
-                    key={item.id}
-                    to={base + item.id}
-                    aria-current={item.id === step.id ? "step" : undefined}
-                    className={cn(
-                      "block rounded-lg border border-transparent p-3 outline-none focus-visible:ring-2 focus-visible:ring-ring",
-                      item.id === step.id ? "border-primary/20 bg-primary/5" : "hover:bg-muted",
-                    )}
-                  >
-                    <span className="flex items-center justify-between gap-2 text-[11px] text-muted-foreground">
-                      <span>
-                        {String(i + 1).padStart(2, "0")} ·{" "}
-                        {item.kind === "lecture" ? "Лекция" : "Практика"}
-                      </span>
-                      {passed && (
-                        <span className="text-emerald-700 dark:text-emerald-400">Пройдено</span>
+              <Progress value={(100 * doneCount) / steps.length} aria-label="Прогресс обучения" />
+              <nav
+                aria-label="Содержание модуля"
+                className="max-h-[65vh] space-y-1 overflow-y-auto"
+              >
+                {steps.map((item, i) => {
+                  const passed = stepCompleted(section.id, item, completed)
+                  return (
+                    <Link
+                      key={item.id}
+                      to={base + item.id}
+                      aria-current={item.id === step.id ? "step" : undefined}
+                      className={cn(
+                        "block rounded-lg border border-transparent p-3 outline-none focus-visible:ring-2 focus-visible:ring-ring",
+                        item.id === step.id ? "border-primary/20 bg-primary/5" : "hover:bg-muted",
                       )}
-                    </span>
-                    <span className="mt-1 block text-xs leading-5 font-medium">{item.title}</span>
-                  </Link>
-                )
-              })}
-            </nav>
-            <Link to="/learn" className="text-xs text-primary underline underline-offset-4">
-              Выбрать другой модуль
-            </Link>
-          </Card>
+                    >
+                      <span className="flex items-center justify-between gap-2 text-[11px] text-muted-foreground">
+                        <span>
+                          {String(i + 1).padStart(2, "0")} ·{" "}
+                          {item.kind === "lecture" ? "Лекция" : "Практика"}
+                        </span>
+                        {passed && (
+                          <span className="text-emerald-700 dark:text-emerald-400">Пройдено</span>
+                        )}
+                      </span>
+                      <span className="mt-1 block text-xs leading-5 font-medium">{item.title}</span>
+                    </Link>
+                  )
+                })}
+              </nav>
+              <Link to="/learn" className="text-xs text-primary underline underline-offset-4">
+                Выбрать другой модуль
+              </Link>
+            </Card>
+          </CourseContents>
         </aside>
         <section key={key} className="min-w-0 space-y-6">
           <header>
@@ -115,6 +133,12 @@ export function LearningCoursePage() {
               <span className="text-xs text-muted-foreground">
                 Этап {index + 1} из {steps.length}
               </span>
+              {step.kind === "lecture" && (
+                <span className="text-xs text-muted-foreground">
+                  Около {Math.max(1, Math.ceil((step.markdown ?? "").split(/\s+/).length / 180))}{" "}
+                  мин чтения
+                </span>
+              )}
               {done && (
                 <Badge
                   variant="outline"
@@ -134,7 +158,15 @@ export function LearningCoursePage() {
           </header>
           {step.kind === "lecture" ? (
             <Card className="gap-5 rounded-xl p-5 shadow-none sm:p-8">
-              <LearningMarkdown content={step.markdown ?? ""} topic={section.title} />
+              <LectureOutline
+                content={step.markdown ?? ""}
+                prefix={"lecture-" + section.id + "-" + step.id}
+              />
+              <LearningMarkdown
+                content={step.markdown ?? ""}
+                topic={section.title}
+                anchorPrefix={"lecture-" + section.id + "-" + step.id}
+              />
               <div className="flex flex-wrap items-center justify-between gap-3 border-t pt-5">
                 <p className="text-xs leading-6 text-muted-foreground">
                   Разобрались в материале? Отметьте лекцию как пройденную.
@@ -164,6 +196,29 @@ export function LearningCoursePage() {
               ))}
             </>
           )}
+          {done && (
+            <div className="rounded-xl border border-emerald-500/30 bg-emerald-500/5 p-4 text-sm">
+              <p>
+                Этап пройден.{" "}
+                {index < steps.length - 1
+                  ? "Дальше: " + steps[index + 1].title
+                  : "Модуль завершён. Можно повторить материалы или выбрать новое направление."}
+              </p>
+              {index < steps.length - 1 && (
+                <Button
+                  nativeButton={false}
+                  size="sm"
+                  className="mt-3"
+                  render={<Link to={base + steps[index + 1].id} />}
+                >
+                  Перейти: {steps[index + 1].kind === "practice" ? "к практике" : "к лекции"}
+                </Button>
+              )}
+            </div>
+          )}
+          <PersonalNote contentKey={"lecture:" + key} />
+          <RelatedStudy moduleId={section.id} from={base + step.id} />
+          <ContentFeedback contentKey={"lecture:" + key} />
           <section className="rounded-xl border bg-muted/20 p-5" aria-label="Основы">
             <h2 className="text-sm font-semibold">Основы</h2>
             <p className="mt-1 text-xs leading-6 text-muted-foreground">

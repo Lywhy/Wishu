@@ -1,5 +1,7 @@
+import { javascriptAnswerMarkdown } from "@/lib/javascript-answer-markdown"
+import { changeQuestionMark } from "@/lib/question-mark-actions"
 import { LearningMarkdown } from "@/components/learning/learning-markdown"
-import { useId, useState } from "react"
+import { useEffect, useId, useState } from "react"
 import { Check, RotateCcw, SkipForward } from "lucide-react"
 import { Link } from "react-router-dom"
 import { Badge } from "@/components/ui/badge"
@@ -73,7 +75,6 @@ export function AnswerPreference() {
 export function QuestionStatusControls({ questionId }: { questionId: string }) {
   const saving = usePracticeProgress((state) => state.pendingQuestionWrites > 0)
   const current = usePracticeProgress((state) => state.questionStatuses[questionId])
-  const setStatus = usePracticeProgress((state) => state.setQuestionStatus)
   return (
     <div aria-label="Отметка изучения вопроса" className="flex flex-wrap gap-2">
       {statuses.map(({ value, label, icon: Icon, selected }) => (
@@ -85,7 +86,7 @@ export function QuestionStatusControls({ questionId }: { questionId: string }) {
           aria-label={label}
           aria-pressed={current === value}
           disabled={saving}
-          onClick={() => setStatus(questionId, current === value ? null : value)}
+          onClick={() => changeQuestionMark(questionId, current === value ? null : value)}
           className={cn("size-8", current === value && selected)}
         >
           <Icon className="size-4" aria-hidden="true" />
@@ -113,6 +114,11 @@ export function QuestionAnswer({ question }: { question: Question }) {
 
 function AnswerDisclosure({ question, defaultOpen }: { question: Question; defaultOpen: boolean }) {
   const [open, setOpen] = useState(defaultOpen)
+  useEffect(() => {
+    const toggle = () => setOpen((value) => !value)
+    document.addEventListener("wishu-toggle-answer", toggle)
+    return () => document.removeEventListener("wishu-toggle-answer", toggle)
+  }, [])
   const id = useId()
   return (
     <div className="space-y-4">
@@ -131,23 +137,27 @@ function AnswerDisclosure({ question, defaultOpen }: { question: Question; defau
         <div className="max-w-[72ch]">
           <LearningMarkdown
             key={String(open)}
-            content={[
-              "### Короткий ответ",
-              question.answer[0] ?? "",
-              ...(question.answer.length > 1
-                ? ["### Подробности", ...question.answer.slice(1)]
-                : []),
-            ].join("\n\n")}
+            content={
+              question.topic === "JavaScript"
+                ? javascriptAnswerMarkdown(question)
+                : [
+                    "### Короткий ответ",
+                    question.answer[0] ?? "",
+                    ...(question.answer.length > 1
+                      ? ["### Подробности", ...question.answer.slice(1)]
+                      : []),
+                  ].join("\n\n")
+            }
             topic={question.topic}
           />
         </div>
-        {question.code && (
+        {question.topic !== "JavaScript" && question.code && (
           <CodeBlock
             code={question.code}
             language={codeLanguageFor(question.topic, question.code)}
           />
         )}
-        {question.pitfall && (
+        {question.topic !== "JavaScript" && question.pitfall && (
           <section
             aria-labelledby={`${id}-pitfall`}
             className="rounded-xl border border-amber-200 bg-amber-50/50 p-4 dark:border-amber-800/50 dark:bg-amber-500/5"
@@ -160,14 +170,16 @@ function AnswerDisclosure({ question, defaultOpen }: { question: Question; defau
             </div>
           </section>
         )}
-        <section aria-labelledby={`${id}-takeaway`} className="rounded-xl border bg-muted/40 p-4">
-          <h3 id={`${id}-takeaway`} className="text-sm font-semibold">
-            Главная мысль
-          </h3>
-          <div className="mt-2 max-w-[72ch]">
-            <LearningMarkdown content={question.takeaway} topic={question.topic} />
-          </div>
-        </section>
+        {question.topic !== "JavaScript" && (
+          <section aria-labelledby={`${id}-takeaway`} className="rounded-xl border bg-muted/40 p-4">
+            <h3 id={`${id}-takeaway`} className="text-sm font-semibold">
+              Главная мысль
+            </h3>
+            <div className="mt-2 max-w-[72ch]">
+              <LearningMarkdown content={question.takeaway} topic={question.topic} />
+            </div>
+          </section>
+        )}
       </div>
     </div>
   )

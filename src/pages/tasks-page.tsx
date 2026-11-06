@@ -75,6 +75,24 @@ export function TasksPage() {
         description="Выберите задачу, проверьте решение на тестах и разберите результат. Черновик сохранится автоматически."
         eyebrow="Практика и проверка"
       />
+      {practiceTasks.length > 0 && practiceTasks.every((task) => reviewed.includes(task.id)) && (
+        <Card className="mb-5 space-y-3 p-5">
+          <h2 className="font-semibold">Все задачи решены</h2>
+          <p className="text-sm text-muted-foreground">
+            Можно повторить решения или перейти к новой теме обучения.
+          </p>
+          <Button
+            nativeButton={false}
+            variant="outline"
+            render={<Link to="/tasks?status=reviewed" />}
+          >
+            Повторить задачи
+          </Button>
+          <Button nativeButton={false} render={<Link to="/learn" />}>
+            Выбрать обучение
+          </Button>
+        </Card>
+      )}
       <div className="grid items-start gap-6 lg:grid-cols-[minmax(0,1fr)_280px]">
         <div className="min-w-0 space-y-5">
           {resume && !active && (
@@ -111,7 +129,7 @@ export function TasksPage() {
             ]}
           />
           <div className="flex min-h-9 items-center justify-between gap-3">
-            <p className="text-xs text-muted-foreground">
+            <p aria-live="polite" aria-atomic="true" className="text-xs text-muted-foreground">
               Показано: {items.length ? (page - 1) * 8 + 1 : 0}-{Math.min(page * 8, items.length)}{" "}
               из {items.length}
             </p>

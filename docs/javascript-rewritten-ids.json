@@ -1,0 +1,17 @@
+[
+  "data-types",
+  "equality",
+  "variables",
+  "hoisting",
+  "closures",
+  "function-this",
+  "promise-states",
+  "promise-chains",
+  "event-loop",
+  "async-await",
+  "async-fetch",
+  "structured-clone",
+  "object-assign",
+  "array-sort",
+  "es-modules"
+]

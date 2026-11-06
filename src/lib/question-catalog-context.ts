@@ -8,6 +8,9 @@ import {
   type QuestionSubsection,
 } from "@/data/question-catalog"
 
+import type { CreatedQuestion } from "@/lib/question-api"
+export const AddQuestionContext = createContext<((question: CreatedQuestion) => void) | null>(null)
+
 export const QuestionCatalogContext = createContext<QuestionCatalog | null>(null)
 
 export function useQuestionCatalog() {

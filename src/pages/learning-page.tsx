@@ -1,5 +1,4 @@
-import { useState } from "react"
-import { Link } from "react-router-dom"
+import { Link, useSearchParams } from "react-router-dom"
 import {
   AnimatedCard as Card,
   CatalogHeader,
@@ -7,7 +6,7 @@ import {
   CompletedBadge,
 } from "@/components/catalog/catalog-primitives"
 import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
+import { SearchField } from "@/components/experience/search-field"
 import { Badge } from "@/components/ui/badge"
 import { Progress } from "@/components/ui/progress"
 import { QuestionBreadcrumbs } from "@/components/questions/question-breadcrumbs"
@@ -17,10 +16,34 @@ import { useLearningProgress } from "@/stores/learning-progress"
 import { courseSteps, stepCompleted } from "@/data/learning-course"
 export function LearningPage() {
   const { questionSections, groups, questions } = useQuestionCatalog()
-  const [query, setQuery] = useState("")
-  const [savedOnly, setSavedOnly] = useState(false)
+  const [params, setParams] = useSearchParams()
+  const query = params.get("q") ?? ""
+  const savedOnly = params.get("saved") === "1"
+  const setQuery = (value: string) =>
+    setParams(
+      (current) => {
+        const next = new URLSearchParams(current)
+        if (value) next.set("q", value)
+        else next.delete("q")
+        return next
+      },
+      { replace: true },
+    )
+  const setSavedOnly = (value: boolean | ((previous: boolean) => boolean)) =>
+    setParams(
+      (current) => {
+        const next = new URLSearchParams(current)
+        const enabled = typeof value === "function" ? value(current.get("saved") === "1") : value
+        if (enabled) next.set("saved", "1")
+        else next.delete("saved")
+        return next
+      },
+      { replace: true },
+    )
   const saved = useLearningPlan((state) => state.savedModuleIds)
   const toggle = useLearningPlan((state) => state.toggleModule)
+  const lastSteps = useLearningProgress((state) => state.lastStepBySection)
+  const lastSection = useLearningProgress((state) => state.lastSectionId)
   const completed = useLearningProgress((state) => state.completed)
   const visible = questionSections.filter(
     (section) =>
@@ -29,14 +52,19 @@ export function LearningPage() {
         .toLocaleLowerCase("ru")
         .includes(query.trim().toLocaleLowerCase("ru")),
   )
-  const resume = questionSections.flatMap((section) => {
-    if (section.inDevelopment) return []
-    const steps = courseSteps(section, questions)
-    const next = steps.find((step) => !stepCompleted(section.id, step, completed))
-    return next && steps.some((step) => stepCompleted(section.id, step, completed))
-      ? [{ section, next }]
-      : []
-  })[0]
+  const resume = [...questionSections]
+    .sort((a, b) => Number(b.id === lastSection) - Number(a.id === lastSection))
+    .flatMap((section) => {
+      if (section.inDevelopment) return []
+      const steps = courseSteps(section, questions)
+      const next =
+        steps.find((step) => step.id === lastSteps[section.id]) ??
+        steps.find((step) => !stepCompleted(section.id, step, completed))
+      return next &&
+        (lastSteps[section.id] || steps.some((step) => stepCompleted(section.id, step, completed)))
+        ? [{ section, next }]
+        : []
+    })[0]
   return (
     <>
       <QuestionBreadcrumbs items={[{ label: "Обучение" }]} />
@@ -63,12 +91,12 @@ export function LearningPage() {
         </Card>
       )}
       <div className="mb-8 flex flex-wrap items-center gap-3 rounded-xl border bg-card p-4">
-        <Input
-          className="h-10 flex-1 basis-60"
-          aria-label="Поиск модулей обучения"
+        <SearchField
+          className="flex-1 basis-60"
+          label="Поиск модулей обучения"
           placeholder="Найти модуль…"
           value={query}
-          onChange={(event) => setQuery(event.target.value)}
+          onValueChange={setQuery}
         />
         <Button
           variant={savedOnly ? "secondary" : "outline"}
@@ -78,13 +106,29 @@ export function LearningPage() {
           Мой план
         </Button>
       </div>
+      <output className="sr-only" aria-live="polite" aria-atomic="true">
+        Найдено модулей: {visible.length}
+      </output>
+      <nav aria-label="Группы обучения" className="mb-6 flex flex-wrap gap-2">
+        {groups
+          .filter((group) => visible.some((section) => section.group === group.id))
+          .map((group) => (
+            <a
+              key={group.id}
+              href={"#" + group.id}
+              className="rounded-lg border bg-card px-3 py-2 text-xs outline-none hover:bg-muted focus-visible:ring-2 focus-visible:ring-ring"
+            >
+              {group.title}
+            </a>
+          ))}
+      </nav>
       <div className="space-y-9">
         {groups.map((group) => {
           const sections = visible.filter((section) => section.group === group.id)
           if (!sections.length) return null
           return (
             <section key={group.id} aria-labelledby={group.id}>
-              <h2 id={group.id} className="text-xl font-semibold">
+              <h2 id={group.id} className="scroll-mt-6 text-xl font-semibold">
                 {group.title}
               </h2>
               <p className="mt-1 text-xs leading-6 text-muted-foreground">{group.description}</p>
@@ -96,7 +140,9 @@ export function LearningPage() {
                     stepCompleted(section.id, step, completed),
                   ).length
                   const next =
-                    steps.find((step) => !stepCompleted(section.id, step, completed)) ?? steps[0]
+                    steps.find((step) => step.id === lastSteps[section.id]) ??
+                    steps.find((step) => !stepCompleted(section.id, step, completed)) ??
+                    steps[0]
                   return (
                     <Card
                       key={section.id}
@@ -139,7 +185,11 @@ export function LearningPage() {
                               size="sm"
                               render={<Link to={`/learn/${section.id}/${next.id}`} />}
                             >
-                              {done ? "Продолжить" : "Начать обучение"}
+                              {done === steps.length
+                                ? "Повторить"
+                                : done
+                                  ? "Продолжить"
+                                  : "Начать обучение"}
                             </Button>
                             <Button
                               size="sm"
@@ -166,8 +216,7 @@ export function LearningPage() {
           <Button
             variant="outline"
             onClick={() => {
-              setQuery("")
-              setSavedOnly(false)
+              setParams({}, { replace: true })
             }}
           >
             Сбросить фильтры

@@ -1,0 +1,62 @@
+[
+  {
+    "id": "number-precision",
+    "subsectionId": "fundamentals",
+    "title": "Почему 0.1 + 0.2 не равно 0.3 и как сравнивать дробные числа?"
+  },
+  {
+    "id": "same-value-comparisons",
+    "subsectionId": "fundamentals",
+    "title": "Чем Object.is и SameValueZero отличаются от строгого равенства?"
+  },
+  {
+    "id": "object-to-primitive",
+    "subsectionId": "objects",
+    "title": "Как Symbol.toPrimitive, valueOf и toString участвуют в преобразовании объекта?"
+  },
+  {
+    "id": "prototype-pollution",
+    "subsectionId": "objects",
+    "title": "Что такое prototype pollution и как защищать словари и слияние объектов?"
+  },
+  {
+    "id": "promise-executor-order",
+    "subsectionId": "asynchronous",
+    "title": "Когда выполняется executor Promise и почему нельзя делать его async?"
+  },
+  {
+    "id": "async-concurrency-limit",
+    "subsectionId": "asynchronous",
+    "title": "Как ограничить число одновременно выполняемых асинхронных операций?"
+  },
+  {
+    "id": "request-races",
+    "subsectionId": "asynchronous",
+    "title": "Как избежать устаревшего результата при гонке поисковых запросов?"
+  },
+  {
+    "id": "typed-arrays",
+    "subsectionId": "arrays",
+    "title": "Как связаны ArrayBuffer, TypedArray и DataView?"
+  },
+  {
+    "id": "dates-timezones",
+    "subsectionId": "advanced",
+    "title": "Что хранит Date и как не перепутать UTC, локальное время и календарную дату?"
+  },
+  {
+    "id": "regexp-last-index",
+    "subsectionId": "advanced",
+    "title": "Почему test с регулярным выражением /g может чередовать true и false?"
+  },
+  {
+    "id": "esm-circular-dependencies",
+    "subsectionId": "modern",
+    "title": "Когда циклический import работает, а когда приводит к ReferenceError?"
+  },
+  {
+    "id": "finalization-registry",
+    "subsectionId": "advanced",
+    "title": "Для чего нужен FinalizationRegistry и почему он не заменяет явную очистку?"
+  }
+]

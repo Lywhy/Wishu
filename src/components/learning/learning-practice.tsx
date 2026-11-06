@@ -1,3 +1,5 @@
+import { useWorkspace } from "@/stores/workspace"
+import { TaskHints, AttemptHistory, DraftStatus } from "@/components/experience/study-tools"
 import { lazy, Suspense, useEffect, useRef, useState } from "react"
 import type { PracticeTask } from "@/data/interview-content"
 import type { TaskCheckResult } from "@/lib/task-checker"
@@ -47,10 +49,20 @@ export function LearningPractice({
       if (current.signal.aborted) return
       const results = await checkTask(task.id, code, current.signal, { lesson: true })
       if (current.signal.aborted) return
+      useWorkspace.getState().attempt(progressKey, {
+        code,
+        passed: results.length === 1 && results.every((result) => result.passed),
+        summary: "Учебная проверка",
+      })
       setChecks(results)
       mark(progressKey, results.length === 1 && results.every((result) => result.passed))
     } catch (error) {
       if (!current.signal.aborted) {
+        useWorkspace.getState().attempt(progressKey, {
+          code,
+          passed: false,
+          summary: error instanceof Error ? error.message : "Ошибка проверки",
+        })
         mark(progressKey, false)
         setChecks([
           {
@@ -97,6 +109,21 @@ export function LearningPractice({
           </Button>
         )}
       </div>
+      <DraftStatus
+        storageKey="wishu-learning-progress"
+        draftKey={progressKey}
+        code={code}
+        hasDraft={draft !== undefined}
+      />
+      <div className="space-y-3 p-4">
+        <details>
+          <summary className="cursor-pointer text-sm font-medium">Подсказки</summary>
+          <div className="mt-4">
+            <TaskHints task={task} />
+          </div>
+        </details>
+        <AttemptHistory contentKey={progressKey} code={code} onRestore={edit} />
+      </div>
       <TaskEditorBoundary value={code} onChange={edit}>
         <Suspense
           fallback={<div className="p-8 text-sm text-muted-foreground">Загружаем редактор…</div>}
@@ -109,7 +136,17 @@ export function LearningPractice({
           />
         </Suspense>
       </TaskEditorBoundary>
-      <TaskTestResults checking={checking} checks={checks} solved={done} testCount={1} />
+      <TaskTestResults
+        checking={checking}
+        checks={checks}
+        solved={done}
+        onCancel={() => {
+          controller.current?.abort()
+          setChecking(false)
+          setChecks(null)
+        }}
+        testCount={1}
+      />
     </Card>
   )
 }
