@@ -1,0 +1,95 @@
+{
+  "schemaVersion": 1,
+  "id": "ts-20261107-ts-classes",
+  "title": "Расширение TypeScript: Типизация классов и ООП",
+  "sectionId": "typescript",
+  "subsectionId": "ts-classes",
+  "currentPass": "complete",
+  "goalIds": [
+    "core",
+    "ts-class-members",
+    "ts-constructor-overloads",
+    "ts-class-visibility",
+    "ts-abstract-classes",
+    "ts-implements-extends",
+    "ts-generic-classes",
+    "ts-override-contract",
+    "ts-polymorphic-this",
+    "ts-decorators-models",
+    "ts-constructor-instance-sides",
+    "ts-static-generic-state",
+    "ts-this-based-guards",
+    "ts-mixin-constructor-contract",
+    "ts-accessor-read-write-types",
+    "ts-private-constructor-factory"
+  ],
+  "questionIds": [
+    "ts-constructor-instance-sides",
+    "ts-static-generic-state",
+    "ts-this-based-guards",
+    "ts-mixin-constructor-contract",
+    "ts-accessor-read-write-types",
+    "ts-private-constructor-factory",
+    "ts-class-visibility"
+  ],
+  "scopePass": {
+    "status": "complete",
+    "remaining": []
+  },
+  "answerPass": {
+    "status": "complete",
+    "remaining": []
+  },
+  "baseline": [
+    {
+      "id": "ts-class-members",
+      "title": "Что TypeScript добавляет к типизации полей, методов и конструктора класса?",
+      "contentHash": "6d5281649fcd7bb3c3e12beda542fb59fa03ae836a425f5c77fa39c2b599e37e"
+    },
+    {
+      "id": "ts-constructor-overloads",
+      "title": "Как объявить перегрузки конструктора, если runtime-конструктор один?",
+      "contentHash": "8de5109e9e66ac53038384b1316fcf00061fabfa47ca78062c8fb891c8e45bd5"
+    },
+    {
+      "id": "ts-class-visibility",
+      "title": "Как public, private и protected отличаются от JavaScript-приватности через #?",
+      "contentHash": "5b33cb93e12d62a37423dddeee5205089a719f5043cdca7f8c5ee032a2a31496"
+    },
+    {
+      "id": "ts-abstract-classes",
+      "title": "Для чего нужен abstract class и чем он отличается от интерфейса?",
+      "contentHash": "f894644f6d72ee75a27866f0a4faa32decc58e6e24b7aa9dd9b010917467ab52"
+    },
+    {
+      "id": "ts-implements-extends",
+      "title": "Чем implements отличается от extends?",
+      "contentHash": "35e3e37857c3eec164d2d236538a2c6e3f3207d20e9c3e830603ff461545d6af"
+    },
+    {
+      "id": "ts-generic-classes",
+      "title": "Как generic-класс связывает тип полей и методов экземпляра?",
+      "contentHash": "bf7760ad236a9cec0d5f922c260ad58741ab311a0c2274f164feef618ca08377"
+    },
+    {
+      "id": "ts-override-contract",
+      "title": "Зачем нужны override и noImplicitOverride?",
+      "contentHash": "d4e3948f6ec1a3cbdcc9f88becfebd482993fcaaf017dfc124ab21a2e12fe0c6"
+    },
+    {
+      "id": "ts-polymorphic-this",
+      "title": "Как полиморфный this сохраняет тип наследника в цепочке методов?",
+      "contentHash": "40d6b77c398459a59d74990968e0b9144c01e5d08307e672a92baf9a54034c90"
+    },
+    {
+      "id": "ts-decorators-models",
+      "title": "Чем современные декораторы TypeScript отличаются от legacy-декораторов?",
+      "contentHash": "92d2c3b5ff17d1f5ce1b3bd45bc76c91411cedbce7c16339ed11ea8e0feda306"
+    }
+  ],
+  "notes": [
+    "Граница: язык TypeScript и его toolchain. Runtime JavaScript и фреймворки не дублировать.",
+    "Готовые ответы сверены по документации; код примеров не запускался.",
+    "Контент собран и прошёл полную структурную проверку. TS: 161 вопрос, +62 новых и 17 расширенных. Примеры не исполнялись; seed не применялся."
+  ]
+}

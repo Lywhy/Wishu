@@ -1,0 +1,76 @@
+{
+  "schemaVersion": 1,
+  "id": "ts-20261107-ts-collections",
+  "title": "Расширение TypeScript: Массивы, кортежи и коллекции",
+  "sectionId": "typescript",
+  "subsectionId": "ts-collections",
+  "currentPass": "complete",
+  "goalIds": [
+    "core",
+    "ts-array-types",
+    "ts-readonly-arrays",
+    "ts-tuples",
+    "ts-set-map",
+    "ts-variadic-tuples",
+    "ts-nonempty-array",
+    "ts-tuple-shape-operations",
+    "ts-empty-array-context",
+    "ts-array-alias-mutation",
+    "ts-array-union-shapes",
+    "ts-iterator-result-check",
+    "ts-promise-all-tuples"
+  ],
+  "questionIds": [
+    "ts-tuple-shape-operations",
+    "ts-empty-array-context",
+    "ts-array-alias-mutation",
+    "ts-array-union-shapes",
+    "ts-iterator-result-check",
+    "ts-promise-all-tuples"
+  ],
+  "scopePass": {
+    "status": "complete",
+    "remaining": []
+  },
+  "answerPass": {
+    "status": "complete",
+    "remaining": []
+  },
+  "baseline": [
+    {
+      "id": "ts-array-types",
+      "title": "Как типизировать обычный, смешанный и двумерный массив?",
+      "contentHash": "9a2f747514f380c02d8f055df19ee8a7b05d29f99dfa1a8ec178f09393f1324b"
+    },
+    {
+      "id": "ts-readonly-arrays",
+      "title": "Чем readonly T[] и ReadonlyArray<T> отличаются от изменяемого массива?",
+      "contentHash": "3ab6722803578ea97108d80ebf3cbc58558b73484bb65fa2d87b97c401680410"
+    },
+    {
+      "id": "ts-tuples",
+      "title": "Что такое кортеж и чем он отличается от массива?",
+      "contentHash": "18d1a9a1918dd247f050b9e1e9a38c87bff80c0487a3f1820bf610aeb4e989f5"
+    },
+    {
+      "id": "ts-set-map",
+      "title": "Как типизировать Set и Map и почему важен тип ключа?",
+      "contentHash": "f5c047c574f73f2f54bec58b8dbf962e0a58f7b0272b9289bb8575bad6e0a371"
+    },
+    {
+      "id": "ts-variadic-tuples",
+      "title": "Как variadic tuple types сохраняют позиции при объединении аргументов?",
+      "contentHash": "b7339a021b4e50371289068b9378d2ffcecf7dd35aa439dcdb98d0890c20286d"
+    },
+    {
+      "id": "ts-nonempty-array",
+      "title": "Как выразить непустой массив и подтвердить это во время выполнения?",
+      "contentHash": "5723aa45d15e510507000215824a3186c8d714c1af7be2283a65f0f70d62ebef"
+    }
+  ],
+  "notes": [
+    "Граница: язык TypeScript и его toolchain. Runtime JavaScript и фреймворки не дублировать.",
+    "Готовые ответы сверены по документации; код примеров не запускался.",
+    "Контент собран и прошёл полную структурную проверку. TS: 161 вопрос, +62 новых и 17 расширенных. Примеры не исполнялись; seed не применялся."
+  ]
+}

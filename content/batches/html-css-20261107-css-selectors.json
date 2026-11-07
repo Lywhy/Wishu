@@ -1,0 +1,43 @@
+{
+  "schemaVersion": 1,
+  "id": "html-css-20261107-css-selectors",
+  "title": "Расширение HTML и CSS: Селекторы и область действия",
+  "sectionId": "html-css",
+  "subsectionId": "css-selectors",
+  "currentPass": "complete",
+  "goalIds": [
+    "core",
+    "css-combinator-contract",
+    "css-structural-counting",
+    "css-pseudo-element-content",
+    "css-attribute-selector-tokens",
+    "css-native-nesting-contract",
+    "css-scope-boundary",
+    "css-state-focus-within"
+  ],
+  "questionIds": [
+    "css-combinator-contract",
+    "css-structural-counting",
+    "css-pseudo-element-content",
+    "css-attribute-selector-tokens",
+    "css-native-nesting-contract",
+    "css-scope-boundary",
+    "css-state-focus-within"
+  ],
+  "scopePass": {
+    "status": "complete",
+    "remaining": []
+  },
+  "answerPass": {
+    "status": "complete",
+    "remaining": []
+  },
+  "baseline": [],
+  "notes": [
+    "HTML/CSS описывают документ, представление и нативные контракты; алгоритмы DOM, сеть, SEO и React не дублировать.",
+    "Код примеров не исполняется. Seed выполняет пользователь.",
+    "Сопоставлены исходные 48 вопросов. Новые навыки: Потомки, прямые дети и последующие соседи по дереву элементов. Индексы среди элементов-соседей и фильтрация перед отсчётом. Состояние существующего элемента и стилизуемая часть представления. Наличие атрибута, полное значение, отдельный токен и подстрока. Смысл &, потомки и специфичность списка родительских селекторов. Корень, нижняя граница и разрешение конфликтов после специфичности. Независимые состояния указателя, активации и фокуса поддерева.",
+    "Похожие кандидаты объединены с действующими ответами; список будет в журнале и отчёте.",
+    "Проверка content:build/content:check прошла на 845 вопросах. Проверены сохранность 48 прежних ID и Markdown-разделитель новых ответов. После итогового форматирования требуется повторная сборка для актуальных хешей."
+  ]
+}

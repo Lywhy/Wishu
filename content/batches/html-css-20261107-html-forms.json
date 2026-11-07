@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "id": "html-css-20261107-html-forms",
+  "title": "Расширение HTML и CSS: Формы и ввод данных",
+  "sectionId": "html-css",
+  "subsectionId": "html-forms",
+  "currentPass": "complete",
+  "goalIds": [
+    "core",
+    "html-form-entry-list",
+    "html-native-validation",
+    "html-input-hints",
+    "html-native-submit-contract",
+    "html-fieldset-radio-group",
+    "html-select-options",
+    "html-file-input-contract",
+    "html-numeric-step-validity",
+    "html-contenteditable-contract",
+    "html-form-error-experience"
+  ],
+  "questionIds": [
+    "html-native-submit-contract",
+    "html-fieldset-radio-group",
+    "html-select-options",
+    "html-file-input-contract",
+    "html-numeric-step-validity",
+    "html-contenteditable-contract",
+    "html-form-error-experience",
+    "html-native-validation"
+  ],
+  "scopePass": {
+    "status": "complete",
+    "remaining": []
+  },
+  "answerPass": {
+    "status": "complete",
+    "remaining": []
+  },
+  "baseline": [
+    {
+      "id": "html-form-entry-list",
+      "title": "Какие поля попадают в данные формы и почему disabled отличается от readonly?",
+      "contentHash": "ee6b1266ebfca6c802e66778c33827c141fdf08b4ec13960c99448bf77be3915"
+    },
+    {
+      "id": "html-native-validation",
+      "title": "Что проверяет встроенная валидация формы и где нужны собственные проверки?",
+      "contentHash": "6eef49b8aae66dcc46bf45aad01e86ed06995d5f69700957f4517d210f287848"
+    },
+    {
+      "id": "html-input-hints",
+      "title": "Чем различаются type, inputmode и autocomplete у поля?",
+      "contentHash": "ed29f9b51650fd2814f1d2fa8ae065da097c9efc985e31eb7d23463df43929af"
+    }
+  ],
+  "notes": [
+    "HTML/CSS описывают документ, представление и нативные контракты; алгоритмы DOM, сеть, SEO и React не дублировать.",
+    "Код примеров не исполняется. Seed выполняет пользователь.",
+    "Сопоставлены исходные 48 вопросов. Новые навыки: Нативная отправка без JavaScript, кодирование тела и переопределения submitter. Общая тема выбора, индивидуальные подписи и отключение группы. Данные нативного выбора, исходное состояние и множественные значения. Выбор файлов, ограничения программной установки и серверная проверка. Числовой диапазон, сетка шага и строковые ограничения. Редактируемое содержимое, отсутствие value и контракта отправки формы. Текст сообщения, момент показа и доступная навигация к ошибкам.",
+    "Похожие кандидаты объединены с действующими ответами; список будет в журнале и отчёте.",
+    "Проверка content:build/content:check прошла на 845 вопросах. Проверены сохранность 48 прежних ID и Markdown-разделитель новых ответов. После итогового форматирования требуется повторная сборка для актуальных хешей."
+  ]
+}

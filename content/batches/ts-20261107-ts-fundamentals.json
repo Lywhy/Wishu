@@ -1,0 +1,64 @@
+{
+  "schemaVersion": 1,
+  "id": "ts-20261107-ts-fundamentals",
+  "title": "Расширение TypeScript: Основы TypeScript",
+  "sectionId": "typescript",
+  "subsectionId": "ts-fundamentals",
+  "currentPass": "complete",
+  "goalIds": [
+    "core",
+    "ts-language",
+    "ts-safety-limits",
+    "ts-config",
+    "ts-inference",
+    "ts-structural-typing",
+    "ts-contextual-inference",
+    "ts-type-value-spaces"
+  ],
+  "questionIds": [
+    "ts-contextual-inference",
+    "ts-type-value-spaces",
+    "ts-structural-typing",
+    "ts-config"
+  ],
+  "scopePass": {
+    "status": "complete",
+    "remaining": []
+  },
+  "answerPass": {
+    "status": "complete",
+    "remaining": []
+  },
+  "baseline": [
+    {
+      "id": "ts-language",
+      "title": "Как TypeScript проверяет JavaScript-код и что происходит с типами после преобразования?",
+      "contentHash": "29fd6d2c293248c1bd26ab9cd9feb9b453ea4d8c07ef502aae79bc8a7735e250"
+    },
+    {
+      "id": "ts-safety-limits",
+      "title": "Какие гарантии даёт TypeScript и какие ошибки остаются во время выполнения?",
+      "contentHash": "20b5621823ae9d323a663623177cc9c2ee75413ce4798b40d808dde181e2003e"
+    },
+    {
+      "id": "ts-config",
+      "title": "Что задаёт tsconfig.json и чем target отличается от lib?",
+      "contentHash": "99f075532edd315ad39f01ca610dc50e6869bf5df500d413e65ae1bcad02ed16"
+    },
+    {
+      "id": "ts-inference",
+      "title": "Как работает вывод типов и когда полезна явная аннотация?",
+      "contentHash": "85136c2d0d1348b05c76ac674df19dcfffe74b3e4bdf31dc25ce9377bc635f24"
+    },
+    {
+      "id": "ts-structural-typing",
+      "title": "Как структурная типизация определяет совместимость и чем отличается от номинальной?",
+      "contentHash": "1ccbed9d3ff16672fbbbc757fc2510075cbacde44742f3ab0f34476dd1447cad"
+    }
+  ],
+  "notes": [
+    "Граница: язык TypeScript и его toolchain. Runtime JavaScript и фреймворки не дублировать.",
+    "Готовые ответы сверены по документации; код примеров не запускался.",
+    "Контент собран и прошёл полную структурную проверку. TS: 161 вопрос, +62 новых и 17 расширенных. Примеры не исполнялись; seed не применялся."
+  ]
+}

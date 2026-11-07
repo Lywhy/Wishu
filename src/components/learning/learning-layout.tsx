@@ -1,3 +1,4 @@
+import { CatalogLoading } from "@/components/catalog/catalog-loading"
 import { useEffect, useState } from "react"
 import { Outlet } from "react-router-dom"
 import { questionApi } from "@/lib/question-api"
@@ -37,12 +38,7 @@ export function LearningLayout() {
         </Button>
       </div>
     )
-  if (!catalog)
-    return (
-      <output className="block py-16 text-center text-sm text-muted-foreground">
-        Загружаем модули обучения…
-      </output>
-    )
+  if (!catalog) return <CatalogLoading label="Загружаем модули обучения…" />
   return (
     <QuestionCatalogContext.Provider value={catalog}>
       <Outlet />

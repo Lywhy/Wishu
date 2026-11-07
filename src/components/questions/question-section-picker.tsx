@@ -25,7 +25,10 @@ export function QuestionSectionPicker({ sectionId }: { sectionId: string }) {
         if (typeof value === "string" && value !== sectionId) navigate(sectionPath(value))
       }}
     >
-      <SelectTrigger aria-label="Выбрать другой раздел" className="w-full bg-background sm:w-64">
+      <SelectTrigger
+        aria-label="Выбрать другой раздел"
+        className="w-full bg-background data-[size=default]:h-10 sm:w-64"
+      >
         <SelectValue />
       </SelectTrigger>
       <SelectContent align="start" alignItemWithTrigger={false}>

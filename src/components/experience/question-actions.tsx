@@ -1,3 +1,4 @@
+import { Disclosure } from "@/components/experience/disclosure"
 import {
   changeQuestionMark,
   getQuestionMarkUndo,
@@ -15,6 +16,7 @@ export function UndoQuestionMark() {
   const { questions } = useQuestionCatalog()
   const [undo, setUndo] = useState<QuestionMarkUndo | null>(getQuestionMarkUndo)
   const saving = usePracticeProgress((s) => s.pendingQuestionWrites > 0)
+  const saveError = usePracticeProgress((state) => state.questionSyncError)
   useEffect(() => subscribeQuestionMarkUndo(() => setUndo(getQuestionMarkUndo())), [])
   useEffect(() => {
     if (!undo) return
@@ -23,17 +25,33 @@ export function UndoQuestionMark() {
   }, [undo])
   if (!undo) return null
   return (
-    <div className="mt-3 flex items-center justify-between gap-3 rounded-lg border bg-card p-3 text-xs">
-      <span className="min-w-0 flex-1">
-        Последняя отметка:{" "}
-        {questions.find((question) => question.id === undo.id)?.title ?? "вопрос"}
-      </span>
+    <div className="fixed right-4 bottom-4 left-4 z-40 flex items-center justify-between gap-3 rounded-xl border bg-popover p-3 text-xs text-popover-foreground shadow-lg sm:right-auto sm:left-6 sm:w-96">
+      <div className="min-w-0 flex-1">
+        <output className="block font-medium">
+          {saving
+            ? "Сохраняем отметку…"
+            : saveError
+              ? "Отметка не сохранена"
+              : undo.next === "repeat"
+                ? "Добавлено в повторение"
+                : undo.next === "learned"
+                  ? "Отмечено изученным"
+                  : undo.next === "skipped"
+                    ? "Вопрос пропущен"
+                    : "Отметка снята"}
+        </output>
+        <p className="mt-1 truncate text-muted-foreground">
+          {questions.find((question) => question.id === undo.id)?.title ?? "Вопрос"}
+        </p>
+      </div>
       <Button
         size="sm"
         variant="outline"
-        disabled={saving}
+        disabled={saving || !!saveError}
         onClick={() => {
-          usePracticeProgress.getState().setQuestionStatus(undo.id, undo.previous, undo.wasDone)
+          usePracticeProgress
+            .getState()
+            .setQuestionStatus(undo.id, undo.previous, undo.wasDone, undo.reviewBefore)
           clearQuestionMarkUndo()
           setUndo(null)
         }}
@@ -94,12 +112,11 @@ export function QuestionShortcuts({
     return () => window.removeEventListener("keydown", key)
   }, [id, previous, next, onReveal, navigate])
   return (
-    <details className="mt-3 text-xs text-muted-foreground">
-      <summary className="cursor-pointer">Горячие клавиши</summary>
+    <Disclosure className="mt-3 text-xs text-muted-foreground" title={<> Горячие клавиши </>}>
       <p className="mt-2 leading-6">
         Пробел - показать ответ; ←/→ - вопросы; 1 - повторить, 2 - изучил, 3 - пропустить. При вводе
         текста команды не действуют.
       </p>
-    </details>
+    </Disclosure>
   )
 }

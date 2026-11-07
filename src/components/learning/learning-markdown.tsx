@@ -1,3 +1,4 @@
+import { useInterfaceSettings } from "@/stores/interface-settings"
 import { AnimatedText } from "@/components/catalog/catalog-primitives"
 import Markdown from "react-markdown"
 import remarkGfm from "remark-gfm"
@@ -12,13 +13,24 @@ export function LearningMarkdown({
   content,
   topic,
   anchorPrefix,
+  variant = "lecture",
 }: {
   content: string
   topic: string
   anchorPrefix?: string
+  variant?: "lecture" | "answer"
 }) {
+  const size = useInterfaceSettings((state) => state.readingSize)
+  const spacing = useInterfaceSettings((state) => state.readingSpacing)
   return (
-    <div className="space-y-5 text-sm leading-7 wrap-anywhere">
+    <div
+      style={{ fontSize: size, lineHeight: { normal: 1.8, relaxed: 2, wide: 2.2 }[spacing] }}
+      className={
+        variant === "answer"
+          ? "space-y-5 text-sm leading-7 wrap-anywhere [&>p:first-of-type]:rounded-xl [&>p:first-of-type]:bg-primary/5 [&>p:first-of-type]:p-4 [&>p:first-of-type]:text-foreground"
+          : "space-y-5 text-sm leading-7 wrap-anywhere"
+      }
+    >
       <Markdown
         remarkPlugins={[remarkGfm]}
         remarkRehypeOptions={{
@@ -41,7 +53,11 @@ export function LearningMarkdown({
           ),
           h2: (props) => (
             <h2
-              className="mt-8 scroll-mt-6 border-b pb-3 text-xl font-semibold first:mt-0"
+              className={
+                variant === "answer"
+                  ? "mt-7 scroll-mt-24 text-lg font-semibold first:mt-0"
+                  : "mt-8 scroll-mt-24 border-b pb-3 text-xl font-semibold first:mt-0"
+              }
               {...htmlProps(props)}
               id={
                 anchorPrefix && props.node?.position
@@ -54,7 +70,7 @@ export function LearningMarkdown({
           ),
           h3: (props) => (
             <h3
-              className="mt-6 scroll-mt-6 text-base font-semibold first:mt-0"
+              className="mt-6 scroll-mt-24 text-base font-semibold first:mt-0"
               {...htmlProps(props)}
               id={
                 anchorPrefix && props.node?.position
@@ -66,7 +82,7 @@ export function LearningMarkdown({
             </h3>
           ),
           p: (props) => (
-            <p className="leading-7" {...htmlProps(props)}>
+            <p className="leading-[inherit]" {...htmlProps(props)}>
               <AnimatedText>{props.children}</AnimatedText>
             </p>
           ),

@@ -1,0 +1,27 @@
+**Можно описать допустимые примитивы, массивы и строковые словари рекурсивным типом. Но такая модель не доказывает отсутствие циклов, допустимость каждого числа или нужную бизнес-схему.**
+
+<!-- wishu:answer-block -->
+
+#### Механизм и границы
+
+- Date, bigint и функции не являются просто тем же JSON-значением; обычно нужен транспортный DTO.
+- Тип number не отделяет NaN и Infinity от других чисел.
+- Проверяйте данные на границе и явно выбирайте сериализуемое представление. As JsonValue не исправляет объект.
+
+#### Пример
+
+```typescript
+type JsonValue = string | number | boolean | null | JsonValue[] | { [key: string]: JsonValue }
+const payload: JsonValue = { id: "u1", active: true }
+// Тип не доказывает ацикличность произвольного графа.
+```
+
+#### Для закрепления
+
+- [Как описывать рекурсивные типы и рекурсивные generic-структуры?](/questions/ts-recursive-types)
+- [Почему транспортный DTO стоит отделять от доменной модели?](/questions/ts-dto-domain-boundary)
+- [Как toJSON меняет результат JSON.stringify?](/questions/object-to-json)
+
+#### Источник
+
+[Документация TypeScript](https://www.typescriptlang.org/docs/handbook/2/objects.html).

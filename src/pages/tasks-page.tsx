@@ -1,3 +1,4 @@
+import { ShareCollection } from "@/components/experience/share-collection"
 import { Fragment } from "react"
 import { Link, useLocation } from "react-router-dom"
 import { Button } from "@/components/ui/button"
@@ -15,7 +16,7 @@ import {
   PaginationNext,
   PaginationEllipsis,
 } from "@/components/ui/pagination"
-import { CatalogControls, EmptyResults } from "@/components/practice/catalog-controls"
+import { CatalogControls, EmptyResults } from "@/components/catalog/catalog-controls"
 import { DifficultyBadge, ProgressAside } from "@/components/practice/practice-elements"
 import { QuestionBreadcrumbs } from "@/components/questions/question-breadcrumbs"
 import { practiceTasks } from "@/data/interview-content"
@@ -71,6 +72,7 @@ export function TasksPage() {
         items={[{ label: "Подготовка к собеседованию", to: "/learn" }, { label: "Задачи" }]}
       />
       <CatalogHeader
+        actions={<ShareCollection key={route.search} />}
         title="Задачи для собеседований"
         description="Выберите задачу, проверьте решение на тестах и разберите результат. Черновик сохранится автоматически."
         eyebrow="Практика и проверка"
@@ -96,7 +98,7 @@ export function TasksPage() {
       <div className="grid items-start gap-6 lg:grid-cols-[minmax(0,1fr)_280px]">
         <div className="min-w-0 space-y-5">
           {resume && !active && (
-            <Card className="gap-3 rounded-xl bg-primary/5 p-5 shadow-none ring-primary/15 sm:flex-row sm:items-center sm:justify-between">
+            <Card className="gap-3 rounded-xl border-primary/20 bg-primary/5 p-5 shadow-none sm:flex-row sm:items-center sm:justify-between">
               <div>
                 <p className="text-xs font-medium text-primary">
                   {resume.id === lastId || Object.hasOwn(drafts, resume.id)
@@ -225,7 +227,7 @@ export function TasksPage() {
             </Pagination>
           )}
         </div>
-        <aside className="space-y-4 lg:sticky lg:top-6">
+        <aside className="space-y-4 lg:sticky lg:top-24">
           <ProgressAside
             title="Ваш прогресс"
             done={practiceTasks.filter((task) => reviewed.includes(task.id)).length}

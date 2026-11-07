@@ -1,0 +1,81 @@
+{
+  "schemaVersion": 1,
+  "id": "ts-20261107-ts-functions",
+  "title": "Расширение TypeScript: Типизация функций",
+  "sectionId": "typescript",
+  "subsectionId": "ts-functions",
+  "currentPass": "complete",
+  "goalIds": [
+    "core",
+    "ts-function-signatures",
+    "ts-function-parameters",
+    "ts-async-functions",
+    "ts-function-overloads",
+    "ts-function-variance",
+    "ts-this-parameter",
+    "ts-generator-contract",
+    "ts-polymorphic-callback-contract",
+    "ts-destructured-parameter-annotation",
+    "ts-generic-arrow-tsx",
+    "ts-strict-bind-call-apply"
+  ],
+  "questionIds": [
+    "ts-polymorphic-callback-contract",
+    "ts-destructured-parameter-annotation",
+    "ts-generic-arrow-tsx",
+    "ts-strict-bind-call-apply",
+    "ts-function-parameters",
+    "ts-function-variance",
+    "ts-async-functions"
+  ],
+  "scopePass": {
+    "status": "complete",
+    "remaining": []
+  },
+  "answerPass": {
+    "status": "complete",
+    "remaining": []
+  },
+  "baseline": [
+    {
+      "id": "ts-function-signatures",
+      "title": "Как описать тип функции через сигнатуру, type или interface?",
+      "contentHash": "89a2059f0fc59f6cc8642f23102636386dbe4d62b63524e5715c283433ab5d3f"
+    },
+    {
+      "id": "ts-function-parameters",
+      "title": "Как типизировать optional, default и rest-параметры?",
+      "contentHash": "e447a86ede730c803e30024b006467f38f0d32b96bd479a338dde6a409ab8668"
+    },
+    {
+      "id": "ts-async-functions",
+      "title": "Как типизировать async-функцию и результат её ожидания?",
+      "contentHash": "caaa9b122b53a27795f20295923405efd34954dbb38485ac45bfc952008f49c8"
+    },
+    {
+      "id": "ts-function-overloads",
+      "title": "Как объявлять перегрузки функции и какую роль играет реализация?",
+      "contentHash": "e7017fb605cfc99a2bebff4297231a112b7dc626f4fcec7c15df299babce2b4d"
+    },
+    {
+      "id": "ts-function-variance",
+      "title": "Почему callback с более узким параметром может быть небезопасен?",
+      "contentHash": "fced963f2e398b47b8df3671b56c5b030278d6a4726125324287aef5f3e4262f"
+    },
+    {
+      "id": "ts-this-parameter",
+      "title": "Как явно описать this функции и контекст методов объектного литерала?",
+      "contentHash": "7b1c9e4f31be77a821bc2bf9a9fbd64530b876e3fa94d22e03bc13c25e0ab566"
+    },
+    {
+      "id": "ts-generator-contract",
+      "title": "Что означают три параметра Generator<Yield, Return, Next>?",
+      "contentHash": "9b787a90d6dc3d233b7e9749a6073d9e78aa8e0bc26428511ae900034a83ff33"
+    }
+  ],
+  "notes": [
+    "Граница: язык TypeScript и его toolchain. Runtime JavaScript и фреймворки не дублировать.",
+    "Готовые ответы сверены по документации; код примеров не запускался.",
+    "Контент собран и прошёл полную структурную проверку. TS: 161 вопрос, +62 новых и 17 расширенных. Примеры не исполнялись; seed не применялся."
+  ]
+}

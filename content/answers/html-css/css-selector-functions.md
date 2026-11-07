@@ -9,3 +9,22 @@
 <!-- wishu:answer-block -->
 
 [Документация](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_cascade/Specificity).
+
+<!-- wishu:answer-block -->
+
+#### Применение has без дублирования состояния в классе
+
+`:has()` позволяет выбрать элемент по отношению к подходящему содержимому. Например, label с отмеченным input может получить рамку, не требуя отдельного класса `selected` в JavaScript. Это стилизует уже существующее состояние, а не реализует выбор и не создаёт доступную семантику. Аргумент `> input:checked` ограничивает проверку прямым ребёнком; без `>` совпадение может прийти из более глубокого поддерева. Для целевых старых браузеров сохраняйте рабочий базовый вид.
+
+```css
+.option {
+  border: 2px solid transparent;
+}
+.option:has(> input:checked) {
+  border-color: navy;
+}
+```
+
+- [Чем :checked и :disabled отличаются от \[checked\] и \[disabled\]?](/questions/css-control-state-selector)
+
+[MDN: :has](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Selectors/:has).

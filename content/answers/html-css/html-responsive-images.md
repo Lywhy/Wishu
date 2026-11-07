@@ -7,12 +7,28 @@
 <!-- wishu:answer-block -->
 
 ### Разное разрешение и разная композиция
+
 Srcset с w-дескрипторами и sizes помогает выбрать ресурс под реальный слот; sizes не заменяет CSS-ширину изображения. Picture позволяет дополнительно выбрать другой кадр по media или поддерживаемому формату. Внутренний img остаётся обязательным fallback и носителем alt.
 
 ```html
 <picture>
-  <source media="(max-width: 40rem)" srcset="/portrait-crop.jpg">
-  <img src="/wide.jpg" width="1200" height="800" alt="Команда обсуждает проект">
+  <source media="(max-width: 40rem)" srcset="/portrait-crop.jpg" />
+  <img src="/wide.jpg" width="1200" height="800" alt="Команда обсуждает проект" />
 </picture>
 ```
+
 Для art direction учитывайте различающееся соотношение сторон и резервирование места. Не загружайте LCP-изображение лениво без анализа.
+
+<!-- wishu:answer-block -->
+
+#### Плотность и ширина - разные схемы srcset
+
+Дескрипторы 1x/2x описывают плотность для заданного отображаемого размера, а 640w/1280w - реальные ширины файлов. Схему w используют вместе с корректным sizes, который описывает ожидаемую ширину слота, а не физическую ширину экрана. Эти схемы не смешивают в одном списке. Выбор кандидата остаётся решением браузера с учётом среды; нельзя обещать один файл только по DPR.
+
+```html
+<img src="avatar.png" srcset="avatar.png 1x, avatar-2x.png 2x" width="48" height="48" alt="Анна" />
+```
+
+- [Как aspect-ratio и object-fit решают разные задачи изображения?](/questions/css-image-fitting)
+
+[MDN: img](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/img#srcset).

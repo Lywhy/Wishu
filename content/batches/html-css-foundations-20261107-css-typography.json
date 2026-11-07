@@ -1,0 +1,79 @@
+{
+  "schemaVersion": 1,
+  "id": "html-css-foundations-20261107-css-typography",
+  "title": "Базовый и средний HTML/CSS: Текст и типографика",
+  "sectionId": "html-css",
+  "subsectionId": "css-typography",
+  "currentPass": "complete",
+  "goalIds": [
+    "core",
+    "css-line-height-inheritance",
+    "css-white-space-contract",
+    "css-baseline-inline-image",
+    "css-font-fallback-glyphs",
+    "css-variable-font-contract",
+    "css-text-decoration-contract",
+    "css-text-align-box",
+    "css-text-transform-data",
+    "css-readable-measure-ch",
+    "css-multiline-clamp",
+    "css-tabular-numerals",
+    "css-list-marker-layout"
+  ],
+  "questionIds": [
+    "css-text-align-box",
+    "css-text-transform-data",
+    "css-readable-measure-ch",
+    "css-multiline-clamp",
+    "css-tabular-numerals",
+    "css-list-marker-layout",
+    "css-white-space-contract"
+  ],
+  "scopePass": {
+    "status": "complete",
+    "remaining": []
+  },
+  "answerPass": {
+    "status": "complete",
+    "remaining": []
+  },
+  "baseline": [
+    {
+      "id": "css-line-height-inheritance",
+      "title": "Почему line-height: 1.5 часто лучше наследуется, чем 150% или 24px?",
+      "contentHash": "1cf7039cb7028b5d570e4763438d5fdb728e8158c052885f91a1b850f1e64caa"
+    },
+    {
+      "id": "css-white-space-contract",
+      "title": "Чем normal, nowrap, pre и pre-wrap отличаются в white-space?",
+      "contentHash": "a2ebb34751d8545cb6a131f1e6017bd74e1ab8682213db4073bd35d4c9073842"
+    },
+    {
+      "id": "css-baseline-inline-image",
+      "title": "Откуда берётся зазор под img и почему vertical-align не центрирует любой блок?",
+      "contentHash": "83a9acef5f6172bfa9f05edcbf9bf95c54b0a234b4b8328172973712d5bbe145"
+    },
+    {
+      "id": "css-font-fallback-glyphs",
+      "title": "Как браузер выбирает шрифт из font-family и почему строка может использовать несколько шрифтов?",
+      "contentHash": "cb3d3eba0cf6e5dd67363ea72a158b73c106d8c83fe7e69d72ce9f66a0da369f"
+    },
+    {
+      "id": "css-variable-font-contract",
+      "title": "Как variable font связан с font-weight и когда нужен font-variation-settings?",
+      "contentHash": "8d494552ab47c7d752b3da2cf64ffab5ae5dd1b3cd2242189066fd125e9e7871"
+    },
+    {
+      "id": "css-text-decoration-contract",
+      "title": "Почему text-decoration: none у потомка не всегда убирает подчёркивание предка?",
+      "contentHash": "5ecd403604f30bb5e05168fcbd5e749eb3494a3738c61e5fcc7ed251858eef3c"
+    }
+  ],
+  "notes": [
+    "Пакет 2026-11-07: только базовый и средний уровни. Определения и самостоятельные практические навыки; современные API не являются целью пакета.",
+    "Сохранять прежние ID. Не дублировать общие определения из связанных карточек. Примеры не исполнять.",
+    "Новые самостоятельные цели: Inline-содержимое строк и положение собственной коробки. Отображение регистра отдельно от хранения и бизнес-правил. Удобная ширина текстового столбца и метрика символа ноль. Многострочное сокращение и отличия от однострочного text-overflow. Табличные цифры OpenType и отличие от резервирования места. Положение маркера, перенос текста и ограниченная стилизация.",
+    "Сопоставлены базовые определения и прикладные вопросы. Пересечения сохранены в existing.mjs до записи в журнал.",
+    "Content:build и полная content:check прошли на 905 вопросах. Сохранены все 845 исходных ID; кроме 6 согласованных расширений прежние хеши совпадают. Проверены два блока каждого нового ответа и значимый пробел в примере :empty. Код примеров не исполнялся."
+  ]
+}

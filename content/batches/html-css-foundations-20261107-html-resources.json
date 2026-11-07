@@ -1,0 +1,74 @@
+{
+  "schemaVersion": 1,
+  "id": "html-css-foundations-20261107-html-resources",
+  "title": "Базовый и средний HTML/CSS: Ресурсы и встраивание",
+  "sectionId": "html-css",
+  "subsectionId": "html-resources",
+  "currentPass": "complete",
+  "goalIds": [
+    "core",
+    "html-iframe-boundary",
+    "html-resource-hints",
+    "html-link-target-rel",
+    "html-media-tracks-autoplay",
+    "html-template-inert-content",
+    "html-stylesheet-render-blocking",
+    "html-subresource-integrity",
+    "html-svg-embedding",
+    "html-svg-viewbox",
+    "html-download-hint"
+  ],
+  "questionIds": ["html-svg-embedding", "html-svg-viewbox", "html-download-hint"],
+  "scopePass": {
+    "status": "complete",
+    "remaining": []
+  },
+  "answerPass": {
+    "status": "complete",
+    "remaining": []
+  },
+  "baseline": [
+    {
+      "id": "html-iframe-boundary",
+      "title": "Как определить границу доверия для iframe?",
+      "contentHash": "e13043c1b972dc9a1109e2627511ee3942d2a87d5dd8e5beab9be81611ad1fbc"
+    },
+    {
+      "id": "html-resource-hints",
+      "title": "Когда использовать preload, prefetch и preconnect?",
+      "contentHash": "3c80a5c53e8a4c0af7b115e68f88a7d1c8eb20b60c2259e71f241644b524d3b3"
+    },
+    {
+      "id": "html-link-target-rel",
+      "title": "Чем noopener отличается от noreferrer у внешней ссылки?",
+      "contentHash": "dcf6c630eb3dd6e1526fcf7f34259c052a93c550b8d8c601f3894c1205af898b"
+    },
+    {
+      "id": "html-media-tracks-autoplay",
+      "title": "Как встроить видео с субтитрами и почему autoplay может не сработать?",
+      "contentHash": "15a7fbb984237ecdde0b6aed5736a1dd6afcc5064842ff3f9e3807a289e4144f"
+    },
+    {
+      "id": "html-template-inert-content",
+      "title": "Зачем нужен template и чем он отличается от скрытого div?",
+      "contentHash": "4385d07e0299492864523542ad9b49e2d2b5d713536ec5202878701d977ce550"
+    },
+    {
+      "id": "html-stylesheet-render-blocking",
+      "title": "Может ли CSS задержать выполнение script и событие DOMContentLoaded?",
+      "contentHash": "146fc6504463896d91f3ff9696a6ccd07989e5b15660b5f37d94b3aafd4cb018"
+    },
+    {
+      "id": "html-subresource-integrity",
+      "title": "Что проверяет integrity у внешнего ресурса и зачем рядом crossorigin?",
+      "contentHash": "25f90ccfda49166f4c9b15f1ff4c5cc3c8bdaf51798b9bbb1603d521ad73bd3e"
+    }
+  ],
+  "notes": [
+    "Пакет 2026-11-07: только базовый и средний уровни. Определения и самостоятельные практические навыки; современные API не являются целью пакета.",
+    "Сохранять прежние ID. Не дублировать общие определения из связанных карточек. Примеры не исполнять.",
+    "Новые самостоятельные цели: Доступ к внутренним элементам, стили и текстовая альтернатива. Внутренняя система координат и размер области отображения. Подсказка браузеру, origin и влияние ответа сервера.",
+    "Сопоставлены базовые определения и прикладные вопросы. Пересечения сохранены в existing.mjs до записи в журнал.",
+    "Content:build и полная content:check прошли на 905 вопросах. Сохранены все 845 исходных ID; кроме 6 согласованных расширений прежние хеши совпадают. Проверены два блока каждого нового ответа и значимый пробел в примере :empty. Код примеров не исполнялся."
+  ]
+}

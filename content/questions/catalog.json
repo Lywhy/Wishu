@@ -920,6 +920,55 @@
       "title": "Хранилища и координация вкладок",
       "description": "Транзакции IndexedDB, квоты, устойчивость данных и обмен сообщениями.",
       "order": 19
+    },
+    {
+      "id": "ts-configuration",
+      "sectionId": "typescript",
+      "title": "Конфигурация и диагностика",
+      "description": "Граф проекта, наследование настроек, emit, карты и диагностика checker.",
+      "order": 14
+    },
+    {
+      "id": "ts-declarations",
+      "sectionId": "typescript",
+      "title": "Декларации и библиотеки",
+      "description": "Практика написания деклараций и проверки публичных контрактов. Основы .d.ts и публикации связаны с вопросами раздела модулей.",
+      "order": 15
+    },
+    {
+      "id": "html-document",
+      "title": "HTML-документ и текст",
+      "description": "Кодировка, атрибуты, язык и смысловая разметка содержимого.",
+      "sectionId": "html-css",
+      "order": 7
+    },
+    {
+      "id": "css-selectors",
+      "title": "Селекторы и область действия",
+      "description": "Комбинаторы, структурные состояния, псевдоэлементы и границы правил.",
+      "sectionId": "html-css",
+      "order": 8
+    },
+    {
+      "id": "css-typography",
+      "title": "Текст и типографика",
+      "description": "Строки, пробелы, шрифты и управление отображением текста.",
+      "sectionId": "html-css",
+      "order": 9
+    },
+    {
+      "id": "redux",
+      "sectionId": "react",
+      "title": "Redux и Redux Toolkit",
+      "description": "Поток действий, reducers, selectors, асинхронность и RTK Query.",
+      "order": 10
+    },
+    {
+      "id": "zustand",
+      "sectionId": "react",
+      "title": "Zustand",
+      "description": "Создание store, подписки, обновления, persist и жизненный цикл.",
+      "order": 11
     }
   ]
 }

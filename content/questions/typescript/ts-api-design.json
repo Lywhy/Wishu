@@ -19,7 +19,9 @@
         "ts-exclusive-options",
         "ts-typestate-api",
         "ts-dto-domain-boundary",
-        "ts-function-wrapper-contract"
+        "ts-function-wrapper-contract",
+        "ts-correlated-property-write",
+        "ts-json-data-contract"
       ]
     },
     {
@@ -93,6 +95,24 @@
       "reviewed": false,
       "priority": "core",
       "relatedSkillIds": []
+    },
+    {
+      "id": "ts-correlated-property-write",
+      "title": "Как сохранить связь ключа и значения при обновлении свойства?",
+      "description": "Объяснить и применить правило с учётом его границ: Зависимые параметры должны быть связаны одним типовым отношением.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": ["ts-keyof-indexed-access", "ts-record-to-correlated-union"]
+    },
+    {
+      "id": "ts-json-data-contract",
+      "title": "Как описать JSON-данные типом и какие ограничения такой тип не проверит?",
+      "description": "Объяснить и применить правило с учётом его границ: Статическая JSON-форма полезна, но не является полной гарантией сериализации.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": ["ts-recursive-types", "ts-dto-domain-boundary", "object-to-json"]
     }
   ],
   "questions": [
@@ -287,6 +307,58 @@
         "sourceRefs": ["ref-db1c5af3b94742b6"]
       },
       "answerFile": "answers/typescript/ts-function-wrapper-contract.md"
+    },
+    {
+      "id": "ts-correlated-property-write",
+      "title": "Как сохранить связь ключа и значения при обновлении свойства?",
+      "topic": "TypeScript",
+      "difficulty": "Средний",
+      "summary": "Generic-ключ K и indexed access T[K].",
+      "answerFile": "answers/typescript/ts-correlated-property-write.md",
+      "takeaway": "Зависимые параметры должны быть связаны одним типовым отношением.",
+      "pitfall": "Считать общий union значений проверкой конкретного выбранного поля.",
+      "moduleId": "typescript",
+      "order": 8,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Зависимые параметры должны быть связаны одним типовым отношением.",
+        "keywords": [
+          "TypeScript",
+          "Проектирование типобезопасных API",
+          "Generic",
+          "indexed",
+          "access"
+        ],
+        "kind": "explanation",
+        "reviewStatus": "ready",
+        "priority": "core",
+        "goalIds": ["core", "ts-correlated-property-write"],
+        "relatedQuestionIds": ["ts-keyof-indexed-access", "ts-record-to-correlated-union"],
+        "sourceRefs": ["ref-b8c0426b8b77a2f0"]
+      }
+    },
+    {
+      "id": "ts-json-data-contract",
+      "title": "Как описать JSON-данные типом и какие ограничения такой тип не проверит?",
+      "topic": "TypeScript",
+      "difficulty": "Средний",
+      "summary": "Рекурсивная форма JSON и runtime-ограничения сериализации.",
+      "answerFile": "answers/typescript/ts-json-data-contract.md",
+      "takeaway": "Статическая JSON-форма полезна, но не является полной гарантией сериализации.",
+      "pitfall": "Считать рекурсивный тип полноценным runtime-валидатором и детектором циклов.",
+      "moduleId": "typescript",
+      "order": 9,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Статическая JSON-форма полезна, но не является полной гарантией сериализации.",
+        "keywords": ["TypeScript", "Проектирование типобезопасных API", "JSON", "runtime"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "priority": "core",
+        "goalIds": ["core", "ts-json-data-contract"],
+        "relatedQuestionIds": ["ts-recursive-types", "ts-dto-domain-boundary", "object-to-json"],
+        "sourceRefs": ["ref-e93a21d416404bfe"]
+      }
     }
   ]
 }

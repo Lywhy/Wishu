@@ -20,7 +20,9 @@
         "ts-satisfies",
         "ts-unchecked-index-access",
         "ts-class-field-emit",
-        "ts-dom-boundaries"
+        "ts-dom-boundaries",
+        "ts-type-contract-tests",
+        "ts-read-nested-diagnostics"
       ]
     },
     {
@@ -103,6 +105,24 @@
       "reviewed": false,
       "priority": "core",
       "relatedSkillIds": []
+    },
+    {
+      "id": "ts-type-contract-tests",
+      "title": "Как проверять типовой контракт отдельно от runtime-тестов?",
+      "description": "Объяснить и применить правило с учётом его границ: Поведение программы и поведение её типового API требуют разных свидетельств.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": ["ts-diagnostic-directives", "ts-library-declaration-publishing"]
+    },
+    {
+      "id": "ts-read-nested-diagnostics",
+      "title": "Как разбирать длинное сообщение о несовместимости типов?",
+      "description": "Объяснить и применить правило с учётом его границ: Исправлять нужно первую реальную причину, а не маскировать внешний уровень диагностики.",
+      "requiredDifficulties": ["Базовый"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": ["ts-type-assertions", "ts-dto-domain-boundary"]
     }
   ],
   "questions": [
@@ -192,9 +212,9 @@
         "kind": "explanation",
         "reviewStatus": "imported",
         "goalIds": ["core", "ts-global-augmentation"],
-        "relatedQuestionIds": [],
+        "relatedQuestionIds": ["ts-module-detection-scope"],
         "priority": "core",
-        "sourceRefs": []
+        "sourceRefs": ["ref-4d18f3bf7d37dcc4"]
       },
       "answerFile": "answers/typescript/ts-global-augmentation.md"
     },
@@ -241,7 +261,7 @@
         "goalIds": ["core", "ts-satisfies"],
         "relatedQuestionIds": [],
         "priority": "core",
-        "sourceRefs": ["ref-0787a3c8c4833124"]
+        "sourceRefs": ["ref-0787a3c8c4833124", "ref-e93a21d416404bfe"]
       },
       "answerFile": "answers/typescript/ts-satisfies.md"
     },
@@ -316,6 +336,52 @@
         "sourceRefs": ["ref-79aee076d7c2cb3d"]
       },
       "answerFile": "answers/typescript/ts-dom-boundaries.md"
+    },
+    {
+      "id": "ts-type-contract-tests",
+      "title": "Как проверять типовой контракт отдельно от runtime-тестов?",
+      "topic": "TypeScript",
+      "difficulty": "Средний",
+      "summary": "Положительные примеры, ожидаемые ошибки и совместимость публичного API.",
+      "answerFile": "answers/typescript/ts-type-contract-tests.md",
+      "takeaway": "Поведение программы и поведение её типового API требуют разных свидетельств.",
+      "pitfall": "Считать успешный runtime-тест доказательством правильного generic-вывода.",
+      "moduleId": "typescript",
+      "order": 9,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Поведение программы и поведение её типового API требуют разных свидетельств.",
+        "keywords": ["TypeScript", "Практики, ограничения и антипаттерны", "API"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "priority": "core",
+        "goalIds": ["core", "ts-type-contract-tests"],
+        "relatedQuestionIds": ["ts-diagnostic-directives", "ts-library-declaration-publishing"],
+        "sourceRefs": ["ref-2867a7ff346ce328"]
+      }
+    },
+    {
+      "id": "ts-read-nested-diagnostics",
+      "title": "Как разбирать длинное сообщение о несовместимости типов?",
+      "topic": "TypeScript",
+      "difficulty": "Базовый",
+      "summary": "Направление присваивания и минимальная причина несовпадения.",
+      "answerFile": "answers/typescript/ts-read-nested-diagnostics.md",
+      "takeaway": "Исправлять нужно первую реальную причину, а не маскировать внешний уровень диагностики.",
+      "pitfall": "Принимать длину сообщения за доказательство необходимости сложного приведения.",
+      "moduleId": "typescript",
+      "order": 10,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Исправлять нужно первую реальную причину, а не маскировать внешний уровень диагностики.",
+        "keywords": ["TypeScript", "Практики, ограничения и антипаттерны"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "priority": "core",
+        "goalIds": ["core", "ts-read-nested-diagnostics"],
+        "relatedQuestionIds": ["ts-type-assertions", "ts-dto-domain-boundary"],
+        "sourceRefs": ["ref-1ec6ef05cd7c0c00"]
+      }
     }
   ]
 }

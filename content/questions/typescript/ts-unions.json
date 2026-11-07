@@ -11,7 +11,7 @@
       "requiredDifficulties": [],
       "reviewed": false,
       "priority": "core",
-      "relatedSkillIds": ["ts-union-types", "ts-intersection-types"]
+      "relatedSkillIds": ["ts-union-types", "ts-intersection-types", "ts-union-of-functions"]
     },
     {
       "id": "ts-union-types",
@@ -30,6 +30,15 @@
       "reviewed": false,
       "priority": "core",
       "relatedSkillIds": []
+    },
+    {
+      "id": "ts-union-of-functions",
+      "title": "Почему union функций не равен функции с union-параметром?",
+      "description": "Объяснить и применить правило с учётом его границ: Union вызываемых значений означает неопределённость реализации, а не расширение её возможностей.",
+      "requiredDifficulties": ["Продвинутый"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": ["ts-function-variance", "ts-event-map-correlation"]
     }
   ],
   "questions": [
@@ -78,6 +87,29 @@
         "sourceRefs": []
       },
       "answerFile": "answers/typescript/ts-intersection-types.md"
+    },
+    {
+      "id": "ts-union-of-functions",
+      "title": "Почему union функций не равен функции с union-параметром?",
+      "topic": "TypeScript",
+      "difficulty": "Продвинутый",
+      "summary": "Неизвестная вызываемая реализация и требования к аргументу.",
+      "answerFile": "answers/typescript/ts-union-of-functions.md",
+      "takeaway": "Union вызываемых значений означает неопределённость реализации, а не расширение её возможностей.",
+      "pitfall": "Лечить невозможный вызов через as never.",
+      "moduleId": "typescript",
+      "order": 2,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Union вызываемых значений означает неопределённость реализации, а не расширение её возможностей.",
+        "keywords": ["TypeScript", "Union и Intersection Types"],
+        "kind": "explanation",
+        "reviewStatus": "ready",
+        "priority": "core",
+        "goalIds": ["core", "ts-union-of-functions"],
+        "relatedQuestionIds": ["ts-function-variance", "ts-event-map-correlation"],
+        "sourceRefs": ["ref-db1c5af3b94742b6"]
+      }
     }
   ]
 }

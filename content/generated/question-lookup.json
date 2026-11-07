@@ -146,6 +146,14 @@
         {
           "id": "ts-api-design",
           "title": "Проектирование типобезопасных API"
+        },
+        {
+          "id": "ts-configuration",
+          "title": "Конфигурация и диагностика"
+        },
+        {
+          "id": "ts-declarations",
+          "title": "Декларации и библиотеки"
         }
       ]
     },
@@ -192,6 +200,14 @@
         {
           "id": "testing",
           "title": "Ошибки и тестирование"
+        },
+        {
+          "id": "redux",
+          "title": "Redux и Redux Toolkit"
+        },
+        {
+          "id": "zustand",
+          "title": "Zustand"
         }
       ]
     },
@@ -226,6 +242,18 @@
         {
           "id": "css-visual",
           "title": "Визуальные состояния и анимации"
+        },
+        {
+          "id": "html-document",
+          "title": "HTML-документ и текст"
+        },
+        {
+          "id": "css-selectors",
+          "title": "Селекторы и область действия"
+        },
+        {
+          "id": "css-typography",
+          "title": "Текст и типографика"
         }
       ]
     },
@@ -5869,7 +5897,7 @@
       ],
       "difficulty": "Базовый",
       "priority": "core",
-      "contentHash": "99f075532edd315ad39f01ca610dc50e6869bf5df500d413e65ae1bcad02ed16",
+      "contentHash": "7f87a1aa1c55c3255bddb258975465b95c45c3a0f475d0a66d22f21216917aea",
       "answerFile": "answers/typescript/ts-config.md"
     },
     {
@@ -5899,8 +5927,38 @@
       ],
       "difficulty": "Базовый",
       "priority": "core",
-      "contentHash": "1ccbed9d3ff16672fbbbc757fc2510075cbacde44742f3ab0f34476dd1447cad",
+      "contentHash": "749541ceead4ad41307799d09dc08d599899bd6753395a9749ff36258b67af45",
       "answerFile": "answers/typescript/ts-structural-typing.md"
+    },
+    {
+      "id": "ts-contextual-inference",
+      "title": "Как контекст вызова влияет на вывод типов callback?",
+      "learningGoal": "Вывод типов использует доступный контекст, а не только правую часть выражения.",
+      "sectionId": "typescript",
+      "subsectionId": "ts-fundamentals",
+      "keywords": [
+        "TypeScript",
+        "Основы TypeScript"
+      ],
+      "difficulty": "Средний",
+      "priority": "core",
+      "contentHash": "e6c02d1e9950870e2252da048cfec500d95686c611240f3b8daea0e5bd4f5e40",
+      "answerFile": "answers/typescript/ts-contextual-inference.md"
+    },
+    {
+      "id": "ts-type-value-spaces",
+      "title": "Почему одно имя может обозначать и значение, и тип?",
+      "learningGoal": "При чтении имени сначала определите, требуется тип или runtime-значение.",
+      "sectionId": "typescript",
+      "subsectionId": "ts-fundamentals",
+      "keywords": [
+        "TypeScript",
+        "Основы TypeScript"
+      ],
+      "difficulty": "Базовый",
+      "priority": "core",
+      "contentHash": "ba1ee5f082de9d4bbbdf989bbfb386f4df742f78525fb9719ed9287155cc57c1",
+      "answerFile": "answers/typescript/ts-type-value-spaces.md"
     },
     {
       "id": "ts-primitive-types",
@@ -5944,7 +6002,7 @@
       ],
       "difficulty": "Базовый",
       "priority": "core",
-      "contentHash": "0b7a3337561678241d40fa27adc301e7ec6eb99cf29ea56575d89d5fb2183912",
+      "contentHash": "d78eec9a97211ad48cc6789355f85fe643fea59779290741d7187bb28626a327",
       "answerFile": "answers/typescript/ts-literal-types.md"
     },
     {
@@ -6023,6 +6081,51 @@
       "answerFile": "answers/typescript/ts-empty-object-types.md"
     },
     {
+      "id": "ts-special-type-algebra",
+      "title": "Как any, unknown и never ведут себя в union и intersection?",
+      "learningGoal": "Специальные типы меняют результат преобразований и уровень доступных гарантий.",
+      "sectionId": "typescript",
+      "subsectionId": "types",
+      "keywords": [
+        "TypeScript",
+        "Базовые и специальные типы"
+      ],
+      "difficulty": "Средний",
+      "priority": "core",
+      "contentHash": "1f8f9851d05972b2f7b9e1dd8fbab9b67f9ec1da582e9ae6800f98c91e592555",
+      "answerFile": "answers/typescript/ts-special-type-algebra.md"
+    },
+    {
+      "id": "ts-unique-symbol-identity",
+      "title": "Как unique symbol создаёт различимые ключи и бренды?",
+      "learningGoal": "Идентичность символа и его текстовое описание - разные вещи.",
+      "sectionId": "typescript",
+      "subsectionId": "types",
+      "keywords": [
+        "TypeScript",
+        "Базовые и специальные типы"
+      ],
+      "difficulty": "Средний",
+      "priority": "core",
+      "contentHash": "8a85d8450cf8eea3656384d9fc08eeb4c90d95ee8f0693bf398c4ade48319907",
+      "answerFile": "answers/typescript/ts-unique-symbol-identity.md"
+    },
+    {
+      "id": "ts-property-key-domains",
+      "title": "Когда использовать PropertyKey и почему ключ объекта не всегда string?",
+      "learningGoal": "Контракт конкретного набора ключей важнее универсального слова «ключ».",
+      "sectionId": "typescript",
+      "subsectionId": "types",
+      "keywords": [
+        "TypeScript",
+        "Базовые и специальные типы"
+      ],
+      "difficulty": "Средний",
+      "priority": "core",
+      "contentHash": "62898decb83f9171b910cd7f030080fe35d23daa17a9c6535a3e7185aa1dbdf0",
+      "answerFile": "answers/typescript/ts-property-key-domains.md"
+    },
+    {
       "id": "ts-type-interface",
       "title": "Чем type отличается от interface и как ими описывать объекты?",
       "learningGoal": "Type описывает произвольное выражение типа, interface - расширяемый объектный контракт.",
@@ -6064,7 +6167,7 @@
       ],
       "difficulty": "Базовый",
       "priority": "core",
-      "contentHash": "c29a10bdb72058b174d84cf8009d379793696f83cbf6f440435777d4c4764cb1",
+      "contentHash": "b03be07f5a9ed3442b4c3ee0d43e0069996315c15bf544d3715ef3f253c33f95",
       "answerFile": "answers/typescript/ts-index-signature.md"
     },
     {
@@ -6126,6 +6229,58 @@
       "priority": "core",
       "contentHash": "ed361561af8dfc357618a9a21e798c6c35ec77853be8dc8b1cc6e8917f5e37a6",
       "answerFile": "answers/typescript/ts-runtime-object-keys.md"
+    },
+    {
+      "id": "ts-weak-object-types",
+      "title": "Почему объект может не подходить типу, у которого все свойства optional?",
+      "learningGoal": "Optional-поля не превращают предметный объектный контракт в произвольный словарь.",
+      "sectionId": "typescript",
+      "subsectionId": "ts-objects",
+      "keywords": [
+        "TypeScript",
+        "Объектные типы и интерфейсы",
+        "Weak",
+        "type",
+        "detection"
+      ],
+      "difficulty": "Средний",
+      "priority": "core",
+      "contentHash": "2775b76b37b05de0af5d36a1726ab0397f343bfee4f0032d963609df93191a94",
+      "answerFile": "answers/typescript/ts-weak-object-types.md"
+    },
+    {
+      "id": "ts-spread-result-types",
+      "title": "Как порядок spread влияет на выведенный тип результирующего объекта?",
+      "learningGoal": "Создание объекта с перезаписью и одновременное требование двух контрактов - разные операции.",
+      "sectionId": "typescript",
+      "subsectionId": "ts-objects",
+      "keywords": [
+        "TypeScript",
+        "Объектные типы и интерфейсы",
+        "intersection"
+      ],
+      "difficulty": "Средний",
+      "priority": "core",
+      "contentHash": "9c4e702b7876258aaab357e812c21dd95c7120ddec1db95273aedc6a53c672db",
+      "answerFile": "answers/typescript/ts-spread-result-types.md"
+    },
+    {
+      "id": "ts-template-index-signatures",
+      "title": "Как разрешить динамические свойства только с заданным префиксом?",
+      "learningGoal": "Динамические ключи можно ограничить предметным форматом вместо общего string.",
+      "sectionId": "typescript",
+      "subsectionId": "ts-objects",
+      "keywords": [
+        "TypeScript",
+        "Объектные типы и интерфейсы",
+        "index",
+        "signature",
+        "data"
+      ],
+      "difficulty": "Средний",
+      "priority": "core",
+      "contentHash": "c43d601f3db67cbd50fd973443e640eb6828c698ba7fc394226c07716a569b0b",
+      "answerFile": "answers/typescript/ts-template-index-signatures.md"
     },
     {
       "id": "ts-array-types",
@@ -6218,6 +6373,98 @@
       "answerFile": "answers/typescript/ts-nonempty-array.md"
     },
     {
+      "id": "ts-tuple-shape-operations",
+      "title": "Как keyof, length и T[number] по-разному описывают кортеж?",
+      "learningGoal": "Позиционный контракт, длина и множество возможных элементов отвечают на разные вопросы.",
+      "sectionId": "typescript",
+      "subsectionId": "ts-collections",
+      "keywords": [
+        "TypeScript",
+        "Массивы, кортежи и коллекции"
+      ],
+      "difficulty": "Средний",
+      "priority": "core",
+      "contentHash": "d0c811bc12f9049fcc6d7bfa9ba1c29cacc500f20e458298929d0c475258144a",
+      "answerFile": "answers/typescript/ts-tuple-shape-operations.md"
+    },
+    {
+      "id": "ts-empty-array-context",
+      "title": "Почему пустой массив внутри объекта может получить тип never[]?",
+      "learningGoal": "Пустой контейнер часто требует явного контракта элемента.",
+      "sectionId": "typescript",
+      "subsectionId": "ts-collections",
+      "keywords": [
+        "TypeScript",
+        "Массивы, кортежи и коллекции"
+      ],
+      "difficulty": "Средний",
+      "priority": "core",
+      "contentHash": "650660b92207380ac8a56834990427cb5f99d1d1ec4dd48fb71dd6698ca43875",
+      "answerFile": "answers/typescript/ts-empty-array-context.md"
+    },
+    {
+      "id": "ts-array-alias-mutation",
+      "title": "Почему совместимое присваивание массивов не гарантирует безопасность последующей мутации?",
+      "learningGoal": "Структурная совместимость и возможность мутации требуют отдельного анализа.",
+      "sectionId": "typescript",
+      "subsectionId": "ts-collections",
+      "keywords": [
+        "TypeScript",
+        "Массивы, кортежи и коллекции"
+      ],
+      "difficulty": "Продвинутый",
+      "priority": "core",
+      "contentHash": "5a364768926694baafdb6bc0e12ed1d8aaec8e42fcad7bbe8c1c085b156e728f",
+      "answerFile": "answers/typescript/ts-array-alias-mutation.md"
+    },
+    {
+      "id": "ts-array-union-shapes",
+      "title": "Чем (A | B)[] отличается от A[] | B[]?",
+      "learningGoal": "Место union в выражении типа определяет, что именно может варьироваться.",
+      "sectionId": "typescript",
+      "subsectionId": "ts-collections",
+      "keywords": [
+        "TypeScript",
+        "Массивы, кортежи и коллекции"
+      ],
+      "difficulty": "Базовый",
+      "priority": "core",
+      "contentHash": "79e75f59d7a2359815e4d189aa4f8f436ec453bb53de5863b532c0c8ae21a745",
+      "answerFile": "answers/typescript/ts-array-union-shapes.md"
+    },
+    {
+      "id": "ts-iterator-result-check",
+      "title": "Почему перед использованием iterator.next().value важно проверить done?",
+      "learningGoal": "Контракт итерации включает завершение, а не только очередное значение.",
+      "sectionId": "typescript",
+      "subsectionId": "ts-collections",
+      "keywords": [
+        "TypeScript",
+        "Массивы, кортежи и коллекции",
+        "Yield",
+        "strictBuiltinIteratorReturn"
+      ],
+      "difficulty": "Средний",
+      "priority": "core",
+      "contentHash": "16d1d83860cdf2c1357fcd9b1d97571b42ce145fa6f35003067bab4fbde3c0e5",
+      "answerFile": "answers/typescript/ts-iterator-result-check.md"
+    },
+    {
+      "id": "ts-promise-all-tuples",
+      "title": "Как сохранить разные типы результатов Promise.all по позициям?",
+      "learningGoal": "Для разных позиционных результатов сначала нужно сохранить позиции на входе.",
+      "sectionId": "typescript",
+      "subsectionId": "ts-collections",
+      "keywords": [
+        "TypeScript",
+        "Массивы, кортежи и коллекции"
+      ],
+      "difficulty": "Средний",
+      "priority": "core",
+      "contentHash": "bd71200878da6fab0c0861a8de1dd16ee17a12441d2c3d1e276fe1494d9393ae",
+      "answerFile": "answers/typescript/ts-promise-all-tuples.md"
+    },
+    {
       "id": "ts-function-signatures",
       "title": "Как описать тип функции через сигнатуру, type или interface?",
       "learningGoal": "Сигнатура описывает допустимый вызов и его результат независимо от синтаксиса реализации.",
@@ -6244,7 +6491,7 @@
       ],
       "difficulty": "Базовый",
       "priority": "core",
-      "contentHash": "e447a86ede730c803e30024b006467f38f0d32b96bd479a338dde6a409ab8668",
+      "contentHash": "a0fb891a8c6d7f9714781dcfab850df7afeaf973c78c8f55a219b9df0aaad8b2",
       "answerFile": "answers/typescript/ts-function-parameters.md"
     },
     {
@@ -6261,7 +6508,7 @@
       ],
       "difficulty": "Базовый",
       "priority": "core",
-      "contentHash": "caaa9b122b53a27795f20295923405efd34954dbb38485ac45bfc952008f49c8",
+      "contentHash": "a9205657d7d80b9b2d99d6a1e845c1aac85549671e570898e53bb13f307abeaa",
       "answerFile": "answers/typescript/ts-async-functions.md"
     },
     {
@@ -6291,7 +6538,7 @@
       ],
       "difficulty": "Продвинутый",
       "priority": "core",
-      "contentHash": "fced963f2e398b47b8df3671b56c5b030278d6a4726125324287aef5f3e4262f",
+      "contentHash": "2c61da290f8f1622b0aedd9c233c6eeb59e39990e10d717bbfc448db1489655a",
       "answerFile": "answers/typescript/ts-function-variance.md"
     },
     {
@@ -6325,6 +6572,67 @@
       "answerFile": "answers/typescript/ts-generator-contract.md"
     },
     {
+      "id": "ts-polymorphic-callback-contract",
+      "title": "Чем generic-callback отличается от callback с заранее выбранным типом?",
+      "learningGoal": "Место объявления generic-параметра определяет область его выбора.",
+      "sectionId": "typescript",
+      "subsectionId": "ts-functions",
+      "keywords": [
+        "TypeScript",
+        "Типизация функций"
+      ],
+      "difficulty": "Продвинутый",
+      "priority": "core",
+      "contentHash": "5f68a41af82e3899f7c33d900d5c8f01b71f61efd182516ab88198bd256498fc",
+      "answerFile": "answers/typescript/ts-polymorphic-callback-contract.md"
+    },
+    {
+      "id": "ts-destructured-parameter-annotation",
+      "title": "Где записывать тип деструктурируемого параметра функции?",
+      "learningGoal": "Синтаксис JavaScript-деструктуризации и место TypeScript-аннотации нужно различать.",
+      "sectionId": "typescript",
+      "subsectionId": "ts-functions",
+      "keywords": [
+        "TypeScript",
+        "Типизация функций"
+      ],
+      "difficulty": "Базовый",
+      "priority": "core",
+      "contentHash": "d8cd7c508a65ef60490f094429bbb3200044806b92ae5d2bc4bd491e10b5d44e",
+      "answerFile": "answers/typescript/ts-destructured-parameter-annotation.md"
+    },
+    {
+      "id": "ts-generic-arrow-tsx",
+      "title": "Почему generic-стрелка в .tsx может быть разобрана как JSX?",
+      "learningGoal": "Одинаковая запись может разбираться иначе в TS и TSX.",
+      "sectionId": "typescript",
+      "subsectionId": "ts-functions",
+      "keywords": [
+        "TypeScript",
+        "Типизация функций"
+      ],
+      "difficulty": "Средний",
+      "priority": "core",
+      "contentHash": "9fe67b3e9733d78dcfd488072f173ed21a9999b04a3fe4667e2b39d914cbddae",
+      "answerFile": "answers/typescript/ts-generic-arrow-tsx.md"
+    },
+    {
+      "id": "ts-strict-bind-call-apply",
+      "title": "Что проверяет strictBindCallApply при вызове call, apply и bind?",
+      "learningGoal": "Косвенный вызов полезно проверять тем же контрактом, что и прямой.",
+      "sectionId": "typescript",
+      "subsectionId": "ts-functions",
+      "keywords": [
+        "TypeScript",
+        "Типизация функций",
+        "this"
+      ],
+      "difficulty": "Средний",
+      "priority": "core",
+      "contentHash": "bc4f9c27e5968354e1c947cae0b3e8238927a9c6e8c2645da132f18315118dc0",
+      "answerFile": "answers/typescript/ts-strict-bind-call-apply.md"
+    },
+    {
       "id": "ts-union-types",
       "title": "Что означает union и какие операции доступны до сужения?",
       "learningGoal": "Union задаёт альтернативы, поэтому до проверки нужно учитывать каждый возможный вариант.",
@@ -6353,6 +6661,21 @@
       "priority": "core",
       "contentHash": "6d460e58183fc8661f29f5cacc03740b37ca53a9b6c56f10c86b9415d019d3a4",
       "answerFile": "answers/typescript/ts-intersection-types.md"
+    },
+    {
+      "id": "ts-union-of-functions",
+      "title": "Почему union функций не равен функции с union-параметром?",
+      "learningGoal": "Union вызываемых значений означает неопределённость реализации, а не расширение её возможностей.",
+      "sectionId": "typescript",
+      "subsectionId": "ts-unions",
+      "keywords": [
+        "TypeScript",
+        "Union и Intersection Types"
+      ],
+      "difficulty": "Продвинутый",
+      "priority": "core",
+      "contentHash": "78e46699287995d777865e1ef88579a69a356becfa3bed2ec695ee2ed3ad89d3",
+      "answerFile": "answers/typescript/ts-union-of-functions.md"
     },
     {
       "id": "ts-control-flow-narrowing",
@@ -6437,6 +6760,86 @@
       "priority": "core",
       "contentHash": "8cee4b29ef1499907edd0f061f9c33664c3d4e3c4401c881f7731001d8d0fd5b",
       "answerFile": "answers/typescript/ts-narrowing-closures.md"
+    },
+    {
+      "id": "ts-inferred-predicates",
+      "title": "Когда filter выводит type predicate без явного value is T?",
+      "learningGoal": "Предикат должен корректно описывать и положительный, и отрицательный исход проверки.",
+      "sectionId": "typescript",
+      "subsectionId": "ts-narrowing",
+      "keywords": [
+        "TypeScript",
+        "Сужение типов и Type Guards",
+        "truthiness"
+      ],
+      "difficulty": "Средний",
+      "priority": "core",
+      "contentHash": "af358b19e79763a15cb2bf1ec7f79237b4170f5d65c20ea3d3e6441f5958c97d",
+      "answerFile": "answers/typescript/ts-inferred-predicates.md"
+    },
+    {
+      "id": "ts-guard-false-branch",
+      "title": "Почему предикат «это маленькое число» нельзя объявлять как value is number?",
+      "learningGoal": "Type guard - логический контракт, а не просто удобная аннотация true-ветви.",
+      "sectionId": "typescript",
+      "subsectionId": "ts-narrowing",
+      "keywords": [
+        "TypeScript",
+        "Сужение типов и Type Guards",
+        "type",
+        "predicate"
+      ],
+      "difficulty": "Продвинутый",
+      "priority": "core",
+      "contentHash": "8bf7c87e7d91746f292f02511233dcd0cd1e347e4e068a364ba6952de6eaef00",
+      "answerFile": "answers/typescript/ts-guard-false-branch.md"
+    },
+    {
+      "id": "ts-destructured-discriminant",
+      "title": "Когда деструктуризация discriminated union сохраняет связь между полями?",
+      "learningGoal": "Отдельные переменные могут сохранять доказанную связь, но не создают её сами.",
+      "sectionId": "typescript",
+      "subsectionId": "ts-narrowing",
+      "keywords": [
+        "TypeScript",
+        "Сужение типов и Type Guards",
+        "payload"
+      ],
+      "difficulty": "Средний",
+      "priority": "core",
+      "contentHash": "3f853c29ce52d49f3929db5c1e69723c314733ccf0c99fd270c362ce0913293a",
+      "answerFile": "answers/typescript/ts-destructured-discriminant.md"
+    },
+    {
+      "id": "ts-mutation-after-narrowing",
+      "title": "Может ли вызов другой функции сделать ранее суженное свойство небезопасным?",
+      "learningGoal": "Сужение не превращает изменяемый объект в неизменяемый факт.",
+      "sectionId": "typescript",
+      "subsectionId": "ts-narrowing",
+      "keywords": [
+        "TypeScript",
+        "Сужение типов и Type Guards",
+        "alias"
+      ],
+      "difficulty": "Продвинутый",
+      "priority": "core",
+      "contentHash": "b0ae99973267fe492c840ba4e40fcb03ac7c4f25d061bec2edbce22158d2cd99",
+      "answerFile": "answers/typescript/ts-mutation-after-narrowing.md"
+    },
+    {
+      "id": "ts-unknown-array-elements",
+      "title": "Почему Array.isArray недостаточно для проверки массива строк из unknown?",
+      "learningGoal": "Проверка контейнера и доказательство контракта его содержимого - разные шаги.",
+      "sectionId": "typescript",
+      "subsectionId": "ts-narrowing",
+      "keywords": [
+        "TypeScript",
+        "Сужение типов и Type Guards"
+      ],
+      "difficulty": "Средний",
+      "priority": "core",
+      "contentHash": "3fdfddba251a6c88edfbe31e3435e1d62e0aaae4f5d177b1b53336cd0dd01d89",
+      "answerFile": "answers/typescript/ts-unknown-array-elements.md"
     },
     {
       "id": "generics",
@@ -6559,6 +6962,53 @@
       "answerFile": "answers/typescript/ts-generic-variance.md"
     },
     {
+      "id": "ts-partial-type-argument-inference",
+      "title": "Можно ли явно задать один generic-параметр, а остальные оставить для произвольного вывода?",
+      "learningGoal": "Эргономику выбора типов можно проектировать через границы вызовов.",
+      "sectionId": "typescript",
+      "subsectionId": "generics",
+      "keywords": [
+        "TypeScript",
+        "Дженерики"
+      ],
+      "difficulty": "Средний",
+      "priority": "core",
+      "contentHash": "dec761da85b534eafafc716db97c35af914e2286fa027cf45193f3a3eba9f616",
+      "answerFile": "answers/typescript/ts-partial-type-argument-inference.md"
+    },
+    {
+      "id": "ts-instantiation-expressions",
+      "title": "Что делает выражение makeBox<string> без вызова функции?",
+      "learningGoal": "Специализация сигнатуры и выполнение функции - отдельные действия.",
+      "sectionId": "typescript",
+      "subsectionId": "generics",
+      "keywords": [
+        "TypeScript",
+        "Дженерики",
+        "generic",
+        "runtime"
+      ],
+      "difficulty": "Средний",
+      "priority": "core",
+      "contentHash": "c58dda7e4eaf3f02dd2474cbcfd4e98535d6e23ff832b836044615d89f9d60b9",
+      "answerFile": "answers/typescript/ts-instantiation-expressions.md"
+    },
+    {
+      "id": "ts-unused-generic-parameter",
+      "title": "Почему неиспользуемый generic-параметр не различает два контейнера?",
+      "learningGoal": "На совместимость влияет использование параметра, а не факт его объявления.",
+      "sectionId": "typescript",
+      "subsectionId": "generics",
+      "keywords": [
+        "TypeScript",
+        "Дженерики"
+      ],
+      "difficulty": "Средний",
+      "priority": "core",
+      "contentHash": "d10c61f0e7e1125653cd0062eafe41809ab59a9fccbed3eb85146baf1184a6af",
+      "answerFile": "answers/typescript/ts-unused-generic-parameter.md"
+    },
+    {
       "id": "ts-keyof-indexed-access",
       "title": "Как keyof, T[K] и K extends keyof T типизируют доступ к свойству?",
       "learningGoal": "Связка keyof и T[K] сохраняет зависимость результата от выбранного ключа.",
@@ -6645,7 +7095,7 @@
       ],
       "difficulty": "Средний",
       "priority": "extended",
-      "contentHash": "a6133a39304d7acee832d38e53a1bd1974a7529d4e482fa134564efb503a02b4",
+      "contentHash": "62a0d41718342520254c3c514288c37da1d96596e58c08e9f2e905c4c8b4cb7e",
       "answerFile": "answers/typescript/ts-distributive-never.md"
     },
     {
@@ -6660,7 +7110,7 @@
       ],
       "difficulty": "Средний",
       "priority": "extended",
-      "contentHash": "9b5ed63c82886a1b38d2eddacbc96f78ce5f4cb1cc6cc2f8a3b69e7ff422ddfd",
+      "contentHash": "60058bdd92c393e7025349c57a95dbf4d0842fb2a1694db6e228504e8357cbbc",
       "answerFile": "answers/typescript/ts-template-literal-patterns.md"
     },
     {
@@ -6679,6 +7129,134 @@
       "answerFile": "answers/typescript/ts-deep-readonly-contract.md"
     },
     {
+      "id": "ts-keyof-union-keys",
+      "title": "Почему keyof union возвращает общие ключи, а не все ключи вариантов?",
+      "learningGoal": "Общие безопасные ключи и объединение всех известных ключей - разные запросы к типам.",
+      "sectionId": "typescript",
+      "subsectionId": "ts-type-operators",
+      "keywords": [
+        "TypeScript",
+        "Операторы типов и преобразования",
+        "union"
+      ],
+      "difficulty": "Продвинутый",
+      "priority": "core",
+      "contentHash": "6b6ddde42409ac9e18af8de32985ef6c1d2dbff518574327135cae763673f795",
+      "answerFile": "answers/typescript/ts-keyof-union-keys.md"
+    },
+    {
+      "id": "ts-tuple-pattern-infer",
+      "title": "Как извлечь голову и хвост кортежа через infer?",
+      "learningGoal": "Infer извлекает часть доказанной формы, а не гарантирует наличие элемента любого массива.",
+      "sectionId": "typescript",
+      "subsectionId": "ts-type-operators",
+      "keywords": [
+        "TypeScript",
+        "Операторы типов и преобразования"
+      ],
+      "difficulty": "Средний",
+      "priority": "core",
+      "contentHash": "acec8919e25b3f9b1603e14db132d786100ea2722e42b9164d3621380aad4541",
+      "answerFile": "answers/typescript/ts-tuple-pattern-infer.md"
+    },
+    {
+      "id": "ts-infer-multiple-candidates",
+      "title": "Как позиции нескольких infer-кандидатов влияют на union или intersection результата?",
+      "learningGoal": "Одного совпадения имени infer-параметра недостаточно: важны позиции кандидатов.",
+      "sectionId": "typescript",
+      "subsectionId": "ts-type-operators",
+      "keywords": [
+        "TypeScript",
+        "Операторы типов и преобразования"
+      ],
+      "difficulty": "Продвинутый",
+      "priority": "extended",
+      "contentHash": "a2d2d3a7c72ee105643a7f74f838a70352a05792fe1116be49da3e3d8ad9cdd5",
+      "answerFile": "answers/typescript/ts-infer-multiple-candidates.md"
+    },
+    {
+      "id": "ts-homomorphic-tuples",
+      "title": "Почему mapped type может сохранить кортеж, а явный remapping ключей - изменить форму результата?",
+      "learningGoal": "Сохранение контейнера является частью формы преобразования, а не любого цикла по keyof.",
+      "sectionId": "typescript",
+      "subsectionId": "ts-type-operators",
+      "keywords": [
+        "TypeScript",
+        "Операторы типов и преобразования"
+      ],
+      "difficulty": "Продвинутый",
+      "priority": "extended",
+      "contentHash": "3ea643345a0405cffed7247a32c02d5264f657d731f2875bb80750d5fa316b08",
+      "answerFile": "answers/typescript/ts-homomorphic-tuples.md"
+    },
+    {
+      "id": "ts-record-to-correlated-union",
+      "title": "Как из словаря типов получить union связанных пар ключ-значение?",
+      "learningGoal": "Зависимость ключа и значения сохраняют по вариантам, а не двумя отдельными union.",
+      "sectionId": "typescript",
+      "subsectionId": "ts-type-operators",
+      "keywords": [
+        "TypeScript",
+        "Операторы типов и преобразования",
+        "Mapped",
+        "type",
+        "indexed",
+        "access"
+      ],
+      "difficulty": "Продвинутый",
+      "priority": "core",
+      "contentHash": "3fe52b2c9d2f972ea82a724cc7b009366f8d1a378bbba644946f37c7707466bd",
+      "answerFile": "answers/typescript/ts-record-to-correlated-union.md"
+    },
+    {
+      "id": "ts-filter-properties-by-type",
+      "title": "Как выбрать свойства объекта по типу их значений?",
+      "learningGoal": "Правило отбора должно явно определять отношение к optional и union-значениям.",
+      "sectionId": "typescript",
+      "subsectionId": "ts-type-operators",
+      "keywords": [
+        "TypeScript",
+        "Операторы типов и преобразования",
+        "Key",
+        "remapping",
+        "optional"
+      ],
+      "difficulty": "Продвинутый",
+      "priority": "core",
+      "contentHash": "72c6f934dac6a4efe29ee16abd8532066a038efd329756b6b2c529818da72a61",
+      "answerFile": "answers/typescript/ts-filter-properties-by-type.md"
+    },
+    {
+      "id": "ts-template-number-inference",
+      "title": "Как infer с ограничением извлекает число из строкового литерала?",
+      "learningGoal": "Типовая интерпретация известного литерала не заменяет парсер внешнего ввода.",
+      "sectionId": "typescript",
+      "subsectionId": "ts-type-operators",
+      "keywords": [
+        "TypeScript",
+        "Операторы типов и преобразования"
+      ],
+      "difficulty": "Продвинутый",
+      "priority": "core",
+      "contentHash": "dca0f74a610491da03b586089035f79192658b4c16587f994dab566887888aac",
+      "answerFile": "answers/typescript/ts-template-number-inference.md"
+    },
+    {
+      "id": "ts-recursive-type-budget",
+      "title": "Как ограничить рекурсивный тип и избежать чрезмерной глубины вычисления?",
+      "learningGoal": "Типовой алгоритм тоже требует ограничений входа и стоимости.",
+      "sectionId": "typescript",
+      "subsectionId": "ts-type-operators",
+      "keywords": [
+        "TypeScript",
+        "Операторы типов и преобразования"
+      ],
+      "difficulty": "Продвинутый",
+      "priority": "core",
+      "contentHash": "5c8ddea012e3a941e4d37f5df83aa4431e6c6372c5b8eb77d294a0ca5c3fcbc7",
+      "answerFile": "answers/typescript/ts-recursive-type-budget.md"
+    },
+    {
       "id": "ts-object-utilities",
       "title": "Зачем нужны utility types и что меняют Partial, Required и Readonly?",
       "learningGoal": "Utility type строит новый контракт, оставляя runtime-объекты без автоматических изменений.",
@@ -6690,7 +7268,7 @@
       ],
       "difficulty": "Базовый",
       "priority": "core",
-      "contentHash": "40f97a773c79bf809155c26512c2c376ff14aca842b61af4be8075c2960c8bdf",
+      "contentHash": "722581bb895d9fbb565e465d8321c076f7281e0617c5eabce191ca43854d056f",
       "answerFile": "answers/typescript/ts-object-utilities.md"
     },
     {
@@ -6750,7 +7328,7 @@
       ],
       "difficulty": "Базовый",
       "priority": "core",
-      "contentHash": "0a1b9ba92a447ad3fb5b4ec1fa424a9a0dafdb67b68e0bda6e5c4f49141bef71",
+      "contentHash": "4664cfe37e4d5f16bb011c7483724edb4323f0dc35f744281aac68a85c55bc24",
       "answerFile": "answers/typescript/ts-signature-utilities.md"
     },
     {
@@ -6782,6 +7360,21 @@
       "priority": "core",
       "contentHash": "1eb50e3300bc92572b3b75efeea24298d61cfd89eeb626a5ab0c6f980662b0d5",
       "answerFile": "answers/typescript/ts-no-infer.md"
+    },
+    {
+      "id": "ts-distributive-omit",
+      "title": "Почему Omit над union может потерять поля отдельных вариантов?",
+      "learningGoal": "Преобразование объединения целиком и преобразование каждого варианта могут различаться.",
+      "sectionId": "typescript",
+      "subsectionId": "ts-utility-types",
+      "keywords": [
+        "TypeScript",
+        "Utility Types"
+      ],
+      "difficulty": "Продвинутый",
+      "priority": "core",
+      "contentHash": "a5c141f869255372ac46e60d21e021e7afd3a55991121074c6e74d5b9d1f8d1a",
+      "answerFile": "answers/typescript/ts-distributive-omit.md"
     },
     {
       "id": "ts-class-members",
@@ -6825,7 +7418,7 @@
       ],
       "difficulty": "Базовый",
       "priority": "extended",
-      "contentHash": "5b33cb93e12d62a37423dddeee5205089a719f5043cdca7f8c5ee032a2a31496",
+      "contentHash": "ad145ce4c6c5810ffd8033e8855cff7be3ea2c9e9c98c461628429636707a5fb",
       "answerFile": "answers/typescript/ts-class-visibility.md"
     },
     {
@@ -6921,6 +7514,100 @@
       "answerFile": "answers/typescript/ts-decorators-models.md"
     },
     {
+      "id": "ts-constructor-instance-sides",
+      "title": "Чем тип экземпляра класса отличается от typeof Class?",
+      "learningGoal": "Конструктор и созданный экземпляр представляют разные стороны класса.",
+      "sectionId": "typescript",
+      "subsectionId": "ts-classes",
+      "keywords": [
+        "TypeScript",
+        "Типизация классов и ООП",
+        "Instance",
+        "side",
+        "static"
+      ],
+      "difficulty": "Средний",
+      "priority": "core",
+      "contentHash": "4414f6660d423a5dc23aea45e32e295118e6161fe3fa3e168d889d03257901d3",
+      "answerFile": "answers/typescript/ts-constructor-instance-sides.md"
+    },
+    {
+      "id": "ts-static-generic-state",
+      "title": "Почему static-поле generic-класса не может принадлежать отдельному T?",
+      "learningGoal": "Типовая специализация экземпляров не размножает runtime static-состояние.",
+      "sectionId": "typescript",
+      "subsectionId": "ts-classes",
+      "keywords": [
+        "TypeScript",
+        "Типизация классов и ООП",
+        "runtime"
+      ],
+      "difficulty": "Средний",
+      "priority": "core",
+      "contentHash": "a90d7ac4f6d9b84da7d2fff9b411245a83b2f5749b4c8e7caf930350eed4fce8",
+      "answerFile": "answers/typescript/ts-static-generic-state.md"
+    },
+    {
+      "id": "ts-this-based-guards",
+      "title": "Как метод с this is уточняет состояние экземпляра?",
+      "learningGoal": "This-based guard связывает проверку состояния с типом текущего экземпляра.",
+      "sectionId": "typescript",
+      "subsectionId": "ts-classes",
+      "keywords": [
+        "TypeScript",
+        "Типизация классов и ООП"
+      ],
+      "difficulty": "Средний",
+      "priority": "core",
+      "contentHash": "c02b7a354414753b369064b450c79c10b1bb450c6f8ce7b45609ceb0e2ad1f92",
+      "answerFile": "answers/typescript/ts-this-based-guards.md"
+    },
+    {
+      "id": "ts-mixin-constructor-contract",
+      "title": "Как типизируется mixin как функция над конструктором?",
+      "learningGoal": "Mixin проектируется как преобразование контракта конструктора и экземпляра.",
+      "sectionId": "typescript",
+      "subsectionId": "ts-classes",
+      "keywords": [
+        "TypeScript",
+        "Типизация классов и ООП"
+      ],
+      "difficulty": "Продвинутый",
+      "priority": "extended",
+      "contentHash": "ee3d7a52e1387e6d511f380aa811d4e17b6a0d78e868e791c893817ed8b58cae",
+      "answerFile": "answers/typescript/ts-mixin-constructor-contract.md"
+    },
+    {
+      "id": "ts-accessor-read-write-types",
+      "title": "Могут ли getter и setter описывать разные типы чтения и записи?",
+      "learningGoal": "Разные границы чтения и записи полезны, когда реализация действительно нормализует значение.",
+      "sectionId": "typescript",
+      "subsectionId": "ts-classes",
+      "keywords": [
+        "TypeScript",
+        "Типизация классов и ООП"
+      ],
+      "difficulty": "Средний",
+      "priority": "core",
+      "contentHash": "e126c5ae951f58046c721dcce1c656508c77cf442707346748a0c27a235a8f57",
+      "answerFile": "answers/typescript/ts-accessor-read-write-types.md"
+    },
+    {
+      "id": "ts-private-constructor-factory",
+      "title": "Зачем закрывать конструктор private и предоставлять статическую фабрику?",
+      "learningGoal": "Фабрика соединяет управляемое создание с реальным доказательством инварианта.",
+      "sectionId": "typescript",
+      "subsectionId": "ts-classes",
+      "keywords": [
+        "TypeScript",
+        "Типизация классов и ООП"
+      ],
+      "difficulty": "Средний",
+      "priority": "core",
+      "contentHash": "b3c8988b476655431ed99cf00e7ec7a74713e987d6cf833ae7c009ab5f71e85f",
+      "answerFile": "answers/typescript/ts-private-constructor-factory.md"
+    },
+    {
       "id": "ts-strict-mode",
       "title": "Чем strict в TypeScript отличается от выражения «строгая типизация»?",
       "learningGoal": "Strict - именованное семейство проверок TypeScript, а не обещание устранить все ошибки.",
@@ -6977,7 +7664,7 @@
       ],
       "difficulty": "Базовый",
       "priority": "core",
-      "contentHash": "d516fa45a79b0b4ee866d2c33a7c49c44cf1d164fab175ddaeb3cc3046938c2a",
+      "contentHash": "53c2b5d66e0c33bd16aea329c5014cd4d3321cbb6a643e80964f588ee7e7b48c",
       "answerFile": "answers/typescript/ts-global-augmentation.md"
     },
     {
@@ -7007,7 +7694,7 @@
       ],
       "difficulty": "Средний",
       "priority": "core",
-      "contentHash": "e91539ecb899ddacf26891e02e4caea54caaad7c7bac95290a0057b1da7d8ac3",
+      "contentHash": "64cef6390af9f1f9d7eda58f3072d084de0660ddbd3a62fb19bcb4faa881538d",
       "answerFile": "answers/typescript/ts-satisfies.md"
     },
     {
@@ -7054,6 +7741,37 @@
       "priority": "core",
       "contentHash": "af0c99f8f361ac1b07f5942ed8e6306dfa5a9a4436a29e590b960f4e795935ff",
       "answerFile": "answers/typescript/ts-dom-boundaries.md"
+    },
+    {
+      "id": "ts-type-contract-tests",
+      "title": "Как проверять типовой контракт отдельно от runtime-тестов?",
+      "learningGoal": "Поведение программы и поведение её типового API требуют разных свидетельств.",
+      "sectionId": "typescript",
+      "subsectionId": "ts-practices",
+      "keywords": [
+        "TypeScript",
+        "Практики, ограничения и антипаттерны",
+        "API"
+      ],
+      "difficulty": "Средний",
+      "priority": "core",
+      "contentHash": "1fa77a0450df173fc852f46a6cc86d04cbf561d158ad2c98b1afaae779c38672",
+      "answerFile": "answers/typescript/ts-type-contract-tests.md"
+    },
+    {
+      "id": "ts-read-nested-diagnostics",
+      "title": "Как разбирать длинное сообщение о несовместимости типов?",
+      "learningGoal": "Исправлять нужно первую реальную причину, а не маскировать внешний уровень диагностики.",
+      "sectionId": "typescript",
+      "subsectionId": "ts-practices",
+      "keywords": [
+        "TypeScript",
+        "Практики, ограничения и антипаттерны"
+      ],
+      "difficulty": "Базовый",
+      "priority": "core",
+      "contentHash": "dbc9b57a0eca1bd25dfa066594ccc2c8afd42f71593ea44a0c3cc984217a1e74",
+      "answerFile": "answers/typescript/ts-read-nested-diagnostics.md"
     },
     {
       "id": "ts-type-only-imports",
@@ -7112,7 +7830,7 @@
       ],
       "difficulty": "Продвинутый",
       "priority": "core",
-      "contentHash": "0f5e9dad8a88dd64ac918fcbae4f0d5723b4456261f666081ce43dc334869535",
+      "contentHash": "30af8684d3ef6fabcccc40fd5a2779e3b13b1a6be3b035f28000ce903e2a6115",
       "answerFile": "answers/typescript/ts-library-declaration-publishing.md"
     },
     {
@@ -7127,7 +7845,7 @@
       ],
       "difficulty": "Продвинутый",
       "priority": "core",
-      "contentHash": "7c342b41a952215b6e2a87b259d4117752853846addcf2eb7096d7675f256f30",
+      "contentHash": "cf32b961f62101511a31c3ca5a1ce09374b856fa7f3007b01851759db56d3403",
       "answerFile": "answers/typescript/ts-esm-cjs-contract.md"
     },
     {
@@ -7172,7 +7890,7 @@
       ],
       "difficulty": "Средний",
       "priority": "core",
-      "contentHash": "14c877245e6a84f759035c39aa7fc75c992aeb75cdbacd79aa954c87857c2e79",
+      "contentHash": "e26f5024bdeade0fd2285cd548b408241219a80232911b91c6c93d62d7c65a4f",
       "answerFile": "answers/typescript/ts-ambient-types-scope.md"
     },
     {
@@ -7204,6 +7922,69 @@
       "priority": "core",
       "contentHash": "8c00c596bc7e92d2bc043778a16bd8162c2c35190b1a06a44d25789b9562f7aa",
       "answerFile": "answers/typescript/ts-skip-lib-check.md"
+    },
+    {
+      "id": "ts-module-detection-scope",
+      "title": "Почему два файла без импортов могут конфликтовать по глобальным именам?",
+      "learningGoal": "Область объявления зависит от вида файла, а не только от его расширения .ts.",
+      "sectionId": "typescript",
+      "subsectionId": "ts-modules",
+      "keywords": [
+        "TypeScript",
+        "Модули и сборка",
+        "Script",
+        "module",
+        "detection"
+      ],
+      "difficulty": "Средний",
+      "priority": "core",
+      "contentHash": "bc037f9d0a6a583f527fbe236ecd9e59bb50a189ca42bea333d5b057f6c8211e",
+      "answerFile": "answers/typescript/ts-module-detection-scope.md"
+    },
+    {
+      "id": "ts-side-effect-import-check",
+      "title": "Что проверяет noUncheckedSideEffectImports и как типизировать импорт CSS?",
+      "learningGoal": "Типовое разрешение ресурса и его фактическая доставка требуют согласованного конвейера.",
+      "sectionId": "typescript",
+      "subsectionId": "ts-modules",
+      "keywords": [
+        "TypeScript",
+        "Модули и сборка"
+      ],
+      "difficulty": "Средний",
+      "priority": "core",
+      "contentHash": "49d64398cbb78fcdf92ac1ef10a4e90b46b9567efbc26b183b52f2f25e32fe8e",
+      "answerFile": "answers/typescript/ts-side-effect-import-check.md"
+    },
+    {
+      "id": "ts-json-import-boundary",
+      "title": "Что даёт resolveJsonModule и почему этого недостаточно для любого runtime-импорта JSON?",
+      "learningGoal": "Поддержка JSON у checker не определяет универсальную форму runtime-загрузки.",
+      "sectionId": "typescript",
+      "subsectionId": "ts-modules",
+      "keywords": [
+        "TypeScript",
+        "Модули и сборка"
+      ],
+      "difficulty": "Средний",
+      "priority": "core",
+      "contentHash": "a8dc3a9a95823ff52b80eb5efef1e7e0eaa7133bfee128698c4891f73f1a4c49",
+      "answerFile": "answers/typescript/ts-json-import-boundary.md"
+    },
+    {
+      "id": "ts-package-conditional-types",
+      "title": "Как exports и условия types влияют на выбор деклараций пакета?",
+      "learningGoal": "Пакет публикует связанные runtime- и type-entrypoints, а не просто любой .d.ts рядом.",
+      "sectionId": "typescript",
+      "subsectionId": "ts-modules",
+      "keywords": [
+        "TypeScript",
+        "Модули и сборка"
+      ],
+      "difficulty": "Продвинутый",
+      "priority": "core",
+      "contentHash": "50db4aa7224b1e67359941ceb886a227f29eeb5440fc9729fa73a53f1a2a4cf6",
+      "answerFile": "answers/typescript/ts-package-conditional-types.md"
     },
     {
       "id": "ts-branded-identifiers",
@@ -7326,6 +8107,228 @@
       "priority": "core",
       "contentHash": "c7348f0c2b43e5ee56525aa068f4e39b18d1c102042583fd7ecac80191bed1b9",
       "answerFile": "answers/typescript/ts-function-wrapper-contract.md"
+    },
+    {
+      "id": "ts-correlated-property-write",
+      "title": "Как сохранить связь ключа и значения при обновлении свойства?",
+      "learningGoal": "Зависимые параметры должны быть связаны одним типовым отношением.",
+      "sectionId": "typescript",
+      "subsectionId": "ts-api-design",
+      "keywords": [
+        "TypeScript",
+        "Проектирование типобезопасных API",
+        "Generic",
+        "indexed",
+        "access"
+      ],
+      "difficulty": "Средний",
+      "priority": "core",
+      "contentHash": "62e36772e7f8112e6fad83b43a601eb3ea19749717ccaeb849e7860f225a7929",
+      "answerFile": "answers/typescript/ts-correlated-property-write.md"
+    },
+    {
+      "id": "ts-json-data-contract",
+      "title": "Как описать JSON-данные типом и какие ограничения такой тип не проверит?",
+      "learningGoal": "Статическая JSON-форма полезна, но не является полной гарантией сериализации.",
+      "sectionId": "typescript",
+      "subsectionId": "ts-api-design",
+      "keywords": [
+        "TypeScript",
+        "Проектирование типобезопасных API",
+        "JSON",
+        "runtime"
+      ],
+      "difficulty": "Средний",
+      "priority": "core",
+      "contentHash": "a0497481d44f425fd22bca871eecb41bedeb790ccd166232ebbc41095a0c1287",
+      "answerFile": "answers/typescript/ts-json-data-contract.md"
+    },
+    {
+      "id": "ts-project-file-graph",
+      "title": "Чем files, include и exclude отличаются от rootDir и outDir?",
+      "learningGoal": "Набор файлов программы определяется графом и настройками, а не только каталогом emit.",
+      "sectionId": "typescript",
+      "subsectionId": "ts-configuration",
+      "keywords": [
+        "TypeScript",
+        "Конфигурация и диагностика"
+      ],
+      "difficulty": "Средний",
+      "priority": "core",
+      "contentHash": "3a65b5b7736003facceb871c85b43b935aa923c905e8dabd2e84b5baf8502c77",
+      "answerFile": "answers/typescript/ts-project-file-graph.md"
+    },
+    {
+      "id": "ts-config-inheritance-paths",
+      "title": "Как наследование tsconfig влияет на относительные пути и массивы настроек?",
+      "learningGoal": "Общий конфиг полезен только при понятных правилах наследования каждого поля.",
+      "sectionId": "typescript",
+      "subsectionId": "ts-configuration",
+      "keywords": [
+        "TypeScript",
+        "Конфигурация и диагностика"
+      ],
+      "difficulty": "Средний",
+      "priority": "core",
+      "contentHash": "c0da2307b896edea8d5fe07ff71727aeed69b0ddeb5a67b5157cd6d6080744b5",
+      "answerFile": "answers/typescript/ts-config-inheritance-paths.md"
+    },
+    {
+      "id": "ts-check-emit-boundary",
+      "title": "Чем noEmit отличается от noEmitOnError и успешной сборки бандлера?",
+      "learningGoal": "Диагностика типов и наличие исполняемого файла являются разными результатами.",
+      "sectionId": "typescript",
+      "subsectionId": "ts-configuration",
+      "keywords": [
+        "TypeScript",
+        "Конфигурация и диагностика"
+      ],
+      "difficulty": "Базовый",
+      "priority": "core",
+      "contentHash": "2fd33da5e555248bde311d622574905dac554e9c37af52749e35e990d7153f62",
+      "answerFile": "answers/typescript/ts-check-emit-boundary.md"
+    },
+    {
+      "id": "ts-cli-project-selection",
+      "title": "Почему tsc file.ts не равен проверке проекта через tsc -p?",
+      "learningGoal": "Ошибка воспроизводится в определённом проекте и версии, а не только в тексте одного файла.",
+      "sectionId": "typescript",
+      "subsectionId": "ts-configuration",
+      "keywords": [
+        "TypeScript",
+        "Конфигурация и диагностика"
+      ],
+      "difficulty": "Средний",
+      "priority": "core",
+      "contentHash": "5526c0e88b8239dd0a715060ad652fed88c3e24ac3d1125c1a85f3102e83c2c8",
+      "answerFile": "answers/typescript/ts-cli-project-selection.md"
+    },
+    {
+      "id": "ts-erasable-syntax-boundary",
+      "title": "Что проверяет erasableSyntaxOnly и чего не делает простое удаление типов?",
+      "learningGoal": "Поддержка TS-аннотаций не означает поддержку каждой конструкции TypeScript.",
+      "sectionId": "typescript",
+      "subsectionId": "ts-configuration",
+      "keywords": [
+        "TypeScript",
+        "Конфигурация и диагностика",
+        "runtime"
+      ],
+      "difficulty": "Средний",
+      "priority": "core",
+      "contentHash": "7db37157f5e9fa2d65961771e04a3ecb013435a05b30181c9cfe58a15493fee5",
+      "answerFile": "answers/typescript/ts-erasable-syntax-boundary.md"
+    },
+    {
+      "id": "ts-config-diagnostic-tools",
+      "title": "Как найти причину неожиданного импорта, глобального типа или состава проекта?",
+      "learningGoal": "Выбор диагностического инструмента зависит от проверяемой гипотезы.",
+      "sectionId": "typescript",
+      "subsectionId": "ts-configuration",
+      "keywords": [
+        "TypeScript",
+        "Конфигурация и диагностика",
+        "ShowConfig",
+        "explainFiles",
+        "traceResolution"
+      ],
+      "difficulty": "Средний",
+      "priority": "core",
+      "contentHash": "728b7ed69a79e69141fa4031491f7d86fcfcfd0e54d5ef0763dd5324ef572a82",
+      "answerFile": "answers/typescript/ts-config-diagnostic-tools.md"
+    },
+    {
+      "id": "ts-source-declaration-maps",
+      "title": "Чем sourceMap отличается от declarationMap?",
+      "learningGoal": "Карты предназначены для разных переходов между результатом и исходниками.",
+      "sectionId": "typescript",
+      "subsectionId": "ts-configuration",
+      "keywords": [
+        "TypeScript",
+        "Конфигурация и диагностика",
+        "JavaScript"
+      ],
+      "difficulty": "Средний",
+      "priority": "core",
+      "contentHash": "8519a85337aeb494bbd87d7be3dba18c08700cf2d92094d2b81d342662caa901",
+      "answerFile": "answers/typescript/ts-source-declaration-maps.md"
+    },
+    {
+      "id": "ts-checker-performance-diagnosis",
+      "title": "Как отличить медленную проверку типов от медленной сборки или работы программы?",
+      "learningGoal": "Оптимизировать нужно измеренный этап и конкретный источник стоимости.",
+      "sectionId": "typescript",
+      "subsectionId": "ts-configuration",
+      "keywords": [
+        "TypeScript",
+        "Конфигурация и диагностика",
+        "checker"
+      ],
+      "difficulty": "Продвинутый",
+      "priority": "core",
+      "contentHash": "d73bd63fe4a881a28ea8ccd63a3acae5261e96ba3079db7ca734a46132b34337",
+      "answerFile": "answers/typescript/ts-checker-performance-diagnosis.md"
+    },
+    {
+      "id": "ts-library-consumer-check",
+      "title": "Как проверить библиотеку как отдельный потребитель?",
+      "learningGoal": "Проверка поставки должна воспроизводить ограничения её потребителя.",
+      "sectionId": "typescript",
+      "subsectionId": "ts-declarations",
+      "keywords": [
+        "TypeScript",
+        "Декларации и библиотеки"
+      ],
+      "difficulty": "Средний",
+      "priority": "core",
+      "contentHash": "c7e3f53e451de8bcd41e19d81f4720d2bfa58534e35b5142f4381a3e7abdaf98",
+      "answerFile": "answers/typescript/ts-library-consumer-check.md"
+    },
+    {
+      "id": "ts-function-namespace-merging",
+      "title": "Как declaration merging связывает функцию и namespace с дополнительными членами?",
+      "learningGoal": "Declaration merging может объединять сущности с разной ролью в типах и runtime.",
+      "sectionId": "typescript",
+      "subsectionId": "ts-declarations",
+      "keywords": [
+        "TypeScript",
+        "Декларации и библиотеки",
+        "runtime"
+      ],
+      "difficulty": "Средний",
+      "priority": "extended",
+      "contentHash": "b64cad3a0e40c0d662444b2abab1dd6a877ea7e6ce9f358a7eb589b99b1eda48",
+      "answerFile": "answers/typescript/ts-function-namespace-merging.md"
+    },
+    {
+      "id": "ts-shorthand-ambient-any",
+      "title": "Почему короткое declare module может убрать ошибку импорта, но открыть путь any?",
+      "learningGoal": "Принятый импорт и содержательный типовой контракт - разные результаты.",
+      "sectionId": "typescript",
+      "subsectionId": "ts-declarations",
+      "keywords": [
+        "TypeScript",
+        "Декларации и библиотеки"
+      ],
+      "difficulty": "Средний",
+      "priority": "core",
+      "contentHash": "5363365f851497e4e2b48530984f11c4901168bbfe10f1f84141ea1b02e51f9c",
+      "answerFile": "answers/typescript/ts-shorthand-ambient-any.md"
+    },
+    {
+      "id": "ts-merging-overload-contract",
+      "title": "Как объединение деклараций влияет на набор перегрузок публичного API?",
+      "learningGoal": "Расширение типов может менять смысл вызова даже без правки его строки.",
+      "sectionId": "typescript",
+      "subsectionId": "ts-declarations",
+      "keywords": [
+        "TypeScript",
+        "Декларации и библиотеки"
+      ],
+      "difficulty": "Продвинутый",
+      "priority": "core",
+      "contentHash": "a2011a7278ae80fd740a1f30274a0a503a7601fb39a40379639507202b956c78",
+      "answerFile": "answers/typescript/ts-merging-overload-contract.md"
     },
     {
       "id": "react-purpose",
@@ -7927,7 +8930,7 @@
       ],
       "difficulty": "Средний",
       "priority": "core",
-      "contentHash": "3376c39c20b237a12df4027e7164a1721eaaa0f40857c319e87c9ecb07f1c50e",
+      "contentHash": "456dff6ffca020eef529b2d62486bc7c022a7642f3320b085c5dd44f2d3f2449",
       "answerFile": "answers/react/react-state-location.md"
     },
     {
@@ -8385,6 +9388,438 @@
       "answerFile": "answers/react/react-test-browser-boundary.md"
     },
     {
+      "id": "redux-data-flow",
+      "title": "Как устроен поток данных Redux: store, action, dispatch и reducer?",
+      "learningGoal": "Описывайте событие и вычисляйте новый снимок через единый поток обновления.",
+      "sectionId": "react",
+      "subsectionId": "redux",
+      "keywords": [
+        "React",
+        "Redux и Redux Toolkit",
+        "redux",
+        "data",
+        "flow"
+      ],
+      "difficulty": "Базовый",
+      "priority": "core",
+      "contentHash": "578721359c62938e4e9fd990741a6bf64b2c7925a6299c7e77a31a89c45cc0ba",
+      "answerFile": "answers/react/redux-data-flow.md"
+    },
+    {
+      "id": "redux-toolkit-role",
+      "title": "Чем Redux Toolkit отличается от Redux и React-Redux?",
+      "learningGoal": "Изучайте современный Redux через Toolkit, сохраняя понимание базового потока.",
+      "sectionId": "react",
+      "subsectionId": "redux",
+      "keywords": [
+        "React",
+        "Redux и Redux Toolkit",
+        "redux",
+        "toolkit",
+        "role"
+      ],
+      "difficulty": "Базовый",
+      "priority": "core",
+      "contentHash": "5aeff798382da3e3d90848e0257e8185a9f915b98a9b46a43c5653786dfed4e7",
+      "answerFile": "answers/react/redux-toolkit-role.md"
+    },
+    {
+      "id": "redux-store-provider",
+      "title": "Как configureStore и Provider подключают Redux к React?",
+      "learningGoal": "Форма состояния и жизненный цикл store должны быть явными.",
+      "sectionId": "react",
+      "subsectionId": "redux",
+      "keywords": [
+        "React",
+        "Redux и Redux Toolkit",
+        "redux",
+        "store",
+        "provider"
+      ],
+      "difficulty": "Базовый",
+      "priority": "core",
+      "contentHash": "7480367b46d7b35a2da8cae1d390d661af5e92ab33b476e8894a39707e760fff",
+      "answerFile": "answers/react/redux-store-provider.md"
+    },
+    {
+      "id": "redux-slice-immer",
+      "title": "Что создаёт createSlice и почему в его reducer разрешена запись state.value++?",
+      "learningGoal": "Изменяется draft, а прежний опубликованный снимок остаётся неизменным.",
+      "sectionId": "react",
+      "subsectionId": "redux",
+      "keywords": [
+        "React",
+        "Redux и Redux Toolkit",
+        "redux",
+        "slice",
+        "immer"
+      ],
+      "difficulty": "Базовый",
+      "priority": "core",
+      "contentHash": "f554a1b23dd8b5ef99fedf8a1f1b859a0117c1417430d71ce2dbc4982da63d72",
+      "answerFile": "answers/react/redux-slice-immer.md"
+    },
+    {
+      "id": "redux-selector-equality",
+      "title": "Когда useSelector обновляет компонент и почему новый объект в selector мешает?",
+      "learningGoal": "Стабильность выбранного результата важнее стабильности всего дерева store.",
+      "sectionId": "react",
+      "subsectionId": "redux",
+      "keywords": [
+        "React",
+        "Redux и Redux Toolkit",
+        "redux",
+        "selector",
+        "equality"
+      ],
+      "difficulty": "Средний",
+      "priority": "core",
+      "contentHash": "c4e688a462f843149860980c2c24425a076349c799914516898bda2e4ed9fb92",
+      "answerFile": "answers/react/redux-selector-equality.md"
+    },
+    {
+      "id": "redux-memoized-selector",
+      "title": "Как createSelector мемоизирует производные данные?",
+      "learningGoal": "Извлекайте стабильные входы и вычисляйте производные данные в одном месте.",
+      "sectionId": "react",
+      "subsectionId": "redux",
+      "keywords": [
+        "React",
+        "Redux и Redux Toolkit",
+        "redux",
+        "memoized",
+        "selector"
+      ],
+      "difficulty": "Средний",
+      "priority": "core",
+      "contentHash": "f71058f5e3d643ddb8b1b9c2e0559e76468e12170950b3ad140542654365dcf2",
+      "answerFile": "answers/react/redux-memoized-selector.md"
+    },
+    {
+      "id": "redux-async-thunk",
+      "title": "Что делает createAsyncThunk и зачем нужен unwrap?",
+      "learningGoal": "Отличайте lifecycle действий, данные reducer и обещание, которое получает вызывающий код.",
+      "sectionId": "react",
+      "subsectionId": "redux",
+      "keywords": [
+        "React",
+        "Redux и Redux Toolkit",
+        "redux",
+        "async",
+        "thunk"
+      ],
+      "difficulty": "Средний",
+      "priority": "core",
+      "contentHash": "318b7b2157342c08d77e279551de57ce5f2848294a365b8588fbb8cb62f97f7c",
+      "answerFile": "answers/react/redux-async-thunk.md"
+    },
+    {
+      "id": "redux-query-cache",
+      "title": "Чем RTK Query отличается от запроса внутри createAsyncThunk?",
+      "learningGoal": "Используйте готовый жизненный цикл server state, когда задача именно в загрузке и согласовании данных.",
+      "sectionId": "react",
+      "subsectionId": "redux",
+      "keywords": [
+        "React",
+        "Redux и Redux Toolkit",
+        "redux",
+        "query",
+        "cache"
+      ],
+      "difficulty": "Средний",
+      "priority": "core",
+      "contentHash": "f083fcb39ae5d9774a278f43b6bf8b8f33089a4dc988fa24b4dfd295fbf78672",
+      "answerFile": "answers/react/redux-query-cache.md"
+    },
+    {
+      "id": "redux-entity-adapter",
+      "title": "Как createEntityAdapter помогает хранить и обновлять коллекцию?",
+      "learningGoal": "Adapter автоматизирует коллекцию, а правила владения и связей проектирует приложение.",
+      "sectionId": "react",
+      "subsectionId": "redux",
+      "keywords": [
+        "React",
+        "Redux и Redux Toolkit",
+        "redux",
+        "entity",
+        "adapter"
+      ],
+      "difficulty": "Средний",
+      "priority": "core",
+      "contentHash": "a09bf817d90a3a4f7ada45f863efe8fac1ae621a29908cd7c76c7cbfd484660c",
+      "answerFile": "answers/react/redux-entity-adapter.md"
+    },
+    {
+      "id": "redux-serializable-state",
+      "title": "Почему в Redux обычно не хранят Promise, функции и DOM-узлы?",
+      "learningGoal": "Храните описание состояния, а ресурсы и эффекты связывайте с ним отдельно.",
+      "sectionId": "react",
+      "subsectionId": "redux",
+      "keywords": [
+        "React",
+        "Redux и Redux Toolkit",
+        "redux",
+        "serializable",
+        "state"
+      ],
+      "difficulty": "Средний",
+      "priority": "core",
+      "contentHash": "32196df78e2325e1f694c0e36275a5e2a7f2f0aec4459edfaf3c19da833630bb",
+      "answerFile": "answers/react/redux-serializable-state.md"
+    },
+    {
+      "id": "redux-middleware-effects",
+      "title": "Для чего middleware и listenerMiddleware нужны вне reducer?",
+      "learningGoal": "Эффект может реагировать на событие, но reducer остаётся чистым вычислением.",
+      "sectionId": "react",
+      "subsectionId": "redux",
+      "keywords": [
+        "React",
+        "Redux и Redux Toolkit",
+        "redux",
+        "middleware",
+        "effects"
+      ],
+      "difficulty": "Средний",
+      "priority": "core",
+      "contentHash": "df6181ed3a4de5a304d0e98158aeba0466d5480eb89c63c18368ea378098a60f",
+      "answerFile": "answers/react/redux-middleware-effects.md"
+    },
+    {
+      "id": "redux-typescript-hooks",
+      "title": "Как вывести RootState и AppDispatch и типизировать React-Redux hooks?",
+      "learningGoal": "Выводите публичные типы из реальной конфигурации, сохраняя runtime-проверки отдельно.",
+      "sectionId": "react",
+      "subsectionId": "redux",
+      "keywords": [
+        "React",
+        "Redux и Redux Toolkit",
+        "redux",
+        "typescript",
+        "hooks"
+      ],
+      "difficulty": "Средний",
+      "priority": "core",
+      "contentHash": "a7aa530436cfa665fa537bfaf442657129208f79d8124ed5e5efbb12fcdd01a3",
+      "answerFile": "answers/react/redux-typescript-hooks.md"
+    },
+    {
+      "id": "zustand-store-basics",
+      "title": "Что создаёт create в Zustand и нужен ли Provider?",
+      "learningGoal": "Общее состояние определяется общим экземпляром store, а не просто названием хука.",
+      "sectionId": "react",
+      "subsectionId": "zustand",
+      "keywords": [
+        "React",
+        "Zustand",
+        "zustand",
+        "store",
+        "basics"
+      ],
+      "difficulty": "Базовый",
+      "priority": "core",
+      "contentHash": "ac268585991e101b5fba595664ec40e7cfde344aa0bad6259b0f52bf6366a4d0",
+      "answerFile": "answers/react/zustand-store-basics.md"
+    },
+    {
+      "id": "zustand-selector-shallow",
+      "title": "Как selector и useShallow влияют на обновления Zustand-компонента?",
+      "learningGoal": "Подписывайтесь на нужные данные и сохраняйте стабильный результат selector.",
+      "sectionId": "react",
+      "subsectionId": "zustand",
+      "keywords": [
+        "React",
+        "Zustand",
+        "zustand",
+        "selector",
+        "shallow"
+      ],
+      "difficulty": "Базовый",
+      "priority": "core",
+      "contentHash": "1071c834075989c3e5b296d9925c125f0e79f9115283d5336026e9f7271e0e1f",
+      "answerFile": "answers/react/zustand-selector-shallow.md"
+    },
+    {
+      "id": "zustand-set-merge",
+      "title": "Как set объединяет состояние и почему вложенный объект нужно копировать?",
+      "learningGoal": "Zustand сокращает внешний merge, но не отменяет иммутабельность вложенных данных.",
+      "sectionId": "react",
+      "subsectionId": "zustand",
+      "keywords": [
+        "React",
+        "Zustand",
+        "zustand",
+        "set",
+        "merge"
+      ],
+      "difficulty": "Средний",
+      "priority": "core",
+      "contentHash": "eed8c3e2497e476865eb8a6be3006c81f564ba1d15779ed0592a9653a4dd1c8c",
+      "answerFile": "answers/react/zustand-set-merge.md"
+    },
+    {
+      "id": "zustand-async-actions",
+      "title": "Как писать async-действия Zustand и защищаться от устаревшего ответа?",
+      "learningGoal": "Актуальность ответа задаётся приложением, а не наличием async у действия.",
+      "sectionId": "react",
+      "subsectionId": "zustand",
+      "keywords": [
+        "React",
+        "Zustand",
+        "zustand",
+        "async",
+        "actions"
+      ],
+      "difficulty": "Средний",
+      "priority": "core",
+      "contentHash": "2f132a84c5743dc04b6c96806344aa3ae96ac7e6981216616b6805b3a5dab564",
+      "answerFile": "answers/react/zustand-async-actions.md"
+    },
+    {
+      "id": "zustand-imperative-access",
+      "title": "Чем useStore(selector) отличается от useStore.getState()?",
+      "learningGoal": "GetState читает, hook подписывает; выбирайте по месту и требуемой реактивности.",
+      "sectionId": "react",
+      "subsectionId": "zustand",
+      "keywords": [
+        "React",
+        "Zustand",
+        "zustand",
+        "imperative",
+        "access"
+      ],
+      "difficulty": "Базовый",
+      "priority": "core",
+      "contentHash": "c429964d190ac8497fdc75d6a63d792a5d6c4ec7bc56320a61607d8dd27f044c",
+      "answerFile": "answers/react/zustand-imperative-access.md"
+    },
+    {
+      "id": "zustand-selective-subscribe",
+      "title": "Когда нужен subscribeWithSelector и как освобождать подписку?",
+      "learningGoal": "У внешней подписки должны быть узкая цель и явный срок жизни.",
+      "sectionId": "react",
+      "subsectionId": "zustand",
+      "keywords": [
+        "React",
+        "Zustand",
+        "zustand",
+        "selective",
+        "subscribe"
+      ],
+      "difficulty": "Средний",
+      "priority": "core",
+      "contentHash": "0466ac226e086c9dc360ae349317fc528c476d516a4f0e4ffbecdff22e1ceef8",
+      "answerFile": "answers/react/zustand-selective-subscribe.md"
+    },
+    {
+      "id": "zustand-persist-hydration",
+      "title": "Что сохраняет persist и почему гидратация не всегда завершается сразу?",
+      "learningGoal": "Сохранение данных и готовность интерфейса после их восстановления - разные стадии.",
+      "sectionId": "react",
+      "subsectionId": "zustand",
+      "keywords": [
+        "React",
+        "Zustand",
+        "zustand",
+        "persist",
+        "hydration"
+      ],
+      "difficulty": "Средний",
+      "priority": "core",
+      "contentHash": "90b92dcc5b5f1adf420b13d88f8f011fbf548bdb0cf0719774437076f7bcab18",
+      "answerFile": "answers/react/zustand-persist-hydration.md"
+    },
+    {
+      "id": "zustand-persist-migration",
+      "title": "Как version и migrate помогают изменить формат сохранённого Zustand-state?",
+      "learningGoal": "Изменение сохранённой схемы требует политики преобразования и fallback.",
+      "sectionId": "react",
+      "subsectionId": "zustand",
+      "keywords": [
+        "React",
+        "Zustand",
+        "zustand",
+        "persist",
+        "migration"
+      ],
+      "difficulty": "Средний",
+      "priority": "core",
+      "contentHash": "88447ae68da41684e101cf31cc5114a7044a90309e09b53e60342e099ec147a5",
+      "answerFile": "answers/react/zustand-persist-migration.md"
+    },
+    {
+      "id": "zustand-scoped-store",
+      "title": "Как создать независимый Zustand-store для каждого экземпляра виджета?",
+      "learningGoal": "Область общего состояния определяется местом создания экземпляра.",
+      "sectionId": "react",
+      "subsectionId": "zustand",
+      "keywords": [
+        "React",
+        "Zustand",
+        "zustand",
+        "scoped",
+        "store"
+      ],
+      "difficulty": "Средний",
+      "priority": "core",
+      "contentHash": "63d8f872d00794a27753222352dc621da4c059b31d68ae5466ad5886f6d0389c",
+      "answerFile": "answers/react/zustand-scoped-store.md"
+    },
+    {
+      "id": "zustand-immer-middleware",
+      "title": "Что разрешает immer middleware в Zustand и чего обычный set не делает?",
+      "learningGoal": "Мутационный синтаксис допустим внутри конкретного draft-контракта, а не во всём приложении.",
+      "sectionId": "react",
+      "subsectionId": "zustand",
+      "keywords": [
+        "React",
+        "Zustand",
+        "zustand",
+        "immer",
+        "middleware"
+      ],
+      "difficulty": "Средний",
+      "priority": "core",
+      "contentHash": "3996c38864719126cb5587d104109e64867c77f7172d4f4a0df85b5b2b7b20b2",
+      "answerFile": "answers/react/zustand-immer-middleware.md"
+    },
+    {
+      "id": "zustand-typescript-store",
+      "title": "Как типизировать данные и actions Zustand через create<State>()()?",
+      "learningGoal": "Один контракт связывает данные, actions и selectors, но не заменяет runtime-валидацию.",
+      "sectionId": "react",
+      "subsectionId": "zustand",
+      "keywords": [
+        "React",
+        "Zustand",
+        "zustand",
+        "typescript",
+        "store"
+      ],
+      "difficulty": "Средний",
+      "priority": "core",
+      "contentHash": "80ee3a0a74747ca76582ebfad910071ac4b23c367e0adec8d2653e7b9463db03",
+      "answerFile": "answers/react/zustand-typescript-store.md"
+    },
+    {
+      "id": "zustand-reset-lifetime",
+      "title": "Как сбросить Zustand-state и почему logout требует большего, чем clearStorage?",
+      "learningGoal": "Завершение сессии должно учитывать память, storage и операции в полёте.",
+      "sectionId": "react",
+      "subsectionId": "zustand",
+      "keywords": [
+        "React",
+        "Zustand",
+        "zustand",
+        "reset",
+        "lifetime"
+      ],
+      "difficulty": "Средний",
+      "priority": "core",
+      "contentHash": "89d5e20b5e15173c62277e8eb572b3025894733c26d995046c88990af3d25d5e",
+      "answerFile": "answers/react/zustand-reset-lifetime.md"
+    },
+    {
       "id": "semantic-button",
       "title": "Почему для действия лучше использовать button, а не div?",
       "learningGoal": "Нативная семантика даёт доступное поведение по умолчанию.",
@@ -8456,7 +9891,7 @@
       ],
       "difficulty": "Средний",
       "priority": "core",
-      "contentHash": "2047dd67336cbf33a3b51f56356e5ab15065bd2fc446b866825c5193586b3b18",
+      "contentHash": "2b10d2452b467f73cdbbe6dead1873acc72849c8497196b7227ecd93f9c224c1",
       "answerFile": "answers/html-css/html-parser-content-model.md"
     },
     {
@@ -8531,7 +9966,7 @@
       ],
       "difficulty": "Базовый",
       "priority": "core",
-      "contentHash": "2c3c0f57c64e2fefd2295d9d0dd1c9062c04a947df82b5960c45d140f00b30b2",
+      "contentHash": "6a69d45652389f8c23a83cd1af132f9b06d1abcf4425d57c329cba96520cec00",
       "answerFile": "answers/html-css/html-table-relations.md"
     },
     {
@@ -8550,6 +9985,181 @@
       "answerFile": "answers/html-css/html-live-status.md"
     },
     {
+      "id": "html-article-section-aside",
+      "title": "Чем article, section и aside отличаются по смыслу?",
+      "learningGoal": "Семантику выбирают по отношениям содержимого, а не по координатам в макете.",
+      "sectionId": "html-css",
+      "subsectionId": "semantics",
+      "keywords": [
+        "HTML и CSS",
+        "Семантика и доступность",
+        "article",
+        "section",
+        "aside"
+      ],
+      "difficulty": "Базовый",
+      "priority": "core",
+      "contentHash": "d65b408aec4d8ba5a16389d63bc00275e7138e3a8207e53772513d1f1d78b9c1",
+      "answerFile": "answers/html-css/html-article-section-aside.md"
+    },
+    {
+      "id": "html-native-disclosure",
+      "title": "Когда details и summary заменяют собственный компонент раскрытия?",
+      "learningGoal": "Нативное раскрытие уже содержит базовое поведение, которое пришлось бы поддерживать вручную.",
+      "sectionId": "html-css",
+      "subsectionId": "semantics",
+      "keywords": [
+        "HTML и CSS",
+        "Семантика и доступность",
+        "native",
+        "disclosure"
+      ],
+      "difficulty": "Средний",
+      "priority": "core",
+      "contentHash": "c276dcd2ccc1c45c76244302032d0c59c0810f41500feb9e2a85e2a9ca2b5cd5",
+      "answerFile": "answers/html-css/html-native-disclosure.md"
+    },
+    {
+      "id": "html-popover-contract",
+      "title": "Чем popover отличается от модального dialog?",
+      "learningGoal": "Top layer не равен модальности и не заменяет доступное поведение содержимого.",
+      "sectionId": "html-css",
+      "subsectionId": "semantics",
+      "keywords": [
+        "HTML и CSS",
+        "Семантика и доступность",
+        "popover",
+        "contract"
+      ],
+      "difficulty": "Средний",
+      "priority": "core",
+      "contentHash": "e4f09babdf68b5f08415905c518e6e68950a50ada0552b0f87ab3c16404bc750",
+      "answerFile": "answers/html-css/html-popover-contract.md"
+    },
+    {
+      "id": "html-aria-state-behavior",
+      "title": "Почему aria-disabled и aria-expanded не реализуют поведение компонента?",
+      "learningGoal": "У каждого объявленного ARIA-состояния должно быть соответствующее реальное поведение.",
+      "sectionId": "html-css",
+      "subsectionId": "semantics",
+      "keywords": [
+        "HTML и CSS",
+        "Семантика и доступность",
+        "aria",
+        "state",
+        "behavior"
+      ],
+      "difficulty": "Средний",
+      "priority": "core",
+      "contentHash": "efbe5d9575be47f7a8f35749a28a6cf76e2679b01a9d9740c5bc54557f6cc33a",
+      "answerFile": "answers/html-css/html-aria-state-behavior.md"
+    },
+    {
+      "id": "html-progress-meter-output",
+      "title": "Когда выбирать progress, meter и output?",
+      "learningGoal": "Выбирайте нативный индикатор по смыслу величины и наличию известного итога.",
+      "sectionId": "html-css",
+      "subsectionId": "semantics",
+      "keywords": [
+        "HTML и CSS",
+        "Семантика и доступность",
+        "progress",
+        "meter",
+        "output"
+      ],
+      "difficulty": "Базовый",
+      "priority": "core",
+      "contentHash": "ba5a39ed1c03efc1aecbc4398f2562f4d552ef04aac5fd4a6f11175f76ce19c2",
+      "answerFile": "answers/html-css/html-progress-meter-output.md"
+    },
+    {
+      "id": "html-alt-purpose",
+      "title": "Как выбрать alt для информативного, декоративного и кликабельного изображения?",
+      "learningGoal": "Альтернатива определяется задачей изображения и окружающим содержимым.",
+      "sectionId": "html-css",
+      "subsectionId": "semantics",
+      "keywords": [
+        "HTML и CSS",
+        "Семантика и доступность",
+        "alt",
+        "purpose"
+      ],
+      "difficulty": "Базовый",
+      "priority": "core",
+      "contentHash": "bdfe397321533314cd91868ba46d4d7755e68262d9a71ac0a9e4e78dd84ce5c2",
+      "answerFile": "answers/html-css/html-alt-purpose.md"
+    },
+    {
+      "id": "html-figure-caption",
+      "title": "Когда нужны figure и figcaption и заменяют ли они alt?",
+      "learningGoal": "Подпись материала и текстовая альтернатива изображения дополняют друг друга.",
+      "sectionId": "html-css",
+      "subsectionId": "semantics",
+      "keywords": [
+        "HTML и CSS",
+        "Семантика и доступность",
+        "figure",
+        "caption"
+      ],
+      "difficulty": "Базовый",
+      "priority": "core",
+      "contentHash": "db51418f5a893e5ac7c7bf480f8a3cbcba09969c6bcb315bf9afbef2fc66d8f8",
+      "answerFile": "answers/html-css/html-figure-caption.md"
+    },
+    {
+      "id": "html-skip-navigation",
+      "title": "Зачем нужна ссылка «К основному содержимому» и как она должна работать?",
+      "learningGoal": "Пользователь должен быстро обходить повторяющиеся блоки и продолжать работу в материале.",
+      "sectionId": "html-css",
+      "subsectionId": "semantics",
+      "keywords": [
+        "HTML и CSS",
+        "Семантика и доступность",
+        "skip",
+        "navigation"
+      ],
+      "difficulty": "Базовый",
+      "priority": "core",
+      "contentHash": "6975ac85f0ca41e2e30f46f52f0a915acc5b41078a9e871d2404b3a889d80f8a",
+      "answerFile": "answers/html-css/html-skip-navigation.md"
+    },
+    {
+      "id": "css-visually-hidden-label",
+      "title": "Как визуально скрыть вспомогательный текст, сохранив его доступность?",
+      "learningGoal": "Визуальное скрытие и исключение из доступности - разные требования.",
+      "sectionId": "html-css",
+      "subsectionId": "semantics",
+      "keywords": [
+        "HTML и CSS",
+        "Семантика и доступность",
+        "visually",
+        "hidden",
+        "label"
+      ],
+      "difficulty": "Средний",
+      "priority": "core",
+      "contentHash": "d07b2e1bc6d668b043a53c0410bf67aded6fe184aa27733dd5fa88ae02719386",
+      "answerFile": "answers/html-css/css-visually-hidden-label.md"
+    },
+    {
+      "id": "html-accessibility-smoke-check",
+      "title": "Как вручную проверить базовую доступность страницы без специализированного аудита?",
+      "learningGoal": "Проверка должна проходить пользовательский сценарий, а не ограничиваться отсутствием ошибок инструмента.",
+      "sectionId": "html-css",
+      "subsectionId": "semantics",
+      "keywords": [
+        "HTML и CSS",
+        "Семантика и доступность",
+        "accessibility",
+        "smoke",
+        "check"
+      ],
+      "difficulty": "Средний",
+      "priority": "core",
+      "contentHash": "b8bed13afb385a77201c79d2a44aee314fb470bea6ad889c9bcd203def960f42",
+      "answerFile": "answers/html-css/html-accessibility-smoke-check.md"
+    },
+    {
       "id": "css-cascade",
       "title": "Как браузер выбирает правило при конфликте CSS?",
       "learningGoal": "Сначала сравнивают уровни каскада, затем специфичность.",
@@ -8561,7 +10171,7 @@
       ],
       "difficulty": "Средний",
       "priority": "core",
-      "contentHash": "f20d925b17afc528a583cc35b434b60c63eb8d33d17e20fb33f2fb0ad6ec47e2",
+      "contentHash": "cc0f796d6bea00af0344b48ac81eaf04376f20c15028d328a1cdc6bc55fd8dcf",
       "answerFile": "answers/html-css/css-cascade.md"
     },
     {
@@ -8591,7 +10201,7 @@
       ],
       "difficulty": "Средний",
       "priority": "core",
-      "contentHash": "eccfb53d5bb20c3a9cfe4e6baf1444b15bd1e0e796fb5253ca3d741724ca1a88",
+      "contentHash": "f120ccd1970ba30f062023da7b5795430ec6d25b2377dd06764a223b8286727a",
       "answerFile": "answers/html-css/css-inheritance.md"
     },
     {
@@ -8606,7 +10216,7 @@
       ],
       "difficulty": "Средний",
       "priority": "core",
-      "contentHash": "b324472bbef245435d616ddd0db7f404ae379fb30e442315c71819860cca9583",
+      "contentHash": "dcb0e90d4fc56e82a8dc5ee74b32b2c1f885274a873983b322b0638648673fc0",
       "answerFile": "answers/html-css/css-selector-functions.md"
     },
     {
@@ -8621,7 +10231,7 @@
       ],
       "difficulty": "Средний",
       "priority": "core",
-      "contentHash": "3f624bd503b2878f766db1c7ef0ced98910505aa825730d60373b26718e1a72f",
+      "contentHash": "a99b4f9672607db87b50dbdc8416f557bb5494630e408ce2b2ed75d9eae1e63a",
       "answerFile": "answers/html-css/css-custom-properties.md"
     },
     {
@@ -8653,6 +10263,178 @@
       "priority": "core",
       "contentHash": "477c0034d6de1ea5b80364aa554f18bd3a5a115abf9a24c1d949630643412650",
       "answerFile": "answers/html-css/css-progressive-enhancement.md"
+    },
+    {
+      "id": "css-size-constraints",
+      "title": "Как width, min-width и max-width разрешают конфликт размеров?",
+      "learningGoal": "Учитывайте все три ограничения и box-sizing, прежде чем объяснять итоговую ширину.",
+      "sectionId": "html-css",
+      "subsectionId": "cascade",
+      "keywords": [
+        "HTML и CSS",
+        "Каскад и блочная модель",
+        "size",
+        "constraints"
+      ],
+      "difficulty": "Базовый",
+      "priority": "core",
+      "contentHash": "684dc4edd2aede89b029365a0fb4ceb11896269158d9c5146c73cbabfdb8a5ba",
+      "answerFile": "answers/html-css/css-size-constraints.md"
+    },
+    {
+      "id": "css-value-processing",
+      "title": "Чем specified, computed, used и actual values отличаются друг от друга?",
+      "learningGoal": "Победившая декларация ещё не равна окончательной геометрии.",
+      "sectionId": "html-css",
+      "subsectionId": "cascade",
+      "keywords": [
+        "HTML и CSS",
+        "Каскад и блочная модель",
+        "value",
+        "processing"
+      ],
+      "difficulty": "Продвинутый",
+      "priority": "core",
+      "contentHash": "19c8b3ad4ea5beaa167540644bef9b0fa514b6c56020b2e03c20255613581486",
+      "answerFile": "answers/html-css/css-value-processing.md"
+    },
+    {
+      "id": "css-shorthand-reset",
+      "title": "Почему shorthand может сбросить свойство, которого в нём явно нет?",
+      "learningGoal": "Сокращённая запись компактна по тексту, но широка по воздействию.",
+      "sectionId": "html-css",
+      "subsectionId": "cascade",
+      "keywords": [
+        "HTML и CSS",
+        "Каскад и блочная модель",
+        "shorthand",
+        "reset"
+      ],
+      "difficulty": "Средний",
+      "priority": "core",
+      "contentHash": "4215a88a9c75adcc9a2915cedab49f64429669f804b9cddd281f45a7a83df6e9",
+      "answerFile": "answers/html-css/css-shorthand-reset.md"
+    },
+    {
+      "id": "css-error-recovery",
+      "title": "Как браузер обрабатывает неизвестное свойство, неверное значение и ошибку в селекторе?",
+      "learningGoal": "Понимайте границу отбрасывания: декларация, список селекторов и вычисление var() ведут себя по-разному.",
+      "sectionId": "html-css",
+      "subsectionId": "cascade",
+      "keywords": [
+        "HTML и CSS",
+        "Каскад и блочная модель",
+        "error",
+        "recovery"
+      ],
+      "difficulty": "Средний",
+      "priority": "core",
+      "contentHash": "71144592bf236ca0f227b60c887200831528e303c286d93f34a407cee8944abb",
+      "answerFile": "answers/html-css/css-error-recovery.md"
+    },
+    {
+      "id": "css-registered-property",
+      "title": "Что меняет регистрация custom property через @property?",
+      "learningGoal": "Регистрация превращает соглашение о токенах в проверяемый CSS-контракт.",
+      "sectionId": "html-css",
+      "subsectionId": "cascade",
+      "keywords": [
+        "HTML и CSS",
+        "Каскад и блочная модель",
+        "registered",
+        "property"
+      ],
+      "difficulty": "Продвинутый",
+      "priority": "extended",
+      "contentHash": "336ae9ddbf5a440d37064e24c48f929100650fb0faa47965101efa89101c42fd",
+      "answerFile": "answers/html-css/css-registered-property.md"
+    },
+    {
+      "id": "css-reset-normalize",
+      "title": "Чем reset отличается от normalize и почему опасно сбрасывать всё через all?",
+      "learningGoal": "Базовые стили должны упростить каскад, сохраняя доступное поведение.",
+      "sectionId": "html-css",
+      "subsectionId": "cascade",
+      "keywords": [
+        "HTML и CSS",
+        "Каскад и блочная модель",
+        "reset",
+        "normalize"
+      ],
+      "difficulty": "Средний",
+      "priority": "core",
+      "contentHash": "d47074e63835dd943de8479d35a5d4e433e695d0719cb4655197173b3a7572f2",
+      "answerFile": "answers/html-css/css-reset-normalize.md"
+    },
+    {
+      "id": "css-rule-declaration-syntax",
+      "title": "Из чего состоит CSS-правило и чем свойство отличается от селектора?",
+      "learningGoal": "Отделяйте условие выбора элемента от настройки его представления.",
+      "sectionId": "html-css",
+      "subsectionId": "cascade",
+      "keywords": [
+        "HTML и CSS",
+        "Каскад и блочная модель",
+        "rule",
+        "declaration",
+        "syntax"
+      ],
+      "difficulty": "Базовый",
+      "priority": "core",
+      "contentHash": "4487ff64d3ed1e99e2b417dd09dd504b716ac3d8b767c40691528939bb191654",
+      "answerFile": "answers/html-css/css-rule-declaration-syntax.md"
+    },
+    {
+      "id": "css-stylesheet-connection",
+      "title": "Как подключить CSS через link, style и атрибут style?",
+      "learningGoal": "Способ подключения выбирают по структуре проекта; приоритет проверяют по правилам каскада.",
+      "sectionId": "html-css",
+      "subsectionId": "cascade",
+      "keywords": [
+        "HTML и CSS",
+        "Каскад и блочная модель",
+        "stylesheet",
+        "connection"
+      ],
+      "difficulty": "Базовый",
+      "priority": "core",
+      "contentHash": "c7f725a656f8c3a071b10acfe8078c2633e0cb1e73aa55944aaba5d49ef44a3e",
+      "answerFile": "answers/html-css/css-stylesheet-connection.md"
+    },
+    {
+      "id": "css-box-layers-spacing",
+      "title": "Чем content, padding, border и margin отличаются в блочной модели?",
+      "learningGoal": "Для внутреннего воздуха используйте padding, для отношений между коробками выбирайте подходящие margin или gap.",
+      "sectionId": "html-css",
+      "subsectionId": "cascade",
+      "keywords": [
+        "HTML и CSS",
+        "Каскад и блочная модель",
+        "box",
+        "layers",
+        "spacing"
+      ],
+      "difficulty": "Базовый",
+      "priority": "core",
+      "contentHash": "e6da8cf39b0c28247b7eaf44d6b2c5d75582e60e278a05c9103d49c09a26e2d6",
+      "answerFile": "answers/html-css/css-box-layers-spacing.md"
+    },
+    {
+      "id": "css-containment-types",
+      "title": "Что ограничивают contain: layout, paint и size?",
+      "learningGoal": "Оптимизационное обещание допустимо только тогда, когда его поведенческие ограничения подходят компоненту.",
+      "sectionId": "html-css",
+      "subsectionId": "cascade",
+      "keywords": [
+        "HTML и CSS",
+        "Каскад и блочная модель",
+        "containment",
+        "types"
+      ],
+      "difficulty": "Средний",
+      "priority": "extended",
+      "contentHash": "cfc240ce7054e25dd0d8c2d9db98656d1d448cfdd213c4104ebbffa80bce0483",
+      "answerFile": "answers/html-css/css-containment-types.md"
     },
     {
       "id": "css-flex-grid",
@@ -8786,7 +10568,7 @@
       ],
       "difficulty": "Средний",
       "priority": "core",
-      "contentHash": "213d22709de4b9a02873907d9a878c228a1d4959d812ea3fea42f81c4031db90",
+      "contentHash": "9fed0bddb05eef02f341ea049b9f0903f77f827b6ca8b762892273791ab7c775",
       "answerFile": "answers/html-css/css-flex-space.md"
     },
     {
@@ -8850,6 +10632,327 @@
       "answerFile": "answers/html-css/css-overflow-scroll-contract.md"
     },
     {
+      "id": "css-grid-implicit-placement",
+      "title": "Чем явная Grid-сетка отличается от неявной и что делает grid-auto-flow: dense?",
+      "learningGoal": "Автопозиционирование добавляет геометрию, но не переписывает логический порядок документа.",
+      "sectionId": "html-css",
+      "subsectionId": "layout",
+      "keywords": [
+        "HTML и CSS",
+        "Построение макета",
+        "grid",
+        "implicit",
+        "placement"
+      ],
+      "difficulty": "Средний",
+      "priority": "core",
+      "contentHash": "b365acc332c6e948434f4dcb7935599a6ab34a14c44f86392e12209be25c209d",
+      "answerFile": "answers/html-css/css-grid-implicit-placement.md"
+    },
+    {
+      "id": "css-grid-areas-overlap",
+      "title": "Как работают grid-template-areas и наложение элементов в одной ячейке?",
+      "learningGoal": "Grid может управлять и двумерной структурой, и наложением элементов в потоке.",
+      "sectionId": "html-css",
+      "subsectionId": "layout",
+      "keywords": [
+        "HTML и CSS",
+        "Построение макета",
+        "grid",
+        "areas",
+        "overlap"
+      ],
+      "difficulty": "Средний",
+      "priority": "core",
+      "contentHash": "c5f6ffe9e0cfbc4a1eb69b76005611bbafe4a296e6a5ec66a434d85b77090a05",
+      "answerFile": "answers/html-css/css-grid-areas-overlap.md"
+    },
+    {
+      "id": "css-flex-wrapping-lines",
+      "title": "Почему строки flex-wrap не образуют общие колонки?",
+      "learningGoal": "Перенос Flexbox остаётся одномерной моделью с независимыми строками.",
+      "sectionId": "html-css",
+      "subsectionId": "layout",
+      "keywords": [
+        "HTML и CSS",
+        "Построение макета",
+        "flex",
+        "wrapping",
+        "lines"
+      ],
+      "difficulty": "Средний",
+      "priority": "core",
+      "contentHash": "2cf4273b747f6d62fc7c0c0316d8f22b4950610b2df32c133e7b079156ac1e4c",
+      "answerFile": "answers/html-css/css-flex-wrapping-lines.md"
+    },
+    {
+      "id": "css-auto-margin-gap",
+      "title": "Как auto margin во Flexbox взаимодействует с gap и justify-content?",
+      "learningGoal": "Gap задаёт интервалы, auto-margin забирает остаток, justify-content распределяет оставшееся место.",
+      "sectionId": "html-css",
+      "subsectionId": "layout",
+      "keywords": [
+        "HTML и CSS",
+        "Построение макета",
+        "auto",
+        "margin",
+        "gap"
+      ],
+      "difficulty": "Средний",
+      "priority": "core",
+      "contentHash": "a58925dee8a9924f53e026da0f3df4e1d1a2dfb60ead255ff65eb197ea1cb815",
+      "answerFile": "answers/html-css/css-auto-margin-gap.md"
+    },
+    {
+      "id": "css-percentage-height",
+      "title": "Почему height: 100% не растягивает блок по высоте родителя?",
+      "learningGoal": "Для процента сначала найдите базу и выясните, определена ли она в этом layout.",
+      "sectionId": "html-css",
+      "subsectionId": "layout",
+      "keywords": [
+        "HTML и CSS",
+        "Построение макета",
+        "percentage",
+        "height"
+      ],
+      "difficulty": "Средний",
+      "priority": "core",
+      "contentHash": "b7d69f5a9645dd43360aa188c20d9ea9b061ea77ddf75bd4b7a5058acc6ad571",
+      "answerFile": "answers/html-css/css-percentage-height.md"
+    },
+    {
+      "id": "css-transform-flow-geometry",
+      "title": "Чем transform: translate отличается от изменения margin или позиции?",
+      "learningGoal": "Различайте место элемента в потоке и его преобразованную видимую геометрию.",
+      "sectionId": "html-css",
+      "subsectionId": "layout",
+      "keywords": [
+        "HTML и CSS",
+        "Построение макета",
+        "transform",
+        "flow",
+        "geometry"
+      ],
+      "difficulty": "Средний",
+      "priority": "core",
+      "contentHash": "09c21bf69163dd912884b48e2636bf25ab82b2cb40b608582639f920ec6124b1",
+      "answerFile": "answers/html-css/css-transform-flow-geometry.md"
+    },
+    {
+      "id": "css-display-contents-contract",
+      "title": "Что убирает display: contents и почему с ним осторожны на семантических элементах?",
+      "learningGoal": "Дерево CSS-коробок и дерево DOM связаны, но не совпадают.",
+      "sectionId": "html-css",
+      "subsectionId": "layout",
+      "keywords": [
+        "HTML и CSS",
+        "Построение макета",
+        "display",
+        "contents",
+        "contract"
+      ],
+      "difficulty": "Продвинутый",
+      "priority": "extended",
+      "contentHash": "160984387770fbe24ff0794161e1e5163811af56691ef1fc837751946b4af257",
+      "answerFile": "answers/html-css/css-display-contents-contract.md"
+    },
+    {
+      "id": "css-table-layout",
+      "title": "Когда table-layout: fixed полезнее auto и почему он не решает перенос текста?",
+      "learningGoal": "Алгоритм ширины таблицы и способ показа длинного содержимого выбирают отдельно.",
+      "sectionId": "html-css",
+      "subsectionId": "layout",
+      "keywords": [
+        "HTML и CSS",
+        "Построение макета",
+        "table",
+        "layout"
+      ],
+      "difficulty": "Средний",
+      "priority": "core",
+      "contentHash": "20e5e46da74d5bf0d20aa96824de9aaa44670434f5acf9e6819a44cc65d45d27",
+      "answerFile": "answers/html-css/css-table-layout.md"
+    },
+    {
+      "id": "css-normal-flow-position",
+      "title": "Что такое normal flow и как position меняет участие в нём?",
+      "learningGoal": "Отдельно спрашивайте, где находится коробка и зарезервировано ли под неё место в потоке.",
+      "sectionId": "html-css",
+      "subsectionId": "layout",
+      "keywords": [
+        "HTML и CSS",
+        "Построение макета",
+        "normal",
+        "flow",
+        "position"
+      ],
+      "difficulty": "Базовый",
+      "priority": "core",
+      "contentHash": "4e75d524ed01fa236053d2b1d618b2ad3fc4b5c42a8eebc762d3b24cd7109087",
+      "answerFile": "answers/html-css/css-normal-flow-position.md"
+    },
+    {
+      "id": "css-block-horizontal-center",
+      "title": "Как центрировать блочный контейнер и почему margin: auto может быть незаметен?",
+      "learningGoal": "Центрирование блока и его текста - разные операции.",
+      "sectionId": "html-css",
+      "subsectionId": "layout",
+      "keywords": [
+        "HTML и CSS",
+        "Построение макета",
+        "block",
+        "horizontal",
+        "center"
+      ],
+      "difficulty": "Базовый",
+      "priority": "core",
+      "contentHash": "077269152e5608abb9e628e6d6fa77d140675bc6d1e749662a7c2d91a2cafef6",
+      "answerFile": "answers/html-css/css-block-horizontal-center.md"
+    },
+    {
+      "id": "css-bounded-scroll-pane",
+      "title": "Как сделать прокрутку только у центральной панели в Flexbox?",
+      "learningGoal": "Прокрутка появляется там, где рост содержимого встречает реальное ограничение размера.",
+      "sectionId": "html-css",
+      "subsectionId": "layout",
+      "keywords": [
+        "HTML и CSS",
+        "Построение макета",
+        "bounded",
+        "scroll",
+        "pane"
+      ],
+      "difficulty": "Средний",
+      "priority": "core",
+      "contentHash": "ea5965419397b0b8f99f489e03a10eeedbb9fda575a9e16fb8ba8f42fc93acf2",
+      "answerFile": "answers/html-css/css-bounded-scroll-pane.md"
+    },
+    {
+      "id": "css-grid-line-numbering",
+      "title": "Что означают grid-column: 1 / -1 и span 2?",
+      "learningGoal": "Считайте линии и различайте явную сетку с добавленными треками.",
+      "sectionId": "html-css",
+      "subsectionId": "layout",
+      "keywords": [
+        "HTML и CSS",
+        "Построение макета",
+        "grid",
+        "line",
+        "numbering"
+      ],
+      "difficulty": "Средний",
+      "priority": "core",
+      "contentHash": "4b0708fe4564853d6359b465c4dd34d0693a98bb8ab58d2ffc9aadbd22f268de",
+      "answerFile": "answers/html-css/css-grid-line-numbering.md"
+    },
+    {
+      "id": "css-grid-gap-percentages",
+      "title": "Почему две колонки по 50% вместе с gap переполняют Grid?",
+      "learningGoal": "Для долей свободного места используйте fr, а не проценты от всего контейнера.",
+      "sectionId": "html-css",
+      "subsectionId": "layout",
+      "keywords": [
+        "HTML и CSS",
+        "Построение макета",
+        "grid",
+        "gap",
+        "percentages"
+      ],
+      "difficulty": "Средний",
+      "priority": "core",
+      "contentHash": "8d35d4660091f52f1e61bfe7470a8f617e57aea60ec34b7e475a03c9c101bd36",
+      "answerFile": "answers/html-css/css-grid-gap-percentages.md"
+    },
+    {
+      "id": "css-flex-axis-direction",
+      "title": "Как flex-direction определяет основную и поперечную оси?",
+      "learningGoal": "Сначала определите оси, затем выбирайте свойства выравнивания.",
+      "sectionId": "html-css",
+      "subsectionId": "layout",
+      "keywords": [
+        "HTML и CSS",
+        "Построение макета",
+        "flex",
+        "axis",
+        "direction"
+      ],
+      "difficulty": "Базовый",
+      "priority": "core",
+      "contentHash": "055436f72be494735e66d5c18a9ec1ae9001f74f2f3763087808da12651bf5a5",
+      "answerFile": "answers/html-css/css-flex-axis-direction.md"
+    },
+    {
+      "id": "css-float-clear-text",
+      "title": "Для чего нужны float и clear и почему Flexbox не всегда их заменяет?",
+      "learningGoal": "Используйте float для обтекания, а современную сетку - для отношений независимых блоков.",
+      "sectionId": "html-css",
+      "subsectionId": "layout",
+      "keywords": [
+        "HTML и CSS",
+        "Построение макета",
+        "float",
+        "clear",
+        "text"
+      ],
+      "difficulty": "Базовый",
+      "priority": "core",
+      "contentHash": "97418d92c5995ae9afbbd76fa63cd029526d0a70c500afe1f48ebbf7da745b82",
+      "answerFile": "answers/html-css/css-float-clear-text.md"
+    },
+    {
+      "id": "css-absolute-opposing-insets",
+      "title": "Как left и right вместе задают размер absolute-элемента?",
+      "learningGoal": "Противоположные inset могут определять auto-размер, но не отменяют все остальные ограничения.",
+      "sectionId": "html-css",
+      "subsectionId": "layout",
+      "keywords": [
+        "HTML и CSS",
+        "Построение макета",
+        "absolute",
+        "opposing",
+        "insets"
+      ],
+      "difficulty": "Средний",
+      "priority": "core",
+      "contentHash": "6db9467b9dfca0af6c23db6db2292839c623b6ae3d5503603e983f929f969339",
+      "answerFile": "answers/html-css/css-absolute-opposing-insets.md"
+    },
+    {
+      "id": "css-multicol-flow",
+      "title": "Чем многоколоночный текст через columns отличается от Grid?",
+      "learningGoal": "Выбирайте multicol для потока текста, а Grid для явных отношений ячеек.",
+      "sectionId": "html-css",
+      "subsectionId": "layout",
+      "keywords": [
+        "HTML и CSS",
+        "Построение макета",
+        "multicol",
+        "flow"
+      ],
+      "difficulty": "Базовый",
+      "priority": "core",
+      "contentHash": "2ec253bc36c3057e27bc43d8d6d2236e54764db5b5481b4f7e3127b58d7815d7",
+      "answerFile": "answers/html-css/css-multicol-flow.md"
+    },
+    {
+      "id": "css-table-border-model",
+      "title": "Чем border-collapse: collapse отличается от separate у таблицы?",
+      "learningGoal": "Сначала выберите модель границ, затем настраивайте промежутки и padding.",
+      "sectionId": "html-css",
+      "subsectionId": "layout",
+      "keywords": [
+        "HTML и CSS",
+        "Построение макета",
+        "table",
+        "border",
+        "model"
+      ],
+      "difficulty": "Базовый",
+      "priority": "core",
+      "contentHash": "5e70155f1e7c989ecd2f3d5ac3b1dabc7fa204c89a1815f20366546e75b3f483",
+      "answerFile": "answers/html-css/css-table-border-model.md"
+    },
+    {
       "id": "css-media-container",
       "title": "Чем media query отличается от container query?",
       "learningGoal": "Адаптируйте страницу к среде, а компонент - к доступному месту.",
@@ -8876,7 +10979,7 @@
       ],
       "difficulty": "Базовый",
       "priority": "core",
-      "contentHash": "e299fe7e6a4d65fb05471cf105090d67095ecf155622056c5b9246079e162aa8",
+      "contentHash": "2f5d5f26fc7141aa9e8d88ad545d273ec0c689c472310e116d0c4dd729a5d649",
       "answerFile": "answers/html-css/css-relative-units.md"
     },
     {
@@ -8891,7 +10994,7 @@
       ],
       "difficulty": "Средний",
       "priority": "core",
-      "contentHash": "8d39989ac498dd008716f48654f4d63db5c16c9c70acaa22792dcbf0fdff1546",
+      "contentHash": "76b02ae098b43c40643e6ebf183de2fc4cf51da2cc92504d0baa0ff2a917c9a8",
       "answerFile": "answers/html-css/html-responsive-images.md"
     },
     {
@@ -8921,7 +11024,7 @@
       ],
       "difficulty": "Средний",
       "priority": "core",
-      "contentHash": "bd206d0e38f56893f89f03afcb4f0904d0d3950e6e7c13e42bf4718e121a247a",
+      "contentHash": "51c343b76066f2233cdb3356c6255e4463c36965175052d500767ee8582069b9",
       "answerFile": "answers/html-css/css-image-fitting.md"
     },
     {
@@ -8970,6 +11073,201 @@
       "answerFile": "answers/html-css/css-font-loading.md"
     },
     {
+      "id": "css-calc-typed-math",
+      "title": "Что вычисляет calc и почему нельзя складывать любые CSS-значения?",
+      "learningGoal": "CSS-арифметика знает типы и базы относительных значений, а не просто числа.",
+      "sectionId": "html-css",
+      "subsectionId": "responsive",
+      "keywords": [
+        "HTML и CSS",
+        "Адаптивность",
+        "calc",
+        "typed",
+        "math"
+      ],
+      "difficulty": "Средний",
+      "priority": "core",
+      "contentHash": "c0b6c4ee0b6170cca62d72fa4d4ba6ce90b584fea306aed192ea640a4317b1f8",
+      "answerFile": "answers/html-css/css-calc-typed-math.md"
+    },
+    {
+      "id": "css-media-query-logic",
+      "title": "Как работают and, запятая, not и диапазоны в media queries?",
+      "learningGoal": "Проектируйте условия как логические диапазоны возможностей макета.",
+      "sectionId": "html-css",
+      "subsectionId": "responsive",
+      "keywords": [
+        "HTML и CSS",
+        "Адаптивность",
+        "media",
+        "query",
+        "logic"
+      ],
+      "difficulty": "Средний",
+      "priority": "core",
+      "contentHash": "b5620282fcd34e071f83a38f43d80e661c228f1a8f9e27500e0dcb0c65dd4cf1",
+      "answerFile": "answers/html-css/css-media-query-logic.md"
+    },
+    {
+      "id": "css-container-query-setup",
+      "title": "Почему size container query не срабатывает на том элементе, где задан container-type?",
+      "learningGoal": "Контейнер измеряют, а адаптируют его потомка; настройка containment имеет собственную цену.",
+      "sectionId": "html-css",
+      "subsectionId": "responsive",
+      "keywords": [
+        "HTML и CSS",
+        "Адаптивность",
+        "container",
+        "query",
+        "setup"
+      ],
+      "difficulty": "Продвинутый",
+      "priority": "core",
+      "contentHash": "9e3aa296496b809918c4ab049584e794e03752f5eda8031ca455f3110d622789",
+      "answerFile": "answers/html-css/css-container-query-setup.md"
+    },
+    {
+      "id": "css-print-fragmentation",
+      "title": "Как подготовить страницу к печати и что гарантирует break-inside: avoid?",
+      "learningGoal": "Печать - отдельный контекст представления, в котором содержимое должно остаться доступным.",
+      "sectionId": "html-css",
+      "subsectionId": "responsive",
+      "keywords": [
+        "HTML и CSS",
+        "Адаптивность",
+        "print",
+        "fragmentation"
+      ],
+      "difficulty": "Средний",
+      "priority": "core",
+      "contentHash": "86e490d43be2ffde39c14e93b4c9732ab3e320dfa9c3bde38f039478797f08db",
+      "answerFile": "answers/html-css/css-print-fragmentation.md"
+    },
+    {
+      "id": "css-scroll-offset-snap",
+      "title": "Зачем нужны scroll-padding, scroll-margin и scroll-snap-type?",
+      "learningGoal": "Настройте доступную область и цели прокрутки прежде, чем добавлять принудительное движение.",
+      "sectionId": "html-css",
+      "subsectionId": "responsive",
+      "keywords": [
+        "HTML и CSS",
+        "Адаптивность",
+        "scroll",
+        "offset",
+        "snap"
+      ],
+      "difficulty": "Средний",
+      "priority": "core",
+      "contentHash": "5320cde80ab0f9d02601cc4b53ed7507c369f80a729688761fcf65ab7a90ec5d",
+      "answerFile": "answers/html-css/css-scroll-offset-snap.md"
+    },
+    {
+      "id": "html-viewport-meta",
+      "title": "Для чего нужен meta viewport на мобильной странице?",
+      "learningGoal": "Настройте viewport и отдельно обеспечьте гибкий макет и возможность увеличения.",
+      "sectionId": "html-css",
+      "subsectionId": "responsive",
+      "keywords": [
+        "HTML и CSS",
+        "Адаптивность",
+        "viewport",
+        "meta"
+      ],
+      "difficulty": "Базовый",
+      "priority": "core",
+      "contentHash": "04debb59a01092dde6b7022afb6814990711d94102247a2f7fda2e9305874667",
+      "answerFile": "answers/html-css/html-viewport-meta.md"
+    },
+    {
+      "id": "css-mobile-first-strategy",
+      "title": "Что означает mobile-first в CSS и чем он отличается от desktop-first?",
+      "learningGoal": "Базовый вариант должен работать сам, а запросы - осознанно добавлять структуру.",
+      "sectionId": "html-css",
+      "subsectionId": "responsive",
+      "keywords": [
+        "HTML и CSS",
+        "Адаптивность",
+        "mobile",
+        "first",
+        "strategy"
+      ],
+      "difficulty": "Базовый",
+      "priority": "core",
+      "contentHash": "30c5edceafeee3723a6216ceebe3049bd796ad36cc73225c4aba154d6d3734df",
+      "answerFile": "answers/html-css/css-mobile-first-strategy.md"
+    },
+    {
+      "id": "css-viewport-width-overflow",
+      "title": "Почему width: 100vw иногда создаёт горизонтальную прокрутку?",
+      "learningGoal": "Размер viewport и доступный размер родителя не всегда совпадают.",
+      "sectionId": "html-css",
+      "subsectionId": "responsive",
+      "keywords": [
+        "HTML и CSS",
+        "Адаптивность",
+        "viewport",
+        "width",
+        "overflow"
+      ],
+      "difficulty": "Средний",
+      "priority": "core",
+      "contentHash": "b4cf09136932409b820100ae9f92f96cf84a7998b27212ce031a2bf912abc347",
+      "answerFile": "answers/html-css/css-viewport-width-overflow.md"
+    },
+    {
+      "id": "css-input-capability-media",
+      "title": "Чем hover и pointer отличаются от any-hover и any-pointer?",
+      "learningGoal": "Запрашивайте возможность ввода, не выводите из неё всю модель устройства и пользователя.",
+      "sectionId": "html-css",
+      "subsectionId": "responsive",
+      "keywords": [
+        "HTML и CSS",
+        "Адаптивность",
+        "input",
+        "capability",
+        "media"
+      ],
+      "difficulty": "Средний",
+      "priority": "core",
+      "contentHash": "9a294b9110c8116a3268fb3b744b2e3c1e1154a316911b0f5a7f19570a6b0911",
+      "answerFile": "answers/html-css/css-input-capability-media.md"
+    },
+    {
+      "id": "css-zoom-reflow-check",
+      "title": "Почему адаптивность нужно проверять при zoom и увеличении текста?",
+      "learningGoal": "Макет должен выдерживать рост содержимого, а не только заданный размер экрана.",
+      "sectionId": "html-css",
+      "subsectionId": "responsive",
+      "keywords": [
+        "HTML и CSS",
+        "Адаптивность",
+        "zoom",
+        "reflow",
+        "check"
+      ],
+      "difficulty": "Средний",
+      "priority": "core",
+      "contentHash": "b75e941ab41728b69be9d224fac17caf3fdda5673c05368924cb9d0608eaa695",
+      "answerFile": "answers/html-css/css-zoom-reflow-check.md"
+    },
+    {
+      "id": "css-pixel-device-pixel",
+      "title": "Чем CSS-пиксель отличается от физического пикселя и что означает DPR?",
+      "learningGoal": "Размер коробки и детализация растрового ресурса - разные характеристики.",
+      "sectionId": "html-css",
+      "subsectionId": "responsive",
+      "keywords": [
+        "HTML и CSS",
+        "Адаптивность",
+        "pixel",
+        "device"
+      ],
+      "difficulty": "Базовый",
+      "priority": "core",
+      "contentHash": "3291c18faec0a58971d2bb3986f9d276a065a6c9e86217e88931919e62cbf943",
+      "answerFile": "answers/html-css/css-pixel-device-pixel.md"
+    },
+    {
       "id": "html-form-entry-list",
       "title": "Какие поля попадают в данные формы и почему disabled отличается от readonly?",
       "learningGoal": "Payload определяется правилами контролов, а не всем текстом, видимым внутри form.",
@@ -8996,7 +11294,7 @@
       ],
       "difficulty": "Средний",
       "priority": "core",
-      "contentHash": "6eef49b8aae66dcc46bf45aad01e86ed06995d5f69700957f4517d210f287848",
+      "contentHash": "4371a5f5662f808e4b1d87e9fcbbe7058695a6192e9d30cd4062512df3f68bfe",
       "answerFile": "answers/html-css/html-native-validation.md"
     },
     {
@@ -9011,8 +11309,235 @@
       ],
       "difficulty": "Средний",
       "priority": "core",
-      "contentHash": "ed29f9b51650fd2814f1d2fa8ae065da097c9efc985e31eb7d23463df43929af",
+      "contentHash": "9dc28f148de2b15b9d1fdac19428b3dab4713cd7843a0f7ce47e6e992235325f",
       "answerFile": "answers/html-css/html-input-hints.md"
+    },
+    {
+      "id": "html-native-submit-contract",
+      "title": "Как action, method, enctype и submit-кнопка определяют отправку формы?",
+      "learningGoal": "Разделяйте маршрут и метод, кодирование, набор полей и выбранную submit-кнопку.",
+      "sectionId": "html-css",
+      "subsectionId": "html-forms",
+      "keywords": [
+        "HTML и CSS",
+        "Формы и ввод данных",
+        "native",
+        "submit",
+        "contract"
+      ],
+      "difficulty": "Средний",
+      "priority": "core",
+      "contentHash": "02e156a4a90be5490621417b35798eb1fb371ac2e75c2e1f6710c57e33679501",
+      "answerFile": "answers/html-css/html-native-submit-contract.md"
+    },
+    {
+      "id": "html-fieldset-radio-group",
+      "title": "Как сгруппировать radio-кнопки и зачем нужны fieldset и legend?",
+      "learningGoal": "Групповое название и подпись каждого варианта решают разные задачи доступности.",
+      "sectionId": "html-css",
+      "subsectionId": "html-forms",
+      "keywords": [
+        "HTML и CSS",
+        "Формы и ввод данных",
+        "fieldset",
+        "radio",
+        "group"
+      ],
+      "difficulty": "Базовый",
+      "priority": "core",
+      "contentHash": "d65cd6ec9b18b9046f2bf7a74cd3e317bca58014d6a62e9c97383099f9d5b83d",
+      "answerFile": "answers/html-css/html-fieldset-radio-group.md"
+    },
+    {
+      "id": "html-select-options",
+      "title": "Как работают value, selected, multiple и optgroup у select?",
+      "learningGoal": "Отделяйте исходный выбор, текущее состояние и стабильное отправляемое значение.",
+      "sectionId": "html-css",
+      "subsectionId": "html-forms",
+      "keywords": [
+        "HTML и CSS",
+        "Формы и ввод данных",
+        "select",
+        "options"
+      ],
+      "difficulty": "Базовый",
+      "priority": "core",
+      "contentHash": "edd36acb484aa97da1186c5d0c3d42b5e886265b95f05a38c701964d22380cff",
+      "answerFile": "answers/html-css/html-select-options.md"
+    },
+    {
+      "id": "html-file-input-contract",
+      "title": "Что реально ограничивают accept и multiple у input type=\"file\"?",
+      "learningGoal": "Выбор файла даёт данные для загрузки, но не доказательство типа и безопасности.",
+      "sectionId": "html-css",
+      "subsectionId": "html-forms",
+      "keywords": [
+        "HTML и CSS",
+        "Формы и ввод данных",
+        "file",
+        "input",
+        "contract"
+      ],
+      "difficulty": "Средний",
+      "priority": "core",
+      "contentHash": "93d4a9e0bdf2a605b9a27ded39c2e3ac6bf3bf81c9d5ac1434ebb8968f575627",
+      "answerFile": "answers/html-css/html-file-input-contract.md"
+    },
+    {
+      "id": "html-numeric-step-validity",
+      "title": "Почему допустимое число может нарушать step и почему maxlength не ограничивает number?",
+      "learningGoal": "Диапазон, шаг и длина строки - три разных ограничения.",
+      "sectionId": "html-css",
+      "subsectionId": "html-forms",
+      "keywords": [
+        "HTML и CSS",
+        "Формы и ввод данных",
+        "numeric",
+        "step",
+        "validity"
+      ],
+      "difficulty": "Средний",
+      "priority": "core",
+      "contentHash": "a378e457e12be4aea4ce8f4705a50f050c7ad54e599485285910a603c4666b11",
+      "answerFile": "answers/html-css/html-numeric-step-validity.md"
+    },
+    {
+      "id": "html-contenteditable-contract",
+      "title": "Почему contenteditable не является полноценной заменой textarea?",
+      "learningGoal": "Редактируемость - лишь часть требований к текстовому полю.",
+      "sectionId": "html-css",
+      "subsectionId": "html-forms",
+      "keywords": [
+        "HTML и CSS",
+        "Формы и ввод данных",
+        "contenteditable",
+        "contract"
+      ],
+      "difficulty": "Средний",
+      "priority": "core",
+      "contentHash": "c21f0bfb5ae4ca10c2d89e3309a94382bf46bc548f68ed497ecb5a8de6e20f0f",
+      "answerFile": "answers/html-css/html-contenteditable-contract.md"
+    },
+    {
+      "id": "html-form-error-experience",
+      "title": "Как связать ошибку формы с полем и когда использовать aria-invalid?",
+      "learningGoal": "Сообщение, связь с контролом и своевременная обратная связь важнее одной красной рамки.",
+      "sectionId": "html-css",
+      "subsectionId": "html-forms",
+      "keywords": [
+        "HTML и CSS",
+        "Формы и ввод данных",
+        "form",
+        "error",
+        "experience"
+      ],
+      "difficulty": "Средний",
+      "priority": "core",
+      "contentHash": "4c54c7fd70acbb686cdd7d9f7cc5918e9e0856be0e978c0ab06d77313479b6e1",
+      "answerFile": "answers/html-css/html-form-error-experience.md"
+    },
+    {
+      "id": "html-textarea-value",
+      "title": "Где задаётся начальный текст textarea и чем rows отличается от maxlength?",
+      "learningGoal": "Начальные данные, текущее значение, размер поля и лимит длины - разные параметры.",
+      "sectionId": "html-css",
+      "subsectionId": "html-forms",
+      "keywords": [
+        "HTML и CSS",
+        "Формы и ввод данных",
+        "textarea",
+        "value"
+      ],
+      "difficulty": "Базовый",
+      "priority": "core",
+      "contentHash": "d92ad74c0b02d0c59144f6889b94485679c290d38e896c4713b21f148b4e6400",
+      "answerFile": "answers/html-css/html-textarea-value.md"
+    },
+    {
+      "id": "html-datalist-select",
+      "title": "Чем datalist отличается от select?",
+      "learningGoal": "Подсказка вариантов не равна ограничению допустимых значений.",
+      "sectionId": "html-css",
+      "subsectionId": "html-forms",
+      "keywords": [
+        "HTML и CSS",
+        "Формы и ввод данных",
+        "datalist",
+        "select"
+      ],
+      "difficulty": "Базовый",
+      "priority": "core",
+      "contentHash": "eeb0dd0333e5dd8667a409d668fc508b065b13f8e5a2d6219e466cfca42b6db1",
+      "answerFile": "answers/html-css/html-datalist-select.md"
+    },
+    {
+      "id": "html-date-local-value",
+      "title": "Почему input type=\"date\" выглядит локализованным, но отдаёт другой формат?",
+      "learningGoal": "Локализованный интерфейс ввода не меняет нормализованный формат значения.",
+      "sectionId": "html-css",
+      "subsectionId": "html-forms",
+      "keywords": [
+        "HTML и CSS",
+        "Формы и ввод данных",
+        "date",
+        "local",
+        "value"
+      ],
+      "difficulty": "Средний",
+      "priority": "core",
+      "contentHash": "16c129b158cb8e0f04aeafbc36cf490bc73ec889ad5236d39c1d3cbb086f852a",
+      "answerFile": "answers/html-css/html-date-local-value.md"
+    },
+    {
+      "id": "html-checkbox-indeterminate",
+      "title": "Что означает indeterminate у checkbox и влияет ли оно на отправку формы?",
+      "learningGoal": "Смешанный вид агрегированного выбора не заменяет данные о выбранных пунктах.",
+      "sectionId": "html-css",
+      "subsectionId": "html-forms",
+      "keywords": [
+        "HTML и CSS",
+        "Формы и ввод данных",
+        "checkbox",
+        "indeterminate"
+      ],
+      "difficulty": "Средний",
+      "priority": "core",
+      "contentHash": "bcd66c0267e912a320465fc2f6e95ed467fec271b738990b730539b72fcf2c81",
+      "answerFile": "answers/html-css/html-checkbox-indeterminate.md"
+    },
+    {
+      "id": "html-implicit-submit",
+      "title": "Почему Enter в поле может отправить форму и где обрабатывать отправку?",
+      "learningGoal": "Отправка - событие формы, а не только щелчок по конкретной кнопке.",
+      "sectionId": "html-css",
+      "subsectionId": "html-forms",
+      "keywords": [
+        "HTML и CSS",
+        "Формы и ввод данных",
+        "implicit",
+        "submit"
+      ],
+      "difficulty": "Средний",
+      "priority": "core",
+      "contentHash": "acb5f0afdbb7e01ebf7bf0f6a0b469b8f87b8ae086b065ab017b4f138673a91a",
+      "answerFile": "answers/html-css/html-implicit-submit.md"
+    },
+    {
+      "id": "css-control-resize",
+      "title": "Что делает resize у textarea и почему не всегда стоит его отключать?",
+      "learningGoal": "Сохраните пользователю возможность удобно работать с длинным текстом.",
+      "sectionId": "html-css",
+      "subsectionId": "html-forms",
+      "keywords": [
+        "HTML и CSS",
+        "Формы и ввод данных",
+        "control",
+        "resize"
+      ],
+      "difficulty": "Базовый",
+      "priority": "core",
+      "contentHash": "7d2e1691a48735b4177e09ae91889ae4f130fea63d4b3d54c2cf33407d612976",
+      "answerFile": "answers/html-css/css-control-resize.md"
     },
     {
       "id": "html-iframe-boundary",
@@ -9041,8 +11566,148 @@
       ],
       "difficulty": "Средний",
       "priority": "core",
-      "contentHash": "e65a40a2a5ea71c68b35913bad8e2e0de813bf20645d450384c84864ba384953",
+      "contentHash": "3c80a5c53e8a4c0af7b115e68f88a7d1c8eb20b60c2259e71f241644b524d3b3",
       "answerFile": "answers/html-css/html-resource-hints.md"
+    },
+    {
+      "id": "html-link-target-rel",
+      "title": "Чем noopener отличается от noreferrer у внешней ссылки?",
+      "learningGoal": "Управление opener и передача referrer - отдельные решения.",
+      "sectionId": "html-css",
+      "subsectionId": "html-resources",
+      "keywords": [
+        "HTML и CSS",
+        "Ресурсы и встраивание",
+        "link",
+        "target",
+        "rel"
+      ],
+      "difficulty": "Средний",
+      "priority": "core",
+      "contentHash": "dcf6c630eb3dd6e1526fcf7f34259c052a93c550b8d8c601f3894c1205af898b",
+      "answerFile": "answers/html-css/html-link-target-rel.md"
+    },
+    {
+      "id": "html-media-tracks-autoplay",
+      "title": "Как встроить видео с субтитрами и почему autoplay может не сработать?",
+      "learningGoal": "Доступное воспроизведение требует управления, альтернатив и обработки отказа автозапуска.",
+      "sectionId": "html-css",
+      "subsectionId": "html-resources",
+      "keywords": [
+        "HTML и CSS",
+        "Ресурсы и встраивание",
+        "media",
+        "tracks",
+        "autoplay"
+      ],
+      "difficulty": "Средний",
+      "priority": "core",
+      "contentHash": "15a7fbb984237ecdde0b6aed5736a1dd6afcc5064842ff3f9e3807a289e4144f",
+      "answerFile": "answers/html-css/html-media-tracks-autoplay.md"
+    },
+    {
+      "id": "html-template-inert-content",
+      "title": "Зачем нужен template и чем он отличается от скрытого div?",
+      "learningGoal": "Template отделяет заготовку узлов от активного содержимого документа.",
+      "sectionId": "html-css",
+      "subsectionId": "html-resources",
+      "keywords": [
+        "HTML и CSS",
+        "Ресурсы и встраивание",
+        "template",
+        "inert",
+        "content"
+      ],
+      "difficulty": "Средний",
+      "priority": "core",
+      "contentHash": "4385d07e0299492864523542ad9b49e2d2b5d713536ec5202878701d977ce550",
+      "answerFile": "answers/html-css/html-template-inert-content.md"
+    },
+    {
+      "id": "html-stylesheet-render-blocking",
+      "title": "Может ли CSS задержать выполнение script и событие DOMContentLoaded?",
+      "learningGoal": "Отличайте остановку парсера, задержку рендера и косвенное ожидание события через сценарии.",
+      "sectionId": "html-css",
+      "subsectionId": "html-resources",
+      "keywords": [
+        "HTML и CSS",
+        "Ресурсы и встраивание",
+        "stylesheet",
+        "render",
+        "blocking"
+      ],
+      "difficulty": "Продвинутый",
+      "priority": "core",
+      "contentHash": "146fc6504463896d91f3ff9696a6ccd07989e5b15660b5f37d94b3aafd4cb018",
+      "answerFile": "answers/html-css/html-stylesheet-render-blocking.md"
+    },
+    {
+      "id": "html-subresource-integrity",
+      "title": "Что проверяет integrity у внешнего ресурса и зачем рядом crossorigin?",
+      "learningGoal": "SRI проверяет идентичность байтов, а доверие к версии и доставке HTML остаётся отдельной задачей.",
+      "sectionId": "html-css",
+      "subsectionId": "html-resources",
+      "keywords": [
+        "HTML и CSS",
+        "Ресурсы и встраивание",
+        "subresource",
+        "integrity"
+      ],
+      "difficulty": "Продвинутый",
+      "priority": "extended",
+      "contentHash": "25f90ccfda49166f4c9b15f1ff4c5cc3c8bdaf51798b9bbb1603d521ad73bd3e",
+      "answerFile": "answers/html-css/html-subresource-integrity.md"
+    },
+    {
+      "id": "html-svg-embedding",
+      "title": "Чем inline SVG отличается от SVG в img?",
+      "learningGoal": "Способ встраивания определяет доступ к SVG, стилизацию и способ доступного именования.",
+      "sectionId": "html-css",
+      "subsectionId": "html-resources",
+      "keywords": [
+        "HTML и CSS",
+        "Ресурсы и встраивание",
+        "svg",
+        "embedding"
+      ],
+      "difficulty": "Средний",
+      "priority": "core",
+      "contentHash": "f4b2ad194b1a64c20158140edd4342eee21bf8e49e3b9cbe2723ed1b865c89f5",
+      "answerFile": "answers/html-css/html-svg-embedding.md"
+    },
+    {
+      "id": "html-svg-viewbox",
+      "title": "Что задаёт viewBox у SVG и чем он отличается от width и height?",
+      "learningGoal": "Разделяйте внутренние координаты векторного рисунка и его размер в макете.",
+      "sectionId": "html-css",
+      "subsectionId": "html-resources",
+      "keywords": [
+        "HTML и CSS",
+        "Ресурсы и встраивание",
+        "svg",
+        "viewbox"
+      ],
+      "difficulty": "Средний",
+      "priority": "core",
+      "contentHash": "fe8920df6e9f0223419d5feb84494f2693c0d8d90525ccf95789bf376c1c4a57",
+      "answerFile": "answers/html-css/html-svg-viewbox.md"
+    },
+    {
+      "id": "html-download-hint",
+      "title": "Гарантирует ли download у ссылки скачивание файла под указанным именем?",
+      "learningGoal": "Download - часть контракта доставки, а не обход политик другого origin.",
+      "sectionId": "html-css",
+      "subsectionId": "html-resources",
+      "keywords": [
+        "HTML и CSS",
+        "Ресурсы и встраивание",
+        "download",
+        "hint"
+      ],
+      "difficulty": "Базовый",
+      "priority": "core",
+      "contentHash": "0b669c710fc21f6790ba31954d33dbb352f9c169f862fd7117feb27ae807e8ca",
+      "answerFile": "answers/html-css/html-download-hint.md"
     },
     {
       "id": "css-transition-animation",
@@ -9103,6 +11768,957 @@
       "priority": "core",
       "contentHash": "f031761a4190288a64f89e08fcb0d1169d90fd7c10a9d5b5385f3cb7509425d2",
       "answerFile": "answers/html-css/css-color-preferences.md"
+    },
+    {
+      "id": "css-background-layers",
+      "title": "Как работают несколько background и чем cover отличается от contain?",
+      "learningGoal": "Используйте фон для представления и декора, контентное изображение - для информации.",
+      "sectionId": "html-css",
+      "subsectionId": "css-visual",
+      "keywords": [
+        "HTML и CSS",
+        "Визуальные состояния и анимации",
+        "background",
+        "layers"
+      ],
+      "difficulty": "Базовый",
+      "priority": "core",
+      "contentHash": "f42ead78800f1cba5e7e754ddbe8401ebb6055fe2d32b3295d4da0f039a43770",
+      "answerFile": "answers/html-css/css-background-layers.md"
+    },
+    {
+      "id": "css-opacity-alpha",
+      "title": "Чем opacity у контейнера отличается от прозрачности background-color?",
+      "learningGoal": "Прозрачность группы и альфа одного слоя имеют разные визуальные и структурные последствия.",
+      "sectionId": "html-css",
+      "subsectionId": "css-visual",
+      "keywords": [
+        "HTML и CSS",
+        "Визуальные состояния и анимации",
+        "opacity",
+        "alpha"
+      ],
+      "difficulty": "Средний",
+      "priority": "core",
+      "contentHash": "542e5d8f8a150c1c6c8094b4d6e04d065670f4ce0c69fd7d472a746fc10474e9",
+      "answerFile": "answers/html-css/css-opacity-alpha.md"
+    },
+    {
+      "id": "css-color-space-contrast",
+      "title": "Что дают oklch и color-mix и гарантируют ли они доступный контраст?",
+      "learningGoal": "Современный формат облегчает работу с цветом, но не заменяет проверку читаемости.",
+      "sectionId": "html-css",
+      "subsectionId": "css-visual",
+      "keywords": [
+        "HTML и CSS",
+        "Визуальные состояния и анимации",
+        "color",
+        "space",
+        "contrast"
+      ],
+      "difficulty": "Средний",
+      "priority": "core",
+      "contentHash": "2f97ab0804f1c8e6037b44368b985a1247853dd58ce174ce61473083072b11cc",
+      "answerFile": "answers/html-css/css-color-space-contrast.md"
+    },
+    {
+      "id": "css-pointer-events-contract",
+      "title": "Почему pointer-events: none не отключает кнопку полностью?",
+      "learningGoal": "Ограничение hit testing не означает запрет всех способов взаимодействия.",
+      "sectionId": "html-css",
+      "subsectionId": "css-visual",
+      "keywords": [
+        "HTML и CSS",
+        "Визуальные состояния и анимации",
+        "pointer",
+        "events",
+        "contract"
+      ],
+      "difficulty": "Средний",
+      "priority": "core",
+      "contentHash": "ca1bdf36635153f36c00b729dac273669c83b26eecf4de4730a2eeb202449f06",
+      "answerFile": "answers/html-css/css-pointer-events-contract.md"
+    },
+    {
+      "id": "css-animation-fill-timing",
+      "title": "Что определяют animation-delay, direction и fill-mode?",
+      "learningGoal": "Анимационная шкала временно участвует в представлении, но не хранит состояние приложения.",
+      "sectionId": "html-css",
+      "subsectionId": "css-visual",
+      "keywords": [
+        "HTML и CSS",
+        "Визуальные состояния и анимации",
+        "animation",
+        "fill",
+        "timing"
+      ],
+      "difficulty": "Средний",
+      "priority": "core",
+      "contentHash": "39d6b79fca958ecd5ddfaa02724d75b65808f58e3e2d0ed1922d5df664500e3f",
+      "answerFile": "answers/html-css/css-animation-fill-timing.md"
+    },
+    {
+      "id": "css-entry-starting-style",
+      "title": "Зачем нужен @starting-style при появлении нового элемента?",
+      "learningGoal": "Сначала обеспечьте рабочее конечное состояние, затем улучшайте входную анимацию.",
+      "sectionId": "html-css",
+      "subsectionId": "css-visual",
+      "keywords": [
+        "HTML и CSS",
+        "Визуальные состояния и анимации",
+        "entry",
+        "starting",
+        "style"
+      ],
+      "difficulty": "Продвинутый",
+      "priority": "extended",
+      "contentHash": "5e66a7c4bff455892ade05701732aef60b7b1eb27ec2ac40c0135a16958dd0aa",
+      "answerFile": "answers/html-css/css-entry-starting-style.md"
+    },
+    {
+      "id": "css-scrollbar-gutter",
+      "title": "Как scrollbar-gutter уменьшает сдвиг макета при появлении прокрутки?",
+      "learningGoal": "Резервируйте системное место декларативно вместо ручной компенсации случайной шириной.",
+      "sectionId": "html-css",
+      "subsectionId": "css-visual",
+      "keywords": [
+        "HTML и CSS",
+        "Визуальные состояния и анимации",
+        "scrollbar",
+        "gutter"
+      ],
+      "difficulty": "Средний",
+      "priority": "core",
+      "contentHash": "8f2fd813356997fbbd9395a0e6982729ab2f548af8ddee94141bbb619286b54e",
+      "answerFile": "answers/html-css/css-scrollbar-gutter.md"
+    },
+    {
+      "id": "css-border-outline-shadow",
+      "title": "Чем border, outline и box-shadow отличаются по влиянию на размеры?",
+      "learningGoal": "Выбирайте эффект по его геометрии, а не только по внешнему сходству линий.",
+      "sectionId": "html-css",
+      "subsectionId": "css-visual",
+      "keywords": [
+        "HTML и CSS",
+        "Визуальные состояния и анимации",
+        "border",
+        "outline",
+        "shadow"
+      ],
+      "difficulty": "Базовый",
+      "priority": "core",
+      "contentHash": "be9bd12562cc2be74d0ff28141747ba927d63d2a751d362e1f5016cb405f1454",
+      "answerFile": "answers/html-css/css-border-outline-shadow.md"
+    },
+    {
+      "id": "css-radius-clipping",
+      "title": "Почему border-radius не всегда обрезает изображение и фон потомка?",
+      "learningGoal": "Закругление коробки и обрезание потомков - связанные, но отдельные действия.",
+      "sectionId": "html-css",
+      "subsectionId": "css-visual",
+      "keywords": [
+        "HTML и CSS",
+        "Визуальные состояния и анимации",
+        "radius",
+        "clipping"
+      ],
+      "difficulty": "Базовый",
+      "priority": "core",
+      "contentHash": "490b5a03695be8f23e5e7d16f311e3899e9b1bd636398f25aeb91168eb3926a6",
+      "answerFile": "answers/html-css/css-radius-clipping.md"
+    },
+    {
+      "id": "css-gradient-image",
+      "title": "Является ли gradient цветом и как задаются его остановки?",
+      "learningGoal": "Градиент - генерируемый ресурс представления с собственной геометрией.",
+      "sectionId": "html-css",
+      "subsectionId": "css-visual",
+      "keywords": [
+        "HTML и CSS",
+        "Визуальные состояния и анимации",
+        "gradient",
+        "image"
+      ],
+      "difficulty": "Базовый",
+      "priority": "core",
+      "contentHash": "9e9b4d3730e6f80e6ca160808123f5d6e15cbc557766ff04d54e3da312f1abd3",
+      "answerFile": "answers/html-css/css-gradient-image.md"
+    },
+    {
+      "id": "css-shadow-shape",
+      "title": "Чем box-shadow отличается от filter: drop-shadow у прозрачной картинки?",
+      "learningGoal": "Выбирайте тень по тому, какую форму она должна повторять.",
+      "sectionId": "html-css",
+      "subsectionId": "css-visual",
+      "keywords": [
+        "HTML и CSS",
+        "Визуальные состояния и анимации",
+        "shadow",
+        "shape"
+      ],
+      "difficulty": "Средний",
+      "priority": "core",
+      "contentHash": "7fc222c2c37585360304bb2425d62e6f7d1030d2559521441996e7c621484c0c",
+      "answerFile": "answers/html-css/css-shadow-shape.md"
+    },
+    {
+      "id": "css-transform-order-origin",
+      "title": "Почему порядок translate и rotate меняет результат и что задаёт transform-origin?",
+      "learningGoal": "Композиция и origin - часть результата, а не взаимозаменяемый порядок записи эффектов.",
+      "sectionId": "html-css",
+      "subsectionId": "css-visual",
+      "keywords": [
+        "HTML и CSS",
+        "Визуальные состояния и анимации",
+        "transform",
+        "order",
+        "origin"
+      ],
+      "difficulty": "Средний",
+      "priority": "core",
+      "contentHash": "a68054a0b9a54007f0edd4571b810a0dcffa911fc8a3b28397e46b7c8421dff1",
+      "answerFile": "answers/html-css/css-transform-order-origin.md"
+    },
+    {
+      "id": "css-easing-duration",
+      "title": "Чем duration отличается от easing и когда нужны steps?",
+      "learningGoal": "Время и характер движения настраивают отдельно; ступени подходят для дискретной последовательности.",
+      "sectionId": "html-css",
+      "subsectionId": "css-visual",
+      "keywords": [
+        "HTML и CSS",
+        "Визуальные состояния и анимации",
+        "easing",
+        "duration"
+      ],
+      "difficulty": "Средний",
+      "priority": "core",
+      "contentHash": "be176e670f4ea2f352e3675414aca6bb2b8125dcb88eeebfb76920ae3c12e66d",
+      "answerFile": "answers/html-css/css-easing-duration.md"
+    },
+    {
+      "id": "css-touch-action-gesture",
+      "title": "Зачем нужен touch-action и чем он отличается от pointer-events?",
+      "learningGoal": "Согласуйте собственный жест с нативными возможностями браузера, сохраняя доступность.",
+      "sectionId": "html-css",
+      "subsectionId": "css-visual",
+      "keywords": [
+        "HTML и CSS",
+        "Визуальные состояния и анимации",
+        "touch",
+        "action",
+        "gesture"
+      ],
+      "difficulty": "Средний",
+      "priority": "core",
+      "contentHash": "5df56fe819e188b53efce52e9cb6f1cd1cc822701e1a1db46ba7593171b7d6e0",
+      "answerFile": "answers/html-css/css-touch-action-gesture.md"
+    },
+    {
+      "id": "css-overscroll-chaining",
+      "title": "Как не передавать прокрутку от вложенной панели странице?",
+      "learningGoal": "Граница передачи прокрутки и доступность остальной страницы - разные обязанности.",
+      "sectionId": "html-css",
+      "subsectionId": "css-visual",
+      "keywords": [
+        "HTML и CSS",
+        "Визуальные состояния и анимации",
+        "overscroll",
+        "chaining"
+      ],
+      "difficulty": "Средний",
+      "priority": "core",
+      "contentHash": "ad81820d6e6e9c8e1646606ced3de04464c52661d0902a88b309be2813d60918",
+      "answerFile": "answers/html-css/css-overscroll-chaining.md"
+    },
+    {
+      "id": "css-blend-isolation",
+      "title": "Для чего isolation: isolate нужен рядом с mix-blend-mode?",
+      "learningGoal": "Эффект смешивания требует явной границы и проверки результата на реальных фонах.",
+      "sectionId": "html-css",
+      "subsectionId": "css-visual",
+      "keywords": [
+        "HTML и CSS",
+        "Визуальные состояния и анимации",
+        "blend",
+        "isolation"
+      ],
+      "difficulty": "Средний",
+      "priority": "extended",
+      "contentHash": "e706f2999f5cbb297c367b0c848c04ce807e8712db82577a9dcceada7ea7b46b",
+      "answerFile": "answers/html-css/css-blend-isolation.md"
+    },
+    {
+      "id": "html-language-direction",
+      "title": "Для чего нужны lang, dir и bdi в HTML?",
+      "learningGoal": "Размечайте язык и направление по смыслу текста, а макет адаптируйте логическими свойствами.",
+      "sectionId": "html-css",
+      "subsectionId": "html-document",
+      "keywords": [
+        "HTML и CSS",
+        "HTML-документ и текст",
+        "language",
+        "direction"
+      ],
+      "difficulty": "Базовый",
+      "priority": "core",
+      "contentHash": "48edaf20a3098e26faf97e063f7d90c7edca5c3a1fdaeca507af68a7a4006c76",
+      "answerFile": "answers/html-css/html-language-direction.md"
+    },
+    {
+      "id": "html-encoding-contract",
+      "title": "Как браузер определяет кодировку HTML и где размещать meta charset?",
+      "learningGoal": "UTF-8 должен совпадать в файле, доставке и объявлении документа.",
+      "sectionId": "html-css",
+      "subsectionId": "html-document",
+      "keywords": [
+        "HTML и CSS",
+        "HTML-документ и текст",
+        "encoding",
+        "contract"
+      ],
+      "difficulty": "Средний",
+      "priority": "core",
+      "contentHash": "c01a5273c78c446dae58aba0a2f97f1af8d4eb8ca926ebd7f346095c7b2c78c3",
+      "answerFile": "answers/html-css/html-encoding-contract.md"
+    },
+    {
+      "id": "html-boolean-enumerated-attributes",
+      "title": "Почему disabled=\"false\" всё равно отключает поле?",
+      "learningGoal": "Для булевого HTML-атрибута false означает отсутствие атрибута.",
+      "sectionId": "html-css",
+      "subsectionId": "html-document",
+      "keywords": [
+        "HTML и CSS",
+        "HTML-документ и текст",
+        "boolean",
+        "enumerated",
+        "attributes"
+      ],
+      "difficulty": "Базовый",
+      "priority": "core",
+      "contentHash": "162851388b40fbe475ab0d661ff58012ee4b081647d1fea78c5c488bd432a79e",
+      "answerFile": "answers/html-css/html-boolean-enumerated-attributes.md"
+    },
+    {
+      "id": "html-void-replaced-elements",
+      "title": "Чем пустые HTML-элементы отличаются от замещаемых?",
+      "learningGoal": "Синтаксис HTML, происхождение содержимого и CSS-display - независимые классификации.",
+      "sectionId": "html-css",
+      "subsectionId": "html-document",
+      "keywords": [
+        "HTML и CSS",
+        "HTML-документ и текст",
+        "void",
+        "replaced",
+        "elements"
+      ],
+      "difficulty": "Базовый",
+      "priority": "core",
+      "contentHash": "4af8663e3d07a4f24d39e35fd6b3925f6c6714fe3acddd7d60d8aa40bc6efc0f",
+      "answerFile": "answers/html-css/html-void-replaced-elements.md"
+    },
+    {
+      "id": "html-character-references",
+      "title": "Когда в HTML нужны &lt;, &amp; и другие ссылки на символы?",
+      "learningGoal": "Безопасность определяется контекстом вставки, а не одним универсальным replace.",
+      "sectionId": "html-css",
+      "subsectionId": "html-document",
+      "keywords": [
+        "HTML и CSS",
+        "HTML-документ и текст",
+        "character",
+        "references"
+      ],
+      "difficulty": "Базовый",
+      "priority": "core",
+      "contentHash": "bd91bf9aff7058847d9c15e37cccb6dfe0437402335a98d58545cd015d07ac47",
+      "answerFile": "answers/html-css/html-character-references.md"
+    },
+    {
+      "id": "html-text-semantics",
+      "title": "Как выбрать между strong, em, b, i и обычным span?",
+      "learningGoal": "Сначала определите смысл выделения, затем настраивайте его внешний вид.",
+      "sectionId": "html-css",
+      "subsectionId": "html-document",
+      "keywords": [
+        "HTML и CSS",
+        "HTML-документ и текст",
+        "text",
+        "semantics"
+      ],
+      "difficulty": "Базовый",
+      "priority": "core",
+      "contentHash": "29eaa6d375aed0c47b0278a750d6206275cf611e9a5a0987065821e5aa39177c",
+      "answerFile": "answers/html-css/html-text-semantics.md"
+    },
+    {
+      "id": "html-list-description-contract",
+      "title": "Когда использовать ul, ol и dl вместо набора div?",
+      "learningGoal": "Разметка должна сохранять отношения между элементами без CSS.",
+      "sectionId": "html-css",
+      "subsectionId": "html-document",
+      "keywords": [
+        "HTML и CSS",
+        "HTML-документ и текст",
+        "list",
+        "description",
+        "contract"
+      ],
+      "difficulty": "Базовый",
+      "priority": "core",
+      "contentHash": "79527b10b72502c578bb6a6cc40620325c43b4f0fa7c53df7daaaf0d0b60011e",
+      "answerFile": "answers/html-css/html-list-description-contract.md"
+    },
+    {
+      "id": "html-base-url",
+      "title": "Как base влияет на относительные URL и ссылки с #fragment?",
+      "learningGoal": "base - глобальный контракт разрешения URL, который нужно учитывать во всём документе.",
+      "sectionId": "html-css",
+      "subsectionId": "html-document",
+      "keywords": [
+        "HTML и CSS",
+        "HTML-документ и текст",
+        "base",
+        "url"
+      ],
+      "difficulty": "Средний",
+      "priority": "extended",
+      "contentHash": "9faeee5154de9b7f2a9e780319c3d2b1e7828536ca9bc5d7c0df061ae2ed2301",
+      "answerFile": "answers/html-css/html-base-url.md"
+    },
+    {
+      "id": "html-css-javascript-responsibility",
+      "title": "За что отвечают HTML, CSS и JavaScript на веб-странице?",
+      "learningGoal": "Выбирайте минимальный механизм с подходящим нативным контрактом.",
+      "sectionId": "html-css",
+      "subsectionId": "html-document",
+      "keywords": [
+        "HTML и CSS",
+        "HTML-документ и текст",
+        "css",
+        "javascript",
+        "responsibility"
+      ],
+      "difficulty": "Базовый",
+      "priority": "core",
+      "contentHash": "1f66c52e240fa15d1ef154ea27a20dcec297348f28f8fd7f62109ee0fc7b54bf",
+      "answerFile": "answers/html-css/html-css-javascript-responsibility.md"
+    },
+    {
+      "id": "html-tag-element-attribute",
+      "title": "Чем тег, элемент и атрибут отличаются друг от друга?",
+      "learningGoal": "Различайте запись HTML и полученную структуру документа.",
+      "sectionId": "html-css",
+      "subsectionId": "html-document",
+      "keywords": [
+        "HTML и CSS",
+        "HTML-документ и текст",
+        "tag",
+        "element",
+        "attribute"
+      ],
+      "difficulty": "Базовый",
+      "priority": "core",
+      "contentHash": "700bcb5bb44cb2f43dd347d53d5e89aaa76474c335c5fcaf8d68655a8b889a94",
+      "answerFile": "answers/html-css/html-tag-element-attribute.md"
+    },
+    {
+      "id": "html-document-head-body",
+      "title": "Из каких частей состоит обычный HTML-документ и что размещают в head?",
+      "learningGoal": "Метаданные документа и видимый материал решают разные задачи.",
+      "sectionId": "html-css",
+      "subsectionId": "html-document",
+      "keywords": [
+        "HTML и CSS",
+        "HTML-документ и текст",
+        "document",
+        "head",
+        "body"
+      ],
+      "difficulty": "Базовый",
+      "priority": "core",
+      "contentHash": "efcaceb650d914dfd90735bfdd8fdb96a556054034a1e803eed2678dadb95b5b",
+      "answerFile": "answers/html-css/html-document-head-body.md"
+    },
+    {
+      "id": "html-relative-url-paths",
+      "title": "Чем отличаются абсолютный URL, /path, ./path и ../path?",
+      "learningGoal": "Сначала определите базовый URL, затем разрешайте путь.",
+      "sectionId": "html-css",
+      "subsectionId": "html-document",
+      "keywords": [
+        "HTML и CSS",
+        "HTML-документ и текст",
+        "relative",
+        "url",
+        "paths"
+      ],
+      "difficulty": "Базовый",
+      "priority": "core",
+      "contentHash": "8f29c0cb04450d4d5cc5ec9a44c54c1c7eb7030bd87c4b9e8cbb2939e1e5b953",
+      "answerFile": "answers/html-css/html-relative-url-paths.md"
+    },
+    {
+      "id": "html-time-machine-value",
+      "title": "Зачем у time нужен datetime, если дата уже видна пользователю?",
+      "learningGoal": "Разделяйте отображение даты и её однозначное машинное значение.",
+      "sectionId": "html-css",
+      "subsectionId": "html-document",
+      "keywords": [
+        "HTML и CSS",
+        "HTML-документ и текст",
+        "time",
+        "machine",
+        "value"
+      ],
+      "difficulty": "Базовый",
+      "priority": "core",
+      "contentHash": "aca4bfad666fb93fc8b1cd646ca7eafe978a68875982911d8447b6b5ca705854",
+      "answerFile": "answers/html-css/html-time-machine-value.md"
+    },
+    {
+      "id": "html-pre-code-contract",
+      "title": "Почему для примера кода используют pre и code вместе?",
+      "learningGoal": "Code задаёт смысл, pre помогает сохранить формат; безопасность вставки остаётся отдельной обязанностью.",
+      "sectionId": "html-css",
+      "subsectionId": "html-document",
+      "keywords": [
+        "HTML и CSS",
+        "HTML-документ и текст",
+        "pre",
+        "code",
+        "contract"
+      ],
+      "difficulty": "Базовый",
+      "priority": "core",
+      "contentHash": "daab2a6c81560c0907e97b75513e64fafe3a0938e58ebbf2f91afe33759408b3",
+      "answerFile": "answers/html-css/html-pre-code-contract.md"
+    },
+    {
+      "id": "html-quotation-citation",
+      "title": "Как различаются q, blockquote и cite?",
+      "learningGoal": "Размечайте цитату и источник по смыслу и делайте ссылку видимой при необходимости.",
+      "sectionId": "html-css",
+      "subsectionId": "html-document",
+      "keywords": [
+        "HTML и CSS",
+        "HTML-документ и текст",
+        "quotation",
+        "citation"
+      ],
+      "difficulty": "Базовый",
+      "priority": "core",
+      "contentHash": "c49655052d9ba3a5f31baaa12e7620e12f5055cd2384aa5c68acc39041589a1c",
+      "answerFile": "answers/html-css/html-quotation-citation.md"
+    },
+    {
+      "id": "css-combinator-contract",
+      "title": "Чем отличаются пробел, >, + и ~ в CSS-селекторах?",
+      "learningGoal": "Сначала установите отношение в DOM, затем выбирайте комбинатор.",
+      "sectionId": "html-css",
+      "subsectionId": "css-selectors",
+      "keywords": [
+        "HTML и CSS",
+        "Селекторы и область действия",
+        "combinator",
+        "contract"
+      ],
+      "difficulty": "Базовый",
+      "priority": "core",
+      "contentHash": "aa941dfdfbc56d810dd71624baa74d4d533547c87f9c4db5db114c3ecc98be71",
+      "answerFile": "answers/html-css/css-combinator-contract.md"
+    },
+    {
+      "id": "css-structural-counting",
+      "title": "Чем nth-child отличается от nth-of-type и как работает of S?",
+      "learningGoal": "Различайте фильтрацию множества и проверку позиции в уже заданном множестве.",
+      "sectionId": "html-css",
+      "subsectionId": "css-selectors",
+      "keywords": [
+        "HTML и CSS",
+        "Селекторы и область действия",
+        "structural",
+        "counting"
+      ],
+      "difficulty": "Средний",
+      "priority": "core",
+      "contentHash": "e5cef6782db8ed6596afbcacf4da9ee49d1c8a67dc1145bd91038566f2718f5e",
+      "answerFile": "answers/html-css/css-structural-counting.md"
+    },
+    {
+      "id": "css-pseudo-element-content",
+      "title": "Чем псевдоэлемент отличается от псевдокласса и можно ли хранить смысл в ::before?",
+      "learningGoal": "Смысл храните в HTML, декоративное представление можно создавать CSS.",
+      "sectionId": "html-css",
+      "subsectionId": "css-selectors",
+      "keywords": [
+        "HTML и CSS",
+        "Селекторы и область действия",
+        "pseudo",
+        "element",
+        "content"
+      ],
+      "difficulty": "Базовый",
+      "priority": "core",
+      "contentHash": "50b35299c48efdc63045e6de4383b47ed9fbc0fae5a5fa21639271d679b1ed73",
+      "answerFile": "answers/html-css/css-pseudo-element-content.md"
+    },
+    {
+      "id": "css-attribute-selector-tokens",
+      "title": "Чем [attr], [attr=\"x\"], [attr~=\"x\"] и [attr*=\"x\"] отличаются?",
+      "learningGoal": "Выбирайте сравнение по структуре значения, а не по случайному совпадению символов.",
+      "sectionId": "html-css",
+      "subsectionId": "css-selectors",
+      "keywords": [
+        "HTML и CSS",
+        "Селекторы и область действия",
+        "attribute",
+        "selector",
+        "tokens"
+      ],
+      "difficulty": "Базовый",
+      "priority": "core",
+      "contentHash": "6549af37181b71a8b9cc28b2bae7c4eb039d1093c030c937b33a7ff56f35e4d7",
+      "answerFile": "answers/html-css/css-attribute-selector-tokens.md"
+    },
+    {
+      "id": "css-native-nesting-contract",
+      "title": "Чем нативная CSS-вложенность отличается от простого склеивания селекторов?",
+      "learningGoal": "Вложенность сокращает запись, но не отменяет отношения DOM и правила специфичности.",
+      "sectionId": "html-css",
+      "subsectionId": "css-selectors",
+      "keywords": [
+        "HTML и CSS",
+        "Селекторы и область действия",
+        "native",
+        "nesting",
+        "contract"
+      ],
+      "difficulty": "Продвинутый",
+      "priority": "core",
+      "contentHash": "de91e589a213b2852c610353f8b85bc690c0c89cb67e828b1d3dc02139009064",
+      "answerFile": "answers/html-css/css-native-nesting-contract.md"
+    },
+    {
+      "id": "css-scope-boundary",
+      "title": "Что ограничивает @scope и когда учитывается scoping proximity?",
+      "learningGoal": "Область селектора и изоляция наследования - разные механизмы.",
+      "sectionId": "html-css",
+      "subsectionId": "css-selectors",
+      "keywords": [
+        "HTML и CSS",
+        "Селекторы и область действия",
+        "scope",
+        "boundary"
+      ],
+      "difficulty": "Продвинутый",
+      "priority": "extended",
+      "contentHash": "d8080f8ce1bb49a723d4d4dc45d39b18a2f54a1c60fd754fdfce26de3fa4a1b1",
+      "answerFile": "answers/html-css/css-scope-boundary.md"
+    },
+    {
+      "id": "css-state-focus-within",
+      "title": "Как связаны hover, active, focus и focus-within?",
+      "learningGoal": "Состояния ввода описывают разные моменты взаимодействия и не заменяют состояние приложения.",
+      "sectionId": "html-css",
+      "subsectionId": "css-selectors",
+      "keywords": [
+        "HTML и CSS",
+        "Селекторы и область действия",
+        "state",
+        "focus",
+        "within"
+      ],
+      "difficulty": "Средний",
+      "priority": "core",
+      "contentHash": "b5d7c0f5d6975e0790f4b46befd897e155985f137a891d1cabdba4c5b58821f3",
+      "answerFile": "answers/html-css/css-state-focus-within.md"
+    },
+    {
+      "id": "css-basic-selector-choice",
+      "title": "Как работают селекторы тега, класса, ID и универсальный селектор?",
+      "learningGoal": "Класс удобен для повторяемого оформления, ID - для уникальной идентификации.",
+      "sectionId": "html-css",
+      "subsectionId": "css-selectors",
+      "keywords": [
+        "HTML и CSS",
+        "Селекторы и область действия",
+        "basic",
+        "selector",
+        "choice"
+      ],
+      "difficulty": "Базовый",
+      "priority": "core",
+      "contentHash": "f9e7c7ba5c1bb9450f9e775aa2db3290b5213fa8109e26d670e33851da05abb3",
+      "answerFile": "answers/html-css/css-basic-selector-choice.md"
+    },
+    {
+      "id": "css-empty-dom-content",
+      "title": "Почему визуально пустой элемент может не подходить под :empty?",
+      "learningGoal": "DOM-пустота, визуальная пустота и отсутствие данных - разные понятия.",
+      "sectionId": "html-css",
+      "subsectionId": "css-selectors",
+      "keywords": [
+        "HTML и CSS",
+        "Селекторы и область действия",
+        "empty",
+        "dom",
+        "content"
+      ],
+      "difficulty": "Средний",
+      "priority": "core",
+      "contentHash": "1cbd9180a4200c244de518316498a9b3bc6fc7e0a0120be3d902514495625eac",
+      "answerFile": "answers/html-css/css-empty-dom-content.md"
+    },
+    {
+      "id": "css-control-state-selector",
+      "title": "Чем :checked и :disabled отличаются от [checked] и [disabled]?",
+      "learningGoal": "Для отображения нативного состояния выбирайте соответствующий псевдокласс.",
+      "sectionId": "html-css",
+      "subsectionId": "css-selectors",
+      "keywords": [
+        "HTML и CSS",
+        "Селекторы и область действия",
+        "control",
+        "state",
+        "selector"
+      ],
+      "difficulty": "Средний",
+      "priority": "core",
+      "contentHash": "a3813f08a2134f1391705b8a7a2f07294b102bc852f83cc6ecfebb13710f4b84",
+      "answerFile": "answers/html-css/css-control-state-selector.md"
+    },
+    {
+      "id": "css-visited-privacy",
+      "title": "Почему :visited не позволяет произвольно менять вид ссылки или читать историю?",
+      "learningGoal": "Visited - ограниченная подсказка отображения, а не источник данных приложения.",
+      "sectionId": "html-css",
+      "subsectionId": "css-selectors",
+      "keywords": [
+        "HTML и CSS",
+        "Селекторы и область действия",
+        "visited",
+        "privacy"
+      ],
+      "difficulty": "Средний",
+      "priority": "extended",
+      "contentHash": "08c0b32a03acbda8aef9311fca6f32360907d187b5cf609f0763e7da95e1b63d",
+      "answerFile": "answers/html-css/css-visited-privacy.md"
+    },
+    {
+      "id": "css-line-height-inheritance",
+      "title": "Почему line-height: 1.5 часто лучше наследуется, чем 150% или 24px?",
+      "learningGoal": "Наследуемый коэффициент масштабируется с текстом потомка, фиксированная длина - нет.",
+      "sectionId": "html-css",
+      "subsectionId": "css-typography",
+      "keywords": [
+        "HTML и CSS",
+        "Текст и типографика",
+        "line",
+        "height",
+        "inheritance"
+      ],
+      "difficulty": "Средний",
+      "priority": "core",
+      "contentHash": "1cf7039cb7028b5d570e4763438d5fdb728e8158c052885f91a1b850f1e64caa",
+      "answerFile": "answers/html-css/css-line-height-inheritance.md"
+    },
+    {
+      "id": "css-white-space-contract",
+      "title": "Чем normal, nowrap, pre и pre-wrap отличаются в white-space?",
+      "learningGoal": "Отдельно выбирайте сохранение пробелов и способ обработки длинной строки.",
+      "sectionId": "html-css",
+      "subsectionId": "css-typography",
+      "keywords": [
+        "HTML и CSS",
+        "Текст и типографика",
+        "white",
+        "space",
+        "contract"
+      ],
+      "difficulty": "Базовый",
+      "priority": "core",
+      "contentHash": "012136c976b96c1a50d6a795c837f747746b8cf5a90a0a8c1bb4672c7cfaf3cd",
+      "answerFile": "answers/html-css/css-white-space-contract.md"
+    },
+    {
+      "id": "css-baseline-inline-image",
+      "title": "Откуда берётся зазор под img и почему vertical-align не центрирует любой блок?",
+      "learningGoal": "Проверьте строковый контекст и baseline прежде, чем исправлять несуществующий margin.",
+      "sectionId": "html-css",
+      "subsectionId": "css-typography",
+      "keywords": [
+        "HTML и CSS",
+        "Текст и типографика",
+        "baseline",
+        "inline",
+        "image"
+      ],
+      "difficulty": "Базовый",
+      "priority": "core",
+      "contentHash": "83a9acef5f6172bfa9f05edcbf9bf95c54b0a234b4b8328172973712d5bbe145",
+      "answerFile": "answers/html-css/css-baseline-inline-image.md"
+    },
+    {
+      "id": "css-font-fallback-glyphs",
+      "title": "Как браузер выбирает шрифт из font-family и почему строка может использовать несколько шрифтов?",
+      "learningGoal": "Выбор шрифта включает доступность конкретных символов, а не только имя семейства.",
+      "sectionId": "html-css",
+      "subsectionId": "css-typography",
+      "keywords": [
+        "HTML и CSS",
+        "Текст и типографика",
+        "font",
+        "fallback",
+        "glyphs"
+      ],
+      "difficulty": "Средний",
+      "priority": "core",
+      "contentHash": "cb3d3eba0cf6e5dd67363ea72a158b73c106d8c83fe7e69d72ce9f66a0da369f",
+      "answerFile": "answers/html-css/css-font-fallback-glyphs.md"
+    },
+    {
+      "id": "css-variable-font-contract",
+      "title": "Как variable font связан с font-weight и когда нужен font-variation-settings?",
+      "learningGoal": "Используйте высокоуровневые свойства для стандартных осей и объявляйте реальные возможности файла.",
+      "sectionId": "html-css",
+      "subsectionId": "css-typography",
+      "keywords": [
+        "HTML и CSS",
+        "Текст и типографика",
+        "variable",
+        "font",
+        "contract"
+      ],
+      "difficulty": "Средний",
+      "priority": "extended",
+      "contentHash": "8d494552ab47c7d752b3da2cf64ffab5ae5dd1b3cd2242189066fd125e9e7871",
+      "answerFile": "answers/html-css/css-variable-font-contract.md"
+    },
+    {
+      "id": "css-text-decoration-contract",
+      "title": "Почему text-decoration: none у потомка не всегда убирает подчёркивание предка?",
+      "learningGoal": "Для снятия оформления найдите элемент, который его создаёт, а не только вложенный текст.",
+      "sectionId": "html-css",
+      "subsectionId": "css-typography",
+      "keywords": [
+        "HTML и CSS",
+        "Текст и типографика",
+        "text",
+        "decoration",
+        "contract"
+      ],
+      "difficulty": "Средний",
+      "priority": "core",
+      "contentHash": "5ecd403604f30bb5e05168fcbd5e749eb3494a3738c61e5fcc7ed251858eef3c",
+      "answerFile": "answers/html-css/css-text-decoration-contract.md"
+    },
+    {
+      "id": "css-text-align-box",
+      "title": "Что выравнивает text-align и почему он не центрирует блочный div?",
+      "learningGoal": "Уточняйте, что нужно выровнять: содержимое строки или коробку элемента.",
+      "sectionId": "html-css",
+      "subsectionId": "css-typography",
+      "keywords": [
+        "HTML и CSS",
+        "Текст и типографика",
+        "text",
+        "align",
+        "box"
+      ],
+      "difficulty": "Базовый",
+      "priority": "core",
+      "contentHash": "4cad9c457d1e80179749f122a575b48fe5521ffd1e5fe4cbd0b2811a6621314b",
+      "answerFile": "answers/html-css/css-text-align-box.md"
+    },
+    {
+      "id": "css-text-transform-data",
+      "title": "Меняет ли text-transform исходный текст и подходит ли он для нормализации данных?",
+      "learningGoal": "Разделяйте визуальную типографику и преобразование самих данных.",
+      "sectionId": "html-css",
+      "subsectionId": "css-typography",
+      "keywords": [
+        "HTML и CSS",
+        "Текст и типографика",
+        "text",
+        "transform",
+        "data"
+      ],
+      "difficulty": "Базовый",
+      "priority": "core",
+      "contentHash": "ffc4a01cd11d6da652e71107392ac2eaffd527a0e6e71888f7398956e71f55e9",
+      "answerFile": "answers/html-css/css-text-transform-data.md"
+    },
+    {
+      "id": "css-readable-measure-ch",
+      "title": "Как ограничить длину строки и означает ли 60ch ровно 60 символов?",
+      "learningGoal": "Ch - типографическая метрика для настройки меры строки, а не счётчик символов.",
+      "sectionId": "html-css",
+      "subsectionId": "css-typography",
+      "keywords": [
+        "HTML и CSS",
+        "Текст и типографика",
+        "readable",
+        "measure",
+        "ch"
+      ],
+      "difficulty": "Базовый",
+      "priority": "core",
+      "contentHash": "971dbddc0eb4ffe032b6777a7c59a6e320b6fcbf5b1149a54bc90b8304aa09cf",
+      "answerFile": "answers/html-css/css-readable-measure-ch.md"
+    },
+    {
+      "id": "css-multiline-clamp",
+      "title": "Как ограничить описание несколькими строками и не потерять доступ к полному тексту?",
+      "learningGoal": "Превью может быть коротким, но необходимая информация не должна становиться недоступной.",
+      "sectionId": "html-css",
+      "subsectionId": "css-typography",
+      "keywords": [
+        "HTML и CSS",
+        "Текст и типографика",
+        "multiline",
+        "clamp"
+      ],
+      "difficulty": "Средний",
+      "priority": "core",
+      "contentHash": "efc23c785518748ccf538abf256200b016ae7fec0a317101aad77bdd4f580cdd",
+      "answerFile": "answers/html-css/css-multiline-clamp.md"
+    },
+    {
+      "id": "css-tabular-numerals",
+      "title": "Как сделать счётчик или таймер устойчивым по ширине без моноширинного шрифта?",
+      "learningGoal": "Равная ширина глифов и резерв под всю строку решают разные причины скачков.",
+      "sectionId": "html-css",
+      "subsectionId": "css-typography",
+      "keywords": [
+        "HTML и CSS",
+        "Текст и типографика",
+        "tabular",
+        "numerals"
+      ],
+      "difficulty": "Средний",
+      "priority": "core",
+      "contentHash": "224ec9f40c13b675d324b8da3aa766953f09a8a027573f408fc3b0f7f3927d52",
+      "answerFile": "answers/html-css/css-tabular-numerals.md"
+    },
+    {
+      "id": "css-list-marker-layout",
+      "title": "Что меняют list-style-position и ::marker у списка?",
+      "learningGoal": "Сохраняйте отношения списка и настраивайте маркер как специальную часть представления.",
+      "sectionId": "html-css",
+      "subsectionId": "css-typography",
+      "keywords": [
+        "HTML и CSS",
+        "Текст и типографика",
+        "list",
+        "marker",
+        "layout"
+      ],
+      "difficulty": "Базовый",
+      "priority": "core",
+      "contentHash": "cce3ce437263334b691ee22cd6493acaaa50198d7a4bc4fbb1ad3f05cc821dcf",
+      "answerFile": "answers/html-css/css-list-marker-layout.md"
     },
     {
       "id": "http-cache",

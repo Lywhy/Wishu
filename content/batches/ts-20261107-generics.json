@@ -1,0 +1,82 @@
+{
+  "schemaVersion": 1,
+  "id": "ts-20261107-generics",
+  "title": "Расширение TypeScript: Дженерики",
+  "sectionId": "typescript",
+  "subsectionId": "generics",
+  "currentPass": "complete",
+  "goalIds": [
+    "core",
+    "generics",
+    "ts-multiple-generics",
+    "ts-generic-containers",
+    "ts-generic-constraints",
+    "ts-generic-defaults",
+    "ts-const-type-parameters",
+    "ts-generic-constraint-return",
+    "ts-generic-variance",
+    "ts-partial-type-argument-inference",
+    "ts-instantiation-expressions",
+    "ts-unused-generic-parameter"
+  ],
+  "questionIds": [
+    "ts-partial-type-argument-inference",
+    "ts-instantiation-expressions",
+    "ts-unused-generic-parameter"
+  ],
+  "scopePass": {
+    "status": "complete",
+    "remaining": []
+  },
+  "answerPass": {
+    "status": "complete",
+    "remaining": []
+  },
+  "baseline": [
+    {
+      "id": "generics",
+      "title": "Как generics сохраняют связь типов и как выводятся параметры generic-функции?",
+      "contentHash": "6df8d43dd1897432345008a559979a6e1933348233ffe0efb4d0852bef7c6eda"
+    },
+    {
+      "id": "ts-multiple-generics",
+      "title": "Когда функции нужны несколько параметров типа?",
+      "contentHash": "65eb5f1d6dccd68104ed9748f61ba1af2f5b5320a353d829ed9cd9e1256d586c"
+    },
+    {
+      "id": "ts-generic-containers",
+      "title": "Как объявлять generic-типы и читать вложенные обобщения?",
+      "contentHash": "90868a16b17be90e2e84c989b51ff4740fec11ef03fda9cc15a66a57c2d20049"
+    },
+    {
+      "id": "ts-generic-constraints",
+      "title": "Когда generic-параметру нужно extends и когда ограничение избыточно?",
+      "contentHash": "77acf01709401e32624ebce76b76441308d332ceb597213ce193d28bd928a0d4"
+    },
+    {
+      "id": "ts-generic-defaults",
+      "title": "Как задавать значение по умолчанию параметру типа?",
+      "contentHash": "c8baf4c6c422e4f14453db292812e2e50391a9a7cc0f86da0b75947532b403d7"
+    },
+    {
+      "id": "ts-const-type-parameters",
+      "title": "Когда const-параметр типа сохраняет литеральную точность аргумента?",
+      "contentHash": "dc746667ba954d95cf32bb3515bd55ef7bc243177fdc27dfb4171ed524c6b7c9"
+    },
+    {
+      "id": "ts-generic-constraint-return",
+      "title": "Почему нельзя вернуть произвольный Constraint как результат T extends Constraint?",
+      "contentHash": "3dc89ae48c0a9c51f4225522098608b85ab0f8e6532e8c1b6d926cd95ffbbc39"
+    },
+    {
+      "id": "ts-generic-variance",
+      "title": "Как позиция параметра типа влияет на совместимость generic-контейнеров?",
+      "contentHash": "855421cb4fd04c47530aebbc0c1e2000e90c8272cc04a830fec642cc4692e727"
+    }
+  ],
+  "notes": [
+    "Граница: язык TypeScript и его toolchain. Runtime JavaScript и фреймворки не дублировать.",
+    "Готовые ответы сверены по документации; код примеров не запускался.",
+    "Контент собран и прошёл полную структурную проверку. TS: 161 вопрос, +62 новых и 17 расширенных. Примеры не исполнялись; seed не применялся."
+  ]
+}

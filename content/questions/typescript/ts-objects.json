@@ -18,7 +18,10 @@
         "ts-interface-extends",
         "ts-interface-merging",
         "ts-recursive-types",
-        "ts-runtime-object-keys"
+        "ts-runtime-object-keys",
+        "ts-weak-object-types",
+        "ts-spread-result-types",
+        "ts-template-index-signatures"
       ]
     },
     {
@@ -83,6 +86,33 @@
       "reviewed": false,
       "priority": "core",
       "relatedSkillIds": []
+    },
+    {
+      "id": "ts-weak-object-types",
+      "title": "Почему объект может не подходить типу, у которого все свойства optional?",
+      "description": "Объяснить и применить правило с учётом его границ: Optional-поля не превращают предметный объектный контракт в произвольный словарь.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": ["ts-property-modifiers"]
+    },
+    {
+      "id": "ts-spread-result-types",
+      "title": "Как порядок spread влияет на выведенный тип результирующего объекта?",
+      "description": "Объяснить и применить правило с учётом его границ: Создание объекта с перезаписью и одновременное требование двух контрактов - разные операции.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": ["ts-intersection-types"]
+    },
+    {
+      "id": "ts-template-index-signatures",
+      "title": "Как разрешить динамические свойства только с заданным префиксом?",
+      "description": "Объяснить и применить правило с учётом его границ: Динамические ключи можно ограничить предметным форматом вместо общего string.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": ["ts-template-literal-patterns"]
     }
   ],
   "questions": [
@@ -151,7 +181,7 @@
         "goalIds": ["core", "ts-index-signature"],
         "relatedQuestionIds": [],
         "priority": "core",
-        "sourceRefs": []
+        "sourceRefs": ["ref-e93a21d416404bfe"]
       },
       "answerFile": "answers/typescript/ts-index-signature.md"
     },
@@ -247,6 +277,75 @@
         "sourceRefs": ["ref-b1f557c0324024a7"]
       },
       "answerFile": "answers/typescript/ts-runtime-object-keys.md"
+    },
+    {
+      "id": "ts-weak-object-types",
+      "title": "Почему объект может не подходить типу, у которого все свойства optional?",
+      "topic": "TypeScript",
+      "difficulty": "Средний",
+      "summary": "Weak type detection и отсутствие общих свойств.",
+      "answerFile": "answers/typescript/ts-weak-object-types.md",
+      "takeaway": "Optional-поля не превращают предметный объектный контракт в произвольный словарь.",
+      "pitfall": "Ожидать совместимость любого объекта с типом из необязательных полей.",
+      "moduleId": "typescript",
+      "order": 7,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Optional-поля не превращают предметный объектный контракт в произвольный словарь.",
+        "keywords": ["TypeScript", "Объектные типы и интерфейсы", "Weak", "type", "detection"],
+        "kind": "explanation",
+        "reviewStatus": "ready",
+        "priority": "core",
+        "goalIds": ["core", "ts-weak-object-types"],
+        "relatedQuestionIds": ["ts-property-modifiers"],
+        "sourceRefs": ["ref-c479350cd6a01481"]
+      }
+    },
+    {
+      "id": "ts-spread-result-types",
+      "title": "Как порядок spread влияет на выведенный тип результирующего объекта?",
+      "topic": "TypeScript",
+      "difficulty": "Средний",
+      "summary": "Перезапись полей и отличие нового объекта от intersection.",
+      "answerFile": "answers/typescript/ts-spread-result-types.md",
+      "takeaway": "Создание объекта с перезаписью и одновременное требование двух контрактов - разные операции.",
+      "pitfall": "Объяснять каждый spread как безусловный intersection.",
+      "moduleId": "typescript",
+      "order": 8,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Создание объекта с перезаписью и одновременное требование двух контрактов - разные операции.",
+        "keywords": ["TypeScript", "Объектные типы и интерфейсы", "intersection"],
+        "kind": "explanation",
+        "reviewStatus": "ready",
+        "priority": "core",
+        "goalIds": ["core", "ts-spread-result-types"],
+        "relatedQuestionIds": ["ts-intersection-types"],
+        "sourceRefs": ["ref-e93a21d416404bfe"]
+      }
+    },
+    {
+      "id": "ts-template-index-signatures",
+      "title": "Как разрешить динамические свойства только с заданным префиксом?",
+      "topic": "TypeScript",
+      "difficulty": "Средний",
+      "summary": "Шаблонная index signature для data-* контрактов.",
+      "answerFile": "answers/typescript/ts-template-index-signatures.md",
+      "takeaway": "Динамические ключи можно ограничить предметным форматом вместо общего string.",
+      "pitfall": "Считать строковый шаблон полноценным парсером имени.",
+      "moduleId": "typescript",
+      "order": 9,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Динамические ключи можно ограничить предметным форматом вместо общего string.",
+        "keywords": ["TypeScript", "Объектные типы и интерфейсы", "index", "signature", "data"],
+        "kind": "explanation",
+        "reviewStatus": "ready",
+        "priority": "core",
+        "goalIds": ["core", "ts-template-index-signatures"],
+        "relatedQuestionIds": ["ts-template-literal-patterns"],
+        "sourceRefs": ["ref-e93a21d416404bfe"]
+      }
     }
   ]
 }

@@ -72,7 +72,7 @@ export function QuestionSectionPage() {
             </Link>
           ))}
         </section>
-        <aside className="space-y-5 lg:sticky lg:top-7">
+        <aside className="space-y-5 lg:sticky lg:top-24">
           <QuestionStudyAside
             questionIds={getSectionQuestions(section).map((question) => question.id)}
             title={`Прогресс: ${section.title}`}

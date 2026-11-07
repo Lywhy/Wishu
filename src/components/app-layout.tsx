@@ -1,3 +1,7 @@
+import { GlobalSearch } from "@/components/experience/global-search"
+import { InterfaceSettings } from "@/components/experience/interface-settings"
+import { useQuestionExperience } from "@/stores/question-experience"
+import { GradientBackground } from "@/components/experience/gradient-background"
 import { SessionBanner } from "@/pages/study-session-page"
 import { CatalogScrollRestoration } from "@/components/experience/catalog-scroll-restoration"
 import { Braces, Moon, Sun } from "lucide-react"
@@ -11,34 +15,44 @@ const navigation = [
   { to: "/learn", title: "Обучение" },
   { to: "/questions", title: "Вопросы" },
   { to: "/tasks", title: "Задачи" },
+  { to: "/session", title: "Короткая подготовка" },
   { to: "/interviews", title: "Собеседования" },
 ]
 
 export function AppLayout() {
   const { theme, setTheme } = useTheme()
+  const questionSearch = useQuestionExperience(
+    (state) => state.listVisits["/questions"]?.search ?? "",
+  )
   const route = useLocation()
   const { pathname } = route
+  const sessionReturn = route.state?.questionSession?.returnTo
+  const requestedReturn =
+    route.state?.returnTo ??
+    (typeof sessionReturn === "string" &&
+    /^\/(interviews|session|mock-interview)(?:\?|$)/.test(sessionReturn)
+      ? sessionReturn
+      : null)
   const returnTo =
-    route.state &&
-    typeof route.state === "object" &&
-    typeof route.state.returnTo === "string" &&
-    /^\/(learn|tasks|questions)(?:\/|\?|$)/.test(route.state.returnTo)
-      ? route.state.returnTo
+    typeof requestedReturn === "string" &&
+    /^\/(learn|tasks|questions|interviews|session|mock-interview)(?:\/|\?|$)/.test(requestedReturn)
+      ? requestedReturn
       : null
   const showFooter = ["/learn", "/questions", "/tasks", "/interviews"].includes(
     pathname.replace(/\/+$/, ""),
   )
 
   return (
-    <div className="flex min-h-dvh flex-col bg-muted/20 text-foreground">
+    <div className="relative isolate flex min-h-dvh flex-col bg-background text-foreground">
+      <GradientBackground />
       <a
         href="#main"
         className="sr-only fixed top-3 left-3 z-50 rounded-lg bg-background p-3 focus:not-sr-only"
       >
         К содержимому
       </a>
-      <header className="border-b bg-background">
-        <div className="mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-x-4 gap-y-3 px-5 pt-5 sm:px-8 lg:h-14 lg:flex-nowrap lg:gap-x-8 lg:gap-y-0 lg:pt-0">
+      <header className="sticky top-0 z-30 border-b bg-background/95 backdrop-blur-sm">
+        <div className="mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-x-4 gap-y-3 px-5 pt-5 sm:px-8 lg:h-16 lg:flex-nowrap lg:gap-x-8 lg:gap-y-0 lg:pt-0">
           <Link
             to="/learn"
             aria-label="Wishu - главная"
@@ -50,15 +64,15 @@ export function AppLayout() {
           </Link>
           <nav
             aria-label="Главная навигация"
-            className="order-3 -mb-px flex w-full gap-5 overflow-x-auto sm:gap-8 lg:order-0 lg:h-full lg:w-auto"
+            className="order-3 -mb-px flex w-full justify-between gap-4 overflow-x-auto sm:gap-6 lg:order-0 lg:h-full lg:w-auto lg:justify-start"
           >
             {navigation.map(({ to, title }) => (
               <NavLink
                 key={to}
-                to={to}
+                to={to === "/questions" ? to + questionSearch : to}
                 className={({ isActive }) =>
                   cn(
-                    "flex shrink-0 items-center border-b-2 px-1 py-4 text-sm font-medium transition-colors outline-none focus-visible:ring-2 focus-visible:ring-ring lg:py-0",
+                    "flex shrink-0 items-center border-b-2 px-1 py-4 text-xs font-medium transition-colors outline-none focus-visible:ring-2 focus-visible:ring-ring sm:text-sm lg:py-0",
                     isActive
                       ? "border-primary text-primary"
                       : "border-transparent text-muted-foreground hover:text-foreground",
@@ -69,10 +83,9 @@ export function AppLayout() {
               </NavLink>
             ))}
           </nav>
-          <div className="flex items-center gap-3">
-            <Button nativeButton={false} variant="ghost" size="sm" render={<Link to="/session" />}>
-              Короткая подготовка
-            </Button>
+          <div className="flex items-center gap-1 sm:gap-3">
+            <GlobalSearch />
+            <InterfaceSettings />
             <Button
               variant="outline"
               size="icon"
@@ -85,12 +98,16 @@ export function AppLayout() {
           </div>
         </div>
       </header>
-      <main id="main" className="mx-auto w-full max-w-7xl flex-1 px-5 py-8 sm:px-8 lg:py-10">
+      <main id="main" className="mx-auto w-full max-w-7xl flex-1 px-5 py-6 sm:px-8 lg:py-8">
         <CatalogScrollRestoration />
         <SessionBanner />
         {returnTo && (
           <Link className="mb-4 block text-xs text-primary underline" to={returnTo}>
-            Вернуться к исходному материалу
+            {returnTo.startsWith("/interviews")
+              ? "Вернуться к собеседованию"
+              : returnTo === "/session"
+                ? "Вернуться к занятию"
+                : "Вернуться к исходному материалу"}
           </Link>
         )}
         <Outlet />

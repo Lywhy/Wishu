@@ -1,0 +1,420 @@
+{
+  "$schema": "../question-bundle.schema.json",
+  "sectionId": "html-css",
+  "subsectionId": "css-typography",
+  "scope": "Строки, пробелы, шрифты и управление отображением текста.",
+  "coverageGoals": [
+    {
+      "id": "core",
+      "title": "Текст и типографика",
+      "description": "Строки, пробелы, шрифты и управление отображением текста.",
+      "requiredDifficulties": [],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": [
+        "css-line-height-inheritance",
+        "css-white-space-contract",
+        "css-baseline-inline-image",
+        "css-font-fallback-glyphs",
+        "css-variable-font-contract",
+        "css-text-decoration-contract",
+        "css-text-align-box",
+        "css-text-transform-data",
+        "css-readable-measure-ch",
+        "css-multiline-clamp",
+        "css-tabular-numerals",
+        "css-list-marker-layout"
+      ]
+    },
+    {
+      "id": "css-line-height-inheritance",
+      "title": "Почему line-height: 1.5 часто лучше наследуется, чем 150% или 24px?",
+      "description": "Наследуемый коэффициент масштабируется с текстом потомка, фиксированная длина - нет.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "css-white-space-contract",
+      "title": "Чем normal, nowrap, pre и pre-wrap отличаются в white-space?",
+      "description": "Отдельно выбирайте сохранение пробелов и способ обработки длинной строки.",
+      "requiredDifficulties": ["Базовый"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "css-baseline-inline-image",
+      "title": "Откуда берётся зазор под img и почему vertical-align не центрирует любой блок?",
+      "description": "Проверьте строковый контекст и baseline прежде, чем исправлять несуществующий margin.",
+      "requiredDifficulties": ["Базовый"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "css-font-fallback-glyphs",
+      "title": "Как браузер выбирает шрифт из font-family и почему строка может использовать несколько шрифтов?",
+      "description": "Выбор шрифта включает доступность конкретных символов, а не только имя семейства.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "css-variable-font-contract",
+      "title": "Как variable font связан с font-weight и когда нужен font-variation-settings?",
+      "description": "Используйте высокоуровневые свойства для стандартных осей и объявляйте реальные возможности файла.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": true,
+      "priority": "extended",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "css-text-decoration-contract",
+      "title": "Почему text-decoration: none у потомка не всегда убирает подчёркивание предка?",
+      "description": "Для снятия оформления найдите элемент, который его создаёт, а не только вложенный текст.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "css-text-align-box",
+      "title": "Что выравнивает text-align и почему он не центрирует блочный div?",
+      "description": "Уточняйте, что нужно выровнять: содержимое строки или коробку элемента.",
+      "requiredDifficulties": ["Базовый"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "css-text-transform-data",
+      "title": "Меняет ли text-transform исходный текст и подходит ли он для нормализации данных?",
+      "description": "Разделяйте визуальную типографику и преобразование самих данных.",
+      "requiredDifficulties": ["Базовый"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "css-readable-measure-ch",
+      "title": "Как ограничить длину строки и означает ли 60ch ровно 60 символов?",
+      "description": "Ch - типографическая метрика для настройки меры строки, а не счётчик символов.",
+      "requiredDifficulties": ["Базовый"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "css-multiline-clamp",
+      "title": "Как ограничить описание несколькими строками и не потерять доступ к полному тексту?",
+      "description": "Превью может быть коротким, но необходимая информация не должна становиться недоступной.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "css-tabular-numerals",
+      "title": "Как сделать счётчик или таймер устойчивым по ширине без моноширинного шрифта?",
+      "description": "Равная ширина глифов и резерв под всю строку решают разные причины скачков.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "css-list-marker-layout",
+      "title": "Что меняют list-style-position и ::marker у списка?",
+      "description": "Сохраняйте отношения списка и настраивайте маркер как специальную часть представления.",
+      "requiredDifficulties": ["Базовый"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    }
+  ],
+  "questions": [
+    {
+      "id": "css-line-height-inheritance",
+      "title": "Почему line-height: 1.5 часто лучше наследуется, чем 150% или 24px?",
+      "topic": "HTML и CSS",
+      "difficulty": "Средний",
+      "summary": "Передача коэффициента и передача уже вычисленной длины.",
+      "answerFile": "answers/html-css/css-line-height-inheritance.md",
+      "takeaway": "Наследуемый коэффициент масштабируется с текстом потомка, фиксированная длина - нет.",
+      "pitfall": "Считать 1.5 и 150% полностью одинаковыми во всём поддереве.",
+      "moduleId": "html-css",
+      "order": 0,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Наследуемый коэффициент масштабируется с текстом потомка, фиксированная длина - нет.",
+        "keywords": ["HTML и CSS", "Текст и типографика", "line", "height", "inheritance"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "priority": "core",
+        "goalIds": ["core", "css-line-height-inheritance"],
+        "relatedQuestionIds": ["css-relative-units"],
+        "sourceRefs": ["ref-c80c5094d9974e3a"]
+      }
+    },
+    {
+      "id": "css-white-space-contract",
+      "title": "Чем normal, nowrap, pre и pre-wrap отличаются в white-space?",
+      "topic": "HTML и CSS",
+      "difficulty": "Базовый",
+      "summary": "Схлопывание пробелов, сохранение переводов строк и разрешение переноса.",
+      "answerFile": "answers/html-css/css-white-space-contract.md",
+      "takeaway": "Отдельно выбирайте сохранение пробелов и способ обработки длинной строки.",
+      "pitfall": "Включить nowrap у всей карточки ради одного badge и получить горизонтальную прокрутку.",
+      "moduleId": "html-css",
+      "order": 1,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Отдельно выбирайте сохранение пробелов и способ обработки длинной строки.",
+        "keywords": ["HTML и CSS", "Текст и типографика", "white", "space", "contract"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "priority": "core",
+        "goalIds": ["core", "css-white-space-contract"],
+        "relatedQuestionIds": [
+          "css-text-wrapping",
+          "css-auto-margin-gap",
+          "css-display-formatting"
+        ],
+        "sourceRefs": ["ref-a82fa1da65163149", "ref-563a421e7ead9ea9"]
+      }
+    },
+    {
+      "id": "css-baseline-inline-image",
+      "title": "Откуда берётся зазор под img и почему vertical-align не центрирует любой блок?",
+      "topic": "HTML и CSS",
+      "difficulty": "Базовый",
+      "summary": "Базовая линия строки, место для нижних выносных элементов и область действия свойства.",
+      "answerFile": "answers/html-css/css-baseline-inline-image.md",
+      "takeaway": "Проверьте строковый контекст и baseline прежде, чем исправлять несуществующий margin.",
+      "pitfall": "Задать vertical-align: middle блочному div и ждать вертикального центрирования его содержимого.",
+      "moduleId": "html-css",
+      "order": 2,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Проверьте строковый контекст и baseline прежде, чем исправлять несуществующий margin.",
+        "keywords": ["HTML и CSS", "Текст и типографика", "baseline", "inline", "image"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "priority": "core",
+        "goalIds": ["core", "css-baseline-inline-image"],
+        "relatedQuestionIds": ["css-display-formatting"],
+        "sourceRefs": ["ref-54f36b09569005df"]
+      }
+    },
+    {
+      "id": "css-font-fallback-glyphs",
+      "title": "Как браузер выбирает шрифт из font-family и почему строка может использовать несколько шрифтов?",
+      "topic": "HTML и CSS",
+      "difficulty": "Средний",
+      "summary": "Поиск семейства, начертания и доступных глифов.",
+      "answerFile": "answers/html-css/css-font-fallback-glyphs.md",
+      "takeaway": "Выбор шрифта включает доступность конкретных символов, а не только имя семейства.",
+      "pitfall": "Считать успешную загрузку латинского subset доказательством корректного отображения всех языков.",
+      "moduleId": "html-css",
+      "order": 3,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Выбор шрифта включает доступность конкретных символов, а не только имя семейства.",
+        "keywords": ["HTML и CSS", "Текст и типографика", "font", "fallback", "glyphs"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "priority": "core",
+        "goalIds": ["core", "css-font-fallback-glyphs"],
+        "relatedQuestionIds": ["css-font-loading", "html-encoding-contract"],
+        "sourceRefs": ["ref-0f8ba2ccbe84d9a8"]
+      }
+    },
+    {
+      "id": "css-variable-font-contract",
+      "title": "Как variable font связан с font-weight и когда нужен font-variation-settings?",
+      "topic": "HTML и CSS",
+      "difficulty": "Средний",
+      "summary": "Диапазоны осей, высокоуровневые свойства и синтетические начертания.",
+      "answerFile": "answers/html-css/css-variable-font-contract.md",
+      "takeaway": "Используйте высокоуровневые свойства для стандартных осей и объявляйте реальные возможности файла.",
+      "pitfall": "Предполагать, что любое число font-weight создаст настоящее начертание у обычного статического шрифта.",
+      "moduleId": "html-css",
+      "order": 4,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Используйте высокоуровневые свойства для стандартных осей и объявляйте реальные возможности файла.",
+        "keywords": ["HTML и CSS", "Текст и типографика", "variable", "font", "contract"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "priority": "extended",
+        "goalIds": ["core", "css-variable-font-contract"],
+        "relatedQuestionIds": ["css-font-loading"],
+        "sourceRefs": ["ref-5a570c6fe59ed66e"]
+      }
+    },
+    {
+      "id": "css-text-decoration-contract",
+      "title": "Почему text-decoration: none у потомка не всегда убирает подчёркивание предка?",
+      "topic": "HTML и CSS",
+      "difficulty": "Средний",
+      "summary": "Распространение декорации, оформление ссылок и отличие от наследования.",
+      "answerFile": "answers/html-css/css-text-decoration-contract.md",
+      "takeaway": "Для снятия оформления найдите элемент, который его создаёт, а не только вложенный текст.",
+      "pitfall": "Объяснять распространение underline обычным наследованием свойства.",
+      "moduleId": "html-css",
+      "order": 5,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Для снятия оформления найдите элемент, который его создаёт, а не только вложенный текст.",
+        "keywords": ["HTML и CSS", "Текст и типографика", "text", "decoration", "contract"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "priority": "core",
+        "goalIds": ["core", "css-text-decoration-contract"],
+        "relatedQuestionIds": [],
+        "sourceRefs": ["ref-322766afecab8627"]
+      }
+    },
+    {
+      "id": "css-text-align-box",
+      "title": "Что выравнивает text-align и почему он не центрирует блочный div?",
+      "topic": "HTML и CSS",
+      "difficulty": "Базовый",
+      "summary": "Inline-содержимое строк и положение собственной коробки.",
+      "answerFile": "answers/html-css/css-text-align-box.md",
+      "takeaway": "Уточняйте, что нужно выровнять: содержимое строки или коробку элемента.",
+      "pitfall": "Использовать text-align для центрирования любого блочного компонента.",
+      "moduleId": "html-css",
+      "order": 6,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Уточняйте, что нужно выровнять: содержимое строки или коробку элемента.",
+        "keywords": ["HTML и CSS", "Текст и типографика", "text", "align", "box"],
+        "kind": "explanation",
+        "reviewStatus": "ready",
+        "priority": "core",
+        "goalIds": ["core", "css-text-align-box"],
+        "relatedQuestionIds": ["css-block-horizontal-center"],
+        "sourceRefs": ["ref-5a6495d338db10d8"]
+      }
+    },
+    {
+      "id": "css-text-transform-data",
+      "title": "Меняет ли text-transform исходный текст и подходит ли он для нормализации данных?",
+      "topic": "HTML и CSS",
+      "difficulty": "Базовый",
+      "summary": "Отображение регистра отдельно от хранения и бизнес-правил.",
+      "answerFile": "answers/html-css/css-text-transform-data.md",
+      "takeaway": "Разделяйте визуальную типографику и преобразование самих данных.",
+      "pitfall": "Считать введённый адрес или код нормализованным только из-за uppercase на поле.",
+      "moduleId": "html-css",
+      "order": 7,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Разделяйте визуальную типографику и преобразование самих данных.",
+        "keywords": ["HTML и CSS", "Текст и типографика", "text", "transform", "data"],
+        "kind": "explanation",
+        "reviewStatus": "ready",
+        "priority": "core",
+        "goalIds": ["core", "css-text-transform-data"],
+        "relatedQuestionIds": ["html-language-direction"],
+        "sourceRefs": ["ref-be8be7ec4d46090a"]
+      }
+    },
+    {
+      "id": "css-readable-measure-ch",
+      "title": "Как ограничить длину строки и означает ли 60ch ровно 60 символов?",
+      "topic": "HTML и CSS",
+      "difficulty": "Базовый",
+      "summary": "Удобная ширина текстового столбца и метрика символа ноль.",
+      "answerFile": "answers/html-css/css-readable-measure-ch.md",
+      "takeaway": "Ch - типографическая метрика для настройки меры строки, а не счётчик символов.",
+      "pitfall": "Обещать ровно 65 букв в каждой строке при max-width: 65ch.",
+      "moduleId": "html-css",
+      "order": 8,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Ch - типографическая метрика для настройки меры строки, а не счётчик символов.",
+        "keywords": ["HTML и CSS", "Текст и типографика", "readable", "measure", "ch"],
+        "kind": "explanation",
+        "reviewStatus": "ready",
+        "priority": "core",
+        "goalIds": ["core", "css-readable-measure-ch"],
+        "relatedQuestionIds": ["css-line-height-inheritance"],
+        "sourceRefs": ["ref-6056ee1133c6bcad"]
+      }
+    },
+    {
+      "id": "css-multiline-clamp",
+      "title": "Как ограничить описание несколькими строками и не потерять доступ к полному тексту?",
+      "topic": "HTML и CSS",
+      "difficulty": "Средний",
+      "summary": "Многострочное сокращение и отличия от однострочного text-overflow.",
+      "answerFile": "answers/html-css/css-multiline-clamp.md",
+      "takeaway": "Превью может быть коротким, но необходимая информация не должна становиться недоступной.",
+      "pitfall": "Применять clamp к любому сообщению ради одинаковой высоты карточек.",
+      "moduleId": "html-css",
+      "order": 9,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Превью может быть коротким, но необходимая информация не должна становиться недоступной.",
+        "keywords": ["HTML и CSS", "Текст и типографика", "multiline", "clamp"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "priority": "core",
+        "goalIds": ["core", "css-multiline-clamp"],
+        "relatedQuestionIds": ["css-text-wrapping"],
+        "sourceRefs": ["ref-3cb66931f9b0efd9"]
+      }
+    },
+    {
+      "id": "css-tabular-numerals",
+      "title": "Как сделать счётчик или таймер устойчивым по ширине без моноширинного шрифта?",
+      "topic": "HTML и CSS",
+      "difficulty": "Средний",
+      "summary": "Табличные цифры OpenType и отличие от резервирования места.",
+      "answerFile": "answers/html-css/css-tabular-numerals.md",
+      "takeaway": "Равная ширина глифов и резерв под всю строку решают разные причины скачков.",
+      "pitfall": "Считать tabular-nums гарантией неизменной ширины при любом количестве цифр.",
+      "moduleId": "html-css",
+      "order": 10,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Равная ширина глифов и резерв под всю строку решают разные причины скачков.",
+        "keywords": ["HTML и CSS", "Текст и типографика", "tabular", "numerals"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "priority": "core",
+        "goalIds": ["core", "css-tabular-numerals"],
+        "relatedQuestionIds": [],
+        "sourceRefs": ["ref-a9b47256e80fd6ad"]
+      }
+    },
+    {
+      "id": "css-list-marker-layout",
+      "title": "Что меняют list-style-position и ::marker у списка?",
+      "topic": "HTML и CSS",
+      "difficulty": "Базовый",
+      "summary": "Положение маркера, перенос текста и ограниченная стилизация.",
+      "answerFile": "answers/html-css/css-list-marker-layout.md",
+      "takeaway": "Сохраняйте отношения списка и настраивайте маркер как специальную часть представления.",
+      "pitfall": "Ожидать margin или display: flex у ::marker как у обычного div.",
+      "moduleId": "html-css",
+      "order": 11,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Сохраняйте отношения списка и настраивайте маркер как специальную часть представления.",
+        "keywords": ["HTML и CSS", "Текст и типографика", "list", "marker", "layout"],
+        "kind": "explanation",
+        "reviewStatus": "ready",
+        "priority": "core",
+        "goalIds": ["core", "css-list-marker-layout"],
+        "relatedQuestionIds": ["html-list-description-contract"],
+        "sourceRefs": ["ref-4a55699180f17d57"]
+      }
+    }
+  ]
+}

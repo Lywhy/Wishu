@@ -22,7 +22,17 @@
         "html-hiding-contract",
         "html-native-dialog",
         "html-table-relations",
-        "html-live-status"
+        "html-live-status",
+        "html-article-section-aside",
+        "html-native-disclosure",
+        "html-popover-contract",
+        "html-aria-state-behavior",
+        "html-progress-meter-output",
+        "html-alt-purpose",
+        "html-figure-caption",
+        "html-skip-navigation",
+        "css-visually-hidden-label",
+        "html-accessibility-smoke-check"
       ]
     },
     {
@@ -121,6 +131,96 @@
       "description": "Объяснить и применить правило с учётом его границ: Асинхронный результат должен быть доступен без захвата фокуса и лишних прерываний.",
       "requiredDifficulties": ["Средний"],
       "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "html-article-section-aside",
+      "title": "Чем article, section и aside отличаются по смыслу?",
+      "description": "Семантику выбирают по отношениям содержимого, а не по координатам в макете.",
+      "requiredDifficulties": ["Базовый"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "html-native-disclosure",
+      "title": "Когда details и summary заменяют собственный компонент раскрытия?",
+      "description": "Нативное раскрытие уже содержит базовое поведение, которое пришлось бы поддерживать вручную.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "html-popover-contract",
+      "title": "Чем popover отличается от модального dialog?",
+      "description": "Top layer не равен модальности и не заменяет доступное поведение содержимого.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "html-aria-state-behavior",
+      "title": "Почему aria-disabled и aria-expanded не реализуют поведение компонента?",
+      "description": "У каждого объявленного ARIA-состояния должно быть соответствующее реальное поведение.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "html-progress-meter-output",
+      "title": "Когда выбирать progress, meter и output?",
+      "description": "Выбирайте нативный индикатор по смыслу величины и наличию известного итога.",
+      "requiredDifficulties": ["Базовый"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "html-alt-purpose",
+      "title": "Как выбрать alt для информативного, декоративного и кликабельного изображения?",
+      "description": "Альтернатива определяется задачей изображения и окружающим содержимым.",
+      "requiredDifficulties": ["Базовый"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "html-figure-caption",
+      "title": "Когда нужны figure и figcaption и заменяют ли они alt?",
+      "description": "Подпись материала и текстовая альтернатива изображения дополняют друг друга.",
+      "requiredDifficulties": ["Базовый"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "html-skip-navigation",
+      "title": "Зачем нужна ссылка «К основному содержимому» и как она должна работать?",
+      "description": "Пользователь должен быстро обходить повторяющиеся блоки и продолжать работу в материале.",
+      "requiredDifficulties": ["Базовый"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "css-visually-hidden-label",
+      "title": "Как визуально скрыть вспомогательный текст, сохранив его доступность?",
+      "description": "Визуальное скрытие и исключение из доступности - разные требования.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "html-accessibility-smoke-check",
+      "title": "Как вручную проверить базовую доступность страницы без специализированного аудита?",
+      "description": "Проверка должна проходить пользовательский сценарий, а не ограничиваться отсутствием ошибок инструмента.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": true,
       "priority": "core",
       "relatedSkillIds": []
     }
@@ -237,9 +337,9 @@
         "kind": "explanation",
         "reviewStatus": "imported",
         "goalIds": ["core", "html-parser-content-model"],
-        "relatedQuestionIds": [],
+        "relatedQuestionIds": ["html-void-replaced-elements"],
         "priority": "core",
-        "sourceRefs": ["ref-3987811ea032a5be"]
+        "sourceRefs": ["ref-3987811ea032a5be", "ref-2501dcc79edec105"]
       },
       "answerFile": "answers/html-css/html-parser-content-model.md"
     },
@@ -357,9 +457,9 @@
         "kind": "explanation",
         "reviewStatus": "imported",
         "goalIds": ["core", "html-table-relations"],
-        "relatedQuestionIds": [],
+        "relatedQuestionIds": ["css-table-border-model", "css-table-layout"],
         "priority": "core",
-        "sourceRefs": ["ref-8dc103a1299a62ab"]
+        "sourceRefs": ["ref-8dc103a1299a62ab", "ref-664c99322a7995fc"]
       },
       "answerFile": "answers/html-css/html-table-relations.md"
     },
@@ -386,6 +486,236 @@
         "sourceRefs": ["ref-4a1ef0fcca10ea57"]
       },
       "answerFile": "answers/html-css/html-live-status.md"
+    },
+    {
+      "id": "html-article-section-aside",
+      "title": "Чем article, section и aside отличаются по смыслу?",
+      "topic": "HTML и CSS",
+      "difficulty": "Базовый",
+      "summary": "Самостоятельный материал, тематическая часть и косвенно связанное содержимое.",
+      "answerFile": "answers/html-css/html-article-section-aside.md",
+      "takeaway": "Семантику выбирают по отношениям содержимого, а не по координатам в макете.",
+      "pitfall": "Заменять каждый div на section в надежде автоматически улучшить доступность.",
+      "moduleId": "html-css",
+      "order": 11,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Семантику выбирают по отношениям содержимого, а не по координатам в макете.",
+        "keywords": ["HTML и CSS", "Семантика и доступность", "article", "section", "aside"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "priority": "core",
+        "goalIds": ["core", "html-article-section-aside"],
+        "relatedQuestionIds": ["html-landmarks"],
+        "sourceRefs": ["ref-bdae4f62d9d16213"]
+      }
+    },
+    {
+      "id": "html-native-disclosure",
+      "title": "Когда details и summary заменяют собственный компонент раскрытия?",
+      "topic": "HTML и CSS",
+      "difficulty": "Средний",
+      "summary": "Нативный disclosure, булев open и ограничение применимости.",
+      "answerFile": "answers/html-css/html-native-disclosure.md",
+      "takeaway": "Нативное раскрытие уже содержит базовое поведение, которое пришлось бы поддерживать вручную.",
+      "pitfall": "Придавать details роль вкладки, не реализуя соответствующую модель клавиатуры.",
+      "moduleId": "html-css",
+      "order": 12,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Нативное раскрытие уже содержит базовое поведение, которое пришлось бы поддерживать вручную.",
+        "keywords": ["HTML и CSS", "Семантика и доступность", "native", "disclosure"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "priority": "core",
+        "goalIds": ["core", "html-native-disclosure"],
+        "relatedQuestionIds": ["html-boolean-enumerated-attributes"],
+        "sourceRefs": ["ref-339d5ca874465d75"]
+      }
+    },
+    {
+      "id": "html-popover-contract",
+      "title": "Чем popover отличается от модального dialog?",
+      "topic": "HTML и CSS",
+      "difficulty": "Средний",
+      "summary": "Верхний слой, закрытие снаружи и отсутствие автоматической модальности.",
+      "answerFile": "answers/html-css/html-popover-contract.md",
+      "takeaway": "Top layer не равен модальности и не заменяет доступное поведение содержимого.",
+      "pitfall": "Ожидать, что popover автоматически удержит фокус как модальное окно.",
+      "moduleId": "html-css",
+      "order": 13,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Top layer не равен модальности и не заменяет доступное поведение содержимого.",
+        "keywords": ["HTML и CSS", "Семантика и доступность", "popover", "contract"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "priority": "core",
+        "goalIds": ["core", "html-popover-contract"],
+        "relatedQuestionIds": ["html-native-dialog", "css-position-stacking"],
+        "sourceRefs": ["ref-67ca2dd321bb9a41"]
+      }
+    },
+    {
+      "id": "html-aria-state-behavior",
+      "title": "Почему aria-disabled и aria-expanded не реализуют поведение компонента?",
+      "topic": "HTML и CSS",
+      "difficulty": "Средний",
+      "summary": "Сообщение состояния вспомогательным технологиям и обязанности приложения.",
+      "answerFile": "answers/html-css/html-aria-state-behavior.md",
+      "takeaway": "У каждого объявленного ARIA-состояния должно быть соответствующее реальное поведение.",
+      "pitfall": "Добавить aria-disabled и считать действие заблокированным без проверки клавиатуры и обработчиков.",
+      "moduleId": "html-css",
+      "order": 14,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "У каждого объявленного ARIA-состояния должно быть соответствующее реальное поведение.",
+        "keywords": ["HTML и CSS", "Семантика и доступность", "aria", "state", "behavior"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "priority": "core",
+        "goalIds": ["core", "html-aria-state-behavior"],
+        "relatedQuestionIds": ["semantic-button", "html-hiding-contract"],
+        "sourceRefs": ["ref-30a3b6932f3257bc"]
+      }
+    },
+    {
+      "id": "html-progress-meter-output",
+      "title": "Когда выбирать progress, meter и output?",
+      "topic": "HTML и CSS",
+      "difficulty": "Базовый",
+      "summary": "Ход выполнения, величина в диапазоне и результат вычисления.",
+      "answerFile": "answers/html-css/html-progress-meter-output.md",
+      "takeaway": "Выбирайте нативный индикатор по смыслу величины и наличию известного итога.",
+      "pitfall": "Показывать ход загрузки через meter или считать отсутствие value эквивалентом нуля.",
+      "moduleId": "html-css",
+      "order": 15,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Выбирайте нативный индикатор по смыслу величины и наличию известного итога.",
+        "keywords": ["HTML и CSS", "Семантика и доступность", "progress", "meter", "output"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "priority": "core",
+        "goalIds": ["core", "html-progress-meter-output"],
+        "relatedQuestionIds": ["html-live-status"],
+        "sourceRefs": ["ref-134a2fa5b83f3292"]
+      }
+    },
+    {
+      "id": "html-alt-purpose",
+      "title": "Как выбрать alt для информативного, декоративного и кликабельного изображения?",
+      "topic": "HTML и CSS",
+      "difficulty": "Базовый",
+      "summary": "Альтернатива зависит от цели изображения в конкретном контексте.",
+      "answerFile": "answers/html-css/html-alt-purpose.md",
+      "takeaway": "Альтернатива определяется задачей изображения и окружающим содержимым.",
+      "pitfall": "Заполнять каждый alt именем файла или одинаковым текстом «Изображение».",
+      "moduleId": "html-css",
+      "order": 16,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Альтернатива определяется задачей изображения и окружающим содержимым.",
+        "keywords": ["HTML и CSS", "Семантика и доступность", "alt", "purpose"],
+        "kind": "explanation",
+        "reviewStatus": "ready",
+        "priority": "core",
+        "goalIds": ["core", "html-alt-purpose"],
+        "relatedQuestionIds": ["html-responsive-images", "html-accessible-name"],
+        "sourceRefs": ["ref-a2eff16c1d28fa7a"]
+      }
+    },
+    {
+      "id": "html-figure-caption",
+      "title": "Когда нужны figure и figcaption и заменяют ли они alt?",
+      "topic": "HTML и CSS",
+      "difficulty": "Базовый",
+      "summary": "Самостоятельный иллюстративный материал и его видимая подпись.",
+      "answerFile": "answers/html-css/html-figure-caption.md",
+      "takeaway": "Подпись материала и текстовая альтернатива изображения дополняют друг друга.",
+      "pitfall": "Удалять alt у любой картинки внутри figure.",
+      "moduleId": "html-css",
+      "order": 17,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Подпись материала и текстовая альтернатива изображения дополняют друг друга.",
+        "keywords": ["HTML и CSS", "Семантика и доступность", "figure", "caption"],
+        "kind": "explanation",
+        "reviewStatus": "ready",
+        "priority": "core",
+        "goalIds": ["core", "html-figure-caption"],
+        "relatedQuestionIds": ["html-alt-purpose"],
+        "sourceRefs": ["ref-7d52bc57c68ae38a"]
+      }
+    },
+    {
+      "id": "html-skip-navigation",
+      "title": "Зачем нужна ссылка «К основному содержимому» и как она должна работать?",
+      "topic": "HTML и CSS",
+      "difficulty": "Базовый",
+      "summary": "Обход повторяющейся навигации с клавиатуры.",
+      "answerFile": "answers/html-css/html-skip-navigation.md",
+      "takeaway": "Пользователь должен быстро обходить повторяющиеся блоки и продолжать работу в материале.",
+      "pitfall": "Сделать ссылку видимой только при hover или направить её на несуществующий id.",
+      "moduleId": "html-css",
+      "order": 18,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Пользователь должен быстро обходить повторяющиеся блоки и продолжать работу в материале.",
+        "keywords": ["HTML и CSS", "Семантика и доступность", "skip", "navigation"],
+        "kind": "explanation",
+        "reviewStatus": "ready",
+        "priority": "core",
+        "goalIds": ["core", "html-skip-navigation"],
+        "relatedQuestionIds": ["html-focus-order", "css-scroll-offset-snap"],
+        "sourceRefs": ["ref-13da181048458702"]
+      }
+    },
+    {
+      "id": "css-visually-hidden-label",
+      "title": "Как визуально скрыть вспомогательный текст, сохранив его доступность?",
+      "topic": "HTML и CSS",
+      "difficulty": "Средний",
+      "summary": "Отличие visually hidden от полного скрытия и осторожность с интерактивным содержимым.",
+      "answerFile": "answers/html-css/css-visually-hidden-label.md",
+      "takeaway": "Визуальное скрытие и исключение из доступности - разные требования.",
+      "pitfall": "Добавить aria-hidden к подписи, которую как раз должен прочитать скринридер.",
+      "moduleId": "html-css",
+      "order": 19,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Визуальное скрытие и исключение из доступности - разные требования.",
+        "keywords": ["HTML и CSS", "Семантика и доступность", "visually", "hidden", "label"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "priority": "core",
+        "goalIds": ["core", "css-visually-hidden-label"],
+        "relatedQuestionIds": ["html-hiding-contract", "html-skip-navigation"],
+        "sourceRefs": ["ref-3d09deba61eae672"]
+      }
+    },
+    {
+      "id": "html-accessibility-smoke-check",
+      "title": "Как вручную проверить базовую доступность страницы без специализированного аудита?",
+      "topic": "HTML и CSS",
+      "difficulty": "Средний",
+      "summary": "Клавиатура, фокус, имена, масштабирование и ограниченность автоматических проверок.",
+      "answerFile": "answers/html-css/html-accessibility-smoke-check.md",
+      "takeaway": "Проверка должна проходить пользовательский сценарий, а не ограничиваться отсутствием ошибок инструмента.",
+      "pitfall": "Объявлять интерфейс доступным только по зелёному автоматическому отчёту.",
+      "moduleId": "html-css",
+      "order": 20,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Проверка должна проходить пользовательский сценарий, а не ограничиваться отсутствием ошибок инструмента.",
+        "keywords": ["HTML и CSS", "Семантика и доступность", "accessibility", "smoke", "check"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "priority": "core",
+        "goalIds": ["core", "html-accessibility-smoke-check"],
+        "relatedQuestionIds": ["html-form-error-experience", "css-focus-indicator"],
+        "sourceRefs": ["ref-4d89ea2f0f87c72f"]
+      }
     }
   ]
 }

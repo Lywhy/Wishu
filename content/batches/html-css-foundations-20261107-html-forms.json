@@ -1,0 +1,103 @@
+{
+  "schemaVersion": 1,
+  "id": "html-css-foundations-20261107-html-forms",
+  "title": "Базовый и средний HTML/CSS: Формы и ввод данных",
+  "sectionId": "html-css",
+  "subsectionId": "html-forms",
+  "currentPass": "complete",
+  "goalIds": [
+    "core",
+    "html-form-entry-list",
+    "html-native-validation",
+    "html-input-hints",
+    "html-native-submit-contract",
+    "html-fieldset-radio-group",
+    "html-select-options",
+    "html-file-input-contract",
+    "html-numeric-step-validity",
+    "html-contenteditable-contract",
+    "html-form-error-experience",
+    "html-textarea-value",
+    "html-datalist-select",
+    "html-date-local-value",
+    "html-checkbox-indeterminate",
+    "html-implicit-submit",
+    "css-control-resize"
+  ],
+  "questionIds": [
+    "html-textarea-value",
+    "html-datalist-select",
+    "html-date-local-value",
+    "html-checkbox-indeterminate",
+    "html-implicit-submit",
+    "css-control-resize",
+    "html-input-hints"
+  ],
+  "scopePass": {
+    "status": "complete",
+    "remaining": []
+  },
+  "answerPass": {
+    "status": "complete",
+    "remaining": []
+  },
+  "baseline": [
+    {
+      "id": "html-form-entry-list",
+      "title": "Какие поля попадают в данные формы и почему disabled отличается от readonly?",
+      "contentHash": "ee6b1266ebfca6c802e66778c33827c141fdf08b4ec13960c99448bf77be3915"
+    },
+    {
+      "id": "html-native-validation",
+      "title": "Что проверяет встроенная валидация формы и где нужны собственные проверки?",
+      "contentHash": "4371a5f5662f808e4b1d87e9fcbbe7058695a6192e9d30cd4062512df3f68bfe"
+    },
+    {
+      "id": "html-input-hints",
+      "title": "Чем различаются type, inputmode и autocomplete у поля?",
+      "contentHash": "ed29f9b51650fd2814f1d2fa8ae065da097c9efc985e31eb7d23463df43929af"
+    },
+    {
+      "id": "html-native-submit-contract",
+      "title": "Как action, method, enctype и submit-кнопка определяют отправку формы?",
+      "contentHash": "02e156a4a90be5490621417b35798eb1fb371ac2e75c2e1f6710c57e33679501"
+    },
+    {
+      "id": "html-fieldset-radio-group",
+      "title": "Как сгруппировать radio-кнопки и зачем нужны fieldset и legend?",
+      "contentHash": "d65cd6ec9b18b9046f2bf7a74cd3e317bca58014d6a62e9c97383099f9d5b83d"
+    },
+    {
+      "id": "html-select-options",
+      "title": "Как работают value, selected, multiple и optgroup у select?",
+      "contentHash": "edd36acb484aa97da1186c5d0c3d42b5e886265b95f05a38c701964d22380cff"
+    },
+    {
+      "id": "html-file-input-contract",
+      "title": "Что реально ограничивают accept и multiple у input type=\"file\"?",
+      "contentHash": "93d4a9e0bdf2a605b9a27ded39c2e3ac6bf3bf81c9d5ac1434ebb8968f575627"
+    },
+    {
+      "id": "html-numeric-step-validity",
+      "title": "Почему допустимое число может нарушать step и почему maxlength не ограничивает number?",
+      "contentHash": "a378e457e12be4aea4ce8f4705a50f050c7ad54e599485285910a603c4666b11"
+    },
+    {
+      "id": "html-contenteditable-contract",
+      "title": "Почему contenteditable не является полноценной заменой textarea?",
+      "contentHash": "c21f0bfb5ae4ca10c2d89e3309a94382bf46bc548f68ed497ecb5a8de6e20f0f"
+    },
+    {
+      "id": "html-form-error-experience",
+      "title": "Как связать ошибку формы с полем и когда использовать aria-invalid?",
+      "contentHash": "4c54c7fd70acbb686cdd7d9f7cc5918e9e0856be0e978c0ab06d77313479b6e1"
+    }
+  ],
+  "notes": [
+    "Пакет 2026-11-07: только базовый и средний уровни. Определения и самостоятельные практические навыки; современные API не являются целью пакета.",
+    "Сохранять прежние ID. Не дублировать общие определения из связанных карточек. Примеры не исполнять.",
+    "Новые самостоятельные цели: Текстовое содержимое, текущее value, видимый размер и допустимая длина. Подсказки при свободном вводе и ограниченный набор вариантов. Календарная дата, datetime-local и отсутствие часового пояса. Визуальное смешанное состояние отдельно от checked. Неявная отправка, submitter и различие submit с кликом кнопки. Пользовательское изменение размера и ограничения контейнера.",
+    "Сопоставлены базовые определения и прикладные вопросы. Пересечения сохранены в existing.mjs до записи в журнал.",
+    "Content:build и полная content:check прошли на 905 вопросах. Сохранены все 845 исходных ID; кроме 6 согласованных расширений прежние хеши совпадают. Проверены два блока каждого нового ответа и значимый пробел в примере :empty. Код примеров не исполнялся."
+  ]
+}

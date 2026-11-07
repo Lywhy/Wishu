@@ -1,3 +1,4 @@
+import { Toggle } from "@/components/ui/toggle"
 import { BookOpen, Braces, Check, Clock3 } from "lucide-react"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
@@ -26,21 +27,17 @@ export function ModuleCard({ module, saved, onOpen, onSave }: ModuleCardProps) {
           >
             {module.mark}
           </span>
-          <Button
-            variant="ghost"
+          <Toggle
             size="sm"
             aria-label={
               saved ? `Убрать «${module.title}» из плана` : `Добавить «${module.title}» в план`
             }
-            aria-pressed={saved}
-            onClick={onSave}
-            className={cn(
-              "text-muted-foreground",
-              saved && "bg-orange-50 text-primary dark:bg-orange-500/10",
-            )}
+            pressed={saved}
+            onPressedChange={onSave}
+            className={cn("text-muted-foreground", saved && "bg-primary/10 text-primary")}
           >
             {saved ? "В плане" : "В план"}
-          </Button>
+          </Toggle>
         </div>
         <div className="mb-2.5 flex items-center gap-2 text-[11px] text-muted-foreground">
           <span>{module.category}</span>
@@ -48,12 +45,13 @@ export function ModuleCard({ module, saved, onOpen, onSave }: ModuleCardProps) {
           <span>{module.level}</span>
         </div>
         <h4 className="text-[17px] leading-6 font-semibold tracking-tight">
-          <button
+          <Button
+            variant="ghost"
             onClick={onOpen}
-            className="cursor-pointer rounded text-left transition-colors outline-none group-hover:text-primary focus-visible:ring-2 focus-visible:ring-ring"
+            className="h-auto cursor-pointer justify-start rounded p-0 text-left text-base font-semibold whitespace-normal transition-colors outline-none group-hover:text-primary hover:bg-transparent focus-visible:ring-2 focus-visible:ring-ring"
           >
             {module.title}
-          </button>
+          </Button>
         </h4>
         <p className="mt-2.5 flex-1 text-[13px] leading-6 text-muted-foreground">
           {module.description}
@@ -75,10 +73,7 @@ export function ModuleCard({ module, saved, onOpen, onSave }: ModuleCardProps) {
       </CardContent>
       <CardFooter className="justify-between bg-transparent px-5 py-3">
         {saved ? (
-          <Badge
-            variant="secondary"
-            className="gap-1 bg-orange-50 text-primary dark:bg-orange-500/10"
-          >
+          <Badge variant="secondary" className="gap-1 bg-primary/10 text-primary">
             <Check className="size-3" aria-hidden="true" />В моём плане
           </Badge>
         ) : (

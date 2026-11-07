@@ -7,11 +7,33 @@
 <!-- wishu:answer-block -->
 
 ### Свежий литерал и уже созданное значение
+
 Дополнительная проверка лишних свойств помогает находить опечатки при передаче свежего объектного литерала. Она не превращает структурный тип в точный закрытый объект. Передача ранее созданной переменной может быть допустима, хотя та содержит дополнительные данные. Сохранение объекта в переменную не удаляет поля и не является способом безопасной сериализации.
 
 ```typescript
-function greet(value: { name: string }) { return value.name }
+function greet(value: { name: string }) {
+  return value.name
+}
 const full = { name: "Анна", debug: true }
 greet(full) // Структурно совместим.
 // greet({ name: "Анна", debug: true }) // Лишнее поле свежего литерала.
 ```
+
+<!-- wishu:answer-block -->
+
+### Данные на границе API
+
+Статическое представление не удаляет лишние поля. Для отправки разрешённой формы явно соберите DTO: это реальное преобразование, а не только аннотация.
+
+```typescript
+const source = { name: "Анна", secret: "token" }
+const view: { name: string } = source
+// JSON.stringify(view) по-прежнему видит secret.
+const dto = { name: source.name }
+```
+
+#### Продолжить тему
+
+- [Почему неиспользуемый generic-параметр не различает два контейнера?](/questions/ts-unused-generic-parameter)
+
+[Документация TypeScript](https://www.typescriptlang.org/docs/handbook/2/objects.html).

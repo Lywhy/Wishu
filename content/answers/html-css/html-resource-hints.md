@@ -9,3 +9,18 @@ Preload заранее запрашивает нужный для текущей
 <!-- wishu:answer-block -->
 
 [Документация](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Attributes/rel/preload).
+
+<!-- wishu:answer-block -->
+
+#### Fetchpriority не заменяет preload и loading
+
+Preload заранее обнаруживает нужный ресурс; fetchpriority подсказывает относительную важность уже выбранной загрузки; loading="lazy" меняет момент допустимого начала для поддерживаемых элементов. Подсказка high не гарантирует точный порядок и не оправдывает приоритет всех картинок. Для вероятного LCP-изображения сохраняют раннее обнаружение и не откладывают его lazy-loading.
+
+```html
+<img src="hero.webp" width="1200" height="600" fetchpriority="high" alt="Схема программы курса" />
+```
+
+- [Для чего нужны srcset, sizes и размеры изображения?](/questions/html-responsive-images)
+- [Как по Network waterfall понять причину медленной загрузки?](/questions/network-waterfall)
+
+[MDN: img](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/img#fetchpriority).

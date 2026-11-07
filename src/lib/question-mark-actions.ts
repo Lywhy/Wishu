@@ -1,3 +1,4 @@
+import { useReviewSchedule, type ReviewEntry } from "@/stores/review-schedule"
 import { usePracticeProgress } from "@/stores/practice-progress"
 import { useShortSession } from "@/stores/short-session"
 import type { QuestionStatus } from "@/data/question-catalog"
@@ -7,6 +8,7 @@ export interface QuestionMarkUndo {
   previous: QuestionStatus | null
   next: QuestionStatus | null
   wasDone: boolean
+  reviewBefore: ReviewEntry | null
   until: number
 }
 let last: QuestionMarkUndo | null = null
@@ -17,6 +19,7 @@ export function changeQuestionMark(id: string, status: QuestionStatus | null) {
   last = {
     id,
     previous,
+    reviewBefore: useReviewSchedule.getState().entries[id] ?? null,
     next: status,
     until: Date.now() + 15000,
     wasDone: useShortSession.getState().done.includes(id),

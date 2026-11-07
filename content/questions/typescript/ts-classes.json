@@ -20,7 +20,13 @@
         "ts-generic-classes",
         "ts-override-contract",
         "ts-polymorphic-this",
-        "ts-decorators-models"
+        "ts-decorators-models",
+        "ts-constructor-instance-sides",
+        "ts-static-generic-state",
+        "ts-this-based-guards",
+        "ts-mixin-constructor-contract",
+        "ts-accessor-read-write-types",
+        "ts-private-constructor-factory"
       ]
     },
     {
@@ -103,6 +109,60 @@
       "reviewed": false,
       "priority": "extended",
       "relatedSkillIds": []
+    },
+    {
+      "id": "ts-constructor-instance-sides",
+      "title": "Чем тип экземпляра класса отличается от typeof Class?",
+      "description": "Объяснить и применить правило с учётом его границ: Конструктор и созданный экземпляр представляют разные стороны класса.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": ["ts-function-signatures", "ts-signature-utilities"]
+    },
+    {
+      "id": "ts-static-generic-state",
+      "title": "Почему static-поле generic-класса не может принадлежать отдельному T?",
+      "description": "Объяснить и применить правило с учётом его границ: Типовая специализация экземпляров не размножает runtime static-состояние.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": ["ts-generic-classes"]
+    },
+    {
+      "id": "ts-this-based-guards",
+      "title": "Как метод с this is уточняет состояние экземпляра?",
+      "description": "Объяснить и применить правило с учётом его границ: This-based guard связывает проверку состояния с типом текущего экземпляра.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": ["ts-type-predicates", "ts-typestate-api"]
+    },
+    {
+      "id": "ts-mixin-constructor-contract",
+      "title": "Как типизируется mixin как функция над конструктором?",
+      "description": "Объяснить и применить правило с учётом его границ: Mixin проектируется как преобразование контракта конструктора и экземпляра.",
+      "requiredDifficulties": ["Продвинутый"],
+      "reviewed": true,
+      "priority": "extended",
+      "relatedSkillIds": ["ts-constructor-instance-sides", "ts-generic-constraints"]
+    },
+    {
+      "id": "ts-accessor-read-write-types",
+      "title": "Могут ли getter и setter описывать разные типы чтения и записи?",
+      "description": "Объяснить и применить правило с учётом его границ: Разные границы чтения и записи полезны, когда реализация действительно нормализует значение.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": ["ts-class-members", "object-accessors"]
+    },
+    {
+      "id": "ts-private-constructor-factory",
+      "title": "Зачем закрывать конструктор private и предоставлять статическую фабрику?",
+      "description": "Объяснить и применить правило с учётом его границ: Фабрика соединяет управляемое создание с реальным доказательством инварианта.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": ["ts-class-visibility", "ts-abstract-classes"]
     }
   ],
   "questions": [
@@ -169,9 +229,9 @@
         "kind": "explanation",
         "reviewStatus": "imported",
         "goalIds": ["core", "ts-class-visibility"],
-        "relatedQuestionIds": [],
+        "relatedQuestionIds": ["ts-private-constructor-factory"],
         "priority": "extended",
-        "sourceRefs": []
+        "sourceRefs": ["ref-b1f557c0324024a7"]
       },
       "answerFile": "answers/typescript/ts-class-visibility.md"
     },
@@ -315,6 +375,144 @@
         "sourceRefs": ["ref-f3bc0c0e7bc0b54f"]
       },
       "answerFile": "answers/typescript/ts-decorators-models.md"
+    },
+    {
+      "id": "ts-constructor-instance-sides",
+      "title": "Чем тип экземпляра класса отличается от typeof Class?",
+      "topic": "TypeScript",
+      "difficulty": "Средний",
+      "summary": "Instance side, static side и фабрика экземпляров.",
+      "answerFile": "answers/typescript/ts-constructor-instance-sides.md",
+      "takeaway": "Конструктор и созданный экземпляр представляют разные стороны класса.",
+      "pitfall": "Передавать User вместо typeof User в контракте new.",
+      "moduleId": "typescript",
+      "order": 9,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Конструктор и созданный экземпляр представляют разные стороны класса.",
+        "keywords": ["TypeScript", "Типизация классов и ООП", "Instance", "side", "static"],
+        "kind": "explanation",
+        "reviewStatus": "ready",
+        "priority": "core",
+        "goalIds": ["core", "ts-constructor-instance-sides"],
+        "relatedQuestionIds": ["ts-function-signatures", "ts-signature-utilities"],
+        "sourceRefs": ["ref-56877450f8207778"]
+      }
+    },
+    {
+      "id": "ts-static-generic-state",
+      "title": "Почему static-поле generic-класса не может принадлежать отдельному T?",
+      "topic": "TypeScript",
+      "difficulty": "Средний",
+      "summary": "Один runtime-конструктор и много типовых подстановок.",
+      "answerFile": "answers/typescript/ts-static-generic-state.md",
+      "takeaway": "Типовая специализация экземпляров не размножает runtime static-состояние.",
+      "pitfall": "Объяснять generic-класс как отдельный сгенерированный класс на каждый тип.",
+      "moduleId": "typescript",
+      "order": 10,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Типовая специализация экземпляров не размножает runtime static-состояние.",
+        "keywords": ["TypeScript", "Типизация классов и ООП", "runtime"],
+        "kind": "explanation",
+        "reviewStatus": "ready",
+        "priority": "core",
+        "goalIds": ["core", "ts-static-generic-state"],
+        "relatedQuestionIds": ["ts-generic-classes"],
+        "sourceRefs": ["ref-56877450f8207778"]
+      }
+    },
+    {
+      "id": "ts-this-based-guards",
+      "title": "Как метод с this is уточняет состояние экземпляра?",
+      "topic": "TypeScript",
+      "difficulty": "Средний",
+      "summary": "Проверка текущего объекта и видимость уточнённых полей.",
+      "answerFile": "answers/typescript/ts-this-based-guards.md",
+      "takeaway": "This-based guard связывает проверку состояния с типом текущего экземпляра.",
+      "pitfall": "Объявлять готовность экземпляра без проверки всех обещанных полей.",
+      "moduleId": "typescript",
+      "order": 11,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: This-based guard связывает проверку состояния с типом текущего экземпляра.",
+        "keywords": ["TypeScript", "Типизация классов и ООП"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "priority": "core",
+        "goalIds": ["core", "ts-this-based-guards"],
+        "relatedQuestionIds": ["ts-type-predicates", "ts-typestate-api"],
+        "sourceRefs": ["ref-56877450f8207778"]
+      }
+    },
+    {
+      "id": "ts-mixin-constructor-contract",
+      "title": "Как типизируется mixin как функция над конструктором?",
+      "topic": "TypeScript",
+      "difficulty": "Продвинутый",
+      "summary": "Ограничение базового конструктора и составной экземпляр.",
+      "answerFile": "answers/typescript/ts-mixin-constructor-contract.md",
+      "takeaway": "Mixin проектируется как преобразование контракта конструктора и экземпляра.",
+      "pitfall": "Путать mixin-фабрику с копированием произвольных методов через Object.assign.",
+      "moduleId": "typescript",
+      "order": 12,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Mixin проектируется как преобразование контракта конструктора и экземпляра.",
+        "keywords": ["TypeScript", "Типизация классов и ООП"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "priority": "extended",
+        "goalIds": ["core", "ts-mixin-constructor-contract"],
+        "relatedQuestionIds": ["ts-constructor-instance-sides", "ts-generic-constraints"],
+        "sourceRefs": ["ref-56877450f8207778"]
+      }
+    },
+    {
+      "id": "ts-accessor-read-write-types",
+      "title": "Могут ли getter и setter описывать разные типы чтения и записи?",
+      "topic": "TypeScript",
+      "difficulty": "Средний",
+      "summary": "Нормализация входа и тип доступного результата.",
+      "answerFile": "answers/typescript/ts-accessor-read-write-types.md",
+      "takeaway": "Разные границы чтения и записи полезны, когда реализация действительно нормализует значение.",
+      "pitfall": "Считать аннотацию setter автоматической конвертацией входа.",
+      "moduleId": "typescript",
+      "order": 13,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Разные границы чтения и записи полезны, когда реализация действительно нормализует значение.",
+        "keywords": ["TypeScript", "Типизация классов и ООП"],
+        "kind": "explanation",
+        "reviewStatus": "ready",
+        "priority": "core",
+        "goalIds": ["core", "ts-accessor-read-write-types"],
+        "relatedQuestionIds": ["ts-class-members", "object-accessors"],
+        "sourceRefs": ["ref-56877450f8207778"]
+      }
+    },
+    {
+      "id": "ts-private-constructor-factory",
+      "title": "Зачем закрывать конструктор private и предоставлять статическую фабрику?",
+      "topic": "TypeScript",
+      "difficulty": "Средний",
+      "summary": "Контроль создания в типах и проверка инварианта при создании.",
+      "answerFile": "answers/typescript/ts-private-constructor-factory.md",
+      "takeaway": "Фабрика соединяет управляемое создание с реальным доказательством инварианта.",
+      "pitfall": "Принимать private за runtime-валидацию или механизм авторизации.",
+      "moduleId": "typescript",
+      "order": 14,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Фабрика соединяет управляемое создание с реальным доказательством инварианта.",
+        "keywords": ["TypeScript", "Типизация классов и ООП"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "priority": "core",
+        "goalIds": ["core", "ts-private-constructor-factory"],
+        "relatedQuestionIds": ["ts-class-visibility", "ts-abstract-classes"],
+        "sourceRefs": ["ref-56877450f8207778"]
+      }
     }
   ]
 }

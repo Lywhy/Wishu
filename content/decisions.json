@@ -10,6 +10,667 @@
       "questionIds": [],
       "reason": "Сохранены все ID и тексты ответов. Ответы вынесены в Markdown; навыки описаны по существующим главным выводам. Не выполнялось автоматическое слияние вопросов или объявление полноты покрытия.",
       "notes": "Приоритеты начальные и зависят от целевой роли; reviewed остаётся false до редакторского пересмотра."
+    },
+    {
+      "id": "ts-dedup-20261107-ts-object-exactness-boundary",
+      "date": "2026-11-07",
+      "type": "expand",
+      "sectionId": "typescript",
+      "subsectionId": "ts-fundamentals",
+      "questionIds": ["ts-structural-typing"],
+      "reason": "Кандидат «Можно ли типом запретить все лишние поля произвольного объекта?» не создан отдельной карточкой: основная учебная цель уже раскрыта в ts-structural-typing. Добавлены только полезный пример или уточнение."
+    },
+    {
+      "id": "ts-dedup-20261107-ts-index-signature-named-fields",
+      "date": "2026-11-07",
+      "type": "expand",
+      "sectionId": "typescript",
+      "subsectionId": "ts-objects",
+      "questionIds": ["ts-index-signature"],
+      "reason": "Кандидат «Как совместить известные поля объекта с динамическим словарём?» не создан отдельной карточкой: основная учебная цель уже раскрыта в ts-index-signature. Добавлены только полезный пример или уточнение."
+    },
+    {
+      "id": "ts-dedup-20261107-ts-generic-parameter-inference-positions",
+      "date": "2026-11-07",
+      "type": "keep",
+      "sectionId": "typescript",
+      "subsectionId": "ts-utility-types",
+      "questionIds": ["ts-no-infer"],
+      "reason": "Кандидат «Почему перестановка generic API между аргументами и объектом настроек меняет вывод?» не создан отдельной карточкой: основная учебная цель уже раскрыта в ts-no-infer. Сохранён канонический разбор без повторения ответа."
+    },
+    {
+      "id": "ts-dedup-20261107-ts-declaration-module-flavors",
+      "date": "2026-11-07",
+      "type": "expand",
+      "sectionId": "typescript",
+      "subsectionId": "ts-modules",
+      "questionIds": ["ts-esm-cjs-contract"],
+      "reason": "Кандидат «Зачем нужны .d.ts, .d.mts и .d.cts?» не создан отдельной карточкой: основная учебная цель уже раскрыта в ts-esm-cjs-contract. Добавлены только полезный пример или уточнение."
+    },
+    {
+      "id": "ts-dedup-20261107-ts-declaration-private-paths",
+      "date": "2026-11-07",
+      "type": "expand",
+      "sectionId": "typescript",
+      "subsectionId": "ts-modules",
+      "questionIds": ["ts-library-declaration-publishing"],
+      "reason": "Кандидат «Почему успешный declaration emit может оставить библиотеку с неработающими внутренними импортами?» не создан отдельной карточкой: основная учебная цель уже раскрыта в ts-library-declaration-publishing. Добавлены только полезный пример или уточнение."
+    },
+    {
+      "id": "ts-dedup-20261107-ts-augmentation-vs-shadowing",
+      "date": "2026-11-07",
+      "type": "expand",
+      "sectionId": "typescript",
+      "subsectionId": "ts-practices",
+      "questionIds": ["ts-global-augmentation"],
+      "reason": "Кандидат «Почему файл declare module может случайно заменить видимый контракт вместо расширения?» не создан отдельной карточкой: основная учебная цель уже раскрыта в ts-global-augmentation. Добавлены только полезный пример или уточнение."
+    },
+    {
+      "id": "ts-dedup-20261107-ts-lib-runtime-version",
+      "date": "2026-11-07",
+      "type": "expand",
+      "sectionId": "typescript",
+      "subsectionId": "ts-fundamentals",
+      "questionIds": ["ts-config"],
+      "reason": "Кандидат «Почему метод есть в подсказках TypeScript, но отсутствует при запуске?» не создан отдельной карточкой: основная учебная цель уже раскрыта в ts-config. Добавлены только полезный пример или уточнение."
+    },
+    {
+      "id": "ts-dedup-20261107-ts-awaited-contract",
+      "date": "2026-11-07",
+      "type": "expand",
+      "sectionId": "typescript",
+      "subsectionId": "ts-functions",
+      "questionIds": ["ts-async-functions"],
+      "reason": "Кандидат «Что моделирует Awaited<T> и почему одного извлечения Promise<infer U> недостаточно?» не создан отдельной карточкой: основная учебная цель уже раскрыта в ts-async-functions. Добавлены только полезный пример или уточнение."
+    },
+    {
+      "id": "ts-dedup-20261107-ts-widening-object-properties",
+      "date": "2026-11-07",
+      "type": "expand",
+      "sectionId": "typescript",
+      "subsectionId": "types",
+      "questionIds": ["ts-literal-types"],
+      "reason": "Кандидат «Почему const-объект теряет литеральный тип изменяемого свойства?» не создан отдельной карточкой: основная учебная цель уже раскрыта в ts-literal-types. Добавлены только полезный пример или уточнение."
+    },
+    {
+      "id": "ts-dedup-20261107-ts-callable-constructable-contract",
+      "date": "2026-11-07",
+      "type": "keep",
+      "sectionId": "typescript",
+      "subsectionId": "ts-functions",
+      "questionIds": ["ts-function-signatures"],
+      "reason": "Кандидат «Чем сигнатура вызова отличается от construct signature?» не создан отдельной карточкой: основная учебная цель уже раскрыта в ts-function-signatures. Сохранён канонический разбор без повторения ответа."
+    },
+    {
+      "id": "ts-dedup-20261107-ts-template-union-expansion",
+      "date": "2026-11-07",
+      "type": "expand",
+      "sectionId": "typescript",
+      "subsectionId": "ts-type-operators",
+      "questionIds": ["ts-template-literal-patterns"],
+      "reason": "Кандидат «Почему template literal types могут резко увеличить число вариантов?» не создан отдельной карточкой: основная учебная цель уже раскрыта в ts-template-literal-patterns. Добавлены только полезный пример или уточнение."
+    },
+    {
+      "id": "html-css-20261107-fold-html-native-validation",
+      "date": "2026-11-07",
+      "type": "expand",
+      "sectionId": "html-css",
+      "subsectionId": "html-forms",
+      "questionIds": ["html-native-validation"],
+      "reason": "Новый вопрос про requestSubmit и submit: Уже описано различие сценариев проверки; добавлен пример вызова и границы."
+    },
+    {
+      "id": "html-css-20261107-fold-html-responsive-images",
+      "date": "2026-11-07",
+      "type": "expand",
+      "sectionId": "html-css",
+      "subsectionId": "responsive",
+      "questionIds": ["html-responsive-images"],
+      "reason": "Новый вопрос про srcset 1x/2x и w: Это продолжение единого выбора ресурса; не разделять на похожие карточки."
+    },
+    {
+      "id": "html-css-20261107-fold-html-resource-hints",
+      "date": "2026-11-07",
+      "type": "expand",
+      "sectionId": "html-css",
+      "subsectionId": "html-resources",
+      "questionIds": ["html-resource-hints"],
+      "reason": "Новый вопрос про fetchpriority и preload: Единая задача планирования загрузки; дополнен канонический ответ."
+    },
+    {
+      "id": "html-css-20261107-fold-css-inheritance",
+      "date": "2026-11-07",
+      "type": "expand",
+      "sectionId": "html-css",
+      "subsectionId": "cascade",
+      "questionIds": ["css-inheritance"],
+      "reason": "Новый вопрос про unset, revert и revert-layer: Базовые различия уже раскрыты; добавлен конкретный пример с UA-рамкой."
+    },
+    {
+      "id": "html-css-20261107-fold-css-custom-properties",
+      "date": "2026-11-07",
+      "type": "expand",
+      "sectionId": "html-css",
+      "subsectionId": "cascade",
+      "questionIds": ["css-custom-properties"],
+      "reason": "Новый вопрос про fallback var(): Существующая цель уже включает invalid at computed-value time; добавлен контрпример."
+    },
+    {
+      "id": "html-css-20261107-fold-css-cascade",
+      "date": "2026-11-07",
+      "type": "expand",
+      "sectionId": "html-css",
+      "subsectionId": "cascade",
+      "questionIds": ["css-cascade"],
+      "reason": "Новый вопрос про сравнение специфичности: Частный шаг общего алгоритма каскада; дополнен расчёт."
+    },
+    {
+      "id": "html-css-20261107-fold-html-parser-content-model",
+      "date": "2026-11-07",
+      "type": "expand",
+      "sectionId": "html-css",
+      "subsectionId": "semantics",
+      "questionIds": ["html-parser-content-model"],
+      "reason": "Новый вопрос про исправление p браузером: В каноническом ответе есть парсер и hydration; добавлен корректный вариант."
+    },
+    {
+      "id": "html-css-20261107-fold-css-relative-units",
+      "date": "2026-11-07",
+      "type": "expand",
+      "sectionId": "html-css",
+      "subsectionId": "responsive",
+      "questionIds": ["css-relative-units"],
+      "reason": "Новый вопрос про базу процентного padding: Уточнение существующей модели относительных единиц."
+    },
+    {
+      "id": "html-css-20261107-fold-css-grid-tracks",
+      "date": "2026-11-07",
+      "type": "keep",
+      "sectionId": "html-css",
+      "subsectionId": "layout",
+      "questionIds": ["css-grid-tracks"],
+      "reason": "Повторное определение auto-fit и auto-fill: Уже есть прямое сравнение и пределы minmax; повтор не создан."
+    },
+    {
+      "id": "html-css-20261107-fold-html-focus-order",
+      "date": "2026-11-07",
+      "type": "keep",
+      "sectionId": "html-css",
+      "subsectionId": "semantics",
+      "questionIds": ["html-focus-order"],
+      "reason": "Новый вопрос про положительный tabindex: Правило уже объяснено вместе с DOM-порядком и roving tabindex."
+    },
+    {
+      "id": "html-css-20261107-fold-script-loading",
+      "date": "2026-11-07",
+      "type": "keep",
+      "sectionId": "javascript",
+      "subsectionId": "dom",
+      "questionIds": ["script-loading"],
+      "reason": "Копия инструкции async/defer: Оставлена в JavaScript; новый вопрос рассматривает зависимость от CSS, не повторяет типы загрузки."
+    },
+    {
+      "id": "html-css-20261107-fold-seo-headings",
+      "date": "2026-11-07",
+      "type": "keep",
+      "sectionId": "seo",
+      "subsectionId": "content",
+      "questionIds": ["seo-headings"],
+      "reason": "Повторное объяснение title и иерархии заголовков для SEO: Основная SEO-цель остаётся в SEO; HTML-семантика связана с существующими landmark-вопросами."
+    },
+    {
+      "id": "html-css-20261107-scope-semantics",
+      "date": "2026-11-07",
+      "type": "separate",
+      "sectionId": "html-css",
+      "subsectionId": "semantics",
+      "questionIds": [
+        "html-article-section-aside",
+        "html-native-disclosure",
+        "html-popover-contract",
+        "html-aria-state-behavior",
+        "html-progress-meter-output"
+      ],
+      "reason": "Добавлены отдельные навыки подраздела «Семантика и доступность». Прямые совпадения с исходными ответами не создавались; код и сетевые API соседних разделов связаны ссылками."
+    },
+    {
+      "id": "html-css-20261107-scope-cascade",
+      "date": "2026-11-07",
+      "type": "separate",
+      "sectionId": "html-css",
+      "subsectionId": "cascade",
+      "questionIds": [
+        "css-size-constraints",
+        "css-value-processing",
+        "css-shorthand-reset",
+        "css-error-recovery",
+        "css-registered-property",
+        "css-reset-normalize"
+      ],
+      "reason": "Добавлены отдельные навыки подраздела «Каскад и блочная модель». Прямые совпадения с исходными ответами не создавались; код и сетевые API соседних разделов связаны ссылками."
+    },
+    {
+      "id": "html-css-20261107-scope-layout",
+      "date": "2026-11-07",
+      "type": "separate",
+      "sectionId": "html-css",
+      "subsectionId": "layout",
+      "questionIds": [
+        "css-grid-implicit-placement",
+        "css-grid-areas-overlap",
+        "css-flex-wrapping-lines",
+        "css-auto-margin-gap",
+        "css-percentage-height",
+        "css-transform-flow-geometry",
+        "css-display-contents-contract",
+        "css-table-layout"
+      ],
+      "reason": "Добавлены отдельные навыки подраздела «Построение макета». Прямые совпадения с исходными ответами не создавались; код и сетевые API соседних разделов связаны ссылками."
+    },
+    {
+      "id": "html-css-20261107-scope-responsive",
+      "date": "2026-11-07",
+      "type": "separate",
+      "sectionId": "html-css",
+      "subsectionId": "responsive",
+      "questionIds": [
+        "css-calc-typed-math",
+        "css-media-query-logic",
+        "css-container-query-setup",
+        "css-print-fragmentation",
+        "css-scroll-offset-snap"
+      ],
+      "reason": "Добавлены отдельные навыки подраздела «Адаптивность». Прямые совпадения с исходными ответами не создавались; код и сетевые API соседних разделов связаны ссылками."
+    },
+    {
+      "id": "html-css-20261107-scope-html-forms",
+      "date": "2026-11-07",
+      "type": "separate",
+      "sectionId": "html-css",
+      "subsectionId": "html-forms",
+      "questionIds": [
+        "html-native-submit-contract",
+        "html-fieldset-radio-group",
+        "html-select-options",
+        "html-file-input-contract",
+        "html-numeric-step-validity",
+        "html-contenteditable-contract",
+        "html-form-error-experience"
+      ],
+      "reason": "Добавлены отдельные навыки подраздела «Формы и ввод данных». Прямые совпадения с исходными ответами не создавались; код и сетевые API соседних разделов связаны ссылками."
+    },
+    {
+      "id": "html-css-20261107-scope-html-resources",
+      "date": "2026-11-07",
+      "type": "separate",
+      "sectionId": "html-css",
+      "subsectionId": "html-resources",
+      "questionIds": [
+        "html-link-target-rel",
+        "html-media-tracks-autoplay",
+        "html-template-inert-content",
+        "html-stylesheet-render-blocking",
+        "html-subresource-integrity"
+      ],
+      "reason": "Добавлены отдельные навыки подраздела «Ресурсы и встраивание». Прямые совпадения с исходными ответами не создавались; код и сетевые API соседних разделов связаны ссылками."
+    },
+    {
+      "id": "html-css-20261107-scope-css-visual",
+      "date": "2026-11-07",
+      "type": "separate",
+      "sectionId": "html-css",
+      "subsectionId": "css-visual",
+      "questionIds": [
+        "css-background-layers",
+        "css-opacity-alpha",
+        "css-color-space-contrast",
+        "css-pointer-events-contract",
+        "css-animation-fill-timing",
+        "css-entry-starting-style",
+        "css-scrollbar-gutter"
+      ],
+      "reason": "Добавлены отдельные навыки подраздела «Визуальные состояния и анимации». Прямые совпадения с исходными ответами не создавались; код и сетевые API соседних разделов связаны ссылками."
+    },
+    {
+      "id": "html-css-20261107-scope-html-document",
+      "date": "2026-11-07",
+      "type": "separate",
+      "sectionId": "html-css",
+      "subsectionId": "html-document",
+      "questionIds": [
+        "html-language-direction",
+        "html-encoding-contract",
+        "html-boolean-enumerated-attributes",
+        "html-void-replaced-elements",
+        "html-character-references",
+        "html-text-semantics",
+        "html-list-description-contract",
+        "html-base-url"
+      ],
+      "reason": "Добавлены отдельные навыки подраздела «HTML-документ и текст». Прямые совпадения с исходными ответами не создавались; код и сетевые API соседних разделов связаны ссылками."
+    },
+    {
+      "id": "html-css-20261107-scope-css-selectors",
+      "date": "2026-11-07",
+      "type": "separate",
+      "sectionId": "html-css",
+      "subsectionId": "css-selectors",
+      "questionIds": [
+        "css-combinator-contract",
+        "css-structural-counting",
+        "css-pseudo-element-content",
+        "css-attribute-selector-tokens",
+        "css-native-nesting-contract",
+        "css-scope-boundary",
+        "css-state-focus-within"
+      ],
+      "reason": "Добавлены отдельные навыки подраздела «Селекторы и область действия». Прямые совпадения с исходными ответами не создавались; код и сетевые API соседних разделов связаны ссылками."
+    },
+    {
+      "id": "html-css-20261107-scope-css-typography",
+      "date": "2026-11-07",
+      "type": "separate",
+      "sectionId": "html-css",
+      "subsectionId": "css-typography",
+      "questionIds": [
+        "css-line-height-inheritance",
+        "css-white-space-contract",
+        "css-baseline-inline-image",
+        "css-font-fallback-glyphs",
+        "css-variable-font-contract",
+        "css-text-decoration-contract"
+      ],
+      "reason": "Добавлены отдельные навыки подраздела «Текст и типографика». Прямые совпадения с исходными ответами не создавались; код и сетевые API соседних разделов связаны ссылками."
+    },
+    {
+      "id": "html-css-foundations-20261107-semantics",
+      "date": "2026-11-07",
+      "type": "separate",
+      "sectionId": "html-css",
+      "subsectionId": "semantics",
+      "questionIds": [
+        "html-alt-purpose",
+        "html-figure-caption",
+        "html-skip-navigation",
+        "css-visually-hidden-label",
+        "html-accessibility-smoke-check"
+      ],
+      "reason": "Вводные определения и самостоятельные прикладные навыки базового/среднего уровня. Связанные понятия закрепляются ссылками, общий алгоритм не копируется целиком."
+    },
+    {
+      "id": "html-css-foundations-20261107-cascade",
+      "date": "2026-11-07",
+      "type": "separate",
+      "sectionId": "html-css",
+      "subsectionId": "cascade",
+      "questionIds": [
+        "css-rule-declaration-syntax",
+        "css-stylesheet-connection",
+        "css-box-layers-spacing",
+        "css-containment-types"
+      ],
+      "reason": "Вводные определения и самостоятельные прикладные навыки базового/среднего уровня. Связанные понятия закрепляются ссылками, общий алгоритм не копируется целиком."
+    },
+    {
+      "id": "html-css-foundations-20261107-layout",
+      "date": "2026-11-07",
+      "type": "separate",
+      "sectionId": "html-css",
+      "subsectionId": "layout",
+      "questionIds": [
+        "css-normal-flow-position",
+        "css-block-horizontal-center",
+        "css-bounded-scroll-pane",
+        "css-grid-line-numbering",
+        "css-grid-gap-percentages",
+        "css-flex-axis-direction",
+        "css-float-clear-text",
+        "css-absolute-opposing-insets",
+        "css-multicol-flow",
+        "css-table-border-model"
+      ],
+      "reason": "Вводные определения и самостоятельные прикладные навыки базового/среднего уровня. Связанные понятия закрепляются ссылками, общий алгоритм не копируется целиком."
+    },
+    {
+      "id": "html-css-foundations-20261107-responsive",
+      "date": "2026-11-07",
+      "type": "separate",
+      "sectionId": "html-css",
+      "subsectionId": "responsive",
+      "questionIds": [
+        "html-viewport-meta",
+        "css-mobile-first-strategy",
+        "css-viewport-width-overflow",
+        "css-input-capability-media",
+        "css-zoom-reflow-check",
+        "css-pixel-device-pixel"
+      ],
+      "reason": "Вводные определения и самостоятельные прикладные навыки базового/среднего уровня. Связанные понятия закрепляются ссылками, общий алгоритм не копируется целиком."
+    },
+    {
+      "id": "html-css-foundations-20261107-html-forms",
+      "date": "2026-11-07",
+      "type": "separate",
+      "sectionId": "html-css",
+      "subsectionId": "html-forms",
+      "questionIds": [
+        "html-textarea-value",
+        "html-datalist-select",
+        "html-date-local-value",
+        "html-checkbox-indeterminate",
+        "html-implicit-submit",
+        "css-control-resize"
+      ],
+      "reason": "Вводные определения и самостоятельные прикладные навыки базового/среднего уровня. Связанные понятия закрепляются ссылками, общий алгоритм не копируется целиком."
+    },
+    {
+      "id": "html-css-foundations-20261107-html-resources",
+      "date": "2026-11-07",
+      "type": "separate",
+      "sectionId": "html-css",
+      "subsectionId": "html-resources",
+      "questionIds": ["html-svg-embedding", "html-svg-viewbox", "html-download-hint"],
+      "reason": "Вводные определения и самостоятельные прикладные навыки базового/среднего уровня. Связанные понятия закрепляются ссылками, общий алгоритм не копируется целиком."
+    },
+    {
+      "id": "html-css-foundations-20261107-css-visual",
+      "date": "2026-11-07",
+      "type": "separate",
+      "sectionId": "html-css",
+      "subsectionId": "css-visual",
+      "questionIds": [
+        "css-border-outline-shadow",
+        "css-radius-clipping",
+        "css-gradient-image",
+        "css-shadow-shape",
+        "css-transform-order-origin",
+        "css-easing-duration",
+        "css-touch-action-gesture",
+        "css-overscroll-chaining",
+        "css-blend-isolation"
+      ],
+      "reason": "Вводные определения и самостоятельные прикладные навыки базового/среднего уровня. Связанные понятия закрепляются ссылками, общий алгоритм не копируется целиком."
+    },
+    {
+      "id": "html-css-foundations-20261107-html-document",
+      "date": "2026-11-07",
+      "type": "separate",
+      "sectionId": "html-css",
+      "subsectionId": "html-document",
+      "questionIds": [
+        "html-css-javascript-responsibility",
+        "html-tag-element-attribute",
+        "html-document-head-body",
+        "html-relative-url-paths",
+        "html-time-machine-value",
+        "html-pre-code-contract",
+        "html-quotation-citation"
+      ],
+      "reason": "Вводные определения и самостоятельные прикладные навыки базового/среднего уровня. Связанные понятия закрепляются ссылками, общий алгоритм не копируется целиком."
+    },
+    {
+      "id": "html-css-foundations-20261107-css-selectors",
+      "date": "2026-11-07",
+      "type": "separate",
+      "sectionId": "html-css",
+      "subsectionId": "css-selectors",
+      "questionIds": [
+        "css-basic-selector-choice",
+        "css-empty-dom-content",
+        "css-control-state-selector",
+        "css-visited-privacy"
+      ],
+      "reason": "Вводные определения и самостоятельные прикладные навыки базового/среднего уровня. Связанные понятия закрепляются ссылками, общий алгоритм не копируется целиком."
+    },
+    {
+      "id": "html-css-foundations-20261107-css-typography",
+      "date": "2026-11-07",
+      "type": "separate",
+      "sectionId": "html-css",
+      "subsectionId": "css-typography",
+      "questionIds": [
+        "css-text-align-box",
+        "css-text-transform-data",
+        "css-readable-measure-ch",
+        "css-multiline-clamp",
+        "css-tabular-numerals",
+        "css-list-marker-layout"
+      ],
+      "reason": "Вводные определения и самостоятельные прикладные навыки базового/среднего уровня. Связанные понятия закрепляются ссылками, общий алгоритм не копируется целиком."
+    },
+    {
+      "id": "html-css-foundations-20261107-fold-css-flex-space",
+      "date": "2026-11-07",
+      "type": "expand",
+      "sectionId": "html-css",
+      "subsectionId": "layout",
+      "questionIds": ["css-flex-space"],
+      "reason": "Отдельное сравнение flex: none, auto и 1: Расширена единая модель basis/grow/shrink вместо похожего определения."
+    },
+    {
+      "id": "html-css-foundations-20261107-fold-css-image-fitting",
+      "date": "2026-11-07",
+      "type": "expand",
+      "sectionId": "html-css",
+      "subsectionId": "responsive",
+      "questionIds": ["css-image-fitting"],
+      "reason": "Отдельное определение object-position: Кадрирование добавлено к существующему контракту изображения с примером."
+    },
+    {
+      "id": "html-css-foundations-20261107-fold-html-input-hints",
+      "date": "2026-11-07",
+      "type": "expand",
+      "sectionId": "html-css",
+      "subsectionId": "html-forms",
+      "questionIds": ["html-input-hints"],
+      "reason": "Новый вопрос про autocomplete=off: Оговорка об автозаполнении относится к уже существующему назначению поля."
+    },
+    {
+      "id": "html-css-foundations-20261107-fold-html-table-relations",
+      "date": "2026-11-07",
+      "type": "expand",
+      "sectionId": "html-css",
+      "subsectionId": "semantics",
+      "questionIds": ["html-table-relations"],
+      "reason": "Повтор о thead, tbody и scope: Добавлен связный пример к каноническому вопросу отношений таблицы."
+    },
+    {
+      "id": "html-css-foundations-20261107-fold-css-selector-functions",
+      "date": "2026-11-07",
+      "type": "expand",
+      "sectionId": "html-css",
+      "subsectionId": "cascade",
+      "questionIds": ["css-selector-functions"],
+      "reason": "Новый базовый пример has: Состояние родителя показано в существующем вопросе функций селекторов."
+    },
+    {
+      "id": "html-css-foundations-20261107-fold-css-white-space-contract",
+      "date": "2026-11-07",
+      "type": "expand",
+      "sectionId": "html-css",
+      "subsectionId": "css-typography",
+      "questionIds": ["css-white-space-contract"],
+      "reason": "Отдельный вопрос о пробеле inline-block: Сохранение и схлопывание пробелов объясняется в одном каноническом ответе."
+    },
+    {
+      "id": "html-css-foundations-20261107-fold-form-reset",
+      "date": "2026-11-07",
+      "type": "keep",
+      "sectionId": "javascript",
+      "subsectionId": "dom",
+      "questionIds": ["form-reset"],
+      "reason": "Повторное определение reset формы: Канонический JavaScript-вопрос уже объясняет восстановление defaultValue/defaultChecked; дубль не создан."
+    },
+    {
+      "id": "html-css-foundations-20261107-fold-semantic-button",
+      "date": "2026-11-07",
+      "type": "keep",
+      "sectionId": "html-css",
+      "subsectionId": "semantics",
+      "questionIds": ["semantic-button"],
+      "reason": "Ещё одно объяснение button против ссылки и div: Базовый нативный выбор уже раскрыт; новые карточки ссылаются на него."
+    },
+    {
+      "id": "html-css-foundations-20261107-fold-css-line-height-inheritance",
+      "date": "2026-11-07",
+      "type": "keep",
+      "sectionId": "html-css",
+      "subsectionId": "css-typography",
+      "questionIds": ["css-line-height-inheritance"],
+      "reason": "Новая карточка про line-height с единицей и без неё: Есть отдельный сравнительный ответ с численным примером; повтор не нужен."
+    },
+    {
+      "id": "react-libraries-20261107-redux",
+      "date": "2026-11-07",
+      "type": "separate",
+      "sectionId": "react",
+      "subsectionId": "redux",
+      "questionIds": [
+        "redux-data-flow",
+        "redux-toolkit-role",
+        "redux-store-provider",
+        "redux-slice-immer",
+        "redux-selector-equality",
+        "redux-memoized-selector",
+        "redux-async-thunk",
+        "redux-query-cache",
+        "redux-entity-adapter",
+        "redux-serializable-state",
+        "redux-middleware-effects",
+        "redux-typescript-hooks"
+      ],
+      "reason": "Отдельный подраздел Redux и Redux Toolkit: прикладные API библиотеки. Определения Context, SSR-изоляции, external store и нормализации связаны с каноническими вопросами вместо повторения."
+    },
+    {
+      "id": "react-libraries-20261107-zustand",
+      "date": "2026-11-07",
+      "type": "separate",
+      "sectionId": "react",
+      "subsectionId": "zustand",
+      "questionIds": [
+        "zustand-store-basics",
+        "zustand-selector-shallow",
+        "zustand-set-merge",
+        "zustand-async-actions",
+        "zustand-imperative-access",
+        "zustand-selective-subscribe",
+        "zustand-persist-hydration",
+        "zustand-persist-migration",
+        "zustand-scoped-store",
+        "zustand-immer-middleware",
+        "zustand-typescript-store",
+        "zustand-reset-lifetime"
+      ],
+      "reason": "Отдельный подраздел Zustand: прикладные API библиотеки. Определения Context, SSR-изоляции, external store и нормализации связаны с каноническими вопросами вместо повторения."
+    },
+    {
+      "id": "react-libraries-20261107-choice",
+      "date": "2026-11-07",
+      "type": "expand",
+      "sectionId": "react",
+      "subsectionId": "context",
+      "questionIds": ["react-state-location"],
+      "reason": "Кандидат отдельного сравнения Redux/Zustand/Context включён в действующий вопрос выбора владельца и места состояния. Канонические useSyncExternalStore, SSR isolation и normalized state не дублируются."
     }
   ]
 }

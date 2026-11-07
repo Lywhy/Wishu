@@ -1,3 +1,5 @@
+import { useReviewSchedule, type ReviewEntry } from "@/stores/review-schedule"
+import { browserStorage } from "@/lib/browser-storage"
 import { useShortSession } from "@/stores/short-session"
 import { create } from "zustand"
 import { persist } from "zustand/middleware"
@@ -11,13 +13,20 @@ interface PracticeProgressData extends ServerQuestionProgress {
 }
 
 interface PracticeProgress extends PracticeProgressData {
+  discardQuestionWrite: () => void
   retryQuestionWrite: () => void
+  questionSavedAt: number | null
   questionSyncReady: boolean
   questionSyncError: string | null
   pendingQuestionWrites: number
   hydrateQuestions: (progress: ServerQuestionProgress) => void
   flushQuestionWrites: () => Promise<void>
-  setQuestionStatus: (id: string, status: QuestionStatus | null, sessionDone?: boolean) => void
+  setQuestionStatus: (
+    id: string,
+    status: QuestionStatus | null,
+    sessionDone?: boolean,
+    reviewBefore?: ReviewEntry | null,
+  ) => void
   setAutoRevealAnswers: (enabled: boolean) => void
   toggleSaved: (id: string) => void
   toggleReviewed: (id: string) => void
@@ -33,25 +42,37 @@ export const usePracticeProgress = create<PracticeProgress>()(
   persist<PracticeProgress, [], [], PracticeProgressData>(
     (set, get) => {
       let writes = Promise.resolve()
-      let failedJob: (() => Promise<void>) | null = null
+      const jobs: (() => Promise<void>)[] = []
+      let processing = false
+      const drain = () => {
+        if (processing || !jobs.length) return
+        processing = true
+        set({ questionSyncError: null, pendingQuestionWrites: jobs.length })
+        writes = (async () => {
+          while (jobs.length) {
+            try {
+              await jobs[0]()
+            } catch (error: unknown) {
+              set({
+                questionSyncError:
+                  error instanceof Error ? error.message : "Не удалось сохранить изменение.",
+              })
+              break
+            }
+            jobs.shift()
+            set({ questionSavedAt: Date.now(), pendingQuestionWrites: jobs.length })
+          }
+        })().finally(() => {
+          processing = false
+          set({ pendingQuestionWrites: 0 })
+          if (jobs.length && !get().questionSyncError) drain()
+        })
+      }
       const enqueue = (job: () => Promise<void>) => {
         if (!get().questionSyncReady) return
-        set((state) => ({
-          pendingQuestionWrites: state.pendingQuestionWrites + 1,
-          questionSyncError: null,
-        }))
-        writes = writes
-          .then(job)
-          .catch((error: unknown) => {
-            failedJob = job
-            set({
-              questionSyncError:
-                error instanceof Error ? error.message : "Не удалось сохранить изменение.",
-            })
-          })
-          .finally(() =>
-            set((state) => ({ pendingQuestionWrites: state.pendingQuestionWrites - 1 })),
-          )
+        jobs.push(job)
+        if (processing) set({ pendingQuestionWrites: jobs.length })
+        else if (!get().questionSyncError) drain()
       }
       const applyEntry = (entry: ProgressEntry) =>
         set((state) => {
@@ -73,21 +94,28 @@ export const usePracticeProgress = create<PracticeProgress>()(
         reviewedTaskIds: [],
         drafts: {},
         questionSyncReady: false,
-        retryQuestionWrite: () => {
-          if (failedJob) {
-            const job = failedJob
-            failedJob = null
-            enqueue(job)
-          }
+        retryQuestionWrite: drain,
+        discardQuestionWrite: () => {
+          if (processing) return
+          jobs.shift()
+          set({ questionSyncError: null, questionSavedAt: null })
+          drain()
         },
+        questionSavedAt: null,
         questionSyncError: null,
         pendingQuestionWrites: 0,
         hydrateQuestions: (progress) =>
-          set({ ...progress, questionSyncReady: true, questionSyncError: null }),
+          set({
+            ...progress,
+            questionSyncReady: true,
+            ...(!jobs.length ? { questionSyncError: null } : {}),
+          }),
         flushQuestionWrites: () => writes,
-        setQuestionStatus: (id, status, sessionDone) =>
+        setQuestionStatus: (id, status, sessionDone, reviewBefore) =>
           enqueue(async () => {
             applyEntry(await questionApi.patchProgress(id, { status }))
+            if (reviewBefore !== undefined) useReviewSchedule.getState().restore(id, reviewBefore)
+            else useReviewSchedule.getState().record(id, status)
             useShortSession.getState().mark(id, sessionDone ?? status !== null)
           }),
         setAutoRevealAnswers: (enabled) =>
@@ -119,6 +147,7 @@ export const usePracticeProgress = create<PracticeProgress>()(
     },
     {
       name: "wishu-practice",
+      storage: browserStorage<PracticeProgressData>("practice"),
       version: 3,
       partialize: ({
         questionStatuses,

@@ -18,7 +18,8 @@
         "ts-union-utilities",
         "ts-signature-utilities",
         "ts-string-utilities",
-        "ts-no-infer"
+        "ts-no-infer",
+        "ts-distributive-omit"
       ]
     },
     {
@@ -83,6 +84,15 @@
       "reviewed": false,
       "priority": "core",
       "relatedSkillIds": []
+    },
+    {
+      "id": "ts-distributive-omit",
+      "title": "Почему Omit над union может потерять поля отдельных вариантов?",
+      "description": "Объяснить и применить правило с учётом его границ: Преобразование объединения целиком и преобразование каждого варианта могут различаться.",
+      "requiredDifficulties": ["Продвинутый"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": ["ts-pick-omit", "ts-keyof-union-keys"]
     }
   ],
   "questions": [
@@ -105,7 +115,7 @@
         "goalIds": ["core", "ts-object-utilities"],
         "relatedQuestionIds": [],
         "priority": "core",
-        "sourceRefs": []
+        "sourceRefs": ["ref-3f97ed4aa0a31ba2"]
       },
       "answerFile": "answers/typescript/ts-object-utilities.md"
     },
@@ -195,9 +205,9 @@
         "kind": "explanation",
         "reviewStatus": "imported",
         "goalIds": ["core", "ts-signature-utilities"],
-        "relatedQuestionIds": [],
+        "relatedQuestionIds": ["ts-constructor-instance-sides"],
         "priority": "core",
-        "sourceRefs": []
+        "sourceRefs": ["ref-3f97ed4aa0a31ba2"]
       },
       "answerFile": "answers/typescript/ts-signature-utilities.md"
     },
@@ -247,6 +257,29 @@
         "sourceRefs": ["ref-36c5f0cd57b1b768"]
       },
       "answerFile": "answers/typescript/ts-no-infer.md"
+    },
+    {
+      "id": "ts-distributive-omit",
+      "title": "Почему Omit над union может потерять поля отдельных вариантов?",
+      "topic": "TypeScript",
+      "difficulty": "Продвинутый",
+      "summary": "Общие ключи и распределяемый вариант преобразования.",
+      "answerFile": "answers/typescript/ts-distributive-omit.md",
+      "takeaway": "Преобразование объединения целиком и преобразование каждого варианта могут различаться.",
+      "pitfall": "Считать Omit автоматически поэлементным преобразованием любого union.",
+      "moduleId": "typescript",
+      "order": 7,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Преобразование объединения целиком и преобразование каждого варианта могут различаться.",
+        "keywords": ["TypeScript", "Utility Types"],
+        "kind": "explanation",
+        "reviewStatus": "ready",
+        "priority": "core",
+        "goalIds": ["core", "ts-distributive-omit"],
+        "relatedQuestionIds": ["ts-pick-omit", "ts-keyof-union-keys"],
+        "sourceRefs": ["ref-3f97ed4aa0a31ba2"]
+      }
     }
   ]
 }

@@ -18,7 +18,17 @@
         "css-selector-functions",
         "css-custom-properties",
         "css-content-visibility",
-        "css-progressive-enhancement"
+        "css-progressive-enhancement",
+        "css-size-constraints",
+        "css-value-processing",
+        "css-shorthand-reset",
+        "css-error-recovery",
+        "css-registered-property",
+        "css-reset-normalize",
+        "css-rule-declaration-syntax",
+        "css-stylesheet-connection",
+        "css-box-layers-spacing",
+        "css-containment-types"
       ]
     },
     {
@@ -83,6 +93,96 @@
       "reviewed": false,
       "priority": "core",
       "relatedSkillIds": []
+    },
+    {
+      "id": "css-size-constraints",
+      "title": "Как width, min-width и max-width разрешают конфликт размеров?",
+      "description": "Учитывайте все три ограничения и box-sizing, прежде чем объяснять итоговую ширину.",
+      "requiredDifficulties": ["Базовый"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "css-value-processing",
+      "title": "Чем specified, computed, used и actual values отличаются друг от друга?",
+      "description": "Победившая декларация ещё не равна окончательной геометрии.",
+      "requiredDifficulties": ["Продвинутый"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "css-shorthand-reset",
+      "title": "Почему shorthand может сбросить свойство, которого в нём явно нет?",
+      "description": "Сокращённая запись компактна по тексту, но широка по воздействию.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "css-error-recovery",
+      "title": "Как браузер обрабатывает неизвестное свойство, неверное значение и ошибку в селекторе?",
+      "description": "Понимайте границу отбрасывания: декларация, список селекторов и вычисление var() ведут себя по-разному.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "css-registered-property",
+      "title": "Что меняет регистрация custom property через @property?",
+      "description": "Регистрация превращает соглашение о токенах в проверяемый CSS-контракт.",
+      "requiredDifficulties": ["Продвинутый"],
+      "reviewed": true,
+      "priority": "extended",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "css-reset-normalize",
+      "title": "Чем reset отличается от normalize и почему опасно сбрасывать всё через all?",
+      "description": "Базовые стили должны упростить каскад, сохраняя доступное поведение.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "css-rule-declaration-syntax",
+      "title": "Из чего состоит CSS-правило и чем свойство отличается от селектора?",
+      "description": "Отделяйте условие выбора элемента от настройки его представления.",
+      "requiredDifficulties": ["Базовый"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "css-stylesheet-connection",
+      "title": "Как подключить CSS через link, style и атрибут style?",
+      "description": "Способ подключения выбирают по структуре проекта; приоритет проверяют по правилам каскада.",
+      "requiredDifficulties": ["Базовый"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "css-box-layers-spacing",
+      "title": "Чем content, padding, border и margin отличаются в блочной модели?",
+      "description": "Для внутреннего воздуха используйте padding, для отношений между коробками выбирайте подходящие margin или gap.",
+      "requiredDifficulties": ["Базовый"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "css-containment-types",
+      "title": "Что ограничивают contain: layout, paint и size?",
+      "description": "Оптимизационное обещание допустимо только тогда, когда его поведенческие ограничения подходят компоненту.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": true,
+      "priority": "extended",
+      "relatedSkillIds": []
     }
   ],
   "questions": [
@@ -102,9 +202,9 @@
         "kind": "explanation",
         "reviewStatus": "imported",
         "goalIds": ["core", "css-cascade"],
-        "relatedQuestionIds": [],
+        "relatedQuestionIds": ["css-scope-boundary"],
         "priority": "core",
-        "sourceRefs": []
+        "sourceRefs": ["ref-620c1ba600bc61c6"]
       },
       "answerFile": "answers/html-css/css-cascade.md"
     },
@@ -146,9 +246,9 @@
         "kind": "explanation",
         "reviewStatus": "imported",
         "goalIds": ["core", "css-inheritance"],
-        "relatedQuestionIds": [],
+        "relatedQuestionIds": ["css-reset-normalize"],
         "priority": "core",
-        "sourceRefs": []
+        "sourceRefs": ["ref-838f9c8619d6a8a1"]
       },
       "answerFile": "answers/html-css/css-inheritance.md"
     },
@@ -170,9 +270,9 @@
         "kind": "explanation",
         "reviewStatus": "imported",
         "goalIds": ["core", "css-selector-functions"],
-        "relatedQuestionIds": [],
+        "relatedQuestionIds": ["css-control-state-selector"],
         "priority": "core",
-        "sourceRefs": ["ref-ff2c757eaf3567bb"]
+        "sourceRefs": ["ref-ff2c757eaf3567bb", "ref-2ed90e9b6c3468fa"]
       },
       "answerFile": "answers/html-css/css-selector-functions.md"
     },
@@ -194,7 +294,7 @@
         "kind": "explanation",
         "reviewStatus": "imported",
         "goalIds": ["core", "css-custom-properties"],
-        "relatedQuestionIds": [],
+        "relatedQuestionIds": ["css-registered-property", "css-error-recovery"],
         "priority": "core",
         "sourceRefs": ["ref-e5f2c561a9a5c57f"]
       },
@@ -247,6 +347,236 @@
         "sourceRefs": ["ref-7377f648185f56bf"]
       },
       "answerFile": "answers/html-css/css-progressive-enhancement.md"
+    },
+    {
+      "id": "css-size-constraints",
+      "title": "Как width, min-width и max-width разрешают конфликт размеров?",
+      "topic": "HTML и CSS",
+      "difficulty": "Базовый",
+      "summary": "Предпочтительный размер, нижняя граница и верхнее ограничение.",
+      "answerFile": "answers/html-css/css-size-constraints.md",
+      "takeaway": "Учитывайте все три ограничения и box-sizing, прежде чем объяснять итоговую ширину.",
+      "pitfall": "Считать max-width: 100% гарантией от переполнения при любом min-width.",
+      "moduleId": "html-css",
+      "order": 7,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Учитывайте все три ограничения и box-sizing, прежде чем объяснять итоговую ширину.",
+        "keywords": ["HTML и CSS", "Каскад и блочная модель", "size", "constraints"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "priority": "core",
+        "goalIds": ["core", "css-size-constraints"],
+        "relatedQuestionIds": ["css-box-sizing", "css-flex-min-size"],
+        "sourceRefs": ["ref-3f19f7e8d56dd9e4"]
+      }
+    },
+    {
+      "id": "css-value-processing",
+      "title": "Чем specified, computed, used и actual values отличаются друг от друга?",
+      "topic": "HTML и CSS",
+      "difficulty": "Продвинутый",
+      "summary": "Этапы обработки значения от каскада до геометрии и отображения.",
+      "answerFile": "answers/html-css/css-value-processing.md",
+      "takeaway": "Победившая декларация ещё не равна окончательной геометрии.",
+      "pitfall": "Ожидать, что getComputedStyle всегда вернёт исходный var() или процент из stylesheet.",
+      "moduleId": "html-css",
+      "order": 8,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Победившая декларация ещё не равна окончательной геометрии.",
+        "keywords": ["HTML и CSS", "Каскад и блочная модель", "value", "processing"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "priority": "core",
+        "goalIds": ["core", "css-value-processing"],
+        "relatedQuestionIds": ["css-box-sizing", "js-computed-style-contract"],
+        "sourceRefs": ["ref-da1044310da3885e"]
+      }
+    },
+    {
+      "id": "css-shorthand-reset",
+      "title": "Почему shorthand может сбросить свойство, которого в нём явно нет?",
+      "topic": "HTML и CSS",
+      "difficulty": "Средний",
+      "summary": "Полное развёртывание сокращённой декларации и порядок longhand.",
+      "answerFile": "answers/html-css/css-shorthand-reset.md",
+      "takeaway": "Сокращённая запись компактна по тексту, но широка по воздействию.",
+      "pitfall": "Менять background-color на background и случайно убирать изображение или другие слои.",
+      "moduleId": "html-css",
+      "order": 9,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Сокращённая запись компактна по тексту, но широка по воздействию.",
+        "keywords": ["HTML и CSS", "Каскад и блочная модель", "shorthand", "reset"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "priority": "core",
+        "goalIds": ["core", "css-shorthand-reset"],
+        "relatedQuestionIds": ["css-cascade"],
+        "sourceRefs": ["ref-e320cbf4ef747d70"]
+      }
+    },
+    {
+      "id": "css-error-recovery",
+      "title": "Как браузер обрабатывает неизвестное свойство, неверное значение и ошибку в селекторе?",
+      "topic": "HTML и CSS",
+      "difficulty": "Средний",
+      "summary": "Локальное отбрасывание деклараций и различие обычных и forgiving selector lists.",
+      "answerFile": "answers/html-css/css-error-recovery.md",
+      "takeaway": "Понимайте границу отбрасывания: декларация, список селекторов и вычисление var() ведут себя по-разному.",
+      "pitfall": "Считать все списки селекторов forgiving или ожидать полного прекращения CSS после одной неверной длины.",
+      "moduleId": "html-css",
+      "order": 10,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Понимайте границу отбрасывания: декларация, список селекторов и вычисление var() ведут себя по-разному.",
+        "keywords": ["HTML и CSS", "Каскад и блочная модель", "error", "recovery"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "priority": "core",
+        "goalIds": ["core", "css-error-recovery"],
+        "relatedQuestionIds": ["css-custom-properties", "css-progressive-enhancement"],
+        "sourceRefs": ["ref-7fba41e5002cd228"]
+      }
+    },
+    {
+      "id": "css-registered-property",
+      "title": "Что меняет регистрация custom property через @property?",
+      "topic": "HTML и CSS",
+      "difficulty": "Продвинутый",
+      "summary": "Тип значения, наследование, initial-value и интерполяция.",
+      "answerFile": "answers/html-css/css-registered-property.md",
+      "takeaway": "Регистрация превращает соглашение о токенах в проверяемый CSS-контракт.",
+      "pitfall": "Пропустить inherits или задать зависимое от font-size initial-value для типизированной длины.",
+      "moduleId": "html-css",
+      "order": 11,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Регистрация превращает соглашение о токенах в проверяемый CSS-контракт.",
+        "keywords": ["HTML и CSS", "Каскад и блочная модель", "registered", "property"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "priority": "extended",
+        "goalIds": ["core", "css-registered-property"],
+        "relatedQuestionIds": ["css-custom-properties"],
+        "sourceRefs": ["ref-41c59ecfba59d95a"]
+      }
+    },
+    {
+      "id": "css-reset-normalize",
+      "title": "Чем reset отличается от normalize и почему опасно сбрасывать всё через all?",
+      "topic": "HTML и CSS",
+      "difficulty": "Средний",
+      "summary": "Браузерные стили, базовый слой проекта и сохранение нативных состояний.",
+      "answerFile": "answers/html-css/css-reset-normalize.md",
+      "takeaway": "Базовые стили должны упростить каскад, сохраняя доступное поведение.",
+      "pitfall": "Удалить outline и оформление disabled глобальным reset, не предоставив замены.",
+      "moduleId": "html-css",
+      "order": 12,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Базовые стили должны упростить каскад, сохраняя доступное поведение.",
+        "keywords": ["HTML и CSS", "Каскад и блочная модель", "reset", "normalize"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "priority": "core",
+        "goalIds": ["core", "css-reset-normalize"],
+        "relatedQuestionIds": ["css-inheritance", "css-focus-indicator"],
+        "sourceRefs": ["ref-7a0e05bf745020ee"]
+      }
+    },
+    {
+      "id": "css-rule-declaration-syntax",
+      "title": "Из чего состоит CSS-правило и чем свойство отличается от селектора?",
+      "topic": "HTML и CSS",
+      "difficulty": "Базовый",
+      "summary": "Выбор элементов, блок деклараций и пары свойство-значение.",
+      "answerFile": "answers/html-css/css-rule-declaration-syntax.md",
+      "takeaway": "Отделяйте условие выбора элемента от настройки его представления.",
+      "pitfall": "Писать color = red или считать имя класса CSS-свойством.",
+      "moduleId": "html-css",
+      "order": 13,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Отделяйте условие выбора элемента от настройки его представления.",
+        "keywords": ["HTML и CSS", "Каскад и блочная модель", "rule", "declaration", "syntax"],
+        "kind": "explanation",
+        "reviewStatus": "ready",
+        "priority": "core",
+        "goalIds": ["core", "css-rule-declaration-syntax"],
+        "relatedQuestionIds": ["css-cascade"],
+        "sourceRefs": ["ref-01b80e8064385ace"]
+      }
+    },
+    {
+      "id": "css-stylesheet-connection",
+      "title": "Как подключить CSS через link, style и атрибут style?",
+      "topic": "HTML и CSS",
+      "difficulty": "Базовый",
+      "summary": "Внешняя таблица, встроенный блок и локальные декларации.",
+      "answerFile": "answers/html-css/css-stylesheet-connection.md",
+      "takeaway": "Способ подключения выбирают по структуре проекта; приоритет проверяют по правилам каскада.",
+      "pitfall": "Объяснять приоритет только порядком «inline, style, внешний файл» и игнорировать important, слои и специфичность.",
+      "moduleId": "html-css",
+      "order": 14,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Способ подключения выбирают по структуре проекта; приоритет проверяют по правилам каскада.",
+        "keywords": ["HTML и CSS", "Каскад и блочная модель", "stylesheet", "connection"],
+        "kind": "explanation",
+        "reviewStatus": "ready",
+        "priority": "core",
+        "goalIds": ["core", "css-stylesheet-connection"],
+        "relatedQuestionIds": ["html-relative-url-paths", "css-cascade"],
+        "sourceRefs": ["ref-d5a2e17b225a992e"]
+      }
+    },
+    {
+      "id": "css-box-layers-spacing",
+      "title": "Чем content, padding, border и margin отличаются в блочной модели?",
+      "topic": "HTML и CSS",
+      "difficulty": "Базовый",
+      "summary": "Внутренняя область, рамка и внешнее расстояние.",
+      "answerFile": "answers/html-css/css-box-layers-spacing.md",
+      "takeaway": "Для внутреннего воздуха используйте padding, для отношений между коробками выбирайте подходящие margin или gap.",
+      "pitfall": "Пытаться покрасить margin фоном элемента или задать отрицательный padding.",
+      "moduleId": "html-css",
+      "order": 15,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Для внутреннего воздуха используйте padding, для отношений между коробками выбирайте подходящие margin или gap.",
+        "keywords": ["HTML и CSS", "Каскад и блочная модель", "box", "layers", "spacing"],
+        "kind": "explanation",
+        "reviewStatus": "ready",
+        "priority": "core",
+        "goalIds": ["core", "css-box-layers-spacing"],
+        "relatedQuestionIds": ["css-box-sizing", "css-margin-collapse-bfc"],
+        "sourceRefs": ["ref-124f5df8a371920d"]
+      }
+    },
+    {
+      "id": "css-containment-types",
+      "title": "Что ограничивают contain: layout, paint и size?",
+      "topic": "HTML и CSS",
+      "difficulty": "Средний",
+      "summary": "Обещания независимости частей страницы и побочные эффекты containment.",
+      "answerFile": "answers/html-css/css-containment-types.md",
+      "takeaway": "Оптимизационное обещание допустимо только тогда, когда его поведенческие ограничения подходят компоненту.",
+      "pitfall": "Поставить contain: strict на контентный блок и удивиться исчезновению ожидаемой высоты.",
+      "moduleId": "html-css",
+      "order": 16,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Оптимизационное обещание допустимо только тогда, когда его поведенческие ограничения подходят компоненту.",
+        "keywords": ["HTML и CSS", "Каскад и блочная модель", "containment", "types"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "priority": "extended",
+        "goalIds": ["core", "css-containment-types"],
+        "relatedQuestionIds": ["css-content-visibility", "css-containing-block"],
+        "sourceRefs": ["ref-6db5b3ebbaa7f0e6"]
+      }
     }
   ]
 }

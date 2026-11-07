@@ -3,3 +3,17 @@
 <!-- wishu:answer-block -->
 
 - Target задаёт уровень преобразования синтаксиса, lib - доступные декларации встроенных API, module и moduleResolution - правила модулей и их поиска. Добавление lib не устанавливает polyfill. NoEmit оставляет проверку без генерации JS. Конкретные параметры выбирают под runtime и сборщик; наличие tsconfig не означает, что каждый инструмент автоматически проверяет типы.
+
+<!-- wishu:answer-block -->
+
+### Настройки и гарантии среды
+
+Наличие метода в lib не устанавливает реализацию. Разбирайте отдельно целевой синтаксис, объявления API и фактический runtime. Выбор входных файлов и диагностика проекта подробнее раскрыты в новых подразделах конфигурации.
+
+#### Продолжить тему
+
+- [Чем files, include и exclude отличаются от rootDir и outDir?](/questions/ts-project-file-graph)
+- [Как наследование tsconfig влияет на относительные пути и массивы настроек?](/questions/ts-config-inheritance-paths)
+- [Почему tsc file.ts не равен проверке проекта через tsc -p?](/questions/ts-cli-project-selection)
+
+[Документация TypeScript](https://www.typescriptlang.org/tsconfig/).

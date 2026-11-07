@@ -19,7 +19,18 @@
         "css-image-fitting",
         "css-fluid-type",
         "css-text-wrapping",
-        "css-font-loading"
+        "css-font-loading",
+        "css-calc-typed-math",
+        "css-media-query-logic",
+        "css-container-query-setup",
+        "css-print-fragmentation",
+        "css-scroll-offset-snap",
+        "html-viewport-meta",
+        "css-mobile-first-strategy",
+        "css-viewport-width-overflow",
+        "css-input-capability-media",
+        "css-zoom-reflow-check",
+        "css-pixel-device-pixel"
       ]
     },
     {
@@ -93,6 +104,105 @@
       "reviewed": false,
       "priority": "core",
       "relatedSkillIds": []
+    },
+    {
+      "id": "css-calc-typed-math",
+      "title": "Что вычисляет calc и почему нельзя складывать любые CSS-значения?",
+      "description": "CSS-арифметика знает типы и базы относительных значений, а не просто числа.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "css-media-query-logic",
+      "title": "Как работают and, запятая, not и диапазоны в media queries?",
+      "description": "Проектируйте условия как логические диапазоны возможностей макета.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "css-container-query-setup",
+      "title": "Почему size container query не срабатывает на том элементе, где задан container-type?",
+      "description": "Контейнер измеряют, а адаптируют его потомка; настройка containment имеет собственную цену.",
+      "requiredDifficulties": ["Продвинутый"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "css-print-fragmentation",
+      "title": "Как подготовить страницу к печати и что гарантирует break-inside: avoid?",
+      "description": "Печать - отдельный контекст представления, в котором содержимое должно остаться доступным.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "css-scroll-offset-snap",
+      "title": "Зачем нужны scroll-padding, scroll-margin и scroll-snap-type?",
+      "description": "Настройте доступную область и цели прокрутки прежде, чем добавлять принудительное движение.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "html-viewport-meta",
+      "title": "Для чего нужен meta viewport на мобильной странице?",
+      "description": "Настройте viewport и отдельно обеспечьте гибкий макет и возможность увеличения.",
+      "requiredDifficulties": ["Базовый"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "css-mobile-first-strategy",
+      "title": "Что означает mobile-first в CSS и чем он отличается от desktop-first?",
+      "description": "Базовый вариант должен работать сам, а запросы - осознанно добавлять структуру.",
+      "requiredDifficulties": ["Базовый"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "css-viewport-width-overflow",
+      "title": "Почему width: 100vw иногда создаёт горизонтальную прокрутку?",
+      "description": "Размер viewport и доступный размер родителя не всегда совпадают.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "css-input-capability-media",
+      "title": "Чем hover и pointer отличаются от any-hover и any-pointer?",
+      "description": "Запрашивайте возможность ввода, не выводите из неё всю модель устройства и пользователя.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "css-zoom-reflow-check",
+      "title": "Почему адаптивность нужно проверять при zoom и увеличении текста?",
+      "description": "Макет должен выдерживать рост содержимого, а не только заданный размер экрана.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "css-pixel-device-pixel",
+      "title": "Чем CSS-пиксель отличается от физического пикселя и что означает DPR?",
+      "description": "Размер коробки и детализация растрового ресурса - разные характеристики.",
+      "requiredDifficulties": ["Базовый"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
     }
   ],
   "questions": [
@@ -134,9 +244,13 @@
         "kind": "explanation",
         "reviewStatus": "imported",
         "goalIds": ["core", "css-relative-units"],
-        "relatedQuestionIds": [],
+        "relatedQuestionIds": [
+          "css-percentage-height",
+          "css-transform-flow-geometry",
+          "css-calc-typed-math"
+        ],
         "priority": "core",
-        "sourceRefs": []
+        "sourceRefs": ["ref-2f68aa7741682aa5"]
       },
       "answerFile": "answers/html-css/css-relative-units.md"
     },
@@ -156,9 +270,9 @@
         "kind": "explanation",
         "reviewStatus": "imported",
         "goalIds": ["core", "html-responsive-images"],
-        "relatedQuestionIds": [],
+        "relatedQuestionIds": ["css-image-fitting"],
         "priority": "core",
-        "sourceRefs": []
+        "sourceRefs": ["ref-c4b645b3296ad9f4"]
       },
       "answerFile": "answers/html-css/html-responsive-images.md"
     },
@@ -204,9 +318,9 @@
         "kind": "explanation",
         "reviewStatus": "imported",
         "goalIds": ["core", "css-image-fitting"],
-        "relatedQuestionIds": [],
+        "relatedQuestionIds": ["html-responsive-images", "html-alt-purpose"],
         "priority": "core",
-        "sourceRefs": ["ref-deaa389a2708acfc"]
+        "sourceRefs": ["ref-deaa389a2708acfc", "ref-52e369c87c1d393e"]
       },
       "answerFile": "answers/html-css/css-image-fitting.md"
     },
@@ -281,6 +395,259 @@
         "sourceRefs": ["ref-aafd2bca27fe488e"]
       },
       "answerFile": "answers/html-css/css-font-loading.md"
+    },
+    {
+      "id": "css-calc-typed-math",
+      "title": "Что вычисляет calc и почему нельзя складывать любые CSS-значения?",
+      "topic": "HTML и CSS",
+      "difficulty": "Средний",
+      "summary": "Совместимые типы, смешанные единицы и синтаксис арифметики.",
+      "answerFile": "answers/html-css/css-calc-typed-math.md",
+      "takeaway": "CSS-арифметика знает типы и базы относительных значений, а не просто числа.",
+      "pitfall": "Писать calc(100%-2rem) или складывать длину со временем.",
+      "moduleId": "html-css",
+      "order": 8,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "CSS-арифметика знает типы и базы относительных значений, а не просто числа.",
+        "keywords": ["HTML и CSS", "Адаптивность", "calc", "typed", "math"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "priority": "core",
+        "goalIds": ["core", "css-calc-typed-math"],
+        "relatedQuestionIds": ["css-relative-units", "css-fluid-type"],
+        "sourceRefs": ["ref-b209cabe9ff2834f"]
+      }
+    },
+    {
+      "id": "css-media-query-logic",
+      "title": "Как работают and, запятая, not и диапазоны в media queries?",
+      "topic": "HTML и CSS",
+      "difficulty": "Средний",
+      "summary": "Логическое объединение условий и границы адаптивных правил.",
+      "answerFile": "answers/html-css/css-media-query-logic.md",
+      "takeaway": "Проектируйте условия как логические диапазоны возможностей макета.",
+      "pitfall": "Считать запятую эквивалентом and или ориентироваться на физическое разрешение экрана.",
+      "moduleId": "html-css",
+      "order": 9,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Проектируйте условия как логические диапазоны возможностей макета.",
+        "keywords": ["HTML и CSS", "Адаптивность", "media", "query", "logic"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "priority": "core",
+        "goalIds": ["core", "css-media-query-logic"],
+        "relatedQuestionIds": ["css-media-container"],
+        "sourceRefs": ["ref-c166c01169cd4bc0"]
+      }
+    },
+    {
+      "id": "css-container-query-setup",
+      "title": "Почему size container query не срабатывает на том элементе, где задан container-type?",
+      "topic": "HTML и CSS",
+      "difficulty": "Продвинутый",
+      "summary": "Поиск подходящего предка, именование контейнера и влияние containment.",
+      "answerFile": "answers/html-css/css-container-query-setup.md",
+      "takeaway": "Контейнер измеряют, а адаптируют его потомка; настройка containment имеет собственную цену.",
+      "pitfall": "Пытаться менять размер самого контейнера на основании его же размерного запроса.",
+      "moduleId": "html-css",
+      "order": 10,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Контейнер измеряют, а адаптируют его потомка; настройка containment имеет собственную цену.",
+        "keywords": ["HTML и CSS", "Адаптивность", "container", "query", "setup"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "priority": "core",
+        "goalIds": ["core", "css-container-query-setup"],
+        "relatedQuestionIds": ["css-media-container"],
+        "sourceRefs": ["ref-48050f628b82bacc"]
+      }
+    },
+    {
+      "id": "css-print-fragmentation",
+      "title": "Как подготовить страницу к печати и что гарантирует break-inside: avoid?",
+      "topic": "HTML и CSS",
+      "difficulty": "Средний",
+      "summary": "Печатный контекст, границы страниц и сохранение полезного содержания.",
+      "answerFile": "answers/html-css/css-print-fragmentation.md",
+      "takeaway": "Печать - отдельный контекст представления, в котором содержимое должно остаться доступным.",
+      "pitfall": "Скрыть скроллбар, но сохранить фиксированную высоту контейнера и потерять половину лекции.",
+      "moduleId": "html-css",
+      "order": 11,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Печать - отдельный контекст представления, в котором содержимое должно остаться доступным.",
+        "keywords": ["HTML и CSS", "Адаптивность", "print", "fragmentation"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "priority": "core",
+        "goalIds": ["core", "css-print-fragmentation"],
+        "relatedQuestionIds": [],
+        "sourceRefs": ["ref-2728395fe758abf8"]
+      }
+    },
+    {
+      "id": "css-scroll-offset-snap",
+      "title": "Зачем нужны scroll-padding, scroll-margin и scroll-snap-type?",
+      "topic": "HTML и CSS",
+      "difficulty": "Средний",
+      "summary": "Смещение целевой области прокрутки и привязка позиций без ручной анимации.",
+      "answerFile": "answers/html-css/css-scroll-offset-snap.md",
+      "takeaway": "Настройте доступную область и цели прокрутки прежде, чем добавлять принудительное движение.",
+      "pitfall": "Считать scroll-margin обычным отступом между элементами или включать mandatory без проверки длинных карточек.",
+      "moduleId": "html-css",
+      "order": 12,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Настройте доступную область и цели прокрутки прежде, чем добавлять принудительное движение.",
+        "keywords": ["HTML и CSS", "Адаптивность", "scroll", "offset", "snap"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "priority": "core",
+        "goalIds": ["core", "css-scroll-offset-snap"],
+        "relatedQuestionIds": ["css-overflow-scroll-contract"],
+        "sourceRefs": ["ref-e5421c38442e45e9"]
+      }
+    },
+    {
+      "id": "html-viewport-meta",
+      "title": "Для чего нужен meta viewport на мобильной странице?",
+      "topic": "HTML и CSS",
+      "difficulty": "Базовый",
+      "summary": "Layout viewport устройства и масштабирование адаптивной раскладки.",
+      "answerFile": "answers/html-css/html-viewport-meta.md",
+      "takeaway": "Настройте viewport и отдельно обеспечьте гибкий макет и возможность увеличения.",
+      "pitfall": "Считать meta viewport заменой адаптивной вёрстке или отключать zoom.",
+      "moduleId": "html-css",
+      "order": 13,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Настройте viewport и отдельно обеспечьте гибкий макет и возможность увеличения.",
+        "keywords": ["HTML и CSS", "Адаптивность", "viewport", "meta"],
+        "kind": "explanation",
+        "reviewStatus": "ready",
+        "priority": "core",
+        "goalIds": ["core", "html-viewport-meta"],
+        "relatedQuestionIds": ["css-media-query-logic"],
+        "sourceRefs": ["ref-433a46a49b6e3462"]
+      }
+    },
+    {
+      "id": "css-mobile-first-strategy",
+      "title": "Что означает mobile-first в CSS и чем он отличается от desktop-first?",
+      "topic": "HTML и CSS",
+      "difficulty": "Базовый",
+      "summary": "Базовые правила и направление постепенного усложнения макета.",
+      "answerFile": "answers/html-css/css-mobile-first-strategy.md",
+      "takeaway": "Базовый вариант должен работать сам, а запросы - осознанно добавлять структуру.",
+      "pitfall": "Начинать с набора размеров популярных телефонов вместо поведения содержимого.",
+      "moduleId": "html-css",
+      "order": 14,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Базовый вариант должен работать сам, а запросы - осознанно добавлять структуру.",
+        "keywords": ["HTML и CSS", "Адаптивность", "mobile", "first", "strategy"],
+        "kind": "explanation",
+        "reviewStatus": "ready",
+        "priority": "core",
+        "goalIds": ["core", "css-mobile-first-strategy"],
+        "relatedQuestionIds": ["css-media-query-logic"],
+        "sourceRefs": ["ref-fb30386007455c56"]
+      }
+    },
+    {
+      "id": "css-viewport-width-overflow",
+      "title": "Почему width: 100vw иногда создаёт горизонтальную прокрутку?",
+      "topic": "HTML и CSS",
+      "difficulty": "Средний",
+      "summary": "Viewport-ширина, классическая полоса прокрутки и процент контейнера.",
+      "answerFile": "answers/html-css/css-viewport-width-overflow.md",
+      "takeaway": "Размер viewport и доступный размер родителя не всегда совпадают.",
+      "pitfall": "Лечить любую горизонтальную прокрутку скрытием overflow на body.",
+      "moduleId": "html-css",
+      "order": 15,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Размер viewport и доступный размер родителя не всегда совпадают.",
+        "keywords": ["HTML и CSS", "Адаптивность", "viewport", "width", "overflow"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "priority": "core",
+        "goalIds": ["core", "css-viewport-width-overflow"],
+        "relatedQuestionIds": ["css-scrollbar-gutter", "css-box-sizing"],
+        "sourceRefs": ["ref-3b20f41323599ed7"]
+      }
+    },
+    {
+      "id": "css-input-capability-media",
+      "title": "Чем hover и pointer отличаются от any-hover и any-pointer?",
+      "topic": "HTML и CSS",
+      "difficulty": "Средний",
+      "summary": "Основное устройство ввода и наличие дополнительных способов взаимодействия.",
+      "answerFile": "answers/html-css/css-input-capability-media.md",
+      "takeaway": "Запрашивайте возможность ввода, не выводите из неё всю модель устройства и пользователя.",
+      "pitfall": "Прятать необходимую кнопку на touch-устройстве только потому, что hover недоступен.",
+      "moduleId": "html-css",
+      "order": 16,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Запрашивайте возможность ввода, не выводите из неё всю модель устройства и пользователя.",
+        "keywords": ["HTML и CSS", "Адаптивность", "input", "capability", "media"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "priority": "core",
+        "goalIds": ["core", "css-input-capability-media"],
+        "relatedQuestionIds": ["css-focus-indicator", "css-state-focus-within"],
+        "sourceRefs": ["ref-ca9fbd612230e017"]
+      }
+    },
+    {
+      "id": "css-zoom-reflow-check",
+      "title": "Почему адаптивность нужно проверять при zoom и увеличении текста?",
+      "topic": "HTML и CSS",
+      "difficulty": "Средний",
+      "summary": "Меньшая доступная область, рост текста и сохранение действий.",
+      "answerFile": "answers/html-css/css-zoom-reflow-check.md",
+      "takeaway": "Макет должен выдерживать рост содержимого, а не только заданный размер экрана.",
+      "pitfall": "Обрезать подпись overflow: hidden, чтобы сохранить высоту кнопки при zoom.",
+      "moduleId": "html-css",
+      "order": 17,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Макет должен выдерживать рост содержимого, а не только заданный размер экрана.",
+        "keywords": ["HTML и CSS", "Адаптивность", "zoom", "reflow", "check"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "priority": "core",
+        "goalIds": ["core", "css-zoom-reflow-check"],
+        "relatedQuestionIds": ["css-fluid-type", "html-accessibility-smoke-check"],
+        "sourceRefs": ["ref-ee418d8caaaec05f"]
+      }
+    },
+    {
+      "id": "css-pixel-device-pixel",
+      "title": "Чем CSS-пиксель отличается от физического пикселя и что означает DPR?",
+      "topic": "HTML и CSS",
+      "difficulty": "Базовый",
+      "summary": "Логические размеры макета и плотность растрового отображения.",
+      "answerFile": "answers/html-css/css-pixel-device-pixel.md",
+      "takeaway": "Размер коробки и детализация растрового ресурса - разные характеристики.",
+      "pitfall": "Считать 2x-изображение обязанным занимать вдвое больше места на странице.",
+      "moduleId": "html-css",
+      "order": 18,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Размер коробки и детализация растрового ресурса - разные характеристики.",
+        "keywords": ["HTML и CSS", "Адаптивность", "pixel", "device"],
+        "kind": "explanation",
+        "reviewStatus": "ready",
+        "priority": "core",
+        "goalIds": ["core", "css-pixel-device-pixel"],
+        "relatedQuestionIds": ["html-responsive-images", "css-relative-units"],
+        "sourceRefs": ["ref-0e0bc386d09c597d"]
+      }
     }
   ]
 }

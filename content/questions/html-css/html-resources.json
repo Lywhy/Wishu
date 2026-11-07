@@ -11,7 +11,18 @@
       "requiredDifficulties": [],
       "reviewed": false,
       "priority": "core",
-      "relatedSkillIds": ["html-iframe-boundary", "html-resource-hints"]
+      "relatedSkillIds": [
+        "html-iframe-boundary",
+        "html-resource-hints",
+        "html-link-target-rel",
+        "html-media-tracks-autoplay",
+        "html-template-inert-content",
+        "html-stylesheet-render-blocking",
+        "html-subresource-integrity",
+        "html-svg-embedding",
+        "html-svg-viewbox",
+        "html-download-hint"
+      ]
     },
     {
       "id": "html-iframe-boundary",
@@ -28,6 +39,78 @@
       "description": "Объяснить и применить правило с учётом его границ: Resource hints помогают расписанию загрузок только при верно выбранной и действительно нужной зависимости.",
       "requiredDifficulties": ["Средний"],
       "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "html-link-target-rel",
+      "title": "Чем noopener отличается от noreferrer у внешней ссылки?",
+      "description": "Управление opener и передача referrer - отдельные решения.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "html-media-tracks-autoplay",
+      "title": "Как встроить видео с субтитрами и почему autoplay может не сработать?",
+      "description": "Доступное воспроизведение требует управления, альтернатив и обработки отказа автозапуска.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "html-template-inert-content",
+      "title": "Зачем нужен template и чем он отличается от скрытого div?",
+      "description": "Template отделяет заготовку узлов от активного содержимого документа.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "html-stylesheet-render-blocking",
+      "title": "Может ли CSS задержать выполнение script и событие DOMContentLoaded?",
+      "description": "Отличайте остановку парсера, задержку рендера и косвенное ожидание события через сценарии.",
+      "requiredDifficulties": ["Продвинутый"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "html-subresource-integrity",
+      "title": "Что проверяет integrity у внешнего ресурса и зачем рядом crossorigin?",
+      "description": "SRI проверяет идентичность байтов, а доверие к версии и доставке HTML остаётся отдельной задачей.",
+      "requiredDifficulties": ["Продвинутый"],
+      "reviewed": true,
+      "priority": "extended",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "html-svg-embedding",
+      "title": "Чем inline SVG отличается от SVG в img?",
+      "description": "Способ встраивания определяет доступ к SVG, стилизацию и способ доступного именования.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "html-svg-viewbox",
+      "title": "Что задаёт viewBox у SVG и чем он отличается от width и height?",
+      "description": "Разделяйте внутренние координаты векторного рисунка и его размер в макете.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "html-download-hint",
+      "title": "Гарантирует ли download у ссылки скачивание файла под указанным именем?",
+      "description": "Download - часть контракта доставки, а не обход политик другого origin.",
+      "requiredDifficulties": ["Базовый"],
+      "reviewed": true,
       "priority": "core",
       "relatedSkillIds": []
     }
@@ -75,11 +158,195 @@
         "kind": "explanation",
         "reviewStatus": "imported",
         "goalIds": ["core", "html-resource-hints"],
-        "relatedQuestionIds": [],
+        "relatedQuestionIds": ["html-responsive-images", "network-waterfall"],
         "priority": "core",
-        "sourceRefs": ["ref-563da44f2a96cd5f"]
+        "sourceRefs": ["ref-563da44f2a96cd5f", "ref-615c7548bc93257e"]
       },
       "answerFile": "answers/html-css/html-resource-hints.md"
+    },
+    {
+      "id": "html-link-target-rel",
+      "title": "Чем noopener отличается от noreferrer у внешней ссылки?",
+      "topic": "HTML и CSS",
+      "difficulty": "Средний",
+      "summary": "Связь нового окна с opener и передача HTTP Referer.",
+      "answerFile": "answers/html-css/html-link-target-rel.md",
+      "takeaway": "Управление opener и передача referrer - отдельные решения.",
+      "pitfall": "Добавлять noreferrer только ради разрыва opener, не учитывая потерю источника перехода.",
+      "moduleId": "html-css",
+      "order": 2,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Управление opener и передача referrer - отдельные решения.",
+        "keywords": ["HTML и CSS", "Ресурсы и встраивание", "link", "target", "rel"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "priority": "core",
+        "goalIds": ["core", "html-link-target-rel"],
+        "relatedQuestionIds": [],
+        "sourceRefs": ["ref-ab627d9f46a98e02"]
+      }
+    },
+    {
+      "id": "html-media-tracks-autoplay",
+      "title": "Как встроить видео с субтитрами и почему autoplay может не сработать?",
+      "topic": "HTML и CSS",
+      "difficulty": "Средний",
+      "summary": "Нативные controls, дорожки текста и политика воспроизведения.",
+      "answerFile": "answers/html-css/html-media-tracks-autoplay.md",
+      "takeaway": "Доступное воспроизведение требует управления, альтернатив и обработки отказа автозапуска.",
+      "pitfall": "Считать muted autoplay разрешением принудительно проигрывать любое видео в любой среде.",
+      "moduleId": "html-css",
+      "order": 3,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Доступное воспроизведение требует управления, альтернатив и обработки отказа автозапуска.",
+        "keywords": ["HTML и CSS", "Ресурсы и встраивание", "media", "tracks", "autoplay"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "priority": "core",
+        "goalIds": ["core", "html-media-tracks-autoplay"],
+        "relatedQuestionIds": [],
+        "sourceRefs": ["ref-2ca1878b2bfa297b"]
+      }
+    },
+    {
+      "id": "html-template-inert-content",
+      "title": "Зачем нужен template и чем он отличается от скрытого div?",
+      "topic": "HTML и CSS",
+      "difficulty": "Средний",
+      "summary": "Шаблонный DocumentFragment и активация после вставки содержимого.",
+      "answerFile": "answers/html-css/html-template-inert-content.md",
+      "takeaway": "Template отделяет заготовку узлов от активного содержимого документа.",
+      "pitfall": "Считать template безопасной песочницей для произвольного пользовательского HTML.",
+      "moduleId": "html-css",
+      "order": 4,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Template отделяет заготовку узлов от активного содержимого документа.",
+        "keywords": ["HTML и CSS", "Ресурсы и встраивание", "template", "inert", "content"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "priority": "core",
+        "goalIds": ["core", "html-template-inert-content"],
+        "relatedQuestionIds": ["shadow-dom"],
+        "sourceRefs": ["ref-f7e870694cecadde"]
+      }
+    },
+    {
+      "id": "html-stylesheet-render-blocking",
+      "title": "Может ли CSS задержать выполнение script и событие DOMContentLoaded?",
+      "topic": "HTML и CSS",
+      "difficulty": "Продвинутый",
+      "summary": "Разбор HTML, готовность стилей и зависимость от типа сценария.",
+      "answerFile": "answers/html-css/html-stylesheet-render-blocking.md",
+      "takeaway": "Отличайте остановку парсера, задержку рендера и косвенное ожидание события через сценарии.",
+      "pitfall": "Объяснять весь critical rendering path только правилом «CSS не блокирует HTML».",
+      "moduleId": "html-css",
+      "order": 5,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Отличайте остановку парсера, задержку рендера и косвенное ожидание события через сценарии.",
+        "keywords": ["HTML и CSS", "Ресурсы и встраивание", "stylesheet", "render", "blocking"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "priority": "core",
+        "goalIds": ["core", "html-stylesheet-render-blocking"],
+        "relatedQuestionIds": ["script-loading", "document-ready-events"],
+        "sourceRefs": ["ref-3b31f31fd1161175"]
+      }
+    },
+    {
+      "id": "html-subresource-integrity",
+      "title": "Что проверяет integrity у внешнего ресурса и зачем рядом crossorigin?",
+      "topic": "HTML и CSS",
+      "difficulty": "Продвинутый",
+      "summary": "Проверка байтов по хешу, CORS и границы защиты от подмены.",
+      "answerFile": "answers/html-css/html-subresource-integrity.md",
+      "takeaway": "SRI проверяет идентичность байтов, а доверие к версии и доставке HTML остаётся отдельной задачей.",
+      "pitfall": "Думать, что crossorigin сам разрешает CORS или делает стороннюю библиотеку безопасной.",
+      "moduleId": "html-css",
+      "order": 6,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "SRI проверяет идентичность байтов, а доверие к версии и доставке HTML остаётся отдельной задачей.",
+        "keywords": ["HTML и CSS", "Ресурсы и встраивание", "subresource", "integrity"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "priority": "extended",
+        "goalIds": ["core", "html-subresource-integrity"],
+        "relatedQuestionIds": ["js-csp-trusted-types"],
+        "sourceRefs": ["ref-23cebc8cdf156ff6"]
+      }
+    },
+    {
+      "id": "html-svg-embedding",
+      "title": "Чем inline SVG отличается от SVG в img?",
+      "topic": "HTML и CSS",
+      "difficulty": "Средний",
+      "summary": "Доступ к внутренним элементам, стили и текстовая альтернатива.",
+      "answerFile": "answers/html-css/html-svg-embedding.md",
+      "takeaway": "Способ встраивания определяет доступ к SVG, стилизацию и способ доступного именования.",
+      "pitfall": "Писать img path { fill: red } и ждать доступа к фигурам внешнего изображения.",
+      "moduleId": "html-css",
+      "order": 7,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Способ встраивания определяет доступ к SVG, стилизацию и способ доступного именования.",
+        "keywords": ["HTML и CSS", "Ресурсы и встраивание", "svg", "embedding"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "priority": "core",
+        "goalIds": ["core", "html-svg-embedding"],
+        "relatedQuestionIds": ["html-alt-purpose"],
+        "sourceRefs": ["ref-61faf5bb328a2e4a"]
+      }
+    },
+    {
+      "id": "html-svg-viewbox",
+      "title": "Что задаёт viewBox у SVG и чем он отличается от width и height?",
+      "topic": "HTML и CSS",
+      "difficulty": "Средний",
+      "summary": "Внутренняя система координат и размер области отображения.",
+      "answerFile": "answers/html-css/html-svg-viewbox.md",
+      "takeaway": "Разделяйте внутренние координаты векторного рисунка и его размер в макете.",
+      "pitfall": "Убирать viewBox ради изменения размера и терять предсказуемое масштабирование.",
+      "moduleId": "html-css",
+      "order": 8,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Разделяйте внутренние координаты векторного рисунка и его размер в макете.",
+        "keywords": ["HTML и CSS", "Ресурсы и встраивание", "svg", "viewbox"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "priority": "core",
+        "goalIds": ["core", "html-svg-viewbox"],
+        "relatedQuestionIds": ["html-svg-embedding"],
+        "sourceRefs": ["ref-9d0781fa5f90116a"]
+      }
+    },
+    {
+      "id": "html-download-hint",
+      "title": "Гарантирует ли download у ссылки скачивание файла под указанным именем?",
+      "topic": "HTML и CSS",
+      "difficulty": "Базовый",
+      "summary": "Подсказка браузеру, origin и влияние ответа сервера.",
+      "answerFile": "answers/html-css/html-download-hint.md",
+      "takeaway": "Download - часть контракта доставки, а не обход политик другого origin.",
+      "pitfall": "Считать download гарантией указанного имени и режима для любой внешней ссылки.",
+      "moduleId": "html-css",
+      "order": 9,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Download - часть контракта доставки, а не обход политик другого origin.",
+        "keywords": ["HTML и CSS", "Ресурсы и встраивание", "download", "hint"],
+        "kind": "explanation",
+        "reviewStatus": "ready",
+        "priority": "core",
+        "goalIds": ["core", "html-download-hint"],
+        "relatedQuestionIds": [],
+        "sourceRefs": ["ref-3380e5c7c18dca21"]
+      }
     }
   ]
 }

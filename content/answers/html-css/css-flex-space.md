@@ -9,3 +9,24 @@ Flex: 1 удобно для совместного распределения, �
 <!-- wishu:answer-block -->
 
 [Документация](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_flexible_box_layout/Controlling_ratios_of_flex_items_along_the_main_axis).
+
+<!-- wishu:answer-block -->
+
+#### Чтение распространённых значений flex
+
+`flex: none` разворачивается в `0 0 auto`: коробка не растёт и не отдаёт место через flex-shrink. `flex: auto` означает `1 1 auto`: основа учитывает auto-размер, а элемент может расти и сжиматься. `flex: 1` в браузерах обычно разворачивается в `1 1 0%`. Нулевая база и auto не одно и то же; при неопределённом размере контейнера различие `0%` и `0` тоже может иметь значение. Во всех вариантах продолжают действовать min/max и содержимое. Для фиксированной боковой панели задают размер и запрещают сжатие намеренно.
+
+```css
+.sidebar {
+  flex: 0 0 16rem;
+}
+.content {
+  flex: 1;
+  min-inline-size: 0;
+}
+```
+
+- [Как flex-direction определяет основную и поперечную оси?](/questions/css-flex-axis-direction)
+- [Как сделать прокрутку только у центральной панели в Flexbox?](/questions/css-bounded-scroll-pane)
+
+[MDN: flex](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/flex).

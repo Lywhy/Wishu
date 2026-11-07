@@ -1,0 +1,52 @@
+{
+  "schemaVersion": 1,
+  "id": "react-libraries-20261107-redux",
+  "title": "React: Redux и Redux Toolkit",
+  "sectionId": "react",
+  "subsectionId": "redux",
+  "currentPass": "complete",
+  "goalIds": [
+    "core",
+    "redux-data-flow",
+    "redux-toolkit-role",
+    "redux-store-provider",
+    "redux-slice-immer",
+    "redux-selector-equality",
+    "redux-memoized-selector",
+    "redux-async-thunk",
+    "redux-query-cache",
+    "redux-entity-adapter",
+    "redux-serializable-state",
+    "redux-middleware-effects",
+    "redux-typescript-hooks"
+  ],
+  "questionIds": [
+    "redux-data-flow",
+    "redux-toolkit-role",
+    "redux-store-provider",
+    "redux-slice-immer",
+    "redux-selector-equality",
+    "redux-memoized-selector",
+    "redux-async-thunk",
+    "redux-query-cache",
+    "redux-entity-adapter",
+    "redux-serializable-state",
+    "redux-middleware-effects",
+    "redux-typescript-hooks"
+  ],
+  "scopePass": {
+    "status": "complete",
+    "remaining": []
+  },
+  "answerPass": {
+    "status": "complete",
+    "remaining": []
+  },
+  "baseline": [],
+  "notes": [
+    "Сопоставлены Context, useReducer, external store, normalized state и SSR isolation. Общие определения остаются в канонических React-вопросах.",
+    "Цели: Однонаправленное обновление состояния и роль каждого участника. Ядро состояния, рекомендуемый набор инструментов и React-интеграция. Сборка root state и стабильный экземпляр store в дереве. Action creators, case reducers и ограничение draft-мутаций. Подписка, сравнение результата и shallowEqual. Входные selectors, вычисление результата и стабильные зависимости. Жизненный цикл запроса, rejected action и обработка результата вызывающим кодом. Ключ кеша, подписки, query/mutation и инвалидирование. Ids/entities, CRUD helpers и selectors поверх нормализованного состояния. Предсказуемые данные, инструменты диагностики и границы допустимых исключений. Перехват потока действий и реактивные побочные эффекты. Типы из store вместо ручного дублирования схемы.",
+    "Redux: современный Toolkit. Zustand: API v5. Примеры являются фрагментами и не исполняются.",
+    "Oxfmt, content:build и полная content:check прошли: 929 вопросов. Все исходные 905 ID сохранены; изменён только согласованный канонический ответ выбора store. У новых ответов проверены два Markdown-блока. Примеры не запускались."
+  ]
+}

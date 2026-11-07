@@ -1,4 +1,16 @@
 import {
+  Empty,
+  EmptyHeader,
+  EmptyTitle,
+  EmptyDescription,
+  EmptyContent,
+} from "@/components/ui/empty"
+import { PersonalNote } from "@/components/experience/study-tools"
+import { InterviewDebrief } from "@/components/interviews/interview-debrief"
+import { InterviewPreparation } from "@/components/interviews/interview-preparation"
+import { Toggle } from "@/components/ui/toggle"
+import { Disclosure } from "@/components/experience/disclosure"
+import {
   Dialog,
   DialogContent,
   DialogHeader,
@@ -167,19 +179,19 @@ export function InterviewsPage() {
   return (
     <>
       <QuestionBreadcrumbs items={[{ label: "Собеседования" }]} />
-      <div className="mb-6 flex flex-wrap items-start justify-between gap-4">
-        <CatalogHeader
-          eyebrow="Поиск работы без потерянных деталей"
-          title="Собеседования"
-          description="Компании, этапы отбора и встречи в одном месте. Сохраняйте договорённости и возвращайтесь к подготовке."
-        />
-        <div className="flex flex-wrap gap-2">
-          <Button variant="outline" disabled={!records.length} onClick={backup}>
-            Резервная копия
-          </Button>
-          <Button onClick={() => setEditor({})}>Добавить собеседование</Button>
-        </div>
-      </div>
+      <CatalogHeader
+        eyebrow="Поиск работы без потерянных деталей"
+        title="Собеседования"
+        description="Компании, этапы отбора и встречи в одном месте. Сохраняйте договорённости и возвращайтесь к подготовке."
+        actions={
+          <>
+            <Button variant="outline" disabled={!records.length} onClick={backup}>
+              Резервная копия
+            </Button>
+            <Button onClick={() => setEditor({})}>Добавить собеседование</Button>
+          </>
+        }
+      />
       <div className="mb-6 rounded-lg border bg-muted/20 px-4 py-3 text-xs leading-6 text-muted-foreground">
         Записи хранятся только в этом браузере. Для переноса или сохранения вне браузера скачайте
         резервную копию. Напоминания и синхронизация с календарём пока не подключены.
@@ -198,6 +210,14 @@ export function InterviewsPage() {
           className="mb-5 rounded-lg border border-destructive/30 bg-destructive/5 p-4 text-sm"
         >
           {storageError}
+          <Button
+            size="sm"
+            variant="outline"
+            className="ml-3"
+            onClick={() => useInterviewTracker.getState().retryStorage()}
+          >
+            Повторить сохранение
+          </Button>
         </p>
       )}
       <div className="mb-6 grid grid-cols-2 gap-3 xl:grid-cols-4">
@@ -287,14 +307,14 @@ export function InterviewsPage() {
               </Select>
             </div>
             <div className="flex flex-wrap justify-between gap-2">
-              <Button
+              <Toggle
                 size="sm"
-                variant={upcoming ? "secondary" : "outline"}
-                aria-pressed={upcoming}
-                onClick={() => update("upcoming", upcoming ? "" : "1")}
+                variant="outline"
+                pressed={upcoming}
+                onPressedChange={(pressed) => update("upcoming", pressed ? "1" : "")}
               >
                 Встреча в ближайшие 7 дней
-              </Button>
+              </Toggle>
               {active && (
                 <Button size="sm" variant="ghost" onClick={reset}>
                   Сбросить фильтры
@@ -324,13 +344,14 @@ export function InterviewsPage() {
                     </div>
                     <div>
                       <h2 className="text-lg font-semibold">
-                        <button
+                        <Button
+                          variant="ghost"
                           type="button"
-                          className="rounded text-left outline-none hover:text-primary focus-visible:ring-2 focus-visible:ring-ring"
+                          className="h-auto justify-start rounded p-0 text-left text-base font-semibold whitespace-normal outline-none hover:bg-transparent hover:text-primary focus-visible:ring-2 focus-visible:ring-ring"
                           onClick={() => select(record.id)}
                         >
                           {record.company}
-                        </button>
+                        </Button>
                       </h2>
                       <p className="mt-1 text-sm leading-6 text-muted-foreground">{record.role}</p>
                     </div>
@@ -365,26 +386,34 @@ export function InterviewsPage() {
               })}
             </div>
           ) : (
-            <div className="space-y-4 rounded-xl border border-dashed p-8 text-center">
-              <h2 className="text-lg font-semibold">
-                {records.length ? "Ничего не найдено" : "Первое собеседование начинается с записи"}
-              </h2>
-              <p className="text-sm leading-7 text-muted-foreground">
-                {records.length
-                  ? "Измените поиск, этап или откройте архив."
-                  : "Добавьте компанию и вакансию. Затем назначьте встречи и фиксируйте результаты."}
-              </p>
-              {records.length ? (
-                <Button variant="outline" onClick={reset}>
-                  Сбросить фильтры
-                </Button>
-              ) : (
-                <Button onClick={() => setEditor({})}>Добавить собеседование</Button>
-              )}
-            </div>
+            <Empty className="border bg-card py-12">
+              <EmptyHeader>
+                <EmptyTitle>
+                  <h2 className="text-base font-semibold">
+                    {records.length
+                      ? "Ничего не найдено"
+                      : "Первое собеседование начинается с записи"}
+                  </h2>
+                </EmptyTitle>
+                <EmptyDescription>
+                  {records.length
+                    ? "Измените поиск, этап или откройте архив."
+                    : "Добавьте компанию и вакансию. Затем назначьте встречи и фиксируйте результаты."}
+                </EmptyDescription>
+              </EmptyHeader>
+              <EmptyContent>
+                {records.length ? (
+                  <Button variant="outline" onClick={reset}>
+                    Сбросить фильтры
+                  </Button>
+                ) : (
+                  <Button onClick={() => setEditor({})}>Добавить собеседование</Button>
+                )}
+              </EmptyContent>
+            </Empty>
           )}
         </section>
-        <aside className="space-y-4 lg:sticky lg:top-5">
+        <aside className="space-y-4 lg:sticky lg:top-24">
           <Card className="gap-3 rounded-xl p-4 shadow-none">
             <h2 className="text-sm font-semibold">Ближайшие встречи</h2>
             <p className="text-xs leading-6 text-muted-foreground">
@@ -394,9 +423,10 @@ export function InterviewsPage() {
               <ol className="space-y-3">
                 {futureMeetings.slice(0, 5).map(({ record, meeting: item }) => (
                   <li key={item.id}>
-                    <button
+                    <Button
+                      variant="ghost"
                       type="button"
-                      className="block w-full rounded-lg border p-3 text-left outline-none hover:bg-muted focus-visible:ring-2 focus-visible:ring-ring"
+                      className="block h-auto w-full justify-start rounded-lg border p-0 p-3 text-left whitespace-normal outline-none hover:bg-muted hover:bg-transparent focus-visible:ring-2 focus-visible:ring-ring"
                       onClick={() => select(record.id)}
                     >
                       <span className="block text-xs font-medium text-primary">
@@ -404,7 +434,7 @@ export function InterviewsPage() {
                       </span>
                       <span className="mt-1 block text-sm font-medium">{record.company}</span>
                       <span className="mt-1 block text-xs text-muted-foreground">{item.title}</span>
-                    </button>
+                    </Button>
                   </li>
                 ))}
               </ol>
@@ -492,6 +522,9 @@ export function InterviewsPage() {
                   </div>
                 )}
               </dl>
+              <InterviewPreparation key={selected.id} record={selected} />
+              <InterviewDebrief key={"debrief:" + selected.id} record={selected} />
+              <PersonalNote contentKey={"interview:" + selected.id} />
               {selected.notes && (
                 <section className="space-y-2">
                   <h2 className="text-sm font-semibold">Заметки</h2>
@@ -549,18 +582,17 @@ export function InterviewsPage() {
                             >
                               Изменить
                             </Button>
-                            <Button
+                            <Toggle
                               size="sm"
-                              variant="ghost"
-                              aria-pressed={item.done}
-                              onClick={() =>
+                              pressed={item.done}
+                              onPressedChange={() =>
                                 useInterviewTracker
                                   .getState()
                                   .completeMeeting(selected.id, item.id, !item.done)
                               }
                             >
                               {item.done ? "Снять отметку" : "Встреча прошла"}
-                            </Button>
+                            </Toggle>
                           </div>
                         </li>
                       ))}
@@ -571,8 +603,7 @@ export function InterviewsPage() {
                   </p>
                 )}
               </section>
-              <details className="rounded-lg border p-4">
-                <summary className="cursor-pointer text-sm font-medium">История этапов</summary>
+              <Disclosure className="rounded-lg border" title={<> История этапов </>}>
                 <ol className="mt-4 space-y-3">
                   {[...selected.history].reverse().map((item, index) => (
                     <li key={index} className="text-xs leading-6">
@@ -582,7 +613,7 @@ export function InterviewsPage() {
                     </li>
                   ))}
                 </ol>
-              </details>
+              </Disclosure>
             </>
           )}
         </SheetContent>

@@ -1,0 +1,83 @@
+{
+  "schemaVersion": 1,
+  "id": "ts-20261107-types",
+  "title": "Расширение TypeScript: Базовые и специальные типы",
+  "sectionId": "typescript",
+  "subsectionId": "types",
+  "currentPass": "complete",
+  "goalIds": [
+    "core",
+    "ts-primitive-types",
+    "ts-nullability",
+    "ts-literal-types",
+    "unknown-any",
+    "ts-void",
+    "ts-never",
+    "ts-enums",
+    "ts-empty-object-types",
+    "ts-special-type-algebra",
+    "ts-unique-symbol-identity",
+    "ts-property-key-domains"
+  ],
+  "questionIds": [
+    "ts-special-type-algebra",
+    "ts-unique-symbol-identity",
+    "ts-property-key-domains",
+    "ts-literal-types"
+  ],
+  "scopePass": {
+    "status": "complete",
+    "remaining": []
+  },
+  "answerPass": {
+    "status": "complete",
+    "remaining": []
+  },
+  "baseline": [
+    {
+      "id": "ts-primitive-types",
+      "title": "Какие примитивные типы описывает TypeScript и почему используют string вместо String?",
+      "contentHash": "08af538767d2027afcac31804c6c662a571cdaf5c8cdf24634f866e4342205ef"
+    },
+    {
+      "id": "ts-nullability",
+      "title": "Как strictNullChecks меняет работу с null и undefined?",
+      "contentHash": "0a0cb36ea965a5b551f1b38e073d19071b93eb4c5327af267a550f873295887d"
+    },
+    {
+      "id": "ts-literal-types",
+      "title": "Что такое литеральный тип и как сохранить точное значение через as const?",
+      "contentHash": "0b7a3337561678241d40fa27adc301e7ec6eb99cf29ea56575d89d5fb2183912"
+    },
+    {
+      "id": "unknown-any",
+      "title": "Когда использовать unknown вместо any и чем опасно необоснованное any?",
+      "contentHash": "6e958229acca7642b294d939f9ee8e98a79eb74719d3d575f68b0a34605811a5"
+    },
+    {
+      "id": "ts-void",
+      "title": "Что означает void в результате функции и почему callback может вернуть значение?",
+      "contentHash": "765e74f2c4af92ff3b87ad256ce55e27a565d5ce9b69326a4e858bbf9b022066"
+    },
+    {
+      "id": "ts-never",
+      "title": "Что означает never и чем он отличается от void?",
+      "contentHash": "044a608c056129f5736591174ee24d67581391a19ed1f254d339333e14f1154e"
+    },
+    {
+      "id": "ts-enums",
+      "title": "Для чего нужен enum и какие есть альтернативы?",
+      "contentHash": "0a8c11cc4f1f6558066186aa1f39f847158205039f550a65050cd98324d6e40f"
+    },
+    {
+      "id": "ts-empty-object-types",
+      "title": "Чем различаются object, Object и {}?",
+      "contentHash": "d4b3e8c3e5fd01c68f41ae38aaf3c0d0ac04fea69ecf4edb6ca714e3fd2cd04d"
+    }
+  ],
+  "notes": [
+    "Граница: язык TypeScript и его toolchain. Runtime JavaScript и фреймворки не дублировать.",
+    "Готовые ответы сверены по документации; код примеров не запускался.",
+    "Контент собран и прошёл полную структурную проверку. TS: 161 вопрос, +62 новых и 17 расширенных. Примеры не исполнялись; seed не применялся."
+  ]
+}

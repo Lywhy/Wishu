@@ -1,0 +1,416 @@
+{
+  "$schema": "../question-bundle.schema.json",
+  "sectionId": "react",
+  "subsectionId": "redux",
+  "scope": "Поток действий, reducers, selectors, асинхронность и RTK Query.",
+  "coverageGoals": [
+    {
+      "id": "core",
+      "title": "Redux и Redux Toolkit",
+      "description": "Поток действий, reducers, selectors, асинхронность и RTK Query.",
+      "requiredDifficulties": [],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": [
+        "redux-data-flow",
+        "redux-toolkit-role",
+        "redux-store-provider",
+        "redux-slice-immer",
+        "redux-selector-equality",
+        "redux-memoized-selector",
+        "redux-async-thunk",
+        "redux-query-cache",
+        "redux-entity-adapter",
+        "redux-serializable-state",
+        "redux-middleware-effects",
+        "redux-typescript-hooks"
+      ]
+    },
+    {
+      "id": "redux-data-flow",
+      "title": "Как устроен поток данных Redux: store, action, dispatch и reducer?",
+      "description": "Описывайте событие и вычисляйте новый снимок через единый поток обновления.",
+      "requiredDifficulties": ["Базовый"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "redux-toolkit-role",
+      "title": "Чем Redux Toolkit отличается от Redux и React-Redux?",
+      "description": "Изучайте современный Redux через Toolkit, сохраняя понимание базового потока.",
+      "requiredDifficulties": ["Базовый"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "redux-store-provider",
+      "title": "Как configureStore и Provider подключают Redux к React?",
+      "description": "Форма состояния и жизненный цикл store должны быть явными.",
+      "requiredDifficulties": ["Базовый"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "redux-slice-immer",
+      "title": "Что создаёт createSlice и почему в его reducer разрешена запись state.value++?",
+      "description": "Изменяется draft, а прежний опубликованный снимок остаётся неизменным.",
+      "requiredDifficulties": ["Базовый"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "redux-selector-equality",
+      "title": "Когда useSelector обновляет компонент и почему новый объект в selector мешает?",
+      "description": "Стабильность выбранного результата важнее стабильности всего дерева store.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "redux-memoized-selector",
+      "title": "Как createSelector мемоизирует производные данные?",
+      "description": "Извлекайте стабильные входы и вычисляйте производные данные в одном месте.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "redux-async-thunk",
+      "title": "Что делает createAsyncThunk и зачем нужен unwrap?",
+      "description": "Отличайте lifecycle действий, данные reducer и обещание, которое получает вызывающий код.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "redux-query-cache",
+      "title": "Чем RTK Query отличается от запроса внутри createAsyncThunk?",
+      "description": "Используйте готовый жизненный цикл server state, когда задача именно в загрузке и согласовании данных.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "redux-entity-adapter",
+      "title": "Как createEntityAdapter помогает хранить и обновлять коллекцию?",
+      "description": "Adapter автоматизирует коллекцию, а правила владения и связей проектирует приложение.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "redux-serializable-state",
+      "title": "Почему в Redux обычно не хранят Promise, функции и DOM-узлы?",
+      "description": "Храните описание состояния, а ресурсы и эффекты связывайте с ним отдельно.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "redux-middleware-effects",
+      "title": "Для чего middleware и listenerMiddleware нужны вне reducer?",
+      "description": "Эффект может реагировать на событие, но reducer остаётся чистым вычислением.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "redux-typescript-hooks",
+      "title": "Как вывести RootState и AppDispatch и типизировать React-Redux hooks?",
+      "description": "Выводите публичные типы из реальной конфигурации, сохраняя runtime-проверки отдельно.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    }
+  ],
+  "questions": [
+    {
+      "id": "redux-data-flow",
+      "title": "Как устроен поток данных Redux: store, action, dispatch и reducer?",
+      "topic": "React",
+      "difficulty": "Базовый",
+      "summary": "Однонаправленное обновление состояния и роль каждого участника.",
+      "answerFile": "answers/react/redux-data-flow.md",
+      "takeaway": "Описывайте событие и вычисляйте новый снимок через единый поток обновления.",
+      "pitfall": "Изменить store.getState().counter.value напрямую и ждать корректного уведомления.",
+      "moduleId": "react",
+      "order": 0,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Описывайте событие и вычисляйте новый снимок через единый поток обновления.",
+        "keywords": ["React", "Redux и Redux Toolkit", "redux", "data", "flow"],
+        "kind": "explanation",
+        "reviewStatus": "ready",
+        "priority": "core",
+        "goalIds": ["core", "redux-data-flow"],
+        "relatedQuestionIds": ["react-state-location", "react-use-reducer"],
+        "sourceRefs": ["ref-c8e2a0bb7dc8e59b"]
+      }
+    },
+    {
+      "id": "redux-toolkit-role",
+      "title": "Чем Redux Toolkit отличается от Redux и React-Redux?",
+      "topic": "React",
+      "difficulty": "Базовый",
+      "summary": "Ядро состояния, рекомендуемый набор инструментов и React-интеграция.",
+      "answerFile": "answers/react/redux-toolkit-role.md",
+      "takeaway": "Изучайте современный Redux через Toolkit, сохраняя понимание базового потока.",
+      "pitfall": "Считать Toolkit отдельным конкурентом Redux или путать его с React-Redux.",
+      "moduleId": "react",
+      "order": 1,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Изучайте современный Redux через Toolkit, сохраняя понимание базового потока.",
+        "keywords": ["React", "Redux и Redux Toolkit", "redux", "toolkit", "role"],
+        "kind": "explanation",
+        "reviewStatus": "ready",
+        "priority": "core",
+        "goalIds": ["core", "redux-toolkit-role"],
+        "relatedQuestionIds": ["redux-data-flow"],
+        "sourceRefs": ["ref-64a91dfe3f1ae7d6"]
+      }
+    },
+    {
+      "id": "redux-store-provider",
+      "title": "Как configureStore и Provider подключают Redux к React?",
+      "topic": "React",
+      "difficulty": "Базовый",
+      "summary": "Сборка root state и стабильный экземпляр store в дереве.",
+      "answerFile": "answers/react/redux-store-provider.md",
+      "takeaway": "Форма состояния и жизненный цикл store должны быть явными.",
+      "pitfall": "Читать state.value вместо state.counter.value или пересоздавать store в рендере.",
+      "moduleId": "react",
+      "order": 2,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Форма состояния и жизненный цикл store должны быть явными.",
+        "keywords": ["React", "Redux и Redux Toolkit", "redux", "store", "provider"],
+        "kind": "explanation",
+        "reviewStatus": "ready",
+        "priority": "core",
+        "goalIds": ["core", "redux-store-provider"],
+        "relatedQuestionIds": ["react-ssr-state-isolation", "redux-data-flow"],
+        "sourceRefs": ["ref-5adbbd889079d489"]
+      }
+    },
+    {
+      "id": "redux-slice-immer",
+      "title": "Что создаёт createSlice и почему в его reducer разрешена запись state.value++?",
+      "topic": "React",
+      "difficulty": "Базовый",
+      "summary": "Action creators, case reducers и ограничение draft-мутаций.",
+      "answerFile": "answers/react/redux-slice-immer.md",
+      "takeaway": "Изменяется draft, а прежний опубликованный снимок остаётся неизменным.",
+      "pitfall": "Распространять разрешение draft-мутаций на все объекты приложения.",
+      "moduleId": "react",
+      "order": 3,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Изменяется draft, а прежний опубликованный снимок остаётся неизменным.",
+        "keywords": ["React", "Redux и Redux Toolkit", "redux", "slice", "immer"],
+        "kind": "explanation",
+        "reviewStatus": "ready",
+        "priority": "core",
+        "goalIds": ["core", "redux-slice-immer"],
+        "relatedQuestionIds": ["react-state-immutability", "redux-data-flow"],
+        "sourceRefs": ["ref-59e98fe62d963ce8"]
+      }
+    },
+    {
+      "id": "redux-selector-equality",
+      "title": "Когда useSelector обновляет компонент и почему новый объект в selector мешает?",
+      "topic": "React",
+      "difficulty": "Средний",
+      "summary": "Подписка, сравнение результата и shallowEqual.",
+      "answerFile": "answers/react/redux-selector-equality.md",
+      "takeaway": "Стабильность выбранного результата важнее стабильности всего дерева store.",
+      "pitfall": "Возвращать { value: state.value } без подходящего сравнения и считать подписку узкой.",
+      "moduleId": "react",
+      "order": 4,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Стабильность выбранного результата важнее стабильности всего дерева store.",
+        "keywords": ["React", "Redux и Redux Toolkit", "redux", "selector", "equality"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "priority": "core",
+        "goalIds": ["core", "redux-selector-equality"],
+        "relatedQuestionIds": ["react-external-store"],
+        "sourceRefs": ["ref-ded64674f87b16ea"]
+      }
+    },
+    {
+      "id": "redux-memoized-selector",
+      "title": "Как createSelector мемоизирует производные данные?",
+      "topic": "React",
+      "difficulty": "Средний",
+      "summary": "Входные selectors, вычисление результата и стабильные зависимости.",
+      "answerFile": "answers/react/redux-memoized-selector.md",
+      "takeaway": "Извлекайте стабильные входы и вычисляйте производные данные в одном месте.",
+      "pitfall": "Хранить filteredItems вторым источником истины вместо selector.",
+      "moduleId": "react",
+      "order": 5,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Извлекайте стабильные входы и вычисляйте производные данные в одном месте.",
+        "keywords": ["React", "Redux и Redux Toolkit", "redux", "memoized", "selector"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "priority": "core",
+        "goalIds": ["core", "redux-memoized-selector"],
+        "relatedQuestionIds": ["react-derived-state", "redux-selector-equality"],
+        "sourceRefs": ["ref-3d41c9408a4167e2"]
+      }
+    },
+    {
+      "id": "redux-async-thunk",
+      "title": "Что делает createAsyncThunk и зачем нужен unwrap?",
+      "topic": "React",
+      "difficulty": "Средний",
+      "summary": "Жизненный цикл запроса, rejected action и обработка результата вызывающим кодом.",
+      "answerFile": "answers/react/redux-async-thunk.md",
+      "takeaway": "Отличайте lifecycle действий, данные reducer и обещание, которое получает вызывающий код.",
+      "pitfall": "Ожидать, что rejected thunk автоматически попадёт в catch без unwrap.",
+      "moduleId": "react",
+      "order": 6,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Отличайте lifecycle действий, данные reducer и обещание, которое получает вызывающий код.",
+        "keywords": ["React", "Redux и Redux Toolkit", "redux", "async", "thunk"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "priority": "core",
+        "goalIds": ["core", "redux-async-thunk"],
+        "relatedQuestionIds": ["redux-data-flow"],
+        "sourceRefs": ["ref-8ccecba811290e65"]
+      }
+    },
+    {
+      "id": "redux-query-cache",
+      "title": "Чем RTK Query отличается от запроса внутри createAsyncThunk?",
+      "topic": "React",
+      "difficulty": "Средний",
+      "summary": "Ключ кеша, подписки, query/mutation и инвалидирование.",
+      "answerFile": "answers/react/redux-query-cache.md",
+      "takeaway": "Используйте готовый жизненный цикл server state, когда задача именно в загрузке и согласовании данных.",
+      "pitfall": "Дублировать ответ RTK Query в отдельном slice без независимой причины и политики синхронизации.",
+      "moduleId": "react",
+      "order": 7,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Используйте готовый жизненный цикл server state, когда задача именно в загрузке и согласовании данных.",
+        "keywords": ["React", "Redux и Redux Toolkit", "redux", "query", "cache"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "priority": "core",
+        "goalIds": ["core", "redux-query-cache"],
+        "relatedQuestionIds": ["react-state-location", "redux-async-thunk"],
+        "sourceRefs": ["ref-2e52b3c140eb681a"]
+      }
+    },
+    {
+      "id": "redux-entity-adapter",
+      "title": "Как createEntityAdapter помогает хранить и обновлять коллекцию?",
+      "topic": "React",
+      "difficulty": "Средний",
+      "summary": "Ids/entities, CRUD helpers и selectors поверх нормализованного состояния.",
+      "answerFile": "answers/react/redux-entity-adapter.md",
+      "takeaway": "Adapter автоматизирует коллекцию, а правила владения и связей проектирует приложение.",
+      "pitfall": "Считать adapter полноценной ORM или ожидать глубокого слияния вложенных полей.",
+      "moduleId": "react",
+      "order": 8,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Adapter автоматизирует коллекцию, а правила владения и связей проектирует приложение.",
+        "keywords": ["React", "Redux и Redux Toolkit", "redux", "entity", "adapter"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "priority": "core",
+        "goalIds": ["core", "redux-entity-adapter"],
+        "relatedQuestionIds": ["react-normalized-state"],
+        "sourceRefs": ["ref-689b62baf905fb20"]
+      }
+    },
+    {
+      "id": "redux-serializable-state",
+      "title": "Почему в Redux обычно не хранят Promise, функции и DOM-узлы?",
+      "topic": "React",
+      "difficulty": "Средний",
+      "summary": "Предсказуемые данные, инструменты диагностики и границы допустимых исключений.",
+      "answerFile": "answers/react/redux-serializable-state.md",
+      "takeaway": "Храните описание состояния, а ресурсы и эффекты связывайте с ним отдельно.",
+      "pitfall": "Выключить serializableCheck целиком ради одного случайного DOM-объекта.",
+      "moduleId": "react",
+      "order": 9,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Храните описание состояния, а ресурсы и эффекты связывайте с ним отдельно.",
+        "keywords": ["React", "Redux и Redux Toolkit", "redux", "serializable", "state"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "priority": "core",
+        "goalIds": ["core", "redux-serializable-state"],
+        "relatedQuestionIds": ["redux-data-flow"],
+        "sourceRefs": ["ref-7f98b060fbaa1eea"]
+      }
+    },
+    {
+      "id": "redux-middleware-effects",
+      "title": "Для чего middleware и listenerMiddleware нужны вне reducer?",
+      "topic": "React",
+      "difficulty": "Средний",
+      "summary": "Перехват потока действий и реактивные побочные эффекты.",
+      "answerFile": "answers/react/redux-middleware-effects.md",
+      "takeaway": "Эффект может реагировать на событие, но reducer остаётся чистым вычислением.",
+      "pitfall": "Выполнять fetch внутри reducer или бесконечно dispatch того же action из middleware.",
+      "moduleId": "react",
+      "order": 10,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Эффект может реагировать на событие, но reducer остаётся чистым вычислением.",
+        "keywords": ["React", "Redux и Redux Toolkit", "redux", "middleware", "effects"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "priority": "core",
+        "goalIds": ["core", "redux-middleware-effects"],
+        "relatedQuestionIds": ["redux-async-thunk"],
+        "sourceRefs": ["ref-7936fe40e4ffa5f8"]
+      }
+    },
+    {
+      "id": "redux-typescript-hooks",
+      "title": "Как вывести RootState и AppDispatch и типизировать React-Redux hooks?",
+      "topic": "React",
+      "difficulty": "Средний",
+      "summary": "Типы из store вместо ручного дублирования схемы.",
+      "answerFile": "answers/react/redux-typescript-hooks.md",
+      "takeaway": "Выводите публичные типы из реальной конфигурации, сохраняя runtime-проверки отдельно.",
+      "pitfall": "Использовать обычный Dispatch и терять поддержку типизированных thunks.",
+      "moduleId": "react",
+      "order": 11,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Выводите публичные типы из реальной конфигурации, сохраняя runtime-проверки отдельно.",
+        "keywords": ["React", "Redux и Redux Toolkit", "redux", "typescript", "hooks"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "priority": "core",
+        "goalIds": ["core", "redux-typescript-hooks"],
+        "relatedQuestionIds": ["redux-store-provider"],
+        "sourceRefs": ["ref-e21b65d503bf1c5e"]
+      }
+    }
+  ]
+}

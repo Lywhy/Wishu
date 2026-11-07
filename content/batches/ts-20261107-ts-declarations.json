@@ -1,0 +1,34 @@
+{
+  "schemaVersion": 1,
+  "id": "ts-20261107-ts-declarations",
+  "title": "Расширение TypeScript: Декларации и библиотеки",
+  "sectionId": "typescript",
+  "subsectionId": "ts-declarations",
+  "baseline": [],
+  "notes": [
+    "Готовые ответы сверены по документации; код примеров не запускался.",
+    "Контент собран и прошёл полную структурную проверку. TS: 161 вопрос, +62 новых и 17 расширенных. Примеры не исполнялись; seed не применялся."
+  ],
+  "currentPass": "complete",
+  "scopePass": {
+    "status": "complete",
+    "remaining": []
+  },
+  "answerPass": {
+    "status": "complete",
+    "remaining": []
+  },
+  "goalIds": [
+    "core",
+    "ts-library-consumer-check",
+    "ts-function-namespace-merging",
+    "ts-shorthand-ambient-any",
+    "ts-merging-overload-contract"
+  ],
+  "questionIds": [
+    "ts-library-consumer-check",
+    "ts-function-namespace-merging",
+    "ts-shorthand-ambient-any",
+    "ts-merging-overload-contract"
+  ]
+}

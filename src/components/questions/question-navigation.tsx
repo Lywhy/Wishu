@@ -1,4 +1,4 @@
-import { Input } from "@/components/ui/input"
+import { SearchField } from "@/components/experience/search-field"
 import { Button } from "@/components/ui/button"
 import { Progress } from "@/components/ui/progress"
 import { useEffect, useRef, useState, type ReactNode } from "react"
@@ -69,31 +69,13 @@ export function QuestionNavigation({
           aria-label="Изученные вопросы подборки"
         />
       </div>
-      {actions && (
-        <div className="mt-4 rounded-lg border bg-muted/20 p-3">
-          <p className="mb-2 text-[11px] text-muted-foreground">Ваша отметка</p>
-          {actions}
-        </div>
-      )}
-      <div className="mt-4 flex items-center gap-2">
-        <Input
-          value={query}
-          onChange={(event) => setQuery(event.target.value)}
-          placeholder="Найти в подборке…"
-          aria-label="Найти вопрос в боковом меню"
-          className="h-9 min-w-0 bg-background text-xs"
-        />
-        {query && (
-          <Button
-            size="sm"
-            variant="ghost"
-            onClick={() => setQuery("")}
-            aria-label="Очистить поиск в подборке"
-          >
-            Сброс
-          </Button>
-        )}
-      </div>
+      <SearchField
+        className="mt-4"
+        value={query}
+        onValueChange={setQuery}
+        placeholder="Найти вопрос…"
+        label="Найти вопрос в боковом меню"
+      />
       {currentHidden && (
         <Button size="sm" variant="ghost" className="mt-2 w-full" onClick={() => setQuery("")}>
           Показать текущий вопрос
@@ -102,7 +84,7 @@ export function QuestionNavigation({
       <nav
         ref={navigationRef}
         aria-label="Вопросы подборки"
-        className="relative mt-3 max-h-[min(21rem,38dvh)] min-h-0 scrollbar-gutter-stable overflow-y-auto overscroll-contain"
+        className="relative mt-3 max-h-[min(21rem,max(8rem,calc(100dvh-38rem)))] min-h-0 scrollbar-gutter-stable overflow-y-auto overscroll-contain"
       >
         <ol className="space-y-1">
           {visible.map((question) => {
@@ -127,7 +109,7 @@ export function QuestionNavigation({
                     cn(
                       "relative flex h-full items-start gap-2.5 rounded-lg border border-transparent p-2 text-xs leading-4 transition-colors outline-none focus-visible:ring-2 focus-visible:ring-ring",
                       isActive
-                        ? "border-primary/30 bg-primary/10 font-medium text-foreground ring-1 ring-primary/10 ring-inset"
+                        ? "border-primary/35 bg-primary/10 font-medium text-foreground inset-shadow-[3px_0_0_var(--primary)]"
                         : "text-muted-foreground hover:bg-muted hover:text-foreground",
                     )
                   }
@@ -168,6 +150,7 @@ export function QuestionNavigation({
           В подборке нет вопросов с таким названием.
         </p>
       )}
+      {actions && <div className="mt-4 border-t pt-4">{actions}</div>}
       {footer && <div className="mt-3 border-t pt-3">{footer}</div>}
     </Card>
   )

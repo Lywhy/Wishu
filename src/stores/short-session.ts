@@ -1,3 +1,4 @@
+import { browserStorage } from "@/lib/browser-storage"
 import { create } from "zustand"
 import { persist } from "zustand/middleware"
 interface Session {
@@ -25,6 +26,6 @@ export const useShortSession = create<Session>()(
         ),
       finish: () => set({ active: false }),
     }),
-    { name: "wishu-short-session", version: 1 },
+    { name: "wishu-short-session", version: 1, storage: browserStorage<Session>("short-session") },
   ),
 )

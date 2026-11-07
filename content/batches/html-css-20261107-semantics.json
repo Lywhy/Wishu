@@ -1,0 +1,107 @@
+{
+  "schemaVersion": 1,
+  "id": "html-css-20261107-semantics",
+  "title": "Расширение HTML и CSS: Семантика и доступность",
+  "sectionId": "html-css",
+  "subsectionId": "semantics",
+  "currentPass": "complete",
+  "goalIds": [
+    "core",
+    "semantic-button",
+    "html-landmarks",
+    "html-form-label",
+    "html-doctype-mode",
+    "html-parser-content-model",
+    "html-accessible-name",
+    "html-focus-order",
+    "html-hiding-contract",
+    "html-native-dialog",
+    "html-table-relations",
+    "html-live-status",
+    "html-article-section-aside",
+    "html-native-disclosure",
+    "html-popover-contract",
+    "html-aria-state-behavior",
+    "html-progress-meter-output"
+  ],
+  "questionIds": [
+    "html-article-section-aside",
+    "html-native-disclosure",
+    "html-popover-contract",
+    "html-aria-state-behavior",
+    "html-progress-meter-output",
+    "html-parser-content-model"
+  ],
+  "scopePass": {
+    "status": "complete",
+    "remaining": []
+  },
+  "answerPass": {
+    "status": "complete",
+    "remaining": []
+  },
+  "baseline": [
+    {
+      "id": "semantic-button",
+      "title": "Почему для действия лучше использовать button, а не div?",
+      "contentHash": "a7030f303da8c435ff45fd8afdb6e5e0320420f5c711cc776ef5a86441213b28"
+    },
+    {
+      "id": "html-landmarks",
+      "title": "Зачем нужны main, nav, header и section?",
+      "contentHash": "9b6cb590052cd66be681d464dbd30c6456bd50a7ac2bf8d1609e7f3e3e6bab01"
+    },
+    {
+      "id": "html-form-label",
+      "title": "Почему placeholder не заменяет label у поля?",
+      "contentHash": "e4c9528e0e0b37c0c1f347ce188800979560f218b3cb955022cbb9fc62f7cf99"
+    },
+    {
+      "id": "html-doctype-mode",
+      "title": "Зачем нужен <!doctype html> и что меняет quirks mode?",
+      "contentHash": "c3b2b0c814d166cb36ba3466c7758a25814f0dd6b1f6d3b2b7fbb83d8f578f9c"
+    },
+    {
+      "id": "html-parser-content-model",
+      "title": "Почему DOM может отличаться от написанной HTML-разметки?",
+      "contentHash": "2047dd67336cbf33a3b51f56356e5ab15065bd2fc446b866825c5193586b3b18"
+    },
+    {
+      "id": "html-accessible-name",
+      "title": "Чем доступное имя элемента отличается от роли и описания?",
+      "contentHash": "41e197f3734319c8288d07b5234cf09fe51bac393689df6912098631ad1ececf"
+    },
+    {
+      "id": "html-focus-order",
+      "title": "Как управлять фокусом, не нарушая естественный порядок Tab?",
+      "contentHash": "dea602283aaa8a8b6a75b161b103f548603610aa9b2d249a1118bf295c32843b"
+    },
+    {
+      "id": "html-hiding-contract",
+      "title": "Чем различаются display: none, visibility, opacity, aria-hidden и inert?",
+      "contentHash": "1d11b8a973a1028d8461bb03aae279b0c60d63f119e58386b79b4c0d1a57ed50"
+    },
+    {
+      "id": "html-native-dialog",
+      "title": "Чем showModal() у dialog отличается от простого показа блока?",
+      "contentHash": "ad342e953fadc689b88f5ad9198c0bdcf94660a86a3286142a6d2d1d77e0ad33"
+    },
+    {
+      "id": "html-table-relations",
+      "title": "Как сделать таблицу данных понятной без визуального расположения ячеек?",
+      "contentHash": "2c3c0f57c64e2fefd2295d9d0dd1c9062c04a947df82b5960c45d140f00b30b2"
+    },
+    {
+      "id": "html-live-status",
+      "title": "Как сообщать об изменении статуса без неожиданного перемещения фокуса?",
+      "contentHash": "1d18fa6238b239fe10cdac3a7c84bb14c6b3adb7e1bae02e09370b953a1ae7bd"
+    }
+  ],
+  "notes": [
+    "HTML/CSS описывают документ, представление и нативные контракты; алгоритмы DOM, сеть, SEO и React не дублировать.",
+    "Код примеров не исполняется. Seed выполняет пользователь.",
+    "Сопоставлены исходные 48 вопросов. Новые навыки: Самостоятельный материал, тематическая часть и косвенно связанное содержимое. Нативный disclosure, булев open и ограничение применимости. Верхний слой, закрытие снаружи и отсутствие автоматической модальности. Сообщение состояния вспомогательным технологиям и обязанности приложения. Ход выполнения, величина в диапазоне и результат вычисления.",
+    "Похожие кандидаты объединены с действующими ответами; список будет в журнале и отчёте.",
+    "Проверка content:build/content:check прошла на 845 вопросах. Проверены сохранность 48 прежних ID и Markdown-разделитель новых ответов. После итогового форматирования требуется повторная сборка для актуальных хешей."
+  ]
+}

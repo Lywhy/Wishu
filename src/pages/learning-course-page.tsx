@@ -1,3 +1,4 @@
+import { Toggle } from "@/components/ui/toggle"
 import { useWorkspace } from "@/stores/workspace"
 import { WorkspaceControls, PersonalNote, RelatedStudy } from "@/components/experience/study-tools"
 import { LectureOutline } from "@/components/experience/lecture-outline"
@@ -68,9 +69,9 @@ export function LearningCoursePage() {
       />
       <WorkspaceControls />
       <div
-        className={`grid items-start gap-6 ${focus ? "lg:grid-cols-1" : "lg:grid-cols-[260px_minmax(0,1fr)]"}`}
+        className={`grid items-start gap-6 ${focus ? "lg:grid-cols-1" : "lg:grid-cols-[280px_minmax(0,1fr)]"}`}
       >
-        <aside className={focus ? "hidden" : "min-w-0 lg:sticky lg:top-5"}>
+        <aside className={focus ? "hidden" : "min-w-0 lg:sticky lg:top-24"}>
           <CourseContents title={section.title} done={doneCount} total={steps.length}>
             <Card className="gap-4 rounded-xl p-4 shadow-none">
               <div className="flex items-center gap-3">
@@ -103,7 +104,9 @@ export function LearningCoursePage() {
                       aria-current={item.id === step.id ? "step" : undefined}
                       className={cn(
                         "block rounded-lg border border-transparent p-3 outline-none focus-visible:ring-2 focus-visible:ring-ring",
-                        item.id === step.id ? "border-primary/20 bg-primary/5" : "hover:bg-muted",
+                        item.id === step.id
+                          ? "border-primary/35 bg-primary/10 inset-shadow-[3px_0_0_var(--primary)]"
+                          : "hover:bg-muted",
                       )}
                     >
                       <span className="flex items-center justify-between gap-2 text-[11px] text-muted-foreground">
@@ -111,9 +114,17 @@ export function LearningCoursePage() {
                           {String(i + 1).padStart(2, "0")} ·{" "}
                           {item.kind === "lecture" ? "Лекция" : "Практика"}
                         </span>
-                        {passed && (
-                          <span className="text-emerald-700 dark:text-emerald-400">Пройдено</span>
-                        )}
+                        <span
+                          className={
+                            passed
+                              ? "text-emerald-700 dark:text-emerald-400"
+                              : item.id === step.id
+                                ? "text-primary"
+                                : "text-muted-foreground"
+                          }
+                        >
+                          {item.id === step.id ? "Сейчас" : passed ? "Пройдено" : "Впереди"}
+                        </span>
                       </span>
                       <span className="mt-1 block text-xs leading-5 font-medium">{item.title}</span>
                     </Link>
@@ -171,13 +182,14 @@ export function LearningCoursePage() {
                 <p className="text-xs leading-6 text-muted-foreground">
                   Разобрались в материале? Отметьте лекцию как пройденную.
                 </p>
-                <Button
-                  variant={done ? "secondary" : "default"}
-                  aria-pressed={done}
-                  onClick={() => mark(key, !done)}
+                <Toggle
+                  variant="outline"
+                  pressed={done}
+                  onPressedChange={(pressed) => mark(key, pressed)}
+                  className="h-10"
                 >
                   {done ? "Пройдено" : "Отметить пройденным"}
-                </Button>
+                </Toggle>
               </div>
             </Card>
           ) : (

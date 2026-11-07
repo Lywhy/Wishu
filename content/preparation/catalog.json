@@ -72,6 +72,75 @@
       "canonicalQuestionIds": ["http-cache"],
       "appliedQuestionIds": ["http-cdn"],
       "rule": "HTTP-контракт держать канонически в browser; прикладные кеши фреймворка связывать с ним без повторения всего ответа."
+    },
+    {
+      "concept": "Загрузка HTML, CSS и сценариев",
+      "canonicalQuestionIds": ["script-loading", "document-ready-events"],
+      "appliedQuestionIds": ["html-stylesheet-render-blocking", "html-resource-hints"],
+      "rule": "Модель async/defer и событий документа оставлять в JavaScript; в HTML/CSS объяснять зависимость готовности стилей и декларативные подсказки без повторения всей модели."
+    },
+    {
+      "concept": "Форма как нативный контракт",
+      "canonicalQuestionIds": [
+        "html-form-entry-list",
+        "html-native-validation",
+        "html-native-submit-contract"
+      ],
+      "appliedQuestionIds": [
+        "html-form-error-experience",
+        "html-fieldset-radio-group",
+        "html-file-input-contract"
+      ],
+      "rule": "Разделять payload, проверку, отправку и доступную обратную связь; CORS, fetch и серверные проверки не копировать в каждый ответ."
+    },
+    {
+      "concept": "Каскад и область действия",
+      "canonicalQuestionIds": ["css-cascade", "css-inheritance", "css-custom-properties"],
+      "appliedQuestionIds": [
+        "css-scope-boundary",
+        "css-native-nesting-contract",
+        "css-registered-property"
+      ],
+      "rule": "Алгоритм приоритетов объяснять канонически; новые механизмы показывать через изменяемую часть контракта, а не повторять весь каскад."
+    },
+    {
+      "concept": "Изображение как информация и как ресурс",
+      "canonicalQuestionIds": ["html-responsive-images", "css-image-fitting", "html-alt-purpose"],
+      "appliedQuestionIds": [
+        "html-svg-embedding",
+        "html-svg-viewbox",
+        "html-figure-caption",
+        "css-pixel-device-pixel"
+      ],
+      "rule": "Выбор файла, геометрия, текстовая альтернатива и векторные координаты - разные навыки. Развёрнутый alt вынесен отдельно: в прежнем ответе был только общий пункт, а новый рассматривает функциональные и сложные изображения."
+    },
+    {
+      "concept": "Базовая модель и прикладной разбор CSS",
+      "canonicalQuestionIds": ["css-box-sizing", "css-cascade", "css-box-alignment"],
+      "appliedQuestionIds": [
+        "css-box-layers-spacing",
+        "css-normal-flow-position",
+        "css-flex-axis-direction",
+        "css-grid-gap-percentages",
+        "css-bounded-scroll-pane"
+      ],
+      "rule": "Различать назначение слоёв, порядок каскада, оси и самостоятельный диагностический сценарий. Частичное напоминание допустимо для закрепления; не копировать весь связанный ответ."
+    },
+    {
+      "concept": "React и библиотеки внешнего состояния",
+      "canonicalQuestionIds": [
+        "react-state-location",
+        "react-external-store",
+        "react-ssr-state-isolation",
+        "react-normalized-state"
+      ],
+      "appliedQuestionIds": [
+        "redux-selector-equality",
+        "redux-entity-adapter",
+        "zustand-selector-shallow",
+        "zustand-scoped-store"
+      ],
+      "rule": "Общие React-контракты остаются каноническими; Redux и Zustand показывают конкретный API, сравнение результата и владение экземпляром."
     }
   ],
   "versionNotes": [
@@ -95,6 +164,45 @@
       "environments": ["browser", "nodejs"],
       "recheckWhen": "Уточняется матрица поддержки проекта; не выводить доступность из наличия типов.",
       "lastVerifiedAt": null
+    },
+    {
+      "id": "ts-versioned-compiler-defaults-20261107",
+      "questionIds": [
+        "ts-cli-project-selection",
+        "ts-ambient-types-scope",
+        "ts-esm-cjs-contract",
+        "ts-inferred-predicates",
+        "ts-iterator-result-check"
+      ],
+      "environments": ["typescript", "toolchain"],
+      "recheckWhen": "Меняется версия TypeScript: проверить defaults, правила выбора проекта, interop и вывод предикатов по release notes.",
+      "lastVerifiedAt": "2026-11-07"
+    },
+    {
+      "id": "html-css-modern-features-20261107",
+      "questionIds": [
+        "html-popover-contract",
+        "html-native-disclosure",
+        "css-scope-boundary",
+        "css-registered-property",
+        "css-native-nesting-contract",
+        "css-entry-starting-style",
+        "css-scrollbar-gutter"
+      ],
+      "environments": ["browser", "html", "css"],
+      "recheckWhen": "Изменяется набор поддерживаемых браузеров: перепроверить современные синтаксисы, доступность нативных элементов и поведение fallback. Наличие базовой возможности не доказывает поддержку всех её частей.",
+      "lastVerifiedAt": "2026-11-07"
+    },
+    {
+      "id": "react-state-libraries-20261107",
+      "questionIds": [
+        "redux-typescript-hooks",
+        "zustand-selector-shallow",
+        "zustand-persist-hydration"
+      ],
+      "environments": ["react-redux", "redux-toolkit", "zustand"],
+      "recheckWhen": "Обновляются основные версии библиотек: проверить withTypes, equality API, стабильность selector и persist-гидратацию по официальной документации.",
+      "lastVerifiedAt": "2026-11-07"
     }
   ],
   "interviewFeedback": []

@@ -9,3 +9,22 @@
 <!-- wishu:answer-block -->
 
 [Документация TypeScript](https://www.typescriptlang.org/tsconfig/strictFunctionTypes.html).
+
+<!-- wishu:answer-block -->
+
+### Синтаксис обработчика является частью проверки
+
+Для callback-свойства явно выражайте функциональный тип, если нужен соответствующий строгий контроль параметра. Мягкость проверки method-синтаксиса не делает узкую реализацию безопасной для любого широкого входа.
+
+```typescript
+type Handler<T> = { handle: (value: T) => void }
+type Methods<T> = { handle(value: T): void }
+// Сравнивайте эти формы при включённом strictFunctionTypes.
+```
+
+#### Продолжить тему
+
+- [Чем generic-callback отличается от callback с заранее выбранным типом?](/questions/ts-polymorphic-callback-contract)
+- [Почему union функций не равен функции с union-параметром?](/questions/ts-union-of-functions)
+
+[Документация TypeScript](https://www.typescriptlang.org/docs/handbook/type-compatibility.html).

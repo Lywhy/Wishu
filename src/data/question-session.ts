@@ -22,7 +22,9 @@ export function readQuestionSession(state: unknown): QuestionSession | undefined
     !session.questionIds.every((id) => typeof id === "string") ||
     !("returnTo" in session) ||
     typeof session.returnTo !== "string" ||
-    !/^\/(?:questions(?:\?|\/sections\/|$)|session(?:\?|$))/.test(session.returnTo) ||
+    !/^\/(?:questions(?:\?|\/sections\/|$)|session(?:\?|$)|mock-interview(?:\?|$)|interviews(?:\?|$))/.test(
+      session.returnTo,
+    ) ||
     !("title" in session) ||
     typeof session.title !== "string"
   )

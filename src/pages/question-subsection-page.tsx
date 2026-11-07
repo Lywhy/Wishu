@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom"
 import { Button } from "@/components/ui/button"
 import { useLocation, useParams } from "react-router-dom"
-import { CatalogControls, EmptyResults } from "@/components/practice/catalog-controls"
+import { CatalogControls, EmptyResults } from "@/components/catalog/catalog-controls"
 import { QuestionBreadcrumbs } from "@/components/questions/question-breadcrumbs"
 import { QuestionCard, QuestionStudyAside } from "@/components/questions/question-study"
 import { sectionPath } from "@/data/question-catalog"
@@ -114,7 +114,7 @@ export function QuestionSubsectionPage() {
             />
           )}
         </div>
-        <aside className="space-y-4 lg:sticky lg:top-6">
+        <aside className="space-y-4 lg:sticky lg:top-24">
           <QuestionStudyAside
             questionIds={questions.map((question) => question.id)}
             title="Прогресс подраздела"

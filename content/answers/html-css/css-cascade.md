@@ -7,11 +7,41 @@
 <!-- wishu:answer-block -->
 
 ### Порядок слоёв
+
 Для обычных авторских деклараций поздний слой сильнее раннего, а обычные unlayered-правила сильнее layered. Для important порядок слоёв обращается: ранние слои получают преимущество, и important в слоях сильнее important вне слоёв. Inline-стили имеют отдельные правила; каскад также учитывает другие origins, transitions и animations.
 
 ```css
 @layer reset, base, components;
-@layer base { button { color: black; } }
-@layer components { button { color: navy; } }
+@layer base {
+  button {
+    color: black;
+  }
+}
+@layer components {
+  button {
+    color: navy;
+  }
+}
 ```
+
 Специфичность сравнивается внутри уже выбранного уровня каскада, а не отменяет его.
+
+<!-- wishu:answer-block -->
+
+#### Специфичность сравнивают по разрядам
+
+ID, классы/атрибуты/псевдоклассы и типы/псевдоэлементы сравниваются последовательно, а не как одно десятичное число. Много классов не «переносится» в один ID. Комбинаторы и * сами веса не дают. Перед этим сравнением нужно установить происхождение, важность и слой; при равной специфичности scoped-правила учитывают proximity, затем порядок.
+
+```css
+#app .title {
+  color: navy;
+} /* 1-1-0 */
+.card .title.highlight {
+  color: red;
+} /* 0-3-0 */
+/* При прочих равных первая декларация сильнее. */
+```
+
+- [Что ограничивает @scope и когда учитывается scoping proximity?](/questions/css-scope-boundary)
+
+[MDN: Specificity](https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Cascade/Specificity).

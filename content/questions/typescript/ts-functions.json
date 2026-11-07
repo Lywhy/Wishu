@@ -18,7 +18,11 @@
         "ts-function-overloads",
         "ts-function-variance",
         "ts-this-parameter",
-        "ts-generator-contract"
+        "ts-generator-contract",
+        "ts-polymorphic-callback-contract",
+        "ts-destructured-parameter-annotation",
+        "ts-generic-arrow-tsx",
+        "ts-strict-bind-call-apply"
       ]
     },
     {
@@ -83,6 +87,42 @@
       "reviewed": false,
       "priority": "core",
       "relatedSkillIds": []
+    },
+    {
+      "id": "ts-polymorphic-callback-contract",
+      "title": "Чем generic-callback отличается от callback с заранее выбранным типом?",
+      "description": "Объяснить и применить правило с учётом его границ: Место объявления generic-параметра определяет область его выбора.",
+      "requiredDifficulties": ["Продвинутый"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": ["generics", "ts-function-variance"]
+    },
+    {
+      "id": "ts-destructured-parameter-annotation",
+      "title": "Где записывать тип деструктурируемого параметра функции?",
+      "description": "Объяснить и применить правило с учётом его границ: Синтаксис JavaScript-деструктуризации и место TypeScript-аннотации нужно различать.",
+      "requiredDifficulties": ["Базовый"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": ["ts-function-parameters"]
+    },
+    {
+      "id": "ts-generic-arrow-tsx",
+      "title": "Почему generic-стрелка в .tsx может быть разобрана как JSX?",
+      "description": "Объяснить и применить правило с учётом его границ: Одинаковая запись может разбираться иначе в TS и TSX.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": ["generics"]
+    },
+    {
+      "id": "ts-strict-bind-call-apply",
+      "title": "Что проверяет strictBindCallApply при вызове call, apply и bind?",
+      "description": "Объяснить и применить правило с учётом его границ: Косвенный вызов полезно проверять тем же контрактом, что и прямой.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": ["ts-this-parameter", "function-bind"]
     }
   ],
   "questions": [
@@ -126,9 +166,9 @@
         "kind": "explanation",
         "reviewStatus": "imported",
         "goalIds": ["core", "ts-function-parameters"],
-        "relatedQuestionIds": [],
+        "relatedQuestionIds": ["ts-destructured-parameter-annotation"],
         "priority": "core",
-        "sourceRefs": []
+        "sourceRefs": ["ref-db1c5af3b94742b6"]
       },
       "answerFile": "answers/typescript/ts-function-parameters.md"
     },
@@ -149,9 +189,9 @@
         "kind": "explanation",
         "reviewStatus": "imported",
         "goalIds": ["core", "ts-async-functions"],
-        "relatedQuestionIds": [],
+        "relatedQuestionIds": ["ts-promise-all-tuples"],
         "priority": "core",
-        "sourceRefs": []
+        "sourceRefs": ["ref-3f97ed4aa0a31ba2"]
       },
       "answerFile": "answers/typescript/ts-async-functions.md"
     },
@@ -196,9 +236,9 @@
         "kind": "explanation",
         "reviewStatus": "imported",
         "goalIds": ["core", "ts-function-variance"],
-        "relatedQuestionIds": [],
+        "relatedQuestionIds": ["ts-polymorphic-callback-contract", "ts-union-of-functions"],
         "priority": "core",
-        "sourceRefs": ["ref-9c236532a3d8bc5a"]
+        "sourceRefs": ["ref-9c236532a3d8bc5a", "ref-b1f557c0324024a7"]
       },
       "answerFile": "answers/typescript/ts-function-variance.md"
     },
@@ -249,6 +289,98 @@
         "sourceRefs": ["ref-cb5d5b49e0662695"]
       },
       "answerFile": "answers/typescript/ts-generator-contract.md"
+    },
+    {
+      "id": "ts-polymorphic-callback-contract",
+      "title": "Чем generic-callback отличается от callback с заранее выбранным типом?",
+      "topic": "TypeScript",
+      "difficulty": "Продвинутый",
+      "summary": "Кто выбирает параметр типа и насколько универсален обработчик.",
+      "answerFile": "answers/typescript/ts-polymorphic-callback-contract.md",
+      "takeaway": "Место объявления generic-параметра определяет область его выбора.",
+      "pitfall": "Передавать специализированную функцию вместо универсального преобразования.",
+      "moduleId": "typescript",
+      "order": 7,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Место объявления generic-параметра определяет область его выбора.",
+        "keywords": ["TypeScript", "Типизация функций"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "priority": "core",
+        "goalIds": ["core", "ts-polymorphic-callback-contract"],
+        "relatedQuestionIds": ["generics", "ts-function-variance"],
+        "sourceRefs": ["ref-b8c0426b8b77a2f0"]
+      }
+    },
+    {
+      "id": "ts-destructured-parameter-annotation",
+      "title": "Где записывать тип деструктурируемого параметра функции?",
+      "topic": "TypeScript",
+      "difficulty": "Базовый",
+      "summary": "Аннотация всего шаблона и переименование переменной.",
+      "answerFile": "answers/typescript/ts-destructured-parameter-annotation.md",
+      "takeaway": "Синтаксис JavaScript-деструктуризации и место TypeScript-аннотации нужно различать.",
+      "pitfall": "Писать `{ name: string }` и считать string обозначением типа параметра.",
+      "moduleId": "typescript",
+      "order": 8,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Синтаксис JavaScript-деструктуризации и место TypeScript-аннотации нужно различать.",
+        "keywords": ["TypeScript", "Типизация функций"],
+        "kind": "explanation",
+        "reviewStatus": "ready",
+        "priority": "core",
+        "goalIds": ["core", "ts-destructured-parameter-annotation"],
+        "relatedQuestionIds": ["ts-function-parameters"],
+        "sourceRefs": ["ref-db1c5af3b94742b6"]
+      }
+    },
+    {
+      "id": "ts-generic-arrow-tsx",
+      "title": "Почему generic-стрелка в .tsx может быть разобрана как JSX?",
+      "topic": "TypeScript",
+      "difficulty": "Средний",
+      "summary": "Синтаксическая неоднозначность и явное обозначение параметров типа.",
+      "answerFile": "answers/typescript/ts-generic-arrow-tsx.md",
+      "takeaway": "Одинаковая запись может разбираться иначе в TS и TSX.",
+      "pitfall": "Искать ошибку в generic-логике, когда проблема находится на уровне парсинга JSX.",
+      "moduleId": "typescript",
+      "order": 9,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Одинаковая запись может разбираться иначе в TS и TSX.",
+        "keywords": ["TypeScript", "Типизация функций"],
+        "kind": "explanation",
+        "reviewStatus": "ready",
+        "priority": "core",
+        "goalIds": ["core", "ts-generic-arrow-tsx"],
+        "relatedQuestionIds": ["generics"],
+        "sourceRefs": ["ref-a56cb05e2fc85a16"]
+      }
+    },
+    {
+      "id": "ts-strict-bind-call-apply",
+      "title": "Что проверяет strictBindCallApply при вызове call, apply и bind?",
+      "topic": "TypeScript",
+      "difficulty": "Средний",
+      "summary": "Сохранение аргументов и this при косвенном вызове.",
+      "answerFile": "answers/typescript/ts-strict-bind-call-apply.md",
+      "takeaway": "Косвенный вызов полезно проверять тем же контрактом, что и прямой.",
+      "pitfall": "Ожидать восстановление строгой сигнатуры после превращения функции в any.",
+      "moduleId": "typescript",
+      "order": 10,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Косвенный вызов полезно проверять тем же контрактом, что и прямой.",
+        "keywords": ["TypeScript", "Типизация функций", "this"],
+        "kind": "explanation",
+        "reviewStatus": "ready",
+        "priority": "core",
+        "goalIds": ["core", "ts-strict-bind-call-apply"],
+        "relatedQuestionIds": ["ts-this-parameter", "function-bind"],
+        "sourceRefs": ["ref-d577ddbc8ed18132"]
+      }
     }
   ]
 }

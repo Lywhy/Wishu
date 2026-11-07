@@ -1,0 +1,31 @@
+**Некоторые объявления могут объединяться и описывать значение с дополнительными членами. Например, namespace после функции позволяет связать её вызов и именованные свойства, но это не то же самое, что только удаляемый интерфейс.**
+
+<!-- wishu:answer-block -->
+
+#### Механизм и границы
+
+- Допустимы определённые комбинации и порядок объявлений; не любые два одноимённых объявления можно объединить.
+- Обычный namespace с исполняемым содержимым требует соответствующего emit, что важно для type stripping и erasableSyntaxOnly.
+- Для нового API отдельные экспорты или явное создание свойств функции могут быть понятнее.
+
+#### Пример
+
+```typescript
+function format(value: number) {
+  return value.toFixed(0)
+}
+namespace format {
+  export const unit = "items"
+}
+const text = format(1) + " " + format.unit
+// Пример предполагает конвейер, поддерживающий namespace emit.
+```
+
+#### Для закрепления
+
+- [Что происходит при повторном объявлении interface с одним именем?](/questions/ts-interface-merging)
+- [Что проверяет erasableSyntaxOnly и чего не делает простое удаление типов?](/questions/ts-erasable-syntax-boundary)
+
+#### Источник
+
+[Документация TypeScript](https://www.typescriptlang.org/docs/handbook/declaration-merging.html).

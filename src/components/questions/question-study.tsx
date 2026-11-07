@@ -1,3 +1,9 @@
+import { QuestionSaveNotice } from "@/components/experience/question-save-notice"
+import { LectureOutline } from "@/components/experience/lecture-outline"
+import { Collapsible, CollapsibleTrigger, CollapsibleContent } from "@/components/ui/collapsible"
+import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group"
+import { Tooltip, TooltipTrigger, TooltipContent } from "@/components/ui/tooltip"
+import { Disclosure } from "@/components/experience/disclosure"
 import { JavaScriptQuestionBadge } from "@/components/questions/javascript-preparation"
 import { javascriptAnswerMarkdown } from "@/lib/javascript-answer-markdown"
 import { changeQuestionMark } from "@/lib/question-mark-actions"
@@ -8,10 +14,14 @@ import { Link } from "react-router-dom"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
+import { Separator } from "@/components/ui/separator"
 import { Switch } from "@/components/ui/switch"
 import { CodeBlock, DifficultyBadge } from "@/components/practice/practice-elements"
 import { QuestionPopularBadge } from "@/components/questions/question-popular"
-import { QuestionFavoriteBadge } from "@/components/questions/question-favorite"
+import {
+  QuestionFavoriteButton,
+  QuestionFavoriteBadge,
+} from "@/components/questions/question-favorite"
 import { QuestionPracticeActions } from "@/components/questions/question-practice-actions"
 import { StudyProgress } from "@/components/questions/study-progress"
 import type { Question } from "@/data/interview-content"
@@ -73,47 +83,113 @@ export function AnswerPreference() {
   )
 }
 
-export function QuestionStatusControls({ questionId }: { questionId: string }) {
+export function QuestionReviewControls({
+  questionId,
+  compact = false,
+}: {
+  questionId: string
+  compact?: boolean
+}) {
+  return (
+    <div className="min-w-0" aria-label="Действия с вопросом">
+      {!compact && (
+        <p className="mb-2 px-1 text-xs font-medium text-muted-foreground">Ваша отметка</p>
+      )}
+      <div
+        className={cn(
+          "flex items-center gap-1 overflow-hidden rounded-xl border bg-muted/40 p-1",
+          compact && "h-10",
+        )}
+      >
+        <QuestionStatusControls questionId={questionId} compact={compact} />
+        <Separator orientation="vertical" className="mx-1 my-2" />
+        <QuestionFavoriteButton questionId={questionId} compact={compact} />
+      </div>
+      <QuestionSaveNotice />
+    </div>
+  )
+}
+
+export function QuestionStatusControls({
+  questionId,
+  compact = false,
+}: {
+  questionId: string
+  compact?: boolean
+}) {
   const saving = usePracticeProgress((state) => state.pendingQuestionWrites > 0)
   const current = usePracticeProgress((state) => state.questionStatuses[questionId])
   return (
-    <div aria-label="Отметка изучения вопроса" className="flex flex-wrap gap-2">
+    <ToggleGroup
+      aria-label="Отметка изучения вопроса"
+      spacing={1}
+      className="min-w-0 flex-1"
+      value={current ? [current] : []}
+      disabled={saving}
+      onValueChange={(values) =>
+        changeQuestionMark(
+          questionId,
+          statuses.find((status) => status.value === values[0])?.value ?? null,
+        )
+      }
+    >
       {statuses.map(({ value, label, icon: Icon, selected }) => (
-        <Button
-          key={value}
-          variant="outline"
-          size="icon"
-          title={label}
-          aria-label={label}
-          aria-pressed={current === value}
-          disabled={saving}
-          onClick={() => changeQuestionMark(questionId, current === value ? null : value)}
-          className={cn("size-8", current === value && selected)}
-        >
-          <Icon className="size-4" aria-hidden="true" />
-        </Button>
+        <Tooltip key={value}>
+          <TooltipTrigger
+            aria-label={label}
+            render={
+              <ToggleGroupItem
+                value={value}
+                className={cn(
+                  "h-10 min-w-0 flex-1 rounded-lg p-0 text-muted-foreground hover:bg-background hover:text-foreground focus-visible:ring-inset",
+                  compact && "h-7 rounded-md",
+                  current === value && selected,
+                  {
+                    repeat: "aria-pressed:bg-amber-100 dark:aria-pressed:bg-amber-500/20",
+                    learned: "aria-pressed:bg-emerald-100 dark:aria-pressed:bg-emerald-500/20",
+                    skipped: "aria-pressed:bg-violet-100 dark:aria-pressed:bg-violet-500/20",
+                  }[value],
+                )}
+              />
+            }
+          >
+            <Icon className="size-4" aria-hidden="true" />
+          </TooltipTrigger>
+          <TooltipContent>{label}</TooltipContent>
+        </Tooltip>
       ))}
-    </div>
+    </ToggleGroup>
   )
 }
 
-export function QuestionAnswer({ question }: { question: Question }) {
-  const defaultOpen = usePracticeProgress((state) => state.autoRevealAnswers)
+export function QuestionAnswer({
+  question,
+  interviewMode = false,
+}: {
+  question: Question
+  interviewMode?: boolean
+}) {
+  const autoReveal = usePracticeProgress((state) => state.autoRevealAnswers)
+  const defaultOpen = !interviewMode && autoReveal
   return (
-    <div className="relative">
-      <div className="mb-2 sm:absolute sm:top-0 sm:right-0 sm:mb-0">
-        <AnswerPreference />
-      </div>
-      <AnswerDisclosure
-        key={`${question.id}-${defaultOpen}`}
-        question={question}
-        defaultOpen={defaultOpen}
-      />
-    </div>
+    <AnswerDisclosure
+      key={`${question.id}-${defaultOpen}`}
+      question={question}
+      defaultOpen={defaultOpen}
+      allowPreference={!interviewMode}
+    />
   )
 }
 
-function AnswerDisclosure({ question, defaultOpen }: { question: Question; defaultOpen: boolean }) {
+function AnswerDisclosure({
+  question,
+  defaultOpen,
+  allowPreference,
+}: {
+  question: Question
+  defaultOpen: boolean
+  allowPreference: boolean
+}) {
   const [open, setOpen] = useState(defaultOpen)
   useEffect(() => {
     const toggle = () => setOpen((value) => !value)
@@ -121,34 +197,31 @@ function AnswerDisclosure({ question, defaultOpen }: { question: Question; defau
     return () => document.removeEventListener("wishu-toggle-answer", toggle)
   }, [])
   const id = useId()
+  const content =
+    question.topic === "JavaScript"
+      ? javascriptAnswerMarkdown(question)
+      : [
+          "### Короткий ответ",
+          question.answer[0] ?? "",
+          ...(question.answer.length > 1 ? ["### Подробности", ...question.answer.slice(1)] : []),
+        ].join("\n\n")
+  const prefix = "answer-" + id.replaceAll(":", "")
   return (
-    <div className="space-y-4">
-      <div className="flex min-h-10 items-center sm:pr-64">
-        <Button
-          variant="outline"
-          className="h-10"
-          aria-expanded={open}
-          aria-controls={id}
-          onClick={() => setOpen(!open)}
-        >
+    <Collapsible open={open} onOpenChange={setOpen} className="w-full min-w-0 space-y-4">
+      <div className="flex min-h-10 flex-wrap items-center justify-between gap-3">
+        <CollapsibleTrigger render={<Button variant="outline" className="h-10" />}>
           {open ? "Скрыть ответ" : "Показать ответ"}
-        </Button>
+        </CollapsibleTrigger>
+        {allowPreference && <AnswerPreference />}
       </div>
-      <div id={id} hidden={!open} className="space-y-6 border-t pt-5">
-        <div className="max-w-[72ch]">
+      <CollapsibleContent keepMounted className="w-full min-w-0 space-y-6 border-t pt-5">
+        <LectureOutline content={content} prefix={prefix} compact />
+        <div className="w-full min-w-0">
           <LearningMarkdown
             key={String(open)}
-            content={
-              question.topic === "JavaScript"
-                ? javascriptAnswerMarkdown(question)
-                : [
-                    "### Короткий ответ",
-                    question.answer[0] ?? "",
-                    ...(question.answer.length > 1
-                      ? ["### Подробности", ...question.answer.slice(1)]
-                      : []),
-                  ].join("\n\n")
-            }
+            content={content}
+            variant="answer"
+            anchorPrefix={prefix}
             topic={question.topic}
           />
         </div>
@@ -166,7 +239,7 @@ function AnswerDisclosure({ question, defaultOpen }: { question: Question; defau
             <h3 id={`${id}-pitfall`} className="text-sm font-semibold">
               Частая ошибка
             </h3>
-            <div className="mt-2 max-w-[72ch]">
+            <div className="mt-2 w-full min-w-0">
               <LearningMarkdown content={question.pitfall} topic={question.topic} />
             </div>
           </section>
@@ -176,13 +249,13 @@ function AnswerDisclosure({ question, defaultOpen }: { question: Question; defau
             <h3 id={`${id}-takeaway`} className="text-sm font-semibold">
               Главная мысль
             </h3>
-            <div className="mt-2 max-w-[72ch]">
+            <div className="mt-2 w-full min-w-0">
               <LearningMarkdown content={question.takeaway} topic={question.topic} />
             </div>
           </section>
         )}
-      </div>
-    </div>
+      </CollapsibleContent>
+    </Collapsible>
   )
 }
 
@@ -243,15 +316,15 @@ export function QuestionStudyAside({
       <h2 className="mb-4 text-sm font-semibold">{title}</h2>
       <StudyProgress questionIds={questionIds} />
       {actions && <QuestionPracticeActions questionIds={questionIds} title={title} />}
-      <details className="mt-4 border-t pt-3 text-xs text-muted-foreground">
-        <summary className="min-h-8 cursor-pointer rounded leading-8 outline-none focus-visible:ring-2 focus-visible:ring-ring">
-          Как работают отметки
-        </summary>
+      <Disclosure
+        className="border-0 bg-transparent text-xs text-muted-foreground"
+        title={<> Как работают отметки </>}
+      >
         <p className="mt-2 leading-6">
           Неотмеченные вопросы остаются серыми. Повторное нажатие на выбранную отметку снимает её.
           Отметки сохраняются автоматически.
         </p>
-      </details>
+      </Disclosure>
     </Card>
   )
 }

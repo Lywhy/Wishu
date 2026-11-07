@@ -19,7 +19,15 @@
         "ts-infer",
         "ts-distributive-never",
         "ts-template-literal-patterns",
-        "ts-deep-readonly-contract"
+        "ts-deep-readonly-contract",
+        "ts-keyof-union-keys",
+        "ts-tuple-pattern-infer",
+        "ts-infer-multiple-candidates",
+        "ts-homomorphic-tuples",
+        "ts-record-to-correlated-union",
+        "ts-filter-properties-by-type",
+        "ts-template-number-inference",
+        "ts-recursive-type-budget"
       ]
     },
     {
@@ -93,6 +101,78 @@
       "reviewed": false,
       "priority": "extended",
       "relatedSkillIds": []
+    },
+    {
+      "id": "ts-keyof-union-keys",
+      "title": "Почему keyof union возвращает общие ключи, а не все ключи вариантов?",
+      "description": "Объяснить и применить правило с учётом его границ: Общие безопасные ключи и объединение всех известных ключей - разные запросы к типам.",
+      "requiredDifficulties": ["Продвинутый"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": ["ts-keyof-indexed-access", "ts-conditional-types"]
+    },
+    {
+      "id": "ts-tuple-pattern-infer",
+      "title": "Как извлечь голову и хвост кортежа через infer?",
+      "description": "Объяснить и применить правило с учётом его границ: Infer извлекает часть доказанной формы, а не гарантирует наличие элемента любого массива.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": ["ts-infer", "ts-tuples"]
+    },
+    {
+      "id": "ts-infer-multiple-candidates",
+      "title": "Как позиции нескольких infer-кандидатов влияют на union или intersection результата?",
+      "description": "Объяснить и применить правило с учётом его границ: Одного совпадения имени infer-параметра недостаточно: важны позиции кандидатов.",
+      "requiredDifficulties": ["Продвинутый"],
+      "reviewed": true,
+      "priority": "extended",
+      "relatedSkillIds": ["ts-infer", "ts-generic-variance"]
+    },
+    {
+      "id": "ts-homomorphic-tuples",
+      "title": "Почему mapped type может сохранить кортеж, а явный remapping ключей - изменить форму результата?",
+      "description": "Объяснить и применить правило с учётом его границ: Сохранение контейнера является частью формы преобразования, а не любого цикла по keyof.",
+      "requiredDifficulties": ["Продвинутый"],
+      "reviewed": true,
+      "priority": "extended",
+      "relatedSkillIds": ["ts-mapped-types", "ts-variadic-tuples"]
+    },
+    {
+      "id": "ts-record-to-correlated-union",
+      "title": "Как из словаря типов получить union связанных пар ключ-значение?",
+      "description": "Объяснить и применить правило с учётом его границ: Зависимость ключа и значения сохраняют по вариантам, а не двумя отдельными union.",
+      "requiredDifficulties": ["Продвинутый"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": ["ts-keyof-indexed-access", "ts-discriminated-unions"]
+    },
+    {
+      "id": "ts-filter-properties-by-type",
+      "title": "Как выбрать свойства объекта по типу их значений?",
+      "description": "Объяснить и применить правило с учётом его границ: Правило отбора должно явно определять отношение к optional и union-значениям.",
+      "requiredDifficulties": ["Продвинутый"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": ["ts-mapped-types", "ts-property-modifiers"]
+    },
+    {
+      "id": "ts-template-number-inference",
+      "title": "Как infer с ограничением извлекает число из строкового литерала?",
+      "description": "Объяснить и применить правило с учётом его границ: Типовая интерпретация известного литерала не заменяет парсер внешнего ввода.",
+      "requiredDifficulties": ["Продвинутый"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": ["ts-infer", "ts-template-literal-patterns"]
+    },
+    {
+      "id": "ts-recursive-type-budget",
+      "title": "Как ограничить рекурсивный тип и избежать чрезмерной глубины вычисления?",
+      "description": "Объяснить и применить правило с учётом его границ: Типовой алгоритм тоже требует ограничений входа и стоимости.",
+      "requiredDifficulties": ["Продвинутый"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": ["ts-recursive-types", "ts-deep-readonly-contract"]
     }
   ],
   "questions": [
@@ -228,9 +308,9 @@
         "kind": "explanation",
         "reviewStatus": "imported",
         "goalIds": ["core", "ts-distributive-never"],
-        "relatedQuestionIds": [],
+        "relatedQuestionIds": ["ts-special-type-algebra"],
         "priority": "extended",
-        "sourceRefs": []
+        "sourceRefs": ["ref-27e2f7bd757441f5"]
       },
       "answerFile": "answers/typescript/ts-distributive-never.md"
     },
@@ -252,7 +332,7 @@
         "kind": "explanation",
         "reviewStatus": "imported",
         "goalIds": ["core", "ts-template-literal-patterns"],
-        "relatedQuestionIds": [],
+        "relatedQuestionIds": ["ts-template-index-signatures", "ts-template-number-inference"],
         "priority": "extended",
         "sourceRefs": ["ref-b02446746e720604"]
       },
@@ -281,6 +361,203 @@
         "sourceRefs": ["ref-bad15debd501fec2"]
       },
       "answerFile": "answers/typescript/ts-deep-readonly-contract.md"
+    },
+    {
+      "id": "ts-keyof-union-keys",
+      "title": "Почему keyof union возвращает общие ключи, а не все ключи вариантов?",
+      "topic": "TypeScript",
+      "difficulty": "Продвинутый",
+      "summary": "Безопасный доступ к неизвестному варианту и распределение по членам union.",
+      "answerFile": "answers/typescript/ts-keyof-union-keys.md",
+      "takeaway": "Общие безопасные ключи и объединение всех известных ключей - разные запросы к типам.",
+      "pitfall": "Считать keyof (A | B) простым объединением keyof A и keyof B.",
+      "moduleId": "typescript",
+      "order": 8,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Общие безопасные ключи и объединение всех известных ключей - разные запросы к типам.",
+        "keywords": ["TypeScript", "Операторы типов и преобразования", "union"],
+        "kind": "explanation",
+        "reviewStatus": "ready",
+        "priority": "core",
+        "goalIds": ["core", "ts-keyof-union-keys"],
+        "relatedQuestionIds": ["ts-keyof-indexed-access", "ts-conditional-types"],
+        "sourceRefs": ["ref-5a02d79665f1eb02"]
+      }
+    },
+    {
+      "id": "ts-tuple-pattern-infer",
+      "title": "Как извлечь голову и хвост кортежа через infer?",
+      "topic": "TypeScript",
+      "difficulty": "Средний",
+      "summary": "Сопоставление формы и отдельный случай пустого кортежа.",
+      "answerFile": "answers/typescript/ts-tuple-pattern-infer.md",
+      "takeaway": "Infer извлекает часть доказанной формы, а не гарантирует наличие элемента любого массива.",
+      "pitfall": "Забывать readonly или считать [] и T[] непустыми кортежами.",
+      "moduleId": "typescript",
+      "order": 9,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Infer извлекает часть доказанной формы, а не гарантирует наличие элемента любого массива.",
+        "keywords": ["TypeScript", "Операторы типов и преобразования"],
+        "kind": "explanation",
+        "reviewStatus": "ready",
+        "priority": "core",
+        "goalIds": ["core", "ts-tuple-pattern-infer"],
+        "relatedQuestionIds": ["ts-infer", "ts-tuples"],
+        "sourceRefs": ["ref-27e2f7bd757441f5"]
+      }
+    },
+    {
+      "id": "ts-infer-multiple-candidates",
+      "title": "Как позиции нескольких infer-кандидатов влияют на union или intersection результата?",
+      "topic": "TypeScript",
+      "difficulty": "Продвинутый",
+      "summary": "Сбор кандидатов из результатов и параметров функций.",
+      "answerFile": "answers/typescript/ts-infer-multiple-candidates.md",
+      "takeaway": "Одного совпадения имени infer-параметра недостаточно: важны позиции кандидатов.",
+      "pitfall": "Ожидать union при любом повторении infer U.",
+      "moduleId": "typescript",
+      "order": 10,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Одного совпадения имени infer-параметра недостаточно: важны позиции кандидатов.",
+        "keywords": ["TypeScript", "Операторы типов и преобразования"],
+        "kind": "explanation",
+        "reviewStatus": "ready",
+        "priority": "extended",
+        "goalIds": ["core", "ts-infer-multiple-candidates"],
+        "relatedQuestionIds": ["ts-infer", "ts-generic-variance"],
+        "sourceRefs": ["ref-b4916c12ab02f207"]
+      }
+    },
+    {
+      "id": "ts-homomorphic-tuples",
+      "title": "Почему mapped type может сохранить кортеж, а явный remapping ключей - изменить форму результата?",
+      "topic": "TypeScript",
+      "difficulty": "Продвинутый",
+      "summary": "Специальное сохранение структуры при однородном преобразовании.",
+      "answerFile": "answers/typescript/ts-homomorphic-tuples.md",
+      "takeaway": "Сохранение контейнера является частью формы преобразования, а не любого цикла по keyof.",
+      "pitfall": "Считать всякий mapped type отображением кортежа в кортеж.",
+      "moduleId": "typescript",
+      "order": 11,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Сохранение контейнера является частью формы преобразования, а не любого цикла по keyof.",
+        "keywords": ["TypeScript", "Операторы типов и преобразования"],
+        "kind": "explanation",
+        "reviewStatus": "ready",
+        "priority": "extended",
+        "goalIds": ["core", "ts-homomorphic-tuples"],
+        "relatedQuestionIds": ["ts-mapped-types", "ts-variadic-tuples"],
+        "sourceRefs": ["ref-bad15debd501fec2"]
+      }
+    },
+    {
+      "id": "ts-record-to-correlated-union",
+      "title": "Как из словаря типов получить union связанных пар ключ-значение?",
+      "topic": "TypeScript",
+      "difficulty": "Продвинутый",
+      "summary": "Mapped type с последующим indexed access.",
+      "answerFile": "answers/typescript/ts-record-to-correlated-union.md",
+      "takeaway": "Зависимость ключа и значения сохраняют по вариантам, а не двумя отдельными union.",
+      "pitfall": "Описывать пару независимыми объединениями и ожидать взаимной проверки.",
+      "moduleId": "typescript",
+      "order": 12,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Зависимость ключа и значения сохраняют по вариантам, а не двумя отдельными union.",
+        "keywords": [
+          "TypeScript",
+          "Операторы типов и преобразования",
+          "Mapped",
+          "type",
+          "indexed",
+          "access"
+        ],
+        "kind": "explanation",
+        "reviewStatus": "ready",
+        "priority": "core",
+        "goalIds": ["core", "ts-record-to-correlated-union"],
+        "relatedQuestionIds": ["ts-keyof-indexed-access", "ts-discriminated-unions"],
+        "sourceRefs": ["ref-bad15debd501fec2"]
+      }
+    },
+    {
+      "id": "ts-filter-properties-by-type",
+      "title": "Как выбрать свойства объекта по типу их значений?",
+      "topic": "TypeScript",
+      "difficulty": "Продвинутый",
+      "summary": "Key remapping, условное исключение и optional-поля.",
+      "answerFile": "answers/typescript/ts-filter-properties-by-type.md",
+      "takeaway": "Правило отбора должно явно определять отношение к optional и union-значениям.",
+      "pitfall": "Считать, что name?: string и name: string всегда проходят одно условие одинаково.",
+      "moduleId": "typescript",
+      "order": 13,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Правило отбора должно явно определять отношение к optional и union-значениям.",
+        "keywords": [
+          "TypeScript",
+          "Операторы типов и преобразования",
+          "Key",
+          "remapping",
+          "optional"
+        ],
+        "kind": "explanation",
+        "reviewStatus": "ready",
+        "priority": "core",
+        "goalIds": ["core", "ts-filter-properties-by-type"],
+        "relatedQuestionIds": ["ts-mapped-types", "ts-property-modifiers"],
+        "sourceRefs": ["ref-bad15debd501fec2"]
+      }
+    },
+    {
+      "id": "ts-template-number-inference",
+      "title": "Как infer с ограничением извлекает число из строкового литерала?",
+      "topic": "TypeScript",
+      "difficulty": "Продвинутый",
+      "summary": "Типовой разбор шаблона и проверка соответствия строковому представлению.",
+      "answerFile": "answers/typescript/ts-template-number-inference.md",
+      "takeaway": "Типовая интерпретация известного литерала не заменяет парсер внешнего ввода.",
+      "pitfall": "Обещать числовой литерал для любой произвольной строки.",
+      "moduleId": "typescript",
+      "order": 14,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Типовая интерпретация известного литерала не заменяет парсер внешнего ввода.",
+        "keywords": ["TypeScript", "Операторы типов и преобразования"],
+        "kind": "explanation",
+        "reviewStatus": "ready",
+        "priority": "core",
+        "goalIds": ["core", "ts-template-number-inference"],
+        "relatedQuestionIds": ["ts-infer", "ts-template-literal-patterns"],
+        "sourceRefs": ["ref-8d4083543bc841a8"]
+      }
+    },
+    {
+      "id": "ts-recursive-type-budget",
+      "title": "Как ограничить рекурсивный тип и избежать чрезмерной глубины вычисления?",
+      "topic": "TypeScript",
+      "difficulty": "Продвинутый",
+      "summary": "Условие остановки, счётчик глубины и цена распределения.",
+      "answerFile": "answers/typescript/ts-recursive-type-budget.md",
+      "takeaway": "Типовой алгоритм тоже требует ограничений входа и стоимости.",
+      "pitfall": "Обещать один универсальный числовой лимит рекурсии для всех компиляторов и форм типов.",
+      "moduleId": "typescript",
+      "order": 15,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Типовой алгоритм тоже требует ограничений входа и стоимости.",
+        "keywords": ["TypeScript", "Операторы типов и преобразования"],
+        "kind": "explanation",
+        "reviewStatus": "ready",
+        "priority": "core",
+        "goalIds": ["core", "ts-recursive-type-budget"],
+        "relatedQuestionIds": ["ts-recursive-types", "ts-deep-readonly-contract"],
+        "sourceRefs": ["ref-d47fc0156c7d6c39"]
+      }
     }
   ]
 }

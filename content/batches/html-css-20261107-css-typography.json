@@ -1,0 +1,41 @@
+{
+  "schemaVersion": 1,
+  "id": "html-css-20261107-css-typography",
+  "title": "Расширение HTML и CSS: Текст и типографика",
+  "sectionId": "html-css",
+  "subsectionId": "css-typography",
+  "currentPass": "complete",
+  "goalIds": [
+    "core",
+    "css-line-height-inheritance",
+    "css-white-space-contract",
+    "css-baseline-inline-image",
+    "css-font-fallback-glyphs",
+    "css-variable-font-contract",
+    "css-text-decoration-contract"
+  ],
+  "questionIds": [
+    "css-line-height-inheritance",
+    "css-white-space-contract",
+    "css-baseline-inline-image",
+    "css-font-fallback-glyphs",
+    "css-variable-font-contract",
+    "css-text-decoration-contract"
+  ],
+  "scopePass": {
+    "status": "complete",
+    "remaining": []
+  },
+  "answerPass": {
+    "status": "complete",
+    "remaining": []
+  },
+  "baseline": [],
+  "notes": [
+    "HTML/CSS описывают документ, представление и нативные контракты; алгоритмы DOM, сеть, SEO и React не дублировать.",
+    "Код примеров не исполняется. Seed выполняет пользователь.",
+    "Сопоставлены исходные 48 вопросов. Новые навыки: Передача коэффициента и передача уже вычисленной длины. Схлопывание пробелов, сохранение переводов строк и разрешение переноса. Базовая линия строки, место для нижних выносных элементов и область действия свойства. Поиск семейства, начертания и доступных глифов. Диапазоны осей, высокоуровневые свойства и синтетические начертания. Распространение декорации, оформление ссылок и отличие от наследования.",
+    "Похожие кандидаты объединены с действующими ответами; список будет в журнале и отчёте.",
+    "Проверка content:build/content:check прошла на 845 вопросах. Проверены сохранность 48 прежних ID и Markdown-разделитель новых ответов. После итогового форматирования требуется повторная сборка для актуальных хешей."
+  ]
+}

@@ -16,7 +16,12 @@
         "ts-type-predicates",
         "ts-assertion-functions",
         "ts-discriminated-unions",
-        "ts-narrowing-closures"
+        "ts-narrowing-closures",
+        "ts-inferred-predicates",
+        "ts-guard-false-branch",
+        "ts-destructured-discriminant",
+        "ts-mutation-after-narrowing",
+        "ts-unknown-array-elements"
       ]
     },
     {
@@ -63,6 +68,51 @@
       "reviewed": false,
       "priority": "core",
       "relatedSkillIds": []
+    },
+    {
+      "id": "ts-inferred-predicates",
+      "title": "Когда filter выводит type predicate без явного value is T?",
+      "description": "Объяснить и применить правило с учётом его границ: Предикат должен корректно описывать и положительный, и отрицательный исход проверки.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": ["ts-type-predicates", "ts-control-flow-narrowing"]
+    },
+    {
+      "id": "ts-guard-false-branch",
+      "title": "Почему предикат «это маленькое число» нельзя объявлять как value is number?",
+      "description": "Объяснить и применить правило с учётом его границ: Type guard - логический контракт, а не просто удобная аннотация true-ветви.",
+      "requiredDifficulties": ["Продвинутый"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": ["ts-type-predicates"]
+    },
+    {
+      "id": "ts-destructured-discriminant",
+      "title": "Когда деструктуризация discriminated union сохраняет связь между полями?",
+      "description": "Объяснить и применить правило с учётом его границ: Отдельные переменные могут сохранять доказанную связь, но не создают её сами.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": ["ts-discriminated-unions", "ts-event-map-correlation"]
+    },
+    {
+      "id": "ts-mutation-after-narrowing",
+      "title": "Может ли вызов другой функции сделать ранее суженное свойство небезопасным?",
+      "description": "Объяснить и применить правило с учётом его границ: Сужение не превращает изменяемый объект в неизменяемый факт.",
+      "requiredDifficulties": ["Продвинутый"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": ["ts-narrowing-closures", "ts-property-modifiers"]
+    },
+    {
+      "id": "ts-unknown-array-elements",
+      "title": "Почему Array.isArray недостаточно для проверки массива строк из unknown?",
+      "description": "Объяснить и применить правило с учётом его границ: Проверка контейнера и доказательство контракта его содержимого - разные шаги.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": ["ts-type-predicates", "ts-validated-api-boundary", "array-detection"]
     }
   ],
   "questions": [
@@ -189,6 +239,125 @@
         "sourceRefs": ["ref-36c5f0cd57b1b768"]
       },
       "answerFile": "answers/typescript/ts-narrowing-closures.md"
+    },
+    {
+      "id": "ts-inferred-predicates",
+      "title": "Когда filter выводит type predicate без явного value is T?",
+      "topic": "TypeScript",
+      "difficulty": "Средний",
+      "summary": "Вывод предикатов с TypeScript 5.5 и ограничения truthiness.",
+      "answerFile": "answers/typescript/ts-inferred-predicates.md",
+      "takeaway": "Предикат должен корректно описывать и положительный, и отрицательный исход проверки.",
+      "pitfall": "Использовать truthiness-фильтр, когда ноль является допустимым значением.",
+      "moduleId": "typescript",
+      "order": 5,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Предикат должен корректно описывать и положительный, и отрицательный исход проверки.",
+        "keywords": ["TypeScript", "Сужение типов и Type Guards", "truthiness"],
+        "kind": "explanation",
+        "reviewStatus": "ready",
+        "priority": "core",
+        "goalIds": ["core", "ts-inferred-predicates"],
+        "relatedQuestionIds": ["ts-type-predicates", "ts-control-flow-narrowing"],
+        "sourceRefs": ["ref-93859c354bdf1f3b"]
+      }
+    },
+    {
+      "id": "ts-guard-false-branch",
+      "title": "Почему предикат «это маленькое число» нельзя объявлять как value is number?",
+      "topic": "TypeScript",
+      "difficulty": "Продвинутый",
+      "summary": "Двустороннее обещание type predicate и дополнительное бизнес-условие.",
+      "answerFile": "answers/typescript/ts-guard-false-branch.md",
+      "takeaway": "Type guard - логический контракт, а не просто удобная аннотация true-ветви.",
+      "pitfall": "Считать любую проверку над числом корректным предикатом number.",
+      "moduleId": "typescript",
+      "order": 6,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Type guard - логический контракт, а не просто удобная аннотация true-ветви.",
+        "keywords": ["TypeScript", "Сужение типов и Type Guards", "type", "predicate"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "priority": "core",
+        "goalIds": ["core", "ts-guard-false-branch"],
+        "relatedQuestionIds": ["ts-type-predicates"],
+        "sourceRefs": ["ref-93859c354bdf1f3b"]
+      }
+    },
+    {
+      "id": "ts-destructured-discriminant",
+      "title": "Когда деструктуризация discriminated union сохраняет связь между полями?",
+      "topic": "TypeScript",
+      "difficulty": "Средний",
+      "summary": "Связь обязательной метки и payload при неизменяемых привязках.",
+      "answerFile": "answers/typescript/ts-destructured-discriminant.md",
+      "takeaway": "Отдельные переменные могут сохранять доказанную связь, но не создают её сами.",
+      "pitfall": "Описывать kind и value независимыми union и ожидать корреляцию.",
+      "moduleId": "typescript",
+      "order": 7,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Отдельные переменные могут сохранять доказанную связь, но не создают её сами.",
+        "keywords": ["TypeScript", "Сужение типов и Type Guards", "payload"],
+        "kind": "explanation",
+        "reviewStatus": "ready",
+        "priority": "core",
+        "goalIds": ["core", "ts-destructured-discriminant"],
+        "relatedQuestionIds": ["ts-discriminated-unions", "ts-event-map-correlation"],
+        "sourceRefs": ["ref-d4b7250ff12d57ad"]
+      }
+    },
+    {
+      "id": "ts-mutation-after-narrowing",
+      "title": "Может ли вызов другой функции сделать ранее суженное свойство небезопасным?",
+      "topic": "TypeScript",
+      "difficulty": "Продвинутый",
+      "summary": "Мутация через alias и пределы межпроцедурного анализа.",
+      "answerFile": "answers/typescript/ts-mutation-after-narrowing.md",
+      "takeaway": "Сужение не превращает изменяемый объект в неизменяемый факт.",
+      "pitfall": "Считать зелёную типизацию доказательством отсутствия побочных мутаций.",
+      "moduleId": "typescript",
+      "order": 8,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Сужение не превращает изменяемый объект в неизменяемый факт.",
+        "keywords": ["TypeScript", "Сужение типов и Type Guards", "alias"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "priority": "core",
+        "goalIds": ["core", "ts-mutation-after-narrowing"],
+        "relatedQuestionIds": ["ts-narrowing-closures", "ts-property-modifiers"],
+        "sourceRefs": ["ref-b1f557c0324024a7"]
+      }
+    },
+    {
+      "id": "ts-unknown-array-elements",
+      "title": "Почему Array.isArray недостаточно для проверки массива строк из unknown?",
+      "topic": "TypeScript",
+      "difficulty": "Средний",
+      "summary": "Форма контейнера и валидация каждого элемента.",
+      "answerFile": "answers/typescript/ts-unknown-array-elements.md",
+      "takeaway": "Проверка контейнера и доказательство контракта его содержимого - разные шаги.",
+      "pitfall": "Возвращать is string[] сразу после одного Array.isArray.",
+      "moduleId": "typescript",
+      "order": 9,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Проверка контейнера и доказательство контракта его содержимого - разные шаги.",
+        "keywords": ["TypeScript", "Сужение типов и Type Guards"],
+        "kind": "explanation",
+        "reviewStatus": "ready",
+        "priority": "core",
+        "goalIds": ["core", "ts-unknown-array-elements"],
+        "relatedQuestionIds": [
+          "ts-type-predicates",
+          "ts-validated-api-boundary",
+          "array-detection"
+        ],
+        "sourceRefs": ["ref-b2adaad06a21a777"]
+      }
     }
   ]
 }

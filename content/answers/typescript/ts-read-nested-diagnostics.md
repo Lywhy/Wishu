@@ -1,0 +1,27 @@
+**Найдите, какой тип требуется и какой передан, затем двигайтесь к первому содержательному несовпадению внутри структуры. Внешняя generic-обёртка часто только показывает путь к реальной причине.**
+
+<!-- wishu:answer-block -->
+
+#### Механизм и границы
+
+- Проверьте nullability, optional, readonly, конкретное поле и вход/выход callback.
+- Сведите пример к минимальной форме, сохранив версию и существенные параметры проверки.
+- Не добавляйте двойной as до выяснения, ошибочны данные, модель или публичный контракт.
+
+#### Пример
+
+```typescript
+type User = { lastSeen: Date }
+const dto = { lastSeen: "2026-01-01" }
+// const user: User = dto // Причина: string не является Date.
+const user: User = { lastSeen: new Date(dto.lastSeen) }
+```
+
+#### Для закрепления
+
+- [Что делает type assertion через as и чего он не проверяет?](/questions/ts-type-assertions)
+- [Почему транспортный DTO стоит отделять от доменной модели?](/questions/ts-dto-domain-boundary)
+
+#### Источник
+
+[Документация TypeScript](https://www.typescriptlang.org/docs/handbook/2/everyday-types.html).

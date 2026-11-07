@@ -9,3 +9,19 @@
 <!-- wishu:answer-block -->
 
 [Документация](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/p).
+
+<!-- wishu:answer-block -->
+
+#### Проверка исходника до исправления hydration
+
+Закрытие p перед вложенным блочным содержимым происходит при разборе HTML. Сервер мог выдать одну строку, а React получит уже скорректированное дерево. Не подавляйте предупреждение гидратации до проверки валидности разметки. Проверяйте вкладку Elements и исходный ответ отдельно; исправление состоит в корректной структуре, а не случайной дополнительной обёртке внутри p.
+
+```html
+<!-- Корректная структура вместо <p>Текст<div>Блок</div></p> -->
+<p>Вводный текст.</p>
+<div>Самостоятельный блок.</div>
+```
+
+- [Чем пустые HTML-элементы отличаются от замещаемых?](/questions/html-void-replaced-elements)
+
+[WHATWG HTML: grouping-content.html](https://html.spec.whatwg.org/multipage/grouping-content.html#the-p-element).

@@ -1,0 +1,45 @@
+{
+  "schemaVersion": 1,
+  "id": "html-css-20261107-html-document",
+  "title": "Расширение HTML и CSS: HTML-документ и текст",
+  "sectionId": "html-css",
+  "subsectionId": "html-document",
+  "currentPass": "complete",
+  "goalIds": [
+    "core",
+    "html-language-direction",
+    "html-encoding-contract",
+    "html-boolean-enumerated-attributes",
+    "html-void-replaced-elements",
+    "html-character-references",
+    "html-text-semantics",
+    "html-list-description-contract",
+    "html-base-url"
+  ],
+  "questionIds": [
+    "html-language-direction",
+    "html-encoding-contract",
+    "html-boolean-enumerated-attributes",
+    "html-void-replaced-elements",
+    "html-character-references",
+    "html-text-semantics",
+    "html-list-description-contract",
+    "html-base-url"
+  ],
+  "scopePass": {
+    "status": "complete",
+    "remaining": []
+  },
+  "answerPass": {
+    "status": "complete",
+    "remaining": []
+  },
+  "baseline": [],
+  "notes": [
+    "HTML/CSS описывают документ, представление и нативные контракты; алгоритмы DOM, сеть, SEO и React не дублировать.",
+    "Код примеров не исполняется. Seed выполняет пользователь.",
+    "Сопоставлены исходные 48 вопросов. Новые навыки: Язык текста, направление письма и изоляция неизвестного пользовательского содержимого. Байты ответа, транспортные метаданные и раннее объявление UTF-8. Булевы атрибуты и атрибуты с перечислимыми строковыми значениями. Синтаксис void elements и модель внешнего содержимого replaced elements. Различие данных и разметки, кавычки атрибутов и неразрывный пробел. Важность, смысловое ударение и визуальное выделение текста. Неупорядоченный список, последовательность и связи терминов с описаниями. Базовый URL документа и неожиданные эффекты глобального изменения разрешения ссылок.",
+    "Похожие кандидаты объединены с действующими ответами; список будет в журнале и отчёте.",
+    "Проверка content:build/content:check прошла на 845 вопросах. Проверены сохранность 48 прежних ID и Markdown-разделитель новых ответов. После итогового форматирования требуется повторная сборка для актуальных хешей."
+  ]
+}

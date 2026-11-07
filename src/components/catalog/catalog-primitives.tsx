@@ -65,27 +65,32 @@ export function CatalogHeader({
   description,
   eyebrow,
   questionHeading = false,
+  actions,
 }: {
   title: string
   description: string
   eyebrow: string
   questionHeading?: boolean
+  actions?: ReactNode
 }) {
   return (
-    <header className="mb-5 space-y-2 sm:mb-7 sm:space-y-3">
-      <p className="hidden text-xs font-medium tracking-wide text-primary sm:block">
-        <AnimatedText>{eyebrow}</AnimatedText>
-      </p>
-      <h1
-        data-question-heading={questionHeading || undefined}
-        tabIndex={questionHeading ? -1 : undefined}
-        className="text-2xl font-semibold tracking-tight outline-none sm:text-4xl"
-      >
-        <AnimatedText delay={0.04}>{title}</AnimatedText>
-      </h1>
-      <p className="max-w-2xl text-xs leading-6 text-muted-foreground sm:text-sm sm:leading-7">
-        <AnimatedText delay={0.08}>{description}</AnimatedText>
-      </p>
+    <header className="mb-6 flex flex-wrap items-start justify-between gap-4 sm:mb-8">
+      <div className="min-w-0 flex-1 basis-full space-y-2 sm:basis-0 sm:space-y-3">
+        <p className="hidden text-xs font-medium tracking-wide text-primary sm:block">
+          <AnimatedText>{eyebrow}</AnimatedText>
+        </p>
+        <h1
+          data-question-heading={questionHeading || undefined}
+          tabIndex={questionHeading ? -1 : undefined}
+          className="text-2xl font-semibold tracking-tight outline-none sm:text-3xl"
+        >
+          <AnimatedText delay={0.04}>{title}</AnimatedText>
+        </h1>
+        <p className="max-w-2xl text-xs leading-6 text-muted-foreground sm:text-sm sm:leading-7">
+          <AnimatedText delay={0.08}>{description}</AnimatedText>
+        </p>
+      </div>
+      {actions && <div className="flex shrink-0 flex-wrap gap-2 sm:pt-6">{actions}</div>}
     </header>
   )
 }

@@ -1,0 +1,117 @@
+{
+  "schemaVersion": 1,
+  "id": "html-css-foundations-20261107-cascade",
+  "title": "Базовый и средний HTML/CSS: Каскад и блочная модель",
+  "sectionId": "html-css",
+  "subsectionId": "cascade",
+  "currentPass": "complete",
+  "goalIds": [
+    "core",
+    "css-cascade",
+    "css-box-sizing",
+    "css-inheritance",
+    "css-selector-functions",
+    "css-custom-properties",
+    "css-content-visibility",
+    "css-progressive-enhancement",
+    "css-size-constraints",
+    "css-value-processing",
+    "css-shorthand-reset",
+    "css-error-recovery",
+    "css-registered-property",
+    "css-reset-normalize",
+    "css-rule-declaration-syntax",
+    "css-stylesheet-connection",
+    "css-box-layers-spacing",
+    "css-containment-types"
+  ],
+  "questionIds": [
+    "css-rule-declaration-syntax",
+    "css-stylesheet-connection",
+    "css-box-layers-spacing",
+    "css-containment-types",
+    "css-selector-functions"
+  ],
+  "scopePass": {
+    "status": "complete",
+    "remaining": []
+  },
+  "answerPass": {
+    "status": "complete",
+    "remaining": []
+  },
+  "baseline": [
+    {
+      "id": "css-cascade",
+      "title": "Как браузер выбирает правило при конфликте CSS?",
+      "contentHash": "cc0f796d6bea00af0344b48ac81eaf04376f20c15028d328a1cdc6bc55fd8dcf"
+    },
+    {
+      "id": "css-box-sizing",
+      "title": "Чем content-box отличается от border-box?",
+      "contentHash": "9d33964366662ada89988e31462ae026ac4ef8e772faacb55a56c5c57c7bf3c4"
+    },
+    {
+      "id": "css-inheritance",
+      "title": "Какие CSS-свойства наследуются и что делают inherit и initial?",
+      "contentHash": "f120ccd1970ba30f062023da7b5795430ec6d25b2377dd06764a223b8286727a"
+    },
+    {
+      "id": "css-selector-functions",
+      "title": "Как :is(), :where(), :not() и :has() влияют на выбор элементов и специфичность?",
+      "contentHash": "b324472bbef245435d616ddd0db7f404ae379fb30e442315c71819860cca9583"
+    },
+    {
+      "id": "css-custom-properties",
+      "title": "Как CSS custom properties наследуются и когда срабатывает fallback у var()?",
+      "contentHash": "a99b4f9672607db87b50dbdc8416f557bb5494630e408ce2b2ed75d9eae1e63a"
+    },
+    {
+      "id": "css-content-visibility",
+      "title": "Что даёт content-visibility: auto и чем оно отличается от виртуализации?",
+      "contentHash": "805ab0c627cccc2604e074d173be4ebf1743c1e83ff528fde304f963612a1ae3"
+    },
+    {
+      "id": "css-progressive-enhancement",
+      "title": "Как использовать @supports и улучшать интерфейс без поломки базового варианта?",
+      "contentHash": "477c0034d6de1ea5b80364aa554f18bd3a5a115abf9a24c1d949630643412650"
+    },
+    {
+      "id": "css-size-constraints",
+      "title": "Как width, min-width и max-width разрешают конфликт размеров?",
+      "contentHash": "684dc4edd2aede89b029365a0fb4ceb11896269158d9c5146c73cbabfdb8a5ba"
+    },
+    {
+      "id": "css-value-processing",
+      "title": "Чем specified, computed, used и actual values отличаются друг от друга?",
+      "contentHash": "19c8b3ad4ea5beaa167540644bef9b0fa514b6c56020b2e03c20255613581486"
+    },
+    {
+      "id": "css-shorthand-reset",
+      "title": "Почему shorthand может сбросить свойство, которого в нём явно нет?",
+      "contentHash": "4215a88a9c75adcc9a2915cedab49f64429669f804b9cddd281f45a7a83df6e9"
+    },
+    {
+      "id": "css-error-recovery",
+      "title": "Как браузер обрабатывает неизвестное свойство, неверное значение и ошибку в селекторе?",
+      "contentHash": "71144592bf236ca0f227b60c887200831528e303c286d93f34a407cee8944abb"
+    },
+    {
+      "id": "css-registered-property",
+      "title": "Что меняет регистрация custom property через @property?",
+      "contentHash": "336ae9ddbf5a440d37064e24c48f929100650fb0faa47965101efa89101c42fd"
+    },
+    {
+      "id": "css-reset-normalize",
+      "title": "Чем reset отличается от normalize и почему опасно сбрасывать всё через all?",
+      "contentHash": "d47074e63835dd943de8479d35a5d4e433e695d0719cb4655197173b3a7572f2"
+    }
+  ],
+  "notes": [
+    "Пакет 2026-11-07: только базовый и средний уровни. Определения и самостоятельные практические навыки; современные API не являются целью пакета.",
+    "Сохранять прежние ID. Не дублировать общие определения из связанных карточек. Примеры не исполнять.",
+    "Новые самостоятельные цели: Выбор элементов, блок деклараций и пары свойство-значение. Внешняя таблица, встроенный блок и локальные декларации. Внутренняя область, рамка и внешнее расстояние. Обещания независимости частей страницы и побочные эффекты containment.",
+    "Сопоставлены базовые определения и прикладные вопросы. Пересечения сохранены в existing.mjs до записи в журнал.",
+    "Content:build и полная content:check прошли на 905 вопросах. Сохранены все 845 исходных ID; кроме 6 согласованных расширений прежние хеши совпадают. Проверены два блока каждого нового ответа и значимый пробел в примере :empty. Код примеров не исполнялся."
+  ]
+}

@@ -1,0 +1,389 @@
+{
+  "$schema": "../question-bundle.schema.json",
+  "sectionId": "html-css",
+  "subsectionId": "css-selectors",
+  "scope": "Комбинаторы, структурные состояния, псевдоэлементы и границы правил.",
+  "coverageGoals": [
+    {
+      "id": "core",
+      "title": "Селекторы и область действия",
+      "description": "Комбинаторы, структурные состояния, псевдоэлементы и границы правил.",
+      "requiredDifficulties": [],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": [
+        "css-combinator-contract",
+        "css-structural-counting",
+        "css-pseudo-element-content",
+        "css-attribute-selector-tokens",
+        "css-native-nesting-contract",
+        "css-scope-boundary",
+        "css-state-focus-within",
+        "css-basic-selector-choice",
+        "css-empty-dom-content",
+        "css-control-state-selector",
+        "css-visited-privacy"
+      ]
+    },
+    {
+      "id": "css-combinator-contract",
+      "title": "Чем отличаются пробел, >, + и ~ в CSS-селекторах?",
+      "description": "Сначала установите отношение в DOM, затем выбирайте комбинатор.",
+      "requiredDifficulties": ["Базовый"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "css-structural-counting",
+      "title": "Чем nth-child отличается от nth-of-type и как работает of S?",
+      "description": "Различайте фильтрацию множества и проверку позиции в уже заданном множестве.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "css-pseudo-element-content",
+      "title": "Чем псевдоэлемент отличается от псевдокласса и можно ли хранить смысл в ::before?",
+      "description": "Смысл храните в HTML, декоративное представление можно создавать CSS.",
+      "requiredDifficulties": ["Базовый"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "css-attribute-selector-tokens",
+      "title": "Чем [attr], [attr=\"x\"], [attr~=\"x\"] и [attr*=\"x\"] отличаются?",
+      "description": "Выбирайте сравнение по структуре значения, а не по случайному совпадению символов.",
+      "requiredDifficulties": ["Базовый"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "css-native-nesting-contract",
+      "title": "Чем нативная CSS-вложенность отличается от простого склеивания селекторов?",
+      "description": "Вложенность сокращает запись, но не отменяет отношения DOM и правила специфичности.",
+      "requiredDifficulties": ["Продвинутый"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "css-scope-boundary",
+      "title": "Что ограничивает @scope и когда учитывается scoping proximity?",
+      "description": "Область селектора и изоляция наследования - разные механизмы.",
+      "requiredDifficulties": ["Продвинутый"],
+      "reviewed": true,
+      "priority": "extended",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "css-state-focus-within",
+      "title": "Как связаны hover, active, focus и focus-within?",
+      "description": "Состояния ввода описывают разные моменты взаимодействия и не заменяют состояние приложения.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "css-basic-selector-choice",
+      "title": "Как работают селекторы тега, класса, ID и универсальный селектор?",
+      "description": "Класс удобен для повторяемого оформления, ID - для уникальной идентификации.",
+      "requiredDifficulties": ["Базовый"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "css-empty-dom-content",
+      "title": "Почему визуально пустой элемент может не подходить под :empty?",
+      "description": "DOM-пустота, визуальная пустота и отсутствие данных - разные понятия.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "css-control-state-selector",
+      "title": "Чем :checked и :disabled отличаются от [checked] и [disabled]?",
+      "description": "Для отображения нативного состояния выбирайте соответствующий псевдокласс.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "css-visited-privacy",
+      "title": "Почему :visited не позволяет произвольно менять вид ссылки или читать историю?",
+      "description": "Visited - ограниченная подсказка отображения, а не источник данных приложения.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": true,
+      "priority": "extended",
+      "relatedSkillIds": []
+    }
+  ],
+  "questions": [
+    {
+      "id": "css-combinator-contract",
+      "title": "Чем отличаются пробел, >, + и ~ в CSS-селекторах?",
+      "topic": "HTML и CSS",
+      "difficulty": "Базовый",
+      "summary": "Потомки, прямые дети и последующие соседи по дереву элементов.",
+      "answerFile": "answers/html-css/css-combinator-contract.md",
+      "takeaway": "Сначала установите отношение в DOM, затем выбирайте комбинатор.",
+      "pitfall": "Ожидать, что + выберет предыдущего соседа или что .a.b означает вложенность.",
+      "moduleId": "html-css",
+      "order": 0,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Сначала установите отношение в DOM, затем выбирайте комбинатор.",
+        "keywords": ["HTML и CSS", "Селекторы и область действия", "combinator", "contract"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "priority": "core",
+        "goalIds": ["core", "css-combinator-contract"],
+        "relatedQuestionIds": [],
+        "sourceRefs": ["ref-b8f847ef85e3c638"]
+      }
+    },
+    {
+      "id": "css-structural-counting",
+      "title": "Чем nth-child отличается от nth-of-type и как работает of S?",
+      "topic": "HTML и CSS",
+      "difficulty": "Средний",
+      "summary": "Индексы среди элементов-соседей и фильтрация перед отсчётом.",
+      "answerFile": "answers/html-css/css-structural-counting.md",
+      "takeaway": "Различайте фильтрацию множества и проверку позиции в уже заданном множестве.",
+      "pitfall": "Объяснять nth-of-type как «номер элемента с данным классом».",
+      "moduleId": "html-css",
+      "order": 1,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Различайте фильтрацию множества и проверку позиции в уже заданном множестве.",
+        "keywords": ["HTML и CSS", "Селекторы и область действия", "structural", "counting"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "priority": "core",
+        "goalIds": ["core", "css-structural-counting"],
+        "relatedQuestionIds": ["css-selector-functions"],
+        "sourceRefs": ["ref-65778a68bd96139b"]
+      }
+    },
+    {
+      "id": "css-pseudo-element-content",
+      "title": "Чем псевдоэлемент отличается от псевдокласса и можно ли хранить смысл в ::before?",
+      "topic": "HTML и CSS",
+      "difficulty": "Базовый",
+      "summary": "Состояние существующего элемента и стилизуемая часть представления.",
+      "answerFile": "answers/html-css/css-pseudo-element-content.md",
+      "takeaway": "Смысл храните в HTML, декоративное представление можно создавать CSS.",
+      "pitfall": "Выводить единственное сообщение «Обязательно» через ::after и считать его надёжной подписью.",
+      "moduleId": "html-css",
+      "order": 2,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Смысл храните в HTML, декоративное представление можно создавать CSS.",
+        "keywords": ["HTML и CSS", "Селекторы и область действия", "pseudo", "element", "content"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "priority": "core",
+        "goalIds": ["core", "css-pseudo-element-content"],
+        "relatedQuestionIds": ["html-accessible-name"],
+        "sourceRefs": ["ref-72a9a388aa6333d7"]
+      }
+    },
+    {
+      "id": "css-attribute-selector-tokens",
+      "title": "Чем [attr], [attr=\"x\"], [attr~=\"x\"] и [attr*=\"x\"] отличаются?",
+      "topic": "HTML и CSS",
+      "difficulty": "Базовый",
+      "summary": "Наличие атрибута, полное значение, отдельный токен и подстрока.",
+      "answerFile": "answers/html-css/css-attribute-selector-tokens.md",
+      "takeaway": "Выбирайте сравнение по структуре значения, а не по случайному совпадению символов.",
+      "pitfall": "Использовать *= для проверки одного класса и задевать похожие имена.",
+      "moduleId": "html-css",
+      "order": 3,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Выбирайте сравнение по структуре значения, а не по случайному совпадению символов.",
+        "keywords": [
+          "HTML и CSS",
+          "Селекторы и область действия",
+          "attribute",
+          "selector",
+          "tokens"
+        ],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "priority": "core",
+        "goalIds": ["core", "css-attribute-selector-tokens"],
+        "relatedQuestionIds": [],
+        "sourceRefs": ["ref-8d30e135dd1e22a3"]
+      }
+    },
+    {
+      "id": "css-native-nesting-contract",
+      "title": "Чем нативная CSS-вложенность отличается от простого склеивания селекторов?",
+      "topic": "HTML и CSS",
+      "difficulty": "Продвинутый",
+      "summary": "Смысл &, потомки и специфичность списка родительских селекторов.",
+      "answerFile": "answers/html-css/css-native-nesting-contract.md",
+      "takeaway": "Вложенность сокращает запись, но не отменяет отношения DOM и правила специфичности.",
+      "pitfall": "Добавить ID в список ради одного случая и незаметно усилить все вложенные правила.",
+      "moduleId": "html-css",
+      "order": 4,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Вложенность сокращает запись, но не отменяет отношения DOM и правила специфичности.",
+        "keywords": ["HTML и CSS", "Селекторы и область действия", "native", "nesting", "contract"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "priority": "core",
+        "goalIds": ["core", "css-native-nesting-contract"],
+        "relatedQuestionIds": ["css-selector-functions"],
+        "sourceRefs": ["ref-f2cc25bc1138d584"]
+      }
+    },
+    {
+      "id": "css-scope-boundary",
+      "title": "Что ограничивает @scope и когда учитывается scoping proximity?",
+      "topic": "HTML и CSS",
+      "difficulty": "Продвинутый",
+      "summary": "Корень, нижняя граница и разрешение конфликтов после специфичности.",
+      "answerFile": "answers/html-css/css-scope-boundary.md",
+      "takeaway": "Область селектора и изоляция наследования - разные механизмы.",
+      "pitfall": "Ожидать, что близкая область победит более специфичный селектор или полностью изолирует компонент.",
+      "moduleId": "html-css",
+      "order": 5,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Область селектора и изоляция наследования - разные механизмы.",
+        "keywords": ["HTML и CSS", "Селекторы и область действия", "scope", "boundary"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "priority": "extended",
+        "goalIds": ["core", "css-scope-boundary"],
+        "relatedQuestionIds": ["css-cascade", "css-inheritance"],
+        "sourceRefs": ["ref-fe27c9b92537c578"]
+      }
+    },
+    {
+      "id": "css-state-focus-within",
+      "title": "Как связаны hover, active, focus и focus-within?",
+      "topic": "HTML и CSS",
+      "difficulty": "Средний",
+      "summary": "Независимые состояния указателя, активации и фокуса поддерева.",
+      "answerFile": "answers/html-css/css-state-focus-within.md",
+      "takeaway": "Состояния ввода описывают разные моменты взаимодействия и не заменяют состояние приложения.",
+      "pitfall": "Использовать :active для постоянного выделения текущей страницы.",
+      "moduleId": "html-css",
+      "order": 6,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Состояния ввода описывают разные моменты взаимодействия и не заменяют состояние приложения.",
+        "keywords": ["HTML и CSS", "Селекторы и область действия", "state", "focus", "within"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "priority": "core",
+        "goalIds": ["core", "css-state-focus-within"],
+        "relatedQuestionIds": ["css-focus-indicator"],
+        "sourceRefs": ["ref-02afd434080755b4"]
+      }
+    },
+    {
+      "id": "css-basic-selector-choice",
+      "title": "Как работают селекторы тега, класса, ID и универсальный селектор?",
+      "topic": "HTML и CSS",
+      "difficulty": "Базовый",
+      "summary": "Базовые способы выбрать элементы и смысл уникального идентификатора.",
+      "answerFile": "answers/html-css/css-basic-selector-choice.md",
+      "takeaway": "Класс удобен для повторяемого оформления, ID - для уникальной идентификации.",
+      "pitfall": "Копировать компонент с одним и тем же id по всему списку.",
+      "moduleId": "html-css",
+      "order": 7,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Класс удобен для повторяемого оформления, ID - для уникальной идентификации.",
+        "keywords": ["HTML и CSS", "Селекторы и область действия", "basic", "selector", "choice"],
+        "kind": "explanation",
+        "reviewStatus": "ready",
+        "priority": "core",
+        "goalIds": ["core", "css-basic-selector-choice"],
+        "relatedQuestionIds": ["css-combinator-contract", "html-form-label"],
+        "sourceRefs": ["ref-5da8d568e7d6eb80"]
+      }
+    },
+    {
+      "id": "css-empty-dom-content",
+      "title": "Почему визуально пустой элемент может не подходить под :empty?",
+      "topic": "HTML и CSS",
+      "difficulty": "Средний",
+      "summary": "Пустота по DOM и отличие от отсутствия видимого текста.",
+      "answerFile": "answers/html-css/css-empty-dom-content.md",
+      "takeaway": "DOM-пустота, визуальная пустота и отсутствие данных - разные понятия.",
+      "pitfall": "Использовать :empty как единственный индикатор загрузки или пустого ответа сервера.",
+      "moduleId": "html-css",
+      "order": 8,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "DOM-пустота, визуальная пустота и отсутствие данных - разные понятия.",
+        "keywords": ["HTML и CSS", "Селекторы и область действия", "empty", "dom", "content"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "priority": "core",
+        "goalIds": ["core", "css-empty-dom-content"],
+        "relatedQuestionIds": [],
+        "sourceRefs": ["ref-62bdb85aad330a71"]
+      }
+    },
+    {
+      "id": "css-control-state-selector",
+      "title": "Чем :checked и :disabled отличаются от [checked] и [disabled]?",
+      "topic": "HTML и CSS",
+      "difficulty": "Средний",
+      "summary": "Текущее состояние контрола и буквальное наличие атрибута.",
+      "answerFile": "answers/html-css/css-control-state-selector.md",
+      "takeaway": "Для отображения нативного состояния выбирайте соответствующий псевдокласс.",
+      "pitfall": "Оформлять текущий выбор через [checked] и получать устаревший вид после клика.",
+      "moduleId": "html-css",
+      "order": 9,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Для отображения нативного состояния выбирайте соответствующий псевдокласс.",
+        "keywords": ["HTML и CSS", "Селекторы и область действия", "control", "state", "selector"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "priority": "core",
+        "goalIds": ["core", "css-control-state-selector"],
+        "relatedQuestionIds": ["html-boolean-enumerated-attributes", "html-fieldset-radio-group"],
+        "sourceRefs": ["ref-8cb99d8acdf0d4f4"]
+      }
+    },
+    {
+      "id": "css-visited-privacy",
+      "title": "Почему :visited не позволяет произвольно менять вид ссылки или читать историю?",
+      "topic": "HTML и CSS",
+      "difficulty": "Средний",
+      "summary": "Ограниченные свойства и защита истории переходов от наблюдения.",
+      "answerFile": "answers/html-css/css-visited-privacy.md",
+      "takeaway": "Visited - ограниченная подсказка отображения, а не источник данных приложения.",
+      "pitfall": "Пытаться определить посещённые сайты через размеры ссылки или getComputedStyle.",
+      "moduleId": "html-css",
+      "order": 10,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Visited - ограниченная подсказка отображения, а не источник данных приложения.",
+        "keywords": ["HTML и CSS", "Селекторы и область действия", "visited", "privacy"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "priority": "extended",
+        "goalIds": ["core", "css-visited-privacy"],
+        "relatedQuestionIds": [],
+        "sourceRefs": ["ref-a631b942bd0cc6c6"]
+      }
+    }
+  ]
+}

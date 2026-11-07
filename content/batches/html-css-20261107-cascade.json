@@ -1,0 +1,87 @@
+{
+  "schemaVersion": 1,
+  "id": "html-css-20261107-cascade",
+  "title": "Расширение HTML и CSS: Каскад и блочная модель",
+  "sectionId": "html-css",
+  "subsectionId": "cascade",
+  "currentPass": "complete",
+  "goalIds": [
+    "core",
+    "css-cascade",
+    "css-box-sizing",
+    "css-inheritance",
+    "css-selector-functions",
+    "css-custom-properties",
+    "css-content-visibility",
+    "css-progressive-enhancement",
+    "css-size-constraints",
+    "css-value-processing",
+    "css-shorthand-reset",
+    "css-error-recovery",
+    "css-registered-property",
+    "css-reset-normalize"
+  ],
+  "questionIds": [
+    "css-size-constraints",
+    "css-value-processing",
+    "css-shorthand-reset",
+    "css-error-recovery",
+    "css-registered-property",
+    "css-reset-normalize",
+    "css-cascade",
+    "css-inheritance",
+    "css-custom-properties"
+  ],
+  "scopePass": {
+    "status": "complete",
+    "remaining": []
+  },
+  "answerPass": {
+    "status": "complete",
+    "remaining": []
+  },
+  "baseline": [
+    {
+      "id": "css-cascade",
+      "title": "Как браузер выбирает правило при конфликте CSS?",
+      "contentHash": "f20d925b17afc528a583cc35b434b60c63eb8d33d17e20fb33f2fb0ad6ec47e2"
+    },
+    {
+      "id": "css-box-sizing",
+      "title": "Чем content-box отличается от border-box?",
+      "contentHash": "9d33964366662ada89988e31462ae026ac4ef8e772faacb55a56c5c57c7bf3c4"
+    },
+    {
+      "id": "css-inheritance",
+      "title": "Какие CSS-свойства наследуются и что делают inherit и initial?",
+      "contentHash": "eccfb53d5bb20c3a9cfe4e6baf1444b15bd1e0e796fb5253ca3d741724ca1a88"
+    },
+    {
+      "id": "css-selector-functions",
+      "title": "Как :is(), :where(), :not() и :has() влияют на выбор элементов и специфичность?",
+      "contentHash": "b324472bbef245435d616ddd0db7f404ae379fb30e442315c71819860cca9583"
+    },
+    {
+      "id": "css-custom-properties",
+      "title": "Как CSS custom properties наследуются и когда срабатывает fallback у var()?",
+      "contentHash": "3f624bd503b2878f766db1c7ef0ced98910505aa825730d60373b26718e1a72f"
+    },
+    {
+      "id": "css-content-visibility",
+      "title": "Что даёт content-visibility: auto и чем оно отличается от виртуализации?",
+      "contentHash": "805ab0c627cccc2604e074d173be4ebf1743c1e83ff528fde304f963612a1ae3"
+    },
+    {
+      "id": "css-progressive-enhancement",
+      "title": "Как использовать @supports и улучшать интерфейс без поломки базового варианта?",
+      "contentHash": "477c0034d6de1ea5b80364aa554f18bd3a5a115abf9a24c1d949630643412650"
+    }
+  ],
+  "notes": [
+    "HTML/CSS описывают документ, представление и нативные контракты; алгоритмы DOM, сеть, SEO и React не дублировать.",
+    "Код примеров не исполняется. Seed выполняет пользователь.",
+    "Сопоставлены исходные 48 вопросов. Новые навыки: Предпочтительный размер, нижняя граница и верхнее ограничение. Этапы обработки значения от каскада до геометрии и отображения. Полное развёртывание сокращённой декларации и порядок longhand. Локальное отбрасывание деклараций и различие обычных и forgiving selector lists. Тип значения, наследование, initial-value и интерполяция. Браузерные стили, базовый слой проекта и сохранение нативных состояний.",
+    "Похожие кандидаты объединены с действующими ответами; список будет в журнале и отчёте.",
+    "Проверка content:build/content:check прошла на 845 вопросах. Проверены сохранность 48 прежних ID и Markdown-разделитель новых ответов. После итогового форматирования требуется повторная сборка для актуальных хешей."
+  ]
+}

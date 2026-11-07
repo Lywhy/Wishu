@@ -21,7 +21,11 @@
         "ts-project-references",
         "ts-ambient-types-scope",
         "ts-check-javascript",
-        "ts-skip-lib-check"
+        "ts-skip-lib-check",
+        "ts-module-detection-scope",
+        "ts-side-effect-import-check",
+        "ts-json-import-boundary",
+        "ts-package-conditional-types"
       ]
     },
     {
@@ -113,6 +117,42 @@
       "reviewed": false,
       "priority": "core",
       "relatedSkillIds": []
+    },
+    {
+      "id": "ts-module-detection-scope",
+      "title": "Почему два файла без импортов могут конфликтовать по глобальным именам?",
+      "description": "Объяснить и применить правило с учётом его границ: Область объявления зависит от вида файла, а не только от его расширения .ts.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": ["ts-global-augmentation", "ts-ambient-types-scope"]
+    },
+    {
+      "id": "ts-side-effect-import-check",
+      "title": "Что проверяет noUncheckedSideEffectImports и как типизировать импорт CSS?",
+      "description": "Объяснить и применить правило с учётом его границ: Типовое разрешение ресурса и его фактическая доставка требуют согласованного конвейера.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": ["ts-declaration-files", "ts-module-resolution"]
+    },
+    {
+      "id": "ts-json-import-boundary",
+      "title": "Что даёт resolveJsonModule и почему этого недостаточно для любого runtime-импорта JSON?",
+      "description": "Объяснить и применить правило с учётом его границ: Поддержка JSON у checker не определяет универсальную форму runtime-загрузки.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": ["ts-module-resolution", "js-json-module-attributes"]
+    },
+    {
+      "id": "ts-package-conditional-types",
+      "title": "Как exports и условия types влияют на выбор деклараций пакета?",
+      "description": "Объяснить и применить правило с учётом его границ: Пакет публикует связанные runtime- и type-entrypoints, а не просто любой .d.ts рядом.",
+      "requiredDifficulties": ["Продвинутый"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": ["ts-library-declaration-publishing", "ts-esm-cjs-contract"]
     }
   ],
   "questions": [
@@ -205,7 +245,11 @@
         "kind": "explanation",
         "reviewStatus": "imported",
         "goalIds": ["core", "ts-library-declaration-publishing"],
-        "relatedQuestionIds": [],
+        "relatedQuestionIds": [
+          "ts-type-contract-tests",
+          "ts-source-declaration-maps",
+          "ts-package-conditional-types"
+        ],
         "priority": "core",
         "sourceRefs": ["ref-2867a7ff346ce328"]
       },
@@ -228,9 +272,9 @@
         "kind": "explanation",
         "reviewStatus": "imported",
         "goalIds": ["core", "ts-esm-cjs-contract"],
-        "relatedQuestionIds": [],
+        "relatedQuestionIds": ["ts-package-conditional-types"],
         "priority": "core",
-        "sourceRefs": ["ref-ed6daa68cea06c9b"]
+        "sourceRefs": ["ref-ed6daa68cea06c9b", "ref-180eb8024d5128d7"]
       },
       "answerFile": "answers/typescript/ts-esm-cjs-contract.md"
     },
@@ -298,9 +342,9 @@
         "kind": "explanation",
         "reviewStatus": "imported",
         "goalIds": ["core", "ts-ambient-types-scope"],
-        "relatedQuestionIds": [],
+        "relatedQuestionIds": ["ts-config-diagnostic-tools", "ts-module-detection-scope"],
         "priority": "core",
-        "sourceRefs": ["ref-0cc3e0974cc08536"]
+        "sourceRefs": ["ref-0cc3e0974cc08536", "ref-180eb8024d5128d7"]
       },
       "answerFile": "answers/typescript/ts-ambient-types-scope.md"
     },
@@ -350,6 +394,98 @@
         "sourceRefs": ["ref-368dd47648bb886b"]
       },
       "answerFile": "answers/typescript/ts-skip-lib-check.md"
+    },
+    {
+      "id": "ts-module-detection-scope",
+      "title": "Почему два файла без импортов могут конфликтовать по глобальным именам?",
+      "topic": "TypeScript",
+      "difficulty": "Средний",
+      "summary": "Script-контекст, module detection и локальная область файла.",
+      "answerFile": "answers/typescript/ts-module-detection-scope.md",
+      "takeaway": "Область объявления зависит от вида файла, а не только от его расширения .ts.",
+      "pitfall": "Считать любой файл отдельным модулем без проверки moduleDetection.",
+      "moduleId": "typescript",
+      "order": 10,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Область объявления зависит от вида файла, а не только от его расширения .ts.",
+        "keywords": ["TypeScript", "Модули и сборка", "Script", "module", "detection"],
+        "kind": "explanation",
+        "reviewStatus": "ready",
+        "priority": "core",
+        "goalIds": ["core", "ts-module-detection-scope"],
+        "relatedQuestionIds": ["ts-global-augmentation", "ts-ambient-types-scope"],
+        "sourceRefs": ["ref-a22a197041402e83"]
+      }
+    },
+    {
+      "id": "ts-side-effect-import-check",
+      "title": "Что проверяет noUncheckedSideEffectImports и как типизировать импорт CSS?",
+      "topic": "TypeScript",
+      "difficulty": "Средний",
+      "summary": "Побочный импорт, отсутствие модуля и декларация ресурса.",
+      "answerFile": "answers/typescript/ts-side-effect-import-check.md",
+      "takeaway": "Типовое разрешение ресурса и его фактическая доставка требуют согласованного конвейера.",
+      "pitfall": "Считать wildcard-декларацию доказательством наличия любого указанного файла.",
+      "moduleId": "typescript",
+      "order": 11,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Типовое разрешение ресурса и его фактическая доставка требуют согласованного конвейера.",
+        "keywords": ["TypeScript", "Модули и сборка"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "priority": "core",
+        "goalIds": ["core", "ts-side-effect-import-check"],
+        "relatedQuestionIds": ["ts-declaration-files", "ts-module-resolution"],
+        "sourceRefs": ["ref-47113836c338cb8d"]
+      }
+    },
+    {
+      "id": "ts-json-import-boundary",
+      "title": "Что даёт resolveJsonModule и почему этого недостаточно для любого runtime-импорта JSON?",
+      "topic": "TypeScript",
+      "difficulty": "Средний",
+      "summary": "Вывод формы файла и отдельные правила загрузчика.",
+      "answerFile": "answers/typescript/ts-json-import-boundary.md",
+      "takeaway": "Поддержка JSON у checker не определяет универсальную форму runtime-загрузки.",
+      "pitfall": "Использовать resolveJsonModule как решение всех проблем JSON-импорта.",
+      "moduleId": "typescript",
+      "order": 12,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Поддержка JSON у checker не определяет универсальную форму runtime-загрузки.",
+        "keywords": ["TypeScript", "Модули и сборка"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "priority": "core",
+        "goalIds": ["core", "ts-json-import-boundary"],
+        "relatedQuestionIds": ["ts-module-resolution", "js-json-module-attributes"],
+        "sourceRefs": ["ref-eef61f14c56186ae"]
+      }
+    },
+    {
+      "id": "ts-package-conditional-types",
+      "title": "Как exports и условия types влияют на выбор деклараций пакета?",
+      "topic": "TypeScript",
+      "difficulty": "Продвинутый",
+      "summary": "Типовая точка входа в выбранном режиме разрешения.",
+      "answerFile": "answers/typescript/ts-package-conditional-types.md",
+      "takeaway": "Пакет публикует связанные runtime- и type-entrypoints, а не просто любой .d.ts рядом.",
+      "pitfall": "Думать, что поле types всегда перекрывает все условия exports.",
+      "moduleId": "typescript",
+      "order": 13,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Пакет публикует связанные runtime- и type-entrypoints, а не просто любой .d.ts рядом.",
+        "keywords": ["TypeScript", "Модули и сборка"],
+        "kind": "explanation",
+        "reviewStatus": "ready",
+        "priority": "core",
+        "goalIds": ["core", "ts-package-conditional-types"],
+        "relatedQuestionIds": ["ts-library-declaration-publishing", "ts-esm-cjs-contract"],
+        "sourceRefs": ["ref-5d5a35066078b134"]
+      }
     }
   ]
 }

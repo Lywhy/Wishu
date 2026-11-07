@@ -7,13 +7,39 @@
 <!-- wishu:answer-block -->
 
 ### Выбор области расширения
+
 `declare global` расширяет глобальное окружение из модульного файла. Module augmentation расширяет существующий модуль по его спецификатору; для него важен модульный контекст файла, например импорт расширяемого пакета.
 
 ```typescript
 // В файле-модуле, а не в глобальном script-контексте:
 export {}
 declare global {
-  interface Window { appVersion?: string }
+  interface Window {
+    appVersion?: string
+  }
 }
 ```
+
 Расширение не создаёт runtime-реализацию, не позволяет произвольно заменить несовместимое поле и не служит универсальным способом переопределить default export. Если библиотека действительно добавляет метод, соответствующее выполнение кода должно быть обеспечено отдельно.
+
+<!-- wishu:answer-block -->
+
+### Если после добавления .d.ts исчезли экспорты
+
+Проверьте, не создали ли вы самостоятельный ambient module вместо augmentation. Для расширения существующего интерфейса задайте модульный контекст и точный спецификатор. Типовое расширение не создаёт runtime-метод.
+
+```typescript
+import "./service"
+declare module "./service" {
+  interface Options {
+    trace?: boolean
+  }
+}
+// ./service должен действительно экспортировать расширяемый Options.
+```
+
+#### Продолжить тему
+
+- [Почему два файла без импортов могут конфликтовать по глобальным именам?](/questions/ts-module-detection-scope)
+
+[Документация TypeScript](https://www.typescriptlang.org/docs/handbook/declaration-merging.html).

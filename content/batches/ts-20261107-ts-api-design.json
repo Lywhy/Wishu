@@ -1,0 +1,77 @@
+{
+  "schemaVersion": 1,
+  "id": "ts-20261107-ts-api-design",
+  "title": "Расширение TypeScript: Проектирование типобезопасных API",
+  "sectionId": "typescript",
+  "subsectionId": "ts-api-design",
+  "currentPass": "complete",
+  "goalIds": [
+    "core",
+    "ts-branded-identifiers",
+    "ts-validated-api-boundary",
+    "ts-result-error-contract",
+    "ts-event-map-correlation",
+    "ts-exclusive-options",
+    "ts-typestate-api",
+    "ts-dto-domain-boundary",
+    "ts-function-wrapper-contract",
+    "ts-correlated-property-write",
+    "ts-json-data-contract"
+  ],
+  "questionIds": ["ts-correlated-property-write", "ts-json-data-contract"],
+  "scopePass": {
+    "status": "complete",
+    "remaining": []
+  },
+  "answerPass": {
+    "status": "complete",
+    "remaining": []
+  },
+  "baseline": [
+    {
+      "id": "ts-branded-identifiers",
+      "title": "Как branded types защищают от смешивания одинаковых по форме идентификаторов?",
+      "contentHash": "662d24d796a15ef9b4e9252b85c0e75f3a425fc0edb5b920836c33678948a971"
+    },
+    {
+      "id": "ts-validated-api-boundary",
+      "title": "Как связать результат запроса с валидатором, не обещая произвольный T?",
+      "contentHash": "40658d4b9d91e4d62d2b98f7d59b0af3028ce6d5549e63f5e2d7b6514ea6f17c"
+    },
+    {
+      "id": "ts-result-error-contract",
+      "title": "Когда Result<T, E> полезнее обещания «Promise вернёт T или бросит ошибку»?",
+      "contentHash": "7da982ddadc23fc423bf67a6baf31b8e5e2e512fc7b92db36babf9ecaec17291"
+    },
+    {
+      "id": "ts-event-map-correlation",
+      "title": "Как типизировать связь имени события и аргументов обработчика?",
+      "contentHash": "fb012606391e9938955d509d09691307fdb5af73b20b42d3d8f2d1ccf417c099"
+    },
+    {
+      "id": "ts-exclusive-options",
+      "title": "Как запретить одновременную передачу двух альтернативных параметров?",
+      "contentHash": "2cba96151273e45b383e0767b75ccac1926be22fe48158b9476e3a205eba67d9"
+    },
+    {
+      "id": "ts-typestate-api",
+      "title": "Как сделать недопустимый порядок вызовов недоступным в типах API?",
+      "contentHash": "856945fc2da5fe1839fe8b02a0bda723d958f6362592cd0662d4095f8cb8b190"
+    },
+    {
+      "id": "ts-dto-domain-boundary",
+      "title": "Почему транспортный DTO стоит отделять от доменной модели?",
+      "contentHash": "f60075228ba88cccabcc8de62ec93f1b17d731e18b619a0910f08a5f6392a16e"
+    },
+    {
+      "id": "ts-function-wrapper-contract",
+      "title": "Как сохранить контракт функции в обёртке и где Parameters/ReturnType недостаточно?",
+      "contentHash": "c7348f0c2b43e5ee56525aa068f4e39b18d1c102042583fd7ecac80191bed1b9"
+    }
+  ],
+  "notes": [
+    "Граница: язык TypeScript и его toolchain. Runtime JavaScript и фреймворки не дублировать.",
+    "Готовые ответы сверены по документации; код примеров не запускался.",
+    "Контент собран и прошёл полную структурную проверку. TS: 161 вопрос, +62 новых и 17 расширенных. Примеры не исполнялись; seed не применялся."
+  ]
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": 1,
+  "id": "html-css-20261107-css-visual",
+  "title": "Расширение HTML и CSS: Визуальные состояния и анимации",
+  "sectionId": "html-css",
+  "subsectionId": "css-visual",
+  "currentPass": "complete",
+  "goalIds": [
+    "core",
+    "css-transition-animation",
+    "css-reduced-motion",
+    "css-focus-indicator",
+    "css-color-preferences",
+    "css-background-layers",
+    "css-opacity-alpha",
+    "css-color-space-contrast",
+    "css-pointer-events-contract",
+    "css-animation-fill-timing",
+    "css-entry-starting-style",
+    "css-scrollbar-gutter"
+  ],
+  "questionIds": [
+    "css-background-layers",
+    "css-opacity-alpha",
+    "css-color-space-contrast",
+    "css-pointer-events-contract",
+    "css-animation-fill-timing",
+    "css-entry-starting-style",
+    "css-scrollbar-gutter"
+  ],
+  "scopePass": {
+    "status": "complete",
+    "remaining": []
+  },
+  "answerPass": {
+    "status": "complete",
+    "remaining": []
+  },
+  "baseline": [
+    {
+      "id": "css-transition-animation",
+      "title": "Когда использовать transition, а когда animation?",
+      "contentHash": "4c52bd949bf2cda63741190e4daca13241e411b47184534aaa7f94e054185eed"
+    },
+    {
+      "id": "css-reduced-motion",
+      "title": "Как учитывать prefers-reduced-motion без потери смысла интерфейса?",
+      "contentHash": "b9c9ddd3a4612bb83393b711bdeb36824c132280bae135dfc09730e021690e40"
+    },
+    {
+      "id": "css-focus-indicator",
+      "title": "Как оформить focus-visible и не потерять клавиатурную доступность?",
+      "contentHash": "0b7fb31c59e1c2fc6d2355dc2f168728fbfff429a0d8e48e3bdab1c5233a68fd"
+    },
+    {
+      "id": "css-color-preferences",
+      "title": "Как согласовать тёмную тему, системное предпочтение и forced colors?",
+      "contentHash": "f031761a4190288a64f89e08fcb0d1169d90fd7c10a9d5b5385f3cb7509425d2"
+    }
+  ],
+  "notes": [
+    "HTML/CSS описывают документ, представление и нативные контракты; алгоритмы DOM, сеть, SEO и React не дублировать.",
+    "Код примеров не исполняется. Seed выполняет пользователь.",
+    "Сопоставлены исходные 48 вопросов. Новые навыки: Порядок слоёв, масштабирование фона и отличие от контентного изображения. Групповая прозрачность, непрозрачные потомки и stacking context. Управление координатами цвета, пространство смешивания и проверка итоговой пары. Hit testing указателя, клавиатурная активация и события потомков. Задержка, направление ключевых кадров и стили вне активного интервала. Исходное состояние перехода без предыдущего отображённого стиля. Резервирование места для обычной полосы прокрутки и отличие overlay-режима.",
+    "Похожие кандидаты объединены с действующими ответами; список будет в журнале и отчёте.",
+    "Проверка content:build/content:check прошла на 845 вопросах. Проверены сохранность 48 прежних ID и Markdown-разделитель новых ответов. После итогового форматирования требуется повторная сборка для актуальных хешей."
+  ]
+}

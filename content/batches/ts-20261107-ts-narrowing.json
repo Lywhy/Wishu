@@ -1,0 +1,68 @@
+{
+  "schemaVersion": 1,
+  "id": "ts-20261107-ts-narrowing",
+  "title": "Расширение TypeScript: Сужение типов и Type Guards",
+  "sectionId": "typescript",
+  "subsectionId": "ts-narrowing",
+  "currentPass": "complete",
+  "goalIds": [
+    "core",
+    "ts-control-flow-narrowing",
+    "ts-type-predicates",
+    "ts-assertion-functions",
+    "ts-discriminated-unions",
+    "ts-narrowing-closures",
+    "ts-inferred-predicates",
+    "ts-guard-false-branch",
+    "ts-destructured-discriminant",
+    "ts-mutation-after-narrowing",
+    "ts-unknown-array-elements"
+  ],
+  "questionIds": [
+    "ts-inferred-predicates",
+    "ts-guard-false-branch",
+    "ts-destructured-discriminant",
+    "ts-mutation-after-narrowing",
+    "ts-unknown-array-elements"
+  ],
+  "scopePass": {
+    "status": "complete",
+    "remaining": []
+  },
+  "answerPass": {
+    "status": "complete",
+    "remaining": []
+  },
+  "baseline": [
+    {
+      "id": "ts-control-flow-narrowing",
+      "title": "Как TypeScript сужает тип через проверки и поток управления?",
+      "contentHash": "bd5e33646f69206fd9f00a388172316fc6d80fa4bea74accf7d1aed52c8f7a9e"
+    },
+    {
+      "id": "ts-type-predicates",
+      "title": "Как написать type guard с предикатом value is T?",
+      "contentHash": "0787353635dac9e94b61893bece8fa2394b3cf45293615a3f6f2a743a15ca603"
+    },
+    {
+      "id": "ts-assertion-functions",
+      "title": "Что означает asserts value is T в assertion function?",
+      "contentHash": "13dbb8d79d20afce0de09f8b91f45e8b57219a6d85935a8198d152e1ecc6dc97"
+    },
+    {
+      "id": "ts-discriminated-unions",
+      "title": "Как discriminated union помогает проверить полноту обработки вариантов?",
+      "contentHash": "4cee5bb2673f8ff171fdb51a75187e94b5cea0285e30894410bbaffdb73a3d7f"
+    },
+    {
+      "id": "ts-narrowing-closures",
+      "title": "Когда сужение типа сохраняется внутри callback, а когда теряется?",
+      "contentHash": "8cee4b29ef1499907edd0f061f9c33664c3d4e3c4401c881f7731001d8d0fd5b"
+    }
+  ],
+  "notes": [
+    "Граница: язык TypeScript и его toolchain. Runtime JavaScript и фреймворки не дублировать.",
+    "Готовые ответы сверены по документации; код примеров не запускался.",
+    "Контент собран и прошёл полную структурную проверку. TS: 161 вопрос, +62 новых и 17 расширенных. Примеры не исполнялись; seed не применялся."
+  ]
+}

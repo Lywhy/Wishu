@@ -1,9 +1,8 @@
 import { ChevronLeft, ChevronRight } from "lucide-react"
 import { Link } from "react-router-dom"
 import { Button } from "@/components/ui/button"
-import { QuestionFavoriteButton } from "@/components/questions/question-favorite"
 import { QuestionNavigation } from "@/components/questions/question-navigation"
-import { QuestionStatusControls } from "@/components/questions/question-study"
+import { QuestionReviewControls } from "@/components/questions/question-study"
 import type { Question } from "@/data/interview-content"
 import type { QuestionSession } from "@/data/question-session"
 
@@ -23,12 +22,7 @@ export function QuestionSidebar({
   const index = questions.findIndex((question) => question.id === questionId)
   const previous = questions[index - 1]
   const next = questions[index + 1]
-  const actions = (
-    <div className="flex items-center gap-2">
-      <QuestionStatusControls questionId={questionId} />
-      <QuestionFavoriteButton questionId={questionId} />
-    </div>
-  )
+  const actions = <QuestionReviewControls questionId={questionId} />
   const footer = (
     <nav aria-label="Переключение вопросов" className="flex items-center justify-between gap-2">
       {previous ? (
@@ -70,6 +64,7 @@ export function QuestionSidebar({
       {next ? (
         <Button
           nativeButton={false}
+          variant="outline"
           size="icon"
           className="size-8"
           aria-label="Следующий вопрос"
@@ -86,6 +81,7 @@ export function QuestionSidebar({
         </Button>
       ) : (
         <Button
+          variant="outline"
           size="icon"
           className="size-8"
           aria-label="Следующий вопрос"

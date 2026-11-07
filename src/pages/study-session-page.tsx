@@ -1,125 +1,183 @@
+import { LocalSaveNotice } from "@/components/experience/local-save-notice"
 import { Link } from "react-router-dom"
 import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
+import { Badge } from "@/components/ui/badge"
+import { Progress } from "@/components/ui/progress"
 import { useQuestionCatalog } from "@/lib/question-catalog-context"
 import { usePracticeProgress } from "@/stores/practice-progress"
 import { useShortSession } from "@/stores/short-session"
 import { practiceTasks } from "@/data/interview-content"
+
 export function StudySessionPage() {
-  const { questions } = useQuestionCatalog(),
-    statuses = usePracticeProgress((s) => s.questionStatuses),
-    solved = usePracticeProgress((s) => s.solvedTaskIds)
-  const ids = useShortSession((s) => s.questionIds),
-    done = useShortSession((s) => s.done),
-    taskId = useShortSession((s) => s.taskId),
-    active = useShortSession((s) => s.active)
-  const items = ids.flatMap((id) => {
-      const q = questions.find((q) => q.id === id)
-      return q ? [q] : []
-    }),
-    task = practiceTasks.find((t) => t.id === taskId)
-  const next = items.find((q) => !done.includes(q.id)),
-    taskDone = !!task && solved.includes(task.id),
-    complete = !!items.length && !next && (!task || taskDone)
+  const { questions } = useQuestionCatalog()
+  const statuses = usePracticeProgress((state) => state.questionStatuses)
+  const solved = usePracticeProgress((state) => state.solvedTaskIds)
+  const pending = usePracticeProgress((state) => state.pendingQuestionWrites)
+  const session = useShortSession()
+  const items = session.questionIds.flatMap((id) => {
+    const question = questions.find((item) => item.id === id)
+    return question ? [question] : []
+  })
+  const task = practiceTasks.find((item) => item.id === session.taskId)
+  const done = items.filter((item) => session.done.includes(item.id))
+  const unreviewed = items.filter((item) => !session.done.includes(item.id))
+  const repeat = done.filter((item) => statuses[item.id] === "repeat")
+  const learned = done.filter((item) => statuses[item.id] === "learned")
+  const skipped = done.filter((item) => statuses[item.id] === "skipped")
+  const taskDone = !!task && solved.includes(task.id)
+  const complete = items.length > 0 && !unreviewed.length && (!task || taskDone)
+  const summary = !session.active || complete
+  const next = unreviewed[0] ?? repeat[0] ?? skipped[0]
+  const questionSession = {
+    questionIds: items.map((item) => item.id),
+    returnTo: "/session",
+    title: "Короткая подготовка",
+  }
   function start() {
     const ordered = [...questions].sort(
       (a, b) =>
         (statuses[a.id] === "repeat" ? 0 : !statuses[a.id] ? 1 : 2) -
         (statuses[b.id] === "repeat" ? 0 : !statuses[b.id] ? 1 : 2),
     )
-    const task = practiceTasks.find((t) => !solved.includes(t.id)) ?? practiceTasks[0]
-    useShortSession.getState().start(
-      ordered.slice(0, 5).map((q) => q.id),
-      task?.id ?? null,
+    const nextTask = practiceTasks.find((item) => !solved.includes(item.id))
+    session.start(
+      ordered.slice(0, 5).map((item) => item.id),
+      nextTask?.id ?? null,
     )
   }
   return (
     <div className="mx-auto max-w-3xl space-y-6">
-      <h1 className="text-3xl font-semibold">Короткая подготовка</h1>
-      <p className="text-sm leading-7 text-muted-foreground">
-        Пять вопросов и одна задача. Сначала вопросы для повторения, затем новые. Общий прогресс
-        сохраняется независимо от сессии.
-      </p>
-      {!ids.length ? (
-        <Button onClick={start}>Начать сессию</Button>
+      <Button nativeButton={false} variant="outline" render={<Link to="/mock-interview" />}>
+        Пробное собеседование
+      </Button>
+      <header className="space-y-3">
+        <h1 className="text-3xl font-semibold">Короткая подготовка</h1>
+        <p className="text-sm leading-7 text-muted-foreground">
+          До пяти вопросов и одна нерешённая задача. Прогресс сохраняется независимо от сессии.
+        </p>
+      </header>
+      <LocalSaveNotice area="short-session" />
+      {!session.questionIds.length ? (
+        <Button onClick={start} disabled={!questions.length || pending > 0}>
+          Начать сессию
+        </Button>
       ) : (
         <>
-          <Card className="gap-4 p-5 shadow-none">
-            <h2 className="text-xl font-semibold">
-              {complete ? "Сессия завершена" : active ? "Ваша подборка" : "Итоги сессии"}
-            </h2>
+          <Card className="gap-5 p-5 shadow-none">
+            <h2 className="text-xl font-semibold">{summary ? "Итоги занятия" : "Ваша подборка"}</h2>
+            <Progress
+              value={items.length ? (100 * done.length) / items.length : 0}
+              aria-label="Разобранные вопросы сессии"
+            />
             <p className="text-sm">
-              Разобрано {done.length} из {items.length} вопросов. Задача:{" "}
-              {taskDone ? "решена" : "ещё не решена"}.
+              Разобрано {done.length} из {items.length} вопросов.{" "}
+              {task
+                ? `Задача ${taskDone ? "решена" : "ещё не решена"}.`
+                : "Все задачи каталога решены, в этой сессии только вопросы."}
             </p>
-            {(!active || complete) && (
-              <div className="text-sm leading-7">
-                <p>
-                  Изучил:{" "}
-                  {items.filter((q) => done.includes(q.id) && statuses[q.id] === "learned").length}
-                </p>
-                <p>
-                  Вернуться к повторению:{" "}
-                  {items.filter((q) => done.includes(q.id) && statuses[q.id] === "repeat").length}
-                </p>
-                <p>
-                  Пропущено:{" "}
-                  {items.filter((q) => done.includes(q.id) && statuses[q.id] === "skipped").length}
-                </p>
-              </div>
+            {summary && (
+              <>
+                <dl className="grid grid-cols-2 gap-3 sm:grid-cols-4">
+                  {[
+                    ["Изучено", learned.length],
+                    ["Повторить", repeat.length],
+                    ["Пропущено", skipped.length],
+                    ["Осталось", unreviewed.length],
+                  ].map(([label, count]) => (
+                    <div key={label} className="rounded-xl bg-muted/40 p-3">
+                      <dt className="text-xs text-muted-foreground">{label}</dt>
+                      <dd className="mt-1 text-xl font-semibold">{count}</dd>
+                    </div>
+                  ))}
+                </dl>
+                <section
+                  className="space-y-3 rounded-xl border bg-primary/5 p-4"
+                  aria-label="Следующий шаг"
+                >
+                  <h3 className="text-sm font-semibold">С чего продолжить</h3>
+                  {next ? (
+                    <>
+                      <p className="text-sm leading-6">
+                        {unreviewed.length
+                          ? "Остались неразобранные вопросы."
+                          : repeat.length
+                            ? "Закрепите вопросы, отмеченные для повторения."
+                            : "Вернитесь к пропущенным вопросам."}
+                      </p>
+                      <Button
+                        nativeButton={false}
+                        variant="outline"
+                        className="h-auto min-h-10 whitespace-normal"
+                        render={<Link to={`/questions/${next.id}`} state={{ questionSession }} />}
+                      >
+                        {next.title}
+                      </Button>
+                    </>
+                  ) : task && !taskDone ? (
+                    <p className="text-sm">Вопросы разобраны. Следующий шаг - решить задачу.</p>
+                  ) : (
+                    <p className="text-sm">Подборка разобрана. Можно начать новую сессию.</p>
+                  )}
+                  {!!repeat.length && (
+                    <p className="text-xs text-muted-foreground">
+                      На повторение: {repeat.map((item) => item.title).join("; ")}
+                    </p>
+                  )}
+                </section>
+              </>
             )}
-            {active && next && (
-              <Button
-                nativeButton={false}
-                render={
-                  <Link
-                    to={`/questions/${next.id}`}
-                    state={{
-                      questionSession: {
-                        questionIds: ids,
-                        returnTo: "/session",
-                        title: "Короткая подготовка",
-                      },
-                    }}
-                  />
-                }
-              >
-                Продолжить вопросы
-              </Button>
-            )}
-            {task && (
-              <Button
-                nativeButton={false}
-                variant="outline"
-                render={<Link to={`/tasks/${task.id}`} />}
-              >
-                {taskDone ? "Посмотреть задачу" : "Перейти к задаче"}
-              </Button>
-            )}
-            {active && !complete ? (
-              <Button variant="ghost" onClick={() => useShortSession.getState().finish()}>
-                Закончить и посмотреть итоги
-              </Button>
-            ) : (
-              <Button onClick={start}>Новая сессия</Button>
-            )}
+            <div className="flex flex-wrap gap-2">
+              {!summary && unreviewed[0] && (
+                <Button
+                  nativeButton={false}
+                  render={
+                    <Link to={`/questions/${unreviewed[0].id}`} state={{ questionSession }} />
+                  }
+                >
+                  Продолжить вопросы
+                </Button>
+              )}
+              {task && (
+                <Button
+                  nativeButton={false}
+                  variant="outline"
+                  render={<Link to={`/tasks/${task.id}`} state={{ returnTo: "/session" }} />}
+                >
+                  {taskDone ? "Посмотреть задачу" : "Перейти к задаче"}
+                </Button>
+              )}
+              {session.active && !complete ? (
+                <Button variant="ghost" disabled={pending > 0} onClick={session.finish}>
+                  Закончить и посмотреть итоги
+                </Button>
+              ) : (
+                <Button disabled={pending > 0 || !questions.length} onClick={start}>
+                  Новая сессия
+                </Button>
+              )}
+            </div>
           </Card>
           <ol className="space-y-2">
-            {items.map((q, i) => (
-              <li key={q.id}>
+            {items.map((question, index) => (
+              <li key={question.id}>
                 <Link
-                  className="block rounded-lg border bg-card p-4 text-sm hover:bg-muted"
-                  to={`/questions/${q.id}`}
-                  state={{
-                    questionSession: {
-                      questionIds: ids,
-                      returnTo: "/session",
-                      title: "Короткая подготовка",
-                    },
-                  }}
+                  to={`/questions/${question.id}`}
+                  state={{ questionSession }}
+                  className="flex items-center justify-between gap-3 rounded-xl border bg-card p-4 text-sm outline-none hover:bg-muted focus-visible:ring-2 focus-visible:ring-ring"
                 >
-                  {i + 1}. {q.title}
-                  {done.includes(q.id) ? " · Разобрано" : ""}
+                  <span>
+                    {index + 1}. {question.title}
+                  </span>
+                  {session.done.includes(question.id) && (
+                    <Badge variant="secondary">
+                      {statuses[question.id] === "learned"
+                        ? "Изучено"
+                        : statuses[question.id] === "repeat"
+                          ? "Повторить"
+                          : "Пропущено"}
+                    </Badge>
+                  )}
                 </Link>
               </li>
             ))}
@@ -130,15 +188,22 @@ export function StudySessionPage() {
   )
 }
 export function SessionBanner() {
-  const active = useShortSession((s) => s.active),
-    done = useShortSession((s) => s.done.length),
-    total = useShortSession((s) => s.questionIds.length)
-  return active ? (
+  const active = useShortSession((state) => state.active)
+  const ids = useShortSession((state) => state.questionIds)
+  const done = useShortSession((state) => state.done)
+  const taskId = useShortSession((state) => state.taskId)
+  const solved = usePracticeProgress((state) => state.solvedTaskIds)
+  if (!active) return null
+  const count = ids.filter((id) => done.includes(id)).length
+  const complete = count === ids.length && (!taskId || solved.includes(taskId))
+  return (
     <Link
       className="mb-4 block rounded-lg border bg-primary/5 p-3 text-xs text-primary"
       to="/session"
     >
-      Короткая подготовка · {done}/{total} вопросов · Вернуться к сессии
+      {complete
+        ? "Занятие завершено · Посмотреть итоги"
+        : `Короткая подготовка · ${count}/${ids.length} вопросов · Вернуться к сессии`}
     </Link>
-  ) : null
+  )
 }

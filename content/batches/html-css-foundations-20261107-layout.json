@@ -1,0 +1,177 @@
+{
+  "schemaVersion": 1,
+  "id": "html-css-foundations-20261107-layout",
+  "title": "Базовый и средний HTML/CSS: Построение макета",
+  "sectionId": "html-css",
+  "subsectionId": "layout",
+  "currentPass": "complete",
+  "goalIds": [
+    "core",
+    "css-flex-grid",
+    "css-flex-min-size",
+    "css-position-stacking",
+    "css-margin-collapse-bfc",
+    "css-display-formatting",
+    "css-intrinsic-sizing",
+    "css-containing-block",
+    "css-sticky-constraints",
+    "css-flex-space",
+    "css-grid-tracks",
+    "css-subgrid-contract",
+    "css-box-alignment",
+    "css-overflow-scroll-contract",
+    "css-grid-implicit-placement",
+    "css-grid-areas-overlap",
+    "css-flex-wrapping-lines",
+    "css-auto-margin-gap",
+    "css-percentage-height",
+    "css-transform-flow-geometry",
+    "css-display-contents-contract",
+    "css-table-layout",
+    "css-normal-flow-position",
+    "css-block-horizontal-center",
+    "css-bounded-scroll-pane",
+    "css-grid-line-numbering",
+    "css-grid-gap-percentages",
+    "css-flex-axis-direction",
+    "css-float-clear-text",
+    "css-absolute-opposing-insets",
+    "css-multicol-flow",
+    "css-table-border-model"
+  ],
+  "questionIds": [
+    "css-normal-flow-position",
+    "css-block-horizontal-center",
+    "css-bounded-scroll-pane",
+    "css-grid-line-numbering",
+    "css-grid-gap-percentages",
+    "css-flex-axis-direction",
+    "css-float-clear-text",
+    "css-absolute-opposing-insets",
+    "css-multicol-flow",
+    "css-table-border-model",
+    "css-flex-space"
+  ],
+  "scopePass": {
+    "status": "complete",
+    "remaining": []
+  },
+  "answerPass": {
+    "status": "complete",
+    "remaining": []
+  },
+  "baseline": [
+    {
+      "id": "css-flex-grid",
+      "title": "Когда выбрать Flexbox, а когда Grid?",
+      "contentHash": "c116630d0944fd39e193de382ed4d8392a908451bca5a28fd15698815b418e84"
+    },
+    {
+      "id": "css-flex-min-size",
+      "title": "Почему flex-элемент не сжимается и ломает макет?",
+      "contentHash": "6316664bd64eb0ab6540e9af9ae42fc2fcce4f8e1f104f577eb4bf8dcc9012ae"
+    },
+    {
+      "id": "css-position-stacking",
+      "title": "Почему большой z-index не поднимает элемент над соседним блоком?",
+      "contentHash": "da7d6287284df6592523078ae9f80d6bcdb8a4579d9882472df260830e151d2c"
+    },
+    {
+      "id": "css-margin-collapse-bfc",
+      "title": "Когда вертикальные margin схлопываются и как помогает новый formatting context?",
+      "contentHash": "5dc256a7eb741e4afab13f91eaff10457d0974c95bf65537485e5053586036b3"
+    },
+    {
+      "id": "css-display-formatting",
+      "title": "Чем block, inline и inline-block отличаются в потоке документа?",
+      "contentHash": "7d547d36d0f2c45f25f2a1f4f95ddf8e908196c280cecf894ea0f391f0a9ad98"
+    },
+    {
+      "id": "css-intrinsic-sizing",
+      "title": "Что означают min-content, max-content и fit-content?",
+      "contentHash": "31bf55729b03e83c1a89fccb3e43db8c403e5d8ac1625ab04642719966442ce8"
+    },
+    {
+      "id": "css-containing-block",
+      "title": "Относительно чего позиционируются absolute и fixed?",
+      "contentHash": "58784a3669d303e002a2366b5618088ce3c9e6634c11284556f361b912ae4247"
+    },
+    {
+      "id": "css-sticky-constraints",
+      "title": "Почему position: sticky иногда не прилипает?",
+      "contentHash": "dfda4b65e95ce38aff459c9cd1b5dce838d9e52de8a31626bc763ab88d32b81b"
+    },
+    {
+      "id": "css-flex-space",
+      "title": "Как flex-basis, flex-grow и flex-shrink распределяют место?",
+      "contentHash": "213d22709de4b9a02873907d9a878c228a1d4959d812ea3fea42f81c4031db90"
+    },
+    {
+      "id": "css-grid-tracks",
+      "title": "Как repeat, minmax и auto-fit помогают строить адаптивную Grid-сетку?",
+      "contentHash": "4dc892ef2dd64c5e4666e1be698616a4ad3f8102acb8b2b1dfec251a024136d1"
+    },
+    {
+      "id": "css-subgrid-contract",
+      "title": "Когда subgrid полезнее независимой вложенной сетки?",
+      "contentHash": "9fd2419660e437500eb03ff94c4a35eb0c26dc0c66f2f507bad56c3058a0052f"
+    },
+    {
+      "id": "css-box-alignment",
+      "title": "Чем align-items, align-content и justify-content отличаются?",
+      "contentHash": "f555d6d66c10bbd6ecff01d12d742db9dc92a5a050cb76479f2490bc6307406d"
+    },
+    {
+      "id": "css-overflow-scroll-contract",
+      "title": "Чем overflow: hidden отличается от clip, auto и scroll?",
+      "contentHash": "9e6d95772ef2b0d4cca3d77d613c031d391bc7044b931f0e92893672503692d6"
+    },
+    {
+      "id": "css-grid-implicit-placement",
+      "title": "Чем явная Grid-сетка отличается от неявной и что делает grid-auto-flow: dense?",
+      "contentHash": "b365acc332c6e948434f4dcb7935599a6ab34a14c44f86392e12209be25c209d"
+    },
+    {
+      "id": "css-grid-areas-overlap",
+      "title": "Как работают grid-template-areas и наложение элементов в одной ячейке?",
+      "contentHash": "c5f6ffe9e0cfbc4a1eb69b76005611bbafe4a296e6a5ec66a434d85b77090a05"
+    },
+    {
+      "id": "css-flex-wrapping-lines",
+      "title": "Почему строки flex-wrap не образуют общие колонки?",
+      "contentHash": "2cf4273b747f6d62fc7c0c0316d8f22b4950610b2df32c133e7b079156ac1e4c"
+    },
+    {
+      "id": "css-auto-margin-gap",
+      "title": "Как auto margin во Flexbox взаимодействует с gap и justify-content?",
+      "contentHash": "a58925dee8a9924f53e026da0f3df4e1d1a2dfb60ead255ff65eb197ea1cb815"
+    },
+    {
+      "id": "css-percentage-height",
+      "title": "Почему height: 100% не растягивает блок по высоте родителя?",
+      "contentHash": "b7d69f5a9645dd43360aa188c20d9ea9b061ea77ddf75bd4b7a5058acc6ad571"
+    },
+    {
+      "id": "css-transform-flow-geometry",
+      "title": "Чем transform: translate отличается от изменения margin или позиции?",
+      "contentHash": "09c21bf69163dd912884b48e2636bf25ab82b2cb40b608582639f920ec6124b1"
+    },
+    {
+      "id": "css-display-contents-contract",
+      "title": "Что убирает display: contents и почему с ним осторожны на семантических элементах?",
+      "contentHash": "160984387770fbe24ff0794161e1e5163811af56691ef1fc837751946b4af257"
+    },
+    {
+      "id": "css-table-layout",
+      "title": "Когда table-layout: fixed полезнее auto и почему он не решает перенос текста?",
+      "contentHash": "20e5e46da74d5bf0d20aa96824de9aaa44670434f5acf9e6819a44cc65d45d27"
+    }
+  ],
+  "notes": [
+    "Пакет 2026-11-07: только базовый и средний уровни. Определения и самостоятельные практические навыки; современные API не являются целью пакета.",
+    "Сохранять прежние ID. Не дублировать общие определения из связанных карточек. Примеры не исполнять.",
+    "Новые самостоятельные цели: Исходное размещение блоков и строк, смещение и выход из потока. Ограниченная ширина блока и свободное место по сторонам. Определённая внешняя высота и снятие автоматического минимума у сжимаемой части. Нумерация линий, число треков и конец явной сетки. Проценты от полной ширины и доли оставшегося пространства. Row, column, reverse и зависимость от направления письма. Обтекание текстом и начало блока ниже плавающего содержимого. Автоматическая ширина между противоположными границами и избыточные ограничения. Фрагментация единого потока и независимые ячейки раскладки. Общие границы ячеек, раздельные рамки и border-spacing.",
+    "Сопоставлены базовые определения и прикладные вопросы. Пересечения сохранены в existing.mjs до записи в журнал.",
+    "Content:build и полная content:check прошли на 905 вопросах. Сохранены все 845 исходных ID; кроме 6 согласованных расширений прежние хеши совпадают. Проверены два блока каждого нового ответа и значимый пробел в примере :empty. Код примеров не исполнялся."
+  ]
+}

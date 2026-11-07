@@ -9,3 +9,22 @@
 <!-- wishu:answer-block -->
 
 [Документация TypeScript](https://www.typescriptlang.org/docs/handbook/2/template-literal-types.html).
+
+<!-- wishu:answer-block -->
+
+### Число комбинаций
+
+Два небольших union дают произведение вариантов. До построения большой грамматики оцените её размер и цену для редактора; для крупных стабильных наборов может быть удобнее предварительная генерация.
+
+```typescript
+type Entity = "user" | "order"
+type Action = "created" | "removed"
+type Event = `${Entity}:${Action}` // Четыре варианта.
+```
+
+#### Продолжить тему
+
+- [Как разрешить динамические свойства только с заданным префиксом?](/questions/ts-template-index-signatures)
+- [Как infer с ограничением извлекает число из строкового литерала?](/questions/ts-template-number-inference)
+
+[Документация TypeScript](https://www.typescriptlang.org/docs/handbook/2/template-literal-types.html).

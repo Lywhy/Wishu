@@ -1,0 +1,290 @@
+{
+  "$schema": "../question-bundle.schema.json",
+  "sectionId": "typescript",
+  "subsectionId": "ts-configuration",
+  "scope": "Граф проекта, наследование настроек, emit, карты и диагностика checker.",
+  "coverageGoals": [
+    {
+      "id": "core",
+      "title": "Конфигурация и диагностика",
+      "description": "Граф проекта, наследование настроек, emit, карты и диагностика checker.",
+      "requiredDifficulties": [],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": [
+        "ts-project-file-graph",
+        "ts-config-inheritance-paths",
+        "ts-check-emit-boundary",
+        "ts-cli-project-selection",
+        "ts-erasable-syntax-boundary",
+        "ts-config-diagnostic-tools",
+        "ts-source-declaration-maps",
+        "ts-checker-performance-diagnosis"
+      ]
+    },
+    {
+      "id": "ts-project-file-graph",
+      "title": "Чем files, include и exclude отличаются от rootDir и outDir?",
+      "description": "Объяснить и применить правило с учётом его границ: Набор файлов программы определяется графом и настройками, а не только каталогом emit.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": ["ts-config", "ts-project-references"]
+    },
+    {
+      "id": "ts-config-inheritance-paths",
+      "title": "Как наследование tsconfig влияет на относительные пути и массивы настроек?",
+      "description": "Объяснить и применить правило с учётом его границ: Общий конфиг полезен только при понятных правилах наследования каждого поля.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": ["ts-config", "ts-project-file-graph"]
+    },
+    {
+      "id": "ts-check-emit-boundary",
+      "title": "Чем noEmit отличается от noEmitOnError и успешной сборки бандлера?",
+      "description": "Объяснить и применить правило с учётом его границ: Диагностика типов и наличие исполняемого файла являются разными результатами.",
+      "requiredDifficulties": ["Базовый"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": ["ts-language", "ts-isolated-compilation"]
+    },
+    {
+      "id": "ts-cli-project-selection",
+      "title": "Почему tsc file.ts не равен проверке проекта через tsc -p?",
+      "description": "Объяснить и применить правило с учётом его границ: Ошибка воспроизводится в определённом проекте и версии, а не только в тексте одного файла.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": ["ts-config"]
+    },
+    {
+      "id": "ts-erasable-syntax-boundary",
+      "title": "Что проверяет erasableSyntaxOnly и чего не делает простое удаление типов?",
+      "description": "Объяснить и применить правило с учётом его границ: Поддержка TS-аннотаций не означает поддержку каждой конструкции TypeScript.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": ["ts-enums", "ts-class-members"]
+    },
+    {
+      "id": "ts-config-diagnostic-tools",
+      "title": "Как найти причину неожиданного импорта, глобального типа или состава проекта?",
+      "description": "Объяснить и применить правило с учётом его границ: Выбор диагностического инструмента зависит от проверяемой гипотезы.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": ["ts-module-resolution", "ts-ambient-types-scope"]
+    },
+    {
+      "id": "ts-source-declaration-maps",
+      "title": "Чем sourceMap отличается от declarationMap?",
+      "description": "Объяснить и применить правило с учётом его границ: Карты предназначены для разных переходов между результатом и исходниками.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": ["ts-library-declaration-publishing"]
+    },
+    {
+      "id": "ts-checker-performance-diagnosis",
+      "title": "Как отличить медленную проверку типов от медленной сборки или работы программы?",
+      "description": "Объяснить и применить правило с учётом его границ: Оптимизировать нужно измеренный этап и конкретный источник стоимости.",
+      "requiredDifficulties": ["Продвинутый"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": ["ts-type-complexity", "ts-recursive-type-budget"]
+    }
+  ],
+  "questions": [
+    {
+      "id": "ts-project-file-graph",
+      "title": "Чем files, include и exclude отличаются от rootDir и outDir?",
+      "topic": "TypeScript",
+      "difficulty": "Средний",
+      "summary": "Входные файлы графа проекта и расположение результата.",
+      "answerFile": "answers/typescript/ts-project-file-graph.md",
+      "takeaway": "Набор файлов программы определяется графом и настройками, а не только каталогом emit.",
+      "pitfall": "Считать exclude запретом любого импорта исключённой папки.",
+      "moduleId": "typescript",
+      "order": 0,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Набор файлов программы определяется графом и настройками, а не только каталогом emit.",
+        "keywords": ["TypeScript", "Конфигурация и диагностика"],
+        "kind": "explanation",
+        "reviewStatus": "ready",
+        "priority": "core",
+        "goalIds": ["core", "ts-project-file-graph"],
+        "relatedQuestionIds": ["ts-config", "ts-project-references"],
+        "sourceRefs": ["ref-cab0197eb8116eaf"]
+      }
+    },
+    {
+      "id": "ts-config-inheritance-paths",
+      "title": "Как наследование tsconfig влияет на относительные пути и массивы настроек?",
+      "topic": "TypeScript",
+      "difficulty": "Средний",
+      "summary": "Базовая конфигурация, место объявления пути и явные переопределения.",
+      "answerFile": "answers/typescript/ts-config-inheritance-paths.md",
+      "takeaway": "Общий конфиг полезен только при понятных правилах наследования каждого поля.",
+      "pitfall": "Ожидать конкатенацию массивов или одинаковую базу всех относительных путей.",
+      "moduleId": "typescript",
+      "order": 1,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Общий конфиг полезен только при понятных правилах наследования каждого поля.",
+        "keywords": ["TypeScript", "Конфигурация и диагностика"],
+        "kind": "explanation",
+        "reviewStatus": "ready",
+        "priority": "core",
+        "goalIds": ["core", "ts-config-inheritance-paths"],
+        "relatedQuestionIds": ["ts-config", "ts-project-file-graph"],
+        "sourceRefs": ["ref-cab0197eb8116eaf"]
+      }
+    },
+    {
+      "id": "ts-check-emit-boundary",
+      "title": "Чем noEmit отличается от noEmitOnError и успешной сборки бандлера?",
+      "topic": "TypeScript",
+      "difficulty": "Базовый",
+      "summary": "Проверка типов, генерация файлов и разные стадии конвейера.",
+      "answerFile": "answers/typescript/ts-check-emit-boundary.md",
+      "takeaway": "Диагностика типов и наличие исполняемого файла являются разными результатами.",
+      "pitfall": "Считать успешную сборку Vite/Babel достаточной проверкой типов.",
+      "moduleId": "typescript",
+      "order": 2,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Диагностика типов и наличие исполняемого файла являются разными результатами.",
+        "keywords": ["TypeScript", "Конфигурация и диагностика"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "priority": "core",
+        "goalIds": ["core", "ts-check-emit-boundary"],
+        "relatedQuestionIds": ["ts-language", "ts-isolated-compilation"],
+        "sourceRefs": ["ref-cab0197eb8116eaf"]
+      }
+    },
+    {
+      "id": "ts-cli-project-selection",
+      "title": "Почему tsc file.ts не равен проверке проекта через tsc -p?",
+      "topic": "TypeScript",
+      "difficulty": "Средний",
+      "summary": "Выбор конфигурации, входов и изменение поведения между версиями.",
+      "answerFile": "answers/typescript/ts-cli-project-selection.md",
+      "takeaway": "Ошибка воспроизводится в определённом проекте и версии, а не только в тексте одного файла.",
+      "pitfall": "Сравнивать диагностику разных способов запуска как диагностику одной конфигурации.",
+      "moduleId": "typescript",
+      "order": 3,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Ошибка воспроизводится в определённом проекте и версии, а не только в тексте одного файла.",
+        "keywords": ["TypeScript", "Конфигурация и диагностика"],
+        "kind": "explanation",
+        "reviewStatus": "ready",
+        "priority": "core",
+        "goalIds": ["core", "ts-cli-project-selection"],
+        "relatedQuestionIds": ["ts-config"],
+        "sourceRefs": ["ref-180eb8024d5128d7"]
+      }
+    },
+    {
+      "id": "ts-erasable-syntax-boundary",
+      "title": "Что проверяет erasableSyntaxOnly и чего не делает простое удаление типов?",
+      "topic": "TypeScript",
+      "difficulty": "Средний",
+      "summary": "Стираемый синтаксис и конструкции, которым требуется runtime-преобразование.",
+      "answerFile": "answers/typescript/ts-erasable-syntax-boundary.md",
+      "takeaway": "Поддержка TS-аннотаций не означает поддержку каждой конструкции TypeScript.",
+      "pitfall": "Выдавать проверку стираемости за полную настройку запуска приложения.",
+      "moduleId": "typescript",
+      "order": 4,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Поддержка TS-аннотаций не означает поддержку каждой конструкции TypeScript.",
+        "keywords": ["TypeScript", "Конфигурация и диагностика", "runtime"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "priority": "core",
+        "goalIds": ["core", "ts-erasable-syntax-boundary"],
+        "relatedQuestionIds": ["ts-enums", "ts-class-members"],
+        "sourceRefs": ["ref-6be230e080a5b990"]
+      }
+    },
+    {
+      "id": "ts-config-diagnostic-tools",
+      "title": "Как найти причину неожиданного импорта, глобального типа или состава проекта?",
+      "topic": "TypeScript",
+      "difficulty": "Средний",
+      "summary": "ShowConfig, explainFiles и traceResolution.",
+      "answerFile": "answers/typescript/ts-config-diagnostic-tools.md",
+      "takeaway": "Выбор диагностического инструмента зависит от проверяемой гипотезы.",
+      "pitfall": "Менять aliases и types наугад, не выяснив фактическое разрешение.",
+      "moduleId": "typescript",
+      "order": 5,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Выбор диагностического инструмента зависит от проверяемой гипотезы.",
+        "keywords": [
+          "TypeScript",
+          "Конфигурация и диагностика",
+          "ShowConfig",
+          "explainFiles",
+          "traceResolution"
+        ],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "priority": "core",
+        "goalIds": ["core", "ts-config-diagnostic-tools"],
+        "relatedQuestionIds": ["ts-module-resolution", "ts-ambient-types-scope"],
+        "sourceRefs": ["ref-cab0197eb8116eaf"]
+      }
+    },
+    {
+      "id": "ts-source-declaration-maps",
+      "title": "Чем sourceMap отличается от declarationMap?",
+      "topic": "TypeScript",
+      "difficulty": "Средний",
+      "summary": "Отладка JavaScript и переход от деклараций к исходникам.",
+      "answerFile": "answers/typescript/ts-source-declaration-maps.md",
+      "takeaway": "Карты предназначены для разных переходов между результатом и исходниками.",
+      "pitfall": "Ожидать от declarationMap изменения runtime-обработки ошибок.",
+      "moduleId": "typescript",
+      "order": 6,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Карты предназначены для разных переходов между результатом и исходниками.",
+        "keywords": ["TypeScript", "Конфигурация и диагностика", "JavaScript"],
+        "kind": "explanation",
+        "reviewStatus": "ready",
+        "priority": "core",
+        "goalIds": ["core", "ts-source-declaration-maps"],
+        "relatedQuestionIds": ["ts-library-declaration-publishing"],
+        "sourceRefs": ["ref-cab0197eb8116eaf"]
+      }
+    },
+    {
+      "id": "ts-checker-performance-diagnosis",
+      "title": "Как отличить медленную проверку типов от медленной сборки или работы программы?",
+      "topic": "TypeScript",
+      "difficulty": "Продвинутый",
+      "summary": "Измерение checker, область графа и сложность типов.",
+      "answerFile": "answers/typescript/ts-checker-performance-diagnosis.md",
+      "takeaway": "Оптимизировать нужно измеренный этап и конкретный источник стоимости.",
+      "pitfall": "Связывать время checker напрямую со скоростью JavaScript-кода в браузере.",
+      "moduleId": "typescript",
+      "order": 7,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Оптимизировать нужно измеренный этап и конкретный источник стоимости.",
+        "keywords": ["TypeScript", "Конфигурация и диагностика", "checker"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "priority": "core",
+        "goalIds": ["core", "ts-checker-performance-diagnosis"],
+        "relatedQuestionIds": ["ts-type-complexity", "ts-recursive-type-budget"],
+        "sourceRefs": ["ref-fe785d6b935950a4"]
+      }
+    }
+  ]
+}

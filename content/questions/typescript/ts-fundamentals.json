@@ -16,7 +16,9 @@
         "ts-safety-limits",
         "ts-config",
         "ts-inference",
-        "ts-structural-typing"
+        "ts-structural-typing",
+        "ts-contextual-inference",
+        "ts-type-value-spaces"
       ]
     },
     {
@@ -63,6 +65,24 @@
       "reviewed": false,
       "priority": "core",
       "relatedSkillIds": []
+    },
+    {
+      "id": "ts-contextual-inference",
+      "title": "Как контекст вызова влияет на вывод типов callback?",
+      "description": "Объяснить и применить правило с учётом его границ: Вывод типов использует доступный контекст, а не только правую часть выражения.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": ["ts-inference"]
+    },
+    {
+      "id": "ts-type-value-spaces",
+      "title": "Почему одно имя может обозначать и значение, и тип?",
+      "description": "Объяснить и применить правило с учётом его границ: При чтении имени сначала определите, требуется тип или runtime-значение.",
+      "requiredDifficulties": ["Базовый"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": ["ts-type-query", "ts-class-members"]
     }
   ],
   "questions": [
@@ -129,9 +149,13 @@
         "kind": "explanation",
         "reviewStatus": "imported",
         "goalIds": ["core", "ts-config"],
-        "relatedQuestionIds": [],
+        "relatedQuestionIds": [
+          "ts-project-file-graph",
+          "ts-config-inheritance-paths",
+          "ts-cli-project-selection"
+        ],
         "priority": "core",
-        "sourceRefs": []
+        "sourceRefs": ["ref-cab0197eb8116eaf"]
       },
       "answerFile": "answers/typescript/ts-config.md"
     },
@@ -175,11 +199,57 @@
         "kind": "explanation",
         "reviewStatus": "imported",
         "goalIds": ["core", "ts-structural-typing"],
-        "relatedQuestionIds": [],
+        "relatedQuestionIds": ["ts-unused-generic-parameter"],
         "priority": "core",
-        "sourceRefs": []
+        "sourceRefs": ["ref-e93a21d416404bfe"]
       },
       "answerFile": "answers/typescript/ts-structural-typing.md"
+    },
+    {
+      "id": "ts-contextual-inference",
+      "title": "Как контекст вызова влияет на вывод типов callback?",
+      "topic": "TypeScript",
+      "difficulty": "Средний",
+      "summary": "Контекстная типизация и потеря контекста при отдельном объявлении.",
+      "answerFile": "answers/typescript/ts-contextual-inference.md",
+      "takeaway": "Вывод типов использует доступный контекст, а не только правую часть выражения.",
+      "pitfall": "Ожидать, что будущий вызов всегда типизирует ранее объявленный callback.",
+      "moduleId": "typescript",
+      "order": 5,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Вывод типов использует доступный контекст, а не только правую часть выражения.",
+        "keywords": ["TypeScript", "Основы TypeScript"],
+        "kind": "explanation",
+        "reviewStatus": "ready",
+        "priority": "core",
+        "goalIds": ["core", "ts-contextual-inference"],
+        "relatedQuestionIds": ["ts-inference"],
+        "sourceRefs": ["ref-3c84c1244a973220"]
+      }
+    },
+    {
+      "id": "ts-type-value-spaces",
+      "title": "Почему одно имя может обозначать и значение, и тип?",
+      "topic": "TypeScript",
+      "difficulty": "Базовый",
+      "summary": "Разные пространства имён и двойная роль класса.",
+      "answerFile": "answers/typescript/ts-type-value-spaces.md",
+      "takeaway": "При чтении имени сначала определите, требуется тип или runtime-значение.",
+      "pitfall": "Писать instanceof Interface и ожидать runtime-проверку.",
+      "moduleId": "typescript",
+      "order": 6,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: При чтении имени сначала определите, требуется тип или runtime-значение.",
+        "keywords": ["TypeScript", "Основы TypeScript"],
+        "kind": "explanation",
+        "reviewStatus": "ready",
+        "priority": "core",
+        "goalIds": ["core", "ts-type-value-spaces"],
+        "relatedQuestionIds": ["ts-type-query", "ts-class-members"],
+        "sourceRefs": ["ref-ae872ce8e10666f1"]
+      }
     }
   ]
 }

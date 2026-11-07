@@ -1089,6 +1089,30 @@
           "checkedAt": null,
           "notes": "Начальная точка поиска, не замена источнику конкретного технического утверждения.",
           "id": "ref-d1ea49db3568981e"
+        },
+        {
+          "id": "ref-3c84c1244a973220",
+          "title": "Документация TypeScript",
+          "url": "https://www.typescriptlang.org/docs/handbook/type-inference.html",
+          "checkedAt": null
+        },
+        {
+          "id": "ref-ae872ce8e10666f1",
+          "title": "Документация TypeScript",
+          "url": "https://www.typescriptlang.org/docs/handbook/declaration-files/deep-dive.html",
+          "checkedAt": null
+        },
+        {
+          "id": "ref-e93a21d416404bfe",
+          "title": "Документация TypeScript",
+          "url": "https://www.typescriptlang.org/docs/handbook/2/objects.html",
+          "checkedAt": null
+        },
+        {
+          "id": "ref-cab0197eb8116eaf",
+          "title": "Документация TypeScript",
+          "url": "https://www.typescriptlang.org/tsconfig/",
+          "checkedAt": null
         }
       ],
       "caveats": []
@@ -1111,6 +1135,24 @@
           "checkedAt": null,
           "notes": "Начальная точка поиска, не замена источнику конкретного технического утверждения.",
           "id": "ref-d1ea49db3568981e"
+        },
+        {
+          "id": "ref-27e2f7bd757441f5",
+          "title": "Документация TypeScript",
+          "url": "https://www.typescriptlang.org/docs/handbook/2/conditional-types.html",
+          "checkedAt": null
+        },
+        {
+          "id": "ref-ee054e6800f12156",
+          "title": "Документация TypeScript",
+          "url": "https://www.typescriptlang.org/docs/handbook/symbols.html",
+          "checkedAt": null
+        },
+        {
+          "id": "ref-5a02d79665f1eb02",
+          "title": "Документация TypeScript",
+          "url": "https://www.typescriptlang.org/docs/handbook/2/keyof-types.html",
+          "checkedAt": null
         }
       ],
       "caveats": []
@@ -1133,6 +1175,18 @@
           "checkedAt": null,
           "notes": "Начальная точка поиска, не замена источнику конкретного технического утверждения.",
           "id": "ref-d1ea49db3568981e"
+        },
+        {
+          "id": "ref-c479350cd6a01481",
+          "title": "Документация TypeScript",
+          "url": "https://www.typescriptlang.org/docs/handbook/release-notes/typescript-2-4.html#weak-type-detection",
+          "checkedAt": null
+        },
+        {
+          "id": "ref-e93a21d416404bfe",
+          "title": "Документация TypeScript",
+          "url": "https://www.typescriptlang.org/docs/handbook/2/objects.html",
+          "checkedAt": null
         }
       ],
       "caveats": []
@@ -1160,6 +1214,36 @@
           "checkedAt": null,
           "notes": "Начальная точка поиска, не замена источнику конкретного технического утверждения.",
           "id": "ref-d1ea49db3568981e"
+        },
+        {
+          "id": "ref-e0a2a1812648c9f8",
+          "title": "Материалы команды TypeScript",
+          "url": "https://github.com/microsoft/TypeScript/issues/36987",
+          "checkedAt": null
+        },
+        {
+          "id": "ref-b1f557c0324024a7",
+          "title": "Документация TypeScript",
+          "url": "https://www.typescriptlang.org/docs/handbook/type-compatibility.html",
+          "checkedAt": null
+        },
+        {
+          "id": "ref-1ec6ef05cd7c0c00",
+          "title": "Документация TypeScript",
+          "url": "https://www.typescriptlang.org/docs/handbook/2/everyday-types.html",
+          "checkedAt": null
+        },
+        {
+          "id": "ref-8e025fcda37288b0",
+          "title": "Документация TypeScript",
+          "url": "https://www.typescriptlang.org/docs/handbook/release-notes/typescript-5-6.html#strict-builtin-iterator-checks-and---strictbuiltiniteratorreturn",
+          "checkedAt": null
+        },
+        {
+          "id": "ref-3f97ed4aa0a31ba2",
+          "title": "Документация TypeScript",
+          "url": "https://www.typescriptlang.org/docs/handbook/utility-types.html",
+          "checkedAt": null
         }
       ],
       "caveats": [
@@ -1195,6 +1279,36 @@
           "checkedAt": null,
           "notes": "Начальная точка поиска, не замена источнику конкретного технического утверждения.",
           "id": "ref-d1ea49db3568981e"
+        },
+        {
+          "id": "ref-b8c0426b8b77a2f0",
+          "title": "Документация TypeScript",
+          "url": "https://www.typescriptlang.org/docs/handbook/2/generics.html",
+          "checkedAt": null
+        },
+        {
+          "id": "ref-a56cb05e2fc85a16",
+          "title": "Документация TypeScript",
+          "url": "https://www.typescriptlang.org/docs/handbook/jsx.html",
+          "checkedAt": null
+        },
+        {
+          "id": "ref-d577ddbc8ed18132",
+          "title": "Документация TypeScript",
+          "url": "https://www.typescriptlang.org/tsconfig/strictBindCallApply.html",
+          "checkedAt": null
+        },
+        {
+          "id": "ref-b1f557c0324024a7",
+          "title": "Документация TypeScript",
+          "url": "https://www.typescriptlang.org/docs/handbook/type-compatibility.html",
+          "checkedAt": null
+        },
+        {
+          "id": "ref-3f97ed4aa0a31ba2",
+          "title": "Документация TypeScript",
+          "url": "https://www.typescriptlang.org/docs/handbook/utility-types.html",
+          "checkedAt": null
         }
       ],
       "caveats": [
@@ -1212,6 +1326,12 @@
           "checkedAt": null,
           "notes": "Начальная точка поиска, не замена источнику конкретного технического утверждения.",
           "id": "ref-d1ea49db3568981e"
+        },
+        {
+          "id": "ref-db1c5af3b94742b6",
+          "title": "Документация TypeScript",
+          "url": "https://www.typescriptlang.org/docs/handbook/2/functions.html",
+          "checkedAt": null
         }
       ],
       "caveats": []
@@ -1234,6 +1354,30 @@
           "checkedAt": null,
           "notes": "Начальная точка поиска, не замена источнику конкретного технического утверждения.",
           "id": "ref-d1ea49db3568981e"
+        },
+        {
+          "id": "ref-93859c354bdf1f3b",
+          "title": "Документация TypeScript",
+          "url": "https://www.typescriptlang.org/docs/handbook/release-notes/typescript-5-5.html",
+          "checkedAt": null
+        },
+        {
+          "id": "ref-d4b7250ff12d57ad",
+          "title": "Документация TypeScript",
+          "url": "https://www.typescriptlang.org/docs/handbook/release-notes/typescript-4-6.html#control-flow-analysis-for-destructured-discriminated-unions",
+          "checkedAt": null
+        },
+        {
+          "id": "ref-b1f557c0324024a7",
+          "title": "Документация TypeScript",
+          "url": "https://www.typescriptlang.org/docs/handbook/type-compatibility.html",
+          "checkedAt": null
+        },
+        {
+          "id": "ref-b2adaad06a21a777",
+          "title": "Документация TypeScript",
+          "url": "https://www.typescriptlang.org/docs/handbook/2/narrowing.html",
+          "checkedAt": null
         }
       ],
       "caveats": []
@@ -1267,6 +1411,18 @@
           "checkedAt": null,
           "notes": "Начальная точка поиска, не замена источнику конкретного технического утверждения.",
           "id": "ref-d1ea49db3568981e"
+        },
+        {
+          "id": "ref-5e4a67a64b84cfba",
+          "title": "Документация TypeScript",
+          "url": "https://www.typescriptlang.org/docs/handbook/release-notes/typescript-4-7.html#instantiation-expressions",
+          "checkedAt": null
+        },
+        {
+          "id": "ref-b1f557c0324024a7",
+          "title": "Документация TypeScript",
+          "url": "https://www.typescriptlang.org/docs/handbook/type-compatibility.html",
+          "checkedAt": null
         }
       ],
       "caveats": [
@@ -1296,6 +1452,36 @@
           "checkedAt": null,
           "notes": "Начальная точка поиска, не замена источнику конкретного технического утверждения.",
           "id": "ref-d1ea49db3568981e"
+        },
+        {
+          "id": "ref-5a02d79665f1eb02",
+          "title": "Документация TypeScript",
+          "url": "https://www.typescriptlang.org/docs/handbook/2/keyof-types.html",
+          "checkedAt": null
+        },
+        {
+          "id": "ref-27e2f7bd757441f5",
+          "title": "Документация TypeScript",
+          "url": "https://www.typescriptlang.org/docs/handbook/2/conditional-types.html",
+          "checkedAt": null
+        },
+        {
+          "id": "ref-b4916c12ab02f207",
+          "title": "Документация TypeScript",
+          "url": "https://www.typescriptlang.org/docs/handbook/release-notes/typescript-2-8.html#type-inference-in-conditional-types",
+          "checkedAt": null
+        },
+        {
+          "id": "ref-8d4083543bc841a8",
+          "title": "Документация TypeScript",
+          "url": "https://www.typescriptlang.org/docs/handbook/release-notes/typescript-4-8.html#improved-inference-for-infer-types-in-template-string-types",
+          "checkedAt": null
+        },
+        {
+          "id": "ref-d47fc0156c7d6c39",
+          "title": "Документация TypeScript",
+          "url": "https://www.typescriptlang.org/docs/handbook/release-notes/typescript-4-5.html#tail-recursion-elimination-on-conditional-types",
+          "checkedAt": null
         }
       ],
       "caveats": [
@@ -1320,6 +1506,12 @@
           "checkedAt": null,
           "notes": "Начальная точка поиска, не замена источнику конкретного технического утверждения.",
           "id": "ref-d1ea49db3568981e"
+        },
+        {
+          "id": "ref-3f97ed4aa0a31ba2",
+          "title": "Документация TypeScript",
+          "url": "https://www.typescriptlang.org/docs/handbook/utility-types.html",
+          "checkedAt": null
         }
       ],
       "caveats": []
@@ -1347,6 +1539,12 @@
           "checkedAt": null,
           "notes": "Начальная точка поиска, не замена источнику конкретного технического утверждения.",
           "id": "ref-d1ea49db3568981e"
+        },
+        {
+          "id": "ref-b1f557c0324024a7",
+          "title": "Документация TypeScript",
+          "url": "https://www.typescriptlang.org/docs/handbook/type-compatibility.html",
+          "checkedAt": null
         }
       ],
       "caveats": [
@@ -1388,6 +1586,30 @@
           "checkedAt": null,
           "notes": "Начальная точка поиска, не замена источнику конкретного технического утверждения.",
           "id": "ref-d1ea49db3568981e"
+        },
+        {
+          "id": "ref-2867a7ff346ce328",
+          "title": "Документация TypeScript",
+          "url": "https://www.typescriptlang.org/docs/handbook/declaration-files/publishing.html",
+          "checkedAt": null
+        },
+        {
+          "id": "ref-1ec6ef05cd7c0c00",
+          "title": "Документация TypeScript",
+          "url": "https://www.typescriptlang.org/docs/handbook/2/everyday-types.html",
+          "checkedAt": null
+        },
+        {
+          "id": "ref-e93a21d416404bfe",
+          "title": "Документация TypeScript",
+          "url": "https://www.typescriptlang.org/docs/handbook/2/objects.html",
+          "checkedAt": null
+        },
+        {
+          "id": "ref-4d18f3bf7d37dcc4",
+          "title": "Документация TypeScript",
+          "url": "https://www.typescriptlang.org/docs/handbook/declaration-merging.html",
+          "checkedAt": null
         }
       ],
       "caveats": [
@@ -1465,6 +1687,30 @@
           "checkedAt": null,
           "notes": "Начальная точка поиска, не замена источнику конкретного технического утверждения.",
           "id": "ref-d1ea49db3568981e"
+        },
+        {
+          "id": "ref-a22a197041402e83",
+          "title": "Документация TypeScript",
+          "url": "https://www.typescriptlang.org/tsconfig/moduleDetection.html",
+          "checkedAt": null
+        },
+        {
+          "id": "ref-47113836c338cb8d",
+          "title": "Документация TypeScript",
+          "url": "https://www.typescriptlang.org/tsconfig/noUncheckedSideEffectImports.html",
+          "checkedAt": null
+        },
+        {
+          "id": "ref-eef61f14c56186ae",
+          "title": "Документация TypeScript",
+          "url": "https://www.typescriptlang.org/tsconfig/resolveJsonModule.html",
+          "checkedAt": null
+        },
+        {
+          "id": "ref-180eb8024d5128d7",
+          "title": "Документация TypeScript",
+          "url": "https://www.typescriptlang.org/docs/handbook/release-notes/typescript-6-0.html",
+          "checkedAt": null
         }
       ],
       "caveats": [
@@ -1518,6 +1764,12 @@
           "checkedAt": null,
           "notes": "Начальная точка поиска, не замена источнику конкретного технического утверждения.",
           "id": "ref-d1ea49db3568981e"
+        },
+        {
+          "id": "ref-b8c0426b8b77a2f0",
+          "title": "Документация TypeScript",
+          "url": "https://www.typescriptlang.org/docs/handbook/2/generics.html",
+          "checkedAt": null
         }
       ],
       "caveats": [
@@ -1674,6 +1926,18 @@
           "checkedAt": null,
           "notes": "Начальная точка поиска, не замена источнику конкретного технического утверждения.",
           "id": "ref-8234962172f4a6ef"
+        },
+        {
+          "id": "ref-64a91dfe3f1ae7d6",
+          "title": "Redux: why rtk is redux today",
+          "url": "https://redux.js.org/introduction/why-rtk-is-redux-today",
+          "checkedAt": null
+        },
+        {
+          "id": "ref-15242a8a9dd8eb83",
+          "title": "Zustand: introduction",
+          "url": "https://zustand.docs.pmnd.rs/getting-started/introduction",
+          "checkedAt": null
         }
       ],
       "caveats": [
@@ -1863,6 +2127,78 @@
           "checkedAt": null,
           "notes": "Начальная точка поиска, не замена источнику конкретного технического утверждения.",
           "id": "ref-316115636f085f86"
+        },
+        {
+          "id": "ref-bdae4f62d9d16213",
+          "title": "MDN: article",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/article",
+          "checkedAt": null
+        },
+        {
+          "id": "ref-339d5ca874465d75",
+          "title": "MDN: details",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/details",
+          "checkedAt": null
+        },
+        {
+          "id": "ref-67ca2dd321bb9a41",
+          "title": "MDN: Using",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/API/Popover_API/Using",
+          "checkedAt": null
+        },
+        {
+          "id": "ref-30a3b6932f3257bc",
+          "title": "MDN: aria-disabled",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-disabled",
+          "checkedAt": null
+        },
+        {
+          "id": "ref-134a2fa5b83f3292",
+          "title": "WHATWG HTML: form-elements.html",
+          "url": "https://html.spec.whatwg.org/multipage/form-elements.html#the-progress-element",
+          "checkedAt": null
+        },
+        {
+          "id": "ref-2501dcc79edec105",
+          "title": "WHATWG HTML: grouping-content.html",
+          "url": "https://html.spec.whatwg.org/multipage/grouping-content.html#the-p-element",
+          "checkedAt": null
+        },
+        {
+          "id": "ref-a2eff16c1d28fa7a",
+          "title": "W3C WAI: decision-tree",
+          "url": "https://www.w3.org/WAI/tutorials/images/decision-tree/",
+          "checkedAt": null
+        },
+        {
+          "id": "ref-7d52bc57c68ae38a",
+          "title": "MDN: figure",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/figure",
+          "checkedAt": null
+        },
+        {
+          "id": "ref-13da181048458702",
+          "title": "W3C WAI: G1",
+          "url": "https://www.w3.org/WAI/WCAG22/Techniques/general/G1",
+          "checkedAt": null
+        },
+        {
+          "id": "ref-3d09deba61eae672",
+          "title": "W3C WAI: labels",
+          "url": "https://www.w3.org/WAI/tutorials/forms/labels/#hiding-label-text",
+          "checkedAt": null
+        },
+        {
+          "id": "ref-4d89ea2f0f87c72f",
+          "title": "W3C WAI: preliminary",
+          "url": "https://www.w3.org/WAI/test-evaluate/preliminary/",
+          "checkedAt": null
+        },
+        {
+          "id": "ref-664c99322a7995fc",
+          "title": "W3C WAI: two-headers",
+          "url": "https://www.w3.org/WAI/tutorials/tables/two-headers/",
+          "checkedAt": null
         }
       ],
       "caveats": [
@@ -1904,6 +2240,84 @@
           "checkedAt": null,
           "notes": "Начальная точка поиска, не замена источнику конкретного технического утверждения.",
           "id": "ref-316115636f085f86"
+        },
+        {
+          "id": "ref-3f19f7e8d56dd9e4",
+          "title": "MDN: min-width",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/min-width",
+          "checkedAt": null
+        },
+        {
+          "id": "ref-da1044310da3885e",
+          "title": "MDN: Property value processing",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Cascade/Property_value_processing",
+          "checkedAt": null
+        },
+        {
+          "id": "ref-e320cbf4ef747d70",
+          "title": "MDN: Shorthand properties",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Cascade/Shorthand_properties",
+          "checkedAt": null
+        },
+        {
+          "id": "ref-7fba41e5002cd228",
+          "title": "MDN: Error handling",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Syntax/Error_handling",
+          "checkedAt": null
+        },
+        {
+          "id": "ref-41c59ecfba59d95a",
+          "title": "MDN: @property",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/At-rules/@property",
+          "checkedAt": null
+        },
+        {
+          "id": "ref-7a0e05bf745020ee",
+          "title": "MDN: all",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/all",
+          "checkedAt": null
+        },
+        {
+          "id": "ref-620c1ba600bc61c6",
+          "title": "MDN: Specificity",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Cascade/Specificity",
+          "checkedAt": null
+        },
+        {
+          "id": "ref-838f9c8619d6a8a1",
+          "title": "MDN: revert",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Values/revert",
+          "checkedAt": null
+        },
+        {
+          "id": "ref-01b80e8064385ace",
+          "title": "MDN: Introduction",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Syntax/Introduction",
+          "checkedAt": null
+        },
+        {
+          "id": "ref-d5a2e17b225a992e",
+          "title": "MDN: Getting started",
+          "url": "https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Styling_basics/Getting_started",
+          "checkedAt": null
+        },
+        {
+          "id": "ref-124f5df8a371920d",
+          "title": "MDN: Box model",
+          "url": "https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Styling_basics/Box_model",
+          "checkedAt": null
+        },
+        {
+          "id": "ref-6db5b3ebbaa7f0e6",
+          "title": "MDN: contain",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/contain",
+          "checkedAt": null
+        },
+        {
+          "id": "ref-2ed90e9b6c3468fa",
+          "title": "MDN: :has",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Selectors/:has",
+          "checkedAt": null
         }
       ],
       "caveats": [
@@ -1975,6 +2389,114 @@
           "checkedAt": null,
           "notes": "Начальная точка поиска, не замена источнику конкретного технического утверждения.",
           "id": "ref-316115636f085f86"
+        },
+        {
+          "id": "ref-65bcc7fec402a084",
+          "title": "MDN: Auto-placement",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Grid_layout/Auto-placement",
+          "checkedAt": null
+        },
+        {
+          "id": "ref-701a5cd523ed017f",
+          "title": "MDN: Grid template areas",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Grid_layout/Grid_template_areas",
+          "checkedAt": null
+        },
+        {
+          "id": "ref-1e0dd2b93c92c979",
+          "title": "MDN: Wrapping items",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Flexible_box_layout/Wrapping_items",
+          "checkedAt": null
+        },
+        {
+          "id": "ref-ba4321c8dcabd046",
+          "title": "MDN: Box alignment in flexbox",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Box_alignment/Box_alignment_in_flexbox",
+          "checkedAt": null
+        },
+        {
+          "id": "ref-99d4c41b854d56ad",
+          "title": "MDN: height",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/height",
+          "checkedAt": null
+        },
+        {
+          "id": "ref-fe70db6a90b4bd08",
+          "title": "MDN: transform",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/transform",
+          "checkedAt": null
+        },
+        {
+          "id": "ref-5461597d67f06c48",
+          "title": "MDN: display-box",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Values/display-box",
+          "checkedAt": null
+        },
+        {
+          "id": "ref-d4193a4c2fcbba28",
+          "title": "MDN: table-layout",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/table-layout",
+          "checkedAt": null
+        },
+        {
+          "id": "ref-edafb3712c62634f",
+          "title": "MDN: margin",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/margin",
+          "checkedAt": null
+        },
+        {
+          "id": "ref-128932ae4274357d",
+          "title": "MDN: Basic concepts",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Flexible_box_layout/Basic_concepts",
+          "checkedAt": null
+        },
+        {
+          "id": "ref-2a889a76ff369d5d",
+          "title": "MDN: grid-template-columns",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/grid-template-columns",
+          "checkedAt": null
+        },
+        {
+          "id": "ref-1f1b43b32193f16a",
+          "title": "MDN: flex-direction",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/flex-direction",
+          "checkedAt": null
+        },
+        {
+          "id": "ref-908a8ab620df7656",
+          "title": "MDN: float",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/float",
+          "checkedAt": null
+        },
+        {
+          "id": "ref-4b98cce7f7ed75d3",
+          "title": "MDN: left",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/left",
+          "checkedAt": null
+        },
+        {
+          "id": "ref-2e9182593ff5d3dd",
+          "title": "MDN: Basic concepts",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Multicol_layout/Basic_concepts",
+          "checkedAt": null
+        },
+        {
+          "id": "ref-155ef1b033cb666f",
+          "title": "MDN: border-collapse",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/border-collapse",
+          "checkedAt": null
+        },
+        {
+          "id": "ref-dc001e23540d8a8a",
+          "title": "MDN: flex",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/flex",
+          "checkedAt": null
+        },
+        {
+          "id": "ref-835b755ed83345f5",
+          "title": "MDN: Line-based placement",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Grid_layout/Line-based_placement",
+          "checkedAt": "2026-11-07"
         }
       ],
       "caveats": [
@@ -2022,6 +2544,90 @@
           "checkedAt": null,
           "notes": "Начальная точка поиска, не замена источнику конкретного технического утверждения.",
           "id": "ref-316115636f085f86"
+        },
+        {
+          "id": "ref-b209cabe9ff2834f",
+          "title": "MDN: calc",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Values/calc",
+          "checkedAt": null
+        },
+        {
+          "id": "ref-c166c01169cd4bc0",
+          "title": "MDN: Using",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Media_queries/Using",
+          "checkedAt": null
+        },
+        {
+          "id": "ref-48050f628b82bacc",
+          "title": "MDN: Container queries",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Containment/Container_queries",
+          "checkedAt": null
+        },
+        {
+          "id": "ref-2728395fe758abf8",
+          "title": "MDN: Printing",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Media_queries/Printing",
+          "checkedAt": null
+        },
+        {
+          "id": "ref-e5421c38442e45e9",
+          "title": "W3C: css-scroll-snap-1",
+          "url": "https://www.w3.org/TR/css-scroll-snap-1/",
+          "checkedAt": null
+        },
+        {
+          "id": "ref-c4b645b3296ad9f4",
+          "title": "MDN: img",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/img#srcset",
+          "checkedAt": null
+        },
+        {
+          "id": "ref-2f68aa7741682aa5",
+          "title": "W3C: css-box-3",
+          "url": "https://www.w3.org/TR/css-box-3/#padding-physical",
+          "checkedAt": null
+        },
+        {
+          "id": "ref-433a46a49b6e3462",
+          "title": "MDN: viewport",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/meta/name/viewport",
+          "checkedAt": null
+        },
+        {
+          "id": "ref-fb30386007455c56",
+          "title": "MDN: Responsive Design",
+          "url": "https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/CSS_layout/Responsive_Design",
+          "checkedAt": null
+        },
+        {
+          "id": "ref-3b20f41323599ed7",
+          "title": "MDN: length",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Values/length",
+          "checkedAt": null
+        },
+        {
+          "id": "ref-ca9fbd612230e017",
+          "title": "MDN: any-pointer",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/At-rules/@media/any-pointer",
+          "checkedAt": null
+        },
+        {
+          "id": "ref-ee418d8caaaec05f",
+          "title": "W3C WAI: reflow.html",
+          "url": "https://www.w3.org/WAI/WCAG22/Understanding/reflow.html",
+          "checkedAt": null
+        },
+        {
+          "id": "ref-0e0bc386d09c597d",
+          "title": "MDN: CSS pixel",
+          "url": "https://developer.mozilla.org/en-US/docs/Glossary/CSS_pixel",
+          "checkedAt": null
+        },
+        {
+          "id": "ref-52e369c87c1d393e",
+          "title": "MDN: object-position",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/object-position",
+          "checkedAt": null
         }
       ],
       "caveats": [
@@ -2057,6 +2663,96 @@
           "checkedAt": null,
           "notes": "Начальная точка поиска, не замена источнику конкретного технического утверждения.",
           "id": "ref-316115636f085f86"
+        },
+        {
+          "id": "ref-17d1596ede2d4686",
+          "title": "MDN: form",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/form",
+          "checkedAt": null
+        },
+        {
+          "id": "ref-a51076461378011d",
+          "title": "MDN: fieldset",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/fieldset",
+          "checkedAt": null
+        },
+        {
+          "id": "ref-7f91eb1009d912dc",
+          "title": "MDN: select",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/select",
+          "checkedAt": null
+        },
+        {
+          "id": "ref-35348c25dcfd40c8",
+          "title": "MDN: file",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/input/file",
+          "checkedAt": null
+        },
+        {
+          "id": "ref-fc0a651c3ab2ecdc",
+          "title": "MDN: step",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Attributes/step",
+          "checkedAt": null
+        },
+        {
+          "id": "ref-9c6f30f7a6ff1a70",
+          "title": "MDN: contenteditable",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Global_attributes/contenteditable",
+          "checkedAt": null
+        },
+        {
+          "id": "ref-4df84422250f208b",
+          "title": "W3C: notifications",
+          "url": "https://www.w3.org/WAI/tutorials/forms/notifications/",
+          "checkedAt": null
+        },
+        {
+          "id": "ref-362e25f752381c57",
+          "title": "MDN: requestSubmit",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/API/HTMLFormElement/requestSubmit",
+          "checkedAt": null
+        },
+        {
+          "id": "ref-f35d160c34d7b26e",
+          "title": "MDN: textarea",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/textarea",
+          "checkedAt": null
+        },
+        {
+          "id": "ref-5117f30f18b30827",
+          "title": "MDN: datalist",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/datalist",
+          "checkedAt": null
+        },
+        {
+          "id": "ref-811fd16e24c71927",
+          "title": "MDN: date",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/input/date",
+          "checkedAt": null
+        },
+        {
+          "id": "ref-b34514f2358f977b",
+          "title": "MDN: checkbox",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/input/checkbox#indeterminate_state_checkboxes",
+          "checkedAt": null
+        },
+        {
+          "id": "ref-a75c085ec47752ba",
+          "title": "WHATWG HTML: form-control-infrastructure.html",
+          "url": "https://html.spec.whatwg.org/multipage/form-control-infrastructure.html#implicit-submission",
+          "checkedAt": null
+        },
+        {
+          "id": "ref-7e5e054873cf44cf",
+          "title": "MDN: resize",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/resize",
+          "checkedAt": null
+        },
+        {
+          "id": "ref-3cb1bb8e0f02ad7e",
+          "title": "MDN: autocomplete",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Attributes/autocomplete",
+          "checkedAt": null
         }
       ],
       "caveats": [
@@ -2086,6 +2782,60 @@
           "checkedAt": null,
           "notes": "Начальная точка поиска, не замена источнику конкретного технического утверждения.",
           "id": "ref-316115636f085f86"
+        },
+        {
+          "id": "ref-ab627d9f46a98e02",
+          "title": "MDN: noopener",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Attributes/rel/noopener",
+          "checkedAt": null
+        },
+        {
+          "id": "ref-2ca1878b2bfa297b",
+          "title": "MDN: video",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/video",
+          "checkedAt": null
+        },
+        {
+          "id": "ref-f7e870694cecadde",
+          "title": "MDN: template",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/template",
+          "checkedAt": null
+        },
+        {
+          "id": "ref-3b31f31fd1161175",
+          "title": "MDN: DOMContentLoaded event",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/API/Document/DOMContentLoaded_event",
+          "checkedAt": null
+        },
+        {
+          "id": "ref-23cebc8cdf156ff6",
+          "title": "MDN: Subresource Integrity",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/Security/Defenses/Subresource_Integrity",
+          "checkedAt": null
+        },
+        {
+          "id": "ref-615c7548bc93257e",
+          "title": "MDN: img",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/img#fetchpriority",
+          "checkedAt": null
+        },
+        {
+          "id": "ref-61faf5bb328a2e4a",
+          "title": "MDN: SVG as an image",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/SVG/Guides/SVG_as_an_image",
+          "checkedAt": null
+        },
+        {
+          "id": "ref-9d0781fa5f90116a",
+          "title": "MDN: viewBox",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/SVG/Reference/Attribute/viewBox",
+          "checkedAt": null
+        },
+        {
+          "id": "ref-3380e5c7c18dca21",
+          "title": "MDN: a",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/a#download",
+          "checkedAt": null
         }
       ],
       "caveats": [
@@ -2127,6 +2877,102 @@
           "checkedAt": null,
           "notes": "Начальная точка поиска, не замена источнику конкретного технического утверждения.",
           "id": "ref-316115636f085f86"
+        },
+        {
+          "id": "ref-57beda429f53d7ba",
+          "title": "MDN: background",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/background",
+          "checkedAt": null
+        },
+        {
+          "id": "ref-ac3d88c35445a9fa",
+          "title": "MDN: opacity",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/opacity",
+          "checkedAt": null
+        },
+        {
+          "id": "ref-503bb231d579dff8",
+          "title": "MDN: oklch",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Values/color_value/oklch",
+          "checkedAt": null
+        },
+        {
+          "id": "ref-95c0c2ec643c5c0b",
+          "title": "MDN: pointer-events",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/pointer-events",
+          "checkedAt": null
+        },
+        {
+          "id": "ref-c1ccd2c93083fccb",
+          "title": "MDN: animation-fill-mode",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/animation-fill-mode",
+          "checkedAt": null
+        },
+        {
+          "id": "ref-d7c92d3bed8caac0",
+          "title": "MDN: @starting-style",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/At-rules/@starting-style",
+          "checkedAt": null
+        },
+        {
+          "id": "ref-319b4e21439ac345",
+          "title": "MDN: scrollbar-gutter",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/scrollbar-gutter",
+          "checkedAt": null
+        },
+        {
+          "id": "ref-9017bd9a6fabfa57",
+          "title": "MDN: outline",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/outline",
+          "checkedAt": null
+        },
+        {
+          "id": "ref-a7b54b7b098b07cb",
+          "title": "MDN: border-radius",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/border-radius",
+          "checkedAt": null
+        },
+        {
+          "id": "ref-79ca8641ebac39c9",
+          "title": "MDN: gradient",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Values/gradient",
+          "checkedAt": null
+        },
+        {
+          "id": "ref-a31fbfe53bc1dd9c",
+          "title": "MDN: drop-shadow",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Values/filter-function/drop-shadow",
+          "checkedAt": null
+        },
+        {
+          "id": "ref-fe70db6a90b4bd08",
+          "title": "MDN: transform",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/transform",
+          "checkedAt": null
+        },
+        {
+          "id": "ref-0af32b93f89fa74f",
+          "title": "MDN: easing-function",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Values/easing-function",
+          "checkedAt": null
+        },
+        {
+          "id": "ref-d2df833def6ce7c3",
+          "title": "MDN: touch-action",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/touch-action",
+          "checkedAt": null
+        },
+        {
+          "id": "ref-a49a9f8fad6f5f57",
+          "title": "MDN: overscroll-behavior",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/overscroll-behavior",
+          "checkedAt": null
+        },
+        {
+          "id": "ref-df1ec05cf788945c",
+          "title": "MDN: isolation",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/isolation",
+          "checkedAt": null
         }
       ],
       "caveats": [
@@ -2926,6 +3772,496 @@
         }
       ],
       "caveats": []
+    },
+    {
+      "sectionId": "typescript",
+      "subsectionId": "ts-configuration",
+      "scope": "Граф проекта, наследование настроек, emit, карты и диагностика checker.",
+      "sources": [
+        {
+          "id": "ref-cab0197eb8116eaf",
+          "title": "Документация TypeScript",
+          "url": "https://www.typescriptlang.org/tsconfig/",
+          "checkedAt": null
+        },
+        {
+          "id": "ref-180eb8024d5128d7",
+          "title": "Документация TypeScript",
+          "url": "https://www.typescriptlang.org/docs/handbook/release-notes/typescript-6-0.html",
+          "checkedAt": null
+        },
+        {
+          "id": "ref-6be230e080a5b990",
+          "title": "Документация TypeScript",
+          "url": "https://www.typescriptlang.org/tsconfig/erasableSyntaxOnly.html",
+          "checkedAt": null
+        },
+        {
+          "id": "ref-fe785d6b935950a4",
+          "title": "Материалы команды TypeScript",
+          "url": "https://github.com/microsoft/TypeScript/wiki/Performance",
+          "checkedAt": null
+        }
+      ],
+      "caveats": [
+        "Примеры предполагают strict и подходящие объявления стандартных API. Диагностика и defaults могут зависеть от версии компилятора; исполняемый пример здесь не проверялся."
+      ]
+    },
+    {
+      "sectionId": "typescript",
+      "subsectionId": "ts-declarations",
+      "scope": "Практика написания деклараций и проверки публичных контрактов. Основы .d.ts и публикации связаны с вопросами раздела модулей.",
+      "sources": [
+        {
+          "id": "ref-2867a7ff346ce328",
+          "title": "Документация TypeScript",
+          "url": "https://www.typescriptlang.org/docs/handbook/declaration-files/publishing.html",
+          "checkedAt": null
+        },
+        {
+          "id": "ref-4d18f3bf7d37dcc4",
+          "title": "Документация TypeScript",
+          "url": "https://www.typescriptlang.org/docs/handbook/declaration-merging.html",
+          "checkedAt": null
+        },
+        {
+          "id": "ref-ae872ce8e10666f1",
+          "title": "Документация TypeScript",
+          "url": "https://www.typescriptlang.org/docs/handbook/declaration-files/deep-dive.html",
+          "checkedAt": null
+        }
+      ],
+      "caveats": [
+        "Примеры предполагают strict и подходящие объявления стандартных API. Диагностика и defaults могут зависеть от версии компилятора; исполняемый пример здесь не проверялся."
+      ]
+    },
+    {
+      "sectionId": "html-css",
+      "subsectionId": "html-document",
+      "scope": "Кодировка, атрибуты, язык и смысловая разметка содержимого.",
+      "caveats": [
+        "Поддержку современных возможностей проверять для целевых браузеров. Примеры иллюстрируют правила, но не исполнялись."
+      ],
+      "sources": [
+        {
+          "id": "ref-17abd870a57ad18a",
+          "title": "MDN: dir",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Global_attributes/dir",
+          "checkedAt": null
+        },
+        {
+          "id": "ref-f3e801b0258c2517",
+          "title": "MDN: meta",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/meta#charset",
+          "checkedAt": null
+        },
+        {
+          "id": "ref-5746718c96319d26",
+          "title": "MDN: HTML",
+          "url": "https://developer.mozilla.org/en-US/docs/Glossary/Boolean/HTML",
+          "checkedAt": null
+        },
+        {
+          "id": "ref-18b4c10c80f9c2cb",
+          "title": "MDN: Void element",
+          "url": "https://developer.mozilla.org/en-US/docs/Glossary/Void_element",
+          "checkedAt": null
+        },
+        {
+          "id": "ref-74500e71b36457f2",
+          "title": "MDN: Character reference",
+          "url": "https://developer.mozilla.org/en-US/docs/Glossary/Character_reference",
+          "checkedAt": null
+        },
+        {
+          "id": "ref-46240e82a4c2971d",
+          "title": "WHATWG HTML: text-level-semantics.html",
+          "url": "https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-em-element",
+          "checkedAt": null
+        },
+        {
+          "id": "ref-032516489888d292",
+          "title": "WHATWG HTML: grouping-content.html",
+          "url": "https://html.spec.whatwg.org/multipage/grouping-content.html#the-dl-element",
+          "checkedAt": null
+        },
+        {
+          "id": "ref-64dd2ff12ff37811",
+          "title": "MDN: base",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/base",
+          "checkedAt": null
+        },
+        {
+          "id": "ref-ac2aad6ac3f4248e",
+          "title": "MDN: Basic HTML syntax",
+          "url": "https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Structuring_content/Basic_HTML_syntax",
+          "checkedAt": null
+        },
+        {
+          "id": "ref-f2b4154cb8d9fb48",
+          "title": "MDN: Element",
+          "url": "https://developer.mozilla.org/en-US/docs/Glossary/Element",
+          "checkedAt": null
+        },
+        {
+          "id": "ref-79c98023b280f641",
+          "title": "MDN: head",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/head",
+          "checkedAt": null
+        },
+        {
+          "id": "ref-6c75f97e35504aec",
+          "title": "MDN: Resolving relative references",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/API/URL_API/Resolving_relative_references",
+          "checkedAt": null
+        },
+        {
+          "id": "ref-6e9fd3536e7e1828",
+          "title": "MDN: time",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/time",
+          "checkedAt": null
+        },
+        {
+          "id": "ref-1b4fd05e743da26e",
+          "title": "MDN: pre",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/pre",
+          "checkedAt": null
+        },
+        {
+          "id": "ref-5dc4c8aee8446229",
+          "title": "MDN: blockquote",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/blockquote",
+          "checkedAt": null
+        }
+      ]
+    },
+    {
+      "sectionId": "html-css",
+      "subsectionId": "css-selectors",
+      "scope": "Комбинаторы, структурные состояния, псевдоэлементы и границы правил.",
+      "caveats": [
+        "Поддержку современных возможностей проверять для целевых браузеров. Примеры иллюстрируют правила, но не исполнялись."
+      ],
+      "sources": [
+        {
+          "id": "ref-b8f847ef85e3c638",
+          "title": "MDN: Selectors and combinators",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Selectors/Selectors_and_combinators",
+          "checkedAt": null
+        },
+        {
+          "id": "ref-65778a68bd96139b",
+          "title": "MDN: :nth-child",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Selectors/:nth-child",
+          "checkedAt": null
+        },
+        {
+          "id": "ref-72a9a388aa6333d7",
+          "title": "MDN: Pseudo-elements",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Selectors/Pseudo-elements",
+          "checkedAt": null
+        },
+        {
+          "id": "ref-8d30e135dd1e22a3",
+          "title": "MDN: Attribute selectors",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Selectors/Attribute_selectors",
+          "checkedAt": null
+        },
+        {
+          "id": "ref-f2cc25bc1138d584",
+          "title": "MDN: Nesting and specificity",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Nesting/Nesting_and_specificity",
+          "checkedAt": null
+        },
+        {
+          "id": "ref-fe27c9b92537c578",
+          "title": "MDN: @scope",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/At-rules/@scope",
+          "checkedAt": null
+        },
+        {
+          "id": "ref-02afd434080755b4",
+          "title": "MDN: :focus-within",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Selectors/:focus-within",
+          "checkedAt": null
+        },
+        {
+          "id": "ref-62bdb85aad330a71",
+          "title": "MDN: :empty",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Selectors/:empty",
+          "checkedAt": null
+        },
+        {
+          "id": "ref-8cb99d8acdf0d4f4",
+          "title": "MDN: :checked",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Selectors/:checked",
+          "checkedAt": null
+        },
+        {
+          "id": "ref-a631b942bd0cc6c6",
+          "title": "MDN: Privacy and :visited",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Selectors/Privacy_and_%3Avisited",
+          "checkedAt": null
+        },
+        {
+          "id": "ref-5da8d568e7d6eb80",
+          "title": "MDN: Basic selectors",
+          "url": "https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Styling_basics/Basic_selectors",
+          "checkedAt": "2026-11-07"
+        }
+      ]
+    },
+    {
+      "sectionId": "html-css",
+      "subsectionId": "css-typography",
+      "scope": "Строки, пробелы, шрифты и управление отображением текста.",
+      "caveats": [
+        "Поддержку современных возможностей проверять для целевых браузеров. Примеры иллюстрируют правила, но не исполнялись."
+      ],
+      "sources": [
+        {
+          "id": "ref-c80c5094d9974e3a",
+          "title": "MDN: line-height",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/line-height",
+          "checkedAt": null
+        },
+        {
+          "id": "ref-a82fa1da65163149",
+          "title": "MDN: white-space",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/white-space",
+          "checkedAt": null
+        },
+        {
+          "id": "ref-54f36b09569005df",
+          "title": "MDN: vertical-align",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/vertical-align",
+          "checkedAt": null
+        },
+        {
+          "id": "ref-0f8ba2ccbe84d9a8",
+          "title": "MDN: font-family",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/font-family",
+          "checkedAt": null
+        },
+        {
+          "id": "ref-5a570c6fe59ed66e",
+          "title": "MDN: Variable fonts",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Fonts/Variable_fonts",
+          "checkedAt": null
+        },
+        {
+          "id": "ref-322766afecab8627",
+          "title": "MDN: text-decoration",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/text-decoration",
+          "checkedAt": null
+        },
+        {
+          "id": "ref-5a6495d338db10d8",
+          "title": "MDN: text-align",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/text-align",
+          "checkedAt": null
+        },
+        {
+          "id": "ref-be8be7ec4d46090a",
+          "title": "MDN: text-transform",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/text-transform",
+          "checkedAt": null
+        },
+        {
+          "id": "ref-6056ee1133c6bcad",
+          "title": "MDN: length",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Values/length#ch",
+          "checkedAt": null
+        },
+        {
+          "id": "ref-3cb66931f9b0efd9",
+          "title": "MDN: line-clamp",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/line-clamp",
+          "checkedAt": null
+        },
+        {
+          "id": "ref-a9b47256e80fd6ad",
+          "title": "MDN: font-variant-numeric",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/font-variant-numeric",
+          "checkedAt": null
+        },
+        {
+          "id": "ref-4a55699180f17d57",
+          "title": "MDN: ::marker",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Selectors/::marker",
+          "checkedAt": null
+        },
+        {
+          "id": "ref-563a421e7ead9ea9",
+          "title": "MDN: Whitespace",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Text/Whitespace",
+          "checkedAt": null
+        }
+      ]
+    },
+    {
+      "sectionId": "react",
+      "subsectionId": "redux",
+      "scope": "Поток действий, reducers, selectors, асинхронность и RTK Query.",
+      "caveats": [
+        "Примеры описывают современный Redux Toolkit/React-Redux и Zustand 5. У старых версий API может отличаться. Типы не заменяют runtime-проверки; фрагменты не исполнялись."
+      ],
+      "sources": [
+        {
+          "id": "ref-c8e2a0bb7dc8e59b",
+          "title": "Redux: part 2 concepts data flow",
+          "url": "https://redux.js.org/tutorials/fundamentals/part-2-concepts-data-flow",
+          "checkedAt": null
+        },
+        {
+          "id": "ref-64a91dfe3f1ae7d6",
+          "title": "Redux: why rtk is redux today",
+          "url": "https://redux.js.org/introduction/why-rtk-is-redux-today",
+          "checkedAt": null
+        },
+        {
+          "id": "ref-5adbbd889079d489",
+          "title": "Redux: configureStore",
+          "url": "https://redux-toolkit.js.org/api/configureStore",
+          "checkedAt": null
+        },
+        {
+          "id": "ref-59e98fe62d963ce8",
+          "title": "Redux: immer reducers",
+          "url": "https://redux-toolkit.js.org/usage/immer-reducers",
+          "checkedAt": null
+        },
+        {
+          "id": "ref-ded64674f87b16ea",
+          "title": "Redux: hooks",
+          "url": "https://react-redux.js.org/api/hooks#equality-comparisons-and-updates",
+          "checkedAt": null
+        },
+        {
+          "id": "ref-3d41c9408a4167e2",
+          "title": "Redux: deriving data selectors",
+          "url": "https://redux.js.org/usage/deriving-data-selectors",
+          "checkedAt": null
+        },
+        {
+          "id": "ref-8ccecba811290e65",
+          "title": "Redux: createAsyncThunk",
+          "url": "https://redux-toolkit.js.org/api/createAsyncThunk",
+          "checkedAt": null
+        },
+        {
+          "id": "ref-2e52b3c140eb681a",
+          "title": "Redux: automated refetching",
+          "url": "https://redux-toolkit.js.org/rtk-query/usage/automated-refetching",
+          "checkedAt": null
+        },
+        {
+          "id": "ref-689b62baf905fb20",
+          "title": "Redux: createEntityAdapter",
+          "url": "https://redux-toolkit.js.org/api/createEntityAdapter",
+          "checkedAt": null
+        },
+        {
+          "id": "ref-7f98b060fbaa1eea",
+          "title": "Redux: style guide",
+          "url": "https://redux.js.org/style-guide/#do-not-put-non-serializable-values-in-state-or-actions",
+          "checkedAt": null
+        },
+        {
+          "id": "ref-7936fe40e4ffa5f8",
+          "title": "Redux: createListenerMiddleware",
+          "url": "https://redux-toolkit.js.org/api/createListenerMiddleware",
+          "checkedAt": null
+        },
+        {
+          "id": "ref-e21b65d503bf1c5e",
+          "title": "Redux: usage with typescript",
+          "url": "https://react-redux.js.org/using-react-redux/usage-with-typescript",
+          "checkedAt": null
+        }
+      ]
+    },
+    {
+      "sectionId": "react",
+      "subsectionId": "zustand",
+      "scope": "Создание store, подписки, обновления, persist и жизненный цикл.",
+      "caveats": [
+        "Примеры описывают современный Redux Toolkit/React-Redux и Zustand 5. У старых версий API может отличаться. Типы не заменяют runtime-проверки; фрагменты не исполнялись."
+      ],
+      "sources": [
+        {
+          "id": "ref-15242a8a9dd8eb83",
+          "title": "Zustand: introduction",
+          "url": "https://zustand.docs.pmnd.rs/getting-started/introduction",
+          "checkedAt": null
+        },
+        {
+          "id": "ref-1b354f307afe259c",
+          "title": "Zustand: use shallow",
+          "url": "https://zustand.docs.pmnd.rs/reference/hooks/use-shallow",
+          "checkedAt": null
+        },
+        {
+          "id": "ref-c621b85b87828f0b",
+          "title": "Zustand: immutable state and merging",
+          "url": "https://zustand.docs.pmnd.rs/learn/guides/immutable-state-and-merging",
+          "checkedAt": null
+        },
+        {
+          "id": "ref-7092641d90f9d902",
+          "title": "Zustand: zustand",
+          "url": "https://github.com/pmndrs/zustand#async-actions",
+          "checkedAt": null
+        },
+        {
+          "id": "ref-92e7a3fae9a62e3a",
+          "title": "Zustand: practice with no store actions",
+          "url": "https://zustand.docs.pmnd.rs/learn/guides/practice-with-no-store-actions",
+          "checkedAt": null
+        },
+        {
+          "id": "ref-49d87a574eeafca0",
+          "title": "Zustand: subscribe with selector",
+          "url": "https://zustand.docs.pmnd.rs/reference/middlewares/subscribe-with-selector",
+          "checkedAt": null
+        },
+        {
+          "id": "ref-daf06766c96ce904",
+          "title": "Zustand: persist",
+          "url": "https://zustand.docs.pmnd.rs/reference/middlewares/persist",
+          "checkedAt": null
+        },
+        {
+          "id": "ref-fda0efb76db2a3c5",
+          "title": "Zustand: persisting store data",
+          "url": "https://zustand.docs.pmnd.rs/learn/integrations/persisting-store-data",
+          "checkedAt": null
+        },
+        {
+          "id": "ref-efb2e1b171d57ff5",
+          "title": "Zustand: initialize state with props",
+          "url": "https://zustand.docs.pmnd.rs/learn/guides/initialize-state-with-props",
+          "checkedAt": null
+        },
+        {
+          "id": "ref-065f9b930ee69d60",
+          "title": "Zustand: immer",
+          "url": "https://zustand.docs.pmnd.rs/reference/middlewares/immer",
+          "checkedAt": null
+        },
+        {
+          "id": "ref-0845967c055f954f",
+          "title": "Zustand: beginner typescript",
+          "url": "https://zustand.docs.pmnd.rs/learn/guides/beginner-typescript",
+          "checkedAt": null
+        },
+        {
+          "id": "ref-a19cce3a70d805c0",
+          "title": "Zustand: how to reset state",
+          "url": "https://zustand.docs.pmnd.rs/learn/guides/how-to-reset-state",
+          "checkedAt": null
+        }
+      ]
     }
   ]
 }

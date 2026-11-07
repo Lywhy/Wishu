@@ -45,7 +45,20 @@ export interface InterviewMeeting {
   notes: string
   done: boolean
 }
+export interface InterviewPreparationPlan {
+  sectionIds: string[]
+  questionIds: string[]
+  taskIds: string[]
+}
+export interface InterviewDebriefData {
+  asked: string
+  difficulties: string
+  conclusions: string
+  nextSteps: string
+}
 export interface InterviewRecord {
+  debrief?: InterviewDebriefData
+  preparation?: InterviewPreparationPlan
   id: string
   company: string
   role: string

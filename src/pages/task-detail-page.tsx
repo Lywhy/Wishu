@@ -1,5 +1,7 @@
-import type { CSSProperties } from "react"
+import { Toggle } from "@/components/ui/toggle"
+import { LocalSaveNotice } from "@/components/experience/local-save-notice"
 import { useWorkspace } from "@/stores/workspace"
+import { TaskWorkspace } from "@/components/practice/task-workspace"
 import {
   WorkspaceControls,
   PersonalNote,
@@ -66,13 +68,29 @@ export function TaskDetailPage() {
 }
 
 function TaskView({ task }: { task: PracticeTask }) {
-  const focus = useWorkspace((s) => s.focus),
-    split = useWorkspace((s) => s.split)
   const route = useLocation()
+  const [expandedPane, setExpandedPane] = useState<"editor" | "results" | null>(null)
+  useEffect(() => {
+    if (!expandedPane) return
+    const exit = (event: KeyboardEvent) => {
+      if (
+        event.key === "Escape" &&
+        !event.defaultPrevented &&
+        !document.querySelector('[role="dialog"]')
+      )
+        setExpandedPane(null)
+    }
+    window.addEventListener("keydown", exit)
+    return () => window.removeEventListener("keydown", exit)
+  }, [expandedPane])
   const [solutionOpen, setSolutionOpen] = useState(false)
   const [resetOpen, setResetOpen] = useState(false)
   const [checking, setChecking] = useState(false)
-  const [checks, setChecks] = useState<TaskCheckResult[] | null>(null)
+  const [checks, setChecks] = useState<TaskCheckResult[] | null>(() => {
+    const cached = useTaskExperience.getState().checkRuns[task.id]
+    const currentCode = usePracticeProgress.getState().drafts[task.id] ?? task.starter
+    return cached?.code === currentCode ? cached.results : null
+  })
   const controller = useRef<AbortController | null>(null)
   useEffect(() => () => controller.current?.abort(), [])
   const draft = usePracticeProgress((state) => state.drafts[task.id])
@@ -97,6 +115,7 @@ function TaskView({ task }: { task: PracticeTask }) {
   const updateCode = (value: string) => {
     if (value === code) return
     controller.current?.abort()
+    useTaskExperience.getState().clearCheck(task.id)
     setChecking(false)
     setChecks(null)
     setSolved(task.id, false)
@@ -105,6 +124,7 @@ function TaskView({ task }: { task: PracticeTask }) {
   }
   async function verify() {
     controller.current?.abort()
+    useTaskExperience.getState().clearCheck(task.id)
     const current = new AbortController()
     controller.current = current
     setChecking(true)
@@ -125,6 +145,7 @@ function TaskView({ task }: { task: PracticeTask }) {
           results.length +
           " проверок пройдено",
       })
+      useTaskExperience.getState().cacheCheck(task.id, code, results)
       setChecks(results)
       setSolved(task.id, passed)
     } catch (error) {
@@ -174,148 +195,167 @@ function TaskView({ task }: { task: PracticeTask }) {
           nativeButton={false}
           variant="outline"
           size="sm"
-          className="mt-4"
+          className="mt-4 xl:hidden"
           render={<a href="#task-editor" aria-label="К редактору решения" />}
         >
           К редактору решения
         </Button>
       </header>
-      <WorkspaceControls split />
-      <div
-        style={{ "--study-columns": `${split}% minmax(0,1fr)` } as CSSProperties}
-        className={`grid items-start gap-5 ${focus ? "xl:grid-cols-1" : "xl:grid-cols-(--study-columns)"}`}
+      <WorkspaceControls split={expandedPane === null} />
+      <TaskWorkspace
+        expanded={expandedPane !== null}
+        condition={
+          <div className="min-w-0 space-y-4">
+            <Card className="gap-4 rounded-xl p-4 shadow-none sm:p-5">
+              <div className="flex items-center justify-between gap-3 border-b pb-3">
+                <h2 className="text-sm font-semibold">Условие задачи</h2>
+                <Button variant="outline" size="sm" onClick={() => setSolutionOpen(true)}>
+                  Подсказки и разбор
+                </Button>
+              </div>
+              <section id="task-condition" className="space-y-5">
+                <div>
+                  <h2 className="text-base font-semibold">Условие</h2>
+                  <p className="mt-2 text-sm leading-7">{task.description}</p>
+                </div>
+                <div>
+                  <h3 className="text-sm font-semibold">Требования и крайние случаи</h3>
+                  <ul className="mt-2 list-disc space-y-2 pl-5 text-sm leading-6 text-muted-foreground">
+                    {task.requirements.map((item) => (
+                      <li key={item}>{item}</li>
+                    ))}
+                  </ul>
+                </div>
+                <CodeBlock
+                  code={task.example}
+                  language={codeLanguageFor(task.topic, task.example)}
+                  label="Входные данные и ожидаемый результат"
+                />
+              </section>
+            </Card>
+            <nav aria-label="Другие задачи" className="flex items-center justify-between gap-3">
+              {previous ? (
+                <Button
+                  nativeButton={false}
+                  variant="outline"
+                  className="h-10 flex-1"
+                  render={<Link to={`/tasks/${previous.id}`} state={{ taskList: list }} />}
+                >
+                  Предыдущая
+                </Button>
+              ) : (
+                <Button variant="outline" className="h-10 flex-1" disabled>
+                  Предыдущая
+                </Button>
+              )}
+              {next ? (
+                <Button
+                  nativeButton={false}
+                  variant="outline"
+                  className="h-10 flex-1"
+                  render={<Link to={`/tasks/${next.id}`} state={{ taskList: list }} />}
+                >
+                  Следующая
+                </Button>
+              ) : (
+                <Button variant="outline" className="h-10 flex-1" disabled>
+                  Следующая
+                </Button>
+              )}
+            </nav>
+          </div>
+        }
       >
-        <div className="min-w-0 space-y-4">
-          <Card className="gap-4 rounded-xl p-4 shadow-none sm:p-5">
-            <div className="flex items-center justify-between gap-3 border-b pb-3">
-              <h2 className="text-sm font-semibold">Условие задачи</h2>
-              <Button variant="outline" size="sm" onClick={() => setSolutionOpen(true)}>
-                Подсказки и разбор
-              </Button>
-            </div>
-            <section id="task-condition" className="space-y-5">
-              <div>
-                <h2 className="text-base font-semibold">Условие</h2>
-                <p className="mt-2 text-sm leading-7">{task.description}</p>
-              </div>
-              <div>
-                <h3 className="text-sm font-semibold">Требования и крайние случаи</h3>
-                <ul className="mt-2 list-disc space-y-2 pl-5 text-sm leading-6 text-muted-foreground">
-                  {task.requirements.map((item) => (
-                    <li key={item}>{item}</li>
-                  ))}
-                </ul>
-              </div>
-              <CodeBlock
-                code={task.example}
-                language={codeLanguageFor(task.topic, task.example)}
-                label="Входные данные и ожидаемый результат"
-              />
-            </section>
-          </Card>
-          <nav aria-label="Другие задачи" className="flex items-center justify-between gap-3">
-            {previous ? (
-              <Button
-                nativeButton={false}
-                variant="outline"
-                className="h-10 flex-1"
-                render={<Link to={`/tasks/${previous.id}`} state={{ taskList: list }} />}
-              >
-                Предыдущая
-              </Button>
-            ) : (
-              <Button variant="outline" className="h-10 flex-1" disabled>
-                Предыдущая
-              </Button>
-            )}
-            {next ? (
-              <Button
-                nativeButton={false}
-                variant="outline"
-                className="h-10 flex-1"
-                render={<Link to={`/tasks/${next.id}`} state={{ taskList: list }} />}
-              >
-                Следующая
-              </Button>
-            ) : (
-              <Button variant="outline" className="h-10 flex-1" disabled>
-                Следующая
-              </Button>
-            )}
-          </nav>
-        </div>
         <div id="task-editor" tabIndex={-1} className="min-w-0 scroll-mt-5 space-y-3 outline-none">
           <Card className="gap-0 overflow-hidden rounded-xl py-0 shadow-none">
             <div className="flex flex-wrap items-center justify-between gap-3 border-b p-4">
-              <h2 className="text-sm font-semibold">Ваше решение</h2>
-              <span className="font-mono text-xs text-muted-foreground">
-                {task.topic === "React"
-                  ? "JSX"
-                  : task.topic === "TypeScript"
-                    ? "TypeScript"
-                    : "JavaScript"}
-              </span>
+              <div className="flex items-center gap-3">
+                <h2 className="text-sm font-semibold">Ваше решение</h2>
+                <span className="font-mono text-xs text-muted-foreground">
+                  {task.topic === "React"
+                    ? "JSX"
+                    : task.topic === "TypeScript"
+                      ? "TypeScript"
+                      : "JavaScript"}
+                </span>
+              </div>
+              <div className="flex flex-wrap items-center justify-end gap-2">
+                <Toggle
+                  className="h-10"
+                  pressed={expandedPane === "editor"}
+                  onPressedChange={(pressed) => setExpandedPane(pressed ? "editor" : null)}
+                >
+                  {expandedPane === "editor" ? "Свернуть редактор" : "Развернуть редактор"}
+                </Toggle>
+                {solved ? (
+                  <output className="flex h-8 items-center text-sm font-medium text-emerald-700 dark:text-emerald-400">
+                    Задача решена
+                  </output>
+                ) : (
+                  <>
+                    <Button
+                      variant="ghost"
+                      className="h-10"
+                      disabled={code === task.starter || checking}
+                      onClick={() => setResetOpen(true)}
+                    >
+                      Сбросить код
+                    </Button>
+                    <Button
+                      className="h-10 min-w-28"
+                      disabled={checking}
+                      onClick={() => void verify()}
+                    >
+                      {checking ? "Проверяем…" : "Проверить"}
+                    </Button>
+                  </>
+                )}
+              </div>
             </div>
-            <div className="flex items-center justify-end gap-2 border-b px-3 py-2">
-              {solved ? (
-                <output className="flex h-8 items-center text-sm font-medium text-emerald-700 dark:text-emerald-400">
-                  Задача решена
-                </output>
-              ) : (
-                <>
-                  <Button
-                    variant="ghost"
-                    className="h-8"
-                    disabled={code === task.starter || checking}
-                    onClick={() => setResetOpen(true)}
-                  >
-                    Сбросить код
-                  </Button>
-                  <Button
-                    className="h-8 min-w-28"
-                    disabled={checking}
-                    onClick={() => void verify()}
-                  >
-                    {checking ? "Проверяем…" : "Проверить"}
-                  </Button>
-                </>
-              )}
+            <div hidden={expandedPane === "results"}>
+              <DraftStatus
+                storageKey="wishu-practice"
+                draftKey={task.id}
+                code={code}
+                hasDraft={draft !== undefined}
+              />
+              <TaskEditorBoundary value={code} onChange={updateCode}>
+                <Suspense
+                  fallback={
+                    <div className="flex min-h-96 items-center justify-center text-sm text-muted-foreground">
+                      Загружаем редактор…
+                    </div>
+                  }
+                >
+                  <TaskCodeEditor
+                    taskId={task.id}
+                    topic={task.topic}
+                    value={code}
+                    onChange={updateCode}
+                    expanded={expandedPane === "editor"}
+                  />
+                </Suspense>
+              </TaskEditorBoundary>
             </div>
-            <DraftStatus
-              storageKey="wishu-practice"
-              draftKey={task.id}
-              code={code}
-              hasDraft={draft !== undefined}
-            />
-            <TaskEditorBoundary value={code} onChange={updateCode}>
-              <Suspense
-                fallback={
-                  <div className="flex min-h-96 items-center justify-center text-sm text-muted-foreground">
-                    Загружаем редактор…
-                  </div>
-                }
-              >
-                <TaskCodeEditor
-                  taskId={task.id}
-                  topic={task.topic}
-                  value={code}
-                  onChange={updateCode}
-                />
-              </Suspense>
-            </TaskEditorBoundary>
             <TaskTestResults
+              storageKey={task.id}
+              expanded={expandedPane === "results"}
+              onToggleExpand={() =>
+                setExpandedPane((value) => (value === "results" ? null : "results"))
+              }
               checking={checking}
               checks={checks}
               solved={solved}
               onCancel={() => {
                 controller.current?.abort()
+                useTaskExperience.getState().clearCheck(task.id)
                 setChecking(false)
                 setChecks(null)
               }}
             />
           </Card>
         </div>
-      </div>
+      </TaskWorkspace>
       <Sheet open={solutionOpen} onOpenChange={setSolutionOpen}>
         <SheetContent className="w-[min(96vw,48rem)]">
           <SheetTitle>Подсказки и разбор: {task.title}</SheetTitle>
@@ -324,6 +364,8 @@ function TaskView({ task }: { task: PracticeTask }) {
         </SheetContent>
       </Sheet>
       <div className="mt-6 space-y-4">
+        <LocalSaveNotice area="practice" />
+        <LocalSaveNotice area="task-view" errorsOnly />
         <AttemptHistory contentKey={task.id} code={code} onRestore={updateCode} />
         <PersonalNote contentKey={"task:" + task.id} />
         <RelatedStudy moduleId={task.moduleId} from={"/tasks/" + task.id} />

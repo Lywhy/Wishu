@@ -1,0 +1,70 @@
+{
+  "schemaVersion": 1,
+  "id": "ts-20261107-ts-utility-types",
+  "title": "Расширение TypeScript: Utility Types",
+  "sectionId": "typescript",
+  "subsectionId": "ts-utility-types",
+  "currentPass": "complete",
+  "goalIds": [
+    "core",
+    "ts-object-utilities",
+    "ts-pick-omit",
+    "ts-record",
+    "ts-union-utilities",
+    "ts-signature-utilities",
+    "ts-string-utilities",
+    "ts-no-infer",
+    "ts-distributive-omit"
+  ],
+  "questionIds": ["ts-distributive-omit", "ts-signature-utilities", "ts-object-utilities"],
+  "scopePass": {
+    "status": "complete",
+    "remaining": []
+  },
+  "answerPass": {
+    "status": "complete",
+    "remaining": []
+  },
+  "baseline": [
+    {
+      "id": "ts-object-utilities",
+      "title": "Зачем нужны utility types и что меняют Partial, Required и Readonly?",
+      "contentHash": "40f97a773c79bf809155c26512c2c376ff14aca842b61af4be8075c2960c8bdf"
+    },
+    {
+      "id": "ts-pick-omit",
+      "title": "Чем Pick отличается от Omit и удаляют ли они реальные свойства?",
+      "contentHash": "a31d46e486cb34c5d547987e7d5e70d78371d101fae318780e7964ba899ccf35"
+    },
+    {
+      "id": "ts-record",
+      "title": "Как Record задаёт словарь и чем конечные ключи отличаются от string?",
+      "contentHash": "8d3ab790a8d0325e4040659e6b86bfc81a5f0d20efc9716dd4759ca0b0f435cc"
+    },
+    {
+      "id": "ts-union-utilities",
+      "title": "Как Exclude, Extract и NonNullable преобразуют union?",
+      "contentHash": "5aefde5d934ab2f5c53cd63b06429fa55ad2f00808966eed0dd18189bf5ad711"
+    },
+    {
+      "id": "ts-signature-utilities",
+      "title": "Как извлечь параметры и результат функции либо конструктора?",
+      "contentHash": "0a1b9ba92a447ad3fb5b4ec1fa424a9a0dafdb67b68e0bda6e5c4f49141bef71"
+    },
+    {
+      "id": "ts-string-utilities",
+      "title": "Как Uppercase, Lowercase, Capitalize и Uncapitalize преобразуют строковые типы?",
+      "contentHash": "3458f4a109e8ecd3f063b5d34d3d2ca734f8561112b4c42772126c376dc5bab7"
+    },
+    {
+      "id": "ts-no-infer",
+      "title": "Когда NoInfer помогает выбрать источник вывода generic-параметра?",
+      "contentHash": "1eb50e3300bc92572b3b75efeea24298d61cfd89eeb626a5ab0c6f980662b0d5"
+    }
+  ],
+  "notes": [
+    "Граница: язык TypeScript и его toolchain. Runtime JavaScript и фреймворки не дублировать.",
+    "Готовые ответы сверены по документации; код примеров не запускался.",
+    "Контент собран и прошёл полную структурную проверку. TS: 161 вопрос, +62 новых и 17 расширенных. Примеры не исполнялись; seed не применялся."
+  ]
+}

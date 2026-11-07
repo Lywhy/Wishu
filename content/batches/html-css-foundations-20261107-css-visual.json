@@ -1,0 +1,114 @@
+{
+  "schemaVersion": 1,
+  "id": "html-css-foundations-20261107-css-visual",
+  "title": "Базовый и средний HTML/CSS: Визуальные состояния и анимации",
+  "sectionId": "html-css",
+  "subsectionId": "css-visual",
+  "currentPass": "complete",
+  "goalIds": [
+    "core",
+    "css-transition-animation",
+    "css-reduced-motion",
+    "css-focus-indicator",
+    "css-color-preferences",
+    "css-background-layers",
+    "css-opacity-alpha",
+    "css-color-space-contrast",
+    "css-pointer-events-contract",
+    "css-animation-fill-timing",
+    "css-entry-starting-style",
+    "css-scrollbar-gutter",
+    "css-border-outline-shadow",
+    "css-radius-clipping",
+    "css-gradient-image",
+    "css-shadow-shape",
+    "css-transform-order-origin",
+    "css-easing-duration",
+    "css-touch-action-gesture",
+    "css-overscroll-chaining",
+    "css-blend-isolation"
+  ],
+  "questionIds": [
+    "css-border-outline-shadow",
+    "css-radius-clipping",
+    "css-gradient-image",
+    "css-shadow-shape",
+    "css-transform-order-origin",
+    "css-easing-duration",
+    "css-touch-action-gesture",
+    "css-overscroll-chaining",
+    "css-blend-isolation"
+  ],
+  "scopePass": {
+    "status": "complete",
+    "remaining": []
+  },
+  "answerPass": {
+    "status": "complete",
+    "remaining": []
+  },
+  "baseline": [
+    {
+      "id": "css-transition-animation",
+      "title": "Когда использовать transition, а когда animation?",
+      "contentHash": "4c52bd949bf2cda63741190e4daca13241e411b47184534aaa7f94e054185eed"
+    },
+    {
+      "id": "css-reduced-motion",
+      "title": "Как учитывать prefers-reduced-motion без потери смысла интерфейса?",
+      "contentHash": "b9c9ddd3a4612bb83393b711bdeb36824c132280bae135dfc09730e021690e40"
+    },
+    {
+      "id": "css-focus-indicator",
+      "title": "Как оформить focus-visible и не потерять клавиатурную доступность?",
+      "contentHash": "0b7fb31c59e1c2fc6d2355dc2f168728fbfff429a0d8e48e3bdab1c5233a68fd"
+    },
+    {
+      "id": "css-color-preferences",
+      "title": "Как согласовать тёмную тему, системное предпочтение и forced colors?",
+      "contentHash": "f031761a4190288a64f89e08fcb0d1169d90fd7c10a9d5b5385f3cb7509425d2"
+    },
+    {
+      "id": "css-background-layers",
+      "title": "Как работают несколько background и чем cover отличается от contain?",
+      "contentHash": "f42ead78800f1cba5e7e754ddbe8401ebb6055fe2d32b3295d4da0f039a43770"
+    },
+    {
+      "id": "css-opacity-alpha",
+      "title": "Чем opacity у контейнера отличается от прозрачности background-color?",
+      "contentHash": "542e5d8f8a150c1c6c8094b4d6e04d065670f4ce0c69fd7d472a746fc10474e9"
+    },
+    {
+      "id": "css-color-space-contrast",
+      "title": "Что дают oklch и color-mix и гарантируют ли они доступный контраст?",
+      "contentHash": "2f97ab0804f1c8e6037b44368b985a1247853dd58ce174ce61473083072b11cc"
+    },
+    {
+      "id": "css-pointer-events-contract",
+      "title": "Почему pointer-events: none не отключает кнопку полностью?",
+      "contentHash": "ca1bdf36635153f36c00b729dac273669c83b26eecf4de4730a2eeb202449f06"
+    },
+    {
+      "id": "css-animation-fill-timing",
+      "title": "Что определяют animation-delay, direction и fill-mode?",
+      "contentHash": "39d6b79fca958ecd5ddfaa02724d75b65808f58e3e2d0ed1922d5df664500e3f"
+    },
+    {
+      "id": "css-entry-starting-style",
+      "title": "Зачем нужен @starting-style при появлении нового элемента?",
+      "contentHash": "5e66a7c4bff455892ade05701732aef60b7b1eb27ec2ac40c0135a16958dd0aa"
+    },
+    {
+      "id": "css-scrollbar-gutter",
+      "title": "Как scrollbar-gutter уменьшает сдвиг макета при появлении прокрутки?",
+      "contentHash": "8f2fd813356997fbbd9395a0e6982729ab2f548af8ddee94141bbb619286b54e"
+    }
+  ],
+  "notes": [
+    "Пакет 2026-11-07: только базовый и средний уровни. Определения и самостоятельные практические навыки; современные API не являются целью пакета.",
+    "Сохранять прежние ID. Не дублировать общие определения из связанных карточек. Примеры не исполнять.",
+    "Новые самостоятельные цели: Граница коробки и внешние эффекты без обычного участия в layout. Закругление собственной коробки и отдельная граница обрезания содержимого. CSS-изображение, направление и распределение цветов. Тень коробки и тень непрозрачного силуэта. Композиция преобразований и точка отсчёта вращения. Длительность, распределение прогресса и дискретные состояния. Разрешённые нативные жесты и выбор цели указателя. Scroll chaining на границе и отличие от запрета прокрутки документа. Граница группы смешивания и независимый stacking context.",
+    "Сопоставлены базовые определения и прикладные вопросы. Пересечения сохранены в existing.mjs до записи в журнал.",
+    "Content:build и полная content:check прошли на 905 вопросах. Сохранены все 845 исходных ID; кроме 6 согласованных расширений прежние хеши совпадают. Проверены два блока каждого нового ответа и значимый пробел в примере :empty. Код примеров не исполнялся."
+  ]
+}

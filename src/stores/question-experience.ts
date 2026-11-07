@@ -12,6 +12,8 @@ interface QuestionExperience {
   lastBySection: Record<string, string>
   lastBySubsection: Record<string, string>
   lastSession: QuestionSession | null
+  resultLimits: Record<string, number>
+  setResultLimit: (key: string, value: number) => void
   listVisits: Record<string, ListVisit>
   rememberQuestion: (
     sectionId: string,
@@ -30,6 +32,16 @@ export const useQuestionExperience = create<QuestionExperience>()(
       lastBySubsection: {},
       lastSession: null,
       listVisits: {},
+      resultLimits: {},
+      setResultLimit: (key, value) =>
+        set((state) => ({
+          resultLimits: Object.fromEntries(
+            [
+              ...Object.entries(state.resultLimits).filter(([id]) => id !== key),
+              [key, value],
+            ].slice(-60),
+          ),
+        })),
       rememberQuestion: (sectionId, subsectionId, questionId, session) =>
         set((state) => ({
           lastQuestionId: questionId,
@@ -51,12 +63,14 @@ export const useQuestionExperience = create<QuestionExperience>()(
         lastBySubsection,
         lastSession,
         listVisits,
+        resultLimits,
       }) => ({
         lastQuestionId,
         lastBySection,
         lastBySubsection,
         lastSession,
         listVisits,
+        resultLimits,
       }),
     },
   ),

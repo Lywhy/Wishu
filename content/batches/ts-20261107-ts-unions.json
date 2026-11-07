@@ -1,0 +1,35 @@
+{
+  "schemaVersion": 1,
+  "id": "ts-20261107-ts-unions",
+  "title": "Расширение TypeScript: Union и Intersection Types",
+  "sectionId": "typescript",
+  "subsectionId": "ts-unions",
+  "currentPass": "complete",
+  "goalIds": ["core", "ts-union-types", "ts-intersection-types", "ts-union-of-functions"],
+  "questionIds": ["ts-union-of-functions"],
+  "scopePass": {
+    "status": "complete",
+    "remaining": []
+  },
+  "answerPass": {
+    "status": "complete",
+    "remaining": []
+  },
+  "baseline": [
+    {
+      "id": "ts-union-types",
+      "title": "Что означает union и какие операции доступны до сужения?",
+      "contentHash": "d6a19b9ddd8587b4aebe866c534241e3993c276c1a7cc8f5dccb094ec5118777"
+    },
+    {
+      "id": "ts-intersection-types",
+      "title": "Как intersection объединяет требования и что происходит с конфликтующими свойствами?",
+      "contentHash": "6d460e58183fc8661f29f5cacc03740b37ca53a9b6c56f10c86b9415d019d3a4"
+    }
+  ],
+  "notes": [
+    "Граница: язык TypeScript и его toolchain. Runtime JavaScript и фреймворки не дублировать.",
+    "Готовые ответы сверены по документации; код примеров не запускался.",
+    "Контент собран и прошёл полную структурную проверку. TS: 161 вопрос, +62 новых и 17 расширенных. Примеры не исполнялись; seed не применялся."
+  ]
+}

@@ -1,3 +1,4 @@
+import { MockInterviewPage } from "@/pages/mock-interview-page"
 import { QuestionCreatePage } from "@/pages/question-create-page"
 import { InterviewsPage } from "@/pages/interviews-page"
 import { StudySessionPage } from "@/pages/study-session-page"
@@ -27,6 +28,7 @@ function App() {
           </Route>
           <Route element={<QuestionsLayout />}>
             <Route path="/session" element={<StudySessionPage />} />
+            <Route path="/mock-interview" element={<MockInterviewPage />} />
             <Route path="/questions" element={<QuestionsPage />} />
             <Route path="/questions/sections/:sectionId" element={<QuestionSectionPage />} />
             <Route

@@ -9,3 +9,34 @@
 <!-- wishu:answer-block -->
 
 [Документация](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/table).
+
+<!-- wishu:answer-block -->
+
+#### Минимальная таблица с заголовками двух направлений
+
+`thead` и `tbody` группируют строки, но сами по себе не объявляют каждую ячейку заголовком. Для этого нужен `th`, а `scope` поясняет его отношение в простой таблице. В примере столбец задаёт тип показателя, строка - технологию. `caption` называет таблицу целиком. Семантические связи сохраняют смысл при чтении по ячейкам; CSS-границы их не создают.
+
+```html
+<table>
+  <caption>
+    Решённые задачи по технологиям
+  </caption>
+  <thead>
+    <tr>
+      <th scope="col">Технология</th>
+      <th scope="col">Решено</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">HTML</th>
+      <td>12</td>
+    </tr>
+  </tbody>
+</table>
+```
+
+- [Чем border-collapse: collapse отличается от separate у таблицы?](/questions/css-table-border-model)
+- [Когда table-layout: fixed полезнее auto и почему он не решает перенос текста?](/questions/css-table-layout)
+
+[W3C WAI: two-headers](https://www.w3.org/WAI/tutorials/tables/two-headers/).

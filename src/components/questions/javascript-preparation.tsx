@@ -1,3 +1,4 @@
+import { Disclosure } from "@/components/experience/disclosure"
 import { Link } from "react-router-dom"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
@@ -113,10 +114,10 @@ export function JavaScriptPreparationGuide() {
           )}
         </li>
       </ol>
-      <details className="rounded-lg bg-muted/40 p-4">
-        <summary className="cursor-pointer text-sm font-medium">
-          Практика по темам и дополнительные API
-        </summary>
+      <Disclosure
+        className="rounded-lg bg-muted/40"
+        title={<> Практика по темам и дополнительные API </>}
+      >
         <ul className="mt-3 flex flex-wrap gap-2" aria-label="Подборка практических задач">
           {tasks.map((task) => (
             <li key={task.id}>
@@ -155,7 +156,7 @@ export function JavaScriptPreparationGuide() {
                 </li>
               ))}
         </ul>
-      </details>
+      </Disclosure>
     </Card>
   )
 }
@@ -167,8 +168,7 @@ export function JavaScriptSelfCheck({ question }: { question: Question }) {
     return task ? [task] : []
   })
   return (
-    <details className="rounded-xl border bg-card p-4 sm:p-5">
-      <summary className="cursor-pointer text-sm font-medium">Проверить, что я понял тему</summary>
+    <Disclosure className="rounded-xl border bg-card" title={<> Проверить, что я понял тему </>}>
       <ul className="mt-3 list-disc space-y-2 pl-5 text-sm leading-6 text-muted-foreground">
         <li>Могу объяснить механизм своими словами и привести пример без подсказки.</li>
         <li>Могу предсказать результат при изменении входных данных или порядка действий.</li>
@@ -190,6 +190,6 @@ export function JavaScriptSelfCheck({ question }: { question: Question }) {
           ))}
         </div>
       )}
-    </details>
+    </Disclosure>
   )
 }

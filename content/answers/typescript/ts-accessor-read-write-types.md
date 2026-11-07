@@ -1,0 +1,34 @@
+**Контракт чтения свойства и допустимый вход setter могут различаться. Например, setter принимает строку или число, а getter всегда возвращает нормализованное число.**
+
+<!-- wishu:answer-block -->
+
+#### Механизм и границы
+
+- Возможности раздельной типизации accessors развивались в версиях TS; показанный контракт предполагает поддержку такого синтаксиса.
+- Различие типов не выполняет преобразование: его реализует тело setter.
+- Нужно определить поведение для неподходящей числовой строки и NaN, а не полагаться только на number.
+
+#### Пример
+
+```typescript
+class Size {
+  private stored = 0
+  get value(): number {
+    return this.stored
+  }
+  set value(input: string | number) {
+    const next = Number(input)
+    if (!Number.isFinite(next)) throw new Error("Invalid size")
+    this.stored = next
+  }
+}
+```
+
+#### Для закрепления
+
+- [Что TypeScript добавляет к типизации полей, методов и конструктора класса?](/questions/ts-class-members)
+- [Как работают геттеры и сеттеры объекта?](/questions/object-accessors)
+
+#### Источник
+
+[Документация TypeScript](https://www.typescriptlang.org/docs/handbook/2/classes.html).

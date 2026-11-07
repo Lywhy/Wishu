@@ -9,3 +9,18 @@ Type задаёт вид и часть поведения контрола, inpu
 <!-- wishu:answer-block -->
 
 [Документация](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/input).
+
+<!-- wishu:answer-block -->
+
+#### Автозаполнение - помощь, а не граница доверия
+
+`autocomplete` сообщает назначение данных, например `email`, `current-password` или `new-password`. Одного `off` недостаточно, чтобы универсально запретить менеджерам паролей все предложения: поведение зависит от браузера и контекста. Не блокируйте вставку и не используйте обманные имена полей как защиту. Подсказка не подтверждает принадлежность email и не заменяет проверку учётных данных.
+
+```html
+<label for="password">Новый пароль</label>
+<input id="password" name="password" type="password" autocomplete="new-password" />
+```
+
+- [Как связать ошибку формы с полем и когда использовать aria-invalid?](/questions/html-form-error-experience)
+
+[MDN: autocomplete](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Attributes/autocomplete).

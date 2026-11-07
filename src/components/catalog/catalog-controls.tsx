@@ -1,3 +1,12 @@
+import { Toggle } from "@/components/ui/toggle"
+import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group"
+import {
+  Empty,
+  EmptyHeader,
+  EmptyTitle,
+  EmptyDescription,
+  EmptyContent,
+} from "@/components/ui/empty"
 import { SearchField } from "@/components/experience/search-field"
 import { Button } from "@/components/ui/button"
 import {
@@ -102,15 +111,14 @@ export function CatalogControls({
           </SelectContent>
         </Select>
         {showPopular && (
-          <Button
-            type="button"
-            variant={filter.popular ? "secondary" : "outline"}
+          <Toggle
+            variant="outline"
             className="h-10 sm:col-span-2 lg:col-span-1"
-            aria-pressed={filter.popular}
-            onClick={() => filter.update("popular", filter.popular ? "" : "1")}
+            pressed={filter.popular}
+            onPressedChange={(pressed) => filter.update("popular", pressed ? "1" : "")}
           >
             Популярные
-          </Button>
+          </Toggle>
         )}
       </div>
       {showPopular &&
@@ -142,20 +150,23 @@ export function CatalogControls({
         </div>
       )}
       {topics.length > 0 && (
-        <div aria-label="Темы" className="flex flex-wrap gap-2">
+        <ToggleGroup
+          aria-label="Темы задач"
+          value={[filter.topic]}
+          onValueChange={(values) => filter.update("topic", values[0] ?? "Все темы")}
+          className="w-full flex-wrap justify-start"
+          size="sm"
+        >
           {["Все темы", ...topics].map((topic) => (
-            <Button
+            <ToggleGroupItem
               key={topic}
-              variant={filter.topic === topic ? "secondary" : "ghost"}
-              size="sm"
-              aria-pressed={filter.topic === topic}
-              onClick={() => filter.update("topic", topic)}
-              className="text-xs"
+              value={topic}
+              className="aria-pressed:bg-primary/10 aria-pressed:text-primary"
             >
               {topic}
-            </Button>
+            </ToggleGroupItem>
           ))}
-        </div>
+        </ToggleGroup>
       )}
     </div>
   )
@@ -171,12 +182,18 @@ export function EmptyResults({
   description?: string
 }) {
   return (
-    <div className="rounded-2xl border border-dashed px-6 py-16 text-center">
-      <h2 className="font-semibold">{title}</h2>
-      <p className="mt-2 text-sm leading-6 text-muted-foreground">{description}</p>
-      <Button variant="outline" className="mt-5" onClick={onReset}>
-        Сбросить фильтры
-      </Button>
-    </div>
+    <Empty className="border bg-card py-12">
+      <EmptyHeader>
+        <EmptyTitle>
+          <h2 className="font-semibold">{title}</h2>
+        </EmptyTitle>
+        <EmptyDescription>{description}</EmptyDescription>
+      </EmptyHeader>
+      <EmptyContent>
+        <Button variant="outline" className="mt-5" onClick={onReset}>
+          Сбросить фильтры
+        </Button>
+      </EmptyContent>
+    </Empty>
   )
 }

@@ -137,9 +137,9 @@
         "kind": "explanation",
         "reviewStatus": "imported",
         "goalIds": ["core", "react-state-location"],
-        "relatedQuestionIds": [],
+        "relatedQuestionIds": ["redux-toolkit-role", "zustand-store-basics", "redux-query-cache"],
         "priority": "core",
-        "sourceRefs": []
+        "sourceRefs": ["ref-64a91dfe3f1ae7d6", "ref-15242a8a9dd8eb83"]
       },
       "answerFile": "answers/react/react-state-location.md"
     },

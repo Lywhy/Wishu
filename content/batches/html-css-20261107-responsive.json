@@ -1,0 +1,90 @@
+{
+  "schemaVersion": 1,
+  "id": "html-css-20261107-responsive",
+  "title": "Расширение HTML и CSS: Адаптивность",
+  "sectionId": "html-css",
+  "subsectionId": "responsive",
+  "currentPass": "complete",
+  "goalIds": [
+    "core",
+    "css-media-container",
+    "css-relative-units",
+    "html-responsive-images",
+    "css-logical-properties",
+    "css-image-fitting",
+    "css-fluid-type",
+    "css-text-wrapping",
+    "css-font-loading",
+    "css-calc-typed-math",
+    "css-media-query-logic",
+    "css-container-query-setup",
+    "css-print-fragmentation",
+    "css-scroll-offset-snap"
+  ],
+  "questionIds": [
+    "css-calc-typed-math",
+    "css-media-query-logic",
+    "css-container-query-setup",
+    "css-print-fragmentation",
+    "css-scroll-offset-snap",
+    "html-responsive-images",
+    "css-relative-units"
+  ],
+  "scopePass": {
+    "status": "complete",
+    "remaining": []
+  },
+  "answerPass": {
+    "status": "complete",
+    "remaining": []
+  },
+  "baseline": [
+    {
+      "id": "css-media-container",
+      "title": "Чем media query отличается от container query?",
+      "contentHash": "d9732d3433cc9cffd9e4b728d510d3357941842669739d731821940802c65db4"
+    },
+    {
+      "id": "css-relative-units",
+      "title": "Чем rem, em, проценты и viewport-единицы отличаются?",
+      "contentHash": "e299fe7e6a4d65fb05471cf105090d67095ecf155622056c5b9246079e162aa8"
+    },
+    {
+      "id": "html-responsive-images",
+      "title": "Для чего нужны srcset, sizes и размеры изображения?",
+      "contentHash": "8d39989ac498dd008716f48654f4d63db5c16c9c70acaa22792dcbf0fdff1546"
+    },
+    {
+      "id": "css-logical-properties",
+      "title": "Зачем использовать logical properties вместо left, right, width и height?",
+      "contentHash": "cbcd37f31fde52133a8d698828221e140494a8551e4f673c8b89d5a69191f2ad"
+    },
+    {
+      "id": "css-image-fitting",
+      "title": "Как aspect-ratio и object-fit решают разные задачи изображения?",
+      "contentHash": "bd206d0e38f56893f89f03afcb4f0904d0d3950e6e7c13e42bf4718e121a247a"
+    },
+    {
+      "id": "css-fluid-type",
+      "title": "Как сделать плавный размер текста через clamp и сохранить читаемость?",
+      "contentHash": "5db9bf44b5eb5df58ff93e7248fce2f139ff5e62fa1514a708f5e55e8f50ce0e"
+    },
+    {
+      "id": "css-text-wrapping",
+      "title": "Как выбрать между переносом длинного слова и визуальным обрезанием текста?",
+      "contentHash": "9df712d9c3849b0aaca8c2efd0c273d774540d993ce110c5728f6daf27bd6ef5"
+    },
+    {
+      "id": "css-font-loading",
+      "title": "Как загрузка веб-шрифта влияет на текст и сдвиги макета?",
+      "contentHash": "a6da93cae8d0446f9e696d946814fad674590854e4df5a6d9f3d2d79244935ad"
+    }
+  ],
+  "notes": [
+    "HTML/CSS описывают документ, представление и нативные контракты; алгоритмы DOM, сеть, SEO и React не дублировать.",
+    "Код примеров не исполняется. Seed выполняет пользователь.",
+    "Сопоставлены исходные 48 вопросов. Новые навыки: Совместимые типы, смешанные единицы и синтаксис арифметики. Логическое объединение условий и границы адаптивных правил. Поиск подходящего предка, именование контейнера и влияние containment. Печатный контекст, границы страниц и сохранение полезного содержания. Смещение целевой области прокрутки и привязка позиций без ручной анимации.",
+    "Похожие кандидаты объединены с действующими ответами; список будет в журнале и отчёте.",
+    "Проверка content:build/content:check прошла на 845 вопросах. Проверены сохранность 48 прежних ID и Markdown-разделитель новых ответов. После итогового форматирования требуется повторная сборка для актуальных хешей."
+  ]
+}

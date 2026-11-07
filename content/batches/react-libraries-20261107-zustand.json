@@ -1,0 +1,52 @@
+{
+  "schemaVersion": 1,
+  "id": "react-libraries-20261107-zustand",
+  "title": "React: Zustand",
+  "sectionId": "react",
+  "subsectionId": "zustand",
+  "currentPass": "complete",
+  "goalIds": [
+    "core",
+    "zustand-store-basics",
+    "zustand-selector-shallow",
+    "zustand-set-merge",
+    "zustand-async-actions",
+    "zustand-imperative-access",
+    "zustand-selective-subscribe",
+    "zustand-persist-hydration",
+    "zustand-persist-migration",
+    "zustand-scoped-store",
+    "zustand-immer-middleware",
+    "zustand-typescript-store",
+    "zustand-reset-lifetime"
+  ],
+  "questionIds": [
+    "zustand-store-basics",
+    "zustand-selector-shallow",
+    "zustand-set-merge",
+    "zustand-async-actions",
+    "zustand-imperative-access",
+    "zustand-selective-subscribe",
+    "zustand-persist-hydration",
+    "zustand-persist-migration",
+    "zustand-scoped-store",
+    "zustand-immer-middleware",
+    "zustand-typescript-store",
+    "zustand-reset-lifetime"
+  ],
+  "scopePass": {
+    "status": "complete",
+    "remaining": []
+  },
+  "answerPass": {
+    "status": "complete",
+    "remaining": []
+  },
+  "baseline": [],
+  "notes": [
+    "Сопоставлены Context, useReducer, external store, normalized state и SSR isolation. Общие определения остаются в канонических React-вопросах.",
+    "Цели: Общий store с React-hook и отделение экземпляра от локального состояния. Узкая подписка и стабильный результат составного selector. Поверхностный merge, updater и осторожность с replace. Обычная async-функция, явные статусы и проверка актуальности. Реактивная подписка в компоненте и императивный снимок вне рендера. Выборочная внешняя реакция, сравнение и cleanup. Выбор сохраняемых полей и восстановление состояния из storage. Старая схема storage, явное преобразование и проверка данных. Vanilla createStore, Context как передача экземпляра и стабильный владелец. Draft-синтаксис только в соответствующем middleware-контексте. Явный контракт store, аргументы действий и граница runtime-данных. Текущий снимок, начальные данные и сохранённая копия.",
+    "Redux: современный Toolkit. Zustand: API v5. Примеры являются фрагментами и не исполняются.",
+    "Oxfmt, content:build и полная content:check прошли: 929 вопросов. Все исходные 905 ID сохранены; изменён только согласованный канонический ответ выбора store. У новых ответов проверены два Markdown-блока. Примеры не запускались."
+  ]
+}

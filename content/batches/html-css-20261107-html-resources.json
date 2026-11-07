@@ -1,0 +1,53 @@
+{
+  "schemaVersion": 1,
+  "id": "html-css-20261107-html-resources",
+  "title": "Расширение HTML и CSS: Ресурсы и встраивание",
+  "sectionId": "html-css",
+  "subsectionId": "html-resources",
+  "currentPass": "complete",
+  "goalIds": [
+    "core",
+    "html-iframe-boundary",
+    "html-resource-hints",
+    "html-link-target-rel",
+    "html-media-tracks-autoplay",
+    "html-template-inert-content",
+    "html-stylesheet-render-blocking",
+    "html-subresource-integrity"
+  ],
+  "questionIds": [
+    "html-link-target-rel",
+    "html-media-tracks-autoplay",
+    "html-template-inert-content",
+    "html-stylesheet-render-blocking",
+    "html-subresource-integrity",
+    "html-resource-hints"
+  ],
+  "scopePass": {
+    "status": "complete",
+    "remaining": []
+  },
+  "answerPass": {
+    "status": "complete",
+    "remaining": []
+  },
+  "baseline": [
+    {
+      "id": "html-iframe-boundary",
+      "title": "Как определить границу доверия для iframe?",
+      "contentHash": "e13043c1b972dc9a1109e2627511ee3942d2a87d5dd8e5beab9be81611ad1fbc"
+    },
+    {
+      "id": "html-resource-hints",
+      "title": "Когда использовать preload, prefetch и preconnect?",
+      "contentHash": "e65a40a2a5ea71c68b35913bad8e2e0de813bf20645d450384c84864ba384953"
+    }
+  ],
+  "notes": [
+    "HTML/CSS описывают документ, представление и нативные контракты; алгоритмы DOM, сеть, SEO и React не дублировать.",
+    "Код примеров не исполняется. Seed выполняет пользователь.",
+    "Сопоставлены исходные 48 вопросов. Новые навыки: Связь нового окна с opener и передача HTTP Referer. Нативные controls, дорожки текста и политика воспроизведения. Шаблонный DocumentFragment и активация после вставки содержимого. Разбор HTML, готовность стилей и зависимость от типа сценария. Проверка байтов по хешу, CORS и границы защиты от подмены.",
+    "Похожие кандидаты объединены с действующими ответами; список будет в журнале и отчёте.",
+    "Проверка content:build/content:check прошла на 845 вопросах. Проверены сохранность 48 прежних ID и Markdown-разделитель новых ответов. После итогового форматирования требуется повторная сборка для актуальных хешей."
+  ]
+}

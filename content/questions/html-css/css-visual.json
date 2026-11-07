@@ -15,7 +15,23 @@
         "css-transition-animation",
         "css-reduced-motion",
         "css-focus-indicator",
-        "css-color-preferences"
+        "css-color-preferences",
+        "css-background-layers",
+        "css-opacity-alpha",
+        "css-color-space-contrast",
+        "css-pointer-events-contract",
+        "css-animation-fill-timing",
+        "css-entry-starting-style",
+        "css-scrollbar-gutter",
+        "css-border-outline-shadow",
+        "css-radius-clipping",
+        "css-gradient-image",
+        "css-shadow-shape",
+        "css-transform-order-origin",
+        "css-easing-duration",
+        "css-touch-action-gesture",
+        "css-overscroll-chaining",
+        "css-blend-isolation"
       ]
     },
     {
@@ -52,6 +68,150 @@
       "requiredDifficulties": ["Средний"],
       "reviewed": false,
       "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "css-background-layers",
+      "title": "Как работают несколько background и чем cover отличается от contain?",
+      "description": "Используйте фон для представления и декора, контентное изображение - для информации.",
+      "requiredDifficulties": ["Базовый"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "css-opacity-alpha",
+      "title": "Чем opacity у контейнера отличается от прозрачности background-color?",
+      "description": "Прозрачность группы и альфа одного слоя имеют разные визуальные и структурные последствия.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "css-color-space-contrast",
+      "title": "Что дают oklch и color-mix и гарантируют ли они доступный контраст?",
+      "description": "Современный формат облегчает работу с цветом, но не заменяет проверку читаемости.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "css-pointer-events-contract",
+      "title": "Почему pointer-events: none не отключает кнопку полностью?",
+      "description": "Ограничение hit testing не означает запрет всех способов взаимодействия.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "css-animation-fill-timing",
+      "title": "Что определяют animation-delay, direction и fill-mode?",
+      "description": "Анимационная шкала временно участвует в представлении, но не хранит состояние приложения.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "css-entry-starting-style",
+      "title": "Зачем нужен @starting-style при появлении нового элемента?",
+      "description": "Сначала обеспечьте рабочее конечное состояние, затем улучшайте входную анимацию.",
+      "requiredDifficulties": ["Продвинутый"],
+      "reviewed": true,
+      "priority": "extended",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "css-scrollbar-gutter",
+      "title": "Как scrollbar-gutter уменьшает сдвиг макета при появлении прокрутки?",
+      "description": "Резервируйте системное место декларативно вместо ручной компенсации случайной шириной.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "css-border-outline-shadow",
+      "title": "Чем border, outline и box-shadow отличаются по влиянию на размеры?",
+      "description": "Выбирайте эффект по его геометрии, а не только по внешнему сходству линий.",
+      "requiredDifficulties": ["Базовый"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "css-radius-clipping",
+      "title": "Почему border-radius не всегда обрезает изображение и фон потомка?",
+      "description": "Закругление коробки и обрезание потомков - связанные, но отдельные действия.",
+      "requiredDifficulties": ["Базовый"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "css-gradient-image",
+      "title": "Является ли gradient цветом и как задаются его остановки?",
+      "description": "Градиент - генерируемый ресурс представления с собственной геометрией.",
+      "requiredDifficulties": ["Базовый"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "css-shadow-shape",
+      "title": "Чем box-shadow отличается от filter: drop-shadow у прозрачной картинки?",
+      "description": "Выбирайте тень по тому, какую форму она должна повторять.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "css-transform-order-origin",
+      "title": "Почему порядок translate и rotate меняет результат и что задаёт transform-origin?",
+      "description": "Композиция и origin - часть результата, а не взаимозаменяемый порядок записи эффектов.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "css-easing-duration",
+      "title": "Чем duration отличается от easing и когда нужны steps?",
+      "description": "Время и характер движения настраивают отдельно; ступени подходят для дискретной последовательности.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "css-touch-action-gesture",
+      "title": "Зачем нужен touch-action и чем он отличается от pointer-events?",
+      "description": "Согласуйте собственный жест с нативными возможностями браузера, сохраняя доступность.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "css-overscroll-chaining",
+      "title": "Как не передавать прокрутку от вложенной панели странице?",
+      "description": "Граница передачи прокрутки и доступность остальной страницы - разные обязанности.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "css-blend-isolation",
+      "title": "Для чего isolation: isolate нужен рядом с mix-blend-mode?",
+      "description": "Эффект смешивания требует явной границы и проверки результата на реальных фонах.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": true,
+      "priority": "extended",
       "relatedSkillIds": []
     }
   ],
@@ -151,6 +311,398 @@
         "sourceRefs": ["ref-f628e2cfe314f388"]
       },
       "answerFile": "answers/html-css/css-color-preferences.md"
+    },
+    {
+      "id": "css-background-layers",
+      "title": "Как работают несколько background и чем cover отличается от contain?",
+      "topic": "HTML и CSS",
+      "difficulty": "Базовый",
+      "summary": "Порядок слоёв, масштабирование фона и отличие от контентного изображения.",
+      "answerFile": "answers/html-css/css-background-layers.md",
+      "takeaway": "Используйте фон для представления и декора, контентное изображение - для информации.",
+      "pitfall": "Передавать важную схему только background-image без текстовой альтернативы.",
+      "moduleId": "html-css",
+      "order": 4,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Используйте фон для представления и декора, контентное изображение - для информации.",
+        "keywords": ["HTML и CSS", "Визуальные состояния и анимации", "background", "layers"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "priority": "core",
+        "goalIds": ["core", "css-background-layers"],
+        "relatedQuestionIds": ["css-image-fitting"],
+        "sourceRefs": ["ref-57beda429f53d7ba"]
+      }
+    },
+    {
+      "id": "css-opacity-alpha",
+      "title": "Чем opacity у контейнера отличается от прозрачности background-color?",
+      "topic": "HTML и CSS",
+      "difficulty": "Средний",
+      "summary": "Групповая прозрачность, непрозрачные потомки и stacking context.",
+      "answerFile": "answers/html-css/css-opacity-alpha.md",
+      "takeaway": "Прозрачность группы и альфа одного слоя имеют разные визуальные и структурные последствия.",
+      "pitfall": "Пытаться восстановить непрозрачный текст через opacity: 1 у ребёнка прозрачного контейнера.",
+      "moduleId": "html-css",
+      "order": 5,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Прозрачность группы и альфа одного слоя имеют разные визуальные и структурные последствия.",
+        "keywords": ["HTML и CSS", "Визуальные состояния и анимации", "opacity", "alpha"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "priority": "core",
+        "goalIds": ["core", "css-opacity-alpha"],
+        "relatedQuestionIds": ["html-hiding-contract", "css-position-stacking"],
+        "sourceRefs": ["ref-ac3d88c35445a9fa"]
+      }
+    },
+    {
+      "id": "css-color-space-contrast",
+      "title": "Что дают oklch и color-mix и гарантируют ли они доступный контраст?",
+      "topic": "HTML и CSS",
+      "difficulty": "Средний",
+      "summary": "Управление координатами цвета, пространство смешивания и проверка итоговой пары.",
+      "answerFile": "answers/html-css/css-color-space-contrast.md",
+      "takeaway": "Современный формат облегчает работу с цветом, но не заменяет проверку читаемости.",
+      "pitfall": "Считать любое различие OKLCH lightness достаточным доказательством доступности.",
+      "moduleId": "html-css",
+      "order": 6,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Современный формат облегчает работу с цветом, но не заменяет проверку читаемости.",
+        "keywords": ["HTML и CSS", "Визуальные состояния и анимации", "color", "space", "contrast"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "priority": "core",
+        "goalIds": ["core", "css-color-space-contrast"],
+        "relatedQuestionIds": ["css-color-preferences"],
+        "sourceRefs": ["ref-503bb231d579dff8"]
+      }
+    },
+    {
+      "id": "css-pointer-events-contract",
+      "title": "Почему pointer-events: none не отключает кнопку полностью?",
+      "topic": "HTML и CSS",
+      "difficulty": "Средний",
+      "summary": "Hit testing указателя, клавиатурная активация и события потомков.",
+      "answerFile": "answers/html-css/css-pointer-events-contract.md",
+      "takeaway": "Ограничение hit testing не означает запрет всех способов взаимодействия.",
+      "pitfall": "Защищать повторную отправку формы только pointer-events: none.",
+      "moduleId": "html-css",
+      "order": 7,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Ограничение hit testing не означает запрет всех способов взаимодействия.",
+        "keywords": [
+          "HTML и CSS",
+          "Визуальные состояния и анимации",
+          "pointer",
+          "events",
+          "contract"
+        ],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "priority": "core",
+        "goalIds": ["core", "css-pointer-events-contract"],
+        "relatedQuestionIds": ["html-aria-state-behavior"],
+        "sourceRefs": ["ref-95c0c2ec643c5c0b"]
+      }
+    },
+    {
+      "id": "css-animation-fill-timing",
+      "title": "Что определяют animation-delay, direction и fill-mode?",
+      "topic": "HTML и CSS",
+      "difficulty": "Средний",
+      "summary": "Задержка, направление ключевых кадров и стили вне активного интервала.",
+      "answerFile": "answers/html-css/css-animation-fill-timing.md",
+      "takeaway": "Анимационная шкала временно участвует в представлении, но не хранит состояние приложения.",
+      "pitfall": "Считать forwards физической записью последнего кадра в style элемента.",
+      "moduleId": "html-css",
+      "order": 8,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Анимационная шкала временно участвует в представлении, но не хранит состояние приложения.",
+        "keywords": [
+          "HTML и CSS",
+          "Визуальные состояния и анимации",
+          "animation",
+          "fill",
+          "timing"
+        ],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "priority": "core",
+        "goalIds": ["core", "css-animation-fill-timing"],
+        "relatedQuestionIds": ["css-transition-animation", "css-reduced-motion"],
+        "sourceRefs": ["ref-c1ccd2c93083fccb"]
+      }
+    },
+    {
+      "id": "css-entry-starting-style",
+      "title": "Зачем нужен @starting-style при появлении нового элемента?",
+      "topic": "HTML и CSS",
+      "difficulty": "Продвинутый",
+      "summary": "Исходное состояние перехода без предыдущего отображённого стиля.",
+      "answerFile": "answers/html-css/css-entry-starting-style.md",
+      "takeaway": "Сначала обеспечьте рабочее конечное состояние, затем улучшайте входную анимацию.",
+      "pitfall": "Обещать плавное удаление DOM-узла только благодаря @starting-style.",
+      "moduleId": "html-css",
+      "order": 9,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Сначала обеспечьте рабочее конечное состояние, затем улучшайте входную анимацию.",
+        "keywords": ["HTML и CSS", "Визуальные состояния и анимации", "entry", "starting", "style"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "priority": "extended",
+        "goalIds": ["core", "css-entry-starting-style"],
+        "relatedQuestionIds": ["css-transition-animation"],
+        "sourceRefs": ["ref-d7c92d3bed8caac0"]
+      }
+    },
+    {
+      "id": "css-scrollbar-gutter",
+      "title": "Как scrollbar-gutter уменьшает сдвиг макета при появлении прокрутки?",
+      "topic": "HTML и CSS",
+      "difficulty": "Средний",
+      "summary": "Резервирование места для обычной полосы прокрутки и отличие overlay-режима.",
+      "answerFile": "answers/html-css/css-scrollbar-gutter.md",
+      "takeaway": "Резервируйте системное место декларативно вместо ручной компенсации случайной шириной.",
+      "pitfall": "Считать отсутствие видимого эффекта с overlay-scrollbars доказательством ошибки свойства.",
+      "moduleId": "html-css",
+      "order": 10,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Резервируйте системное место декларативно вместо ручной компенсации случайной шириной.",
+        "keywords": ["HTML и CSS", "Визуальные состояния и анимации", "scrollbar", "gutter"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "priority": "core",
+        "goalIds": ["core", "css-scrollbar-gutter"],
+        "relatedQuestionIds": ["css-overflow-scroll-contract"],
+        "sourceRefs": ["ref-319b4e21439ac345"]
+      }
+    },
+    {
+      "id": "css-border-outline-shadow",
+      "title": "Чем border, outline и box-shadow отличаются по влиянию на размеры?",
+      "topic": "HTML и CSS",
+      "difficulty": "Базовый",
+      "summary": "Граница коробки и внешние эффекты без обычного участия в layout.",
+      "answerFile": "answers/html-css/css-border-outline-shadow.md",
+      "takeaway": "Выбирайте эффект по его геометрии, а не только по внешнему сходству линий.",
+      "pitfall": "Добавлять толщину border только в hover и получать скачок содержимого.",
+      "moduleId": "html-css",
+      "order": 11,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Выбирайте эффект по его геометрии, а не только по внешнему сходству линий.",
+        "keywords": [
+          "HTML и CSS",
+          "Визуальные состояния и анимации",
+          "border",
+          "outline",
+          "shadow"
+        ],
+        "kind": "explanation",
+        "reviewStatus": "ready",
+        "priority": "core",
+        "goalIds": ["core", "css-border-outline-shadow"],
+        "relatedQuestionIds": ["css-box-sizing", "css-focus-indicator"],
+        "sourceRefs": ["ref-9017bd9a6fabfa57"]
+      }
+    },
+    {
+      "id": "css-radius-clipping",
+      "title": "Почему border-radius не всегда обрезает изображение и фон потомка?",
+      "topic": "HTML и CSS",
+      "difficulty": "Базовый",
+      "summary": "Закругление собственной коробки и отдельная граница обрезания содержимого.",
+      "answerFile": "answers/html-css/css-radius-clipping.md",
+      "takeaway": "Закругление коробки и обрезание потомков - связанные, но отдельные действия.",
+      "pitfall": "Ставить overflow: hidden на всю карточку и незаметно срезать фокус кнопок.",
+      "moduleId": "html-css",
+      "order": 12,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Закругление коробки и обрезание потомков - связанные, но отдельные действия.",
+        "keywords": ["HTML и CSS", "Визуальные состояния и анимации", "radius", "clipping"],
+        "kind": "explanation",
+        "reviewStatus": "ready",
+        "priority": "core",
+        "goalIds": ["core", "css-radius-clipping"],
+        "relatedQuestionIds": ["css-overflow-scroll-contract"],
+        "sourceRefs": ["ref-a7b54b7b098b07cb"]
+      }
+    },
+    {
+      "id": "css-gradient-image",
+      "title": "Является ли gradient цветом и как задаются его остановки?",
+      "topic": "HTML и CSS",
+      "difficulty": "Базовый",
+      "summary": "CSS-изображение, направление и распределение цветов.",
+      "answerFile": "answers/html-css/css-gradient-image.md",
+      "takeaway": "Градиент - генерируемый ресурс представления с собственной геометрией.",
+      "pitfall": "Считать градиент доступным фоном без проверки текста на разных его участках.",
+      "moduleId": "html-css",
+      "order": 13,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Градиент - генерируемый ресурс представления с собственной геометрией.",
+        "keywords": ["HTML и CSS", "Визуальные состояния и анимации", "gradient", "image"],
+        "kind": "explanation",
+        "reviewStatus": "ready",
+        "priority": "core",
+        "goalIds": ["core", "css-gradient-image"],
+        "relatedQuestionIds": ["css-background-layers", "css-color-space-contrast"],
+        "sourceRefs": ["ref-79ca8641ebac39c9"]
+      }
+    },
+    {
+      "id": "css-shadow-shape",
+      "title": "Чем box-shadow отличается от filter: drop-shadow у прозрачной картинки?",
+      "topic": "HTML и CSS",
+      "difficulty": "Средний",
+      "summary": "Тень коробки и тень непрозрачного силуэта.",
+      "answerFile": "answers/html-css/css-shadow-shape.md",
+      "takeaway": "Выбирайте тень по тому, какую форму она должна повторять.",
+      "pitfall": "Ждать, что box-shadow повторит внутренние прозрачные вырезы изображения.",
+      "moduleId": "html-css",
+      "order": 14,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Выбирайте тень по тому, какую форму она должна повторять.",
+        "keywords": ["HTML и CSS", "Визуальные состояния и анимации", "shadow", "shape"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "priority": "core",
+        "goalIds": ["core", "css-shadow-shape"],
+        "relatedQuestionIds": ["css-position-stacking"],
+        "sourceRefs": ["ref-a31fbfe53bc1dd9c"]
+      }
+    },
+    {
+      "id": "css-transform-order-origin",
+      "title": "Почему порядок translate и rotate меняет результат и что задаёт transform-origin?",
+      "topic": "HTML и CSS",
+      "difficulty": "Средний",
+      "summary": "Композиция преобразований и точка отсчёта вращения.",
+      "answerFile": "answers/html-css/css-transform-order-origin.md",
+      "takeaway": "Композиция и origin - часть результата, а не взаимозаменяемый порядок записи эффектов.",
+      "pitfall": "Переставлять transform-функции при рефакторинге как независимые декларации.",
+      "moduleId": "html-css",
+      "order": 15,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Композиция и origin - часть результата, а не взаимозаменяемый порядок записи эффектов.",
+        "keywords": [
+          "HTML и CSS",
+          "Визуальные состояния и анимации",
+          "transform",
+          "order",
+          "origin"
+        ],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "priority": "core",
+        "goalIds": ["core", "css-transform-order-origin"],
+        "relatedQuestionIds": ["css-transform-flow-geometry"],
+        "sourceRefs": ["ref-fe70db6a90b4bd08"]
+      }
+    },
+    {
+      "id": "css-easing-duration",
+      "title": "Чем duration отличается от easing и когда нужны steps?",
+      "topic": "HTML и CSS",
+      "difficulty": "Средний",
+      "summary": "Длительность, распределение прогресса и дискретные состояния.",
+      "answerFile": "answers/html-css/css-easing-duration.md",
+      "takeaway": "Время и характер движения настраивают отдельно; ступени подходят для дискретной последовательности.",
+      "pitfall": "Пытаться заменить delay через ease-in или использовать steps для требуемого плавного движения.",
+      "moduleId": "html-css",
+      "order": 16,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Время и характер движения настраивают отдельно; ступени подходят для дискретной последовательности.",
+        "keywords": ["HTML и CSS", "Визуальные состояния и анимации", "easing", "duration"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "priority": "core",
+        "goalIds": ["core", "css-easing-duration"],
+        "relatedQuestionIds": ["css-animation-fill-timing", "css-reduced-motion"],
+        "sourceRefs": ["ref-0af32b93f89fa74f"]
+      }
+    },
+    {
+      "id": "css-touch-action-gesture",
+      "title": "Зачем нужен touch-action и чем он отличается от pointer-events?",
+      "topic": "HTML и CSS",
+      "difficulty": "Средний",
+      "summary": "Разрешённые нативные жесты и выбор цели указателя.",
+      "answerFile": "answers/html-css/css-touch-action-gesture.md",
+      "takeaway": "Согласуйте собственный жест с нативными возможностями браузера, сохраняя доступность.",
+      "pitfall": "Считать touch-action: none просто ускорителем обработчика или заменой pointer-events.",
+      "moduleId": "html-css",
+      "order": 17,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Согласуйте собственный жест с нативными возможностями браузера, сохраняя доступность.",
+        "keywords": ["HTML и CSS", "Визуальные состояния и анимации", "touch", "action", "gesture"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "priority": "core",
+        "goalIds": ["core", "css-touch-action-gesture"],
+        "relatedQuestionIds": ["css-pointer-events-contract"],
+        "sourceRefs": ["ref-d2df833def6ce7c3"]
+      }
+    },
+    {
+      "id": "css-overscroll-chaining",
+      "title": "Как не передавать прокрутку от вложенной панели странице?",
+      "topic": "HTML и CSS",
+      "difficulty": "Средний",
+      "summary": "Scroll chaining на границе и отличие от запрета прокрутки документа.",
+      "answerFile": "answers/html-css/css-overscroll-chaining.md",
+      "takeaway": "Граница передачи прокрутки и доступность остальной страницы - разные обязанности.",
+      "pitfall": "Считать overscroll-behavior полной заменой блокировке фона модального окна.",
+      "moduleId": "html-css",
+      "order": 18,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Граница передачи прокрутки и доступность остальной страницы - разные обязанности.",
+        "keywords": ["HTML и CSS", "Визуальные состояния и анимации", "overscroll", "chaining"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "priority": "core",
+        "goalIds": ["core", "css-overscroll-chaining"],
+        "relatedQuestionIds": ["css-bounded-scroll-pane", "html-native-dialog"],
+        "sourceRefs": ["ref-a49a9f8fad6f5f57"]
+      }
+    },
+    {
+      "id": "css-blend-isolation",
+      "title": "Для чего isolation: isolate нужен рядом с mix-blend-mode?",
+      "topic": "HTML и CSS",
+      "difficulty": "Средний",
+      "summary": "Граница группы смешивания и независимый stacking context.",
+      "answerFile": "answers/html-css/css-blend-isolation.md",
+      "takeaway": "Эффект смешивания требует явной границы и проверки результата на реальных фонах.",
+      "pitfall": "Считать isolate обрезанием, защитой от CSS-наследования или заменой overflow.",
+      "moduleId": "html-css",
+      "order": 19,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Эффект смешивания требует явной границы и проверки результата на реальных фонах.",
+        "keywords": ["HTML и CSS", "Визуальные состояния и анимации", "blend", "isolation"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "priority": "extended",
+        "goalIds": ["core", "css-blend-isolation"],
+        "relatedQuestionIds": ["css-position-stacking", "css-color-space-contrast"],
+        "sourceRefs": ["ref-df1ec05cf788945c"]
+      }
     }
   ]
 }

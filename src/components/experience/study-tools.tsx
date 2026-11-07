@@ -1,4 +1,6 @@
-import { useId, useState } from "react"
+import { Toggle } from "@/components/ui/toggle"
+import { Disclosure } from "@/components/experience/disclosure"
+import { useEffect, useId, useState, type ReactNode } from "react"
 import { Link } from "react-router-dom"
 import { Button } from "@/components/ui/button"
 import { Textarea } from "@/components/ui/textarea"
@@ -14,34 +16,45 @@ import { useWorkspace } from "@/stores/workspace"
 import { CodeBlock } from "@/components/practice/practice-elements"
 import type { PracticeTask } from "@/data/interview-content"
 import { codeLanguageFor } from "@/lib/syntax-highlighter"
-export function WorkspaceControls({ split = false }: { split?: boolean }) {
-  const focus = useWorkspace((s) => s.focus),
-    setFocus = useWorkspace((s) => s.setFocus),
-    width = useWorkspace((s) => s.split),
-    setWidth = useWorkspace((s) => s.setSplit)
+export function WorkspaceControls({
+  split = false,
+  children,
+}: {
+  split?: boolean
+  children?: ReactNode
+}) {
+  const focus = useWorkspace((state) => state.focus)
+  const setFocus = useWorkspace((state) => state.setFocus)
+  useEffect(() => {
+    if (!focus) return
+    const exit = (event: KeyboardEvent) => {
+      if (
+        event.key !== "Escape" ||
+        event.defaultPrevented ||
+        document.querySelector('[role="dialog"]')
+      )
+        return
+      setFocus(false)
+    }
+    window.addEventListener("keydown", exit)
+    return () => window.removeEventListener("keydown", exit)
+  }, [focus, setFocus])
   return (
-    <div className="mb-4 flex flex-wrap items-center gap-3">
-      <Button
-        size="sm"
-        variant={focus ? "secondary" : "outline"}
-        aria-pressed={focus}
-        onClick={() => setFocus(!focus)}
+    <div className="mb-4 flex flex-wrap items-center justify-between gap-3 rounded-xl border bg-card px-4 py-3">
+      {children}
+      <Toggle
+        className="h-10"
+        variant="outline"
+        pressed={focus}
+        onPressedChange={setFocus}
+        title={focus ? "Выйти из режима фокуса (Esc)" : "Скрыть дополнительные блоки"}
       >
         {focus ? "Обычный режим" : "Сосредоточиться"}
-      </Button>
+      </Toggle>
       {split && !focus && (
-        <label className="hidden items-center gap-3 text-xs text-muted-foreground xl:flex">
-          Ширина условия {width}%
-          <input
-            aria-label="Ширина условия задачи"
-            type="range"
-            min={30}
-            max={65}
-            value={width}
-            onChange={(e) => setWidth(Number(e.target.value))}
-            className="accent-primary"
-          />
-        </label>
+        <p className="hidden text-xs text-muted-foreground xl:block">
+          Перетащите границу между условием и решением.
+        </p>
       )}
     </div>
   )
@@ -51,10 +64,10 @@ export function PersonalNote({ contentKey }: { contentKey: string }) {
   const text = useWorkspace((s) => s.notes[contentKey] ?? ""),
     save = useWorkspace((s) => s.note)
   return (
-    <details className="rounded-xl border bg-card p-4">
-      <summary className="cursor-pointer text-sm font-medium">
-        Моя заметка{text ? " · есть запись" : ""}
-      </summary>
+    <Disclosure
+      className="rounded-xl border bg-card"
+      title={<> Моя заметка{text ? " · есть запись" : ""} </>}
+    >
       <label htmlFor={noteId} className="mt-4 block text-xs text-muted-foreground">
         Только в этом браузере
         <Textarea
@@ -82,7 +95,7 @@ export function PersonalNote({ contentKey }: { contentKey: string }) {
             }
           })()}
       </p>
-    </details>
+    </Disclosure>
   )
 }
 export function DraftStatus({
@@ -107,7 +120,9 @@ export function DraftStatus({
       text = "Хранилище недоступно. Скопируйте код перед закрытием"
     }
   }
-  return <output className="block px-4 py-2 text-xs text-muted-foreground">{text}</output>
+  return hasDraft ? (
+    <output className="block px-4 py-2 text-xs text-muted-foreground">{text}</output>
+  ) : null
 }
 const emptyAttempts: import("@/stores/workspace").Attempt[] = []
 export function AttemptHistory({
@@ -124,10 +139,10 @@ export function AttemptHistory({
   const attempt = list.find((item) => item.id === selected)
   return (
     <>
-      <details className="rounded-xl border bg-card p-4">
-        <summary className="cursor-pointer text-sm font-medium">
-          История попыток ({list.length})
-        </summary>
+      <Disclosure
+        className="rounded-xl border bg-card"
+        title={<> История попыток ({list.length}) </>}
+      >
         <p className="mt-2 text-xs text-muted-foreground">
           Последние 15 проверок, только в этом браузере.
         </p>
@@ -148,7 +163,7 @@ export function AttemptHistory({
             <p className="text-xs text-muted-foreground">Попытки появятся после проверки.</p>
           )}
         </div>
-      </details>
+      </Disclosure>
       <Dialog
         open={!!attempt}
         onOpenChange={(open) => {

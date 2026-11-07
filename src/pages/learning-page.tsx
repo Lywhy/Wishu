@@ -1,3 +1,5 @@
+import { EmptyResults } from "@/components/catalog/catalog-controls"
+import { Toggle } from "@/components/ui/toggle"
 import { Link, useSearchParams } from "react-router-dom"
 import {
   AnimatedCard as Card,
@@ -57,9 +59,11 @@ export function LearningPage() {
     .flatMap((section) => {
       if (section.inDevelopment) return []
       const steps = courseSteps(section, questions)
+      const remembered = steps.find((step) => step.id === lastSteps[section.id])
       const next =
-        steps.find((step) => step.id === lastSteps[section.id]) ??
-        steps.find((step) => !stepCompleted(section.id, step, completed))
+        (remembered && !stepCompleted(section.id, remembered, completed)
+          ? remembered
+          : undefined) ?? steps.find((step) => !stepCompleted(section.id, step, completed))
       return next &&
         (lastSteps[section.id] || steps.some((step) => stepCompleted(section.id, step, completed)))
         ? [{ section, next }]
@@ -74,7 +78,7 @@ export function LearningPage() {
         eyebrow="Теория и закрепление"
       />
       {resume && (
-        <Card className="mb-5 gap-3 rounded-xl bg-primary/5 p-5 shadow-none ring-primary/15 sm:flex-row sm:items-center sm:justify-between">
+        <Card className="mb-5 gap-3 rounded-xl border-primary/20 bg-primary/5 p-5 shadow-none sm:flex-row sm:items-center sm:justify-between">
           <div>
             <p className="text-xs font-medium text-primary">Продолжить обучение</p>
             <p className="mt-1 text-sm font-semibold">
@@ -98,13 +102,14 @@ export function LearningPage() {
           value={query}
           onValueChange={setQuery}
         />
-        <Button
-          variant={savedOnly ? "secondary" : "outline"}
-          aria-pressed={savedOnly}
-          onClick={() => setSavedOnly((value) => !value)}
+        <Toggle
+          variant="outline"
+          pressed={savedOnly}
+          onPressedChange={setSavedOnly}
+          className="h-10"
         >
           Мой план
-        </Button>
+        </Toggle>
       </div>
       <output className="sr-only" aria-live="polite" aria-atomic="true">
         Найдено модулей: {visible.length}
@@ -139,8 +144,11 @@ export function LearningPage() {
                   const done = steps.filter((step) =>
                     stepCompleted(section.id, step, completed),
                   ).length
+                  const remembered = steps.find((step) => step.id === lastSteps[section.id])
                   const next =
-                    steps.find((step) => step.id === lastSteps[section.id]) ??
+                    (remembered && !stepCompleted(section.id, remembered, completed)
+                      ? remembered
+                      : undefined) ??
                     steps.find((step) => !stepCompleted(section.id, step, completed)) ??
                     steps[0]
                   return (
@@ -179,26 +187,36 @@ export function LearningPage() {
                             value={(100 * done) / steps.length}
                             aria-label={`Прогресс ${section.title}`}
                           />
+                          <p className="min-h-10 text-xs leading-5 text-muted-foreground">
+                            {done === steps.length ? (
+                              "Все этапы завершены. Можно повторить материал."
+                            ) : (
+                              <>
+                                Дальше:{" "}
+                                <span className="font-medium text-foreground">{next.title}</span>
+                              </>
+                            )}
+                          </p>
                           <div className="flex items-center justify-between gap-2">
                             <Button
                               nativeButton={false}
+                              className="h-10"
                               size="sm"
                               render={<Link to={`/learn/${section.id}/${next.id}`} />}
                             >
                               {done === steps.length
                                 ? "Повторить"
-                                : done
+                                : done || lastSteps[section.id]
                                   ? "Продолжить"
                                   : "Начать обучение"}
                             </Button>
-                            <Button
+                            <Toggle
                               size="sm"
-                              variant="ghost"
-                              aria-pressed={saved.includes(section.id)}
-                              onClick={() => toggle(section.id)}
+                              pressed={saved.includes(section.id)}
+                              onPressedChange={() => toggle(section.id)}
                             >
                               {saved.includes(section.id) ? "В плане" : "В план"}
-                            </Button>
+                            </Toggle>
                           </div>
                         </>
                       )}
@@ -211,17 +229,11 @@ export function LearningPage() {
         })}
       </div>
       {!visible.length && (
-        <div className="space-y-4 py-12 text-center text-sm text-muted-foreground">
-          <p>Модули не найдены. Измените поиск или отключите «Мой план».</p>
-          <Button
-            variant="outline"
-            onClick={() => {
-              setParams({}, { replace: true })
-            }}
-          >
-            Сбросить фильтры
-          </Button>
-        </div>
+        <EmptyResults
+          title="Модули не найдены"
+          description="Измените поиск или отключите «Мой план»."
+          onReset={() => setParams({}, { replace: true })}
+        />
       )}
     </>
   )

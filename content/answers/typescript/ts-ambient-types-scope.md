@@ -13,10 +13,7 @@ types ограничивает набор автоматически подкл�
 ```json
 {
   "compilerOptions": {
-    "lib": [
-      "ES2023",
-      "DOM"
-    ],
+    "lib": ["ES2023", "DOM"],
     "types": []
   }
 }
@@ -29,3 +26,22 @@ types ограничивает набор автоматически подкл�
 <!-- wishu:answer-block -->
 
 [Документация TypeScript](https://www.typescriptlang.org/tsconfig/types.html).
+
+<!-- wishu:answer-block -->
+
+### Не полагаться на defaults другой версии
+
+Для целевого окружения полезно явно задать нужные глобальные типы. По документации TS 6.0 default для types изменён на пустой список; поведение TS 5.9 и ранее при отсутствии настройки отличалось. Явные импорты и lib остаются отдельными источниками типов.
+
+```typescript
+// Для конкретного Node-проекта, если это соответствует среде:
+// { "compilerOptions": { "types": ["node"] } }
+// Для браузера не добавлять Node-глобалы без реальной необходимости.
+```
+
+#### Продолжить тему
+
+- [Как найти причину неожиданного импорта, глобального типа или состава проекта?](/questions/ts-config-diagnostic-tools)
+- [Почему два файла без импортов могут конфликтовать по глобальным именам?](/questions/ts-module-detection-scope)
+
+[Документация TypeScript](https://www.typescriptlang.org/docs/handbook/release-notes/typescript-6-0.html).

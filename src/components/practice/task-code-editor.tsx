@@ -1,11 +1,12 @@
 import Editor, { loader } from "@monaco-editor/react"
-import { useEffect } from "react"
+import { useEffect, useRef } from "react"
 import * as monaco from "monaco-editor"
 import EditorWorker from "monaco-editor/esm/vs/editor/editor.worker?worker"
 import TypeScriptWorker from "monaco-editor/esm/vs/language/typescript/ts.worker?worker"
 import CssWorker from "monaco-editor/esm/vs/language/css/css.worker?worker"
 import HtmlWorker from "monaco-editor/esm/vs/language/html/html.worker?worker"
 import JsonWorker from "monaco-editor/esm/vs/language/json/json.worker?worker"
+import { useTaskExperience } from "@/stores/task-experience"
 import { useTheme } from "@/lib/theme-context"
 
 const host = globalThis as typeof globalThis & { MonacoEnvironment: monaco.Environment }
@@ -82,24 +83,57 @@ export default function TaskCodeEditor({
   topic,
   value,
   onChange,
+  expanded = false,
 }: {
   taskId: string
   topic: string
   value: string
   onChange: (value: string) => void
+  expanded?: boolean
 }) {
   const { theme } = useTheme()
+  const cleanup = useRef<(() => void) | null>(null)
+  useEffect(() => () => cleanup.current?.(), [taskId])
   useEffect(() => {
     projectTheme(theme)
   }, [theme])
   const extension = topic === "TypeScript" ? "ts" : topic === "React" ? "jsx" : "js"
   return (
     <Editor
-      height="min(65vh, 620px)"
+      height={expanded ? "70dvh" : "clamp(20rem, 44vh, 30rem)"}
       path={`file:///wishu/tasks/${taskId}.${extension}`}
       language={extension === "ts" ? "typescript" : "javascript"}
       theme={`wishu-${theme}`}
       beforeMount={() => projectTheme(theme)}
+      onMount={(editor) => {
+        cleanup.current?.()
+        const saved = useTaskExperience.getState().editorStates[taskId]
+        if (saved) {
+          try {
+            editor.restoreViewState(saved)
+          } catch {
+            /* Ignore incompatible editor versions. */
+          }
+        }
+        let timer: ReturnType<typeof setTimeout> | undefined
+        let lastState = editor.saveViewState()
+        const persist = () => {
+          if (lastState) useTaskExperience.getState().saveEditorState(taskId, lastState)
+        }
+        const capture = () => {
+          lastState = editor.saveViewState()
+          clearTimeout(timer)
+          timer = setTimeout(persist, 400)
+        }
+        const cursor = editor.onDidChangeCursorSelection(capture)
+        const scroll = editor.onDidScrollChange(capture)
+        cleanup.current = () => {
+          clearTimeout(timer)
+          cursor.dispose()
+          scroll.dispose()
+          persist()
+        }
+      }}
       value={value}
       onChange={(next) => onChange(next ?? "")}
       loading={

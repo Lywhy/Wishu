@@ -1,0 +1,160 @@
+{
+  "$schema": "../question-bundle.schema.json",
+  "sectionId": "typescript",
+  "subsectionId": "ts-declarations",
+  "scope": "Практика написания деклараций и проверки публичных контрактов. Основы .d.ts и публикации связаны с вопросами раздела модулей.",
+  "coverageGoals": [
+    {
+      "id": "core",
+      "title": "Декларации и библиотеки",
+      "description": "Практика написания деклараций и проверки публичных контрактов. Основы .d.ts и публикации связаны с вопросами раздела модулей.",
+      "requiredDifficulties": [],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": [
+        "ts-library-consumer-check",
+        "ts-function-namespace-merging",
+        "ts-shorthand-ambient-any",
+        "ts-merging-overload-contract"
+      ]
+    },
+    {
+      "id": "ts-library-consumer-check",
+      "title": "Как проверить библиотеку как отдельный потребитель?",
+      "description": "Объяснить и применить правило с учётом его границ: Проверка поставки должна воспроизводить ограничения её потребителя.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": ["ts-type-contract-tests", "ts-package-conditional-types"]
+    },
+    {
+      "id": "ts-function-namespace-merging",
+      "title": "Как declaration merging связывает функцию и namespace с дополнительными членами?",
+      "description": "Объяснить и применить правило с учётом его границ: Declaration merging может объединять сущности с разной ролью в типах и runtime.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": true,
+      "priority": "extended",
+      "relatedSkillIds": ["ts-interface-merging", "ts-erasable-syntax-boundary"]
+    },
+    {
+      "id": "ts-shorthand-ambient-any",
+      "title": "Почему короткое declare module может убрать ошибку импорта, но открыть путь any?",
+      "description": "Объяснить и применить правило с учётом его границ: Принятый импорт и содержательный типовой контракт - разные результаты.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": ["ts-declaration-files", "unknown-any"]
+    },
+    {
+      "id": "ts-merging-overload-contract",
+      "title": "Как объединение деклараций влияет на набор перегрузок публичного API?",
+      "description": "Объяснить и применить правило с учётом его границ: Расширение типов может менять смысл вызова даже без правки его строки.",
+      "requiredDifficulties": ["Продвинутый"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": [
+        "ts-interface-merging",
+        "ts-function-overloads",
+        "ts-library-consumer-check"
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "id": "ts-library-consumer-check",
+      "title": "Как проверить библиотеку как отдельный потребитель?",
+      "topic": "TypeScript",
+      "difficulty": "Средний",
+      "summary": "Чистая установка поставки и несколько поддерживаемых сценариев импорта.",
+      "answerFile": "answers/typescript/ts-library-consumer-check.md",
+      "takeaway": "Проверка поставки должна воспроизводить ограничения её потребителя.",
+      "pitfall": "Считать локальный workspace-import полной проверкой публикации.",
+      "moduleId": "typescript",
+      "order": 0,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Проверка поставки должна воспроизводить ограничения её потребителя.",
+        "keywords": ["TypeScript", "Декларации и библиотеки"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "priority": "core",
+        "goalIds": ["core", "ts-library-consumer-check"],
+        "relatedQuestionIds": ["ts-type-contract-tests", "ts-package-conditional-types"],
+        "sourceRefs": ["ref-2867a7ff346ce328"]
+      }
+    },
+    {
+      "id": "ts-function-namespace-merging",
+      "title": "Как declaration merging связывает функцию и namespace с дополнительными членами?",
+      "topic": "TypeScript",
+      "difficulty": "Средний",
+      "summary": "Объединение типов и конструкции, которые также создают runtime-код.",
+      "answerFile": "answers/typescript/ts-function-namespace-merging.md",
+      "takeaway": "Declaration merging может объединять сущности с разной ролью в типах и runtime.",
+      "pitfall": "Считать namespace всегда удаляемой группировкой типов.",
+      "moduleId": "typescript",
+      "order": 1,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Declaration merging может объединять сущности с разной ролью в типах и runtime.",
+        "keywords": ["TypeScript", "Декларации и библиотеки", "runtime"],
+        "kind": "explanation",
+        "reviewStatus": "ready",
+        "priority": "extended",
+        "goalIds": ["core", "ts-function-namespace-merging"],
+        "relatedQuestionIds": ["ts-interface-merging", "ts-erasable-syntax-boundary"],
+        "sourceRefs": ["ref-4d18f3bf7d37dcc4"]
+      }
+    },
+    {
+      "id": "ts-shorthand-ambient-any",
+      "title": "Почему короткое declare module может убрать ошибку импорта, но открыть путь any?",
+      "topic": "TypeScript",
+      "difficulty": "Средний",
+      "summary": "Заглушка неизвестного модуля и полноценная декларация контракта.",
+      "answerFile": "answers/typescript/ts-shorthand-ambient-any.md",
+      "takeaway": "Принятый импорт и содержательный типовой контракт - разные результаты.",
+      "pitfall": "Считать любую заглушку .d.ts завершённой типизацией зависимости.",
+      "moduleId": "typescript",
+      "order": 2,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Принятый импорт и содержательный типовой контракт - разные результаты.",
+        "keywords": ["TypeScript", "Декларации и библиотеки"],
+        "kind": "explanation",
+        "reviewStatus": "ready",
+        "priority": "core",
+        "goalIds": ["core", "ts-shorthand-ambient-any"],
+        "relatedQuestionIds": ["ts-declaration-files", "unknown-any"],
+        "sourceRefs": ["ref-ae872ce8e10666f1"]
+      }
+    },
+    {
+      "id": "ts-merging-overload-contract",
+      "title": "Как объединение деклараций влияет на набор перегрузок публичного API?",
+      "topic": "TypeScript",
+      "difficulty": "Продвинутый",
+      "summary": "Состав объединённого контракта и выбор специализированной сигнатуры.",
+      "answerFile": "answers/typescript/ts-merging-overload-contract.md",
+      "takeaway": "Расширение типов может менять смысл вызова даже без правки его строки.",
+      "pitfall": "Считать declaration merging безусловно безопасным добавлением документации.",
+      "moduleId": "typescript",
+      "order": 3,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Расширение типов может менять смысл вызова даже без правки его строки.",
+        "keywords": ["TypeScript", "Декларации и библиотеки"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "priority": "core",
+        "goalIds": ["core", "ts-merging-overload-contract"],
+        "relatedQuestionIds": [
+          "ts-interface-merging",
+          "ts-function-overloads",
+          "ts-library-consumer-check"
+        ],
+        "sourceRefs": ["ref-4d18f3bf7d37dcc4"]
+      }
+    }
+  ]
+}

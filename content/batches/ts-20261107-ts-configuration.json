@@ -1,0 +1,42 @@
+{
+  "schemaVersion": 1,
+  "id": "ts-20261107-ts-configuration",
+  "title": "Расширение TypeScript: Конфигурация и диагностика",
+  "sectionId": "typescript",
+  "subsectionId": "ts-configuration",
+  "baseline": [],
+  "notes": [
+    "Готовые ответы сверены по документации; код примеров не запускался.",
+    "Контент собран и прошёл полную структурную проверку. TS: 161 вопрос, +62 новых и 17 расширенных. Примеры не исполнялись; seed не применялся."
+  ],
+  "currentPass": "complete",
+  "scopePass": {
+    "status": "complete",
+    "remaining": []
+  },
+  "answerPass": {
+    "status": "complete",
+    "remaining": []
+  },
+  "goalIds": [
+    "core",
+    "ts-project-file-graph",
+    "ts-config-inheritance-paths",
+    "ts-check-emit-boundary",
+    "ts-cli-project-selection",
+    "ts-erasable-syntax-boundary",
+    "ts-config-diagnostic-tools",
+    "ts-source-declaration-maps",
+    "ts-checker-performance-diagnosis"
+  ],
+  "questionIds": [
+    "ts-project-file-graph",
+    "ts-config-inheritance-paths",
+    "ts-check-emit-boundary",
+    "ts-cli-project-selection",
+    "ts-erasable-syntax-boundary",
+    "ts-config-diagnostic-tools",
+    "ts-source-declaration-maps",
+    "ts-checker-performance-diagnosis"
+  ]
+}

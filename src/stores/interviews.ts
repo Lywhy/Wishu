@@ -1,6 +1,12 @@
 import { create } from "zustand"
 import { persist, createJSONStorage } from "zustand/middleware"
-import type { InterviewDraft, InterviewMeeting, InterviewRecord } from "@/data/interviews"
+import type {
+  InterviewDraft,
+  InterviewMeeting,
+  InterviewRecord,
+  InterviewPreparationPlan,
+  InterviewDebriefData,
+} from "@/data/interviews"
 export const useInterviewStorage = create<{ error: string | null }>(() => ({ error: null }))
 const memory = new Map<string, string>()
 const storage = createJSONStorage(() => ({
@@ -39,14 +45,32 @@ interface Tracker {
   records: InterviewRecord[]
   save: (draft: InterviewDraft, id?: string) => string
   archive: (id: string, value: boolean) => void
+  setDebrief: (id: string, debrief: InterviewDebriefData) => void
+  setPreparation: (id: string, plan: InterviewPreparationPlan) => void
+  retryStorage: () => void
   remove: (id: string) => void
   meeting: (id: string, draft: Omit<InterviewMeeting, "id" | "done">, meetingId?: string) => void
   completeMeeting: (id: string, meetingId: string, done: boolean) => void
 }
 export const useInterviewTracker = create<Tracker>()(
   persist(
-    (set) => ({
+    (set, get) => ({
       records: [],
+      setDebrief: (id, debrief) =>
+        set((state) => ({
+          records: state.records.map((record) =>
+            record.id === id ? { ...record, debrief, updatedAt: new Date().toISOString() } : record,
+          ),
+        })),
+      retryStorage: () => set({ records: [...get().records] }),
+      setPreparation: (id, preparation) =>
+        set((state) => ({
+          records: state.records.map((record) =>
+            record.id === id
+              ? { ...record, preparation, updatedAt: new Date().toISOString() }
+              : record,
+          ),
+        })),
       save: (draft, id) => {
         const key = id ?? crypto.randomUUID(),
           at = new Date().toISOString()

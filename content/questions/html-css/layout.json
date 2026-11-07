@@ -24,7 +24,25 @@
         "css-grid-tracks",
         "css-subgrid-contract",
         "css-box-alignment",
-        "css-overflow-scroll-contract"
+        "css-overflow-scroll-contract",
+        "css-grid-implicit-placement",
+        "css-grid-areas-overlap",
+        "css-flex-wrapping-lines",
+        "css-auto-margin-gap",
+        "css-percentage-height",
+        "css-transform-flow-geometry",
+        "css-display-contents-contract",
+        "css-table-layout",
+        "css-normal-flow-position",
+        "css-block-horizontal-center",
+        "css-bounded-scroll-pane",
+        "css-grid-line-numbering",
+        "css-grid-gap-percentages",
+        "css-flex-axis-direction",
+        "css-float-clear-text",
+        "css-absolute-opposing-insets",
+        "css-multicol-flow",
+        "css-table-border-model"
       ]
     },
     {
@@ -141,6 +159,168 @@
       "description": "Объяснить и применить правило с учётом его границ: Скролл требует правильных размеров и ограничений, а скрытие переполнения не всегда устраняет причину.",
       "requiredDifficulties": ["Средний"],
       "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "css-grid-implicit-placement",
+      "title": "Чем явная Grid-сетка отличается от неявной и что делает grid-auto-flow: dense?",
+      "description": "Автопозиционирование добавляет геометрию, но не переписывает логический порядок документа.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "css-grid-areas-overlap",
+      "title": "Как работают grid-template-areas и наложение элементов в одной ячейке?",
+      "description": "Grid может управлять и двумерной структурой, и наложением элементов в потоке.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "css-flex-wrapping-lines",
+      "title": "Почему строки flex-wrap не образуют общие колонки?",
+      "description": "Перенос Flexbox остаётся одномерной моделью с независимыми строками.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "css-auto-margin-gap",
+      "title": "Как auto margin во Flexbox взаимодействует с gap и justify-content?",
+      "description": "Gap задаёт интервалы, auto-margin забирает остаток, justify-content распределяет оставшееся место.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "css-percentage-height",
+      "title": "Почему height: 100% не растягивает блок по высоте родителя?",
+      "description": "Для процента сначала найдите базу и выясните, определена ли она в этом layout.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "css-transform-flow-geometry",
+      "title": "Чем transform: translate отличается от изменения margin или позиции?",
+      "description": "Различайте место элемента в потоке и его преобразованную видимую геометрию.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "css-display-contents-contract",
+      "title": "Что убирает display: contents и почему с ним осторожны на семантических элементах?",
+      "description": "Дерево CSS-коробок и дерево DOM связаны, но не совпадают.",
+      "requiredDifficulties": ["Продвинутый"],
+      "reviewed": true,
+      "priority": "extended",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "css-table-layout",
+      "title": "Когда table-layout: fixed полезнее auto и почему он не решает перенос текста?",
+      "description": "Алгоритм ширины таблицы и способ показа длинного содержимого выбирают отдельно.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "css-normal-flow-position",
+      "title": "Что такое normal flow и как position меняет участие в нём?",
+      "description": "Отдельно спрашивайте, где находится коробка и зарезервировано ли под неё место в потоке.",
+      "requiredDifficulties": ["Базовый"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "css-block-horizontal-center",
+      "title": "Как центрировать блочный контейнер и почему margin: auto может быть незаметен?",
+      "description": "Центрирование блока и его текста - разные операции.",
+      "requiredDifficulties": ["Базовый"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "css-bounded-scroll-pane",
+      "title": "Как сделать прокрутку только у центральной панели в Flexbox?",
+      "description": "Прокрутка появляется там, где рост содержимого встречает реальное ограничение размера.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "css-grid-line-numbering",
+      "title": "Что означают grid-column: 1 / -1 и span 2?",
+      "description": "Считайте линии и различайте явную сетку с добавленными треками.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "css-grid-gap-percentages",
+      "title": "Почему две колонки по 50% вместе с gap переполняют Grid?",
+      "description": "Для долей свободного места используйте fr, а не проценты от всего контейнера.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "css-flex-axis-direction",
+      "title": "Как flex-direction определяет основную и поперечную оси?",
+      "description": "Сначала определите оси, затем выбирайте свойства выравнивания.",
+      "requiredDifficulties": ["Базовый"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "css-float-clear-text",
+      "title": "Для чего нужны float и clear и почему Flexbox не всегда их заменяет?",
+      "description": "Используйте float для обтекания, а современную сетку - для отношений независимых блоков.",
+      "requiredDifficulties": ["Базовый"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "css-absolute-opposing-insets",
+      "title": "Как left и right вместе задают размер absolute-элемента?",
+      "description": "Противоположные inset могут определять auto-размер, но не отменяют все остальные ограничения.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "css-multicol-flow",
+      "title": "Чем многоколоночный текст через columns отличается от Grid?",
+      "description": "Выбирайте multicol для потока текста, а Grid для явных отношений ячеек.",
+      "requiredDifficulties": ["Базовый"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "css-table-border-model",
+      "title": "Чем border-collapse: collapse отличается от separate у таблицы?",
+      "description": "Сначала выберите модель границ, затем настраивайте промежутки и padding.",
+      "requiredDifficulties": ["Базовый"],
+      "reviewed": true,
       "priority": "core",
       "relatedSkillIds": []
     }
@@ -350,9 +530,9 @@
         "kind": "explanation",
         "reviewStatus": "imported",
         "goalIds": ["core", "css-flex-space"],
-        "relatedQuestionIds": [],
+        "relatedQuestionIds": ["css-flex-axis-direction", "css-bounded-scroll-pane"],
         "priority": "core",
-        "sourceRefs": ["ref-a7effa5821d087a1"]
+        "sourceRefs": ["ref-a7effa5821d087a1", "ref-dc001e23540d8a8a"]
       },
       "answerFile": "answers/html-css/css-flex-space.md"
     },
@@ -451,6 +631,420 @@
         "sourceRefs": ["ref-b72c181aea3fa605"]
       },
       "answerFile": "answers/html-css/css-overflow-scroll-contract.md"
+    },
+    {
+      "id": "css-grid-implicit-placement",
+      "title": "Чем явная Grid-сетка отличается от неявной и что делает grid-auto-flow: dense?",
+      "topic": "HTML и CSS",
+      "difficulty": "Средний",
+      "summary": "Создание дополнительных треков, автопозиционирование и порядок чтения.",
+      "answerFile": "answers/html-css/css-grid-implicit-placement.md",
+      "takeaway": "Автопозиционирование добавляет геометрию, но не переписывает логический порядок документа.",
+      "pitfall": "Включать dense для последовательности вопросов и получать скачущий визуальный порядок.",
+      "moduleId": "html-css",
+      "order": 13,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Автопозиционирование добавляет геометрию, но не переписывает логический порядок документа.",
+        "keywords": ["HTML и CSS", "Построение макета", "grid", "implicit", "placement"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "priority": "core",
+        "goalIds": ["core", "css-grid-implicit-placement"],
+        "relatedQuestionIds": ["css-grid-tracks", "html-focus-order"],
+        "sourceRefs": ["ref-65bcc7fec402a084"]
+      }
+    },
+    {
+      "id": "css-grid-areas-overlap",
+      "title": "Как работают grid-template-areas и наложение элементов в одной ячейке?",
+      "topic": "HTML и CSS",
+      "difficulty": "Средний",
+      "summary": "Именованные прямоугольные области и совместное размещение без absolute.",
+      "answerFile": "answers/html-css/css-grid-areas-overlap.md",
+      "takeaway": "Grid может управлять и двумерной структурой, и наложением элементов в потоке.",
+      "pitfall": "Создавать непрямоугольную именованную область или считать наложение исключительной задачей absolute.",
+      "moduleId": "html-css",
+      "order": 14,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Grid может управлять и двумерной структурой, и наложением элементов в потоке.",
+        "keywords": ["HTML и CSS", "Построение макета", "grid", "areas", "overlap"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "priority": "core",
+        "goalIds": ["core", "css-grid-areas-overlap"],
+        "relatedQuestionIds": ["css-position-stacking"],
+        "sourceRefs": ["ref-701a5cd523ed017f"]
+      }
+    },
+    {
+      "id": "css-flex-wrapping-lines",
+      "title": "Почему строки flex-wrap не образуют общие колонки?",
+      "topic": "HTML и CSS",
+      "difficulty": "Средний",
+      "summary": "Независимое распределение места в каждой flex-строке.",
+      "answerFile": "answers/html-css/css-flex-wrapping-lines.md",
+      "takeaway": "Перенос Flexbox остаётся одномерной моделью с независимыми строками.",
+      "pitfall": "Лечить несовпадение колонок случайными процентами, когда задача требует Grid.",
+      "moduleId": "html-css",
+      "order": 15,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Перенос Flexbox остаётся одномерной моделью с независимыми строками.",
+        "keywords": ["HTML и CSS", "Построение макета", "flex", "wrapping", "lines"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "priority": "core",
+        "goalIds": ["core", "css-flex-wrapping-lines"],
+        "relatedQuestionIds": ["css-flex-grid", "css-flex-space"],
+        "sourceRefs": ["ref-1e0dd2b93c92c979"]
+      }
+    },
+    {
+      "id": "css-auto-margin-gap",
+      "title": "Как auto margin во Flexbox взаимодействует с gap и justify-content?",
+      "topic": "HTML и CSS",
+      "difficulty": "Средний",
+      "summary": "Поглощение свободного места и фиксированные промежутки между элементами.",
+      "answerFile": "answers/html-css/css-auto-margin-gap.md",
+      "takeaway": "Gap задаёт интервалы, auto-margin забирает остаток, justify-content распределяет оставшееся место.",
+      "pitfall": "Ожидать, что justify-content сдвинет группу, когда весь остаток уже занят auto-margin.",
+      "moduleId": "html-css",
+      "order": 16,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Gap задаёт интервалы, auto-margin забирает остаток, justify-content распределяет оставшееся место.",
+        "keywords": ["HTML и CSS", "Построение макета", "auto", "margin", "gap"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "priority": "core",
+        "goalIds": ["core", "css-auto-margin-gap"],
+        "relatedQuestionIds": ["css-box-alignment"],
+        "sourceRefs": ["ref-ba4321c8dcabd046"]
+      }
+    },
+    {
+      "id": "css-percentage-height",
+      "title": "Почему height: 100% не растягивает блок по высоте родителя?",
+      "topic": "HTML и CSS",
+      "difficulty": "Средний",
+      "summary": "Определённый размер содержащего блока и зависимость от layout-контекста.",
+      "answerFile": "answers/html-css/css-percentage-height.md",
+      "takeaway": "Для процента сначала найдите базу и выясните, определена ли она в этом layout.",
+      "pitfall": "Добавлять height: 100% всем предкам, не понимая, откуда берётся итоговая высота.",
+      "moduleId": "html-css",
+      "order": 17,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Для процента сначала найдите базу и выясните, определена ли она в этом layout.",
+        "keywords": ["HTML и CSS", "Построение макета", "percentage", "height"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "priority": "core",
+        "goalIds": ["core", "css-percentage-height"],
+        "relatedQuestionIds": ["css-containing-block", "css-relative-units"],
+        "sourceRefs": ["ref-99d4c41b854d56ad"]
+      }
+    },
+    {
+      "id": "css-transform-flow-geometry",
+      "title": "Чем transform: translate отличается от изменения margin или позиции?",
+      "topic": "HTML и CSS",
+      "difficulty": "Средний",
+      "summary": "Визуальное преобразование после layout и сохранение исходного места.",
+      "answerFile": "answers/html-css/css-transform-flow-geometry.md",
+      "takeaway": "Различайте место элемента в потоке и его преобразованную видимую геометрию.",
+      "pitfall": "Использовать translate для создания места между блоками и удивляться перекрытию.",
+      "moduleId": "html-css",
+      "order": 18,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Различайте место элемента в потоке и его преобразованную видимую геометрию.",
+        "keywords": ["HTML и CSS", "Построение макета", "transform", "flow", "geometry"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "priority": "core",
+        "goalIds": ["core", "css-transform-flow-geometry"],
+        "relatedQuestionIds": ["css-containing-block", "js-dom-geometry"],
+        "sourceRefs": ["ref-fe70db6a90b4bd08"]
+      }
+    },
+    {
+      "id": "css-display-contents-contract",
+      "title": "Что убирает display: contents и почему с ним осторожны на семантических элементах?",
+      "topic": "HTML и CSS",
+      "difficulty": "Продвинутый",
+      "summary": "Отсутствие собственной коробки при сохранении DOM-обёртки.",
+      "answerFile": "answers/html-css/css-display-contents-contract.md",
+      "takeaway": "Дерево CSS-коробок и дерево DOM связаны, но не совпадают.",
+      "pitfall": "Считать display: contents полным удалением обёртки или гарантией сохранения всей доступной семантики.",
+      "moduleId": "html-css",
+      "order": 19,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Дерево CSS-коробок и дерево DOM связаны, но не совпадают.",
+        "keywords": ["HTML и CSS", "Построение макета", "display", "contents", "contract"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "priority": "extended",
+        "goalIds": ["core", "css-display-contents-contract"],
+        "relatedQuestionIds": ["css-display-formatting"],
+        "sourceRefs": ["ref-5461597d67f06c48"]
+      }
+    },
+    {
+      "id": "css-table-layout",
+      "title": "Когда table-layout: fixed полезнее auto и почему он не решает перенос текста?",
+      "topic": "HTML и CSS",
+      "difficulty": "Средний",
+      "summary": "Алгоритм ширины колонок и отдельное управление переполнением.",
+      "answerFile": "answers/html-css/css-table-layout.md",
+      "takeaway": "Алгоритм ширины таблицы и способ показа длинного содержимого выбирают отдельно.",
+      "pitfall": "Задать fixed без ширины или ждать, что он автоматически добавит многоточие.",
+      "moduleId": "html-css",
+      "order": 20,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Алгоритм ширины таблицы и способ показа длинного содержимого выбирают отдельно.",
+        "keywords": ["HTML и CSS", "Построение макета", "table", "layout"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "priority": "core",
+        "goalIds": ["core", "css-table-layout"],
+        "relatedQuestionIds": ["html-table-relations", "css-text-wrapping"],
+        "sourceRefs": ["ref-d4193a4c2fcbba28"]
+      }
+    },
+    {
+      "id": "css-normal-flow-position",
+      "title": "Что такое normal flow и как position меняет участие в нём?",
+      "topic": "HTML и CSS",
+      "difficulty": "Базовый",
+      "summary": "Исходное размещение блоков и строк, смещение и выход из потока.",
+      "answerFile": "answers/html-css/css-normal-flow-position.md",
+      "takeaway": "Отдельно спрашивайте, где находится коробка и зарезервировано ли под неё место в потоке.",
+      "pitfall": "Использовать absolute как основной способ раскладки текстовой страницы с неизвестной высотой.",
+      "moduleId": "html-css",
+      "order": 21,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Отдельно спрашивайте, где находится коробка и зарезервировано ли под неё место в потоке.",
+        "keywords": ["HTML и CSS", "Построение макета", "normal", "flow", "position"],
+        "kind": "explanation",
+        "reviewStatus": "ready",
+        "priority": "core",
+        "goalIds": ["core", "css-normal-flow-position"],
+        "relatedQuestionIds": ["css-containing-block", "css-sticky-constraints"],
+        "sourceRefs": ["ref-266760f8f9b207c0"]
+      }
+    },
+    {
+      "id": "css-block-horizontal-center",
+      "title": "Как центрировать блочный контейнер и почему margin: auto может быть незаметен?",
+      "topic": "HTML и CSS",
+      "difficulty": "Базовый",
+      "summary": "Ограниченная ширина блока и свободное место по сторонам.",
+      "answerFile": "answers/html-css/css-block-horizontal-center.md",
+      "takeaway": "Центрирование блока и его текста - разные операции.",
+      "pitfall": "Задать только margin: auto полноширинному div и ждать видимого перемещения.",
+      "moduleId": "html-css",
+      "order": 22,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Центрирование блока и его текста - разные операции.",
+        "keywords": ["HTML и CSS", "Построение макета", "block", "horizontal", "center"],
+        "kind": "explanation",
+        "reviewStatus": "ready",
+        "priority": "core",
+        "goalIds": ["core", "css-block-horizontal-center"],
+        "relatedQuestionIds": ["css-auto-margin-gap", "css-size-constraints"],
+        "sourceRefs": ["ref-edafb3712c62634f"]
+      }
+    },
+    {
+      "id": "css-bounded-scroll-pane",
+      "title": "Как сделать прокрутку только у центральной панели в Flexbox?",
+      "topic": "HTML и CSS",
+      "difficulty": "Средний",
+      "summary": "Определённая внешняя высота и снятие автоматического минимума у сжимаемой части.",
+      "answerFile": "answers/html-css/css-bounded-scroll-pane.md",
+      "takeaway": "Прокрутка появляется там, где рост содержимого встречает реальное ограничение размера.",
+      "pitfall": "Лечить растущую страницу overflow: hidden на body, не устранив причину в layout.",
+      "moduleId": "html-css",
+      "order": 23,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Прокрутка появляется там, где рост содержимого встречает реальное ограничение размера.",
+        "keywords": ["HTML и CSS", "Построение макета", "bounded", "scroll", "pane"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "priority": "core",
+        "goalIds": ["core", "css-bounded-scroll-pane"],
+        "relatedQuestionIds": ["css-flex-min-size", "css-overflow-scroll-contract"],
+        "sourceRefs": ["ref-128932ae4274357d"]
+      }
+    },
+    {
+      "id": "css-grid-line-numbering",
+      "title": "Что означают grid-column: 1 / -1 и span 2?",
+      "topic": "HTML и CSS",
+      "difficulty": "Средний",
+      "summary": "Нумерация линий, число треков и конец явной сетки.",
+      "answerFile": "answers/html-css/css-grid-line-numbering.md",
+      "takeaway": "Считайте линии и различайте явную сетку с добавленными треками.",
+      "pitfall": "Считать -1 последним фактическим треком независимо от неявного размещения.",
+      "moduleId": "html-css",
+      "order": 24,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Считайте линии и различайте явную сетку с добавленными треками.",
+        "keywords": ["HTML и CSS", "Построение макета", "grid", "line", "numbering"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "priority": "core",
+        "goalIds": ["core", "css-grid-line-numbering"],
+        "relatedQuestionIds": ["css-grid-implicit-placement"],
+        "sourceRefs": ["ref-835b755ed83345f5"]
+      }
+    },
+    {
+      "id": "css-grid-gap-percentages",
+      "title": "Почему две колонки по 50% вместе с gap переполняют Grid?",
+      "topic": "HTML и CSS",
+      "difficulty": "Средний",
+      "summary": "Проценты от полной ширины и доли оставшегося пространства.",
+      "answerFile": "answers/html-css/css-grid-gap-percentages.md",
+      "takeaway": "Для долей свободного места используйте fr, а не проценты от всего контейнера.",
+      "pitfall": "Ожидать, что браузер автоматически вычтет gap из каждой колонки 50%.",
+      "moduleId": "html-css",
+      "order": 25,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Для долей свободного места используйте fr, а не проценты от всего контейнера.",
+        "keywords": ["HTML и CSS", "Построение макета", "grid", "gap", "percentages"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "priority": "core",
+        "goalIds": ["core", "css-grid-gap-percentages"],
+        "relatedQuestionIds": ["css-grid-tracks"],
+        "sourceRefs": ["ref-2a889a76ff369d5d"]
+      }
+    },
+    {
+      "id": "css-flex-axis-direction",
+      "title": "Как flex-direction определяет основную и поперечную оси?",
+      "topic": "HTML и CSS",
+      "difficulty": "Базовый",
+      "summary": "Row, column, reverse и зависимость от направления письма.",
+      "answerFile": "answers/html-css/css-flex-axis-direction.md",
+      "takeaway": "Сначала определите оси, затем выбирайте свойства выравнивания.",
+      "pitfall": "Запоминать justify-content как «горизонтально», не учитывая flex-direction.",
+      "moduleId": "html-css",
+      "order": 26,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Сначала определите оси, затем выбирайте свойства выравнивания.",
+        "keywords": ["HTML и CSS", "Построение макета", "flex", "axis", "direction"],
+        "kind": "explanation",
+        "reviewStatus": "ready",
+        "priority": "core",
+        "goalIds": ["core", "css-flex-axis-direction"],
+        "relatedQuestionIds": ["css-box-alignment", "html-focus-order"],
+        "sourceRefs": ["ref-1f1b43b32193f16a"]
+      }
+    },
+    {
+      "id": "css-float-clear-text",
+      "title": "Для чего нужны float и clear и почему Flexbox не всегда их заменяет?",
+      "topic": "HTML и CSS",
+      "difficulty": "Базовый",
+      "summary": "Обтекание текстом и начало блока ниже плавающего содержимого.",
+      "answerFile": "answers/html-css/css-float-clear-text.md",
+      "takeaway": "Используйте float для обтекания, а современную сетку - для отношений независимых блоков.",
+      "pitfall": "Объявлять float полностью бесполезным или использовать его для всей страницы.",
+      "moduleId": "html-css",
+      "order": 27,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Используйте float для обтекания, а современную сетку - для отношений независимых блоков.",
+        "keywords": ["HTML и CSS", "Построение макета", "float", "clear", "text"],
+        "kind": "explanation",
+        "reviewStatus": "ready",
+        "priority": "core",
+        "goalIds": ["core", "css-float-clear-text"],
+        "relatedQuestionIds": ["css-margin-collapse-bfc"],
+        "sourceRefs": ["ref-908a8ab620df7656"]
+      }
+    },
+    {
+      "id": "css-absolute-opposing-insets",
+      "title": "Как left и right вместе задают размер absolute-элемента?",
+      "topic": "HTML и CSS",
+      "difficulty": "Средний",
+      "summary": "Автоматическая ширина между противоположными границами и избыточные ограничения.",
+      "answerFile": "answers/html-css/css-absolute-opposing-insets.md",
+      "takeaway": "Противоположные inset могут определять auto-размер, но не отменяют все остальные ограничения.",
+      "pitfall": "Добавлять одновременно width: 100% и left/right, получая переполнение или переограничение.",
+      "moduleId": "html-css",
+      "order": 28,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Противоположные inset могут определять auto-размер, но не отменяют все остальные ограничения.",
+        "keywords": ["HTML и CSS", "Построение макета", "absolute", "opposing", "insets"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "priority": "core",
+        "goalIds": ["core", "css-absolute-opposing-insets"],
+        "relatedQuestionIds": ["css-containing-block", "css-normal-flow-position"],
+        "sourceRefs": ["ref-4b98cce7f7ed75d3"]
+      }
+    },
+    {
+      "id": "css-multicol-flow",
+      "title": "Чем многоколоночный текст через columns отличается от Grid?",
+      "topic": "HTML и CSS",
+      "difficulty": "Базовый",
+      "summary": "Фрагментация единого потока и независимые ячейки раскладки.",
+      "answerFile": "answers/html-css/css-multicol-flow.md",
+      "takeaway": "Выбирайте multicol для потока текста, а Grid для явных отношений ячеек.",
+      "pitfall": "Ожидать от columns одинаковых горизонтальных рядов карточек как у Grid.",
+      "moduleId": "html-css",
+      "order": 29,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Выбирайте multicol для потока текста, а Grid для явных отношений ячеек.",
+        "keywords": ["HTML и CSS", "Построение макета", "multicol", "flow"],
+        "kind": "explanation",
+        "reviewStatus": "ready",
+        "priority": "core",
+        "goalIds": ["core", "css-multicol-flow"],
+        "relatedQuestionIds": [],
+        "sourceRefs": ["ref-2e9182593ff5d3dd"]
+      }
+    },
+    {
+      "id": "css-table-border-model",
+      "title": "Чем border-collapse: collapse отличается от separate у таблицы?",
+      "topic": "HTML и CSS",
+      "difficulty": "Базовый",
+      "summary": "Общие границы ячеек, раздельные рамки и border-spacing.",
+      "answerFile": "answers/html-css/css-table-border-model.md",
+      "takeaway": "Сначала выберите модель границ, затем настраивайте промежутки и padding.",
+      "pitfall": "Использовать border-spacing с collapse и ждать внешнего воздуха между ячейками.",
+      "moduleId": "html-css",
+      "order": 30,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Сначала выберите модель границ, затем настраивайте промежутки и padding.",
+        "keywords": ["HTML и CSS", "Построение макета", "table", "border", "model"],
+        "kind": "explanation",
+        "reviewStatus": "ready",
+        "priority": "core",
+        "goalIds": ["core", "css-table-border-model"],
+        "relatedQuestionIds": ["css-table-layout", "html-table-relations"],
+        "sourceRefs": ["ref-155ef1b033cb666f"]
+      }
     }
   ]
 }

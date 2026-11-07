@@ -3,3 +3,16 @@
 <!-- wishu:answer-block -->
 
 - Сигнатура не создаёт поля и не доказывает наличие любого ключа во время выполнения. NoUncheckedIndexedAccess добавляет `undefined` к непроверенному чтению; эта настройка не включается одним strict. Для конечного набора обязательных ключей удобнее Record с union ключей. Наличие элемента всё равно зависит от реальных данных.
+
+<!-- wishu:answer-block -->
+
+### Метаданные рядом со словарём
+
+Если отдельное поле имеет другой тип, лучше выделить однородные записи во вложенную структуру. Широкий union ради одного исключения ослабляет каждое динамическое чтение.
+
+```typescript
+type Report = { title: string; values: Record<string, number> }
+const report: Report = { title: "Неделя", values: { visits: 20 } }
+```
+
+[Документация TypeScript](https://www.typescriptlang.org/docs/handbook/2/objects.html).

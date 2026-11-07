@@ -1,3 +1,5 @@
+import { clearQuestionMarkUndo } from "@/lib/question-mark-actions"
+import { CatalogLoading } from "@/components/catalog/catalog-loading"
 import { useEffect, useState } from "react"
 import { Outlet } from "react-router-dom"
 import { Button } from "@/components/ui/button"
@@ -78,15 +80,7 @@ export function QuestionsLayout() {
         </Button>
       </section>
     )
-  if (!catalog)
-    return (
-      <div
-        aria-live="polite"
-        className="flex min-h-[60vh] items-center justify-center text-sm text-muted-foreground"
-      >
-        Загружаем разделы и ваш прогресс…
-      </div>
-    )
+  if (!catalog) return <CatalogLoading label="Загружаем разделы и ваш прогресс…" />
   return (
     <QuestionCatalogContext.Provider value={catalog}>
       <AddQuestionContext.Provider
@@ -139,6 +133,17 @@ export function QuestionsLayout() {
               onClick={() => usePracticeProgress.getState().retryQuestionWrite()}
             >
               Повторить сохранение
+            </Button>
+            <Button
+              className="pointer-events-auto mt-2"
+              variant="ghost"
+              size="sm"
+              onClick={() => {
+                usePracticeProgress.getState().discardQuestionWrite()
+                clearQuestionMarkUndo()
+              }}
+            >
+              Отменить несохранённое действие
             </Button>
           </p>
         ) : pending > 0 ? (

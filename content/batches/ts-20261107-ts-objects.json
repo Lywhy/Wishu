@@ -1,0 +1,77 @@
+{
+  "schemaVersion": 1,
+  "id": "ts-20261107-ts-objects",
+  "title": "Расширение TypeScript: Объектные типы и интерфейсы",
+  "sectionId": "typescript",
+  "subsectionId": "ts-objects",
+  "currentPass": "complete",
+  "goalIds": [
+    "core",
+    "ts-type-interface",
+    "ts-property-modifiers",
+    "ts-index-signature",
+    "ts-interface-extends",
+    "ts-interface-merging",
+    "ts-recursive-types",
+    "ts-runtime-object-keys",
+    "ts-weak-object-types",
+    "ts-spread-result-types",
+    "ts-template-index-signatures"
+  ],
+  "questionIds": [
+    "ts-weak-object-types",
+    "ts-spread-result-types",
+    "ts-template-index-signatures",
+    "ts-index-signature"
+  ],
+  "scopePass": {
+    "status": "complete",
+    "remaining": []
+  },
+  "answerPass": {
+    "status": "complete",
+    "remaining": []
+  },
+  "baseline": [
+    {
+      "id": "ts-type-interface",
+      "title": "Чем type отличается от interface и как ими описывать объекты?",
+      "contentHash": "a3c693fc05c6061f689a547ede5bc6371627d67bd112d84fa91a1757509b0641"
+    },
+    {
+      "id": "ts-property-modifiers",
+      "title": "Как optional и readonly меняют контракт свойства?",
+      "contentHash": "5fe07be0b86a59bb6f89e43afcfac7a588cb8528143fcbb44b4859e96f975478"
+    },
+    {
+      "id": "ts-index-signature",
+      "title": "Как index signature описывает динамические ключи объекта?",
+      "contentHash": "c29a10bdb72058b174d84cf8009d379793696f83cbf6f440435777d4c4764cb1"
+    },
+    {
+      "id": "ts-interface-extends",
+      "title": "Как interface расширяет один или несколько объектных контрактов?",
+      "contentHash": "29eb854df266c2d3de7154fc1eacd99d62809bd1432b850ec5dff622d8edb889"
+    },
+    {
+      "id": "ts-interface-merging",
+      "title": "Что происходит при повторном объявлении interface с одним именем?",
+      "contentHash": "bf2a60a6b19c6cc011d1cee5c19c156b7bc26c389562f8def69920833c58fb14"
+    },
+    {
+      "id": "ts-recursive-types",
+      "title": "Как описывать рекурсивные типы и рекурсивные generic-структуры?",
+      "contentHash": "58d9f42e1a552c461464c13e4a9890fd8a79f1d0dfd5bbfe8e46233173e64276"
+    },
+    {
+      "id": "ts-runtime-object-keys",
+      "title": "Почему Object.keys возвращает string[], а не (keyof T)[]?",
+      "contentHash": "ed361561af8dfc357618a9a21e798c6c35ec77853be8dc8b1cc6e8917f5e37a6"
+    }
+  ],
+  "notes": [
+    "Граница: язык TypeScript и его toolchain. Runtime JavaScript и фреймворки не дублировать.",
+    "Готовые ответы сверены по документации; код примеров не запускался.",
+    "Контент собран и прошёл полную структурную проверку. TS: 161 вопрос, +62 новых и 17 расширенных. Примеры не исполнялись; seed не применялся."
+  ]
+}

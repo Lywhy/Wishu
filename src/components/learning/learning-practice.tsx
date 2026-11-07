@@ -1,3 +1,4 @@
+import { Disclosure } from "@/components/experience/disclosure"
 import { useWorkspace } from "@/stores/workspace"
 import { TaskHints, AttemptHistory, DraftStatus } from "@/components/experience/study-tools"
 import { lazy, Suspense, useEffect, useRef, useState } from "react"
@@ -116,12 +117,11 @@ export function LearningPractice({
         hasDraft={draft !== undefined}
       />
       <div className="space-y-3 p-4">
-        <details>
-          <summary className="cursor-pointer text-sm font-medium">Подсказки</summary>
+        <Disclosure title={<> Подсказки </>}>
           <div className="mt-4">
             <TaskHints task={task} />
           </div>
-        </details>
+        </Disclosure>
         <AttemptHistory contentKey={progressKey} code={code} onRestore={edit} />
       </div>
       <TaskEditorBoundary value={code} onChange={edit}>

@@ -9,3 +9,19 @@
 <!-- wishu:answer-block -->
 
 [Документация TypeScript](https://www.typescriptlang.org/docs/handbook/release-notes/typescript-4-9.html).
+
+<!-- wishu:answer-block -->
+
+### Проверка не добавляет необязательное свойство
+
+Целевой контракт может разрешать optional-поле, отсутствующее у конкретного выражения. Satisfies не обязан добавить это поле к итоговой форме значения. Если нужен широкий переменный контракт, задайте подходящую аннотацию.
+
+```typescript
+const config = { mode: "dark" } satisfies {
+  mode: "dark" | "light"
+  debug?: boolean
+}
+// config.debug // Поле не было объявлено в исходном выражении.
+```
+
+[Документация TypeScript](https://www.typescriptlang.org/docs/handbook/2/objects.html).

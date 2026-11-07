@@ -19,7 +19,10 @@
         "ts-void",
         "ts-never",
         "ts-enums",
-        "ts-empty-object-types"
+        "ts-empty-object-types",
+        "ts-special-type-algebra",
+        "ts-unique-symbol-identity",
+        "ts-property-key-domains"
       ]
     },
     {
@@ -93,6 +96,33 @@
       "reviewed": false,
       "priority": "core",
       "relatedSkillIds": []
+    },
+    {
+      "id": "ts-special-type-algebra",
+      "title": "Как any, unknown и never ведут себя в union и intersection?",
+      "description": "Объяснить и применить правило с учётом его границ: Специальные типы меняют результат преобразований и уровень доступных гарантий.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": ["unknown-any", "ts-distributive-never"]
+    },
+    {
+      "id": "ts-unique-symbol-identity",
+      "title": "Как unique symbol создаёт различимые ключи и бренды?",
+      "description": "Объяснить и применить правило с учётом его границ: Идентичность символа и его текстовое описание - разные вещи.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": ["ts-branded-identifiers", "symbol"]
+    },
+    {
+      "id": "ts-property-key-domains",
+      "title": "Когда использовать PropertyKey и почему ключ объекта не всегда string?",
+      "description": "Объяснить и применить правило с учётом его границ: Контракт конкретного набора ключей важнее универсального слова «ключ».",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": ["ts-keyof-indexed-access", "ts-runtime-object-keys"]
     }
   ],
   "questions": [
@@ -161,7 +191,7 @@
         "goalIds": ["core", "ts-literal-types"],
         "relatedQuestionIds": [],
         "priority": "core",
-        "sourceRefs": []
+        "sourceRefs": ["ref-1ec6ef05cd7c0c00"]
       },
       "answerFile": "answers/typescript/ts-literal-types.md"
     },
@@ -281,6 +311,75 @@
         "sourceRefs": ["ref-1ec6ef05cd7c0c00"]
       },
       "answerFile": "answers/typescript/ts-empty-object-types.md"
+    },
+    {
+      "id": "ts-special-type-algebra",
+      "title": "Как any, unknown и never ведут себя в union и intersection?",
+      "topic": "TypeScript",
+      "difficulty": "Средний",
+      "summary": "Поглощение, нейтральные элементы и пределы аналогии с множествами.",
+      "answerFile": "answers/typescript/ts-special-type-algebra.md",
+      "takeaway": "Специальные типы меняют результат преобразований и уровень доступных гарантий.",
+      "pitfall": "Объяснять any как безопасный синоним unknown.",
+      "moduleId": "typescript",
+      "order": 8,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Специальные типы меняют результат преобразований и уровень доступных гарантий.",
+        "keywords": ["TypeScript", "Базовые и специальные типы"],
+        "kind": "explanation",
+        "reviewStatus": "ready",
+        "priority": "core",
+        "goalIds": ["core", "ts-special-type-algebra"],
+        "relatedQuestionIds": ["unknown-any", "ts-distributive-never"],
+        "sourceRefs": ["ref-27e2f7bd757441f5"]
+      }
+    },
+    {
+      "id": "ts-unique-symbol-identity",
+      "title": "Как unique symbol создаёт различимые ключи и бренды?",
+      "topic": "TypeScript",
+      "difficulty": "Средний",
+      "summary": "Уникальная идентичность символа на уровне типа.",
+      "answerFile": "answers/typescript/ts-unique-symbol-identity.md",
+      "takeaway": "Идентичность символа и его текстовое описание - разные вещи.",
+      "pitfall": "Создавать новый Symbol(\"id\") при каждом чтении и ожидать прежний ключ.",
+      "moduleId": "typescript",
+      "order": 9,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Идентичность символа и его текстовое описание - разные вещи.",
+        "keywords": ["TypeScript", "Базовые и специальные типы"],
+        "kind": "explanation",
+        "reviewStatus": "ready",
+        "priority": "core",
+        "goalIds": ["core", "ts-unique-symbol-identity"],
+        "relatedQuestionIds": ["ts-branded-identifiers", "symbol"],
+        "sourceRefs": ["ref-ee054e6800f12156"]
+      }
+    },
+    {
+      "id": "ts-property-key-domains",
+      "title": "Когда использовать PropertyKey и почему ключ объекта не всегда string?",
+      "topic": "TypeScript",
+      "difficulty": "Средний",
+      "summary": "Строковые, числовые и символьные ключи в контрактах.",
+      "answerFile": "answers/typescript/ts-property-key-domains.md",
+      "takeaway": "Контракт конкретного набора ключей важнее универсального слова «ключ».",
+      "pitfall": "Считать keyof T всегда подтипом string.",
+      "moduleId": "typescript",
+      "order": 10,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Контракт конкретного набора ключей важнее универсального слова «ключ».",
+        "keywords": ["TypeScript", "Базовые и специальные типы"],
+        "kind": "explanation",
+        "reviewStatus": "ready",
+        "priority": "core",
+        "goalIds": ["core", "ts-property-key-domains"],
+        "relatedQuestionIds": ["ts-keyof-indexed-access", "ts-runtime-object-keys"],
+        "sourceRefs": ["ref-5a02d79665f1eb02"]
+      }
     }
   ]
 }

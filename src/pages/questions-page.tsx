@@ -1,3 +1,7 @@
+import { LocalSaveNotice } from "@/components/experience/local-save-notice"
+import { useReviewSchedule } from "@/stores/review-schedule"
+import { useReviewDay } from "@/hooks/use-review-day"
+import { ShareCollection } from "@/components/experience/share-collection"
 import { Link, useLocation } from "react-router-dom"
 import { Badge } from "@/components/ui/badge"
 import {
@@ -6,9 +10,10 @@ import {
   CategoryMark,
 } from "@/components/catalog/catalog-primitives"
 import { Button } from "@/components/ui/button"
-import { CatalogControls, EmptyResults } from "@/components/practice/catalog-controls"
+import { CatalogControls, EmptyResults } from "@/components/catalog/catalog-controls"
 import { QuestionBreadcrumbs } from "@/components/questions/question-breadcrumbs"
-import { QuestionCard, QuestionStudyAside } from "@/components/questions/question-study"
+import { QuestionResultList } from "@/components/questions/question-result-list"
+import { QuestionStudyAside } from "@/components/questions/question-study"
 import { QuestionPracticeActions } from "@/components/questions/question-practice-actions"
 import { StudyProgress } from "@/components/questions/study-progress"
 import { sectionPath } from "@/data/question-catalog"
@@ -28,12 +33,26 @@ export function QuestionsPage() {
     useQuestionCatalog()
   const statuses = usePracticeProgress((state) => state.questionStatuses)
   const saved = usePracticeProgress((state) => state.savedQuestionIds)
+  const reviewEntries = useReviewSchedule((state) => state.entries)
+  const today = useReviewDay()
+  const dueIds = new Set(
+    questions
+      .filter((question) =>
+        reviewEntries[question.id]
+          ? reviewEntries[question.id].dueDay <= today
+          : statuses[question.id] === "repeat",
+      )
+      .map((question) => question.id),
+  )
   const rawFilter = useCatalogFilters()
-  const filter = { ...rawFilter, popular: false }
+  const filter = rawFilter
   const route = useLocation()
   const query = filter.query.trim().toLocaleLowerCase("ru")
   const searching =
-    Boolean(query) || filter.difficulty !== "Любой уровень" || filter.status !== "all"
+    Boolean(query) ||
+    filter.difficulty !== "Любой уровень" ||
+    filter.status !== "all" ||
+    filter.popular
   const sections = questionSections.filter((section) =>
     `${section.title} ${section.description} ${section.group} ${section.subsections.map((sub) => sub.title).join(" ")}`
       .toLocaleLowerCase("ru")
@@ -47,17 +66,25 @@ export function QuestionsPage() {
           `${question.title} ${question.summary} ${question.topic} ${location.section.title} ${location.subsection.title}`.toLocaleLowerCase(
             "ru",
           )
-        return text.includes(query) && matchesQuestionFilters(question, filter, statuses, saved)
+        return text.includes(query) &&
+          matchesQuestionFilters(question, filter, statuses, saved) &&
+          (filter.status !== "due" || dueIds.has(question.id))
           ? [{ question, location }]
           : []
       })
     : []
   const mode =
-    filter.status === "repeat"
-      ? "Повторение"
-      : filter.status === "saved"
-        ? "Избранное"
-        : "Результаты поиска"
+    filter.status === "due"
+      ? "Повторить сегодня"
+      : filter.status === "repeat"
+        ? "Повторение"
+        : filter.status === "saved"
+          ? "Избранное"
+          : filter.status === "new"
+            ? "Новые вопросы"
+            : filter.popular
+              ? "Популярные вопросы"
+              : "Результаты поиска"
   const session: QuestionSession = {
     questionIds: matches.map(({ question }) => question.id),
     returnTo: route.pathname + route.search,
@@ -65,7 +92,25 @@ export function QuestionsPage() {
   }
   const repeatCount = questions.filter((question) => statuses[question.id] === "repeat").length
   const savedCount = questions.filter((question) => saved.includes(question.id)).length
-  const emptyState = questionEmptyState(questions, filter, statuses, saved)
+  const newCount = questions.filter((question) => !statuses[question.id]).length
+  const popularCount = questions.filter((question) => question.popular).length
+  const collectionLink = (status: string, popular = false) => {
+    const params = new URLSearchParams(route.search)
+    params.delete("page")
+    if (status === "all") params.delete("status")
+    else params.set("status", status)
+    if (popular) params.set("popular", "1")
+    else params.delete("popular")
+    return "/questions?" + params.toString()
+  }
+  const emptyState =
+    filter.status === "due" && !dueIds.size
+      ? {
+          title: "На сегодня повторений нет",
+          description:
+            "Отмечайте вопросы после ответа. Интервалы повторения: 1, 3, 7, 14 и 30 дней. Расписание сохраняется в этом браузере.",
+        }
+      : questionEmptyState(questions, filter, statuses, saved)
   return (
     <>
       <QuestionBreadcrumbs
@@ -76,12 +121,16 @@ export function QuestionsPage() {
         description="Продолжайте подготовку или найдите нужный вопрос во всём каталоге."
         eyebrow="Подготовка и повторение"
         questionHeading
+        actions={
+          <>
+            <ShareCollection key={route.search} />
+            <Button nativeButton={false} render={<Link to="/questions/new" />}>
+              Добавить вопрос
+            </Button>
+          </>
+        }
       />
-      <div className="mb-6 flex justify-end">
-        <Button nativeButton={false} render={<Link to="/questions/new" />}>
-          Добавить вопрос
-        </Button>
-      </div>
+      <LocalSaveNotice area="review-schedule" errorsOnly />
       <div className="grid items-start gap-6 lg:grid-cols-[minmax(0,1fr)_280px]">
         <div className="min-w-0 space-y-5">
           {!searching && (
@@ -94,9 +143,32 @@ export function QuestionsPage() {
           <div className="flex flex-wrap gap-2" aria-label="Быстрые подборки">
             <Button
               nativeButton={false}
+              variant={filter.status === "due" ? "secondary" : "outline"}
+              render={<Link to={collectionLink("due")} />}
+            >
+              На сегодня ({dueIds.size})
+            </Button>
+            <Button
+              nativeButton={false}
+              variant={filter.status === "new" ? "secondary" : "outline"}
+              className="h-10"
+              render={<Link to={collectionLink("new")} />}
+            >
+              Новые ({newCount})
+            </Button>
+            <Button
+              nativeButton={false}
+              variant={filter.popular ? "secondary" : "outline"}
+              className="h-10"
+              render={<Link to={collectionLink("all", true)} />}
+            >
+              Популярные ({popularCount})
+            </Button>
+            <Button
+              nativeButton={false}
               variant={filter.status === "repeat" ? "secondary" : "outline"}
               className="h-10"
-              render={<Link to="/questions?status=repeat" />}
+              render={<Link to={collectionLink("repeat")} />}
             >
               Повторить ({repeatCount})
             </Button>
@@ -104,7 +176,7 @@ export function QuestionsPage() {
               nativeButton={false}
               variant={filter.status === "saved" ? "secondary" : "outline"}
               className="h-10"
-              render={<Link to="/questions?status=saved" />}
+              render={<Link to={collectionLink("saved")} />}
             >
               Избранное ({savedCount})
             </Button>
@@ -122,7 +194,7 @@ export function QuestionsPage() {
           <CatalogControls
             filter={filter}
             placeholder="Найти вопрос, раздел или подраздел"
-            statuses={questionFilterStatuses}
+            statuses={[...questionFilterStatuses, { value: "due", label: "На сегодня" }]}
           />
           {searching && (
             <section aria-label="Результаты поиска" className="space-y-3">
@@ -133,14 +205,14 @@ export function QuestionsPage() {
                 </p>
               </div>
               {matches.length ? (
-                matches.map(({ question, location }) => (
-                  <QuestionCard
-                    key={question.id}
-                    question={question}
-                    session={session}
-                    context={`${location.section.title} / ${location.subsection.title}`}
-                  />
-                ))
+                <QuestionResultList
+                  key={route.search}
+                  items={matches.map(({ question, location }) => ({
+                    question,
+                    context: `${location.section.title} / ${location.subsection.title}`,
+                  }))}
+                  session={session}
+                />
               ) : (
                 <EmptyResults onReset={filter.reset} {...emptyState} />
               )}
@@ -231,7 +303,7 @@ export function QuestionsPage() {
             </div>
           )}
         </div>
-        <aside className="space-y-4 lg:sticky lg:top-6">
+        <aside className="space-y-4 lg:sticky lg:top-24">
           <QuestionStudyAside
             questionIds={questions.map((question) => question.id)}
             title="Общий прогресс"

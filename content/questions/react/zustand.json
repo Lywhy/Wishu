@@ -1,0 +1,416 @@
+{
+  "$schema": "../question-bundle.schema.json",
+  "sectionId": "react",
+  "subsectionId": "zustand",
+  "scope": "Создание store, подписки, обновления, persist и жизненный цикл.",
+  "coverageGoals": [
+    {
+      "id": "core",
+      "title": "Zustand",
+      "description": "Создание store, подписки, обновления, persist и жизненный цикл.",
+      "requiredDifficulties": [],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": [
+        "zustand-store-basics",
+        "zustand-selector-shallow",
+        "zustand-set-merge",
+        "zustand-async-actions",
+        "zustand-imperative-access",
+        "zustand-selective-subscribe",
+        "zustand-persist-hydration",
+        "zustand-persist-migration",
+        "zustand-scoped-store",
+        "zustand-immer-middleware",
+        "zustand-typescript-store",
+        "zustand-reset-lifetime"
+      ]
+    },
+    {
+      "id": "zustand-store-basics",
+      "title": "Что создаёт create в Zustand и нужен ли Provider?",
+      "description": "Общее состояние определяется общим экземпляром store, а не просто названием хука.",
+      "requiredDifficulties": ["Базовый"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "zustand-selector-shallow",
+      "title": "Как selector и useShallow влияют на обновления Zustand-компонента?",
+      "description": "Подписывайтесь на нужные данные и сохраняйте стабильный результат selector.",
+      "requiredDifficulties": ["Базовый"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "zustand-set-merge",
+      "title": "Как set объединяет состояние и почему вложенный объект нужно копировать?",
+      "description": "Zustand сокращает внешний merge, но не отменяет иммутабельность вложенных данных.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "zustand-async-actions",
+      "title": "Как писать async-действия Zustand и защищаться от устаревшего ответа?",
+      "description": "Актуальность ответа задаётся приложением, а не наличием async у действия.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "zustand-imperative-access",
+      "title": "Чем useStore(selector) отличается от useStore.getState()?",
+      "description": "GetState читает, hook подписывает; выбирайте по месту и требуемой реактивности.",
+      "requiredDifficulties": ["Базовый"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "zustand-selective-subscribe",
+      "title": "Когда нужен subscribeWithSelector и как освобождать подписку?",
+      "description": "У внешней подписки должны быть узкая цель и явный срок жизни.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "zustand-persist-hydration",
+      "title": "Что сохраняет persist и почему гидратация не всегда завершается сразу?",
+      "description": "Сохранение данных и готовность интерфейса после их восстановления - разные стадии.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "zustand-persist-migration",
+      "title": "Как version и migrate помогают изменить формат сохранённого Zustand-state?",
+      "description": "Изменение сохранённой схемы требует политики преобразования и fallback.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "zustand-scoped-store",
+      "title": "Как создать независимый Zustand-store для каждого экземпляра виджета?",
+      "description": "Область общего состояния определяется местом создания экземпляра.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "zustand-immer-middleware",
+      "title": "Что разрешает immer middleware в Zustand и чего обычный set не делает?",
+      "description": "Мутационный синтаксис допустим внутри конкретного draft-контракта, а не во всём приложении.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "zustand-typescript-store",
+      "title": "Как типизировать данные и actions Zustand через create<State>()()?",
+      "description": "Один контракт связывает данные, actions и selectors, но не заменяет runtime-валидацию.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "zustand-reset-lifetime",
+      "title": "Как сбросить Zustand-state и почему logout требует большего, чем clearStorage?",
+      "description": "Завершение сессии должно учитывать память, storage и операции в полёте.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    }
+  ],
+  "questions": [
+    {
+      "id": "zustand-store-basics",
+      "title": "Что создаёт create в Zustand и нужен ли Provider?",
+      "topic": "React",
+      "difficulty": "Базовый",
+      "summary": "Общий store с React-hook и отделение экземпляра от локального состояния.",
+      "answerFile": "answers/react/zustand-store-basics.md",
+      "takeaway": "Общее состояние определяется общим экземпляром store, а не просто названием хука.",
+      "pitfall": "Ожидать отдельный счётчик в каждом компоненте, использующем один useCounter.",
+      "moduleId": "react",
+      "order": 0,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Общее состояние определяется общим экземпляром store, а не просто названием хука.",
+        "keywords": ["React", "Zustand", "zustand", "store", "basics"],
+        "kind": "explanation",
+        "reviewStatus": "ready",
+        "priority": "core",
+        "goalIds": ["core", "zustand-store-basics"],
+        "relatedQuestionIds": ["react-custom-hooks", "react-state-location"],
+        "sourceRefs": ["ref-15242a8a9dd8eb83"]
+      }
+    },
+    {
+      "id": "zustand-selector-shallow",
+      "title": "Как selector и useShallow влияют на обновления Zustand-компонента?",
+      "topic": "React",
+      "difficulty": "Базовый",
+      "summary": "Узкая подписка и стабильный результат составного selector.",
+      "answerFile": "answers/react/zustand-selector-shallow.md",
+      "takeaway": "Подписывайтесь на нужные данные и сохраняйте стабильный результат selector.",
+      "pitfall": "Переносить пример Zustand 4 со вторым equality-аргументом в обычный create Zustand 5 без проверки API.",
+      "moduleId": "react",
+      "order": 1,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Подписывайтесь на нужные данные и сохраняйте стабильный результат selector.",
+        "keywords": ["React", "Zustand", "zustand", "selector", "shallow"],
+        "kind": "explanation",
+        "reviewStatus": "ready",
+        "priority": "core",
+        "goalIds": ["core", "zustand-selector-shallow"],
+        "relatedQuestionIds": ["react-external-store", "redux-selector-equality"],
+        "sourceRefs": ["ref-1b354f307afe259c"]
+      }
+    },
+    {
+      "id": "zustand-set-merge",
+      "title": "Как set объединяет состояние и почему вложенный объект нужно копировать?",
+      "topic": "React",
+      "difficulty": "Средний",
+      "summary": "Поверхностный merge, updater и осторожность с replace.",
+      "answerFile": "answers/react/zustand-set-merge.md",
+      "takeaway": "Zustand сокращает внешний merge, но не отменяет иммутабельность вложенных данных.",
+      "pitfall": "Изменить state.profile.name напрямую и считать объект новым из-за вызова set.",
+      "moduleId": "react",
+      "order": 2,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Zustand сокращает внешний merge, но не отменяет иммутабельность вложенных данных.",
+        "keywords": ["React", "Zustand", "zustand", "set", "merge"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "priority": "core",
+        "goalIds": ["core", "zustand-set-merge"],
+        "relatedQuestionIds": ["react-state-immutability"],
+        "sourceRefs": ["ref-c621b85b87828f0b"]
+      }
+    },
+    {
+      "id": "zustand-async-actions",
+      "title": "Как писать async-действия Zustand и защищаться от устаревшего ответа?",
+      "topic": "React",
+      "difficulty": "Средний",
+      "summary": "Обычная async-функция, явные статусы и проверка актуальности.",
+      "answerFile": "answers/react/zustand-async-actions.md",
+      "takeaway": "Актуальность ответа задаётся приложением, а не наличием async у действия.",
+      "pitfall": "Писать последний завершившийся ответ в store независимо от того, какой запрос актуален.",
+      "moduleId": "react",
+      "order": 3,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Актуальность ответа задаётся приложением, а не наличием async у действия.",
+        "keywords": ["React", "Zustand", "zustand", "async", "actions"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "priority": "core",
+        "goalIds": ["core", "zustand-async-actions"],
+        "relatedQuestionIds": ["redux-async-thunk", "react-state-location"],
+        "sourceRefs": ["ref-7092641d90f9d902"]
+      }
+    },
+    {
+      "id": "zustand-imperative-access",
+      "title": "Чем useStore(selector) отличается от useStore.getState()?",
+      "topic": "React",
+      "difficulty": "Базовый",
+      "summary": "Реактивная подписка в компоненте и императивный снимок вне рендера.",
+      "answerFile": "answers/react/zustand-imperative-access.md",
+      "takeaway": "GetState читает, hook подписывает; выбирайте по месту и требуемой реактивности.",
+      "pitfall": "Отобразить getState().count в JSX и ждать автоматического обновления.",
+      "moduleId": "react",
+      "order": 4,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "GetState читает, hook подписывает; выбирайте по месту и требуемой реактивности.",
+        "keywords": ["React", "Zustand", "zustand", "imperative", "access"],
+        "kind": "explanation",
+        "reviewStatus": "ready",
+        "priority": "core",
+        "goalIds": ["core", "zustand-imperative-access"],
+        "relatedQuestionIds": ["react-external-store"],
+        "sourceRefs": ["ref-92e7a3fae9a62e3a"]
+      }
+    },
+    {
+      "id": "zustand-selective-subscribe",
+      "title": "Когда нужен subscribeWithSelector и как освобождать подписку?",
+      "topic": "React",
+      "difficulty": "Средний",
+      "summary": "Выборочная внешняя реакция, сравнение и cleanup.",
+      "answerFile": "answers/react/zustand-selective-subscribe.md",
+      "takeaway": "У внешней подписки должны быть узкая цель и явный срок жизни.",
+      "pitfall": "Регистрировать новую подписку на каждом рендере без cleanup.",
+      "moduleId": "react",
+      "order": 5,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "У внешней подписки должны быть узкая цель и явный срок жизни.",
+        "keywords": ["React", "Zustand", "zustand", "selective", "subscribe"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "priority": "core",
+        "goalIds": ["core", "zustand-selective-subscribe"],
+        "relatedQuestionIds": ["zustand-imperative-access"],
+        "sourceRefs": ["ref-49d87a574eeafca0"]
+      }
+    },
+    {
+      "id": "zustand-persist-hydration",
+      "title": "Что сохраняет persist и почему гидратация не всегда завершается сразу?",
+      "topic": "React",
+      "difficulty": "Средний",
+      "summary": "Выбор сохраняемых полей и восстановление состояния из storage.",
+      "answerFile": "answers/react/zustand-persist-hydration.md",
+      "takeaway": "Сохранение данных и готовность интерфейса после их восстановления - разные стадии.",
+      "pitfall": "Считать persist готовой авторизацией или всегда синхронной загрузкой.",
+      "moduleId": "react",
+      "order": 6,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Сохранение данных и готовность интерфейса после их восстановления - разные стадии.",
+        "keywords": ["React", "Zustand", "zustand", "persist", "hydration"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "priority": "core",
+        "goalIds": ["core", "zustand-persist-hydration"],
+        "relatedQuestionIds": ["react-ssr-state-isolation"],
+        "sourceRefs": ["ref-daf06766c96ce904"]
+      }
+    },
+    {
+      "id": "zustand-persist-migration",
+      "title": "Как version и migrate помогают изменить формат сохранённого Zustand-state?",
+      "topic": "React",
+      "difficulty": "Средний",
+      "summary": "Старая схема storage, явное преобразование и проверка данных.",
+      "answerFile": "answers/react/zustand-persist-migration.md",
+      "takeaway": "Изменение сохранённой схемы требует политики преобразования и fallback.",
+      "pitfall": "Переименовать поле в коде и надеяться, что старый localStorage сам обновится.",
+      "moduleId": "react",
+      "order": 7,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Изменение сохранённой схемы требует политики преобразования и fallback.",
+        "keywords": ["React", "Zustand", "zustand", "persist", "migration"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "priority": "core",
+        "goalIds": ["core", "zustand-persist-migration"],
+        "relatedQuestionIds": ["zustand-persist-hydration"],
+        "sourceRefs": ["ref-fda0efb76db2a3c5"]
+      }
+    },
+    {
+      "id": "zustand-scoped-store",
+      "title": "Как создать независимый Zustand-store для каждого экземпляра виджета?",
+      "topic": "React",
+      "difficulty": "Средний",
+      "summary": "Vanilla createStore, Context как передача экземпляра и стабильный владелец.",
+      "answerFile": "answers/react/zustand-scoped-store.md",
+      "takeaway": "Область общего состояния определяется местом создания экземпляра.",
+      "pitfall": "Вызывать createStore заново при каждом рендере потребителя.",
+      "moduleId": "react",
+      "order": 8,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Область общего состояния определяется местом создания экземпляра.",
+        "keywords": ["React", "Zustand", "zustand", "scoped", "store"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "priority": "core",
+        "goalIds": ["core", "zustand-scoped-store"],
+        "relatedQuestionIds": ["react-ssr-state-isolation", "react-context"],
+        "sourceRefs": ["ref-efb2e1b171d57ff5"]
+      }
+    },
+    {
+      "id": "zustand-immer-middleware",
+      "title": "Что разрешает immer middleware в Zustand и чего обычный set не делает?",
+      "topic": "React",
+      "difficulty": "Средний",
+      "summary": "Draft-синтаксис только в соответствующем middleware-контексте.",
+      "answerFile": "answers/react/zustand-immer-middleware.md",
+      "takeaway": "Мутационный синтаксис допустим внутри конкретного draft-контракта, а не во всём приложении.",
+      "pitfall": "Скопировать draft-обновление в store без immer middleware.",
+      "moduleId": "react",
+      "order": 9,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Мутационный синтаксис допустим внутри конкретного draft-контракта, а не во всём приложении.",
+        "keywords": ["React", "Zustand", "zustand", "immer", "middleware"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "priority": "core",
+        "goalIds": ["core", "zustand-immer-middleware"],
+        "relatedQuestionIds": ["zustand-set-merge", "redux-slice-immer"],
+        "sourceRefs": ["ref-065f9b930ee69d60"]
+      }
+    },
+    {
+      "id": "zustand-typescript-store",
+      "title": "Как типизировать данные и actions Zustand через create<State>()()?",
+      "topic": "React",
+      "difficulty": "Средний",
+      "summary": "Явный контракт store, аргументы действий и граница runtime-данных.",
+      "answerFile": "answers/react/zustand-typescript-store.md",
+      "takeaway": "Один контракт связывает данные, actions и selectors, но не заменяет runtime-валидацию.",
+      "pitfall": "Использовать any для persisted JSON и считать его проверенным из-за типа store.",
+      "moduleId": "react",
+      "order": 10,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Один контракт связывает данные, actions и selectors, но не заменяет runtime-валидацию.",
+        "keywords": ["React", "Zustand", "zustand", "typescript", "store"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "priority": "core",
+        "goalIds": ["core", "zustand-typescript-store"],
+        "relatedQuestionIds": ["zustand-store-basics"],
+        "sourceRefs": ["ref-0845967c055f954f"]
+      }
+    },
+    {
+      "id": "zustand-reset-lifetime",
+      "title": "Как сбросить Zustand-state и почему logout требует большего, чем clearStorage?",
+      "topic": "React",
+      "difficulty": "Средний",
+      "summary": "Текущий снимок, начальные данные и сохранённая копия.",
+      "answerFile": "answers/react/zustand-reset-lifetime.md",
+      "takeaway": "Завершение сессии должно учитывать память, storage и операции в полёте.",
+      "pitfall": "Очистить только localStorage и оставить интерфейс со старым пользователем в памяти.",
+      "moduleId": "react",
+      "order": 11,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Завершение сессии должно учитывать память, storage и операции в полёте.",
+        "keywords": ["React", "Zustand", "zustand", "reset", "lifetime"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "priority": "core",
+        "goalIds": ["core", "zustand-reset-lifetime"],
+        "relatedQuestionIds": ["zustand-persist-hydration", "zustand-async-actions"],
+        "sourceRefs": ["ref-a19cce3a70d805c0"]
+      }
+    }
+  ]
+}

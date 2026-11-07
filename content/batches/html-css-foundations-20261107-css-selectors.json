@@ -1,0 +1,80 @@
+{
+  "schemaVersion": 1,
+  "id": "html-css-foundations-20261107-css-selectors",
+  "title": "Базовый и средний HTML/CSS: Селекторы и область действия",
+  "sectionId": "html-css",
+  "subsectionId": "css-selectors",
+  "currentPass": "complete",
+  "goalIds": [
+    "core",
+    "css-combinator-contract",
+    "css-structural-counting",
+    "css-pseudo-element-content",
+    "css-attribute-selector-tokens",
+    "css-native-nesting-contract",
+    "css-scope-boundary",
+    "css-state-focus-within",
+    "css-basic-selector-choice",
+    "css-empty-dom-content",
+    "css-control-state-selector",
+    "css-visited-privacy"
+  ],
+  "questionIds": [
+    "css-basic-selector-choice",
+    "css-empty-dom-content",
+    "css-control-state-selector",
+    "css-visited-privacy"
+  ],
+  "scopePass": {
+    "status": "complete",
+    "remaining": []
+  },
+  "answerPass": {
+    "status": "complete",
+    "remaining": []
+  },
+  "baseline": [
+    {
+      "id": "css-combinator-contract",
+      "title": "Чем отличаются пробел, >, + и ~ в CSS-селекторах?",
+      "contentHash": "aa941dfdfbc56d810dd71624baa74d4d533547c87f9c4db5db114c3ecc98be71"
+    },
+    {
+      "id": "css-structural-counting",
+      "title": "Чем nth-child отличается от nth-of-type и как работает of S?",
+      "contentHash": "e5cef6782db8ed6596afbcacf4da9ee49d1c8a67dc1145bd91038566f2718f5e"
+    },
+    {
+      "id": "css-pseudo-element-content",
+      "title": "Чем псевдоэлемент отличается от псевдокласса и можно ли хранить смысл в ::before?",
+      "contentHash": "50b35299c48efdc63045e6de4383b47ed9fbc0fae5a5fa21639271d679b1ed73"
+    },
+    {
+      "id": "css-attribute-selector-tokens",
+      "title": "Чем [attr], [attr=\"x\"], [attr~=\"x\"] и [attr*=\"x\"] отличаются?",
+      "contentHash": "6549af37181b71a8b9cc28b2bae7c4eb039d1093c030c937b33a7ff56f35e4d7"
+    },
+    {
+      "id": "css-native-nesting-contract",
+      "title": "Чем нативная CSS-вложенность отличается от простого склеивания селекторов?",
+      "contentHash": "de91e589a213b2852c610353f8b85bc690c0c89cb67e828b1d3dc02139009064"
+    },
+    {
+      "id": "css-scope-boundary",
+      "title": "Что ограничивает @scope и когда учитывается scoping proximity?",
+      "contentHash": "d8080f8ce1bb49a723d4d4dc45d39b18a2f54a1c60fd754fdfce26de3fa4a1b1"
+    },
+    {
+      "id": "css-state-focus-within",
+      "title": "Как связаны hover, active, focus и focus-within?",
+      "contentHash": "b5d7c0f5d6975e0790f4b46befd897e155985f137a891d1cabdba4c5b58821f3"
+    }
+  ],
+  "notes": [
+    "Пакет 2026-11-07: только базовый и средний уровни. Определения и самостоятельные практические навыки; современные API не являются целью пакета.",
+    "Сохранять прежние ID. Не дублировать общие определения из связанных карточек. Примеры не исполнять.",
+    "Новые самостоятельные цели: Базовые способы выбрать элементы и смысл уникального идентификатора. Пустота по DOM и отличие от отсутствия видимого текста. Текущее состояние контрола и буквальное наличие атрибута. Ограниченные свойства и защита истории переходов от наблюдения.",
+    "Сопоставлены базовые определения и прикладные вопросы. Пересечения сохранены в existing.mjs до записи в журнал.",
+    "Content:build и полная content:check прошли на 905 вопросах. Сохранены все 845 исходных ID; кроме 6 согласованных расширений прежние хеши совпадают. Проверены два блока каждого нового ответа и значимый пробел в примере :empty. Код примеров не исполнялся."
+  ]
+}

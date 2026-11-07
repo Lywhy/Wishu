@@ -7,8 +7,34 @@
 <!-- wishu:answer-block -->
 
 ### Высота мобильного viewport
+
 Svh ориентируется на малый вариант viewport, lvh - на большой, dvh следует динамическому изменению интерфейса браузера. Выбор влияет на стабильность блока при появлении адресной панели. Safe-area inset из env отвечает за другую границу: небезопасные для содержимого зоны устройства. Не запрещайте пользовательское масштабирование ради неподвижного макета.
 
 ```css
-.screen { min-block-size: 100dvh; padding-block-end: env(safe-area-inset-bottom); }
+.screen {
+  min-block-size: 100dvh;
+  padding-block-end: env(safe-area-inset-bottom);
+}
 ```
+
+<!-- wishu:answer-block -->
+
+#### У процента нет одной универсальной базы
+
+В обычном горизонтальном writing mode проценты padding, включая верхний и нижний, вычисляются от inline-размера содержащего блока, а не от высоты самого элемента. Процент translate, напротив, связан с reference box преобразуемого элемента. Процент height требует разрешимой базы по правилам layout. Поэтому фраза «процент всегда от соответствующей стороны родителя» неверна.
+
+```css
+.container {
+  inline-size: 400px;
+}
+.child {
+  padding-block-start: 10%;
+}
+/* В обычном horizontal-tb база - 400px, отступ будет 40px. */
+```
+
+- [Почему height: 100% не растягивает блок по высоте родителя?](/questions/css-percentage-height)
+- [Чем transform: translate отличается от изменения margin или позиции?](/questions/css-transform-flow-geometry)
+- [Что вычисляет calc и почему нельзя складывать любые CSS-значения?](/questions/css-calc-typed-math)
+
+[W3C: css-box-3](https://www.w3.org/TR/css-box-3/#padding-physical).

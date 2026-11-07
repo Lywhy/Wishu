@@ -7,6 +7,7 @@
 <!-- wishu:answer-block -->
 
 ### Вложенная внешняя ссылка
+
 Const assertion на литерале не замораживает ранее созданный объект или массив, попавший внутрь по ссылке. Следует различать readonly-свойство, неизменяемый тип вложенного контейнера и runtime-заморозку.
 
 ```typescript
@@ -16,3 +17,18 @@ shared.push(2)
 view.items.push(3) // items - readonly-свойство, но его значение всё ещё number[].
 // view.items = [] // Переназначение readonly-свойства запрещено.
 ```
+
+<!-- wishu:answer-block -->
+
+### Const привязки и литеральность свойства
+
+Const не запрещает менять поле обычного объекта, поэтому поле может расшириться до string. Если протокол требует точного значения, выберите явный контракт или const assertion, учитывая его readonly-эффект.
+
+```typescript
+const options = { method: "GET" }
+options.method = "POST"
+const fixed = { method: "GET" } as const
+// fixed.method = "POST" // Не соответствует контракту.
+```
+
+[Документация TypeScript](https://www.typescriptlang.org/docs/handbook/2/everyday-types.html).

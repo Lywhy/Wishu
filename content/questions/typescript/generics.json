@@ -19,7 +19,10 @@
         "ts-generic-defaults",
         "ts-const-type-parameters",
         "ts-generic-constraint-return",
-        "ts-generic-variance"
+        "ts-generic-variance",
+        "ts-partial-type-argument-inference",
+        "ts-instantiation-expressions",
+        "ts-unused-generic-parameter"
       ]
     },
     {
@@ -93,6 +96,33 @@
       "reviewed": false,
       "priority": "core",
       "relatedSkillIds": []
+    },
+    {
+      "id": "ts-partial-type-argument-inference",
+      "title": "Можно ли явно задать один generic-параметр, а остальные оставить для произвольного вывода?",
+      "description": "Объяснить и применить правило с учётом его границ: Эргономику выбора типов можно проектировать через границы вызовов.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": ["ts-generic-defaults", "ts-no-infer"]
+    },
+    {
+      "id": "ts-instantiation-expressions",
+      "title": "Что делает выражение makeBox<string> без вызова функции?",
+      "description": "Объяснить и применить правило с учётом его границ: Специализация сигнатуры и выполнение функции - отдельные действия.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": ["generics", "ts-function-overloads"]
+    },
+    {
+      "id": "ts-unused-generic-parameter",
+      "title": "Почему неиспользуемый generic-параметр не различает два контейнера?",
+      "description": "Объяснить и применить правило с учётом его границ: На совместимость влияет использование параметра, а не факт его объявления.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": ["ts-structural-typing", "ts-branded-identifiers"]
     }
   ],
   "questions": [
@@ -282,6 +312,75 @@
         "sourceRefs": ["ref-b8c0426b8b77a2f0"]
       },
       "answerFile": "answers/typescript/ts-generic-variance.md"
+    },
+    {
+      "id": "ts-partial-type-argument-inference",
+      "title": "Можно ли явно задать один generic-параметр, а остальные оставить для произвольного вывода?",
+      "topic": "TypeScript",
+      "difficulty": "Средний",
+      "summary": "Порядок выбора параметров типа и разделение вызовов.",
+      "answerFile": "answers/typescript/ts-partial-type-argument-inference.md",
+      "takeaway": "Эргономику выбора типов можно проектировать через границы вызовов.",
+      "pitfall": "Путать default параметра типа с произвольной дыркой для вывода.",
+      "moduleId": "typescript",
+      "order": 8,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Эргономику выбора типов можно проектировать через границы вызовов.",
+        "keywords": ["TypeScript", "Дженерики"],
+        "kind": "explanation",
+        "reviewStatus": "ready",
+        "priority": "core",
+        "goalIds": ["core", "ts-partial-type-argument-inference"],
+        "relatedQuestionIds": ["ts-generic-defaults", "ts-no-infer"],
+        "sourceRefs": ["ref-b8c0426b8b77a2f0"]
+      }
+    },
+    {
+      "id": "ts-instantiation-expressions",
+      "title": "Что делает выражение makeBox<string> без вызова функции?",
+      "topic": "TypeScript",
+      "difficulty": "Средний",
+      "summary": "Специализация generic-сигнатуры без запуска runtime-тела.",
+      "answerFile": "answers/typescript/ts-instantiation-expressions.md",
+      "takeaway": "Специализация сигнатуры и выполнение функции - отдельные действия.",
+      "pitfall": "Ожидать, что box<string> уже возвращает объект box.",
+      "moduleId": "typescript",
+      "order": 9,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Специализация сигнатуры и выполнение функции - отдельные действия.",
+        "keywords": ["TypeScript", "Дженерики", "generic", "runtime"],
+        "kind": "explanation",
+        "reviewStatus": "ready",
+        "priority": "core",
+        "goalIds": ["core", "ts-instantiation-expressions"],
+        "relatedQuestionIds": ["generics", "ts-function-overloads"],
+        "sourceRefs": ["ref-5e4a67a64b84cfba"]
+      }
+    },
+    {
+      "id": "ts-unused-generic-parameter",
+      "title": "Почему неиспользуемый generic-параметр не различает два контейнера?",
+      "topic": "TypeScript",
+      "difficulty": "Средний",
+      "summary": "Структурная совместимость и отсутствие наблюдаемого члена.",
+      "answerFile": "answers/typescript/ts-unused-generic-parameter.md",
+      "takeaway": "На совместимость влияет использование параметра, а не факт его объявления.",
+      "pitfall": "Считать Empty<User> и Empty<Order> гарантированно разными типами.",
+      "moduleId": "typescript",
+      "order": 10,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: На совместимость влияет использование параметра, а не факт его объявления.",
+        "keywords": ["TypeScript", "Дженерики"],
+        "kind": "explanation",
+        "reviewStatus": "ready",
+        "priority": "core",
+        "goalIds": ["core", "ts-unused-generic-parameter"],
+        "relatedQuestionIds": ["ts-structural-typing", "ts-branded-identifiers"],
+        "sourceRefs": ["ref-b1f557c0324024a7"]
+      }
     }
   ]
 }

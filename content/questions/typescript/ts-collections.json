@@ -17,7 +17,13 @@
         "ts-tuples",
         "ts-set-map",
         "ts-variadic-tuples",
-        "ts-nonempty-array"
+        "ts-nonempty-array",
+        "ts-tuple-shape-operations",
+        "ts-empty-array-context",
+        "ts-array-alias-mutation",
+        "ts-array-union-shapes",
+        "ts-iterator-result-check",
+        "ts-promise-all-tuples"
       ]
     },
     {
@@ -73,6 +79,60 @@
       "reviewed": false,
       "priority": "core",
       "relatedSkillIds": []
+    },
+    {
+      "id": "ts-tuple-shape-operations",
+      "title": "Как keyof, length и T[number] по-разному описывают кортеж?",
+      "description": "Объяснить и применить правило с учётом его границ: Позиционный контракт, длина и множество возможных элементов отвечают на разные вопросы.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": ["ts-tuples", "ts-variadic-tuples"]
+    },
+    {
+      "id": "ts-empty-array-context",
+      "title": "Почему пустой массив внутри объекта может получить тип never[]?",
+      "description": "Объяснить и применить правило с учётом его границ: Пустой контейнер часто требует явного контракта элемента.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": ["ts-inference", "ts-array-types"]
+    },
+    {
+      "id": "ts-array-alias-mutation",
+      "title": "Почему совместимое присваивание массивов не гарантирует безопасность последующей мутации?",
+      "description": "Объяснить и применить правило с учётом его границ: Структурная совместимость и возможность мутации требуют отдельного анализа.",
+      "requiredDifficulties": ["Продвинутый"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": ["ts-readonly-arrays", "ts-generic-variance"]
+    },
+    {
+      "id": "ts-array-union-shapes",
+      "title": "Чем (A | B)[] отличается от A[] | B[]?",
+      "description": "Объяснить и применить правило с учётом его границ: Место union в выражении типа определяет, что именно может варьироваться.",
+      "requiredDifficulties": ["Базовый"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": ["ts-array-types", "ts-union-types"]
+    },
+    {
+      "id": "ts-iterator-result-check",
+      "title": "Почему перед использованием iterator.next().value важно проверить done?",
+      "description": "Объяснить и применить правило с учётом его границ: Контракт итерации включает завершение, а не только очередное значение.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": ["ts-generator-contract", "iterator-protocols"]
+    },
+    {
+      "id": "ts-promise-all-tuples",
+      "title": "Как сохранить разные типы результатов Promise.all по позициям?",
+      "description": "Объяснить и применить правило с учётом его границ: Для разных позиционных результатов сначала нужно сохранить позиции на входе.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": ["ts-async-functions", "ts-variadic-tuples", "promise-all-settled"]
     }
   ],
   "questions": [
@@ -215,6 +275,149 @@
         "sourceRefs": ["ref-e93a21d416404bfe"]
       },
       "answerFile": "answers/typescript/ts-nonempty-array.md"
+    },
+    {
+      "id": "ts-tuple-shape-operations",
+      "title": "Как keyof, length и T[number] по-разному описывают кортеж?",
+      "topic": "TypeScript",
+      "difficulty": "Средний",
+      "summary": "Позиции, допустимая длина и объединение элементов.",
+      "answerFile": "answers/typescript/ts-tuple-shape-operations.md",
+      "takeaway": "Позиционный контракт, длина и множество возможных элементов отвечают на разные вопросы.",
+      "pitfall": "Использовать T[number] там, где нужно сохранить порядок аргументов.",
+      "moduleId": "typescript",
+      "order": 6,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Позиционный контракт, длина и множество возможных элементов отвечают на разные вопросы.",
+        "keywords": ["TypeScript", "Массивы, кортежи и коллекции"],
+        "kind": "explanation",
+        "reviewStatus": "ready",
+        "priority": "core",
+        "goalIds": ["core", "ts-tuple-shape-operations"],
+        "relatedQuestionIds": ["ts-tuples", "ts-variadic-tuples"],
+        "sourceRefs": ["ref-e93a21d416404bfe"]
+      }
+    },
+    {
+      "id": "ts-empty-array-context",
+      "title": "Почему пустой массив внутри объекта может получить тип never[]?",
+      "topic": "TypeScript",
+      "difficulty": "Средний",
+      "summary": "Контекст пустого литерала и явное задание типа элементов.",
+      "answerFile": "answers/typescript/ts-empty-array-context.md",
+      "takeaway": "Пустой контейнер часто требует явного контракта элемента.",
+      "pitfall": "Исправлять вывод пустого массива через any[] без понимания модели.",
+      "moduleId": "typescript",
+      "order": 7,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Пустой контейнер часто требует явного контракта элемента.",
+        "keywords": ["TypeScript", "Массивы, кортежи и коллекции"],
+        "kind": "explanation",
+        "reviewStatus": "ready",
+        "priority": "core",
+        "goalIds": ["core", "ts-empty-array-context"],
+        "relatedQuestionIds": ["ts-inference", "ts-array-types"],
+        "sourceRefs": ["ref-e0a2a1812648c9f8"]
+      }
+    },
+    {
+      "id": "ts-array-alias-mutation",
+      "title": "Почему совместимое присваивание массивов не гарантирует безопасность последующей мутации?",
+      "topic": "TypeScript",
+      "difficulty": "Продвинутый",
+      "summary": "Ковариантная совместимость изменяемых массивов и общая ссылка.",
+      "answerFile": "answers/typescript/ts-array-alias-mutation.md",
+      "takeaway": "Структурная совместимость и возможность мутации требуют отдельного анализа.",
+      "pitfall": "Доказывать полную runtime-безопасность одной зелёной проверкой присваивания.",
+      "moduleId": "typescript",
+      "order": 8,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Структурная совместимость и возможность мутации требуют отдельного анализа.",
+        "keywords": ["TypeScript", "Массивы, кортежи и коллекции"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "priority": "core",
+        "goalIds": ["core", "ts-array-alias-mutation"],
+        "relatedQuestionIds": ["ts-readonly-arrays", "ts-generic-variance"],
+        "sourceRefs": ["ref-b1f557c0324024a7"]
+      }
+    },
+    {
+      "id": "ts-array-union-shapes",
+      "title": "Чем (A | B)[] отличается от A[] | B[]?",
+      "topic": "TypeScript",
+      "difficulty": "Базовый",
+      "summary": "Смешанные элементы и выбор однородного контейнера.",
+      "answerFile": "answers/typescript/ts-array-union-shapes.md",
+      "takeaway": "Место union в выражении типа определяет, что именно может варьироваться.",
+      "pitfall": "Считать обе записи взаимозаменяемыми при описании набора данных.",
+      "moduleId": "typescript",
+      "order": 9,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Место union в выражении типа определяет, что именно может варьироваться.",
+        "keywords": ["TypeScript", "Массивы, кортежи и коллекции"],
+        "kind": "explanation",
+        "reviewStatus": "ready",
+        "priority": "core",
+        "goalIds": ["core", "ts-array-union-shapes"],
+        "relatedQuestionIds": ["ts-array-types", "ts-union-types"],
+        "sourceRefs": ["ref-1ec6ef05cd7c0c00"]
+      }
+    },
+    {
+      "id": "ts-iterator-result-check",
+      "title": "Почему перед использованием iterator.next().value важно проверить done?",
+      "topic": "TypeScript",
+      "difficulty": "Средний",
+      "summary": "Yield-значение, результат завершения и strictBuiltinIteratorReturn.",
+      "answerFile": "answers/typescript/ts-iterator-result-check.md",
+      "takeaway": "Контракт итерации включает завершение, а не только очередное значение.",
+      "pitfall": "Считать value у next безусловно элементом коллекции.",
+      "moduleId": "typescript",
+      "order": 10,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Контракт итерации включает завершение, а не только очередное значение.",
+        "keywords": [
+          "TypeScript",
+          "Массивы, кортежи и коллекции",
+          "Yield",
+          "strictBuiltinIteratorReturn"
+        ],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "priority": "core",
+        "goalIds": ["core", "ts-iterator-result-check"],
+        "relatedQuestionIds": ["ts-generator-contract", "iterator-protocols"],
+        "sourceRefs": ["ref-8e025fcda37288b0"]
+      }
+    },
+    {
+      "id": "ts-promise-all-tuples",
+      "title": "Как сохранить разные типы результатов Promise.all по позициям?",
+      "topic": "TypeScript",
+      "difficulty": "Средний",
+      "summary": "Кортеж входных задач и потеря позиций в широком массиве.",
+      "answerFile": "answers/typescript/ts-promise-all-tuples.md",
+      "takeaway": "Для разных позиционных результатов сначала нужно сохранить позиции на входе.",
+      "pitfall": "Ожидать восстановление точного кортежа из произвольного массива.",
+      "moduleId": "typescript",
+      "order": 11,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Для разных позиционных результатов сначала нужно сохранить позиции на входе.",
+        "keywords": ["TypeScript", "Массивы, кортежи и коллекции"],
+        "kind": "explanation",
+        "reviewStatus": "ready",
+        "priority": "core",
+        "goalIds": ["core", "ts-promise-all-tuples"],
+        "relatedQuestionIds": ["ts-async-functions", "ts-variadic-tuples", "promise-all-settled"],
+        "sourceRefs": ["ref-3f97ed4aa0a31ba2"]
+      }
     }
   ]
 }

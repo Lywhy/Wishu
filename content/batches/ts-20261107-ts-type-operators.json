@@ -1,0 +1,94 @@
+{
+  "schemaVersion": 1,
+  "id": "ts-20261107-ts-type-operators",
+  "title": "Расширение TypeScript: Операторы типов и преобразования",
+  "sectionId": "typescript",
+  "subsectionId": "ts-type-operators",
+  "currentPass": "complete",
+  "goalIds": [
+    "core",
+    "ts-keyof-indexed-access",
+    "ts-type-query",
+    "ts-mapped-types",
+    "ts-conditional-types",
+    "ts-infer",
+    "ts-distributive-never",
+    "ts-template-literal-patterns",
+    "ts-deep-readonly-contract",
+    "ts-keyof-union-keys",
+    "ts-tuple-pattern-infer",
+    "ts-infer-multiple-candidates",
+    "ts-homomorphic-tuples",
+    "ts-record-to-correlated-union",
+    "ts-filter-properties-by-type",
+    "ts-template-number-inference",
+    "ts-recursive-type-budget"
+  ],
+  "questionIds": [
+    "ts-keyof-union-keys",
+    "ts-tuple-pattern-infer",
+    "ts-infer-multiple-candidates",
+    "ts-homomorphic-tuples",
+    "ts-record-to-correlated-union",
+    "ts-filter-properties-by-type",
+    "ts-template-number-inference",
+    "ts-recursive-type-budget",
+    "ts-template-literal-patterns",
+    "ts-distributive-never"
+  ],
+  "scopePass": {
+    "status": "complete",
+    "remaining": []
+  },
+  "answerPass": {
+    "status": "complete",
+    "remaining": []
+  },
+  "baseline": [
+    {
+      "id": "ts-keyof-indexed-access",
+      "title": "Как keyof, T[K] и K extends keyof T типизируют доступ к свойству?",
+      "contentHash": "5663d794edd184f9d476ae74010524ad0b5dbc1b39302b8e7f2d29c34ff90f0f"
+    },
+    {
+      "id": "ts-type-query",
+      "title": "Чем typeof в позиции типа отличается от JavaScript-оператора typeof?",
+      "contentHash": "e00fb732fe98072090f40db5e098e172eb27c5310e4e9dbb7c4272e152bbd94a"
+    },
+    {
+      "id": "ts-mapped-types",
+      "title": "Как mapped types преобразуют свойства и их модификаторы?",
+      "contentHash": "62a04162bbaee22406848dbf4c723fff5e6981e685bff93de65c9864e1dfdda5"
+    },
+    {
+      "id": "ts-conditional-types",
+      "title": "Как работает conditional type T extends U ? X : Y?",
+      "contentHash": "6f04838f40ff8103790a9f9bee7c1e5b59be0efab38cbed9af44f1c232eadfb4"
+    },
+    {
+      "id": "ts-infer",
+      "title": "Как infer извлекает части типа, например параметры и результат функции?",
+      "contentHash": "3b5579865e2139e1921a30cfe19e03f1d5fe71cfe88dcbef046385bf289394c4"
+    },
+    {
+      "id": "ts-distributive-never",
+      "title": "Как отключить дистрибутивность conditional types и проверить never?",
+      "contentHash": "a6133a39304d7acee832d38e53a1bd1974a7529d4e482fa134564efb503a02b4"
+    },
+    {
+      "id": "ts-template-literal-patterns",
+      "title": "Как template literal types ограничивают формат строкового контракта?",
+      "contentHash": "9b5ed63c82886a1b38d2eddacbc96f78ce5f4cb1cc6cc2f8a3b69e7ff422ddfd"
+    },
+    {
+      "id": "ts-deep-readonly-contract",
+      "title": "Как определить DeepReadonly и заранее ограничить область его применения?",
+      "contentHash": "454642b7d71b7716746b2979d2f1a4a6915bc0aa4aa935b9691ed356a9b603b6"
+    }
+  ],
+  "notes": [
+    "Граница: язык TypeScript и его toolchain. Runtime JavaScript и фреймворки не дублировать.",
+    "Готовые ответы сверены по документации; код примеров не запускался.",
+    "Контент собран и прошёл полную структурную проверку. TS: 161 вопрос, +62 новых и 17 расширенных. Примеры не исполнялись; seed не применялся."
+  ]
+}

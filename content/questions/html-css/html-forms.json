@@ -11,7 +11,24 @@
       "requiredDifficulties": [],
       "reviewed": false,
       "priority": "core",
-      "relatedSkillIds": ["html-form-entry-list", "html-native-validation", "html-input-hints"]
+      "relatedSkillIds": [
+        "html-form-entry-list",
+        "html-native-validation",
+        "html-input-hints",
+        "html-native-submit-contract",
+        "html-fieldset-radio-group",
+        "html-select-options",
+        "html-file-input-contract",
+        "html-numeric-step-validity",
+        "html-contenteditable-contract",
+        "html-form-error-experience",
+        "html-textarea-value",
+        "html-datalist-select",
+        "html-date-local-value",
+        "html-checkbox-indeterminate",
+        "html-implicit-submit",
+        "css-control-resize"
+      ]
     },
     {
       "id": "html-form-entry-list",
@@ -37,6 +54,123 @@
       "description": "Объяснить и применить правило с учётом его границ: Описывайте назначение и способ ввода, не превращая строковый идентификатор в арифметическое число.",
       "requiredDifficulties": ["Средний"],
       "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "html-native-submit-contract",
+      "title": "Как action, method, enctype и submit-кнопка определяют отправку формы?",
+      "description": "Разделяйте маршрут и метод, кодирование, набор полей и выбранную submit-кнопку.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "html-fieldset-radio-group",
+      "title": "Как сгруппировать radio-кнопки и зачем нужны fieldset и legend?",
+      "description": "Групповое название и подпись каждого варианта решают разные задачи доступности.",
+      "requiredDifficulties": ["Базовый"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "html-select-options",
+      "title": "Как работают value, selected, multiple и optgroup у select?",
+      "description": "Отделяйте исходный выбор, текущее состояние и стабильное отправляемое значение.",
+      "requiredDifficulties": ["Базовый"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "html-file-input-contract",
+      "title": "Что реально ограничивают accept и multiple у input type=\"file\"?",
+      "description": "Выбор файла даёт данные для загрузки, но не доказательство типа и безопасности.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "html-numeric-step-validity",
+      "title": "Почему допустимое число может нарушать step и почему maxlength не ограничивает number?",
+      "description": "Диапазон, шаг и длина строки - три разных ограничения.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "html-contenteditable-contract",
+      "title": "Почему contenteditable не является полноценной заменой textarea?",
+      "description": "Редактируемость - лишь часть требований к текстовому полю.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "html-form-error-experience",
+      "title": "Как связать ошибку формы с полем и когда использовать aria-invalid?",
+      "description": "Сообщение, связь с контролом и своевременная обратная связь важнее одной красной рамки.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "html-textarea-value",
+      "title": "Где задаётся начальный текст textarea и чем rows отличается от maxlength?",
+      "description": "Начальные данные, текущее значение, размер поля и лимит длины - разные параметры.",
+      "requiredDifficulties": ["Базовый"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "html-datalist-select",
+      "title": "Чем datalist отличается от select?",
+      "description": "Подсказка вариантов не равна ограничению допустимых значений.",
+      "requiredDifficulties": ["Базовый"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "html-date-local-value",
+      "title": "Почему input type=\"date\" выглядит локализованным, но отдаёт другой формат?",
+      "description": "Локализованный интерфейс ввода не меняет нормализованный формат значения.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "html-checkbox-indeterminate",
+      "title": "Что означает indeterminate у checkbox и влияет ли оно на отправку формы?",
+      "description": "Смешанный вид агрегированного выбора не заменяет данные о выбранных пунктах.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "html-implicit-submit",
+      "title": "Почему Enter в поле может отправить форму и где обрабатывать отправку?",
+      "description": "Отправка - событие формы, а не только щелчок по конкретной кнопке.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "css-control-resize",
+      "title": "Что делает resize у textarea и почему не всегда стоит его отключать?",
+      "description": "Сохраните пользователю возможность удобно работать с длинным текстом.",
+      "requiredDifficulties": ["Базовый"],
+      "reviewed": true,
       "priority": "core",
       "relatedSkillIds": []
     }
@@ -84,9 +218,9 @@
         "kind": "explanation",
         "reviewStatus": "imported",
         "goalIds": ["core", "html-native-validation"],
-        "relatedQuestionIds": [],
+        "relatedQuestionIds": ["html-native-submit-contract", "html-form-error-experience"],
         "priority": "core",
-        "sourceRefs": ["ref-8dc19488153757ed"]
+        "sourceRefs": ["ref-8dc19488153757ed", "ref-362e25f752381c57"]
       },
       "answerFile": "answers/html-css/html-native-validation.md"
     },
@@ -108,11 +242,310 @@
         "kind": "explanation",
         "reviewStatus": "imported",
         "goalIds": ["core", "html-input-hints"],
-        "relatedQuestionIds": [],
+        "relatedQuestionIds": ["html-form-error-experience"],
         "priority": "core",
-        "sourceRefs": ["ref-acbab30c2f86e9e7"]
+        "sourceRefs": ["ref-acbab30c2f86e9e7", "ref-3cb1bb8e0f02ad7e"]
       },
       "answerFile": "answers/html-css/html-input-hints.md"
+    },
+    {
+      "id": "html-native-submit-contract",
+      "title": "Как action, method, enctype и submit-кнопка определяют отправку формы?",
+      "topic": "HTML и CSS",
+      "difficulty": "Средний",
+      "summary": "Нативная отправка без JavaScript, кодирование тела и переопределения submitter.",
+      "answerFile": "answers/html-css/html-native-submit-contract.md",
+      "takeaway": "Разделяйте маршрут и метод, кодирование, набор полей и выбранную submit-кнопку.",
+      "pitfall": "Считать POST защитой содержимого от перехвата или забывать method и получить GET по умолчанию.",
+      "moduleId": "html-css",
+      "order": 3,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Разделяйте маршрут и метод, кодирование, набор полей и выбранную submit-кнопку.",
+        "keywords": ["HTML и CSS", "Формы и ввод данных", "native", "submit", "contract"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "priority": "core",
+        "goalIds": ["core", "html-native-submit-contract"],
+        "relatedQuestionIds": ["html-form-entry-list", "html-native-validation"],
+        "sourceRefs": ["ref-17d1596ede2d4686"]
+      }
+    },
+    {
+      "id": "html-fieldset-radio-group",
+      "title": "Как сгруппировать radio-кнопки и зачем нужны fieldset и legend?",
+      "topic": "HTML и CSS",
+      "difficulty": "Базовый",
+      "summary": "Общая тема выбора, индивидуальные подписи и отключение группы.",
+      "answerFile": "answers/html-css/html-fieldset-radio-group.md",
+      "takeaway": "Групповое название и подпись каждого варианта решают разные задачи доступности.",
+      "pitfall": "Использовать разные name для вариантов одного выбора и получить несколько отмеченных кнопок.",
+      "moduleId": "html-css",
+      "order": 4,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Групповое название и подпись каждого варианта решают разные задачи доступности.",
+        "keywords": ["HTML и CSS", "Формы и ввод данных", "fieldset", "radio", "group"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "priority": "core",
+        "goalIds": ["core", "html-fieldset-radio-group"],
+        "relatedQuestionIds": ["html-form-label", "html-form-entry-list"],
+        "sourceRefs": ["ref-a51076461378011d"]
+      }
+    },
+    {
+      "id": "html-select-options",
+      "title": "Как работают value, selected, multiple и optgroup у select?",
+      "topic": "HTML и CSS",
+      "difficulty": "Базовый",
+      "summary": "Данные нативного выбора, исходное состояние и множественные значения.",
+      "answerFile": "answers/html-css/html-select-options.md",
+      "takeaway": "Отделяйте исходный выбор, текущее состояние и стабильное отправляемое значение.",
+      "pitfall": "Читать FormData.get для multiple и незаметно терять остальные выбранные значения.",
+      "moduleId": "html-css",
+      "order": 5,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Отделяйте исходный выбор, текущее состояние и стабильное отправляемое значение.",
+        "keywords": ["HTML и CSS", "Формы и ввод данных", "select", "options"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "priority": "core",
+        "goalIds": ["core", "html-select-options"],
+        "relatedQuestionIds": ["html-form-entry-list"],
+        "sourceRefs": ["ref-7f91eb1009d912dc"]
+      }
+    },
+    {
+      "id": "html-file-input-contract",
+      "title": "Что реально ограничивают accept и multiple у input type=\"file\"?",
+      "topic": "HTML и CSS",
+      "difficulty": "Средний",
+      "summary": "Выбор файлов, ограничения программной установки и серверная проверка.",
+      "answerFile": "answers/html-css/html-file-input-contract.md",
+      "takeaway": "Выбор файла даёт данные для загрузки, но не доказательство типа и безопасности.",
+      "pitfall": "Принимать любой файл только потому, что у поля задан accept=\"image/*\".",
+      "moduleId": "html-css",
+      "order": 6,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Выбор файла даёт данные для загрузки, но не доказательство типа и безопасности.",
+        "keywords": ["HTML и CSS", "Формы и ввод данных", "file", "input", "contract"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "priority": "core",
+        "goalIds": ["core", "html-file-input-contract"],
+        "relatedQuestionIds": ["html-native-submit-contract"],
+        "sourceRefs": ["ref-35348c25dcfd40c8"]
+      }
+    },
+    {
+      "id": "html-numeric-step-validity",
+      "title": "Почему допустимое число может нарушать step и почему maxlength не ограничивает number?",
+      "topic": "HTML и CSS",
+      "difficulty": "Средний",
+      "summary": "Числовой диапазон, сетка шага и строковые ограничения.",
+      "answerFile": "answers/html-css/html-numeric-step-validity.md",
+      "takeaway": "Диапазон, шаг и длина строки - три разных ограничения.",
+      "pitfall": "Задать maxlength=\"4\" у number и считать ввод ограниченным четырьмя цифрами.",
+      "moduleId": "html-css",
+      "order": 7,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Диапазон, шаг и длина строки - три разных ограничения.",
+        "keywords": ["HTML и CSS", "Формы и ввод данных", "numeric", "step", "validity"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "priority": "core",
+        "goalIds": ["core", "html-numeric-step-validity"],
+        "relatedQuestionIds": ["html-input-hints", "html-native-validation"],
+        "sourceRefs": ["ref-fc0a651c3ab2ecdc"]
+      }
+    },
+    {
+      "id": "html-contenteditable-contract",
+      "title": "Почему contenteditable не является полноценной заменой textarea?",
+      "topic": "HTML и CSS",
+      "difficulty": "Средний",
+      "summary": "Редактируемое содержимое, отсутствие value и контракта отправки формы.",
+      "answerFile": "answers/html-css/html-contenteditable-contract.md",
+      "takeaway": "Редактируемость - лишь часть требований к текстовому полю.",
+      "pitfall": "Считывать innerHTML редактора и без обработки выводить его другим пользователям.",
+      "moduleId": "html-css",
+      "order": 8,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Редактируемость - лишь часть требований к текстовому полю.",
+        "keywords": ["HTML и CSS", "Формы и ввод данных", "contenteditable", "contract"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "priority": "core",
+        "goalIds": ["core", "html-contenteditable-contract"],
+        "relatedQuestionIds": ["inner-html"],
+        "sourceRefs": ["ref-9c6f30f7a6ff1a70"]
+      }
+    },
+    {
+      "id": "html-form-error-experience",
+      "title": "Как связать ошибку формы с полем и когда использовать aria-invalid?",
+      "topic": "HTML и CSS",
+      "difficulty": "Средний",
+      "summary": "Текст сообщения, момент показа и доступная навигация к ошибкам.",
+      "answerFile": "answers/html-css/html-form-error-experience.md",
+      "takeaway": "Сообщение, связь с контролом и своевременная обратная связь важнее одной красной рамки.",
+      "pitfall": "Считать aria-invalid запретом отправки или заменять им текст причины.",
+      "moduleId": "html-css",
+      "order": 9,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Сообщение, связь с контролом и своевременная обратная связь важнее одной красной рамки.",
+        "keywords": ["HTML и CSS", "Формы и ввод данных", "form", "error", "experience"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "priority": "core",
+        "goalIds": ["core", "html-form-error-experience"],
+        "relatedQuestionIds": ["html-native-validation", "html-live-status"],
+        "sourceRefs": ["ref-4df84422250f208b"]
+      }
+    },
+    {
+      "id": "html-textarea-value",
+      "title": "Где задаётся начальный текст textarea и чем rows отличается от maxlength?",
+      "topic": "HTML и CSS",
+      "difficulty": "Базовый",
+      "summary": "Текстовое содержимое, текущее value, видимый размер и допустимая длина.",
+      "answerFile": "answers/html-css/html-textarea-value.md",
+      "takeaway": "Начальные данные, текущее значение, размер поля и лимит длины - разные параметры.",
+      "pitfall": "Задавать value как HTML-атрибут или считать rows=\"4\" запретом пятой строки текста.",
+      "moduleId": "html-css",
+      "order": 10,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Начальные данные, текущее значение, размер поля и лимит длины - разные параметры.",
+        "keywords": ["HTML и CSS", "Формы и ввод данных", "textarea", "value"],
+        "kind": "explanation",
+        "reviewStatus": "ready",
+        "priority": "core",
+        "goalIds": ["core", "html-textarea-value"],
+        "relatedQuestionIds": ["dom-attributes-properties", "html-form-entry-list"],
+        "sourceRefs": ["ref-f35d160c34d7b26e"]
+      }
+    },
+    {
+      "id": "html-datalist-select",
+      "title": "Чем datalist отличается от select?",
+      "topic": "HTML и CSS",
+      "difficulty": "Базовый",
+      "summary": "Подсказки при свободном вводе и ограниченный набор вариантов.",
+      "answerFile": "answers/html-css/html-datalist-select.md",
+      "takeaway": "Подсказка вариантов не равна ограничению допустимых значений.",
+      "pitfall": "Считать список datalist клиентской и серверной валидацией справочника.",
+      "moduleId": "html-css",
+      "order": 11,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Подсказка вариантов не равна ограничению допустимых значений.",
+        "keywords": ["HTML и CSS", "Формы и ввод данных", "datalist", "select"],
+        "kind": "explanation",
+        "reviewStatus": "ready",
+        "priority": "core",
+        "goalIds": ["core", "html-datalist-select"],
+        "relatedQuestionIds": ["html-select-options"],
+        "sourceRefs": ["ref-5117f30f18b30827"]
+      }
+    },
+    {
+      "id": "html-date-local-value",
+      "title": "Почему input type=\"date\" выглядит локализованным, но отдаёт другой формат?",
+      "topic": "HTML и CSS",
+      "difficulty": "Средний",
+      "summary": "Календарная дата, datetime-local и отсутствие часового пояса.",
+      "answerFile": "answers/html-css/html-date-local-value.md",
+      "takeaway": "Локализованный интерфейс ввода не меняет нормализованный формат значения.",
+      "pitfall": "Считать datetime-local строкой с автоматически известным часовым поясом пользователя.",
+      "moduleId": "html-css",
+      "order": 12,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Локализованный интерфейс ввода не меняет нормализованный формат значения.",
+        "keywords": ["HTML и CSS", "Формы и ввод данных", "date", "local", "value"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "priority": "core",
+        "goalIds": ["core", "html-date-local-value"],
+        "relatedQuestionIds": [],
+        "sourceRefs": ["ref-811fd16e24c71927"]
+      }
+    },
+    {
+      "id": "html-checkbox-indeterminate",
+      "title": "Что означает indeterminate у checkbox и влияет ли оно на отправку формы?",
+      "topic": "HTML и CSS",
+      "difficulty": "Средний",
+      "summary": "Визуальное смешанное состояние отдельно от checked.",
+      "answerFile": "answers/html-css/html-checkbox-indeterminate.md",
+      "takeaway": "Смешанный вид агрегированного выбора не заменяет данные о выбранных пунктах.",
+      "pitfall": "Добавить indeterminate=\"true\" в HTML и ждать нативного смешанного состояния.",
+      "moduleId": "html-css",
+      "order": 13,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Смешанный вид агрегированного выбора не заменяет данные о выбранных пунктах.",
+        "keywords": ["HTML и CSS", "Формы и ввод данных", "checkbox", "indeterminate"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "priority": "core",
+        "goalIds": ["core", "html-checkbox-indeterminate"],
+        "relatedQuestionIds": ["html-form-entry-list"],
+        "sourceRefs": ["ref-b34514f2358f977b"]
+      }
+    },
+    {
+      "id": "html-implicit-submit",
+      "title": "Почему Enter в поле может отправить форму и где обрабатывать отправку?",
+      "topic": "HTML и CSS",
+      "difficulty": "Средний",
+      "summary": "Неявная отправка, submitter и различие submit с кликом кнопки.",
+      "answerFile": "answers/html-css/html-implicit-submit.md",
+      "takeaway": "Отправка - событие формы, а не только щелчок по конкретной кнопке.",
+      "pitfall": "Привязать запрос только к click и потерять отправку клавиатурой.",
+      "moduleId": "html-css",
+      "order": 14,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Отправка - событие формы, а не только щелчок по конкретной кнопке.",
+        "keywords": ["HTML и CSS", "Формы и ввод данных", "implicit", "submit"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "priority": "core",
+        "goalIds": ["core", "html-implicit-submit"],
+        "relatedQuestionIds": ["event-cancellation", "html-native-validation"],
+        "sourceRefs": ["ref-a75c085ec47752ba"]
+      }
+    },
+    {
+      "id": "css-control-resize",
+      "title": "Что делает resize у textarea и почему не всегда стоит его отключать?",
+      "topic": "HTML и CSS",
+      "difficulty": "Базовый",
+      "summary": "Пользовательское изменение размера и ограничения контейнера.",
+      "answerFile": "answers/html-css/css-control-resize.md",
+      "takeaway": "Сохраните пользователю возможность удобно работать с длинным текстом.",
+      "pitfall": "Удалять resize без альтернативы, оставляя тесное поле для большого ответа.",
+      "moduleId": "html-css",
+      "order": 15,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Сохраните пользователю возможность удобно работать с длинным текстом.",
+        "keywords": ["HTML и CSS", "Формы и ввод данных", "control", "resize"],
+        "kind": "explanation",
+        "reviewStatus": "ready",
+        "priority": "core",
+        "goalIds": ["core", "css-control-resize"],
+        "relatedQuestionIds": ["html-textarea-value"],
+        "sourceRefs": ["ref-7e5e054873cf44cf"]
+      }
     }
   ]
 }

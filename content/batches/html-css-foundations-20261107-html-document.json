@@ -1,0 +1,92 @@
+{
+  "schemaVersion": 1,
+  "id": "html-css-foundations-20261107-html-document",
+  "title": "Базовый и средний HTML/CSS: HTML-документ и текст",
+  "sectionId": "html-css",
+  "subsectionId": "html-document",
+  "currentPass": "complete",
+  "goalIds": [
+    "core",
+    "html-language-direction",
+    "html-encoding-contract",
+    "html-boolean-enumerated-attributes",
+    "html-void-replaced-elements",
+    "html-character-references",
+    "html-text-semantics",
+    "html-list-description-contract",
+    "html-base-url",
+    "html-css-javascript-responsibility",
+    "html-tag-element-attribute",
+    "html-document-head-body",
+    "html-relative-url-paths",
+    "html-time-machine-value",
+    "html-pre-code-contract",
+    "html-quotation-citation"
+  ],
+  "questionIds": [
+    "html-css-javascript-responsibility",
+    "html-tag-element-attribute",
+    "html-document-head-body",
+    "html-relative-url-paths",
+    "html-time-machine-value",
+    "html-pre-code-contract",
+    "html-quotation-citation"
+  ],
+  "scopePass": {
+    "status": "complete",
+    "remaining": []
+  },
+  "answerPass": {
+    "status": "complete",
+    "remaining": []
+  },
+  "baseline": [
+    {
+      "id": "html-language-direction",
+      "title": "Для чего нужны lang, dir и bdi в HTML?",
+      "contentHash": "48edaf20a3098e26faf97e063f7d90c7edca5c3a1fdaeca507af68a7a4006c76"
+    },
+    {
+      "id": "html-encoding-contract",
+      "title": "Как браузер определяет кодировку HTML и где размещать meta charset?",
+      "contentHash": "c01a5273c78c446dae58aba0a2f97f1af8d4eb8ca926ebd7f346095c7b2c78c3"
+    },
+    {
+      "id": "html-boolean-enumerated-attributes",
+      "title": "Почему disabled=\"false\" всё равно отключает поле?",
+      "contentHash": "162851388b40fbe475ab0d661ff58012ee4b081647d1fea78c5c488bd432a79e"
+    },
+    {
+      "id": "html-void-replaced-elements",
+      "title": "Чем пустые HTML-элементы отличаются от замещаемых?",
+      "contentHash": "4af8663e3d07a4f24d39e35fd6b3925f6c6714fe3acddd7d60d8aa40bc6efc0f"
+    },
+    {
+      "id": "html-character-references",
+      "title": "Когда в HTML нужны &lt;, &amp; и другие ссылки на символы?",
+      "contentHash": "bd91bf9aff7058847d9c15e37cccb6dfe0437402335a98d58545cd015d07ac47"
+    },
+    {
+      "id": "html-text-semantics",
+      "title": "Как выбрать между strong, em, b, i и обычным span?",
+      "contentHash": "29eaa6d375aed0c47b0278a750d6206275cf611e9a5a0987065821e5aa39177c"
+    },
+    {
+      "id": "html-list-description-contract",
+      "title": "Когда использовать ul, ol и dl вместо набора div?",
+      "contentHash": "79527b10b72502c578bb6a6cc40620325c43b4f0fa7c53df7daaaf0d0b60011e"
+    },
+    {
+      "id": "html-base-url",
+      "title": "Как base влияет на относительные URL и ссылки с #fragment?",
+      "contentHash": "9faeee5154de9b7f2a9e780319c3d2b1e7828536ca9bc5d7c0df061ae2ed2301"
+    }
+  ],
+  "notes": [
+    "Пакет 2026-11-07: только базовый и средний уровни. Определения и самостоятельные практические навыки; современные API не являются целью пакета.",
+    "Сохранять прежние ID. Не дублировать общие определения из связанных карточек. Примеры не исполнять.",
+    "Новые самостоятельные цели: Структура и смысл, представление и поведение без жёсткого правила «всё работает только со скриптом». Синтаксис записи, объект структуры и дополнительные параметры. Корневой элемент, метаданные документа и основное содержимое. Разрешение адреса относительно origin и каталога текущего базового URL. Человекочитаемая подпись и машиночитаемое представление даты или времени. Семантика программного фрагмента и сохранение форматирования. Короткая цитата, отдельный цитируемый фрагмент и название произведения.",
+    "Сопоставлены базовые определения и прикладные вопросы. Пересечения сохранены в existing.mjs до записи в журнал.",
+    "Content:build и полная content:check прошли на 905 вопросах. Сохранены все 845 исходных ID; кроме 6 согласованных расширений прежние хеши совпадают. Проверены два блока каждого нового ответа и значимый пробел в примере :empty. Код примеров не исполнялся."
+  ]
+}

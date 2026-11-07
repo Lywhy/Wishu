@@ -1,4 +1,14 @@
 export function valueDifferences(expected: string | undefined, actual: string | undefined) {
+  if (expected === undefined || actual === undefined)
+    return expected === actual
+      ? []
+      : [
+          {
+            path: "result",
+            expected: expected ?? "нет результата",
+            actual: actual ?? "нет результата",
+          },
+        ]
   let left: unknown, right: unknown
   try {
     left = JSON.parse(expected ?? "null")
