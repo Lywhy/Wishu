@@ -1,3 +1,4 @@
+import { JavaScriptPreparationGuide } from "@/components/questions/javascript-preparation"
 import { CategoryMark } from "@/components/catalog/catalog-primitives"
 import { useQuestionCatalog } from "@/lib/question-catalog-context"
 import { Link, useParams } from "react-router-dom"
@@ -42,6 +43,7 @@ export function QuestionSectionPage() {
           {section.description} Выберите подраздел для повторения.
         </p>
       </header>
+      {section.id === "javascript" && <JavaScriptPreparationGuide />}
       <div className="grid items-start gap-7 lg:grid-cols-[minmax(0,1fr)_280px]">
         <section aria-label="Подразделы" className="grid gap-3 sm:grid-cols-2">
           {section.subsections.map((subsection, index) => (

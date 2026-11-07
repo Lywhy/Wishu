@@ -1,0 +1,113 @@
+{
+  "$schema": "../question-bundle.schema.json",
+  "sectionId": "java",
+  "subsectionId": "runtime",
+  "scope": "Исключения, закрытие ресурсов и конкуренция.",
+  "coverageGoals": [
+    {
+      "id": "core",
+      "title": "Ошибки и ресурсы",
+      "description": "Обзор и взаимосвязи навыков: Исключения, закрытие ресурсов и конкуренция.",
+      "requiredDifficulties": [],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": ["java-checked-exceptions", "java-try-resources", "java-thread-safety"]
+    },
+    {
+      "id": "java-checked-exceptions",
+      "title": "Чем checked exceptions отличаются от unchecked?",
+      "description": "Объяснить и применить правило с учётом его границ: Checked описывает обязательство вызывающего по контракту, а не тяжесть сбоя.",
+      "requiredDifficulties": ["Базовый"],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "java-try-resources",
+      "title": "Как try-with-resources закрывает ресурсы при ошибке?",
+      "description": "Объяснить и применить правило с учётом его границ: Освобождение ресурса должно работать при любом исходе блока.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "java-thread-safety",
+      "title": "Почему volatile не делает count++ атомарным?",
+      "description": "Объяснить и применить правило с учётом его границ: Видимость отдельного значения не обеспечивает атомарность последовательности.",
+      "requiredDifficulties": ["Продвинутый"],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": []
+    }
+  ],
+  "questions": [
+    {
+      "id": "java-checked-exceptions",
+      "title": "Чем checked exceptions отличаются от unchecked?",
+      "topic": "Java",
+      "difficulty": "Базовый",
+      "summary": "Требование обработки на уровне компиляции.",
+      "takeaway": "Checked описывает обязательство вызывающего по контракту, а не тяжесть сбоя.",
+      "moduleId": "java",
+      "order": 0,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Checked описывает обязательство вызывающего по контракту, а не тяжесть сбоя.",
+        "keywords": ["Java", "Ошибки и ресурсы"],
+        "kind": "explanation",
+        "reviewStatus": "imported",
+        "goalIds": ["core", "java-checked-exceptions"],
+        "relatedQuestionIds": [],
+        "priority": "core",
+        "sourceRefs": []
+      },
+      "answerFile": "answers/java/java-checked-exceptions.md"
+    },
+    {
+      "id": "java-try-resources",
+      "title": "Как try-with-resources закрывает ресурсы при ошибке?",
+      "topic": "Java",
+      "difficulty": "Средний",
+      "summary": "AutoCloseable и suppressed exceptions.",
+      "code": "try (var reader = Files.newBufferedReader(Path.of(\"notes.txt\"))) {\n    System.out.println(reader.readLine());\n}",
+      "takeaway": "Освобождение ресурса должно работать при любом исходе блока.",
+      "moduleId": "java",
+      "order": 1,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Освобождение ресурса должно работать при любом исходе блока.",
+        "keywords": ["Java", "Ошибки и ресурсы"],
+        "kind": "explanation",
+        "reviewStatus": "imported",
+        "goalIds": ["core", "java-try-resources"],
+        "relatedQuestionIds": [],
+        "priority": "core",
+        "sourceRefs": []
+      },
+      "answerFile": "answers/java/java-try-resources.md"
+    },
+    {
+      "id": "java-thread-safety",
+      "title": "Почему volatile не делает count++ атомарным?",
+      "topic": "Java",
+      "difficulty": "Продвинутый",
+      "summary": "Видимость и составная операция.",
+      "takeaway": "Видимость отдельного значения не обеспечивает атомарность последовательности.",
+      "moduleId": "java",
+      "order": 2,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Видимость отдельного значения не обеспечивает атомарность последовательности.",
+        "keywords": ["Java", "Ошибки и ресурсы"],
+        "kind": "explanation",
+        "reviewStatus": "imported",
+        "goalIds": ["core", "java-thread-safety"],
+        "relatedQuestionIds": [],
+        "priority": "core",
+        "sourceRefs": []
+      },
+      "answerFile": "answers/java/java-thread-safety.md"
+    }
+  ]
+}

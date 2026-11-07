@@ -1,0 +1,113 @@
+{
+  "$schema": "../question-bundle.schema.json",
+  "sectionId": "vue",
+  "subsectionId": "templates",
+  "scope": "Single-File Components, условия и списки.",
+  "coverageGoals": [
+    {
+      "id": "core",
+      "title": "Компоненты и шаблоны",
+      "description": "Обзор и взаимосвязи навыков: Single-File Components, условия и списки.",
+      "requiredDifficulties": [],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": ["vue-sfc", "vue-if-show", "vue-list-keys"]
+    },
+    {
+      "id": "vue-sfc",
+      "title": "Как устроен Single-File Component во Vue 3?",
+      "description": "Объяснить и применить правило с учётом его границ: SFC объединяет части компонента и компилируется инструментами Vue.",
+      "requiredDifficulties": ["Базовый"],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "vue-if-show",
+      "title": "Чем v-if отличается от v-show?",
+      "description": "Объяснить и применить правило с учётом его границ: Скрытие через display не равно размонтированию.",
+      "requiredDifficulties": ["Базовый"],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "vue-list-keys",
+      "title": "Зачем Vue нужен key в v-for и почему не стоит совмещать v-if и v-for?",
+      "description": "Объяснить и применить правило с учётом его границ: Фильтруйте данные отдельно, задавайте ключ по идентичности записи.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": []
+    }
+  ],
+  "questions": [
+    {
+      "id": "vue-sfc",
+      "title": "Как устроен Single-File Component во Vue 3?",
+      "topic": "Vue",
+      "difficulty": "Базовый",
+      "summary": "Шаблон, логика и стили компонента.",
+      "takeaway": "SFC объединяет части компонента и компилируется инструментами Vue.",
+      "moduleId": "vue",
+      "order": 0,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: SFC объединяет части компонента и компилируется инструментами Vue.",
+        "keywords": ["Vue", "Компоненты и шаблоны"],
+        "kind": "explanation",
+        "reviewStatus": "imported",
+        "goalIds": ["core", "vue-sfc"],
+        "relatedQuestionIds": [],
+        "priority": "core",
+        "sourceRefs": []
+      },
+      "answerFile": "answers/vue/vue-sfc.md"
+    },
+    {
+      "id": "vue-if-show",
+      "title": "Чем v-if отличается от v-show?",
+      "topic": "Vue",
+      "difficulty": "Базовый",
+      "summary": "Монтирование ветви и переключение видимости.",
+      "takeaway": "Скрытие через display не равно размонтированию.",
+      "moduleId": "vue",
+      "order": 1,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Скрытие через display не равно размонтированию.",
+        "keywords": ["Vue", "Компоненты и шаблоны"],
+        "kind": "explanation",
+        "reviewStatus": "imported",
+        "goalIds": ["core", "vue-if-show"],
+        "relatedQuestionIds": [],
+        "priority": "core",
+        "sourceRefs": []
+      },
+      "answerFile": "answers/vue/vue-if-show.md"
+    },
+    {
+      "id": "vue-list-keys",
+      "title": "Зачем Vue нужен key в v-for и почему не стоит совмещать v-if и v-for?",
+      "topic": "Vue",
+      "difficulty": "Средний",
+      "summary": "Идентичность списка и предварительная фильтрация.",
+      "code": "<li v-for=\"item in visibleItems\" :key=\"item.id\">{{ item.title }}</li>",
+      "takeaway": "Фильтруйте данные отдельно, задавайте ключ по идентичности записи.",
+      "moduleId": "vue",
+      "order": 2,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Фильтруйте данные отдельно, задавайте ключ по идентичности записи.",
+        "keywords": ["Vue", "Компоненты и шаблоны"],
+        "kind": "explanation",
+        "reviewStatus": "imported",
+        "goalIds": ["core", "vue-list-keys"],
+        "relatedQuestionIds": [],
+        "priority": "core",
+        "sourceRefs": []
+      },
+      "answerFile": "answers/vue/vue-list-keys.md"
+    }
+  ]
+}

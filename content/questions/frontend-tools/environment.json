@@ -1,0 +1,114 @@
+{
+  "$schema": "../question-bundle.schema.json",
+  "sectionId": "frontend-tools",
+  "subsectionId": "environment",
+  "scope": "Переменные, proxy и пути импорта.",
+  "coverageGoals": [
+    {
+      "id": "core",
+      "title": "Окружение проекта",
+      "description": "Обзор и взаимосвязи навыков: Переменные, proxy и пути импорта.",
+      "requiredDifficulties": [],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": ["tools-vite-env", "tools-dev-proxy", "tools-import-alias"]
+    },
+    {
+      "id": "tools-vite-env",
+      "title": "Почему VITE_API_KEY нельзя считать секретом?",
+      "description": "Объяснить и применить правило с учётом его границ: Всё переданное клиентскому коду считайте публичным.",
+      "requiredDifficulties": ["Базовый"],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "tools-dev-proxy",
+      "title": "Что решает proxy в dev-сервере и что произойдёт после публикации?",
+      "description": "Объяснить и применить правило с учётом его границ: Локальный proxy - часть среды разработки, а не готовая production-инфраструктура.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "tools-import-alias",
+      "title": "Почему alias импорта работает в редакторе, но ломается при сборке?",
+      "description": "Объяснить и применить правило с учётом его границ: Один импорт должен одинаково разрешаться всеми участниками сборки и запуска.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": []
+    }
+  ],
+  "questions": [
+    {
+      "id": "tools-vite-env",
+      "title": "Почему VITE_API_KEY нельзя считать секретом?",
+      "topic": "Frontend инструменты",
+      "difficulty": "Базовый",
+      "summary": "Подстановка переменных в клиентский bundle.",
+      "takeaway": "Всё переданное клиентскому коду считайте публичным.",
+      "moduleId": "frontend-tools",
+      "order": 0,
+      "popular": false,
+      "code": "const apiUrl = import.meta.env.VITE_API_URL\n// Это публичная настройка клиента, а не место для приватного токена.",
+      "pitfall": "Поместить приватный токен в VITE_* и рассчитывать, что файл .env скроет его от браузера. Клиентская настройка попадает в публичный bundle.",
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Всё переданное клиентскому коду считайте публичным.",
+        "keywords": ["Frontend инструменты", "Окружение проекта"],
+        "kind": "explanation",
+        "reviewStatus": "imported",
+        "goalIds": ["core", "tools-vite-env"],
+        "relatedQuestionIds": [],
+        "priority": "core",
+        "sourceRefs": []
+      },
+      "answerFile": "answers/frontend-tools/tools-vite-env.md"
+    },
+    {
+      "id": "tools-dev-proxy",
+      "title": "Что решает proxy в dev-сервере и что произойдёт после публикации?",
+      "topic": "Frontend инструменты",
+      "difficulty": "Средний",
+      "summary": "Локальная маршрутизация запросов API.",
+      "takeaway": "Локальный proxy - часть среды разработки, а не готовая production-инфраструктура.",
+      "moduleId": "frontend-tools",
+      "order": 1,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Локальный proxy - часть среды разработки, а не готовая production-инфраструктура.",
+        "keywords": ["Frontend инструменты", "Окружение проекта"],
+        "kind": "explanation",
+        "reviewStatus": "imported",
+        "goalIds": ["core", "tools-dev-proxy"],
+        "relatedQuestionIds": [],
+        "priority": "core",
+        "sourceRefs": []
+      },
+      "answerFile": "answers/frontend-tools/tools-dev-proxy.md"
+    },
+    {
+      "id": "tools-import-alias",
+      "title": "Почему alias импорта работает в редакторе, но ломается при сборке?",
+      "topic": "Frontend инструменты",
+      "difficulty": "Средний",
+      "summary": "Согласованность TypeScript и runtime-разрешения.",
+      "takeaway": "Один импорт должен одинаково разрешаться всеми участниками сборки и запуска.",
+      "moduleId": "frontend-tools",
+      "order": 2,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Один импорт должен одинаково разрешаться всеми участниками сборки и запуска.",
+        "keywords": ["Frontend инструменты", "Окружение проекта"],
+        "kind": "explanation",
+        "reviewStatus": "imported",
+        "goalIds": ["core", "tools-import-alias"],
+        "relatedQuestionIds": [],
+        "priority": "core",
+        "sourceRefs": []
+      },
+      "answerFile": "answers/frontend-tools/tools-import-alias.md"
+    }
+  ]
+}

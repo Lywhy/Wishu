@@ -1,0 +1,83 @@
+{
+  "$schema": "../question-bundle.schema.json",
+  "sectionId": "typescript",
+  "subsectionId": "ts-unions",
+  "scope": "Альтернативы значений, совместные требования и конфликты свойств.",
+  "coverageGoals": [
+    {
+      "id": "core",
+      "title": "Union и Intersection Types",
+      "description": "Обзор и взаимосвязи навыков: Альтернативы значений, совместные требования и конфликты свойств.",
+      "requiredDifficulties": [],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": ["ts-union-types", "ts-intersection-types"]
+    },
+    {
+      "id": "ts-union-types",
+      "title": "Что означает union и какие операции доступны до сужения?",
+      "description": "Объяснить и применить правило с учётом его границ: Union задаёт альтернативы, поэтому до проверки нужно учитывать каждый возможный вариант.",
+      "requiredDifficulties": ["Базовый"],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "ts-intersection-types",
+      "title": "Как intersection объединяет требования и что происходит с конфликтующими свойствами?",
+      "description": "Объяснить и применить правило с учётом его границ: Intersection пересекает требования, а не заменяет конфликтующие поля последним объявлением.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": []
+    }
+  ],
+  "questions": [
+    {
+      "id": "ts-union-types",
+      "title": "Что означает union и какие операции доступны до сужения?",
+      "topic": "TypeScript",
+      "difficulty": "Базовый",
+      "summary": "Альтернативы значений и общие допустимые члены.",
+      "code": "function describe(value: string | number): string {\n  if (typeof value === \"string\") return value.toUpperCase();\n  return value.toFixed(0);\n}\ntype Result = { ok: true; value: string } | { ok: false; error: string };",
+      "takeaway": "Union задаёт альтернативы, поэтому до проверки нужно учитывать каждый возможный вариант.",
+      "moduleId": "typescript",
+      "order": 0,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Union задаёт альтернативы, поэтому до проверки нужно учитывать каждый возможный вариант.",
+        "keywords": ["TypeScript", "Union и Intersection Types"],
+        "kind": "explanation",
+        "reviewStatus": "imported",
+        "goalIds": ["core", "ts-union-types"],
+        "relatedQuestionIds": [],
+        "priority": "core",
+        "sourceRefs": []
+      },
+      "answerFile": "answers/typescript/ts-union-types.md"
+    },
+    {
+      "id": "ts-intersection-types",
+      "title": "Как intersection объединяет требования и что происходит с конфликтующими свойствами?",
+      "topic": "TypeScript",
+      "difficulty": "Средний",
+      "summary": "Совместное выполнение контрактов, never и поведение модификаторов.",
+      "code": "type Entity = { id: number } & { name: string };\nconst item: Entity = { id: 1, name: \"JS\" };\ntype Conflict = { value: string } & { value: number };\ntype Value = Conflict[\"value\"]; // never\ntype Combined = { readonly x?: number } & { x: number };\nconst point: Combined = { x: 1 };\npoint.x = 2; // изменяемый контракт сохраняет возможность записи",
+      "takeaway": "Intersection пересекает требования, а не заменяет конфликтующие поля последним объявлением.",
+      "moduleId": "typescript",
+      "order": 1,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Intersection пересекает требования, а не заменяет конфликтующие поля последним объявлением.",
+        "keywords": ["TypeScript", "Union и Intersection Types"],
+        "kind": "explanation",
+        "reviewStatus": "imported",
+        "goalIds": ["core", "ts-intersection-types"],
+        "relatedQuestionIds": [],
+        "priority": "core",
+        "sourceRefs": []
+      },
+      "answerFile": "answers/typescript/ts-intersection-types.md"
+    }
+  ]
+}

@@ -1,0 +1,112 @@
+{
+  "$schema": "../question-bundle.schema.json",
+  "sectionId": "redis",
+  "subsectionId": "cache",
+  "scope": "TTL, актуальность и одновременные промахи.",
+  "coverageGoals": [
+    {
+      "id": "core",
+      "title": "Кеширование",
+      "description": "Обзор и взаимосвязи навыков: TTL, актуальность и одновременные промахи.",
+      "requiredDifficulties": [],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": ["redis-ttl-eviction", "redis-cache-aside", "redis-cache-stampede"]
+    },
+    {
+      "id": "redis-ttl-eviction",
+      "title": "Чем истечение TTL отличается от eviction?",
+      "description": "Объяснить и применить правило с учётом его границ: TTL и политика памяти независимо влияют на существование ключа.",
+      "requiredDifficulties": ["Базовый"],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "redis-cache-aside",
+      "title": "Как работает cache-aside и где возникает устаревание?",
+      "description": "Объяснить и применить правило с учётом его границ: Кеш требует явного источника истины и политики согласованности.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "redis-cache-stampede",
+      "title": "Что такое cache stampede и как уменьшить его вероятность?",
+      "description": "Объяснить и применить правило с учётом его границ: Координируйте пересчёт популярных данных и ограничивайте ожидание.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": []
+    }
+  ],
+  "questions": [
+    {
+      "id": "redis-ttl-eviction",
+      "title": "Чем истечение TTL отличается от eviction?",
+      "topic": "Redis",
+      "difficulty": "Базовый",
+      "summary": "Срок актуальности и нехватка памяти.",
+      "takeaway": "TTL и политика памяти независимо влияют на существование ключа.",
+      "moduleId": "redis",
+      "order": 0,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: TTL и политика памяти независимо влияют на существование ключа.",
+        "keywords": ["Redis", "Кеширование"],
+        "kind": "explanation",
+        "reviewStatus": "imported",
+        "goalIds": ["core", "redis-ttl-eviction"],
+        "relatedQuestionIds": [],
+        "priority": "core",
+        "sourceRefs": []
+      },
+      "answerFile": "answers/redis/redis-ttl-eviction.md"
+    },
+    {
+      "id": "redis-cache-aside",
+      "title": "Как работает cache-aside и где возникает устаревание?",
+      "topic": "Redis",
+      "difficulty": "Средний",
+      "summary": "Промах, источник истины и инвалидирование.",
+      "takeaway": "Кеш требует явного источника истины и политики согласованности.",
+      "moduleId": "redis",
+      "order": 1,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Кеш требует явного источника истины и политики согласованности.",
+        "keywords": ["Redis", "Кеширование"],
+        "kind": "explanation",
+        "reviewStatus": "imported",
+        "goalIds": ["core", "redis-cache-aside"],
+        "relatedQuestionIds": [],
+        "priority": "core",
+        "sourceRefs": []
+      },
+      "answerFile": "answers/redis/redis-cache-aside.md"
+    },
+    {
+      "id": "redis-cache-stampede",
+      "title": "Что такое cache stampede и как уменьшить его вероятность?",
+      "topic": "Redis",
+      "difficulty": "Средний",
+      "summary": "Одновременные промахи по популярному ключу.",
+      "takeaway": "Координируйте пересчёт популярных данных и ограничивайте ожидание.",
+      "moduleId": "redis",
+      "order": 2,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Координируйте пересчёт популярных данных и ограничивайте ожидание.",
+        "keywords": ["Redis", "Кеширование"],
+        "kind": "explanation",
+        "reviewStatus": "imported",
+        "goalIds": ["core", "redis-cache-stampede"],
+        "relatedQuestionIds": [],
+        "priority": "core",
+        "sourceRefs": []
+      },
+      "answerFile": "answers/redis/redis-cache-stampede.md"
+    }
+  ]
+}

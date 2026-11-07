@@ -1,0 +1,112 @@
+{
+  "$schema": "../question-bundle.schema.json",
+  "sectionId": "postgresql",
+  "subsectionId": "maintenance",
+  "scope": "Vacuum, блокировки и восстановление.",
+  "coverageGoals": [
+    {
+      "id": "core",
+      "title": "Обслуживание и надёжность",
+      "description": "Обзор и взаимосвязи навыков: Vacuum, блокировки и восстановление.",
+      "requiredDifficulties": [],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": ["pg-vacuum", "pg-locks-deadlock", "pg-backup-restore"]
+    },
+    {
+      "id": "pg-vacuum",
+      "title": "Зачем PostgreSQL нужен VACUUM и что делает autovacuum?",
+      "description": "Объяснить и применить правило с учётом его границ: MVCC требует регулярной уборки ненужных версий.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "pg-locks-deadlock",
+      "title": "Чем ожидание блокировки отличается от deadlock?",
+      "description": "Объяснить и применить правило с учётом его границ: Deadlock требует цикла ожидания, обычная блокировка может завершиться сама.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "pg-backup-restore",
+      "title": "Почему реплика и Docker volume не заменяют резервную копию?",
+      "description": "Объяснить и применить правило с учётом его границ: Надёжность копии подтверждается возможностью восстановить нужные данные.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": []
+    }
+  ],
+  "questions": [
+    {
+      "id": "pg-vacuum",
+      "title": "Зачем PostgreSQL нужен VACUUM и что делает autovacuum?",
+      "topic": "PostgreSQL",
+      "difficulty": "Средний",
+      "summary": "Старые версии строк и обслуживание видимости.",
+      "takeaway": "MVCC требует регулярной уборки ненужных версий.",
+      "moduleId": "postgresql",
+      "order": 0,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: MVCC требует регулярной уборки ненужных версий.",
+        "keywords": ["PostgreSQL", "Обслуживание и надёжность"],
+        "kind": "explanation",
+        "reviewStatus": "imported",
+        "goalIds": ["core", "pg-vacuum"],
+        "relatedQuestionIds": [],
+        "priority": "core",
+        "sourceRefs": []
+      },
+      "answerFile": "answers/postgresql/pg-vacuum.md"
+    },
+    {
+      "id": "pg-locks-deadlock",
+      "title": "Чем ожидание блокировки отличается от deadlock?",
+      "topic": "PostgreSQL",
+      "difficulty": "Средний",
+      "summary": "Очередь доступа и цикл взаимного ожидания.",
+      "takeaway": "Deadlock требует цикла ожидания, обычная блокировка может завершиться сама.",
+      "moduleId": "postgresql",
+      "order": 1,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Deadlock требует цикла ожидания, обычная блокировка может завершиться сама.",
+        "keywords": ["PostgreSQL", "Обслуживание и надёжность"],
+        "kind": "explanation",
+        "reviewStatus": "imported",
+        "goalIds": ["core", "pg-locks-deadlock"],
+        "relatedQuestionIds": [],
+        "priority": "core",
+        "sourceRefs": []
+      },
+      "answerFile": "answers/postgresql/pg-locks-deadlock.md"
+    },
+    {
+      "id": "pg-backup-restore",
+      "title": "Почему реплика и Docker volume не заменяют резервную копию?",
+      "topic": "PostgreSQL",
+      "difficulty": "Средний",
+      "summary": "Восстановление после логической ошибки и потери среды.",
+      "takeaway": "Надёжность копии подтверждается возможностью восстановить нужные данные.",
+      "moduleId": "postgresql",
+      "order": 2,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Надёжность копии подтверждается возможностью восстановить нужные данные.",
+        "keywords": ["PostgreSQL", "Обслуживание и надёжность"],
+        "kind": "explanation",
+        "reviewStatus": "imported",
+        "goalIds": ["core", "pg-backup-restore"],
+        "relatedQuestionIds": [],
+        "priority": "core",
+        "sourceRefs": []
+      },
+      "answerFile": "answers/postgresql/pg-backup-restore.md"
+    }
+  ]
+}

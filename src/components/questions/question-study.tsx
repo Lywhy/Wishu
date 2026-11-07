@@ -1,3 +1,4 @@
+import { JavaScriptQuestionBadge } from "@/components/questions/javascript-preparation"
 import { javascriptAnswerMarkdown } from "@/lib/javascript-answer-markdown"
 import { changeQuestionMark } from "@/lib/question-mark-actions"
 import { LearningMarkdown } from "@/components/learning/learning-markdown"
@@ -210,6 +211,7 @@ export function QuestionCard({
         </h2>
         <div className="flex min-h-5 flex-wrap items-center gap-1.5">
           <DifficultyBadge level={question.difficulty} />
+          <JavaScriptQuestionBadge question={question} />
           {question.popular && <QuestionPopularBadge />}
           {currentStatus && (
             <Badge

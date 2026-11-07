@@ -1,0 +1,128 @@
+{
+  "$schema": "../question-bundle.schema.json",
+  "sectionId": "javascript",
+  "subsectionId": "storage",
+  "scope": "Транзакции IndexedDB, квоты, устойчивость данных и обмен сообщениями.",
+  "coverageGoals": [
+    {
+      "id": "core",
+      "title": "Хранилища и координация вкладок",
+      "description": "Обзор и взаимосвязи навыков: Транзакции IndexedDB, квоты, устойчивость данных и обмен сообщениями.",
+      "requiredDifficulties": [],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": [
+        "js-idb-transaction-lifetime",
+        "js-storage-persistence",
+        "js-broadcast-channel"
+      ]
+    },
+    {
+      "id": "js-idb-transaction-lifetime",
+      "title": "Почему IndexedDB-транзакция может завершиться раньше следующего await?",
+      "description": "Объяснить и применить правило с учётом его границ: Время жизни native-транзакции не определяется временем жизни вашей async-функции.",
+      "requiredDifficulties": ["Продвинутый"],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": ["indexed-db"]
+    },
+    {
+      "id": "js-storage-persistence",
+      "title": "Почему браузерное хранилище нельзя считать бессрочной гарантированной базой данных?",
+      "description": "Объяснить и применить правило с учётом его границ: Локальная сохранность - контракт с отказами и восстановлением, а не факт вызова setItem.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "js-broadcast-channel",
+      "title": "Для чего нужен BroadcastChannel и почему он не является общей изменяемой памятью?",
+      "description": "Объяснить и применить правило с учётом его границ: Канал переносит события между контекстами, а модель общего состояния строит приложение.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": []
+    }
+  ],
+  "questions": [
+    {
+      "id": "js-idb-transaction-lifetime",
+      "difficulty": "Продвинутый",
+      "title": "Почему IndexedDB-транзакция может завершиться раньше следующего await?",
+      "summary": "Активность транзакции, очередь запросов и отличие success запроса от commit.",
+      "code": "function store(db, record) {\n  const tx = db.transaction(\"items\", \"readwrite\")\n  tx.objectStore(\"items\").put(record)\n  tx.oncomplete = () => console.log(\"транзакция завершена\")\n  tx.onabort = () => console.log(\"транзакция отменена\")\n}\n// Не вставляйте произвольный fetch между созданием tx и её запросами.",
+      "takeaway": "Время жизни native-транзакции не определяется временем жизни вашей async-функции.",
+      "pitfall": "Считать завершение put гарантией commit или ждать сеть внутри транзакции без понимания активности.",
+      "topic": "JavaScript",
+      "moduleId": "javascript",
+      "popular": false,
+      "order": 0,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Время жизни native-транзакции не определяется временем жизни вашей async-функции.",
+        "keywords": [
+          "JavaScript",
+          "Хранилища и координация вкладок",
+          "транзакция",
+          "транзакции",
+          "transaction"
+        ],
+        "kind": "explanation",
+        "reviewStatus": "imported",
+        "goalIds": ["core", "js-idb-transaction-lifetime"],
+        "relatedQuestionIds": ["indexed-db"],
+        "priority": "core",
+        "sourceRefs": ["ref-270dfb7aeda2dbca"]
+      },
+      "answerFile": "answers/javascript/js-idb-transaction-lifetime.md"
+    },
+    {
+      "id": "js-storage-persistence",
+      "difficulty": "Средний",
+      "title": "Почему браузерное хранилище нельзя считать бессрочной гарантированной базой данных?",
+      "summary": "Квоты, ошибки записи, очистка и политика persistence.",
+      "code": "function saveDraft(key, draft) {\n  try { localStorage.setItem(key, JSON.stringify(draft)); return true }\n  catch { return false }\n}\n// Вызывающий код должен различать успешное сохранение и fallback в памяти.",
+      "takeaway": "Локальная сохранность - контракт с отказами и восстановлением, а не факт вызова setItem.",
+      "pitfall": "Молчаливо проглатывать ошибку записи и обещать пользователю сохранённый черновик.",
+      "topic": "JavaScript",
+      "moduleId": "javascript",
+      "popular": false,
+      "order": 1,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Локальная сохранность - контракт с отказами и восстановлением, а не факт вызова setItem.",
+        "keywords": ["JavaScript", "Хранилища и координация вкладок"],
+        "kind": "explanation",
+        "reviewStatus": "imported",
+        "goalIds": ["core", "js-storage-persistence"],
+        "relatedQuestionIds": [],
+        "priority": "core",
+        "sourceRefs": ["ref-c3fde32989fa5e12"]
+      },
+      "answerFile": "answers/javascript/js-storage-persistence.md"
+    },
+    {
+      "id": "js-broadcast-channel",
+      "difficulty": "Средний",
+      "title": "Для чего нужен BroadcastChannel и почему он не является общей изменяемой памятью?",
+      "summary": "Обмен сообщениями между контекстами и независимая стратегия согласования состояния.",
+      "code": "const channel = new BroadcastChannel(\"draft-updates\")\nchannel.onmessage = event => { /* Проверить схему event.data и актуальность. */ }\nchannel.postMessage({ type: \"changed\", id: \"draft-1\", revision: 2 })\n// После завершения владельца: channel.close()",
+      "takeaway": "Канал переносит события между контекстами, а модель общего состояния строит приложение.",
+      "pitfall": "Ожидать общего объекта или автоматического replay истории при открытии новой вкладки.",
+      "topic": "JavaScript",
+      "moduleId": "javascript",
+      "popular": false,
+      "order": 2,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Канал переносит события между контекстами, а модель общего состояния строит приложение.",
+        "keywords": ["JavaScript", "Хранилища и координация вкладок"],
+        "kind": "explanation",
+        "reviewStatus": "imported",
+        "goalIds": ["core", "js-broadcast-channel"],
+        "relatedQuestionIds": [],
+        "priority": "core",
+        "sourceRefs": ["ref-0fcdff4df3e3729c"]
+      },
+      "answerFile": "answers/javascript/js-broadcast-channel.md"
+    }
+  ]
+}

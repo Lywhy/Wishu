@@ -8,9 +8,9 @@
     "build": "tsc --project tsconfig.build.json",
     "start": "node dist/main.js",
     "typecheck": "tsc --noEmit",
-    "db:init": "pnpm build && node dist/database/cli.js init",
+    "db:init": "pnpm --dir .. content:check && pnpm build && node dist/database/cli.js init",
     "db:migrate": "pnpm build && node dist/database/cli.js migrate",
-    "db:seed": "pnpm build && node dist/database/cli.js seed"
+    "db:seed": "pnpm --dir .. content:check && pnpm build && node dist/database/cli.js seed"
   },
   "dependencies": {
     "@nestjs/common": "^11.1.0",

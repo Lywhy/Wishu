@@ -1,0 +1,112 @@
+{
+  "$schema": "../question-bundle.schema.json",
+  "sectionId": "browser",
+  "subsectionId": "transport",
+  "scope": "DNS, TLS и версии HTTP.",
+  "coverageGoals": [
+    {
+      "id": "core",
+      "title": "Сеть и соединения",
+      "description": "Обзор и взаимосвязи навыков: DNS, TLS и версии HTTP.",
+      "requiredDifficulties": [],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": ["network-dns", "network-https", "http-multiplexing"]
+    },
+    {
+      "id": "network-dns",
+      "title": "Зачем браузеру DNS перед HTTPS-запросом?",
+      "description": "Объяснить и применить правило с учётом его границ: DNS находит адрес, TLS проверяет защищённое соединение.",
+      "requiredDifficulties": ["Базовый"],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "network-https",
+      "title": "Что защищает HTTPS и чего он не гарантирует?",
+      "description": "Объяснить и применить правило с учётом его границ: Защита канала не заменяет защиту приложения.",
+      "requiredDifficulties": ["Базовый"],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "http-multiplexing",
+      "title": "Чем HTTP/2 и HTTP/3 отличаются в работе с соединениями?",
+      "description": "Объяснить и применить правило с учётом его границ: Мультиплексирование и свойства транспорта влияют на взаимные задержки потоков.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": []
+    }
+  ],
+  "questions": [
+    {
+      "id": "network-dns",
+      "title": "Зачем браузеру DNS перед HTTPS-запросом?",
+      "topic": "Web",
+      "difficulty": "Базовый",
+      "summary": "Имя хоста, адрес и повторное использование соединения.",
+      "takeaway": "DNS находит адрес, TLS проверяет защищённое соединение.",
+      "moduleId": "browser",
+      "order": 0,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: DNS находит адрес, TLS проверяет защищённое соединение.",
+        "keywords": ["Браузер и HTTP", "Сеть и соединения"],
+        "kind": "explanation",
+        "reviewStatus": "imported",
+        "goalIds": ["core", "network-dns"],
+        "relatedQuestionIds": [],
+        "priority": "core",
+        "sourceRefs": []
+      },
+      "answerFile": "answers/browser/network-dns.md"
+    },
+    {
+      "id": "network-https",
+      "title": "Что защищает HTTPS и чего он не гарантирует?",
+      "topic": "Web",
+      "difficulty": "Базовый",
+      "summary": "Шифрование, целостность и аутентификация сервера.",
+      "takeaway": "Защита канала не заменяет защиту приложения.",
+      "moduleId": "browser",
+      "order": 1,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Защита канала не заменяет защиту приложения.",
+        "keywords": ["Браузер и HTTP", "Сеть и соединения"],
+        "kind": "explanation",
+        "reviewStatus": "imported",
+        "goalIds": ["core", "network-https"],
+        "relatedQuestionIds": [],
+        "priority": "core",
+        "sourceRefs": []
+      },
+      "answerFile": "answers/browser/network-https.md"
+    },
+    {
+      "id": "http-multiplexing",
+      "title": "Чем HTTP/2 и HTTP/3 отличаются в работе с соединениями?",
+      "topic": "Web",
+      "difficulty": "Средний",
+      "summary": "Параллельные потоки и транспорт.",
+      "takeaway": "Мультиплексирование и свойства транспорта влияют на взаимные задержки потоков.",
+      "moduleId": "browser",
+      "order": 2,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Мультиплексирование и свойства транспорта влияют на взаимные задержки потоков.",
+        "keywords": ["Браузер и HTTP", "Сеть и соединения"],
+        "kind": "explanation",
+        "reviewStatus": "imported",
+        "goalIds": ["core", "http-multiplexing"],
+        "relatedQuestionIds": [],
+        "priority": "core",
+        "sourceRefs": []
+      },
+      "answerFile": "answers/browser/http-multiplexing.md"
+    }
+  ]
+}

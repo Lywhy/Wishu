@@ -1,0 +1,112 @@
+{
+  "$schema": "../question-bundle.schema.json",
+  "sectionId": "frontend-tools",
+  "subsectionId": "quality",
+  "scope": "Линтер, форматтер, тесты и CI.",
+  "coverageGoals": [
+    {
+      "id": "core",
+      "title": "Качество и автоматизация",
+      "description": "Обзор и взаимосвязи навыков: Линтер, форматтер, тесты и CI.",
+      "requiredDifficulties": [],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": ["tools-lint-format", "tools-test-levels", "tools-ci-reproducibility"]
+    },
+    {
+      "id": "tools-lint-format",
+      "title": "Чем линтер отличается от форматтера?",
+      "description": "Объяснить и применить правило с учётом его границ: Единый вид и отсутствие типичных ошибок проверяются разными средствами.",
+      "requiredDifficulties": ["Базовый"],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "tools-test-levels",
+      "title": "Чем unit, интеграционный и end-to-end тесты полезны frontend-проекту?",
+      "description": "Объяснить и применить правило с учётом его границ: Проверяйте риск на самом простом уровне, который его действительно покрывает.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "tools-ci-reproducibility",
+      "title": "Что делает проверку проекта в CI воспроизводимой?",
+      "description": "Объяснить и применить правило с учётом его границ: Воспроизводимость требует контролировать входы и результат каждого шага.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": []
+    }
+  ],
+  "questions": [
+    {
+      "id": "tools-lint-format",
+      "title": "Чем линтер отличается от форматтера?",
+      "topic": "Frontend инструменты",
+      "difficulty": "Базовый",
+      "summary": "Правила кода и единообразие записи.",
+      "takeaway": "Единый вид и отсутствие типичных ошибок проверяются разными средствами.",
+      "moduleId": "frontend-tools",
+      "order": 0,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Единый вид и отсутствие типичных ошибок проверяются разными средствами.",
+        "keywords": ["Frontend инструменты", "Качество и автоматизация"],
+        "kind": "explanation",
+        "reviewStatus": "imported",
+        "goalIds": ["core", "tools-lint-format"],
+        "relatedQuestionIds": [],
+        "priority": "core",
+        "sourceRefs": []
+      },
+      "answerFile": "answers/frontend-tools/tools-lint-format.md"
+    },
+    {
+      "id": "tools-test-levels",
+      "title": "Чем unit, интеграционный и end-to-end тесты полезны frontend-проекту?",
+      "topic": "Frontend инструменты",
+      "difficulty": "Средний",
+      "summary": "Границы сценария и стоимость обратной связи.",
+      "takeaway": "Проверяйте риск на самом простом уровне, который его действительно покрывает.",
+      "moduleId": "frontend-tools",
+      "order": 1,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Проверяйте риск на самом простом уровне, который его действительно покрывает.",
+        "keywords": ["Frontend инструменты", "Качество и автоматизация"],
+        "kind": "explanation",
+        "reviewStatus": "imported",
+        "goalIds": ["core", "tools-test-levels"],
+        "relatedQuestionIds": [],
+        "priority": "core",
+        "sourceRefs": []
+      },
+      "answerFile": "answers/frontend-tools/tools-test-levels.md"
+    },
+    {
+      "id": "tools-ci-reproducibility",
+      "title": "Что делает проверку проекта в CI воспроизводимой?",
+      "topic": "Frontend инструменты",
+      "difficulty": "Средний",
+      "summary": "Среда, фиксированные зависимости и обязательные шаги.",
+      "takeaway": "Воспроизводимость требует контролировать входы и результат каждого шага.",
+      "moduleId": "frontend-tools",
+      "order": 2,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Воспроизводимость требует контролировать входы и результат каждого шага.",
+        "keywords": ["Frontend инструменты", "Качество и автоматизация"],
+        "kind": "explanation",
+        "reviewStatus": "imported",
+        "goalIds": ["core", "tools-ci-reproducibility"],
+        "relatedQuestionIds": [],
+        "priority": "core",
+        "sourceRefs": []
+      },
+      "answerFile": "answers/frontend-tools/tools-ci-reproducibility.md"
+    }
+  ]
+}

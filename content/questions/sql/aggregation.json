@@ -1,0 +1,114 @@
+{
+  "$schema": "../question-bundle.schema.json",
+  "sectionId": "sql",
+  "subsectionId": "aggregation",
+  "scope": "Группировка, подсчёт и ранжирование.",
+  "coverageGoals": [
+    {
+      "id": "core",
+      "title": "Агрегация и окна",
+      "description": "Обзор и взаимосвязи навыков: Группировка, подсчёт и ранжирование.",
+      "requiredDifficulties": [],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": ["sql-group-having", "sql-count-null", "sql-window-functions"]
+    },
+    {
+      "id": "sql-group-having",
+      "title": "Чем WHERE отличается от HAVING?",
+      "description": "Объяснить и применить правило с учётом его границ: Сначала выбирайте подходящие строки, затем подходящие группы.",
+      "requiredDifficulties": ["Базовый"],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "sql-count-null",
+      "title": "Чем COUNT(*) отличается от COUNT(column)?",
+      "description": "Объяснить и применить правило с учётом его границ: Выбирайте выражение COUNT по тому, что именно нужно считать.",
+      "requiredDifficulties": ["Базовый"],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "sql-window-functions",
+      "title": "Чем оконная функция отличается от GROUP BY?",
+      "description": "Объяснить и применить правило с учётом его границ: Окно добавляет вычисление, не сворачивая детали.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": []
+    }
+  ],
+  "questions": [
+    {
+      "id": "sql-group-having",
+      "title": "Чем WHERE отличается от HAVING?",
+      "topic": "SQL",
+      "difficulty": "Базовый",
+      "summary": "Фильтрация строк и сформированных групп.",
+      "code": "SELECT user_id, SUM(amount) AS total\nFROM orders\nWHERE status = 'paid'\nGROUP BY user_id\nHAVING SUM(amount) > 1000;",
+      "takeaway": "Сначала выбирайте подходящие строки, затем подходящие группы.",
+      "moduleId": "sql",
+      "order": 0,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Сначала выбирайте подходящие строки, затем подходящие группы.",
+        "keywords": ["SQL", "Агрегация и окна"],
+        "kind": "explanation",
+        "reviewStatus": "imported",
+        "goalIds": ["core", "sql-group-having"],
+        "relatedQuestionIds": [],
+        "priority": "core",
+        "sourceRefs": []
+      },
+      "answerFile": "answers/sql/sql-group-having.md"
+    },
+    {
+      "id": "sql-count-null",
+      "title": "Чем COUNT(*) отличается от COUNT(column)?",
+      "topic": "SQL",
+      "difficulty": "Базовый",
+      "summary": "Подсчёт строк и непустых значений.",
+      "takeaway": "Выбирайте выражение COUNT по тому, что именно нужно считать.",
+      "moduleId": "sql",
+      "order": 1,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Выбирайте выражение COUNT по тому, что именно нужно считать.",
+        "keywords": ["SQL", "Агрегация и окна"],
+        "kind": "explanation",
+        "reviewStatus": "imported",
+        "goalIds": ["core", "sql-count-null"],
+        "relatedQuestionIds": [],
+        "priority": "core",
+        "sourceRefs": []
+      },
+      "answerFile": "answers/sql/sql-count-null.md"
+    },
+    {
+      "id": "sql-window-functions",
+      "title": "Чем оконная функция отличается от GROUP BY?",
+      "topic": "SQL",
+      "difficulty": "Средний",
+      "summary": "Вычисление по группе с сохранением отдельных строк.",
+      "code": "SELECT id, user_id, amount,\n       ROW_NUMBER() OVER (PARTITION BY user_id ORDER BY created_at DESC, id DESC) AS rn\nFROM orders;",
+      "takeaway": "Окно добавляет вычисление, не сворачивая детали.",
+      "moduleId": "sql",
+      "order": 2,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Окно добавляет вычисление, не сворачивая детали.",
+        "keywords": ["SQL", "Агрегация и окна"],
+        "kind": "explanation",
+        "reviewStatus": "imported",
+        "goalIds": ["core", "sql-window-functions"],
+        "relatedQuestionIds": [],
+        "priority": "core",
+        "sourceRefs": []
+      },
+      "answerFile": "answers/sql/sql-window-functions.md"
+    }
+  ]
+}

@@ -56,7 +56,36 @@ export function highlightCode(code: string, language: CodeLanguage, theme: "ligh
   }).tokens
 }
 
-export function codeLanguageFor(topic: string, code: string): CodeLanguage {
+const languageAliases: Record<string, CodeLanguage> = {
+  javascript: "javascript",
+  js: "javascript",
+  typescript: "typescript",
+  ts: "typescript",
+  jsx: "jsx",
+  tsx: "tsx",
+  html: "html",
+  css: "css",
+  json: "json",
+  sql: "sql",
+  java: "java",
+  vue: "vue",
+  dockerfile: "dockerfile",
+  shellscript: "shellscript",
+  bash: "shellscript",
+  sh: "shellscript",
+  shell: "shellscript",
+}
+
+export function codeLanguageFor(topic: string, code: string, languageHint?: string): CodeLanguage {
+  const hinted = languageHint?.toLowerCase()
+  if (hinted && Object.hasOwn(languageAliases, hinted)) return languageAliases[hinted]
+  if (topic === "HTML и CSS") {
+    const start = code.trimStart()
+    if (start.startsWith("<")) return "html"
+    if (/^(?:const|let|var|function|import|export|document|window)\b/.test(start))
+      return "javascript"
+    return "css"
+  }
   if (topic === "React" || topic === "Next.js") return "tsx"
   if (topic === "TypeScript" || topic === "NestJS") return "typescript"
   if (topic === "Java") return "java"

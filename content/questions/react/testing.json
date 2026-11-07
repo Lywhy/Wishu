@@ -1,0 +1,181 @@
+{
+  "$schema": "../question-bundle.schema.json",
+  "sectionId": "react",
+  "subsectionId": "testing",
+  "scope": "Error Boundary, проверка поведения, асинхронные тесты и cleanup.",
+  "coverageGoals": [
+    {
+      "id": "core",
+      "title": "Ошибки и тестирование",
+      "description": "Обзор и взаимосвязи навыков: Error Boundary, проверка поведения, асинхронные тесты и cleanup.",
+      "requiredDifficulties": [],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": [
+        "react-error-boundary",
+        "react-test-behavior",
+        "react-async-tests",
+        "react-effect-test",
+        "react-test-browser-boundary"
+      ]
+    },
+    {
+      "id": "react-error-boundary",
+      "title": "Какие ошибки ловит Error Boundary и какие остаются снаружи?",
+      "description": "Объяснить и применить правило с учётом его границ: Расположите границы по областям отказа, остальные ошибки обрабатывайте явно.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "react-test-behavior",
+      "title": "Что стоит проверять в тесте React-компонента?",
+      "description": "Объяснить и применить правило с учётом его границ: Проверяйте контракт компонента, который наблюдает пользователь.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "react-async-tests",
+      "title": "Чем getBy, queryBy и findBy отличаются в асинхронном тесте?",
+      "description": "Объяснить и применить правило с учётом его границ: Выбирайте запрос по тому, ожидается элемент сейчас, позже или не ожидается вовсе.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "react-effect-test",
+      "title": "Как проверить корректность подписки и cleanup компонента?",
+      "description": "Объяснить и применить правило с учётом его границ: Проверяйте владение ресурсом при смене параметров и размонтировании.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "react-test-browser-boundary",
+      "title": "Почему компонентный тест в jsdom не доказывает корректность layout и реального фокуса?",
+      "description": "Объяснить и применить правило с учётом его границ: Тест должен работать в среде, которая действительно реализует проверяемую часть платформы.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": []
+    }
+  ],
+  "questions": [
+    {
+      "id": "react-error-boundary",
+      "title": "Какие ошибки ловит Error Boundary и какие остаются снаружи?",
+      "topic": "React",
+      "difficulty": "Средний",
+      "summary": "Резервный интерфейс и границы обработки исключений.",
+      "takeaway": "Расположите границы по областям отказа, остальные ошибки обрабатывайте явно.",
+      "moduleId": "react",
+      "order": 0,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Расположите границы по областям отказа, остальные ошибки обрабатывайте явно.",
+        "keywords": ["React", "Ошибки и тестирование"],
+        "kind": "explanation",
+        "reviewStatus": "imported",
+        "goalIds": ["core", "react-error-boundary"],
+        "relatedQuestionIds": [],
+        "priority": "core",
+        "sourceRefs": []
+      },
+      "answerFile": "answers/react/react-error-boundary.md"
+    },
+    {
+      "id": "react-test-behavior",
+      "title": "Что стоит проверять в тесте React-компонента?",
+      "topic": "React",
+      "difficulty": "Средний",
+      "summary": "Пользовательский контракт вместо внутреннего устройства.",
+      "takeaway": "Проверяйте контракт компонента, который наблюдает пользователь.",
+      "moduleId": "react",
+      "order": 1,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Проверяйте контракт компонента, который наблюдает пользователь.",
+        "keywords": ["React", "Ошибки и тестирование"],
+        "kind": "explanation",
+        "reviewStatus": "imported",
+        "goalIds": ["core", "react-test-behavior"],
+        "relatedQuestionIds": [],
+        "priority": "core",
+        "sourceRefs": []
+      },
+      "answerFile": "answers/react/react-test-behavior.md"
+    },
+    {
+      "id": "react-async-tests",
+      "title": "Чем getBy, queryBy и findBy отличаются в асинхронном тесте?",
+      "topic": "React",
+      "difficulty": "Средний",
+      "summary": "Немедленный поиск, отсутствие элемента и ожидание.",
+      "takeaway": "Выбирайте запрос по тому, ожидается элемент сейчас, позже или не ожидается вовсе.",
+      "moduleId": "react",
+      "order": 2,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Выбирайте запрос по тому, ожидается элемент сейчас, позже или не ожидается вовсе.",
+        "keywords": ["React", "Ошибки и тестирование"],
+        "kind": "explanation",
+        "reviewStatus": "imported",
+        "goalIds": ["core", "react-async-tests"],
+        "relatedQuestionIds": [],
+        "priority": "core",
+        "sourceRefs": []
+      },
+      "answerFile": "answers/react/react-async-tests.md"
+    },
+    {
+      "id": "react-effect-test",
+      "title": "Как проверить корректность подписки и cleanup компонента?",
+      "topic": "React",
+      "difficulty": "Средний",
+      "summary": "Смена зависимости, размонтирование и отсутствие дублирующих ресурсов.",
+      "takeaway": "Проверяйте владение ресурсом при смене параметров и размонтировании.",
+      "moduleId": "react",
+      "order": 3,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Проверяйте владение ресурсом при смене параметров и размонтировании.",
+        "keywords": ["React", "Ошибки и тестирование"],
+        "kind": "explanation",
+        "reviewStatus": "imported",
+        "goalIds": ["core", "react-effect-test"],
+        "relatedQuestionIds": [],
+        "priority": "core",
+        "sourceRefs": []
+      },
+      "answerFile": "answers/react/react-effect-test.md"
+    },
+    {
+      "id": "react-test-browser-boundary",
+      "title": "Почему компонентный тест в jsdom не доказывает корректность layout и реального фокуса?",
+      "summary": "Выбор тестовой среды по проверяемому поведению, а не одному названию инструмента.",
+      "takeaway": "Тест должен работать в среде, которая действительно реализует проверяемую часть платформы.",
+      "pitfall": "Считать замоканный getBoundingClientRect доказательством правильного CSS-макета.",
+      "difficulty": "Средний",
+      "topic": "React",
+      "moduleId": "react",
+      "popular": false,
+      "order": 4,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Тест должен работать в среде, которая действительно реализует проверяемую часть платформы.",
+        "keywords": ["React", "Ошибки и тестирование"],
+        "kind": "explanation",
+        "reviewStatus": "imported",
+        "goalIds": ["core", "react-test-browser-boundary"],
+        "relatedQuestionIds": [],
+        "priority": "core",
+        "sourceRefs": ["ref-21f0cf93f224731f"]
+      },
+      "answerFile": "answers/react/react-test-browser-boundary.md"
+    }
+  ]
+}

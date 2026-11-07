@@ -1,0 +1,112 @@
+{
+  "$schema": "../question-bundle.schema.json",
+  "sectionId": "frontend-tools",
+  "subsectionId": "dependencies",
+  "scope": "Manifest, lockfile и диапазоны версий.",
+  "coverageGoals": [
+    {
+      "id": "core",
+      "title": "Зависимости и пакеты",
+      "description": "Обзор и взаимосвязи навыков: Manifest, lockfile и диапазоны версий.",
+      "requiredDifficulties": [],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": ["tools-manifest-lock", "tools-semver", "tools-peer-dependencies"]
+    },
+    {
+      "id": "tools-manifest-lock",
+      "title": "Чем package.json отличается от lockfile?",
+      "description": "Объяснить и применить правило с учётом его границ: Manifest описывает требования, lockfile - конкретное разрешение.",
+      "requiredDifficulties": ["Базовый"],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "tools-semver",
+      "title": "Чем диапазоны ^1.2.3 и ~1.2.3 отличаются?",
+      "description": "Объяснить и применить правило с учётом его границ: Различайте допустимый диапазон и фактически установленную версию.",
+      "requiredDifficulties": ["Базовый"],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "tools-peer-dependencies",
+      "title": "Зачем библиотеке peerDependencies?",
+      "description": "Объяснить и применить правило с учётом его границ: Peer dependency описывает совместимость на границе библиотеки и приложения.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": []
+    }
+  ],
+  "questions": [
+    {
+      "id": "tools-manifest-lock",
+      "title": "Чем package.json отличается от lockfile?",
+      "topic": "Frontend инструменты",
+      "difficulty": "Базовый",
+      "summary": "Намерение проекта и разрешённое дерево зависимостей.",
+      "takeaway": "Manifest описывает требования, lockfile - конкретное разрешение.",
+      "moduleId": "frontend-tools",
+      "order": 0,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Manifest описывает требования, lockfile - конкретное разрешение.",
+        "keywords": ["Frontend инструменты", "Зависимости и пакеты"],
+        "kind": "explanation",
+        "reviewStatus": "imported",
+        "goalIds": ["core", "tools-manifest-lock"],
+        "relatedQuestionIds": [],
+        "priority": "core",
+        "sourceRefs": []
+      },
+      "answerFile": "answers/frontend-tools/tools-manifest-lock.md"
+    },
+    {
+      "id": "tools-semver",
+      "title": "Чем диапазоны ^1.2.3 и ~1.2.3 отличаются?",
+      "topic": "Frontend инструменты",
+      "difficulty": "Базовый",
+      "summary": "Допустимые обновления зависимости.",
+      "takeaway": "Различайте допустимый диапазон и фактически установленную версию.",
+      "moduleId": "frontend-tools",
+      "order": 1,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Различайте допустимый диапазон и фактически установленную версию.",
+        "keywords": ["Frontend инструменты", "Зависимости и пакеты"],
+        "kind": "explanation",
+        "reviewStatus": "imported",
+        "goalIds": ["core", "tools-semver"],
+        "relatedQuestionIds": [],
+        "priority": "core",
+        "sourceRefs": []
+      },
+      "answerFile": "answers/frontend-tools/tools-semver.md"
+    },
+    {
+      "id": "tools-peer-dependencies",
+      "title": "Зачем библиотеке peerDependencies?",
+      "topic": "Frontend инструменты",
+      "difficulty": "Средний",
+      "summary": "Совместимость с зависимостями приложения-потребителя.",
+      "takeaway": "Peer dependency описывает совместимость на границе библиотеки и приложения.",
+      "moduleId": "frontend-tools",
+      "order": 2,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Peer dependency описывает совместимость на границе библиотеки и приложения.",
+        "keywords": ["Frontend инструменты", "Зависимости и пакеты"],
+        "kind": "explanation",
+        "reviewStatus": "imported",
+        "goalIds": ["core", "tools-peer-dependencies"],
+        "relatedQuestionIds": [],
+        "priority": "core",
+        "sourceRefs": []
+      },
+      "answerFile": "answers/frontend-tools/tools-peer-dependencies.md"
+    }
+  ]
+}

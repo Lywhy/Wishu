@@ -35,3 +35,12 @@ dist-ssr
 !.env.example
 coverage
 *.tsbuildinfo
+
+# Temporary files from atomic catalog artifact writes
+/content/generated/*.tmp
+/content/batches/*.json.*.tmp
+/server/database/seeds/questions.json.*.tmp
+
+# Content draft writer locks
+/content/questions/*/*.json.lock
+/content/questions/*/*.json.*.tmp

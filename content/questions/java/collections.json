@@ -1,0 +1,113 @@
+{
+  "$schema": "../question-bundle.schema.json",
+  "sectionId": "java",
+  "subsectionId": "collections",
+  "scope": "Структуры данных и обработка последовательностей.",
+  "coverageGoals": [
+    {
+      "id": "core",
+      "title": "Коллекции и Stream API",
+      "description": "Обзор и взаимосвязи навыков: Структуры данных и обработка последовательностей.",
+      "requiredDifficulties": [],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": ["java-list-set-map", "java-hashmap", "java-stream-lazy"]
+    },
+    {
+      "id": "java-list-set-map",
+      "title": "Как выбрать между List, Set и Map?",
+      "description": "Объяснить и применить правило с учётом его границ: Сначала определите семантику данных, затем реализацию коллекции.",
+      "requiredDifficulties": ["Базовый"],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "java-hashmap",
+      "title": "Как HashMap ищет ключ и почему коллизия не означает потерю значения?",
+      "description": "Объяснить и применить правило с учётом его границ: Хеш сужает поиск, равенство определяет конкретный ключ.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "java-stream-lazy",
+      "title": "Почему Stream без terminal operation может ничего не вычислить?",
+      "description": "Объяснить и применить правило с учётом его границ: Stream описывает вычисление, которое запускается терминальной операцией.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": []
+    }
+  ],
+  "questions": [
+    {
+      "id": "java-list-set-map",
+      "title": "Как выбрать между List, Set и Map?",
+      "topic": "Java",
+      "difficulty": "Базовый",
+      "summary": "Последовательность, уникальность и поиск по ключу.",
+      "takeaway": "Сначала определите семантику данных, затем реализацию коллекции.",
+      "moduleId": "java",
+      "order": 0,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Сначала определите семантику данных, затем реализацию коллекции.",
+        "keywords": ["Java", "Коллекции и Stream API"],
+        "kind": "explanation",
+        "reviewStatus": "imported",
+        "goalIds": ["core", "java-list-set-map"],
+        "relatedQuestionIds": [],
+        "priority": "core",
+        "sourceRefs": []
+      },
+      "answerFile": "answers/java/java-list-set-map.md"
+    },
+    {
+      "id": "java-hashmap",
+      "title": "Как HashMap ищет ключ и почему коллизия не означает потерю значения?",
+      "topic": "Java",
+      "difficulty": "Средний",
+      "summary": "Хеш, корзина и проверка равенства.",
+      "takeaway": "Хеш сужает поиск, равенство определяет конкретный ключ.",
+      "moduleId": "java",
+      "order": 1,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Хеш сужает поиск, равенство определяет конкретный ключ.",
+        "keywords": ["Java", "Коллекции и Stream API"],
+        "kind": "explanation",
+        "reviewStatus": "imported",
+        "goalIds": ["core", "java-hashmap"],
+        "relatedQuestionIds": [],
+        "priority": "core",
+        "sourceRefs": []
+      },
+      "answerFile": "answers/java/java-hashmap.md"
+    },
+    {
+      "id": "java-stream-lazy",
+      "title": "Почему Stream без terminal operation может ничего не вычислить?",
+      "topic": "Java",
+      "difficulty": "Средний",
+      "summary": "Ленивый pipeline и одноразовое потребление.",
+      "code": "List<String> names = List.of(\"Анна\", \"Борис\", \"Алексей\");\nList<String> result = names.stream()\n    .filter(name -> name.startsWith(\"А\"))\n    .toList();",
+      "takeaway": "Stream описывает вычисление, которое запускается терминальной операцией.",
+      "moduleId": "java",
+      "order": 2,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Stream описывает вычисление, которое запускается терминальной операцией.",
+        "keywords": ["Java", "Коллекции и Stream API"],
+        "kind": "explanation",
+        "reviewStatus": "imported",
+        "goalIds": ["core", "java-stream-lazy"],
+        "relatedQuestionIds": [],
+        "priority": "core",
+        "sourceRefs": []
+      },
+      "answerFile": "answers/java/java-stream-lazy.md"
+    }
+  ]
+}

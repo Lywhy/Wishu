@@ -1,0 +1,57 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Wishu: структура каталога вопросов",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schemaVersion", "groups", "sections", "subsections"],
+  "properties": {
+    "$schema": { "type": "string" },
+    "schemaVersion": { "const": 1 },
+    "groups": { "type": "array", "items": { "$ref": "#/$defs/group" } },
+    "sections": { "type": "array", "items": { "$ref": "#/$defs/section" } },
+    "subsections": { "type": "array", "items": { "$ref": "#/$defs/subsection" } }
+  },
+  "$defs": {
+    "id": { "type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$" },
+    "text": { "type": "string", "minLength": 1 },
+    "order": { "type": "integer", "minimum": 0 },
+    "group": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "title", "description", "order"],
+      "properties": {
+        "id": { "$ref": "#/$defs/id" },
+        "title": { "$ref": "#/$defs/text" },
+        "description": { "$ref": "#/$defs/text" },
+        "order": { "$ref": "#/$defs/order" }
+      }
+    },
+    "section": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "groupId", "title", "description", "moduleId", "mark", "order"],
+      "properties": {
+        "id": { "$ref": "#/$defs/id" },
+        "groupId": { "$ref": "#/$defs/id" },
+        "title": { "$ref": "#/$defs/text" },
+        "description": { "$ref": "#/$defs/text" },
+        "moduleId": { "$ref": "#/$defs/text" },
+        "mark": { "$ref": "#/$defs/text" },
+        "order": { "$ref": "#/$defs/order" },
+        "inDevelopment": { "type": "boolean" }
+      }
+    },
+    "subsection": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "sectionId", "title", "description", "order"],
+      "properties": {
+        "id": { "$ref": "#/$defs/id" },
+        "sectionId": { "$ref": "#/$defs/id" },
+        "title": { "$ref": "#/$defs/text" },
+        "description": { "$ref": "#/$defs/text" },
+        "order": { "$ref": "#/$defs/order" }
+      }
+    }
+  }
+}

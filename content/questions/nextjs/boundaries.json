@@ -1,0 +1,113 @@
+{
+  "$schema": "../question-bundle.schema.json",
+  "sectionId": "nextjs",
+  "subsectionId": "boundaries",
+  "scope": "Server/Client Components и серверные зависимости.",
+  "coverageGoals": [
+    {
+      "id": "core",
+      "title": "Границы выполнения",
+      "description": "Обзор и взаимосвязи навыков: Server/Client Components и серверные зависимости.",
+      "requiredDifficulties": [],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": ["next-client-boundary", "next-server-data", "next-props-serialization"]
+    },
+    {
+      "id": "next-client-boundary",
+      "title": "Что меняет use client для дерева импортов в Next.js?",
+      "description": "Объяснить и применить правило с учётом его границ: Клиентская граница определяет, какой код потребуется браузеру.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "next-server-data",
+      "title": "Почему Server Component не стоит загружать свои данные через собственный Route Handler?",
+      "description": "Объяснить и применить правило с учётом его границ: Внутри сервера переиспользуйте слой данных, а не обязательный HTTP-запрос к себе.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "next-props-serialization",
+      "title": "Какие данные можно передать из Server Component в Client Component?",
+      "description": "Объяснить и применить правило с учётом его границ: Граница компонентов является также границей передачи данных.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": []
+    }
+  ],
+  "questions": [
+    {
+      "id": "next-client-boundary",
+      "title": "Что меняет use client для дерева импортов в Next.js?",
+      "topic": "Next.js",
+      "difficulty": "Средний",
+      "summary": "Клиентский bundle и место интерактивности.",
+      "takeaway": "Клиентская граница определяет, какой код потребуется браузеру.",
+      "moduleId": "nextjs",
+      "order": 0,
+      "popular": false,
+      "pitfall": "Считать, что use client отключает любой серверный рендеринг компонента. Директива задаёт клиентскую границу модулей, но не равна отключению предварительного HTML.",
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Клиентская граница определяет, какой код потребуется браузеру.",
+        "keywords": ["Next.js", "Границы выполнения"],
+        "kind": "explanation",
+        "reviewStatus": "imported",
+        "goalIds": ["core", "next-client-boundary"],
+        "relatedQuestionIds": [],
+        "priority": "core",
+        "sourceRefs": []
+      },
+      "answerFile": "answers/nextjs/next-client-boundary.md"
+    },
+    {
+      "id": "next-server-data",
+      "title": "Почему Server Component не стоит загружать свои данные через собственный Route Handler?",
+      "topic": "Next.js",
+      "difficulty": "Средний",
+      "summary": "Прямой серверный доступ и лишний HTTP-слой.",
+      "takeaway": "Внутри сервера переиспользуйте слой данных, а не обязательный HTTP-запрос к себе.",
+      "moduleId": "nextjs",
+      "order": 1,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Внутри сервера переиспользуйте слой данных, а не обязательный HTTP-запрос к себе.",
+        "keywords": ["Next.js", "Границы выполнения"],
+        "kind": "explanation",
+        "reviewStatus": "imported",
+        "goalIds": ["core", "next-server-data"],
+        "relatedQuestionIds": [],
+        "priority": "core",
+        "sourceRefs": []
+      },
+      "answerFile": "answers/nextjs/next-server-data.md"
+    },
+    {
+      "id": "next-props-serialization",
+      "title": "Какие данные можно передать из Server Component в Client Component?",
+      "topic": "Next.js",
+      "difficulty": "Средний",
+      "summary": "Сериализация на границе RSC.",
+      "takeaway": "Граница компонентов является также границей передачи данных.",
+      "moduleId": "nextjs",
+      "order": 2,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Граница компонентов является также границей передачи данных.",
+        "keywords": ["Next.js", "Границы выполнения"],
+        "kind": "explanation",
+        "reviewStatus": "imported",
+        "goalIds": ["core", "next-props-serialization"],
+        "relatedQuestionIds": [],
+        "priority": "core",
+        "sourceRefs": ["ref-c86da125f953aa56"]
+      },
+      "answerFile": "answers/nextjs/next-props-serialization.md"
+    }
+  ]
+}

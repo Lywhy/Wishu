@@ -1,0 +1,112 @@
+{
+  "$schema": "../question-bundle.schema.json",
+  "sectionId": "browser",
+  "subsectionId": "delivery",
+  "scope": "CDN, сжатие и анализ сетевой загрузки.",
+  "coverageGoals": [
+    {
+      "id": "core",
+      "title": "Доставка и диагностика",
+      "description": "Обзор и взаимосвязи навыков: CDN, сжатие и анализ сетевой загрузки.",
+      "requiredDifficulties": [],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": ["http-compression", "http-cdn", "network-waterfall"]
+    },
+    {
+      "id": "http-compression",
+      "title": "Как работают Content-Encoding и Accept-Encoding?",
+      "description": "Объяснить и применить правило с учётом его границ: Тип данных и кодирование передачи решают разные задачи.",
+      "requiredDifficulties": ["Базовый"],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "http-cdn",
+      "title": "Что даёт CDN и чем опасно кешировать персональный ответ?",
+      "description": "Объяснить и применить правило с учётом его границ: Для общего кеша важнее корректная граница данных, чем число попаданий.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "network-waterfall",
+      "title": "Как по Network waterfall понять причину медленной загрузки?",
+      "description": "Объяснить и применить правило с учётом его границ: Отделяйте ожидание сети от вычислений и отрисовки.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": []
+    }
+  ],
+  "questions": [
+    {
+      "id": "http-compression",
+      "title": "Как работают Content-Encoding и Accept-Encoding?",
+      "topic": "Web",
+      "difficulty": "Базовый",
+      "summary": "Согласование сжатия передаваемого представления.",
+      "takeaway": "Тип данных и кодирование передачи решают разные задачи.",
+      "moduleId": "browser",
+      "order": 0,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Тип данных и кодирование передачи решают разные задачи.",
+        "keywords": ["Браузер и HTTP", "Доставка и диагностика"],
+        "kind": "explanation",
+        "reviewStatus": "imported",
+        "goalIds": ["core", "http-compression"],
+        "relatedQuestionIds": [],
+        "priority": "core",
+        "sourceRefs": []
+      },
+      "answerFile": "answers/browser/http-compression.md"
+    },
+    {
+      "id": "http-cdn",
+      "title": "Что даёт CDN и чем опасно кешировать персональный ответ?",
+      "topic": "Web",
+      "difficulty": "Средний",
+      "summary": "Распределённая доставка и граница общего кеша.",
+      "takeaway": "Для общего кеша важнее корректная граница данных, чем число попаданий.",
+      "moduleId": "browser",
+      "order": 1,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Для общего кеша важнее корректная граница данных, чем число попаданий.",
+        "keywords": ["Браузер и HTTP", "Доставка и диагностика"],
+        "kind": "explanation",
+        "reviewStatus": "imported",
+        "goalIds": ["core", "http-cdn"],
+        "relatedQuestionIds": [],
+        "priority": "core",
+        "sourceRefs": []
+      },
+      "answerFile": "answers/browser/http-cdn.md"
+    },
+    {
+      "id": "network-waterfall",
+      "title": "Как по Network waterfall понять причину медленной загрузки?",
+      "topic": "Web",
+      "difficulty": "Средний",
+      "summary": "Соединение, ожидание ответа и передача данных.",
+      "takeaway": "Отделяйте ожидание сети от вычислений и отрисовки.",
+      "moduleId": "browser",
+      "order": 2,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Отделяйте ожидание сети от вычислений и отрисовки.",
+        "keywords": ["Браузер и HTTP", "Доставка и диагностика"],
+        "kind": "explanation",
+        "reviewStatus": "imported",
+        "goalIds": ["core", "network-waterfall"],
+        "relatedQuestionIds": [],
+        "priority": "core",
+        "sourceRefs": []
+      },
+      "answerFile": "answers/browser/network-waterfall.md"
+    }
+  ]
+}

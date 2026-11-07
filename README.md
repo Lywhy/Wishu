@@ -105,3 +105,19 @@ pnpm dev:all
 сообщения как UI и API. Ctrl+C останавливает оба процесса; завершение одного
 процесса также останавливает второй. PostgreSQL запускается отдельно командой
 `docker compose up -d postgres` и продолжает работать после остановки UI/API.
+
+## Подготовка вопросов
+
+Вопросы редактируются в `content/questions/<sectionId>/<subsectionId>.json`. Для поиска, матрицы покрытия, черновиков, сборки и проверки доступны команды `content:find`, `content:report`, `content:build`, `content:check`. Собранный seed совместим с текущим сервером. Полный процесс: [docs/question-content-workflow.md](docs/question-content-workflow.md).
+
+## Навигация и быстрые доработки
+
+[Карта проекта](docs/project-map.md), [шаблоны доработок](docs/development-recipes.md), [быстрые команды](docs/development-workflow.md). Для черновиков вопросов: content:new и content:import. Для отдельных областей: check:ui, check:server, check:content; полный набор: check:all. Эти команды не запускают приложение и не записывают данные в PostgreSQL.
+
+## Обновлённый контентный цикл
+
+С 2026-11-07 контентные команды разрешены агенту. Ответы находятся в content/answers, подробные навыки - в coverageGoals, источники - в content/references/sources.json, решения - в content/decisions.json, планы - в content/batches. Отчёт по умолчанию сравнивает только изменения; --all включает полный обзор. [Актуальная инструкция](docs/content-workflow-v2.md) уточняет прежние ограничения запуска и формат импорта. Приложение и seed запускает пользователь.
+
+## Компактный контекст
+
+По умолчанию вывод короткий, подробности включаются параметрами. Find/context используют компактный lookup; show открывает ответ по ID. Batch хранит рабочие ID и хеши, источники доступны через sourceRefs. [Текущий процесс](docs/lean-content-workflow.md) уточняет параметры и заменяет прежние примеры подробного вывода по умолчанию.

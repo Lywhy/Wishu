@@ -1,0 +1,112 @@
+{
+  "$schema": "../question-bundle.schema.json",
+  "sectionId": "nextjs",
+  "subsectionId": "routing",
+  "scope": "Структура app, layouts и навигация.",
+  "coverageGoals": [
+    {
+      "id": "core",
+      "title": "App Router и маршруты",
+      "description": "Обзор и взаимосвязи навыков: Структура app, layouts и навигация.",
+      "requiredDifficulties": [],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": ["next-app-router", "next-navigation", "next-loading-streaming"]
+    },
+    {
+      "id": "next-app-router",
+      "title": "Как файлы page и layout задают маршрут в App Router?",
+      "description": "Объяснить и применить правило с учётом его границ: Маршрут складывается из сегментов, страница и оболочка описываются отдельно.",
+      "requiredDifficulties": ["Базовый"],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "next-navigation",
+      "title": "Зачем Link вместо обычного перехода и когда нужен router?",
+      "description": "Объяснить и применить правило с учётом его границ: Используйте ссылку для перехода, императивную навигацию - для результата действия.",
+      "requiredDifficulties": ["Базовый"],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "next-loading-streaming",
+      "title": "Как loading.tsx и Suspense помогают при медленной странице?",
+      "description": "Объяснить и применить правило с учётом его границ: Размещайте границу ожидания вокруг действительно медленной области.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": []
+    }
+  ],
+  "questions": [
+    {
+      "id": "next-app-router",
+      "title": "Как файлы page и layout задают маршрут в App Router?",
+      "topic": "Next.js",
+      "difficulty": "Базовый",
+      "summary": "Сегменты каталогов и общая оболочка.",
+      "takeaway": "Маршрут складывается из сегментов, страница и оболочка описываются отдельно.",
+      "moduleId": "nextjs",
+      "order": 0,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Маршрут складывается из сегментов, страница и оболочка описываются отдельно.",
+        "keywords": ["Next.js", "App Router и маршруты"],
+        "kind": "explanation",
+        "reviewStatus": "imported",
+        "goalIds": ["core", "next-app-router"],
+        "relatedQuestionIds": [],
+        "priority": "core",
+        "sourceRefs": []
+      },
+      "answerFile": "answers/nextjs/next-app-router.md"
+    },
+    {
+      "id": "next-navigation",
+      "title": "Зачем Link вместо обычного перехода и когда нужен router?",
+      "topic": "Next.js",
+      "difficulty": "Базовый",
+      "summary": "Клиентская навигация и предварительная загрузка.",
+      "takeaway": "Используйте ссылку для перехода, императивную навигацию - для результата действия.",
+      "moduleId": "nextjs",
+      "order": 1,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Используйте ссылку для перехода, императивную навигацию - для результата действия.",
+        "keywords": ["Next.js", "App Router и маршруты"],
+        "kind": "explanation",
+        "reviewStatus": "imported",
+        "goalIds": ["core", "next-navigation"],
+        "relatedQuestionIds": [],
+        "priority": "core",
+        "sourceRefs": []
+      },
+      "answerFile": "answers/nextjs/next-navigation.md"
+    },
+    {
+      "id": "next-loading-streaming",
+      "title": "Как loading.tsx и Suspense помогают при медленной странице?",
+      "topic": "Next.js",
+      "difficulty": "Средний",
+      "summary": "Граница ожидания и потоковая выдача.",
+      "takeaway": "Размещайте границу ожидания вокруг действительно медленной области.",
+      "moduleId": "nextjs",
+      "order": 2,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Размещайте границу ожидания вокруг действительно медленной области.",
+        "keywords": ["Next.js", "App Router и маршруты"],
+        "kind": "explanation",
+        "reviewStatus": "imported",
+        "goalIds": ["core", "next-loading-streaming"],
+        "relatedQuestionIds": [],
+        "priority": "core",
+        "sourceRefs": []
+      },
+      "answerFile": "answers/nextjs/next-loading-streaming.md"
+    }
+  ]
+}

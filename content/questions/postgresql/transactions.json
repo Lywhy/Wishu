@@ -1,0 +1,113 @@
+{
+  "$schema": "../question-bundle.schema.json",
+  "sectionId": "postgresql",
+  "subsectionId": "transactions",
+  "scope": "MVCC, изоляция и защита обновлений.",
+  "coverageGoals": [
+    {
+      "id": "core",
+      "title": "Конкурентный доступ",
+      "description": "Обзор и взаимосвязи навыков: MVCC, изоляция и защита обновлений.",
+      "requiredDifficulties": [],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": ["pg-mvcc", "pg-isolation", "pg-lost-update"]
+    },
+    {
+      "id": "pg-mvcc",
+      "title": "Как MVCC позволяет читать данные при параллельных изменениях?",
+      "description": "Объяснить и применить правило с учётом его границ: Снимок задаёт видимость версий, но не отменяет конфликты записи.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "pg-isolation",
+      "title": "Чем Read Committed отличается от Repeatable Read в PostgreSQL?",
+      "description": "Объяснить и применить правило с учётом его границ: Уровень изоляции задаёт наблюдаемость и условия конфликта.",
+      "requiredDifficulties": ["Продвинутый"],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "pg-lost-update",
+      "title": "Как избежать потерянного обновления счётчика?",
+      "description": "Объяснить и применить правило с учётом его границ: Защита обновления должна находиться в атомарной границе БД.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": []
+    }
+  ],
+  "questions": [
+    {
+      "id": "pg-mvcc",
+      "title": "Как MVCC позволяет читать данные при параллельных изменениях?",
+      "topic": "PostgreSQL",
+      "difficulty": "Средний",
+      "summary": "Версии строк и снимок видимости.",
+      "takeaway": "Снимок задаёт видимость версий, но не отменяет конфликты записи.",
+      "moduleId": "postgresql",
+      "order": 0,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Снимок задаёт видимость версий, но не отменяет конфликты записи.",
+        "keywords": ["PostgreSQL", "Конкурентный доступ"],
+        "kind": "explanation",
+        "reviewStatus": "imported",
+        "goalIds": ["core", "pg-mvcc"],
+        "relatedQuestionIds": [],
+        "priority": "core",
+        "sourceRefs": []
+      },
+      "answerFile": "answers/postgresql/pg-mvcc.md"
+    },
+    {
+      "id": "pg-isolation",
+      "title": "Чем Read Committed отличается от Repeatable Read в PostgreSQL?",
+      "topic": "PostgreSQL",
+      "difficulty": "Продвинутый",
+      "summary": "Граница снимка и повтор запроса.",
+      "takeaway": "Уровень изоляции задаёт наблюдаемость и условия конфликта.",
+      "moduleId": "postgresql",
+      "order": 1,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Уровень изоляции задаёт наблюдаемость и условия конфликта.",
+        "keywords": ["PostgreSQL", "Конкурентный доступ"],
+        "kind": "explanation",
+        "reviewStatus": "imported",
+        "goalIds": ["core", "pg-isolation"],
+        "relatedQuestionIds": [],
+        "priority": "core",
+        "sourceRefs": []
+      },
+      "answerFile": "answers/postgresql/pg-isolation.md"
+    },
+    {
+      "id": "pg-lost-update",
+      "title": "Как избежать потерянного обновления счётчика?",
+      "topic": "PostgreSQL",
+      "difficulty": "Средний",
+      "summary": "Атомарный UPDATE и условие версии.",
+      "code": "UPDATE counters SET value = value + 1 WHERE id = 1 RETURNING value;",
+      "takeaway": "Защита обновления должна находиться в атомарной границе БД.",
+      "moduleId": "postgresql",
+      "order": 2,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Защита обновления должна находиться в атомарной границе БД.",
+        "keywords": ["PostgreSQL", "Конкурентный доступ"],
+        "kind": "explanation",
+        "reviewStatus": "imported",
+        "goalIds": ["core", "pg-lost-update"],
+        "relatedQuestionIds": [],
+        "priority": "core",
+        "sourceRefs": []
+      },
+      "answerFile": "answers/postgresql/pg-lost-update.md"
+    }
+  ]
+}

@@ -1,0 +1,112 @@
+{
+  "$schema": "../question-bundle.schema.json",
+  "sectionId": "nodejs",
+  "subsectionId": "operations",
+  "scope": "Окружение, соединения и завершение.",
+  "coverageGoals": [
+    {
+      "id": "core",
+      "title": "Ресурсы приложения",
+      "description": "Обзор и взаимосвязи навыков: Окружение, соединения и завершение.",
+      "requiredDifficulties": [],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": ["node-env-validation", "node-graceful-shutdown", "node-connection-pool"]
+    },
+    {
+      "id": "node-env-validation",
+      "title": "Почему process.env.PORT нужно явно проверять?",
+      "description": "Объяснить и применить правило с учётом его границ: Окружение - недоверенный ввод, а не готовая типизированная конфигурация.",
+      "requiredDifficulties": ["Базовый"],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "node-graceful-shutdown",
+      "title": "Что входит в корректное завершение HTTP-сервера Node.js?",
+      "description": "Объяснить и применить правило с учётом его границ: Завершение - управляемый сценарий с ограниченным временем.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "node-connection-pool",
+      "title": "Почему соединение с БД обычно берут из пула?",
+      "description": "Объяснить и применить правило с учётом его границ: Пул - ограниченный ресурс, которым нужно явно владеть.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": []
+    }
+  ],
+  "questions": [
+    {
+      "id": "node-env-validation",
+      "title": "Почему process.env.PORT нужно явно проверять?",
+      "topic": "Node.js",
+      "difficulty": "Базовый",
+      "summary": "Строковое окружение и runtime-конфигурация.",
+      "takeaway": "Окружение - недоверенный ввод, а не готовая типизированная конфигурация.",
+      "moduleId": "nodejs",
+      "order": 0,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Окружение - недоверенный ввод, а не готовая типизированная конфигурация.",
+        "keywords": ["Node.js", "Ресурсы приложения"],
+        "kind": "explanation",
+        "reviewStatus": "imported",
+        "goalIds": ["core", "node-env-validation"],
+        "relatedQuestionIds": [],
+        "priority": "core",
+        "sourceRefs": []
+      },
+      "answerFile": "answers/nodejs/node-env-validation.md"
+    },
+    {
+      "id": "node-graceful-shutdown",
+      "title": "Что входит в корректное завершение HTTP-сервера Node.js?",
+      "topic": "Node.js",
+      "difficulty": "Средний",
+      "summary": "Остановка приёма, активные запросы и ресурсы.",
+      "takeaway": "Завершение - управляемый сценарий с ограниченным временем.",
+      "moduleId": "nodejs",
+      "order": 1,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Завершение - управляемый сценарий с ограниченным временем.",
+        "keywords": ["Node.js", "Ресурсы приложения"],
+        "kind": "explanation",
+        "reviewStatus": "imported",
+        "goalIds": ["core", "node-graceful-shutdown"],
+        "relatedQuestionIds": [],
+        "priority": "core",
+        "sourceRefs": []
+      },
+      "answerFile": "answers/nodejs/node-graceful-shutdown.md"
+    },
+    {
+      "id": "node-connection-pool",
+      "title": "Почему соединение с БД обычно берут из пула?",
+      "topic": "Node.js",
+      "difficulty": "Средний",
+      "summary": "Переиспользование и ограничение конкуренции.",
+      "takeaway": "Пул - ограниченный ресурс, которым нужно явно владеть.",
+      "moduleId": "nodejs",
+      "order": 2,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Пул - ограниченный ресурс, которым нужно явно владеть.",
+        "keywords": ["Node.js", "Ресурсы приложения"],
+        "kind": "explanation",
+        "reviewStatus": "imported",
+        "goalIds": ["core", "node-connection-pool"],
+        "relatedQuestionIds": [],
+        "priority": "core",
+        "sourceRefs": []
+      },
+      "answerFile": "answers/nodejs/node-connection-pool.md"
+    }
+  ]
+}

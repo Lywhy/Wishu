@@ -1,0 +1,113 @@
+{
+  "$schema": "../question-bundle.schema.json",
+  "sectionId": "nodejs",
+  "subsectionId": "runtime",
+  "scope": "ESM, файлы и worker threads.",
+  "coverageGoals": [
+    {
+      "id": "core",
+      "title": "Среда выполнения и модули",
+      "description": "Обзор и взаимосвязи навыков: ESM, файлы и worker threads.",
+      "requiredDifficulties": [],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": ["node-esm-cjs", "node-fs-sync", "node-worker-threads"]
+    },
+    {
+      "id": "node-esm-cjs",
+      "title": "Как CommonJS отличается от ESM в Node.js?",
+      "description": "Объяснить и применить правило с учётом его границ: Формат модуля влияет на разрешение и выполнение, а не только синтаксис.",
+      "requiredDifficulties": ["Базовый"],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "node-fs-sync",
+      "title": "Почему readFileSync опасен в обработчике HTTP-запроса?",
+      "description": "Объяснить и применить правило с учётом его границ: Учитывайте место вызова и объём данных, а не только имя API.",
+      "requiredDifficulties": ["Базовый"],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "node-worker-threads",
+      "title": "Когда Node.js приложению нужны worker_threads?",
+      "description": "Объяснить и применить правило с учётом его границ: Выносите CPU-работу, учитывая стоимость обмена и число потоков.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": []
+    }
+  ],
+  "questions": [
+    {
+      "id": "node-esm-cjs",
+      "title": "Как CommonJS отличается от ESM в Node.js?",
+      "topic": "Node.js",
+      "difficulty": "Базовый",
+      "summary": "Формат модуля и способы импорта.",
+      "takeaway": "Формат модуля влияет на разрешение и выполнение, а не только синтаксис.",
+      "moduleId": "nodejs",
+      "order": 0,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Формат модуля влияет на разрешение и выполнение, а не только синтаксис.",
+        "keywords": ["Node.js", "Среда выполнения и модули"],
+        "kind": "explanation",
+        "reviewStatus": "imported",
+        "goalIds": ["core", "node-esm-cjs"],
+        "relatedQuestionIds": [],
+        "priority": "core",
+        "sourceRefs": []
+      },
+      "answerFile": "answers/nodejs/node-esm-cjs.md"
+    },
+    {
+      "id": "node-fs-sync",
+      "title": "Почему readFileSync опасен в обработчике HTTP-запроса?",
+      "topic": "Node.js",
+      "difficulty": "Базовый",
+      "summary": "Блокировка обслуживающего потока.",
+      "code": "import { readFile } from \"node:fs/promises\"\nconst text = await readFile(\"./config.json\", \"utf8\")",
+      "takeaway": "Учитывайте место вызова и объём данных, а не только имя API.",
+      "moduleId": "nodejs",
+      "order": 1,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Учитывайте место вызова и объём данных, а не только имя API.",
+        "keywords": ["Node.js", "Среда выполнения и модули"],
+        "kind": "explanation",
+        "reviewStatus": "imported",
+        "goalIds": ["core", "node-fs-sync"],
+        "relatedQuestionIds": [],
+        "priority": "core",
+        "sourceRefs": []
+      },
+      "answerFile": "answers/nodejs/node-fs-sync.md"
+    },
+    {
+      "id": "node-worker-threads",
+      "title": "Когда Node.js приложению нужны worker_threads?",
+      "topic": "Node.js",
+      "difficulty": "Средний",
+      "summary": "CPU-нагрузка и отдельное выполнение JavaScript.",
+      "takeaway": "Выносите CPU-работу, учитывая стоимость обмена и число потоков.",
+      "moduleId": "nodejs",
+      "order": 2,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Выносите CPU-работу, учитывая стоимость обмена и число потоков.",
+        "keywords": ["Node.js", "Среда выполнения и модули"],
+        "kind": "explanation",
+        "reviewStatus": "imported",
+        "goalIds": ["core", "node-worker-threads"],
+        "relatedQuestionIds": [],
+        "priority": "core",
+        "sourceRefs": []
+      },
+      "answerFile": "answers/nodejs/node-worker-threads.md"
+    }
+  ]
+}

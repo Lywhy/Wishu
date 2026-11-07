@@ -1,0 +1,113 @@
+{
+  "$schema": "../question-bundle.schema.json",
+  "sectionId": "git",
+  "subsectionId": "working-tree",
+  "scope": "Индекс, diff и правила игнорирования.",
+  "coverageGoals": [
+    {
+      "id": "core",
+      "title": "Рабочие изменения",
+      "description": "Обзор и взаимосвязи навыков: Индекс, diff и правила игнорирования.",
+      "requiredDifficulties": [],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": ["git-index", "git-diff-staged", "git-ignore-tracked"]
+    },
+    {
+      "id": "git-index",
+      "title": "Чем рабочее дерево отличается от индекса и коммита?",
+      "description": "Объяснить и применить правило с учётом его границ: Коммит получает снимок из индекса, а не автоматически весь рабочий каталог.",
+      "requiredDifficulties": ["Базовый"],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "git-diff-staged",
+      "title": "Что сравнивают git diff и git diff --staged?",
+      "description": "Объяснить и применить правило с учётом его границ: Просматривайте staged и unstaged отдельно.",
+      "requiredDifficulties": ["Базовый"],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "git-ignore-tracked",
+      "title": "Почему .gitignore не скрывает уже отслеживаемый файл?",
+      "description": "Объяснить и применить правило с учётом его границ: Игнорирование не отменяет уже сохранённую историю.",
+      "requiredDifficulties": ["Базовый"],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": []
+    }
+  ],
+  "questions": [
+    {
+      "id": "git-index",
+      "title": "Чем рабочее дерево отличается от индекса и коммита?",
+      "topic": "Git",
+      "difficulty": "Базовый",
+      "summary": "Три состояния отслеживаемого содержимого.",
+      "takeaway": "Коммит получает снимок из индекса, а не автоматически весь рабочий каталог.",
+      "moduleId": "git",
+      "order": 0,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Коммит получает снимок из индекса, а не автоматически весь рабочий каталог.",
+        "keywords": ["Git", "Рабочие изменения"],
+        "kind": "explanation",
+        "reviewStatus": "imported",
+        "goalIds": ["core", "git-index"],
+        "relatedQuestionIds": [],
+        "priority": "core",
+        "sourceRefs": []
+      },
+      "answerFile": "answers/git/git-index.md"
+    },
+    {
+      "id": "git-diff-staged",
+      "title": "Что сравнивают git diff и git diff --staged?",
+      "topic": "Git",
+      "difficulty": "Базовый",
+      "summary": "Просмотр неподготовленных и подготовленных изменений.",
+      "code": "git status --short\ngit diff\ngit diff --staged",
+      "takeaway": "Просматривайте staged и unstaged отдельно.",
+      "moduleId": "git",
+      "order": 1,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Просматривайте staged и unstaged отдельно.",
+        "keywords": ["Git", "Рабочие изменения"],
+        "kind": "explanation",
+        "reviewStatus": "imported",
+        "goalIds": ["core", "git-diff-staged"],
+        "relatedQuestionIds": [],
+        "priority": "core",
+        "sourceRefs": []
+      },
+      "answerFile": "answers/git/git-diff-staged.md"
+    },
+    {
+      "id": "git-ignore-tracked",
+      "title": "Почему .gitignore не скрывает уже отслеживаемый файл?",
+      "topic": "Git",
+      "difficulty": "Базовый",
+      "summary": "Правила добавления и состояние индекса.",
+      "takeaway": "Игнорирование не отменяет уже сохранённую историю.",
+      "moduleId": "git",
+      "order": 2,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Игнорирование не отменяет уже сохранённую историю.",
+        "keywords": ["Git", "Рабочие изменения"],
+        "kind": "explanation",
+        "reviewStatus": "imported",
+        "goalIds": ["core", "git-ignore-tracked"],
+        "relatedQuestionIds": [],
+        "priority": "core",
+        "sourceRefs": []
+      },
+      "answerFile": "answers/git/git-ignore-tracked.md"
+    }
+  ]
+}

@@ -1,0 +1,113 @@
+{
+  "$schema": "../question-bundle.schema.json",
+  "sectionId": "redis",
+  "subsectionId": "operations",
+  "scope": "Persistence, репликация и обход ключей.",
+  "coverageGoals": [
+    {
+      "id": "core",
+      "title": "Надёжность и обслуживание",
+      "description": "Обзор и взаимосвязи навыков: Persistence, репликация и обход ключей.",
+      "requiredDifficulties": [],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": ["redis-rdb-aof", "redis-replication", "redis-scan"]
+    },
+    {
+      "id": "redis-rdb-aof",
+      "title": "Чем RDB отличается от AOF?",
+      "description": "Объяснить и применить правило с учётом его границ: Оценивайте persistence по допустимой потере и проверенному восстановлению.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "redis-replication",
+      "title": "Гарантирует ли Redis-реплика немедленное чтение последней записи?",
+      "description": "Объяснить и применить правило с учётом его границ: Репликация повышает доступность, но требует явной модели согласованности.",
+      "requiredDifficulties": ["Продвинутый"],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "redis-scan",
+      "title": "Почему SCAN обычно предпочтительнее KEYS в работающем сервисе?",
+      "description": "Объяснить и применить правило с учётом его границ: Порционный обход требует обработки курсора и возможных повторов.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": []
+    }
+  ],
+  "questions": [
+    {
+      "id": "redis-rdb-aof",
+      "title": "Чем RDB отличается от AOF?",
+      "topic": "Redis",
+      "difficulty": "Средний",
+      "summary": "Снимок данных и журнал изменений.",
+      "takeaway": "Оценивайте persistence по допустимой потере и проверенному восстановлению.",
+      "moduleId": "redis",
+      "order": 0,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Оценивайте persistence по допустимой потере и проверенному восстановлению.",
+        "keywords": ["Redis", "Надёжность и обслуживание"],
+        "kind": "explanation",
+        "reviewStatus": "imported",
+        "goalIds": ["core", "redis-rdb-aof"],
+        "relatedQuestionIds": [],
+        "priority": "core",
+        "sourceRefs": []
+      },
+      "answerFile": "answers/redis/redis-rdb-aof.md"
+    },
+    {
+      "id": "redis-replication",
+      "title": "Гарантирует ли Redis-реплика немедленное чтение последней записи?",
+      "topic": "Redis",
+      "difficulty": "Продвинутый",
+      "summary": "Асинхронная репликация и переключение узлов.",
+      "takeaway": "Репликация повышает доступность, но требует явной модели согласованности.",
+      "moduleId": "redis",
+      "order": 1,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Репликация повышает доступность, но требует явной модели согласованности.",
+        "keywords": ["Redis", "Надёжность и обслуживание"],
+        "kind": "explanation",
+        "reviewStatus": "imported",
+        "goalIds": ["core", "redis-replication"],
+        "relatedQuestionIds": [],
+        "priority": "core",
+        "sourceRefs": []
+      },
+      "answerFile": "answers/redis/redis-replication.md"
+    },
+    {
+      "id": "redis-scan",
+      "title": "Почему SCAN обычно предпочтительнее KEYS в работающем сервисе?",
+      "topic": "Redis",
+      "difficulty": "Средний",
+      "summary": "Порционный обход и ограничения курсора.",
+      "code": "SCAN 0 MATCH cache:* COUNT 100\n# Продолжайте с полученным курсором до возврата 0.",
+      "takeaway": "Порционный обход требует обработки курсора и возможных повторов.",
+      "moduleId": "redis",
+      "order": 2,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Порционный обход требует обработки курсора и возможных повторов.",
+        "keywords": ["Redis", "Надёжность и обслуживание"],
+        "kind": "explanation",
+        "reviewStatus": "imported",
+        "goalIds": ["core", "redis-scan"],
+        "relatedQuestionIds": [],
+        "priority": "core",
+        "sourceRefs": []
+      },
+      "answerFile": "answers/redis/redis-scan.md"
+    }
+  ]
+}

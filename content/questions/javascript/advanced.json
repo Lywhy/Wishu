@@ -1,0 +1,288 @@
+{
+  "$schema": "../question-bundle.schema.json",
+  "sectionId": "javascript",
+  "subsectionId": "advanced",
+  "scope": "Контексты выполнения, слабые ссылки, общая память и Temporal.",
+  "coverageGoals": [
+    {
+      "id": "core",
+      "title": "Продвинутые темы",
+      "description": "Обзор и взаимосвязи навыков: Контексты выполнения, слабые ссылки, общая память и Temporal.",
+      "requiredDifficulties": [],
+      "reviewed": false,
+      "priority": "extended",
+      "relatedSkillIds": [
+        "execution-context",
+        "weak-ref",
+        "shared-array-buffer",
+        "temporal-api",
+        "dates-timezones",
+        "regexp-last-index",
+        "finalization-registry",
+        "js-realms-intrinsics"
+      ]
+    },
+    {
+      "id": "execution-context",
+      "title": "Что такое execution context и какие данные нужны для выполнения кода?",
+      "description": "Объяснить и применить правило с учётом его границ: Контекст выполнения описывает состояние исполняемого кода, а this - лишь отдельный аспект его правил.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": false,
+      "priority": "extended",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "weak-ref",
+      "title": "Что делает WeakRef и почему на него нельзя опирать обязательную логику?",
+      "description": "Объяснить и применить правило с учётом его границ: WeakRef допускает исчезновение цели в неопределённый момент и требует запасного пути.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": false,
+      "priority": "specialist",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "shared-array-buffer",
+      "title": "Как SharedArrayBuffer позволяет разделять память между агентами?",
+      "description": "Объяснить и применить правило с учётом его границ: Общая память требует и доступа к байтам, и явного согласования конкурентных операций.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": false,
+      "priority": "extended",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "temporal-api",
+      "title": "Какие задачи решает Temporal API и чем его типы отличаются от Date?",
+      "description": "Объяснить и применить правило с учётом его границ: Temporal выбирают по смыслу данных: момент, календарная дата и время в поясе - разные типы.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": false,
+      "priority": "specialist",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "dates-timezones",
+      "title": "Что хранит Date и как не перепутать UTC, локальное время и календарную дату?",
+      "description": "Объяснить и применить правило с учётом его границ: Отделяйте момент, календарную дату и часовой пояс отображения.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": false,
+      "priority": "extended",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "regexp-last-index",
+      "title": "Почему test с регулярным выражением /g может чередовать true и false?",
+      "description": "Объяснить и применить правило с учётом его границ: Проверяйте флаги и lastIndex, если одинаковый ввод даёт неожиданные результаты.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": false,
+      "priority": "extended",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "finalization-registry",
+      "title": "Для чего нужен FinalizationRegistry и почему он не заменяет явную очистку?",
+      "description": "Объяснить и применить правило с учётом его границ: Финализация - необязательная оптимизация, а не надёжный жизненный цикл ресурса.",
+      "requiredDifficulties": ["Продвинутый"],
+      "reviewed": false,
+      "priority": "specialist",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "js-realms-intrinsics",
+      "title": "Что такое realm и почему instanceof может не работать между окнами?",
+      "description": "Объяснить и применить правило с учётом его границ: Сравнение с локальным конструктором не всегда проверяет внутреннюю категорию чужого значения.",
+      "requiredDifficulties": ["Продвинутый"],
+      "reviewed": false,
+      "priority": "extended",
+      "relatedSkillIds": []
+    }
+  ],
+  "questions": [
+    {
+      "id": "execution-context",
+      "title": "Что такое execution context и какие данные нужны для выполнения кода?",
+      "topic": "JavaScript",
+      "difficulty": "Средний",
+      "summary": "Абстрактное состояние выполнения, окружения и стек контекстов.",
+      "code": "function outer(value) {\n  return function inner() { return value; };\n}\nconst read = outer(42);\nread(); // 42: окружение value доступно после возврата outer\n// Это иллюстрация окружения, а не способ прочитать внутренний execution context.",
+      "takeaway": "Контекст выполнения описывает состояние исполняемого кода, а this - лишь отдельный аспект его правил.",
+      "moduleId": "javascript",
+      "order": 0,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Контекст выполнения описывает состояние исполняемого кода, а this - лишь отдельный аспект его правил.",
+        "keywords": ["JavaScript", "Продвинутые темы"],
+        "kind": "explanation",
+        "reviewStatus": "imported",
+        "goalIds": ["core", "execution-context"],
+        "relatedQuestionIds": [],
+        "priority": "extended",
+        "sourceRefs": []
+      },
+      "answerFile": "answers/javascript/execution-context.md"
+    },
+    {
+      "id": "weak-ref",
+      "title": "Что делает WeakRef и почему на него нельзя опирать обязательную логику?",
+      "topic": "JavaScript",
+      "difficulty": "Средний",
+      "summary": "Слабая ссылка, deref и неопределённое время сборки.",
+      "code": "function readName(reference) {\n  const object = reference.deref();\n  return object ? object.name : \"объект недоступен\";\n}\n// new WeakRef(object) не позволяет предсказать, когда deref вернёт undefined.",
+      "takeaway": "WeakRef допускает исчезновение цели в неопределённый момент и требует запасного пути.",
+      "moduleId": "javascript",
+      "order": 1,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: WeakRef допускает исчезновение цели в неопределённый момент и требует запасного пути.",
+        "keywords": ["JavaScript", "Продвинутые темы"],
+        "kind": "explanation",
+        "reviewStatus": "imported",
+        "goalIds": ["core", "weak-ref"],
+        "relatedQuestionIds": [],
+        "priority": "specialist",
+        "sourceRefs": []
+      },
+      "answerFile": "answers/javascript/weak-ref.md"
+    },
+    {
+      "id": "shared-array-buffer",
+      "title": "Как SharedArrayBuffer позволяет разделять память между агентами?",
+      "topic": "JavaScript",
+      "difficulty": "Средний",
+      "summary": "Общие байты, Atomics и требования браузерного контекста.",
+      "code": "if (globalThis.crossOriginIsolated && typeof SharedArrayBuffer === \"function\") {\n  const buffer = new SharedArrayBuffer(Int32Array.BYTES_PER_ELEMENT);\n  const view = new Int32Array(buffer);\n  Atomics.add(view, 0, 1);\n  Atomics.load(view, 0); // 1 в этом примере\n  // buffer можно передать Worker через postMessage без transfer list.\n}",
+      "takeaway": "Общая память требует и доступа к байтам, и явного согласования конкурентных операций.",
+      "moduleId": "javascript",
+      "order": 2,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Общая память требует и доступа к байтам, и явного согласования конкурентных операций.",
+        "keywords": ["JavaScript", "Продвинутые темы"],
+        "kind": "explanation",
+        "reviewStatus": "imported",
+        "goalIds": ["core", "shared-array-buffer"],
+        "relatedQuestionIds": [],
+        "priority": "extended",
+        "sourceRefs": []
+      },
+      "answerFile": "answers/javascript/shared-array-buffer.md"
+    },
+    {
+      "id": "temporal-api",
+      "title": "Какие задачи решает Temporal API и чем его типы отличаются от Date?",
+      "topic": "JavaScript",
+      "difficulty": "Средний",
+      "summary": "Момент времени, календарная дата, часовой пояс и неизменяемые значения.",
+      "code": "if (typeof Temporal !== \"undefined\") {\n  const date = Temporal.PlainDate.from(\"2026-03-01\");\n  const next = date.add({ days: 1 });\n  date.toString(); // \"2026-03-01\"\n  next.toString(); // \"2026-03-02\"\n}",
+      "takeaway": "Temporal выбирают по смыслу данных: момент, календарная дата и время в поясе - разные типы.",
+      "moduleId": "javascript",
+      "order": 3,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Temporal выбирают по смыслу данных: момент, календарная дата и время в поясе - разные типы.",
+        "keywords": ["JavaScript", "Продвинутые темы"],
+        "kind": "explanation",
+        "reviewStatus": "imported",
+        "goalIds": ["core", "temporal-api"],
+        "relatedQuestionIds": [],
+        "priority": "specialist",
+        "sourceRefs": []
+      },
+      "answerFile": "answers/javascript/temporal-api.md"
+    },
+    {
+      "id": "dates-timezones",
+      "title": "Что хранит Date и как не перепутать UTC, локальное время и календарную дату?",
+      "topic": "JavaScript",
+      "difficulty": "Средний",
+      "summary": "Момент времени, явный offset, форматирование и календарные значения.",
+      "code": "const meeting = new Date(\"2026-01-10T12:00:00+03:00\");\nmeeting.toISOString(); // \"2026-01-10T09:00:00.000Z\"\nconst formatter = new Intl.DateTimeFormat(\"ru-RU\", {\n  timeZone: \"Europe/Moscow\", dateStyle: \"short\", timeStyle: \"short\",\n});\nformatter.format(meeting); // отображение в заданном поясе\nconst birthday = \"2000-01-10\"; // отдельная календарная дата",
+      "takeaway": "Отделяйте момент, календарную дату и часовой пояс отображения.",
+      "moduleId": "javascript",
+      "order": 4,
+      "popular": false,
+      "pitfall": "Считать, что Date запомнил offset исходной строки, или произвольно парсить локализованные строки дат.",
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Отделяйте момент, календарную дату и часовой пояс отображения.",
+        "keywords": ["JavaScript", "Продвинутые темы"],
+        "kind": "explanation",
+        "reviewStatus": "imported",
+        "goalIds": ["core", "dates-timezones"],
+        "relatedQuestionIds": [],
+        "priority": "extended",
+        "sourceRefs": []
+      },
+      "answerFile": "answers/javascript/dates-timezones.md"
+    },
+    {
+      "id": "regexp-last-index",
+      "title": "Почему test с регулярным выражением /g может чередовать true и false?",
+      "topic": "JavaScript",
+      "difficulty": "Средний",
+      "summary": "Состояние RegExp, lastIndex и флаги g/y.",
+      "code": "const pattern = /a/g;\npattern.test(\"a\"); // true; lastIndex = 1\npattern.test(\"a\"); // false; lastIndex = 0\npattern.test(\"a\"); // true\n\nconst independent = /a/;\nindependent.test(\"a\"); // true\nindependent.test(\"a\"); // true",
+      "takeaway": "Проверяйте флаги и lastIndex, если одинаковый ввод даёт неожиданные результаты.",
+      "moduleId": "javascript",
+      "order": 5,
+      "popular": false,
+      "pitfall": "Кешировать один /g RegExp для валидации разных полей и ожидать независимого результата.",
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Проверяйте флаги и lastIndex, если одинаковый ввод даёт неожиданные результаты.",
+        "keywords": ["JavaScript", "Продвинутые темы"],
+        "kind": "explanation",
+        "reviewStatus": "imported",
+        "goalIds": ["core", "regexp-last-index"],
+        "relatedQuestionIds": [],
+        "priority": "extended",
+        "sourceRefs": []
+      },
+      "answerFile": "answers/javascript/regexp-last-index.md"
+    },
+    {
+      "id": "finalization-registry",
+      "title": "Для чего нужен FinalizationRegistry и почему он не заменяет явную очистку?",
+      "topic": "JavaScript",
+      "difficulty": "Продвинутый",
+      "summary": "Регистрация цели, удерживаемое значение и негарантированная финализация.",
+      "code": "const registry = new FinalizationRegistry(key => {\n  console.log(\"Можно убрать необязательные данные:\", key);\n});\nlet target = { name: \"temporary\" };\nregistry.register(target, \"cache-key\");\ntarget = null;\n// Нет гарантии, когда и будет ли вообще вызван callback.",
+      "takeaway": "Финализация - необязательная оптимизация, а не надёжный жизненный цикл ресурса.",
+      "moduleId": "javascript",
+      "order": 6,
+      "popular": false,
+      "pitfall": "Освобождать в финализаторе обязательный ресурс или удерживать target внутри heldValue.",
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Финализация - необязательная оптимизация, а не надёжный жизненный цикл ресурса.",
+        "keywords": ["JavaScript", "Продвинутые темы"],
+        "kind": "explanation",
+        "reviewStatus": "imported",
+        "goalIds": ["core", "finalization-registry"],
+        "relatedQuestionIds": [],
+        "priority": "specialist",
+        "sourceRefs": []
+      },
+      "answerFile": "answers/javascript/finalization-registry.md"
+    },
+    {
+      "id": "js-realms-intrinsics",
+      "difficulty": "Продвинутый",
+      "title": "Что такое realm и почему instanceof может не работать между окнами?",
+      "summary": "Собственные глобальные объекты и наборы встроенных конструкторов среды.",
+      "code": "// При разрешённом доступе к другому окну:\n// const foreign = new iframe.contentWindow.Array(1, 2)\n// foreign instanceof Array может быть false.\n// Array.isArray(foreign) остаётся подходящей проверкой массива.",
+      "takeaway": "Сравнение с локальным конструктором не всегда проверяет внутреннюю категорию чужого значения.",
+      "pitfall": "Использовать instanceof как полную валидацию любого значения из iframe или иной среды.",
+      "topic": "JavaScript",
+      "moduleId": "javascript",
+      "popular": false,
+      "order": 7,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Сравнение с локальным конструктором не всегда проверяет внутреннюю категорию чужого значения.",
+        "keywords": ["JavaScript", "Продвинутые темы"],
+        "kind": "explanation",
+        "reviewStatus": "imported",
+        "goalIds": ["core", "js-realms-intrinsics"],
+        "relatedQuestionIds": [],
+        "priority": "extended",
+        "sourceRefs": ["ref-d9c82cdcde643850"]
+      },
+      "answerFile": "answers/javascript/js-realms-intrinsics.md"
+    }
+  ]
+}

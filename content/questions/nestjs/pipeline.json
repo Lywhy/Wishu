@@ -1,0 +1,112 @@
+{
+  "$schema": "../question-bundle.schema.json",
+  "sectionId": "nestjs",
+  "subsectionId": "pipeline",
+  "scope": "Middleware, guards и interceptors.",
+  "coverageGoals": [
+    {
+      "id": "core",
+      "title": "Обработка запроса",
+      "description": "Обзор и взаимосвязи навыков: Middleware, guards и interceptors.",
+      "requiredDifficulties": [],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": ["nest-middleware-guard", "nest-interceptor", "nest-pipe-guard-order"]
+    },
+    {
+      "id": "nest-middleware-guard",
+      "title": "Чем Middleware отличается от Guard?",
+      "description": "Объяснить и применить правило с учётом его границ: Guard выражает условие допуска к обработчику.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "nest-interceptor",
+      "title": "Как Interceptor работает до и после обработчика?",
+      "description": "Объяснить и применить правило с учётом его границ: Обрабатывайте результат как асинхронный поток, а не уже готовое значение.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "nest-pipe-guard-order",
+      "title": "Почему проверку формата параметра нельзя путать с проверкой доступа?",
+      "description": "Объяснить и применить правило с учётом его границ: У каждого этапа запроса свой контракт входных данных.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": []
+    }
+  ],
+  "questions": [
+    {
+      "id": "nest-middleware-guard",
+      "title": "Чем Middleware отличается от Guard?",
+      "topic": "NestJS",
+      "difficulty": "Средний",
+      "summary": "Предварительная обработка и решение о доступе.",
+      "takeaway": "Guard выражает условие допуска к обработчику.",
+      "moduleId": "nestjs",
+      "order": 0,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Guard выражает условие допуска к обработчику.",
+        "keywords": ["NestJS", "Обработка запроса"],
+        "kind": "explanation",
+        "reviewStatus": "imported",
+        "goalIds": ["core", "nest-middleware-guard"],
+        "relatedQuestionIds": [],
+        "priority": "core",
+        "sourceRefs": []
+      },
+      "answerFile": "answers/nestjs/nest-middleware-guard.md"
+    },
+    {
+      "id": "nest-interceptor",
+      "title": "Как Interceptor работает до и после обработчика?",
+      "topic": "NestJS",
+      "difficulty": "Средний",
+      "summary": "Обёртка выполнения и поток результата.",
+      "takeaway": "Обрабатывайте результат как асинхронный поток, а не уже готовое значение.",
+      "moduleId": "nestjs",
+      "order": 1,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Обрабатывайте результат как асинхронный поток, а не уже готовое значение.",
+        "keywords": ["NestJS", "Обработка запроса"],
+        "kind": "explanation",
+        "reviewStatus": "imported",
+        "goalIds": ["core", "nest-interceptor"],
+        "relatedQuestionIds": [],
+        "priority": "core",
+        "sourceRefs": []
+      },
+      "answerFile": "answers/nestjs/nest-interceptor.md"
+    },
+    {
+      "id": "nest-pipe-guard-order",
+      "title": "Почему проверку формата параметра нельзя путать с проверкой доступа?",
+      "topic": "NestJS",
+      "difficulty": "Средний",
+      "summary": "Pipes и guards на разных этапах запроса.",
+      "takeaway": "У каждого этапа запроса свой контракт входных данных.",
+      "moduleId": "nestjs",
+      "order": 2,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: У каждого этапа запроса свой контракт входных данных.",
+        "keywords": ["NestJS", "Обработка запроса"],
+        "kind": "explanation",
+        "reviewStatus": "imported",
+        "goalIds": ["core", "nest-pipe-guard-order"],
+        "relatedQuestionIds": [],
+        "priority": "core",
+        "sourceRefs": []
+      },
+      "answerFile": "answers/nestjs/nest-pipe-guard-order.md"
+    }
+  ]
+}

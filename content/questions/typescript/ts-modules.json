@@ -1,0 +1,355 @@
+{
+  "$schema": "../question-bundle.schema.json",
+  "sectionId": "typescript",
+  "subsectionId": "ts-modules",
+  "scope": "Типовые импорты, разрешение модулей, декларации, ESM/CJS и границы проектов.",
+  "coverageGoals": [
+    {
+      "id": "core",
+      "title": "Модули и сборка",
+      "description": "Обзор и взаимосвязи навыков: Типовые импорты, разрешение модулей, декларации, ESM/CJS и границы проектов.",
+      "requiredDifficulties": [],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": [
+        "ts-type-only-imports",
+        "ts-module-resolution",
+        "ts-declaration-files",
+        "ts-library-declaration-publishing",
+        "ts-esm-cjs-contract",
+        "ts-isolated-compilation",
+        "ts-project-references",
+        "ts-ambient-types-scope",
+        "ts-check-javascript",
+        "ts-skip-lib-check"
+      ]
+    },
+    {
+      "id": "ts-type-only-imports",
+      "title": "Как import type и verbatimModuleSyntax отделяют типы от runtime-зависимостей?",
+      "description": "Объяснить и применить правило с учётом его границ: Отделяйте необходимую runtime-зависимость от ссылки только на тип.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "ts-module-resolution",
+      "title": "Как согласовать module, moduleResolution и aliases с реальной средой запуска?",
+      "description": "Объяснить и применить правило с учётом его границ: Поиск импорта компилятором и его разрешение при запуске должны описывать одну среду.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "ts-declaration-files",
+      "title": "Что описывают .d.ts и откуда TypeScript получает типы JavaScript-библиотеки?",
+      "description": "Объяснить и применить правило с учётом его границ: Declaration file сообщает о существующем API, но не предоставляет его выполнение.",
+      "requiredDifficulties": ["Базовый"],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "ts-library-declaration-publishing",
+      "title": "Как публиковать библиотеку, чтобы её JavaScript и декларации описывали один API?",
+      "description": "Объяснить и применить правило с учётом его границ: Публикация типов - часть контракта пакета, связанная с реальными точками входа.",
+      "requiredDifficulties": ["Продвинутый"],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "ts-esm-cjs-contract",
+      "title": "Почему импорт CommonJS-пакета может типизироваться, но не работать в выбранной ESM-среде?",
+      "description": "Объяснить и применить правило с учётом его границ: Типизация импорта, преобразование синтаксиса и загрузка модуля - разные слои.",
+      "requiredDifficulties": ["Продвинутый"],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "ts-isolated-compilation",
+      "title": "Чем isolatedModules отличается от isolatedDeclarations?",
+      "description": "Объяснить и применить правило с учётом его границ: Изолированная JS-трансформация и изолированный declaration emit требуют разных гарантий.",
+      "requiredDifficulties": ["Продвинутый"],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "ts-project-references",
+      "title": "Как project references помогают организовать проверку большого проекта?",
+      "description": "Объяснить и применить правило с учётом его границ: References описывают граф проверяемых проектов, а не механизм загрузки пакетов.",
+      "requiredDifficulties": ["Продвинутый"],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "ts-ambient-types-scope",
+      "title": "Как types и typeRoots помогают контролировать глобальные типы окружения?",
+      "description": "Объяснить и применить правило с учётом его границ: Типовое окружение должно соответствовать месту выполнения конкретного набора файлов.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "ts-check-javascript",
+      "title": "Как постепенно проверять JavaScript через allowJs, checkJs и JSDoc?",
+      "description": "Объяснить и применить правило с учётом его границ: Статическую проверку можно вводить в JavaScript постепенно через конфигурацию и JSDoc.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "ts-skip-lib-check",
+      "title": "Что действительно отключает skipLibCheck и когда он скрывает проблему зависимостей?",
+      "description": "Объяснить и применить правило с учётом его границ: Пропуск проверки деклараций не устраняет противоречия в описании зависимостей.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": []
+    }
+  ],
+  "questions": [
+    {
+      "id": "ts-type-only-imports",
+      "title": "Как import type и verbatimModuleSyntax отделяют типы от runtime-зависимостей?",
+      "summary": "Явное удаление типовых импортов и сохранение необходимых побочных эффектов модуля.",
+      "code": "import type { User } from './contracts.js'\nimport { loadUser } from './service.js'\nimport './register.js'\n\nexport async function currentUser(): Promise<User> {\n  return loadUser()\n}\n// Файлы-источники должны предоставлять соответствующие экспорты.",
+      "takeaway": "Отделяйте необходимую runtime-зависимость от ссылки только на тип.",
+      "pitfall": "Удалить единственный исполняемый импорт регистрации, заменив его на import type.",
+      "difficulty": "Средний",
+      "topic": "TypeScript",
+      "moduleId": "typescript",
+      "order": 0,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Отделяйте необходимую runtime-зависимость от ссылки только на тип.",
+        "keywords": ["TypeScript", "Модули и сборка"],
+        "kind": "explanation",
+        "reviewStatus": "imported",
+        "goalIds": ["core", "ts-type-only-imports"],
+        "relatedQuestionIds": [],
+        "priority": "core",
+        "sourceRefs": ["ref-f3bc0c0e7bc0b54f"]
+      },
+      "answerFile": "answers/typescript/ts-type-only-imports.md"
+    },
+    {
+      "id": "ts-module-resolution",
+      "title": "Как согласовать module, moduleResolution и aliases с реальной средой запуска?",
+      "summary": "Разделение формата модулей, поиска файлов и разрешения путей во время выполнения.",
+      "takeaway": "Поиск импорта компилятором и его разрешение при запуске должны описывать одну среду.",
+      "pitfall": "Настроить только paths и ожидать, что Node сам узнает alias из tsconfig.",
+      "difficulty": "Средний",
+      "topic": "TypeScript",
+      "moduleId": "typescript",
+      "order": 1,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Поиск импорта компилятором и его разрешение при запуске должны описывать одну среду.",
+        "keywords": ["TypeScript", "Модули и сборка"],
+        "kind": "explanation",
+        "reviewStatus": "imported",
+        "goalIds": ["core", "ts-module-resolution"],
+        "relatedQuestionIds": [],
+        "priority": "core",
+        "sourceRefs": ["ref-5d5a35066078b134"]
+      },
+      "answerFile": "answers/typescript/ts-module-resolution.md"
+    },
+    {
+      "id": "ts-declaration-files",
+      "title": "Что описывают .d.ts и откуда TypeScript получает типы JavaScript-библиотеки?",
+      "summary": "Декларации пакета, @types, локальный shim и границы ambient-объявлений.",
+      "code": "// legacy-format.d.ts: ambient-описание реально установленного пакета.\ndeclare module 'legacy-format' {\n  export function format(value: number, locale?: string): string\n}\n// Это декларация, а не реализация функции format.",
+      "takeaway": "Declaration file сообщает о существующем API, но не предоставляет его выполнение.",
+      "pitfall": "Лечить отсутствие типов пустым declare module и не замечать распространение any.",
+      "difficulty": "Базовый",
+      "topic": "TypeScript",
+      "moduleId": "typescript",
+      "order": 2,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Declaration file сообщает о существующем API, но не предоставляет его выполнение.",
+        "keywords": ["TypeScript", "Модули и сборка"],
+        "kind": "explanation",
+        "reviewStatus": "imported",
+        "goalIds": ["core", "ts-declaration-files"],
+        "relatedQuestionIds": [],
+        "priority": "core",
+        "sourceRefs": ["ref-c1de2736df1411d9"]
+      },
+      "answerFile": "answers/typescript/ts-declaration-files.md"
+    },
+    {
+      "id": "ts-library-declaration-publishing",
+      "title": "Как публиковать библиотеку, чтобы её JavaScript и декларации описывали один API?",
+      "summary": "Публичные экспорты, declaration emit и соответствие пакетных точек входа.",
+      "code": "// Публичный entrypoint src/index.ts:\nexport interface FormatOptions { locale?: string }\nexport function format(value: number, options: FormatOptions = {}): string {\n  return value.toLocaleString(options.locale)\n}\n// Компилятор может выпустить index.d.ts отдельно от JS-сборки.\n// Оба артефакта должны попасть в пакет и совпасть с его exports.",
+      "takeaway": "Публикация типов - часть контракта пакета, связанная с реальными точками входа.",
+      "pitfall": "Считать успешный declaration emit достаточной проверкой опубликованной библиотеки.",
+      "difficulty": "Продвинутый",
+      "topic": "TypeScript",
+      "moduleId": "typescript",
+      "order": 3,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Публикация типов - часть контракта пакета, связанная с реальными точками входа.",
+        "keywords": ["TypeScript", "Модули и сборка"],
+        "kind": "explanation",
+        "reviewStatus": "imported",
+        "goalIds": ["core", "ts-library-declaration-publishing"],
+        "relatedQuestionIds": [],
+        "priority": "core",
+        "sourceRefs": ["ref-2867a7ff346ce328"]
+      },
+      "answerFile": "answers/typescript/ts-library-declaration-publishing.md"
+    },
+    {
+      "id": "ts-esm-cjs-contract",
+      "title": "Почему импорт CommonJS-пакета может типизироваться, но не работать в выбранной ESM-среде?",
+      "summary": "Границы esModuleInterop, allowSyntheticDefaultImports и моделирования формата файла.",
+      "takeaway": "Типизация импорта, преобразование синтаксиса и загрузка модуля - разные слои.",
+      "pitfall": "Включить allowSyntheticDefaultImports и считать runtime-несовместимость устранённой.",
+      "difficulty": "Продвинутый",
+      "topic": "TypeScript",
+      "moduleId": "typescript",
+      "order": 4,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Типизация импорта, преобразование синтаксиса и загрузка модуля - разные слои.",
+        "keywords": ["TypeScript", "Модули и сборка"],
+        "kind": "explanation",
+        "reviewStatus": "imported",
+        "goalIds": ["core", "ts-esm-cjs-contract"],
+        "relatedQuestionIds": [],
+        "priority": "core",
+        "sourceRefs": ["ref-ed6daa68cea06c9b"]
+      },
+      "answerFile": "answers/typescript/ts-esm-cjs-contract.md"
+    },
+    {
+      "id": "ts-isolated-compilation",
+      "title": "Чем isolatedModules отличается от isolatedDeclarations?",
+      "summary": "Ограничения независимого преобразования файла в JS и независимого создания деклараций.",
+      "code": "export interface User { id: string }\n// Явный публичный контракт облегчает независимый declaration emit.\nexport function createUser(id: string): User {\n  return { id }\n}\n// Локальные очевидные значения по-прежнему могут использовать вывод типов.",
+      "takeaway": "Изолированная JS-трансформация и изолированный declaration emit требуют разных гарантий.",
+      "pitfall": "Считать isolatedModules запуском полной проверки типов внутри Babel или esbuild.",
+      "difficulty": "Продвинутый",
+      "topic": "TypeScript",
+      "moduleId": "typescript",
+      "order": 5,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Изолированная JS-трансформация и изолированный declaration emit требуют разных гарантий.",
+        "keywords": ["TypeScript", "Модули и сборка"],
+        "kind": "explanation",
+        "reviewStatus": "imported",
+        "goalIds": ["core", "ts-isolated-compilation"],
+        "relatedQuestionIds": [],
+        "priority": "core",
+        "sourceRefs": ["ref-93859c354bdf1f3b"]
+      },
+      "answerFile": "answers/typescript/ts-isolated-compilation.md"
+    },
+    {
+      "id": "ts-project-references",
+      "title": "Как project references помогают организовать проверку большого проекта?",
+      "summary": "Граф TypeScript-проектов, composite, декларации и инкрементальная сборка.",
+      "takeaway": "References описывают граф проверяемых проектов, а не механизм загрузки пакетов.",
+      "pitfall": "Ожидать, что ссылка на tsconfig автоматически настроит package.json и runtime-импорты.",
+      "difficulty": "Продвинутый",
+      "topic": "TypeScript",
+      "moduleId": "typescript",
+      "order": 6,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: References описывают граф проверяемых проектов, а не механизм загрузки пакетов.",
+        "keywords": ["TypeScript", "Модули и сборка"],
+        "kind": "explanation",
+        "reviewStatus": "imported",
+        "goalIds": ["core", "ts-project-references"],
+        "relatedQuestionIds": [],
+        "priority": "core",
+        "sourceRefs": ["ref-f31d37d8de59b590"]
+      },
+      "answerFile": "answers/typescript/ts-project-references.md"
+    },
+    {
+      "id": "ts-ambient-types-scope",
+      "title": "Как types и typeRoots помогают контролировать глобальные типы окружения?",
+      "summary": "Предотвращение случайного смешивания браузерных, Node и тестовых глобальных деклараций.",
+      "takeaway": "Типовое окружение должно соответствовать месту выполнения конкретного набора файлов.",
+      "pitfall": "Считать наличие имени process в подсказках доказательством доступности Node API в браузере.",
+      "difficulty": "Средний",
+      "topic": "TypeScript",
+      "moduleId": "typescript",
+      "order": 7,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Типовое окружение должно соответствовать месту выполнения конкретного набора файлов.",
+        "keywords": ["TypeScript", "Модули и сборка"],
+        "kind": "explanation",
+        "reviewStatus": "imported",
+        "goalIds": ["core", "ts-ambient-types-scope"],
+        "relatedQuestionIds": [],
+        "priority": "core",
+        "sourceRefs": ["ref-0cc3e0974cc08536"]
+      },
+      "answerFile": "answers/typescript/ts-ambient-types-scope.md"
+    },
+    {
+      "id": "ts-check-javascript",
+      "title": "Как постепенно проверять JavaScript через allowJs, checkJs и JSDoc?",
+      "summary": "Миграция без обязательного переименования всей кодовой базы в .ts.",
+      "code": "// Пример содержимого math.js:\n// @ts-check\n/** @param {number} left @param {number} right @returns {number} */\nfunction add(left, right) {\n  return left + right\n}\n// add('1', 2) // Проверка должна обнаружить неверный аргумент.",
+      "takeaway": "Статическую проверку можно вводить в JavaScript постепенно через конфигурацию и JSDoc.",
+      "pitfall": "Включить allowJs и предположить, что все JS-файлы уже полноценно проверяются.",
+      "difficulty": "Средний",
+      "topic": "TypeScript",
+      "moduleId": "typescript",
+      "order": 8,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Статическую проверку можно вводить в JavaScript постепенно через конфигурацию и JSDoc.",
+        "keywords": ["TypeScript", "Модули и сборка"],
+        "kind": "explanation",
+        "reviewStatus": "imported",
+        "goalIds": ["core", "ts-check-javascript"],
+        "relatedQuestionIds": [],
+        "priority": "core",
+        "sourceRefs": ["ref-8c00e42e01267e0d"]
+      },
+      "answerFile": "answers/typescript/ts-check-javascript.md"
+    },
+    {
+      "id": "ts-skip-lib-check",
+      "title": "Что действительно отключает skipLibCheck и когда он скрывает проблему зависимостей?",
+      "summary": "Цена проверки declaration files и диагностика конфликтующих версий типов.",
+      "takeaway": "Пропуск проверки деклараций не устраняет противоречия в описании зависимостей.",
+      "pitfall": "Считать skipLibCheck полным отключением типизации библиотек или исправлением конфликтов версий.",
+      "difficulty": "Средний",
+      "topic": "TypeScript",
+      "moduleId": "typescript",
+      "order": 9,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Пропуск проверки деклараций не устраняет противоречия в описании зависимостей.",
+        "keywords": ["TypeScript", "Модули и сборка"],
+        "kind": "explanation",
+        "reviewStatus": "imported",
+        "goalIds": ["core", "ts-skip-lib-check"],
+        "relatedQuestionIds": [],
+        "priority": "core",
+        "sourceRefs": ["ref-368dd47648bb886b"]
+      },
+      "answerFile": "answers/typescript/ts-skip-lib-check.md"
+    }
+  ]
+}

@@ -1,0 +1,258 @@
+{
+  "$schema": "../question-bundle.schema.json",
+  "sectionId": "javascript",
+  "subsectionId": "binary",
+  "scope": "Представления буфера, transfer, кодирование, Atomics и владение ресурсами.",
+  "coverageGoals": [
+    {
+      "id": "core",
+      "title": "Бинарные данные и общая память",
+      "description": "Обзор и взаимосвязи навыков: Представления буфера, transfer, кодирование, Atomics и владение ресурсами.",
+      "requiredDifficulties": [],
+      "reviewed": false,
+      "priority": "extended",
+      "relatedSkillIds": [
+        "js-binary-view-copy",
+        "js-buffer-detachment",
+        "js-data-view-endianness",
+        "js-utf8-binary",
+        "js-blob-file-url",
+        "js-atomics-shared-state",
+        "js-atomic-waiting"
+      ]
+    },
+    {
+      "id": "js-binary-view-copy",
+      "title": "Чем subarray отличается от slice у TypedArray?",
+      "description": "Объяснить и применить правило с учётом его границ: Выбирайте срез по нужному владению памятью, а не только по скорости создания.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": false,
+      "priority": "extended",
+      "relatedSkillIds": ["typed-arrays"]
+    },
+    {
+      "id": "js-buffer-detachment",
+      "title": "Что происходит с ArrayBuffer и его представлениями после передачи владения?",
+      "description": "Объяснить и применить правило с учётом его границ: Transfer меняет доступность исходного ресурса, а не просто делает быструю копию.",
+      "requiredDifficulties": ["Продвинутый"],
+      "reviewed": false,
+      "priority": "extended",
+      "relatedSkillIds": ["structured-clone", "typed-arrays"]
+    },
+    {
+      "id": "js-data-view-endianness",
+      "title": "Когда нужен DataView и почему порядок байтов нужно задавать явно?",
+      "description": "Объяснить и применить правило с учётом его границ: Байтовый порядок является частью протокола, а не угадываемой особенностью устройства.",
+      "requiredDifficulties": ["Продвинутый"],
+      "reviewed": false,
+      "priority": "extended",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "js-utf8-binary",
+      "title": "Как TextEncoder и TextDecoder связывают JavaScript-строку с UTF-8 байтами?",
+      "description": "Объяснить и применить правило с учётом его границ: Различайте единицы JS-строки и байты внешнего формата.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": false,
+      "priority": "extended",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "js-blob-file-url",
+      "title": "Чем Blob, File и object URL отличаются от ArrayBuffer и обычной ссылки?",
+      "description": "Объяснить и применить правило с учётом его границ: Представление данных, ссылка на ресурс и владение его временем жизни - разные вещи.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": false,
+      "priority": "extended",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "js-atomics-shared-state",
+      "title": "Зачем нужны Atomics при совместной работе с SharedArrayBuffer?",
+      "description": "Объяснить и применить правило с учётом его границ: Общая память требует протокола атомарности и синхронизации, а не только общего адреса.",
+      "requiredDifficulties": ["Продвинутый"],
+      "reviewed": false,
+      "priority": "extended",
+      "relatedSkillIds": ["shared-array-buffer"]
+    },
+    {
+      "id": "js-atomic-waiting",
+      "title": "Чем Atomics.wait отличается от waitAsync и почему нельзя блокировать UI?",
+      "description": "Объяснить и применить правило с учётом его границ: Ожидание общей памяти имеет отдельные правила агента, состояния и уведомления.",
+      "requiredDifficulties": ["Продвинутый"],
+      "reviewed": false,
+      "priority": "specialist",
+      "relatedSkillIds": []
+    }
+  ],
+  "questions": [
+    {
+      "id": "js-binary-view-copy",
+      "difficulty": "Средний",
+      "title": "Чем subarray отличается от slice у TypedArray?",
+      "summary": "Разделение буфера, независимая копия и удержание большого ресурса маленьким представлением.",
+      "code": "const data = new Uint8Array([1, 2, 3])\nconst view = data.subarray(1)\nconst copy = data.slice(1)\nview[0] = 9\nconsole.log(data[1], copy[0]) // 9, 2",
+      "takeaway": "Выбирайте срез по нужному владению памятью, а не только по скорости создания.",
+      "pitfall": "Передать subarray как независимую копию и неожиданно получить взаимные изменения.",
+      "topic": "JavaScript",
+      "moduleId": "javascript",
+      "popular": false,
+      "order": 0,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Выбирайте срез по нужному владению памятью, а не только по скорости создания.",
+        "keywords": ["JavaScript", "Бинарные данные и общая память"],
+        "kind": "explanation",
+        "reviewStatus": "imported",
+        "goalIds": ["core", "js-binary-view-copy"],
+        "relatedQuestionIds": ["typed-arrays"],
+        "priority": "extended",
+        "sourceRefs": ["ref-e033551d722fe920"]
+      },
+      "answerFile": "answers/javascript/js-binary-view-copy.md"
+    },
+    {
+      "id": "js-buffer-detachment",
+      "difficulty": "Продвинутый",
+      "title": "Что происходит с ArrayBuffer и его представлениями после передачи владения?",
+      "summary": "Transfer, отделение исходного буфера и контракты последующего доступа.",
+      "code": "const source = new ArrayBuffer(4)\nconst moved = structuredClone(source, { transfer: [source] })\nconsole.log(source.byteLength) // 0\nconsole.log(moved.byteLength) // 4\n// Старые views нельзя использовать как владельцев прежних данных.",
+      "takeaway": "Transfer меняет доступность исходного ресурса, а не просто делает быструю копию.",
+      "pitfall": "Продолжать работу со старым буфером после postMessage с transfer-list.",
+      "topic": "JavaScript",
+      "moduleId": "javascript",
+      "popular": false,
+      "order": 1,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Transfer меняет доступность исходного ресурса, а не просто делает быструю копию.",
+        "keywords": ["JavaScript", "Бинарные данные и общая память"],
+        "kind": "explanation",
+        "reviewStatus": "imported",
+        "goalIds": ["core", "js-buffer-detachment"],
+        "relatedQuestionIds": ["structured-clone", "typed-arrays"],
+        "priority": "extended",
+        "sourceRefs": ["ref-99df322f519ec4b7"]
+      },
+      "answerFile": "answers/javascript/js-buffer-detachment.md"
+    },
+    {
+      "id": "js-data-view-endianness",
+      "difficulty": "Продвинутый",
+      "title": "Когда нужен DataView и почему порядок байтов нужно задавать явно?",
+      "summary": "Чтение бинарного протокола, смещения и endianness.",
+      "code": "const view = new DataView(new ArrayBuffer(2))\nview.setUint16(0, 0x1234, false)\nconsole.log(view.getUint8(0)) // 0x12\nconsole.log(view.getUint16(0, true)) // 0x3412",
+      "takeaway": "Байтовый порядок является частью протокола, а не угадываемой особенностью устройства.",
+      "pitfall": "Читать сетевой формат с произвольным endianness и считать неверное число повреждением файла.",
+      "topic": "JavaScript",
+      "moduleId": "javascript",
+      "popular": false,
+      "order": 2,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Байтовый порядок является частью протокола, а не угадываемой особенностью устройства.",
+        "keywords": ["JavaScript", "Бинарные данные и общая память"],
+        "kind": "explanation",
+        "reviewStatus": "imported",
+        "goalIds": ["core", "js-data-view-endianness"],
+        "relatedQuestionIds": [],
+        "priority": "extended",
+        "sourceRefs": ["ref-1f79dc43429aa5fa"]
+      },
+      "answerFile": "answers/javascript/js-data-view-endianness.md"
+    },
+    {
+      "id": "js-utf8-binary",
+      "difficulty": "Средний",
+      "title": "Как TextEncoder и TextDecoder связывают JavaScript-строку с UTF-8 байтами?",
+      "summary": "Code units строки, кодировка ресурса и частичные многобайтовые последовательности.",
+      "code": "const bytes = new TextEncoder().encode(\"Привет\")\nconsole.log(bytes.length) // 12\nconst text = new TextDecoder(\"utf-8\", { fatal: true }).decode(bytes)\nconsole.log(text) // Привет",
+      "takeaway": "Различайте единицы JS-строки и байты внешнего формата.",
+      "pitfall": "Декодировать каждый сетевой чанк отдельной новой строкой без сохранения частичных последовательностей.",
+      "topic": "JavaScript",
+      "moduleId": "javascript",
+      "popular": false,
+      "order": 3,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Различайте единицы JS-строки и байты внешнего формата.",
+        "keywords": ["JavaScript", "Бинарные данные и общая память"],
+        "kind": "explanation",
+        "reviewStatus": "imported",
+        "goalIds": ["core", "js-utf8-binary"],
+        "relatedQuestionIds": [],
+        "priority": "extended",
+        "sourceRefs": ["ref-10b25e100d9c4f2f"]
+      },
+      "answerFile": "answers/javascript/js-utf8-binary.md"
+    },
+    {
+      "id": "js-blob-file-url",
+      "difficulty": "Средний",
+      "title": "Чем Blob, File и object URL отличаются от ArrayBuffer и обычной ссылки?",
+      "summary": "Представление бинарных данных и время жизни временного URL.",
+      "code": "const blob = new Blob([\"hello\"], { type: \"text/plain\" })\nconst url = URL.createObjectURL(blob)\n// url можно использовать для скачивания или отображения по контракту браузера.\n// После завершения использования:\nURL.revokeObjectURL(url)",
+      "takeaway": "Представление данных, ссылка на ресурс и владение его временем жизни - разные вещи.",
+      "pitfall": "Считать object URL постоянным адресом файла или забывать освобождать множество превью.",
+      "topic": "JavaScript",
+      "moduleId": "javascript",
+      "popular": false,
+      "order": 4,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Представление данных, ссылка на ресурс и владение его временем жизни - разные вещи.",
+        "keywords": ["JavaScript", "Бинарные данные и общая память"],
+        "kind": "explanation",
+        "reviewStatus": "imported",
+        "goalIds": ["core", "js-blob-file-url"],
+        "relatedQuestionIds": [],
+        "priority": "extended",
+        "sourceRefs": ["ref-a3cb083eae4e9e79"]
+      },
+      "answerFile": "answers/javascript/js-blob-file-url.md"
+    },
+    {
+      "id": "js-atomics-shared-state",
+      "difficulty": "Продвинутый",
+      "title": "Зачем нужны Atomics при совместной работе с SharedArrayBuffer?",
+      "summary": "Атомарное чтение/изменение и наблюдаемый порядок между агентами.",
+      "code": "const memory = new SharedArrayBuffer(Int32Array.BYTES_PER_ELEMENT)\nconst counter = new Int32Array(memory)\nAtomics.add(counter, 0, 1)\nconsole.log(Atomics.load(counter, 0)) // 1 в этом отдельном примере.",
+      "takeaway": "Общая память требует протокола атомарности и синхронизации, а не только общего адреса.",
+      "pitfall": "Считать count++ безопасным межпоточным инкрементом без Atomics.",
+      "topic": "JavaScript",
+      "moduleId": "javascript",
+      "popular": false,
+      "order": 5,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Общая память требует протокола атомарности и синхронизации, а не только общего адреса.",
+        "keywords": ["JavaScript", "Бинарные данные и общая память"],
+        "kind": "explanation",
+        "reviewStatus": "imported",
+        "goalIds": ["core", "js-atomics-shared-state"],
+        "relatedQuestionIds": ["shared-array-buffer"],
+        "priority": "extended",
+        "sourceRefs": ["ref-f75747b1fa38c25b"]
+      },
+      "answerFile": "answers/javascript/js-atomics-shared-state.md"
+    },
+    {
+      "id": "js-atomic-waiting",
+      "difficulty": "Продвинутый",
+      "title": "Чем Atomics.wait отличается от waitAsync и почему нельзя блокировать UI?",
+      "summary": "Ожидание состояния общей памяти и уведомление без опроса в цикле.",
+      "code": "const values = new Int32Array(new SharedArrayBuffer(4))\nconst waiting = Atomics.waitAsync(values, 0, 0, 1000)\n// waiting.async определяет, является ли waiting.value Promise.\n// Пример требует поддержки API и допустимой browser isolation.",
+      "takeaway": "Ожидание общей памяти имеет отдельные правила агента, состояния и уведомления.",
+      "pitfall": "Крутить бесконечный while на UI-потоке или всегда считать value у waitAsync промисом.",
+      "topic": "JavaScript",
+      "moduleId": "javascript",
+      "popular": false,
+      "order": 6,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Ожидание общей памяти имеет отдельные правила агента, состояния и уведомления.",
+        "keywords": ["JavaScript", "Бинарные данные и общая память"],
+        "kind": "explanation",
+        "reviewStatus": "imported",
+        "goalIds": ["core", "js-atomic-waiting"],
+        "relatedQuestionIds": [],
+        "priority": "specialist",
+        "sourceRefs": ["ref-87d824cadf6d3f24"]
+      },
+      "answerFile": "answers/javascript/js-atomic-waiting.md"
+    }
+  ]
+}

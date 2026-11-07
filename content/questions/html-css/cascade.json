@@ -1,0 +1,252 @@
+{
+  "$schema": "../question-bundle.schema.json",
+  "sectionId": "html-css",
+  "subsectionId": "cascade",
+  "scope": "Приоритет правил, размеры и наследование.",
+  "coverageGoals": [
+    {
+      "id": "core",
+      "title": "Каскад и блочная модель",
+      "description": "Обзор и взаимосвязи навыков: Приоритет правил, размеры и наследование.",
+      "requiredDifficulties": [],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": [
+        "css-cascade",
+        "css-box-sizing",
+        "css-inheritance",
+        "css-selector-functions",
+        "css-custom-properties",
+        "css-content-visibility",
+        "css-progressive-enhancement"
+      ]
+    },
+    {
+      "id": "css-cascade",
+      "title": "Как браузер выбирает правило при конфликте CSS?",
+      "description": "Объяснить и применить правило с учётом его границ: Сначала сравнивают уровни каскада, затем специфичность.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "css-box-sizing",
+      "title": "Чем content-box отличается от border-box?",
+      "description": "Объяснить и применить правило с учётом его границ: Уточняйте, какую часть коробки описывает width.",
+      "requiredDifficulties": ["Базовый"],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "css-inheritance",
+      "title": "Какие CSS-свойства наследуются и что делают inherit и initial?",
+      "description": "Объяснить и применить правило с учётом его границ: Наследование и значения по умолчанию - разные механизмы.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "css-selector-functions",
+      "title": "Как :is(), :where(), :not() и :has() влияют на выбор элементов и специфичность?",
+      "description": "Объяснить и применить правило с учётом его границ: Выбор элементов и вес селектора нужно анализировать отдельно.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "css-custom-properties",
+      "title": "Как CSS custom properties наследуются и когда срабатывает fallback у var()?",
+      "description": "Объяснить и применить правило с учётом его границ: Var подставляет каскадное значение, а не проверяет произвольную CSS-декларацию за вас.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "css-content-visibility",
+      "title": "Что даёт content-visibility: auto и чем оно отличается от виртуализации?",
+      "description": "Объяснить и применить правило с учётом его границ: Пропуск рендеринга браузером и уменьшение количества компонентов - разные уровни оптимизации.",
+      "requiredDifficulties": ["Продвинутый"],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "css-progressive-enhancement",
+      "title": "Как использовать @supports и улучшать интерфейс без поломки базового варианта?",
+      "description": "Объяснить и применить правило с учётом его границ: Прогрессивное улучшение начинается с работоспособной основы, а не с сокрытия неподдерживаемого интерфейса.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": []
+    }
+  ],
+  "questions": [
+    {
+      "id": "css-cascade",
+      "title": "Как браузер выбирает правило при конфликте CSS?",
+      "topic": "HTML и CSS",
+      "difficulty": "Средний",
+      "summary": "Происхождение, слои, специфичность и порядок.",
+      "takeaway": "Сначала сравнивают уровни каскада, затем специфичность.",
+      "moduleId": "html-css",
+      "order": 0,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Сначала сравнивают уровни каскада, затем специфичность.",
+        "keywords": ["HTML и CSS", "Каскад и блочная модель"],
+        "kind": "explanation",
+        "reviewStatus": "imported",
+        "goalIds": ["core", "css-cascade"],
+        "relatedQuestionIds": [],
+        "priority": "core",
+        "sourceRefs": []
+      },
+      "answerFile": "answers/html-css/css-cascade.md"
+    },
+    {
+      "id": "css-box-sizing",
+      "title": "Чем content-box отличается от border-box?",
+      "topic": "HTML и CSS",
+      "difficulty": "Базовый",
+      "summary": "Расчёт размеров с padding и border.",
+      "takeaway": "Уточняйте, какую часть коробки описывает width.",
+      "moduleId": "html-css",
+      "order": 1,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Уточняйте, какую часть коробки описывает width.",
+        "keywords": ["HTML и CSS", "Каскад и блочная модель"],
+        "kind": "explanation",
+        "reviewStatus": "imported",
+        "goalIds": ["core", "css-box-sizing"],
+        "relatedQuestionIds": [],
+        "priority": "core",
+        "sourceRefs": []
+      },
+      "answerFile": "answers/html-css/css-box-sizing.md"
+    },
+    {
+      "id": "css-inheritance",
+      "title": "Какие CSS-свойства наследуются и что делают inherit и initial?",
+      "topic": "HTML и CSS",
+      "difficulty": "Средний",
+      "summary": "Передача значений от предка и сброс декларации.",
+      "takeaway": "Наследование и значения по умолчанию - разные механизмы.",
+      "moduleId": "html-css",
+      "order": 2,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Наследование и значения по умолчанию - разные механизмы.",
+        "keywords": ["HTML и CSS", "Каскад и блочная модель"],
+        "kind": "explanation",
+        "reviewStatus": "imported",
+        "goalIds": ["core", "css-inheritance"],
+        "relatedQuestionIds": [],
+        "priority": "core",
+        "sourceRefs": []
+      },
+      "answerFile": "answers/html-css/css-inheritance.md"
+    },
+    {
+      "id": "css-selector-functions",
+      "title": "Как :is(), :where(), :not() и :has() влияют на выбор элементов и специфичность?",
+      "summary": "Функциональные селекторы без ошибочного представления, что любое упоминание класса одинаково усиливает правило.",
+      "code": ":where(nav) a { color: inherit; }\n.card:has(input:checked) { border-color: green; }\n:is(.card, #featured) h2 { font-weight: 700; }",
+      "takeaway": "Выбор элементов и вес селектора нужно анализировать отдельно.",
+      "pitfall": "Считать, что :where сохраняет вес вложенных селекторов или что :has всегда выбирает потомка.",
+      "difficulty": "Средний",
+      "topic": "HTML и CSS",
+      "moduleId": "html-css",
+      "popular": false,
+      "order": 3,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Выбор элементов и вес селектора нужно анализировать отдельно.",
+        "keywords": ["HTML и CSS", "Каскад и блочная модель"],
+        "kind": "explanation",
+        "reviewStatus": "imported",
+        "goalIds": ["core", "css-selector-functions"],
+        "relatedQuestionIds": [],
+        "priority": "core",
+        "sourceRefs": ["ref-ff2c757eaf3567bb"]
+      },
+      "answerFile": "answers/html-css/css-selector-functions.md"
+    },
+    {
+      "id": "css-custom-properties",
+      "title": "Как CSS custom properties наследуются и когда срабатывает fallback у var()?",
+      "summary": "Каскад значений --token и отличие отсутствующей переменной от недопустимого итогового значения.",
+      "code": ":root { --accent: #2563eb; }\n.card { color: var(--accent, navy); }\n.card-muted { --accent: #475569; }",
+      "takeaway": "Var подставляет каскадное значение, а не проверяет произвольную CSS-декларацию за вас.",
+      "pitfall": "Ожидать fallback для любого неправильного значения, уже записанного в существующую переменную.",
+      "difficulty": "Средний",
+      "topic": "HTML и CSS",
+      "moduleId": "html-css",
+      "popular": false,
+      "order": 4,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Var подставляет каскадное значение, а не проверяет произвольную CSS-декларацию за вас.",
+        "keywords": ["HTML и CSS", "Каскад и блочная модель"],
+        "kind": "explanation",
+        "reviewStatus": "imported",
+        "goalIds": ["core", "css-custom-properties"],
+        "relatedQuestionIds": [],
+        "priority": "core",
+        "sourceRefs": ["ref-e5f2c561a9a5c57f"]
+      },
+      "answerFile": "answers/html-css/css-custom-properties.md"
+    },
+    {
+      "id": "css-content-visibility",
+      "title": "Что даёт content-visibility: auto и чем оно отличается от виртуализации?",
+      "summary": "Пропуск части рендеринга вне экрана при сохранении DOM и компонентного состояния.",
+      "code": ".chapter { content-visibility: auto; contain-intrinsic-size: auto 40rem; }",
+      "takeaway": "Пропуск рендеринга браузером и уменьшение количества компонентов - разные уровни оптимизации.",
+      "pitfall": "Считать content-visibility заменой отмене подписок или способом вообще не создавать большой DOM.",
+      "difficulty": "Продвинутый",
+      "topic": "HTML и CSS",
+      "moduleId": "html-css",
+      "popular": false,
+      "order": 5,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Пропуск рендеринга браузером и уменьшение количества компонентов - разные уровни оптимизации.",
+        "keywords": ["HTML и CSS", "Каскад и блочная модель"],
+        "kind": "explanation",
+        "reviewStatus": "imported",
+        "goalIds": ["core", "css-content-visibility"],
+        "relatedQuestionIds": [],
+        "priority": "core",
+        "sourceRefs": ["ref-19d8f99de9bcb263"]
+      },
+      "answerFile": "answers/html-css/css-content-visibility.md"
+    },
+    {
+      "id": "css-progressive-enhancement",
+      "title": "Как использовать @supports и улучшать интерфейс без поломки базового варианта?",
+      "summary": "Базовое представление и условное применение CSS-возможностей.",
+      "code": ".cards { display: block; }\n@supports (display: grid) {\n  .cards { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); }\n}",
+      "takeaway": "Прогрессивное улучшение начинается с работоспособной основы, а не с сокрытия неподдерживаемого интерфейса.",
+      "pitfall": "Считать true от @supports полной проверкой качества реализации свойства.",
+      "difficulty": "Средний",
+      "topic": "HTML и CSS",
+      "moduleId": "html-css",
+      "popular": false,
+      "order": 6,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Прогрессивное улучшение начинается с работоспособной основы, а не с сокрытия неподдерживаемого интерфейса.",
+        "keywords": ["HTML и CSS", "Каскад и блочная модель"],
+        "kind": "explanation",
+        "reviewStatus": "imported",
+        "goalIds": ["core", "css-progressive-enhancement"],
+        "relatedQuestionIds": [],
+        "priority": "core",
+        "sourceRefs": ["ref-7377f648185f56bf"]
+      },
+      "answerFile": "answers/html-css/css-progressive-enhancement.md"
+    }
+  ]
+}

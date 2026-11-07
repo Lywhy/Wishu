@@ -1,0 +1,194 @@
+{
+  "$schema": "../question-bundle.schema.json",
+  "sectionId": "typescript",
+  "subsectionId": "ts-narrowing",
+  "scope": "Поток управления, предикаты, assertion functions и полнота вариантов.",
+  "coverageGoals": [
+    {
+      "id": "core",
+      "title": "Сужение типов и Type Guards",
+      "description": "Обзор и взаимосвязи навыков: Поток управления, предикаты, assertion functions и полнота вариантов.",
+      "requiredDifficulties": [],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": [
+        "ts-control-flow-narrowing",
+        "ts-type-predicates",
+        "ts-assertion-functions",
+        "ts-discriminated-unions",
+        "ts-narrowing-closures"
+      ]
+    },
+    {
+      "id": "ts-control-flow-narrowing",
+      "title": "Как TypeScript сужает тип через проверки и поток управления?",
+      "description": "Объяснить и применить правило с учётом его границ: Сужение зависит от реально выполненной проверки и возможных путей программы.",
+      "requiredDifficulties": ["Базовый"],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "ts-type-predicates",
+      "title": "Как написать type guard с предикатом value is T?",
+      "description": "Объяснить и применить правило с учётом его границ: Предикат полезен только при проверке, действительно подтверждающей заявленную форму.",
+      "requiredDifficulties": ["Базовый"],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "ts-assertion-functions",
+      "title": "Что означает asserts value is T в assertion function?",
+      "description": "Объяснить и применить правило с учётом его границ: Assertion function подтверждает тип на продолжающемся пути реальной проверкой.",
+      "requiredDifficulties": ["Базовый"],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "ts-discriminated-unions",
+      "title": "Как discriminated union помогает проверить полноту обработки вариантов?",
+      "description": "Объяснить и применить правило с учётом его границ: Литеральная метка связывает вариант с его полями, а never выявляет пропущенную ветвь.",
+      "requiredDifficulties": ["Базовый"],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "ts-narrowing-closures",
+      "title": "Когда сужение типа сохраняется внутри callback, а когда теряется?",
+      "description": "Объяснить и применить правило с учётом его границ: Для callback важны не только проверка типа, но и возможные изменения захваченной переменной.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": []
+    }
+  ],
+  "questions": [
+    {
+      "id": "ts-control-flow-narrowing",
+      "title": "Как TypeScript сужает тип через проверки и поток управления?",
+      "topic": "TypeScript",
+      "difficulty": "Базовый",
+      "summary": "Typeof, instanceof, равенство, in и достижимость ветвей.",
+      "code": "function length(value: string | string[] | null): number {\n  if (value === null) return 0;\n  if (typeof value === \"string\") return value.length;\n  return value.length; // здесь string[]\n}\n// Для различения объектов полезны точные discriminant-поля.",
+      "takeaway": "Сужение зависит от реально выполненной проверки и возможных путей программы.",
+      "moduleId": "typescript",
+      "order": 0,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Сужение зависит от реально выполненной проверки и возможных путей программы.",
+        "keywords": ["TypeScript", "Сужение типов и Type Guards", "сужение", "narrowing"],
+        "kind": "explanation",
+        "reviewStatus": "imported",
+        "goalIds": ["core", "ts-control-flow-narrowing"],
+        "relatedQuestionIds": [],
+        "priority": "core",
+        "sourceRefs": []
+      },
+      "answerFile": "answers/typescript/ts-control-flow-narrowing.md"
+    },
+    {
+      "id": "ts-type-predicates",
+      "title": "Как написать type guard с предикатом value is T?",
+      "topic": "TypeScript",
+      "difficulty": "Базовый",
+      "summary": "Булев результат, обещание компилятору и корректность проверки.",
+      "code": "type User = { name: string };\nfunction isUser(value: unknown): value is User {\n  return typeof value === \"object\" && value !== null\n    && \"name\" in value && typeof value.name === \"string\";\n}\nfunction label(value: unknown): string {\n  return isUser(value) ? value.name : \"не пользователь\";\n}",
+      "takeaway": "Предикат полезен только при проверке, действительно подтверждающей заявленную форму.",
+      "moduleId": "typescript",
+      "order": 1,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Предикат полезен только при проверке, действительно подтверждающей заявленную форму.",
+        "keywords": ["TypeScript", "Сужение типов и Type Guards"],
+        "kind": "explanation",
+        "reviewStatus": "imported",
+        "goalIds": ["core", "ts-type-predicates"],
+        "relatedQuestionIds": [],
+        "priority": "core",
+        "sourceRefs": []
+      },
+      "answerFile": "answers/typescript/ts-type-predicates.md"
+    },
+    {
+      "id": "ts-assertion-functions",
+      "title": "Что означает asserts value is T в assertion function?",
+      "topic": "TypeScript",
+      "difficulty": "Базовый",
+      "summary": "Продолжение после проверки и исключение при нарушении контракта.",
+      "code": "function assertString(value: unknown): asserts value is string {\n  if (typeof value !== \"string\") throw new TypeError(\"Нужна строка\");\n}\nfunction normalize(value: unknown): string {\n  assertString(value);\n  return value.trim();\n}",
+      "takeaway": "Assertion function подтверждает тип на продолжающемся пути реальной проверкой.",
+      "moduleId": "typescript",
+      "order": 2,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Assertion function подтверждает тип на продолжающемся пути реальной проверкой.",
+        "keywords": ["TypeScript", "Сужение типов и Type Guards"],
+        "kind": "explanation",
+        "reviewStatus": "imported",
+        "goalIds": ["core", "ts-assertion-functions"],
+        "relatedQuestionIds": [],
+        "priority": "core",
+        "sourceRefs": []
+      },
+      "answerFile": "answers/typescript/ts-assertion-functions.md"
+    },
+    {
+      "id": "ts-discriminated-unions",
+      "title": "Как discriminated union помогает проверить полноту обработки вариантов?",
+      "topic": "TypeScript",
+      "difficulty": "Базовый",
+      "summary": "Литеральная метка, сужение и never в недостижимой ветви.",
+      "code": "type State = { kind: \"ready\"; value: string } | { kind: \"error\"; message: string };\nfunction render(state: State): string {\n  switch (state.kind) {\n    case \"ready\": return state.value;\n    case \"error\": return state.message;\n    default: { const impossible: never = state; throw new Error(`Неизвестный вариант: ${impossible}`); }\n  }\n}",
+      "takeaway": "Литеральная метка связывает вариант с его полями, а never выявляет пропущенную ветвь.",
+      "moduleId": "typescript",
+      "order": 3,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Литеральная метка связывает вариант с его полями, а never выявляет пропущенную ветвь.",
+        "keywords": ["TypeScript", "Сужение типов и Type Guards", "сужение", "narrowing"],
+        "kind": "explanation",
+        "reviewStatus": "imported",
+        "goalIds": ["core", "ts-discriminated-unions"],
+        "relatedQuestionIds": [],
+        "priority": "core",
+        "sourceRefs": []
+      },
+      "answerFile": "answers/typescript/ts-discriminated-unions.md"
+    },
+    {
+      "id": "ts-narrowing-closures",
+      "title": "Когда сужение типа сохраняется внутри callback, а когда теряется?",
+      "summary": "Переназначение переменной, время создания замыкания и устойчивая локальная ссылка.",
+      "code": "function readers(input: string | URL, items: string[]) {\n  if (typeof input === 'string') input = new URL(input)\n  const url = input\n  return items.map((item) => url.origin + '/' + item)\n}\n// const url хранит проверенную ссылку независимо от дальнейшего\n// переназначения переменной input.",
+      "takeaway": "Для callback важны не только проверка типа, но и возможные изменения захваченной переменной.",
+      "pitfall": "Ставить as в callback вместо выяснения, кто и когда может изменить значение.",
+      "difficulty": "Средний",
+      "topic": "TypeScript",
+      "moduleId": "typescript",
+      "order": 4,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Для callback важны не только проверка типа, но и возможные изменения захваченной переменной.",
+        "keywords": [
+          "TypeScript",
+          "Сужение типов и Type Guards",
+          "замыкание",
+          "замыкания",
+          "closure",
+          "сужение",
+          "narrowing"
+        ],
+        "kind": "explanation",
+        "reviewStatus": "imported",
+        "goalIds": ["core", "ts-narrowing-closures"],
+        "relatedQuestionIds": [],
+        "priority": "core",
+        "sourceRefs": ["ref-36c5f0cd57b1b768"]
+      },
+      "answerFile": "answers/typescript/ts-narrowing-closures.md"
+    }
+  ]
+}

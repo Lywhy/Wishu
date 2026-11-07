@@ -1,0 +1,184 @@
+{
+  "$schema": "../question-bundle.schema.json",
+  "sectionId": "react",
+  "subsectionId": "async-ui",
+  "scope": "Гонки запросов, Suspense, отложенные обновления и оптимистичный UI.",
+  "coverageGoals": [
+    {
+      "id": "core",
+      "title": "Асинхронный интерфейс",
+      "description": "Обзор и взаимосвязи навыков: Гонки запросов, Suspense, отложенные обновления и оптимистичный UI.",
+      "requiredDifficulties": [],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": [
+        "react-fetch-races",
+        "react-lazy-suspense",
+        "react-transition-deferred",
+        "react-optimistic-ui",
+        "react-data-waterfalls"
+      ]
+    },
+    {
+      "id": "react-fetch-races",
+      "title": "Как предотвратить гонку ответов при загрузке данных в эффекте?",
+      "description": "Объяснить и применить правило с учётом его границ: Результат запроса должен принадлежать текущему параметру загрузки.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "react-lazy-suspense",
+      "title": "Как работают lazy и Suspense и что они не отслеживают?",
+      "description": "Объяснить и применить правило с учётом его границ: Suspense работает с поддерживаемыми источниками ожидания.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": ["next-loading-streaming"]
+    },
+    {
+      "id": "react-transition-deferred",
+      "title": "Чем useTransition отличается от useDeferredValue?",
+      "description": "Объяснить и применить правило с учётом его границ: Отложите дорогое представление, сохранив быстрый отклик ввода.",
+      "requiredDifficulties": ["Продвинутый"],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "react-optimistic-ui",
+      "title": "Как организовать оптимистичное обновление через useOptimistic?",
+      "description": "Объяснить и применить правило с учётом его границ: Оптимистичное представление не заменяет подтверждение сервера.",
+      "requiredDifficulties": ["Продвинутый"],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "react-data-waterfalls",
+      "title": "Почему загрузка данных в дочерних эффектах может создавать waterfall?",
+      "description": "Объяснить и применить правило с учётом его границ: Порядок запуска запросов должен отражать зависимость данных, а не случайный порядок появления компонентов.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": []
+    }
+  ],
+  "questions": [
+    {
+      "id": "react-fetch-races",
+      "title": "Как предотвратить гонку ответов при загрузке данных в эффекте?",
+      "topic": "React",
+      "difficulty": "Средний",
+      "summary": "Устаревший запрос, cleanup и обработка ошибок.",
+      "code": "useEffect(() => {\n  let active = true\n  const controller = new AbortController()\n  async function load() {\n    try {\n      const response = await fetch(\"/api/users/\" + encodeURIComponent(userId), { signal: controller.signal })\n      if (!response.ok) throw new Error(\"Не удалось загрузить пользователя\")\n      const data = await response.json()\n      if (active) setUser(data)\n    } catch (error) {\n      if (active) setError(error)\n    }\n  }\n  void load()\n  return () => { active = false; controller.abort() }\n}, [userId])",
+      "takeaway": "Результат запроса должен принадлежать текущему параметру загрузки.",
+      "moduleId": "react",
+      "order": 0,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Результат запроса должен принадлежать текущему параметру загрузки.",
+        "keywords": ["React", "Асинхронный интерфейс"],
+        "kind": "explanation",
+        "reviewStatus": "imported",
+        "goalIds": ["core", "react-fetch-races"],
+        "relatedQuestionIds": [],
+        "priority": "core",
+        "sourceRefs": []
+      },
+      "answerFile": "answers/react/react-fetch-races.md"
+    },
+    {
+      "id": "react-lazy-suspense",
+      "title": "Как работают lazy и Suspense и что они не отслеживают?",
+      "topic": "React",
+      "difficulty": "Средний",
+      "summary": "Отложенный модуль и граница ожидания.",
+      "code": "import { lazy, Suspense } from \"react\"\n\n// Модуль Editor.jsx должен экспортировать компонент по умолчанию.\nconst Editor = lazy(() => import(\"./Editor.jsx\"))\nfunction EditorPage() {\n  return <Suspense fallback={<p>Загрузка...</p>}><Editor /></Suspense>\n}",
+      "takeaway": "Suspense работает с поддерживаемыми источниками ожидания.",
+      "moduleId": "react",
+      "order": 1,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Suspense работает с поддерживаемыми источниками ожидания.",
+        "keywords": ["React", "Асинхронный интерфейс"],
+        "kind": "explanation",
+        "reviewStatus": "imported",
+        "goalIds": ["core", "react-lazy-suspense"],
+        "relatedQuestionIds": ["next-loading-streaming"],
+        "priority": "core",
+        "sourceRefs": ["ref-f8f3016ad77e9e80"]
+      },
+      "answerFile": "answers/react/react-lazy-suspense.md"
+    },
+    {
+      "id": "react-transition-deferred",
+      "title": "Чем useTransition отличается от useDeferredValue?",
+      "topic": "React",
+      "difficulty": "Продвинутый",
+      "summary": "Приоритет обновления и отложенное представление значения.",
+      "takeaway": "Отложите дорогое представление, сохранив быстрый отклик ввода.",
+      "moduleId": "react",
+      "order": 2,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Отложите дорогое представление, сохранив быстрый отклик ввода.",
+        "keywords": ["React", "Асинхронный интерфейс"],
+        "kind": "explanation",
+        "reviewStatus": "imported",
+        "goalIds": ["core", "react-transition-deferred"],
+        "relatedQuestionIds": [],
+        "priority": "core",
+        "sourceRefs": []
+      },
+      "answerFile": "answers/react/react-transition-deferred.md"
+    },
+    {
+      "id": "react-optimistic-ui",
+      "title": "Как организовать оптимистичное обновление через useOptimistic?",
+      "topic": "React",
+      "difficulty": "Продвинутый",
+      "summary": "Предполагаемый результат, подтверждение и откат.",
+      "takeaway": "Оптимистичное представление не заменяет подтверждение сервера.",
+      "moduleId": "react",
+      "order": 3,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Оптимистичное представление не заменяет подтверждение сервера.",
+        "keywords": ["React", "Асинхронный интерфейс"],
+        "kind": "explanation",
+        "reviewStatus": "imported",
+        "goalIds": ["core", "react-optimistic-ui"],
+        "relatedQuestionIds": [],
+        "priority": "core",
+        "sourceRefs": []
+      },
+      "answerFile": "answers/react/react-optimistic-ui.md"
+    },
+    {
+      "id": "react-data-waterfalls",
+      "title": "Почему загрузка данных в дочерних эффектах может создавать waterfall?",
+      "summary": "Порядок монтирования, параллельный старт независимых запросов и общая стратегия данных.",
+      "code": "async function loadDashboard(loadProfile, loadStats) {\n  const profilePromise = loadProfile()\n  const statsPromise = loadStats()\n  const [profile, stats] = await Promise.all([profilePromise, statsPromise])\n  return { profile, stats }\n}\n// Предполагается независимость операций и выбранная общая политика ошибки.",
+      "takeaway": "Порядок запуска запросов должен отражать зависимость данных, а не случайный порядок появления компонентов.",
+      "pitfall": "Добавлять useMemo вокруг fetch и считать решёнными дедупликацию и срок жизни серверных данных.",
+      "difficulty": "Средний",
+      "topic": "React",
+      "moduleId": "react",
+      "popular": false,
+      "order": 4,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Порядок запуска запросов должен отражать зависимость данных, а не случайный порядок появления компонентов.",
+        "keywords": ["React", "Асинхронный интерфейс"],
+        "kind": "explanation",
+        "reviewStatus": "imported",
+        "goalIds": ["core", "react-data-waterfalls"],
+        "relatedQuestionIds": [],
+        "priority": "core",
+        "sourceRefs": ["ref-4d23b49b0284f9ac"]
+      },
+      "answerFile": "answers/react/react-data-waterfalls.md"
+    }
+  ]
+}

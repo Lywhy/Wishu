@@ -1,0 +1,286 @@
+{
+  "$schema": "../question-bundle.schema.json",
+  "sectionId": "typescript",
+  "subsectionId": "ts-type-operators",
+  "scope": "Keyof, typeof, indexed access, mapped, conditional, infer и дистрибутивность.",
+  "coverageGoals": [
+    {
+      "id": "core",
+      "title": "Операторы типов и преобразования",
+      "description": "Обзор и взаимосвязи навыков: Keyof, typeof, indexed access, mapped, conditional, infer и дистрибутивность.",
+      "requiredDifficulties": [],
+      "reviewed": false,
+      "priority": "extended",
+      "relatedSkillIds": [
+        "ts-keyof-indexed-access",
+        "ts-type-query",
+        "ts-mapped-types",
+        "ts-conditional-types",
+        "ts-infer",
+        "ts-distributive-never",
+        "ts-template-literal-patterns",
+        "ts-deep-readonly-contract"
+      ]
+    },
+    {
+      "id": "ts-keyof-indexed-access",
+      "title": "Как keyof, T[K] и K extends keyof T типизируют доступ к свойству?",
+      "description": "Объяснить и применить правило с учётом его границ: Связка keyof и T[K] сохраняет зависимость результата от выбранного ключа.",
+      "requiredDifficulties": ["Базовый"],
+      "reviewed": false,
+      "priority": "extended",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "ts-type-query",
+      "title": "Чем typeof в позиции типа отличается от JavaScript-оператора typeof?",
+      "description": "Объяснить и применить правило с учётом его границ: Позиция typeof определяет, получаете ли вы статический тип или runtime-строку.",
+      "requiredDifficulties": ["Базовый"],
+      "reviewed": false,
+      "priority": "extended",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "ts-mapped-types",
+      "title": "Как mapped types преобразуют свойства и их модификаторы?",
+      "description": "Объяснить и применить правило с учётом его границ: Mapped type преобразует описание свойств по ключам, а не реальные данные.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": false,
+      "priority": "extended",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "ts-conditional-types",
+      "title": "Как работает conditional type T extends U ? X : Y?",
+      "description": "Объяснить и применить правило с учётом его границ: Conditional type выбирает описание типа по совместимости, не проверяя runtime-значение.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": false,
+      "priority": "extended",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "ts-infer",
+      "title": "Как infer извлекает части типа, например параметры и результат функции?",
+      "description": "Объяснить и применить правило с учётом его границ: Infer извлекает параметры из подходящего шаблона условного типа.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": false,
+      "priority": "extended",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "ts-distributive-never",
+      "title": "Как отключить дистрибутивность conditional types и проверить never?",
+      "description": "Объяснить и применить правило с учётом его границ: Кортежная оболочка позволяет проверить весь тип, включая never, без раздачи по union.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": false,
+      "priority": "extended",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "ts-template-literal-patterns",
+      "title": "Как template literal types ограничивают формат строкового контракта?",
+      "description": "Объяснить и применить правило с учётом его границ: Строковый тип может выражать согласованный формат, но внешние значения требуют проверки.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": false,
+      "priority": "extended",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "ts-deep-readonly-contract",
+      "title": "Как определить DeepReadonly и заранее ограничить область его применения?",
+      "description": "Объяснить и применить правило с учётом его границ: Рекурсивный utility должен иметь явную область применимости и сохранять смысл контейнеров.",
+      "requiredDifficulties": ["Продвинутый"],
+      "reviewed": false,
+      "priority": "extended",
+      "relatedSkillIds": []
+    }
+  ],
+  "questions": [
+    {
+      "id": "ts-keyof-indexed-access",
+      "title": "Как keyof, T[K] и K extends keyof T типизируют доступ к свойству?",
+      "topic": "TypeScript",
+      "difficulty": "Базовый",
+      "summary": "Ключи типа, тип выбранного поля и зависимый результат.",
+      "code": "function getProperty<T, K extends keyof T>(object: T, key: K): T[K] {\n  return object[key];\n}\nconst user = { id: 1, name: \"Аня\" };\nconst name = getProperty(user, \"name\"); // string\ntype UserId = (typeof user)[\"id\"]; // number",
+      "takeaway": "Связка keyof и T[K] сохраняет зависимость результата от выбранного ключа.",
+      "moduleId": "typescript",
+      "order": 0,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Связка keyof и T[K] сохраняет зависимость результата от выбранного ключа.",
+        "keywords": ["TypeScript", "Операторы типов и преобразования"],
+        "kind": "explanation",
+        "reviewStatus": "imported",
+        "goalIds": ["core", "ts-keyof-indexed-access"],
+        "relatedQuestionIds": [],
+        "priority": "extended",
+        "sourceRefs": []
+      },
+      "answerFile": "answers/typescript/ts-keyof-indexed-access.md"
+    },
+    {
+      "id": "ts-type-query",
+      "title": "Чем typeof в позиции типа отличается от JavaScript-оператора typeof?",
+      "topic": "TypeScript",
+      "difficulty": "Базовый",
+      "summary": "Получение статического типа переменной и runtime-строка категории.",
+      "code": "const settings = { theme: \"dark\", retries: 3 };\ntype Settings = typeof settings;\nconst runtimeCategory = typeof settings; // строка \"object\"\ntype Theme = Settings[\"theme\"]; // string, не литерал \"dark\"\nfunction count() { return 3; }\ntype Count = ReturnType<typeof count>; // number",
+      "takeaway": "Позиция typeof определяет, получаете ли вы статический тип или runtime-строку.",
+      "moduleId": "typescript",
+      "order": 1,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Позиция typeof определяет, получаете ли вы статический тип или runtime-строку.",
+        "keywords": ["TypeScript", "Операторы типов и преобразования"],
+        "kind": "explanation",
+        "reviewStatus": "imported",
+        "goalIds": ["core", "ts-type-query"],
+        "relatedQuestionIds": [],
+        "priority": "extended",
+        "sourceRefs": []
+      },
+      "answerFile": "answers/typescript/ts-type-query.md"
+    },
+    {
+      "id": "ts-mapped-types",
+      "title": "Как mapped types преобразуют свойства и их модификаторы?",
+      "topic": "TypeScript",
+      "difficulty": "Средний",
+      "summary": "Перебор ключей и добавление либо снятие readonly и optional.",
+      "code": "type MutableRequired<T> = {\n  -readonly [K in keyof T]-?: T[K];\n};\ntype Source = { readonly id: number; name?: string };\ntype Editable = MutableRequired<Source>;\nconst value: Editable = { id: 1, name: \"Аня\" };",
+      "takeaway": "Mapped type преобразует описание свойств по ключам, а не реальные данные.",
+      "moduleId": "typescript",
+      "order": 2,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Mapped type преобразует описание свойств по ключам, а не реальные данные.",
+        "keywords": ["TypeScript", "Операторы типов и преобразования"],
+        "kind": "explanation",
+        "reviewStatus": "imported",
+        "goalIds": ["core", "ts-mapped-types"],
+        "relatedQuestionIds": [],
+        "priority": "extended",
+        "sourceRefs": []
+      },
+      "answerFile": "answers/typescript/ts-mapped-types.md"
+    },
+    {
+      "id": "ts-conditional-types",
+      "title": "Как работает conditional type T extends U ? X : Y?",
+      "topic": "TypeScript",
+      "difficulty": "Средний",
+      "summary": "Проверка совместимости на уровне типов и выбор результата.",
+      "code": "type IsString<T> = T extends string ? true : false;\ntype First = IsString<\"JS\">; // true\ntype Second = IsString<number>; // false\ntype IdOf<T> = T extends { id: number } ? number : never;",
+      "takeaway": "Conditional type выбирает описание типа по совместимости, не проверяя runtime-значение.",
+      "moduleId": "typescript",
+      "order": 3,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Conditional type выбирает описание типа по совместимости, не проверяя runtime-значение.",
+        "keywords": ["TypeScript", "Операторы типов и преобразования"],
+        "kind": "explanation",
+        "reviewStatus": "imported",
+        "goalIds": ["core", "ts-conditional-types"],
+        "relatedQuestionIds": [],
+        "priority": "extended",
+        "sourceRefs": []
+      },
+      "answerFile": "answers/typescript/ts-conditional-types.md"
+    },
+    {
+      "id": "ts-infer",
+      "title": "Как infer извлекает части типа, например параметры и результат функции?",
+      "topic": "TypeScript",
+      "difficulty": "Средний",
+      "summary": "Шаблон условного типа и локальные выведенные параметры.",
+      "code": "type FunctionInfo<T> = T extends (...args: infer A) => infer R\n  ? { args: A; result: R }\n  : never;\ntype Example = FunctionInfo<(id: number, active: boolean) => string>;\n// { args: [id: number, active: boolean]; result: string }",
+      "takeaway": "Infer извлекает параметры из подходящего шаблона условного типа.",
+      "moduleId": "typescript",
+      "order": 4,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Infer извлекает параметры из подходящего шаблона условного типа.",
+        "keywords": ["TypeScript", "Операторы типов и преобразования"],
+        "kind": "explanation",
+        "reviewStatus": "imported",
+        "goalIds": ["core", "ts-infer"],
+        "relatedQuestionIds": [],
+        "priority": "extended",
+        "sourceRefs": []
+      },
+      "answerFile": "answers/typescript/ts-infer.md"
+    },
+    {
+      "id": "ts-distributive-never",
+      "title": "Как отключить дистрибутивность conditional types и проверить never?",
+      "topic": "TypeScript",
+      "difficulty": "Средний",
+      "summary": "Голый параметр типа, разбор union и проверка целиком.",
+      "code": "type ToArray<T> = T extends unknown ? T[] : never;\ntype WholeArray<T> = [T] extends [unknown] ? T[] : never;\ntype A = ToArray<string | number>; // string[] | number[]\ntype B = WholeArray<string | number>; // (string | number)[]\ntype Broken<T> = T extends never ? true : false;\ntype IsNever<T> = [T] extends [never] ? true : false;\ntype C = Broken<never>; // never\ntype D = IsNever<never>; // true",
+      "takeaway": "Кортежная оболочка позволяет проверить весь тип, включая never, без раздачи по union.",
+      "moduleId": "typescript",
+      "order": 5,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Кортежная оболочка позволяет проверить весь тип, включая never, без раздачи по union.",
+        "keywords": ["TypeScript", "Операторы типов и преобразования"],
+        "kind": "explanation",
+        "reviewStatus": "imported",
+        "goalIds": ["core", "ts-distributive-never"],
+        "relatedQuestionIds": [],
+        "priority": "extended",
+        "sourceRefs": []
+      },
+      "answerFile": "answers/typescript/ts-distributive-never.md"
+    },
+    {
+      "id": "ts-template-literal-patterns",
+      "title": "Как template literal types ограничивают формат строкового контракта?",
+      "summary": "Строковые комбинации, шаблоны и извлечение частей на уровне типов.",
+      "code": "type Area = 'profile' | 'settings'\ntype Action = 'open' | 'close'\ntype EventName = `${Area}:${Action}`\ntype ScopedKey = `user:${string}`\ntype Scope<T extends string> = T extends `${infer Head}:${string}` ? Head : never\ntype ProfileScope = Scope<'profile:open'> // 'profile'",
+      "takeaway": "Строковый тип может выражать согласованный формат, но внешние значения требуют проверки.",
+      "pitfall": "Принимать произвольную строку через as EventName вместо реальной проверки допустимого имени.",
+      "difficulty": "Средний",
+      "topic": "TypeScript",
+      "moduleId": "typescript",
+      "order": 6,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Строковый тип может выражать согласованный формат, но внешние значения требуют проверки.",
+        "keywords": ["TypeScript", "Операторы типов и преобразования"],
+        "kind": "explanation",
+        "reviewStatus": "imported",
+        "goalIds": ["core", "ts-template-literal-patterns"],
+        "relatedQuestionIds": [],
+        "priority": "extended",
+        "sourceRefs": ["ref-b02446746e720604"]
+      },
+      "answerFile": "answers/typescript/ts-template-literal-patterns.md"
+    },
+    {
+      "id": "ts-deep-readonly-contract",
+      "title": "Как определить DeepReadonly и заранее ограничить область его применения?",
+      "summary": "Рекурсивное преобразование вложенных данных без обещания универсальной заморозки.",
+      "code": "type DeepReadonlyData<T> = T extends object\n  ? { readonly [K in keyof T]: DeepReadonlyData<T[K]> }\n  : T\n\ntype Model = DeepReadonlyData<{\n  user: { name: string }\n  tags: string[]\n}>\n// Только простые данные: Date, Map, Set и функции сюда не входят.",
+      "takeaway": "Рекурсивный utility должен иметь явную область применимости и сохранять смысл контейнеров.",
+      "pitfall": "Считать любой рекурсивный mapped type корректной глубокой защитой всех JavaScript-объектов.",
+      "difficulty": "Продвинутый",
+      "topic": "TypeScript",
+      "moduleId": "typescript",
+      "order": 7,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Рекурсивный utility должен иметь явную область применимости и сохранять смысл контейнеров.",
+        "keywords": ["TypeScript", "Операторы типов и преобразования"],
+        "kind": "explanation",
+        "reviewStatus": "imported",
+        "goalIds": ["core", "ts-deep-readonly-contract"],
+        "relatedQuestionIds": [],
+        "priority": "extended",
+        "sourceRefs": ["ref-bad15debd501fec2"]
+      },
+      "answerFile": "answers/typescript/ts-deep-readonly-contract.md"
+    }
+  ]
+}

@@ -1,0 +1,254 @@
+{
+  "$schema": "../question-bundle.schema.json",
+  "sectionId": "typescript",
+  "subsectionId": "ts-functions",
+  "scope": "Сигнатуры, параметры, возвращаемые значения, async и перегрузки.",
+  "coverageGoals": [
+    {
+      "id": "core",
+      "title": "Типизация функций",
+      "description": "Обзор и взаимосвязи навыков: Сигнатуры, параметры, возвращаемые значения, async и перегрузки.",
+      "requiredDifficulties": [],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": [
+        "ts-function-signatures",
+        "ts-function-parameters",
+        "ts-async-functions",
+        "ts-function-overloads",
+        "ts-function-variance",
+        "ts-this-parameter",
+        "ts-generator-contract"
+      ]
+    },
+    {
+      "id": "ts-function-signatures",
+      "title": "Как описать тип функции через сигнатуру, type или interface?",
+      "description": "Объяснить и применить правило с учётом его границ: Сигнатура описывает допустимый вызов и его результат независимо от синтаксиса реализации.",
+      "requiredDifficulties": ["Базовый"],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "ts-function-parameters",
+      "title": "Как типизировать optional, default и rest-параметры?",
+      "description": "Объяснить и применить правило с учётом его границ: Optional и default описывают пропуск, rest - оставшуюся последовательность аргументов.",
+      "requiredDifficulties": ["Базовый"],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "ts-async-functions",
+      "title": "Как типизировать async-функцию и результат её ожидания?",
+      "description": "Объяснить и применить правило с учётом его границ: Promise<T> описывает успешный результат, а не доказательство корректности внешних данных или типа ошибки.",
+      "requiredDifficulties": ["Базовый"],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "ts-function-overloads",
+      "title": "Как объявлять перегрузки функции и какую роль играет реализация?",
+      "description": "Объяснить и применить правило с учётом его границ: Перегрузки описывают доступные вызовы, но все варианты обслуживает одна проверенная реализация.",
+      "requiredDifficulties": ["Базовый"],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "ts-function-variance",
+      "title": "Почему callback с более узким параметром может быть небезопасен?",
+      "description": "Объяснить и применить правило с учётом его границ: Совместимость callback нужно оценивать по входам, которые ему разрешено передать.",
+      "requiredDifficulties": ["Продвинутый"],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "ts-this-parameter",
+      "title": "Как явно описать this функции и контекст методов объектного литерала?",
+      "description": "Объяснить и применить правило с учётом его границ: Аннотация this проверяет способ вызова, а bind или обёртка задают его реальное поведение.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "ts-generator-contract",
+      "title": "Что означают три параметра Generator<Yield, Return, Next>?",
+      "description": "Объяснить и применить правило с учётом его границ: У генератора есть отдельные типы для выхода, завершения и входящего продолжения.",
+      "requiredDifficulties": ["Продвинутый"],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": []
+    }
+  ],
+  "questions": [
+    {
+      "id": "ts-function-signatures",
+      "title": "Как описать тип функции через сигнатуру, type или interface?",
+      "topic": "TypeScript",
+      "difficulty": "Базовый",
+      "summary": "Параметры, результат и вывод возвращаемого типа.",
+      "code": "type Formatter = (value: number) => string;\ninterface FormatterContract { (value: number): string }\nconst format: Formatter = (value) => value.toFixed(2);\nconst same: FormatterContract = format;\nfunction double(value: number) { return value * 2; } // результат number",
+      "takeaway": "Сигнатура описывает допустимый вызов и его результат независимо от синтаксиса реализации.",
+      "moduleId": "typescript",
+      "order": 0,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Сигнатура описывает допустимый вызов и его результат независимо от синтаксиса реализации.",
+        "keywords": ["TypeScript", "Типизация функций"],
+        "kind": "explanation",
+        "reviewStatus": "imported",
+        "goalIds": ["core", "ts-function-signatures"],
+        "relatedQuestionIds": [],
+        "priority": "core",
+        "sourceRefs": []
+      },
+      "answerFile": "answers/typescript/ts-function-signatures.md"
+    },
+    {
+      "id": "ts-function-parameters",
+      "title": "Как типизировать optional, default и rest-параметры?",
+      "topic": "TypeScript",
+      "difficulty": "Базовый",
+      "summary": "Отсутствующий аргумент, значение по умолчанию и массив либо кортеж остатка.",
+      "code": "function greet(name?: string): string { return name ?? \"гость\"; }\nfunction log(prefix = \"app\", ...messages: string[]): string {\n  return [prefix, ...messages].join(\": \");\n}\nfunction point(...coordinates: [number, number]): number {\n  return coordinates[0] + coordinates[1];\n}",
+      "takeaway": "Optional и default описывают пропуск, rest - оставшуюся последовательность аргументов.",
+      "moduleId": "typescript",
+      "order": 1,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Optional и default описывают пропуск, rest - оставшуюся последовательность аргументов.",
+        "keywords": ["TypeScript", "Типизация функций"],
+        "kind": "explanation",
+        "reviewStatus": "imported",
+        "goalIds": ["core", "ts-function-parameters"],
+        "relatedQuestionIds": [],
+        "priority": "core",
+        "sourceRefs": []
+      },
+      "answerFile": "answers/typescript/ts-function-parameters.md"
+    },
+    {
+      "id": "ts-async-functions",
+      "title": "Как типизировать async-функцию и результат её ожидания?",
+      "topic": "TypeScript",
+      "difficulty": "Базовый",
+      "summary": "Promise<T>, возвращаемое значение и отсутствие проверки HTTP-данных типом.",
+      "code": "async function double(value: number): Promise<number> {\n  return value * 2;\n}\ntype Result = Awaited<ReturnType<typeof double>>; // number\nasync function fail(): Promise<never> {\n  throw new Error(\"нет успешного результата\");\n}",
+      "takeaway": "Promise<T> описывает успешный результат, а не доказательство корректности внешних данных или типа ошибки.",
+      "moduleId": "typescript",
+      "order": 2,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Promise<T> описывает успешный результат, а не доказательство корректности внешних данных или типа ошибки.",
+        "keywords": ["TypeScript", "Типизация функций", "промис", "promise"],
+        "kind": "explanation",
+        "reviewStatus": "imported",
+        "goalIds": ["core", "ts-async-functions"],
+        "relatedQuestionIds": [],
+        "priority": "core",
+        "sourceRefs": []
+      },
+      "answerFile": "answers/typescript/ts-async-functions.md"
+    },
+    {
+      "id": "ts-function-overloads",
+      "title": "Как объявлять перегрузки функции и какую роль играет реализация?",
+      "topic": "TypeScript",
+      "difficulty": "Базовый",
+      "summary": "Внешние сигнатуры, один runtime-код и соответствие аргументов.",
+      "code": "function wrap(value: string): string[];\nfunction wrap(value: number): number[];\nfunction wrap(value: string | number): string[] | number[] {\n  return typeof value === \"string\" ? [value] : [value];\n}\nconst names = wrap(\"JS\"); // string[]\nconst numbers = wrap(1); // number[]",
+      "takeaway": "Перегрузки описывают доступные вызовы, но все варианты обслуживает одна проверенная реализация.",
+      "moduleId": "typescript",
+      "order": 3,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Перегрузки описывают доступные вызовы, но все варианты обслуживает одна проверенная реализация.",
+        "keywords": ["TypeScript", "Типизация функций"],
+        "kind": "explanation",
+        "reviewStatus": "imported",
+        "goalIds": ["core", "ts-function-overloads"],
+        "relatedQuestionIds": [],
+        "priority": "core",
+        "sourceRefs": []
+      },
+      "answerFile": "answers/typescript/ts-function-overloads.md"
+    },
+    {
+      "id": "ts-function-variance",
+      "title": "Почему callback с более узким параметром может быть небезопасен?",
+      "summary": "Совместимость функций при strictFunctionTypes и отличие методов от свойств-функций.",
+      "code": "type Animal = { name: string }\ntype Dog = Animal & { bark(): void }\nconst onlyDog = (dog: Dog) => dog.bark()\n// const handle: (animal: Animal) => void = onlyDog\n// Ошибка при strictFunctionTypes: обычное Animal не обязано иметь bark.\nconst acceptsAnimal = (animal: Animal) => animal.name\nconst handleDog: (dog: Dog) => string = acceptsAnimal",
+      "takeaway": "Совместимость callback нужно оценивать по входам, которые ему разрешено передать.",
+      "pitfall": "Считать обработчик более узкого подтипа безопасной заменой обработчику любого родителя.",
+      "difficulty": "Продвинутый",
+      "topic": "TypeScript",
+      "moduleId": "typescript",
+      "order": 4,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Совместимость callback нужно оценивать по входам, которые ему разрешено передать.",
+        "keywords": ["TypeScript", "Типизация функций"],
+        "kind": "explanation",
+        "reviewStatus": "imported",
+        "goalIds": ["core", "ts-function-variance"],
+        "relatedQuestionIds": [],
+        "priority": "core",
+        "sourceRefs": ["ref-9c236532a3d8bc5a"]
+      },
+      "answerFile": "answers/typescript/ts-function-variance.md"
+    },
+    {
+      "id": "ts-this-parameter",
+      "title": "Как явно описать this функции и контекст методов объектного литерала?",
+      "summary": "Служебный this-параметр, this: void и контекстный маркер ThisType.",
+      "code": "function read(this: { name: string }, prefix: string) {\n  return prefix + this.name\n}\nconst result = read.call({ name: 'Анна' }, 'Привет, ')\n// read('Привет, ') // Нет подходящего this для обычного вызова\ntype WithoutThis = OmitThisParameter<typeof read>",
+      "takeaway": "Аннотация this проверяет способ вызова, а bind или обёртка задают его реальное поведение.",
+      "pitfall": "Думать, что this: Context автоматически выполняет bind или передаётся первым аргументом.",
+      "difficulty": "Средний",
+      "topic": "TypeScript",
+      "moduleId": "typescript",
+      "order": 5,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Аннотация this проверяет способ вызова, а bind или обёртка задают его реальное поведение.",
+        "keywords": ["TypeScript", "Типизация функций"],
+        "kind": "explanation",
+        "reviewStatus": "imported",
+        "goalIds": ["core", "ts-this-parameter"],
+        "relatedQuestionIds": [],
+        "priority": "core",
+        "sourceRefs": ["ref-db1c5af3b94742b6"]
+      },
+      "answerFile": "answers/typescript/ts-this-parameter.md"
+    },
+    {
+      "id": "ts-generator-contract",
+      "title": "Что означают три параметра Generator<Yield, Return, Next>?",
+      "summary": "Раздельная типизация выдаваемых значений, результата завершения и входов next.",
+      "code": "function* ask(): Generator<string, number, boolean> {\n  const accepted = yield 'Продолжить?'\n  return accepted ? 1 : 0\n}\nconst dialog = ask()\ndialog.next()\nconst done = dialog.next(true)\nif (done.done) {\n  const result: number = done.value\n}",
+      "takeaway": "У генератора есть отдельные типы для выхода, завершения и входящего продолжения.",
+      "pitfall": "Считать типом результата генератора только тип выражений yield.",
+      "difficulty": "Продвинутый",
+      "topic": "TypeScript",
+      "moduleId": "typescript",
+      "order": 6,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: У генератора есть отдельные типы для выхода, завершения и входящего продолжения.",
+        "keywords": ["TypeScript", "Типизация функций"],
+        "kind": "explanation",
+        "reviewStatus": "imported",
+        "goalIds": ["core", "ts-generator-contract"],
+        "relatedQuestionIds": [],
+        "priority": "core",
+        "sourceRefs": ["ref-cb5d5b49e0662695"]
+      },
+      "answerFile": "answers/typescript/ts-generator-contract.md"
+    }
+  ]
+}

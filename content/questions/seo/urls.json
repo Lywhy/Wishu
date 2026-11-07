@@ -1,0 +1,113 @@
+{
+  "$schema": "../question-bundle.schema.json",
+  "sectionId": "seo",
+  "subsectionId": "urls",
+  "scope": "Канонические URL, редиректы и sitemap.",
+  "coverageGoals": [
+    {
+      "id": "core",
+      "title": "Адреса и дубли",
+      "description": "Обзор и взаимосвязи навыков: Канонические URL, редиректы и sitemap.",
+      "requiredDifficulties": [],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": ["seo-canonical", "seo-redirect-status", "seo-sitemap"]
+    },
+    {
+      "id": "seo-canonical",
+      "title": "Для чего нужен rel=canonical и является ли он перенаправлением?",
+      "description": "Объяснить и применить правило с учётом его границ: Canonical описывает предпочтительную версию, а не меняет адрес перехода.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "seo-redirect-status",
+      "title": "Когда для переноса страницы используют 301 или 308, а когда 302 или 307?",
+      "description": "Объяснить и применить правило с учётом его границ: Статус перехода должен соответствовать реальному характеру переноса.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "seo-sitemap",
+      "title": "Что включать в sitemap и чего он не гарантирует?",
+      "description": "Объяснить и применить правило с учётом его границ: Sitemap помогает обнаружению согласованного набора адресов.",
+      "requiredDifficulties": ["Базовый"],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": []
+    }
+  ],
+  "questions": [
+    {
+      "id": "seo-canonical",
+      "title": "Для чего нужен rel=canonical и является ли он перенаправлением?",
+      "topic": "SEO",
+      "difficulty": "Средний",
+      "summary": "Предпочтительная версия похожих страниц.",
+      "takeaway": "Canonical описывает предпочтительную версию, а не меняет адрес перехода.",
+      "moduleId": "seo",
+      "order": 0,
+      "popular": false,
+      "code": "<link rel=\"canonical\" href=\"https://example.com/articles/css-layout\">",
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Canonical описывает предпочтительную версию, а не меняет адрес перехода.",
+        "keywords": ["SEO", "Адреса и дубли"],
+        "kind": "explanation",
+        "reviewStatus": "imported",
+        "goalIds": ["core", "seo-canonical"],
+        "relatedQuestionIds": [],
+        "priority": "core",
+        "sourceRefs": []
+      },
+      "answerFile": "answers/seo/seo-canonical.md"
+    },
+    {
+      "id": "seo-redirect-status",
+      "title": "Когда для переноса страницы используют 301 или 308, а когда 302 или 307?",
+      "topic": "SEO",
+      "difficulty": "Средний",
+      "summary": "Постоянное и временное перенаправление.",
+      "takeaway": "Статус перехода должен соответствовать реальному характеру переноса.",
+      "moduleId": "seo",
+      "order": 1,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Статус перехода должен соответствовать реальному характеру переноса.",
+        "keywords": ["SEO", "Адреса и дубли"],
+        "kind": "explanation",
+        "reviewStatus": "imported",
+        "goalIds": ["core", "seo-redirect-status"],
+        "relatedQuestionIds": [],
+        "priority": "core",
+        "sourceRefs": []
+      },
+      "answerFile": "answers/seo/seo-redirect-status.md"
+    },
+    {
+      "id": "seo-sitemap",
+      "title": "Что включать в sitemap и чего он не гарантирует?",
+      "topic": "SEO",
+      "difficulty": "Базовый",
+      "summary": "Список предпочтительных адресов для обнаружения.",
+      "takeaway": "Sitemap помогает обнаружению согласованного набора адресов.",
+      "moduleId": "seo",
+      "order": 2,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Sitemap помогает обнаружению согласованного набора адресов.",
+        "keywords": ["SEO", "Адреса и дубли"],
+        "kind": "explanation",
+        "reviewStatus": "imported",
+        "goalIds": ["core", "seo-sitemap"],
+        "relatedQuestionIds": [],
+        "priority": "core",
+        "sourceRefs": []
+      },
+      "answerFile": "answers/seo/seo-sitemap.md"
+    }
+  ]
+}

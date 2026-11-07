@@ -1,0 +1,258 @@
+{
+  "$schema": "../question-bundle.schema.json",
+  "sectionId": "javascript",
+  "subsectionId": "iteration",
+  "scope": "Делегирование, закрытие итераторов, ленивые последовательности и disposal.",
+  "coverageGoals": [
+    {
+      "id": "core",
+      "title": "Итерация и управление ресурсами",
+      "description": "Обзор и взаимосвязи навыков: Делегирование, закрытие итераторов, ленивые последовательности и disposal.",
+      "requiredDifficulties": [],
+      "reviewed": false,
+      "priority": "extended",
+      "relatedSkillIds": [
+        "js-iterator-close",
+        "js-yield-delegation",
+        "js-generator-return-finally",
+        "js-iterator-helpers",
+        "js-array-from-async",
+        "js-async-generator-queue",
+        "js-for-await-sync-rejection"
+      ]
+    },
+    {
+      "id": "js-iterator-close",
+      "title": "Как for...of освобождает ресурс при досрочном выходе из итерации?",
+      "description": "Объяснить и применить правило с учётом его границ: Протокол итерации включает не только next, но и корректное досрочное завершение.",
+      "requiredDifficulties": ["Продвинутый"],
+      "reviewed": false,
+      "priority": "extended",
+      "relatedSkillIds": ["iterator-protocols", "generator-functions"]
+    },
+    {
+      "id": "js-yield-delegation",
+      "title": "Что передаёт yield* вложенному итератору кроме выдаваемых значений?",
+      "description": "Объяснить и применить правило с учётом его границ: Yield* связывает выдачу значений и управляющий протокол двух итераторов.",
+      "requiredDifficulties": ["Продвинутый"],
+      "reviewed": false,
+      "priority": "extended",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "js-generator-return-finally",
+      "title": "Может ли generator.return() вернуть done: false?",
+      "description": "Объяснить и применить правило с учётом его границ: Управляющее завершение генератора тоже может проходить через приостановленный finally.",
+      "requiredDifficulties": ["Продвинутый"],
+      "reviewed": false,
+      "priority": "specialist",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "js-iterator-helpers",
+      "title": "Чем Iterator helpers отличаются от цепочки методов Array?",
+      "description": "Объяснить и применить правило с учётом его границ: Ленивость меняет время работы и владение источником, а не только форму записи.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": false,
+      "priority": "extended",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "js-array-from-async",
+      "title": "Чем Array.fromAsync отличается от Promise.all?",
+      "description": "Объяснить и применить правило с учётом его границ: Сбор асинхронной последовательности и агрегация готовых Promise имеют разные модели запуска.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": false,
+      "priority": "extended",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "js-async-generator-queue",
+      "title": "Почему много next() не превращают async-генератор в параллельный загрузчик?",
+      "description": "Объяснить и применить правило с учётом его границ: Pull-протокол управляет потреблением, а параллельность и отмена требуют отдельного контракта.",
+      "requiredDifficulties": ["Продвинутый"],
+      "reviewed": false,
+      "priority": "extended",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "js-for-await-sync-rejection",
+      "title": "Как for await...of закрывает sync-генератор при отклонении выданного Promise?",
+      "description": "Объяснить и применить правило с учётом его границ: Различайте актуальную семантику адаптера и историческое поведение конкретной реализации.",
+      "requiredDifficulties": ["Продвинутый"],
+      "reviewed": false,
+      "priority": "extended",
+      "relatedSkillIds": ["async-generators", "js-generator-return-finally"]
+    }
+  ],
+  "questions": [
+    {
+      "id": "js-iterator-close",
+      "difficulty": "Продвинутый",
+      "title": "Как for...of освобождает ресурс при досрочном выходе из итерации?",
+      "summary": "Return-метод итератора, break и отличие от простого получения next.",
+      "code": "function* values() {\n  try { yield 1; yield 2 }\n  finally { console.log(\"очистка\") }\n}\nfor (const value of values()) {\n  console.log(value)\n  break\n}\n// Вывод: 1, затем очистка.",
+      "takeaway": "Протокол итерации включает не только next, но и корректное досрочное завершение.",
+      "pitfall": "Забывать return у итератора, который владеет открытым ресурсом.",
+      "topic": "JavaScript",
+      "moduleId": "javascript",
+      "popular": false,
+      "order": 0,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Протокол итерации включает не только next, но и корректное досрочное завершение.",
+        "keywords": ["JavaScript", "Итерация и управление ресурсами"],
+        "kind": "explanation",
+        "reviewStatus": "imported",
+        "goalIds": ["core", "js-iterator-close"],
+        "relatedQuestionIds": ["iterator-protocols", "generator-functions"],
+        "priority": "extended",
+        "sourceRefs": ["ref-a8ff88db0af1694a"]
+      },
+      "answerFile": "answers/javascript/js-iterator-close.md"
+    },
+    {
+      "id": "js-yield-delegation",
+      "difficulty": "Продвинутый",
+      "title": "Что передаёт yield* вложенному итератору кроме выдаваемых значений?",
+      "summary": "Делегирование next/throw/return и итоговое значение подитератора.",
+      "code": "function* inner() { yield 1; return 10 }\nfunction* outer() {\n  const result = yield* inner()\n  yield result + 1\n}\nconsole.log([...outer()]) // [1, 11]",
+      "takeaway": "Yield* связывает выдачу значений и управляющий протокол двух итераторов.",
+      "pitfall": "Считать yield* текстовой заменой цикла, полностью равной любому ручному yield.",
+      "topic": "JavaScript",
+      "moduleId": "javascript",
+      "popular": false,
+      "order": 1,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Yield* связывает выдачу значений и управляющий протокол двух итераторов.",
+        "keywords": ["JavaScript", "Итерация и управление ресурсами"],
+        "kind": "explanation",
+        "reviewStatus": "imported",
+        "goalIds": ["core", "js-yield-delegation"],
+        "relatedQuestionIds": [],
+        "priority": "extended",
+        "sourceRefs": ["ref-f6cf60adce058693"]
+      },
+      "answerFile": "answers/javascript/js-yield-delegation.md"
+    },
+    {
+      "id": "js-generator-return-finally",
+      "difficulty": "Продвинутый",
+      "title": "Может ли generator.return() вернуть done: false?",
+      "summary": "Приостановка внутри finally и отложенное завершение генератора.",
+      "code": "function* values() {\n  try { yield 1 } finally { yield \"cleanup\" }\n}\nconst iterator = values()\niterator.next()\nconsole.log(iterator.return(\"done\")) // { value: \"cleanup\", done: false }\nconsole.log(iterator.next()) // { value: \"done\", done: true }",
+      "takeaway": "Управляющее завершение генератора тоже может проходить через приостановленный finally.",
+      "pitfall": "Всегда ожидать done: true от первого вызова return.",
+      "topic": "JavaScript",
+      "moduleId": "javascript",
+      "popular": false,
+      "order": 2,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Управляющее завершение генератора тоже может проходить через приостановленный finally.",
+        "keywords": ["JavaScript", "Итерация и управление ресурсами"],
+        "kind": "explanation",
+        "reviewStatus": "imported",
+        "goalIds": ["core", "js-generator-return-finally"],
+        "relatedQuestionIds": [],
+        "priority": "specialist",
+        "sourceRefs": ["ref-ae8d334787dedbb5"]
+      },
+      "answerFile": "answers/javascript/js-generator-return-finally.md"
+    },
+    {
+      "id": "js-iterator-helpers",
+      "difficulty": "Средний",
+      "title": "Чем Iterator helpers отличаются от цепочки методов Array?",
+      "summary": "Ленивый конвейер, одноразовый источник и момент выполнения callback.",
+      "code": "const values = Iterator.from([1, 2, 3, 4])\nconst pipeline = values.filter(value => value % 2 === 0).map(value => value * 10).take(1)\nconsole.log(pipeline.toArray()) // [20]",
+      "takeaway": "Ленивость меняет время работы и владение источником, а не только форму записи.",
+      "pitfall": "Повторно потреблять тот же iterator, ожидая новый полный обход.",
+      "topic": "JavaScript",
+      "moduleId": "javascript",
+      "popular": false,
+      "order": 3,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Ленивость меняет время работы и владение источником, а не только форму записи.",
+        "keywords": ["JavaScript", "Итерация и управление ресурсами"],
+        "kind": "explanation",
+        "reviewStatus": "imported",
+        "goalIds": ["core", "js-iterator-helpers"],
+        "relatedQuestionIds": [],
+        "priority": "extended",
+        "sourceRefs": ["ref-4d780395a7e862d3"]
+      },
+      "answerFile": "answers/javascript/js-iterator-helpers.md"
+    },
+    {
+      "id": "js-array-from-async",
+      "difficulty": "Средний",
+      "title": "Чем Array.fromAsync отличается от Promise.all?",
+      "summary": "Асинхронная итерация, последовательное получение и сбор уже начатых операций.",
+      "code": "async function* source() { yield 1; yield 2 }\nasync function collect() {\n  return Array.fromAsync(source(), async value => value * 2)\n}\n// collect() выполняется в среде с поддержкой Array.fromAsync.",
+      "takeaway": "Сбор асинхронной последовательности и агрегация готовых Promise имеют разные модели запуска.",
+      "pitfall": "Использовать Array.fromAsync как обещание параллельной загрузки всех элементов.",
+      "topic": "JavaScript",
+      "moduleId": "javascript",
+      "popular": false,
+      "order": 4,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Сбор асинхронной последовательности и агрегация готовых Promise имеют разные модели запуска.",
+        "keywords": ["JavaScript", "Итерация и управление ресурсами", "промис", "promise"],
+        "kind": "explanation",
+        "reviewStatus": "imported",
+        "goalIds": ["core", "js-array-from-async"],
+        "relatedQuestionIds": [],
+        "priority": "extended",
+        "sourceRefs": ["ref-f9e3681a24b5a718"]
+      },
+      "answerFile": "answers/javascript/js-array-from-async.md"
+    },
+    {
+      "id": "js-async-generator-queue",
+      "difficulty": "Продвинутый",
+      "title": "Почему много next() не превращают async-генератор в параллельный загрузчик?",
+      "summary": "Очередь запросов продолжения, backpressure и отдельная отмена операции.",
+      "code": "async function* pages(load) {\n  for (let page = 1; page <= 3; page++) yield await load(page)\n}\n// Поддерживаемый load определяет сеть и отмену.\n// Очередь iterator.next() не распараллеливает этот цикл.",
+      "takeaway": "Pull-протокол управляет потреблением, а параллельность и отмена требуют отдельного контракта.",
+      "pitfall": "Считать очередь next() эквивалентом запуска трёх независимых fetch.",
+      "topic": "JavaScript",
+      "moduleId": "javascript",
+      "popular": false,
+      "order": 5,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Pull-протокол управляет потреблением, а параллельность и отмена требуют отдельного контракта.",
+        "keywords": ["JavaScript", "Итерация и управление ресурсами"],
+        "kind": "explanation",
+        "reviewStatus": "imported",
+        "goalIds": ["core", "js-async-generator-queue"],
+        "relatedQuestionIds": [],
+        "priority": "extended",
+        "sourceRefs": ["ref-8ce34baa91687cff"]
+      },
+      "answerFile": "answers/javascript/js-async-generator-queue.md"
+    },
+    {
+      "id": "js-for-await-sync-rejection",
+      "difficulty": "Продвинутый",
+      "title": "Как for await...of закрывает sync-генератор при отклонении выданного Promise?",
+      "summary": "Async-from-sync адаптация, return и зависимость от версии реализации.",
+      "code": "function* values() {\n  try { yield Promise.reject(new Error(\"сбой\")) }\n  finally { console.log(\"очистка\") }\n}\nasync function consume() {\n  try { for await (const value of values()) console.log(value) }\n  catch { console.log(\"ошибка\") }\n}\n// В текущем описанном алгоритме consume(): очистка, затем ошибка.\n// Совместимость конкретного runtime проверяется отдельно.",
+      "takeaway": "Различайте актуальную семантику адаптера и историческое поведение конкретной реализации.",
+      "pitfall": "Утверждать, что finally здесь всегда пропускается, опираясь на старую документацию.",
+      "topic": "JavaScript",
+      "moduleId": "javascript",
+      "popular": false,
+      "order": 6,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Различайте актуальную семантику адаптера и историческое поведение конкретной реализации.",
+        "keywords": ["JavaScript", "Итерация и управление ресурсами", "промис", "promise"],
+        "kind": "explanation",
+        "reviewStatus": "imported",
+        "goalIds": ["core", "js-for-await-sync-rejection"],
+        "relatedQuestionIds": ["async-generators", "js-generator-return-finally"],
+        "priority": "extended",
+        "sourceRefs": ["ref-a956740156132837"]
+      },
+      "answerFile": "answers/javascript/js-for-await-sync-rejection.md"
+    }
+  ]
+}

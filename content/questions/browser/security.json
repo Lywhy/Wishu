@@ -1,0 +1,112 @@
+{
+  "$schema": "../question-bundle.schema.json",
+  "sectionId": "browser",
+  "subsectionId": "security",
+  "scope": "Origin, cookies и межсайтовые запросы.",
+  "coverageGoals": [
+    {
+      "id": "core",
+      "title": "Границы безопасности",
+      "description": "Обзор и взаимосвязи навыков: Origin, cookies и межсайтовые запросы.",
+      "requiredDifficulties": [],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": ["browser-cors", "browser-cookie-flags", "browser-csrf"]
+    },
+    {
+      "id": "browser-cors",
+      "title": "Что ограничивает same-origin policy и как CORS разрешает чтение ответа?",
+      "description": "Объяснить и применить правило с учётом его границ: CORS управляет доступом браузерного скрипта к ответу.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "browser-cookie-flags",
+      "title": "Что делают HttpOnly, Secure и SameSite у cookie?",
+      "description": "Объяснить и применить правило с учётом его границ: Каждый флаг cookie защищает отдельную границу.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "browser-csrf",
+      "title": "Чем CSRF отличается от XSS и как защищать изменение данных?",
+      "description": "Объяснить и применить правило с учётом его границ: Защищайте авторизованное действие, а не только чтение ответа.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": []
+    }
+  ],
+  "questions": [
+    {
+      "id": "browser-cors",
+      "title": "Что ограничивает same-origin policy и как CORS разрешает чтение ответа?",
+      "topic": "Web",
+      "difficulty": "Средний",
+      "summary": "Origin, preflight и серверные разрешения.",
+      "takeaway": "CORS управляет доступом браузерного скрипта к ответу.",
+      "moduleId": "browser",
+      "order": 0,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: CORS управляет доступом браузерного скрипта к ответу.",
+        "keywords": ["Браузер и HTTP", "Границы безопасности"],
+        "kind": "explanation",
+        "reviewStatus": "imported",
+        "goalIds": ["core", "browser-cors"],
+        "relatedQuestionIds": [],
+        "priority": "core",
+        "sourceRefs": []
+      },
+      "answerFile": "answers/browser/browser-cors.md"
+    },
+    {
+      "id": "browser-cookie-flags",
+      "title": "Что делают HttpOnly, Secure и SameSite у cookie?",
+      "topic": "Web",
+      "difficulty": "Средний",
+      "summary": "Ограничения доступа и отправки cookie.",
+      "takeaway": "Каждый флаг cookie защищает отдельную границу.",
+      "moduleId": "browser",
+      "order": 1,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Каждый флаг cookie защищает отдельную границу.",
+        "keywords": ["Браузер и HTTP", "Границы безопасности"],
+        "kind": "explanation",
+        "reviewStatus": "imported",
+        "goalIds": ["core", "browser-cookie-flags"],
+        "relatedQuestionIds": [],
+        "priority": "core",
+        "sourceRefs": []
+      },
+      "answerFile": "answers/browser/browser-cookie-flags.md"
+    },
+    {
+      "id": "browser-csrf",
+      "title": "Чем CSRF отличается от XSS и как защищать изменение данных?",
+      "topic": "Web",
+      "difficulty": "Средний",
+      "summary": "Чужой запрос с сессионными полномочиями.",
+      "takeaway": "Защищайте авторизованное действие, а не только чтение ответа.",
+      "moduleId": "browser",
+      "order": 2,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Защищайте авторизованное действие, а не только чтение ответа.",
+        "keywords": ["Браузер и HTTP", "Границы безопасности"],
+        "kind": "explanation",
+        "reviewStatus": "imported",
+        "goalIds": ["core", "browser-csrf"],
+        "relatedQuestionIds": [],
+        "priority": "core",
+        "sourceRefs": []
+      },
+      "answerFile": "answers/browser/browser-csrf.md"
+    }
+  ]
+}

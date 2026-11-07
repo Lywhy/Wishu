@@ -1,0 +1,114 @@
+{
+  "$schema": "../question-bundle.schema.json",
+  "sectionId": "java",
+  "subsectionId": "language",
+  "scope": "Примитивы, передача аргументов и равенство.",
+  "coverageGoals": [
+    {
+      "id": "core",
+      "title": "Типы и значения",
+      "description": "Обзор и взаимосвязи навыков: Примитивы, передача аргументов и равенство.",
+      "requiredDifficulties": [],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": ["java-primitives-boxing", "java-pass-by-value", "java-equals-hashcode"]
+    },
+    {
+      "id": "java-primitives-boxing",
+      "title": "Чем примитивы Java отличаются от классов-обёрток?",
+      "description": "Объяснить и применить правило с учётом его границ: Обёртка - объект с возможным null, а не просто другая запись примитива.",
+      "requiredDifficulties": ["Базовый"],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "java-pass-by-value",
+      "title": "Передаются ли объекты Java в метод по ссылке?",
+      "description": "Объяснить и применить правило с учётом его границ: Метод получает копию ссылки, а не ссылку на переменную вызывающего.",
+      "requiredDifficulties": ["Базовый"],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "java-equals-hashcode",
+      "title": "Как связаны equals и hashCode?",
+      "description": "Объяснить и применить правило с учётом его границ: Равные объекты обязаны иметь одинаковый хеш, обратное неверно.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": []
+    }
+  ],
+  "questions": [
+    {
+      "id": "java-primitives-boxing",
+      "title": "Чем примитивы Java отличаются от классов-обёрток?",
+      "topic": "Java",
+      "difficulty": "Базовый",
+      "summary": "Int, Integer и преобразование между ними.",
+      "code": "Integer value = null;\n// int number = value; // Распаковка вызовет NullPointerException.\nint number = value == null ? 0 : value;",
+      "takeaway": "Обёртка - объект с возможным null, а не просто другая запись примитива.",
+      "moduleId": "java",
+      "order": 0,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Обёртка - объект с возможным null, а не просто другая запись примитива.",
+        "keywords": ["Java", "Типы и значения"],
+        "kind": "explanation",
+        "reviewStatus": "imported",
+        "goalIds": ["core", "java-primitives-boxing"],
+        "relatedQuestionIds": [],
+        "priority": "core",
+        "sourceRefs": []
+      },
+      "answerFile": "answers/java/java-primitives-boxing.md"
+    },
+    {
+      "id": "java-pass-by-value",
+      "title": "Передаются ли объекты Java в метод по ссылке?",
+      "topic": "Java",
+      "difficulty": "Базовый",
+      "summary": "Копия значения ссылки и изменение объекта.",
+      "takeaway": "Метод получает копию ссылки, а не ссылку на переменную вызывающего.",
+      "moduleId": "java",
+      "order": 1,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Метод получает копию ссылки, а не ссылку на переменную вызывающего.",
+        "keywords": ["Java", "Типы и значения"],
+        "kind": "explanation",
+        "reviewStatus": "imported",
+        "goalIds": ["core", "java-pass-by-value"],
+        "relatedQuestionIds": [],
+        "priority": "core",
+        "sourceRefs": []
+      },
+      "answerFile": "answers/java/java-pass-by-value.md"
+    },
+    {
+      "id": "java-equals-hashcode",
+      "title": "Как связаны equals и hashCode?",
+      "topic": "Java",
+      "difficulty": "Средний",
+      "summary": "Контракт равенства для хеш-коллекций.",
+      "takeaway": "Равные объекты обязаны иметь одинаковый хеш, обратное неверно.",
+      "moduleId": "java",
+      "order": 2,
+      "popular": false,
+      "pitfall": "Использовать одинаковый hashCode как доказательство равенства. Коллизии возможны, равенство определяет equals.",
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Равные объекты обязаны иметь одинаковый хеш, обратное неверно.",
+        "keywords": ["Java", "Типы и значения"],
+        "kind": "explanation",
+        "reviewStatus": "imported",
+        "goalIds": ["core", "java-equals-hashcode"],
+        "relatedQuestionIds": [],
+        "priority": "core",
+        "sourceRefs": []
+      },
+      "answerFile": "answers/java/java-equals-hashcode.md"
+    }
+  ]
+}

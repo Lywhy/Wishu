@@ -1,0 +1,156 @@
+{
+  "$schema": "../question-bundle.schema.json",
+  "sectionId": "html-css",
+  "subsectionId": "css-visual",
+  "scope": "Движение, фокус, темы и предпочтения пользователя.",
+  "coverageGoals": [
+    {
+      "id": "core",
+      "title": "Визуальные состояния и анимации",
+      "description": "Обзор и взаимосвязи навыков: Движение, фокус, темы и предпочтения пользователя.",
+      "requiredDifficulties": [],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": [
+        "css-transition-animation",
+        "css-reduced-motion",
+        "css-focus-indicator",
+        "css-color-preferences"
+      ]
+    },
+    {
+      "id": "css-transition-animation",
+      "title": "Когда использовать transition, а когда animation?",
+      "description": "Объяснить и применить правило с учётом его границ: Выбирайте механизм по событию и последовательности движения, затем измеряйте стоимость.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "css-reduced-motion",
+      "title": "Как учитывать prefers-reduced-motion без потери смысла интерфейса?",
+      "description": "Объяснить и применить правило с учётом его границ: Уменьшайте движение, сохраняя понятность изменения и независимость логики от анимации.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "css-focus-indicator",
+      "title": "Как оформить focus-visible и не потерять клавиатурную доступность?",
+      "description": "Объяснить и применить правило с учётом его границ: Фокус должен оставаться видимым независимо от того, как пользователь управляет интерфейсом.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "css-color-preferences",
+      "title": "Как согласовать тёмную тему, системное предпочтение и forced colors?",
+      "description": "Объяснить и применить правило с учётом его границ: Палитра приложения должна работать вместе с настройками браузера и предпочтениями пользователя.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": []
+    }
+  ],
+  "questions": [
+    {
+      "id": "css-transition-animation",
+      "title": "Когда использовать transition, а когда animation?",
+      "summary": "Изменение между состояниями и самостоятельная последовательность ключевых кадров.",
+      "code": ".panel { opacity: 1; transition: opacity 180ms ease; }\n.panel[data-faded=\"true\"] { opacity: .5; }\n.notice { animation: appear 180ms ease; }\n@keyframes appear { from { opacity: 0; } to { opacity: 1; } }",
+      "takeaway": "Выбирайте механизм по событию и последовательности движения, затем измеряйте стоимость.",
+      "pitfall": "Считать любое движение на transform гарантированно бесплатным для браузера.",
+      "difficulty": "Средний",
+      "topic": "HTML и CSS",
+      "moduleId": "html-css",
+      "popular": false,
+      "order": 0,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Выбирайте механизм по событию и последовательности движения, затем измеряйте стоимость.",
+        "keywords": ["HTML и CSS", "Визуальные состояния и анимации"],
+        "kind": "explanation",
+        "reviewStatus": "imported",
+        "goalIds": ["core", "css-transition-animation"],
+        "relatedQuestionIds": [],
+        "priority": "core",
+        "sourceRefs": ["ref-347a11de9df656e9"]
+      },
+      "answerFile": "answers/html-css/css-transition-animation.md"
+    },
+    {
+      "id": "css-reduced-motion",
+      "title": "Как учитывать prefers-reduced-motion без потери смысла интерфейса?",
+      "summary": "Сохранение обратной связи при уменьшении перемещения и длительных эффектов.",
+      "code": ".card { transition: transform 180ms ease; }\n@media (prefers-reduced-motion: reduce) {\n  .card { transition: none; }\n  html { scroll-behavior: auto; }\n}",
+      "takeaway": "Уменьшайте движение, сохраняя понятность изменения и независимость логики от анимации.",
+      "pitfall": "Отключить анимацию, но оставить ожидание animationend единственным способом продолжить действие.",
+      "difficulty": "Средний",
+      "topic": "HTML и CSS",
+      "moduleId": "html-css",
+      "popular": false,
+      "order": 1,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Уменьшайте движение, сохраняя понятность изменения и независимость логики от анимации.",
+        "keywords": ["HTML и CSS", "Визуальные состояния и анимации"],
+        "kind": "explanation",
+        "reviewStatus": "imported",
+        "goalIds": ["core", "css-reduced-motion"],
+        "relatedQuestionIds": [],
+        "priority": "core",
+        "sourceRefs": ["ref-a893493200c86881"]
+      },
+      "answerFile": "answers/html-css/css-reduced-motion.md"
+    },
+    {
+      "id": "css-focus-indicator",
+      "title": "Как оформить focus-visible и не потерять клавиатурную доступность?",
+      "summary": "Индикатор фокуса, hover-состояния и ограничения сенсорного ввода.",
+      "code": "button:focus-visible { outline: 3px solid #2563eb; outline-offset: 3px; }\n@media (hover: hover) { button:hover { text-decoration: underline; } }",
+      "takeaway": "Фокус должен оставаться видимым независимо от того, как пользователь управляет интерфейсом.",
+      "pitfall": "Удалять outline: none для красоты и оставлять только hover-эффект.",
+      "difficulty": "Средний",
+      "topic": "HTML и CSS",
+      "moduleId": "html-css",
+      "popular": false,
+      "order": 2,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Фокус должен оставаться видимым независимо от того, как пользователь управляет интерфейсом.",
+        "keywords": ["HTML и CSS", "Визуальные состояния и анимации"],
+        "kind": "explanation",
+        "reviewStatus": "imported",
+        "goalIds": ["core", "css-focus-indicator"],
+        "relatedQuestionIds": [],
+        "priority": "core",
+        "sourceRefs": ["ref-8aec0767bcda7192"]
+      },
+      "answerFile": "answers/html-css/css-focus-indicator.md"
+    },
+    {
+      "id": "css-color-preferences",
+      "title": "Как согласовать тёмную тему, системное предпочтение и forced colors?",
+      "summary": "Различие выбора палитры, подсказки color-scheme и доступности при пользовательских цветах.",
+      "code": ":root { color-scheme: light dark; --surface: light-dark(white, #18181b); }\n.panel { background: var(--surface); border: 1px solid currentColor; }\n@media (forced-colors: active) { .panel { border-color: CanvasText; } }",
+      "takeaway": "Палитра приложения должна работать вместе с настройками браузера и предпочтениями пользователя.",
+      "pitfall": "Считать color-scheme готовой тёмной темой для любого собственного CSS.",
+      "difficulty": "Средний",
+      "topic": "HTML и CSS",
+      "moduleId": "html-css",
+      "popular": false,
+      "order": 3,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Палитра приложения должна работать вместе с настройками браузера и предпочтениями пользователя.",
+        "keywords": ["HTML и CSS", "Визуальные состояния и анимации"],
+        "kind": "explanation",
+        "reviewStatus": "imported",
+        "goalIds": ["core", "css-color-preferences"],
+        "relatedQuestionIds": [],
+        "priority": "core",
+        "sourceRefs": ["ref-f628e2cfe314f388"]
+      },
+      "answerFile": "answers/html-css/css-color-preferences.md"
+    }
+  ]
+}

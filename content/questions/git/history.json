@@ -1,0 +1,113 @@
+{
+  "$schema": "../question-bundle.schema.json",
+  "sectionId": "git",
+  "subsectionId": "history",
+  "scope": "Коммиты, HEAD и объединение изменений.",
+  "coverageGoals": [
+    {
+      "id": "core",
+      "title": "Ветки и история",
+      "description": "Обзор и взаимосвязи навыков: Коммиты, HEAD и объединение изменений.",
+      "requiredDifficulties": [],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": ["git-rebase", "git-branch-head", "git-fast-forward"]
+    },
+    {
+      "id": "git-rebase",
+      "title": "Когда выбирать merge, а когда rebase?",
+      "description": "Объяснить и применить правило с учётом его границ: Перед rebase важно понять, кто ещё использует историю этой ветки.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "git-branch-head",
+      "title": "Что такое ветка и на что указывает HEAD?",
+      "description": "Объяснить и применить правило с учётом его границ: Ветка именует линию истории, HEAD обозначает текущую позицию.",
+      "requiredDifficulties": ["Базовый"],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "git-fast-forward",
+      "title": "Когда merge может быть fast-forward?",
+      "description": "Объяснить и применить правило с учётом его границ: Fast-forward передвигает ссылку по уже существующей линии.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": []
+    }
+  ],
+  "questions": [
+    {
+      "id": "git-rebase",
+      "title": "Когда выбирать merge, а когда rebase?",
+      "topic": "Инструменты",
+      "difficulty": "Средний",
+      "summary": "История изменений и совместная работа с ветками.",
+      "takeaway": "Перед rebase важно понять, кто ещё использует историю этой ветки.",
+      "moduleId": "git",
+      "order": 0,
+      "popular": false,
+      "pitfall": "Без согласования переписать историю ветки, на которой другие участники уже построили свои коммиты.",
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Перед rebase важно понять, кто ещё использует историю этой ветки.",
+        "keywords": ["Git", "Ветки и история"],
+        "kind": "explanation",
+        "reviewStatus": "imported",
+        "goalIds": ["core", "git-rebase"],
+        "relatedQuestionIds": [],
+        "priority": "core",
+        "sourceRefs": []
+      },
+      "answerFile": "answers/git/git-rebase.md"
+    },
+    {
+      "id": "git-branch-head",
+      "title": "Что такое ветка и на что указывает HEAD?",
+      "topic": "Git",
+      "difficulty": "Базовый",
+      "summary": "Ссылки на коммиты и текущее состояние.",
+      "takeaway": "Ветка именует линию истории, HEAD обозначает текущую позицию.",
+      "moduleId": "git",
+      "order": 1,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Ветка именует линию истории, HEAD обозначает текущую позицию.",
+        "keywords": ["Git", "Ветки и история"],
+        "kind": "explanation",
+        "reviewStatus": "imported",
+        "goalIds": ["core", "git-branch-head"],
+        "relatedQuestionIds": [],
+        "priority": "core",
+        "sourceRefs": []
+      },
+      "answerFile": "answers/git/git-branch-head.md"
+    },
+    {
+      "id": "git-fast-forward",
+      "title": "Когда merge может быть fast-forward?",
+      "topic": "Git",
+      "difficulty": "Средний",
+      "summary": "Достижимость коммитов и отсутствие развилки.",
+      "takeaway": "Fast-forward передвигает ссылку по уже существующей линии.",
+      "moduleId": "git",
+      "order": 2,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Fast-forward передвигает ссылку по уже существующей линии.",
+        "keywords": ["Git", "Ветки и история"],
+        "kind": "explanation",
+        "reviewStatus": "imported",
+        "goalIds": ["core", "git-fast-forward"],
+        "relatedQuestionIds": [],
+        "priority": "core",
+        "sourceRefs": []
+      },
+      "answerFile": "answers/git/git-fast-forward.md"
+    }
+  ]
+}

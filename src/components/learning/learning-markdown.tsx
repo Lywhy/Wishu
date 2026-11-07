@@ -103,7 +103,11 @@ export function LearningMarkdown({
             className?.startsWith("language-") ? (
               <CodeBlock
                 code={String(children).replace(/\n$/, "")}
-                language={codeLanguageFor(topic, String(children))}
+                language={codeLanguageFor(
+                  topic,
+                  String(children),
+                  className.slice("language-".length),
+                )}
               />
             ) : (
               <code className="rounded bg-muted px-1 py-0.5 font-mono text-[0.9em]">

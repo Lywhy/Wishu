@@ -1,0 +1,320 @@
+{
+  "$schema": "../question-bundle.schema.json",
+  "sectionId": "react",
+  "subsectionId": "state",
+  "scope": "Снимки состояния, очередь обновлений, иммутабельность и владение данными.",
+  "coverageGoals": [
+    {
+      "id": "core",
+      "title": "Состояние и поток данных",
+      "description": "Обзор и взаимосвязи навыков: Снимки состояния, очередь обновлений, иммутабельность и владение данными.",
+      "requiredDifficulties": [],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": [
+        "react-state-snapshot",
+        "react-state-queue",
+        "react-state-immutability",
+        "react-derived-state",
+        "react-lifting-state",
+        "react-use-reducer",
+        "react-lazy-state",
+        "react-normalized-state",
+        "react-draft-conflicts"
+      ]
+    },
+    {
+      "id": "react-state-snapshot",
+      "title": "Почему значение state не меняется сразу после setState?",
+      "description": "Объяснить и применить правило с учётом его границ: Каждый рендер видит свой снимок состояния.",
+      "requiredDifficulties": ["Базовый"],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "react-state-queue",
+      "title": "Что выведут три вызова setCount и когда нужен updater?",
+      "description": "Объяснить и применить правило с учётом его границ: Если новое состояние зависит от предыдущего, используйте updater.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "react-state-immutability",
+      "title": "Почему нельзя изменять объект или массив в state напрямую?",
+      "description": "Объяснить и применить правило с учётом его границ: Создавайте новые ссылки только на изменённом пути.",
+      "requiredDifficulties": ["Базовый"],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "react-derived-state",
+      "title": "Почему вычисляемые значения обычно не нужно хранить в state?",
+      "description": "Объяснить и применить правило с учётом его границ: Храните исходные данные, остальные значения вычисляйте.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "react-lifting-state",
+      "title": "Когда нужно поднимать состояние к общему родителю?",
+      "description": "Объяснить и применить правило с учётом его границ: Общие данные должны иметь одного владельца.",
+      "requiredDifficulties": ["Базовый"],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "react-use-reducer",
+      "title": "Когда useReducer удобнее useState?",
+      "description": "Объяснить и применить правило с учётом его границ: Reducer описывает переходы состояния через события.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "react-lazy-state",
+      "title": "Как работает ленивое начальное состояние useState?",
+      "description": "Объяснить и применить правило с учётом его границ: Передавайте чистую функцию, если начальное вычисление дорогое.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "react-normalized-state",
+      "title": "Когда сущности в состоянии лучше хранить по ID, а не копировать в разные ветви?",
+      "description": "Объяснить и применить правило с учётом его границ: Храните идентичность отдельно от данных, когда несколько представлений относятся к одной сущности.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "react-draft-conflicts",
+      "title": "Как сохранить пользовательский черновик при обновлении данных с сервера?",
+      "description": "Объяснить и применить правило с учётом его границ: Несохранённый draft - самостоятельные данные, а не обязательное зеркало последних props.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": []
+    }
+  ],
+  "questions": [
+    {
+      "id": "react-state-snapshot",
+      "title": "Почему значение state не меняется сразу после setState?",
+      "topic": "React",
+      "difficulty": "Базовый",
+      "summary": "Снимок состояния и обработчики текущего рендера.",
+      "code": "function Counter() {\n  const [count, setCount] = useState(0)\n  function increment() {\n    const next = count + 1\n    setCount(next)\n    console.log(next)\n  }\n  return <button onClick={increment}>{count}</button>\n}",
+      "takeaway": "Каждый рендер видит свой снимок состояния.",
+      "moduleId": "react",
+      "order": 0,
+      "popular": false,
+      "pitfall": "Пытаться дождаться обновления через await setCount(...). Setter useState не возвращает Promise завершения рендера.",
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Каждый рендер видит свой снимок состояния.",
+        "keywords": ["React", "Состояние и поток данных"],
+        "kind": "explanation",
+        "reviewStatus": "imported",
+        "goalIds": ["core", "react-state-snapshot"],
+        "relatedQuestionIds": [],
+        "priority": "core",
+        "sourceRefs": []
+      },
+      "answerFile": "answers/react/react-state-snapshot.md"
+    },
+    {
+      "id": "react-state-queue",
+      "title": "Что выведут три вызова setCount и когда нужен updater?",
+      "topic": "React",
+      "difficulty": "Средний",
+      "summary": "Очередь обновлений и пакетная обработка.",
+      "code": "function incrementThreeTimes() {\n  setCount(value => value + 1)\n  setCount(value => value + 1)\n  setCount(value => value + 1)\n}",
+      "takeaway": "Если новое состояние зависит от предыдущего, используйте updater.",
+      "moduleId": "react",
+      "order": 1,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Если новое состояние зависит от предыдущего, используйте updater.",
+        "keywords": ["React", "Состояние и поток данных"],
+        "kind": "explanation",
+        "reviewStatus": "imported",
+        "goalIds": ["core", "react-state-queue"],
+        "relatedQuestionIds": [],
+        "priority": "core",
+        "sourceRefs": []
+      },
+      "answerFile": "answers/react/react-state-queue.md"
+    },
+    {
+      "id": "react-state-immutability",
+      "title": "Почему нельзя изменять объект или массив в state напрямую?",
+      "topic": "React",
+      "difficulty": "Базовый",
+      "summary": "Новые ссылки, вложенные обновления и методы массивов.",
+      "code": "setUser(user => ({ ...user, address: { ...user.address, city: \"Казань\" } }))\nsetItems(items => items.map(item => item.id === id ? { ...item, done: true } : item))",
+      "takeaway": "Создавайте новые ссылки только на изменённом пути.",
+      "moduleId": "react",
+      "order": 2,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Создавайте новые ссылки только на изменённом пути.",
+        "keywords": ["React", "Состояние и поток данных"],
+        "kind": "explanation",
+        "reviewStatus": "imported",
+        "goalIds": ["core", "react-state-immutability"],
+        "relatedQuestionIds": [],
+        "priority": "core",
+        "sourceRefs": []
+      },
+      "answerFile": "answers/react/react-state-immutability.md"
+    },
+    {
+      "id": "react-derived-state",
+      "title": "Почему вычисляемые значения обычно не нужно хранить в state?",
+      "topic": "React",
+      "difficulty": "Средний",
+      "summary": "Единый источник данных и устранение лишней синхронизации.",
+      "code": "const fullName = firstName + \" \" + lastName\nconst visibleItems = items.filter(item => item.title.includes(query))",
+      "takeaway": "Храните исходные данные, остальные значения вычисляйте.",
+      "moduleId": "react",
+      "order": 3,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Храните исходные данные, остальные значения вычисляйте.",
+        "keywords": ["React", "Состояние и поток данных"],
+        "kind": "explanation",
+        "reviewStatus": "imported",
+        "goalIds": ["core", "react-derived-state"],
+        "relatedQuestionIds": [],
+        "priority": "core",
+        "sourceRefs": []
+      },
+      "answerFile": "answers/react/react-derived-state.md"
+    },
+    {
+      "id": "react-lifting-state",
+      "title": "Когда нужно поднимать состояние к общему родителю?",
+      "topic": "React",
+      "difficulty": "Базовый",
+      "summary": "Совместное управление данными и однонаправленный поток.",
+      "code": "function SearchPanel() {\n  const [query, setQuery] = useState(\"\")\n  return <><SearchInput value={query} onChange={setQuery} /><Results query={query} /></>\n}",
+      "takeaway": "Общие данные должны иметь одного владельца.",
+      "moduleId": "react",
+      "order": 4,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Общие данные должны иметь одного владельца.",
+        "keywords": ["React", "Состояние и поток данных"],
+        "kind": "explanation",
+        "reviewStatus": "imported",
+        "goalIds": ["core", "react-lifting-state"],
+        "relatedQuestionIds": [],
+        "priority": "core",
+        "sourceRefs": []
+      },
+      "answerFile": "answers/react/react-lifting-state.md"
+    },
+    {
+      "id": "react-use-reducer",
+      "title": "Когда useReducer удобнее useState?",
+      "topic": "React",
+      "difficulty": "Средний",
+      "summary": "События, переходы и чистая функция обновления.",
+      "code": "function reducer(state, action) {\n  switch (action.type) {\n    case \"increment\": return { ...state, count: state.count + 1 }\n    case \"reset\": return { count: 0 }\n    default: return state\n  }\n}",
+      "takeaway": "Reducer описывает переходы состояния через события.",
+      "moduleId": "react",
+      "order": 5,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Reducer описывает переходы состояния через события.",
+        "keywords": ["React", "Состояние и поток данных"],
+        "kind": "explanation",
+        "reviewStatus": "imported",
+        "goalIds": ["core", "react-use-reducer"],
+        "relatedQuestionIds": [],
+        "priority": "core",
+        "sourceRefs": []
+      },
+      "answerFile": "answers/react/react-use-reducer.md"
+    },
+    {
+      "id": "react-lazy-state",
+      "title": "Как работает ленивое начальное состояние useState?",
+      "topic": "React",
+      "difficulty": "Средний",
+      "summary": "Функция-инициализатор и повторные рендеры.",
+      "code": "const [rows, setRows] = useState(() =>\n  Array.from({ length: 1000 }, (_, id) => ({ id, selected: false }))\n)",
+      "takeaway": "Передавайте чистую функцию, если начальное вычисление дорогое.",
+      "moduleId": "react",
+      "order": 6,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Передавайте чистую функцию, если начальное вычисление дорогое.",
+        "keywords": ["React", "Состояние и поток данных"],
+        "kind": "explanation",
+        "reviewStatus": "imported",
+        "goalIds": ["core", "react-lazy-state"],
+        "relatedQuestionIds": [],
+        "priority": "core",
+        "sourceRefs": []
+      },
+      "answerFile": "answers/react/react-lazy-state.md"
+    },
+    {
+      "id": "react-normalized-state",
+      "title": "Когда сущности в состоянии лучше хранить по ID, а не копировать в разные ветви?",
+      "summary": "Единый владелец записи и стабильные ссылки выбранного элемента.",
+      "code": "const state = {\n  entities: { u1: { id: \"u1\", name: \"Анна\" } },\n  ids: [\"u1\"],\n  selectedId: \"u1\",\n}\nconst selected = state.entities[state.selectedId] ?? null",
+      "takeaway": "Храните идентичность отдельно от данных, когда несколько представлений относятся к одной сущности.",
+      "pitfall": "Обновить запись в списке, но оставить устаревшую копию в selectedUser.",
+      "difficulty": "Средний",
+      "topic": "React",
+      "moduleId": "react",
+      "popular": false,
+      "order": 7,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Храните идентичность отдельно от данных, когда несколько представлений относятся к одной сущности.",
+        "keywords": ["React", "Состояние и поток данных"],
+        "kind": "explanation",
+        "reviewStatus": "imported",
+        "goalIds": ["core", "react-normalized-state"],
+        "relatedQuestionIds": [],
+        "priority": "core",
+        "sourceRefs": ["ref-753634473fba230c"]
+      },
+      "answerFile": "answers/react/react-normalized-state.md"
+    },
+    {
+      "id": "react-draft-conflicts",
+      "title": "Как сохранить пользовательский черновик при обновлении данных с сервера?",
+      "summary": "Разделение подтверждённых данных, локального draft и политики конфликта.",
+      "code": "import { useState } from \"react\"\nfunction TitleDraft({ initialTitle }) {\n  const [draft, setDraft] = useState(initialTitle)\n  return <label>Название<input value={draft} onChange={event => setDraft(event.target.value)} /></label>\n}\n// initialTitle - начальный снимок. Политика внешнего обновления задаётся отдельно.",
+      "takeaway": "Несохранённый draft - самостоятельные данные, а не обязательное зеркало последних props.",
+      "pitfall": "Копировать новые серверные props в state эффектом при каждом refetch и стирать пользовательский ввод.",
+      "difficulty": "Средний",
+      "topic": "React",
+      "moduleId": "react",
+      "popular": false,
+      "order": 8,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Несохранённый draft - самостоятельные данные, а не обязательное зеркало последних props.",
+        "keywords": ["React", "Состояние и поток данных"],
+        "kind": "explanation",
+        "reviewStatus": "imported",
+        "goalIds": ["core", "react-draft-conflicts"],
+        "relatedQuestionIds": [],
+        "priority": "core",
+        "sourceRefs": ["ref-8b892800e16f2524"]
+      },
+      "answerFile": "answers/react/react-draft-conflicts.md"
+    }
+  ]
+}

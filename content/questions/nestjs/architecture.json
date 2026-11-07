@@ -1,0 +1,113 @@
+{
+  "$schema": "../question-bundle.schema.json",
+  "sectionId": "nestjs",
+  "subsectionId": "architecture",
+  "scope": "Провайдеры, токены и области жизни.",
+  "coverageGoals": [
+    {
+      "id": "core",
+      "title": "Архитектура приложения",
+      "description": "Обзор и взаимосвязи навыков: Провайдеры, токены и области жизни.",
+      "requiredDifficulties": [],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": ["nestjs-dependencies", "nest-provider-token", "nest-provider-scope"]
+    },
+    {
+      "id": "nestjs-dependencies",
+      "title": "Как NestJS связывает контроллеры и сервисы?",
+      "description": "Объяснить и применить правило с учётом его границ: Контроллер отвечает за HTTP, сервис - за логику, модуль - за доступность зависимостей.",
+      "requiredDifficulties": ["Базовый"],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "nest-provider-token",
+      "title": "Зачем NestJS нужны токены и custom providers?",
+      "description": "Объяснить и применить правило с учётом его границ: DI связывает runtime-токен с конкретным способом получения зависимости.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "nest-provider-scope",
+      "title": "Чем singleton, request и transient scope отличаются?",
+      "description": "Объяснить и применить правило с учётом его границ: Время жизни провайдера должно соответствовать его состоянию.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": []
+    }
+  ],
+  "questions": [
+    {
+      "id": "nestjs-dependencies",
+      "title": "Как NestJS связывает контроллеры и сервисы?",
+      "topic": "NestJS",
+      "difficulty": "Базовый",
+      "summary": "Модули, провайдеры и внедрение зависимостей.",
+      "takeaway": "Контроллер отвечает за HTTP, сервис - за логику, модуль - за доступность зависимостей.",
+      "moduleId": "nestjs",
+      "order": 0,
+      "popular": false,
+      "pitfall": "Ожидать внедрения зависимости по интерфейсу TypeScript без runtime-токена. Интерфейс отсутствует после компиляции.",
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Контроллер отвечает за HTTP, сервис - за логику, модуль - за доступность зависимостей.",
+        "keywords": ["NestJS", "Архитектура приложения"],
+        "kind": "explanation",
+        "reviewStatus": "imported",
+        "goalIds": ["core", "nestjs-dependencies"],
+        "relatedQuestionIds": [],
+        "priority": "core",
+        "sourceRefs": []
+      },
+      "answerFile": "answers/nestjs/nestjs-dependencies.md"
+    },
+    {
+      "id": "nest-provider-token",
+      "title": "Зачем NestJS нужны токены и custom providers?",
+      "topic": "NestJS",
+      "difficulty": "Средний",
+      "summary": "Связывание абстракции с реализацией.",
+      "takeaway": "DI связывает runtime-токен с конкретным способом получения зависимости.",
+      "moduleId": "nestjs",
+      "order": 1,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: DI связывает runtime-токен с конкретным способом получения зависимости.",
+        "keywords": ["NestJS", "Архитектура приложения"],
+        "kind": "explanation",
+        "reviewStatus": "imported",
+        "goalIds": ["core", "nest-provider-token"],
+        "relatedQuestionIds": [],
+        "priority": "core",
+        "sourceRefs": []
+      },
+      "answerFile": "answers/nestjs/nest-provider-token.md"
+    },
+    {
+      "id": "nest-provider-scope",
+      "title": "Чем singleton, request и transient scope отличаются?",
+      "topic": "NestJS",
+      "difficulty": "Средний",
+      "summary": "Время жизни экземпляра провайдера.",
+      "takeaway": "Время жизни провайдера должно соответствовать его состоянию.",
+      "moduleId": "nestjs",
+      "order": 2,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Время жизни провайдера должно соответствовать его состоянию.",
+        "keywords": ["NestJS", "Архитектура приложения"],
+        "kind": "explanation",
+        "reviewStatus": "imported",
+        "goalIds": ["core", "nest-provider-scope"],
+        "relatedQuestionIds": [],
+        "priority": "core",
+        "sourceRefs": []
+      },
+      "answerFile": "answers/nestjs/nest-provider-scope.md"
+    }
+  ]
+}

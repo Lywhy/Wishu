@@ -1,0 +1,116 @@
+{
+  "$schema": "../question-bundle.schema.json",
+  "sectionId": "java",
+  "subsectionId": "objects",
+  "scope": "Интерфейсы, методы и неизменяемость.",
+  "coverageGoals": [
+    {
+      "id": "core",
+      "title": "Объекты и контракты",
+      "description": "Обзор и взаимосвязи навыков: Интерфейсы, методы и неизменяемость.",
+      "requiredDifficulties": [],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": [
+        "java-interface-abstract",
+        "java-overload-override",
+        "java-immutability-final"
+      ]
+    },
+    {
+      "id": "java-interface-abstract",
+      "title": "Когда выбрать interface, а когда абстрактный класс?",
+      "description": "Объяснить и применить правило с учётом его границ: Отделяйте общий контракт от общего состояния и иерархии.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "java-overload-override",
+      "title": "Чем перегрузка метода отличается от переопределения?",
+      "description": "Объяснить и применить правило с учётом его границ: Перегрузка выбирает сигнатуру, переопределение - реализацию экземпляра.",
+      "requiredDifficulties": ["Базовый"],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "java-immutability-final",
+      "title": "Делает ли final объект неизменяемым?",
+      "description": "Объяснить и применить правило с учётом его границ: Неизменяемость ссылки не равна неизменяемости объекта.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": []
+    }
+  ],
+  "questions": [
+    {
+      "id": "java-interface-abstract",
+      "title": "Когда выбрать interface, а когда абстрактный класс?",
+      "topic": "Java",
+      "difficulty": "Средний",
+      "summary": "Контракт типа и общая реализация.",
+      "takeaway": "Отделяйте общий контракт от общего состояния и иерархии.",
+      "moduleId": "java",
+      "order": 0,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Отделяйте общий контракт от общего состояния и иерархии.",
+        "keywords": ["Java", "Объекты и контракты"],
+        "kind": "explanation",
+        "reviewStatus": "imported",
+        "goalIds": ["core", "java-interface-abstract"],
+        "relatedQuestionIds": [],
+        "priority": "core",
+        "sourceRefs": []
+      },
+      "answerFile": "answers/java/java-interface-abstract.md"
+    },
+    {
+      "id": "java-overload-override",
+      "title": "Чем перегрузка метода отличается от переопределения?",
+      "topic": "Java",
+      "difficulty": "Базовый",
+      "summary": "Выбор сигнатуры и динамическая диспетчеризация.",
+      "takeaway": "Перегрузка выбирает сигнатуру, переопределение - реализацию экземпляра.",
+      "moduleId": "java",
+      "order": 1,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Перегрузка выбирает сигнатуру, переопределение - реализацию экземпляра.",
+        "keywords": ["Java", "Объекты и контракты"],
+        "kind": "explanation",
+        "reviewStatus": "imported",
+        "goalIds": ["core", "java-overload-override"],
+        "relatedQuestionIds": [],
+        "priority": "core",
+        "sourceRefs": []
+      },
+      "answerFile": "answers/java/java-overload-override.md"
+    },
+    {
+      "id": "java-immutability-final",
+      "title": "Делает ли final объект неизменяемым?",
+      "topic": "Java",
+      "difficulty": "Средний",
+      "summary": "Стабильная ссылка и защита внутреннего состояния.",
+      "takeaway": "Неизменяемость ссылки не равна неизменяемости объекта.",
+      "moduleId": "java",
+      "order": 2,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Неизменяемость ссылки не равна неизменяемости объекта.",
+        "keywords": ["Java", "Объекты и контракты"],
+        "kind": "explanation",
+        "reviewStatus": "imported",
+        "goalIds": ["core", "java-immutability-final"],
+        "relatedQuestionIds": [],
+        "priority": "core",
+        "sourceRefs": []
+      },
+      "answerFile": "answers/java/java-immutability-final.md"
+    }
+  ]
+}

@@ -1,3 +1,8 @@
+import {
+  JavaScriptQuestionBadge,
+  JavaScriptSelfCheck,
+} from "@/components/questions/javascript-preparation"
+import { isJavascriptCodeReading } from "@/data/javascript-preparation"
 import { WorkspaceControls, PersonalNote, RelatedStudy } from "@/components/experience/study-tools"
 import { UndoQuestionMark, QuestionShortcuts } from "@/components/experience/question-actions"
 import { ContentFeedback } from "@/components/experience/content-feedback"
@@ -8,7 +13,7 @@ import { useEffect, useMemo } from "react"
 import { useLocation, useParams } from "react-router-dom"
 import { Badge } from "@/components/ui/badge"
 import { Card } from "@/components/ui/card"
-import { DifficultyBadge, RelatedModule } from "@/components/practice/practice-elements"
+import { CodeBlock, DifficultyBadge, RelatedModule } from "@/components/practice/practice-elements"
 import { QuestionPopularBadge } from "@/components/questions/question-popular"
 import { QuestionBreadcrumbs } from "@/components/questions/question-breadcrumbs"
 import { QuestionSidebar } from "@/components/questions/question-sidebar"
@@ -17,6 +22,7 @@ import { QuestionMobileNavigation } from "@/components/questions/question-mobile
 import { QuestionAnswer, QuestionStudyAside } from "@/components/questions/question-study"
 import { sectionPath, subsectionPath } from "@/data/question-catalog"
 import { resolveQuestionSession } from "@/data/question-session"
+import { codeLanguageFor } from "@/lib/syntax-highlighter"
 import { learningModules } from "@/data/learning-modules"
 import { useQuestionCatalog } from "@/lib/question-catalog-context"
 import { usePracticeProgress } from "@/stores/practice-progress"
@@ -97,6 +103,7 @@ export function QuestionDetailPage() {
             <div className="mb-3 flex flex-wrap items-center gap-2">
               <Badge variant="secondary">{question.topic}</Badge>
               <DifficultyBadge level={question.difficulty} />
+              <JavaScriptQuestionBadge question={question} />
               {question.popular && <QuestionPopularBadge />}
               <span className="ml-auto text-xs text-muted-foreground">
                 Вопрос {index + 1} из {siblings.length}
@@ -113,6 +120,19 @@ export function QuestionDetailPage() {
               {question.summary}
             </p>
           </header>
+          {isJavascriptCodeReading(question) && question.code && (
+            <section aria-label="Код для самостоятельного разбора" className="space-y-3">
+              <CodeBlock
+                code={question.code}
+                language={codeLanguageFor(question.topic, question.code)}
+                label="Определите результат без запуска кода"
+              />
+              <p className="text-xs leading-6 text-muted-foreground">
+                Сначала назовите результат и объясните его по шагам. Затем раскройте ответ и
+                сравните рассуждение.
+              </p>
+            </section>
+          )}
           <QuestionMobileNavigation
             key={question.id}
             questions={siblings}
@@ -144,6 +164,7 @@ export function QuestionDetailPage() {
             next={siblings[index + 1] ? "/questions/" + siblings[index + 1].id : undefined}
             onReveal={() => document.dispatchEvent(new Event("wishu-toggle-answer"))}
           />
+          <JavaScriptSelfCheck question={question} />
           <PersonalNote contentKey={"question:" + question.id} />
           <RelatedStudy moduleId={section.id} from={"/questions/" + question.id} />
           <ContentFeedback key={question.id} contentKey={"question:" + question.id} />

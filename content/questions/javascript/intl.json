@@ -1,0 +1,258 @@
+{
+  "$schema": "../question-bundle.schema.json",
+  "sectionId": "javascript",
+  "subsectionId": "intl",
+  "scope": "Календарные операции, часовые пояса и локализованное представление.",
+  "coverageGoals": [
+    {
+      "id": "core",
+      "title": "Даты и интернационализация",
+      "description": "Обзор и взаимосвязи навыков: Календарные операции, часовые пояса и локализованное представление.",
+      "requiredDifficulties": [],
+      "reviewed": false,
+      "priority": "extended",
+      "relatedSkillIds": [
+        "js-date-calendar-arithmetic",
+        "js-intl-date-format",
+        "js-intl-number-format",
+        "js-intl-collation",
+        "js-intl-plural-rules",
+        "js-intl-relative-time",
+        "js-intl-list-format"
+      ]
+    },
+    {
+      "id": "js-date-calendar-arithmetic",
+      "title": "Чем прибавление календарного дня отличается от прибавления 24 часов?",
+      "description": "Объяснить и применить правило с учётом его границ: Перед арифметикой времени выберите календарную единицу и часовую зону.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": false,
+      "priority": "extended",
+      "relatedSkillIds": ["dates-timezones", "temporal-api"]
+    },
+    {
+      "id": "js-intl-date-format",
+      "title": "Как Intl.DateTimeFormat помогает явно выбрать локаль и часовой пояс?",
+      "description": "Объяснить и применить правило с учётом его границ: Явные настройки представления времени уменьшают зависимость от окружения.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": false,
+      "priority": "extended",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "js-intl-number-format",
+      "title": "Почему формат валюты лучше задавать через Intl.NumberFormat, а не конкатенацию?",
+      "description": "Объяснить и применить правило с учётом его границ: Локализованный формат суммы не заменяет модель единиц и округления при вычислениях.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": false,
+      "priority": "extended",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "js-intl-collation",
+      "title": "Как настроить сравнение строк через Intl.Collator под конкретную задачу?",
+      "description": "Объяснить и применить правило с учётом его границ: Правило сравнения должно отражать поиск или сортировку, а не подменять идентичность данных.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": false,
+      "priority": "extended",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "js-intl-plural-rules",
+      "title": "Как PluralRules помогает выбрать форму слова и чего он не переводит?",
+      "description": "Объяснить и применить правило с учётом его границ: Категория числа и перевод слова - отдельные части локализации.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": false,
+      "priority": "extended",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "js-intl-relative-time",
+      "title": "Почему RelativeTimeFormat не вычисляет разницу двух дат за вас?",
+      "description": "Объяснить и применить правило с учётом его границ: Форматирование относительной величины не является алгоритмом календарной разницы.",
+      "requiredDifficulties": ["Базовый"],
+      "reviewed": false,
+      "priority": "extended",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "js-intl-list-format",
+      "title": "Чем ListFormat отличается от array.join при выводе списка для пользователя?",
+      "description": "Объяснить и применить правило с учётом его границ: Грамматика пользовательского списка отличается от простого разделителя и формата обмена.",
+      "requiredDifficulties": ["Базовый"],
+      "reviewed": false,
+      "priority": "extended",
+      "relatedSkillIds": []
+    }
+  ],
+  "questions": [
+    {
+      "id": "js-date-calendar-arithmetic",
+      "difficulty": "Средний",
+      "title": "Чем прибавление календарного дня отличается от прибавления 24 часов?",
+      "summary": "Местный календарь, UTC и переходы часового пояса.",
+      "code": "const date = new Date(Date.UTC(2024, 1, 28))\ndate.setUTCDate(date.getUTCDate() + 1)\nconsole.log(date.toISOString()) // 2024-02-29T00:00:00.000Z\n// Это UTC-пример. Локальные DST-переходы имеют другую семантику.",
+      "takeaway": "Перед арифметикой времени выберите календарную единицу и часовую зону.",
+      "pitfall": "Использовать 86400000 как универсальное определение следующего локального календарного дня.",
+      "topic": "JavaScript",
+      "moduleId": "javascript",
+      "popular": false,
+      "order": 0,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Перед арифметикой времени выберите календарную единицу и часовую зону.",
+        "keywords": ["JavaScript", "Даты и интернационализация"],
+        "kind": "explanation",
+        "reviewStatus": "imported",
+        "goalIds": ["core", "js-date-calendar-arithmetic"],
+        "relatedQuestionIds": ["dates-timezones", "temporal-api"],
+        "priority": "extended",
+        "sourceRefs": ["ref-9ca39db57b1de11c"]
+      },
+      "answerFile": "answers/javascript/js-date-calendar-arithmetic.md"
+    },
+    {
+      "id": "js-intl-date-format",
+      "difficulty": "Средний",
+      "title": "Как Intl.DateTimeFormat помогает явно выбрать локаль и часовой пояс?",
+      "summary": "Представление момента времени независимо от неявных настроек среды.",
+      "code": "const formatter = new Intl.DateTimeFormat(\"ru-RU\", {\n  dateStyle: \"medium\", timeStyle: \"short\", timeZone: \"UTC\",\n})\nconst parts = formatter.formatToParts(new Date(\"2024-01-01T12:00:00Z\"))\n// parts сохраняет роли элементов, не требуя split локализованной строки.",
+      "takeaway": "Явные настройки представления времени уменьшают зависимость от окружения.",
+      "pitfall": "Сохранять пользовательскую дату как результат locale-format и затем разбирать его обратно.",
+      "topic": "JavaScript",
+      "moduleId": "javascript",
+      "popular": false,
+      "order": 1,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Явные настройки представления времени уменьшают зависимость от окружения.",
+        "keywords": ["JavaScript", "Даты и интернационализация"],
+        "kind": "explanation",
+        "reviewStatus": "imported",
+        "goalIds": ["core", "js-intl-date-format"],
+        "relatedQuestionIds": [],
+        "priority": "extended",
+        "sourceRefs": ["ref-a6932f365414e9ff"]
+      },
+      "answerFile": "answers/javascript/js-intl-date-format.md"
+    },
+    {
+      "id": "js-intl-number-format",
+      "difficulty": "Средний",
+      "title": "Почему формат валюты лучше задавать через Intl.NumberFormat, а не конкатенацию?",
+      "summary": "Разделители, расположение валюты, число дробных знаков и формат по частям.",
+      "code": "const formatter = new Intl.NumberFormat(\"ru-RU\", { style: \"currency\", currency: \"RUB\" })\nconst text = formatter.format(1234.5)\nconst parts = formatter.formatToParts(1234.5)\n// Отображение локализовано; арифметический контракт суммы задаётся отдельно.",
+      "takeaway": "Локализованный формат суммы не заменяет модель единиц и округления при вычислениях.",
+      "pitfall": "Разбирать строку цены через обычный split или считать все валюты двухзначными после запятой.",
+      "topic": "JavaScript",
+      "moduleId": "javascript",
+      "popular": false,
+      "order": 2,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Локализованный формат суммы не заменяет модель единиц и округления при вычислениях.",
+        "keywords": ["JavaScript", "Даты и интернационализация"],
+        "kind": "explanation",
+        "reviewStatus": "imported",
+        "goalIds": ["core", "js-intl-number-format"],
+        "relatedQuestionIds": [],
+        "priority": "extended",
+        "sourceRefs": ["ref-adae1e5f175c97a9"]
+      },
+      "answerFile": "answers/javascript/js-intl-number-format.md"
+    },
+    {
+      "id": "js-intl-collation",
+      "difficulty": "Средний",
+      "title": "Как настроить сравнение строк через Intl.Collator под конкретную задачу?",
+      "summary": "Locale, numeric, sensitivity и переиспользование comparator.",
+      "code": "const compare = new Intl.Collator(\"en\", { numeric: true, sensitivity: \"base\" }).compare\nconsole.log(compare(\"file2\", \"file10\") < 0) // true\nconsole.log(compare(\"a\", \"A\") === 0) // true для выбранной политики.",
+      "takeaway": "Правило сравнения должно отражать поиск или сортировку, а не подменять идентичность данных.",
+      "pitfall": "Использовать мягкое поисковое сравнение как уникальный security-ключ аккаунта.",
+      "topic": "JavaScript",
+      "moduleId": "javascript",
+      "popular": false,
+      "order": 3,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Правило сравнения должно отражать поиск или сортировку, а не подменять идентичность данных.",
+        "keywords": ["JavaScript", "Даты и интернационализация"],
+        "kind": "explanation",
+        "reviewStatus": "imported",
+        "goalIds": ["core", "js-intl-collation"],
+        "relatedQuestionIds": [],
+        "priority": "extended",
+        "sourceRefs": ["ref-f7463a0acebdcb6a"]
+      },
+      "answerFile": "answers/javascript/js-intl-collation.md"
+    },
+    {
+      "id": "js-intl-plural-rules",
+      "difficulty": "Средний",
+      "title": "Как PluralRules помогает выбрать форму слова и чего он не переводит?",
+      "summary": "Категории числа, дробные значения и предметные словоформы.",
+      "code": "const plural = new Intl.PluralRules(\"ru\")\nconst forms = { one: \"вопрос\", few: \"вопроса\", many: \"вопросов\", other: \"вопроса\" }\nconst count = 22\nconst label = `${count} ${forms[plural.select(count)]}`\n// Для других существительных нужны соответствующие формы.",
+      "takeaway": "Категория числа и перевод слова - отдельные части локализации.",
+      "pitfall": "Писать одну проверку count === 1 для всех языков и дробных количеств.",
+      "topic": "JavaScript",
+      "moduleId": "javascript",
+      "popular": false,
+      "order": 4,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Категория числа и перевод слова - отдельные части локализации.",
+        "keywords": ["JavaScript", "Даты и интернационализация"],
+        "kind": "explanation",
+        "reviewStatus": "imported",
+        "goalIds": ["core", "js-intl-plural-rules"],
+        "relatedQuestionIds": [],
+        "priority": "extended",
+        "sourceRefs": ["ref-6aaabd7701d8b937"]
+      },
+      "answerFile": "answers/javascript/js-intl-plural-rules.md"
+    },
+    {
+      "id": "js-intl-relative-time",
+      "difficulty": "Базовый",
+      "title": "Почему RelativeTimeFormat не вычисляет разницу двух дат за вас?",
+      "summary": "Подписанная величина, выбранная единица и календарная политика.",
+      "code": "const formatter = new Intl.RelativeTimeFormat(\"ru\", { numeric: \"auto\" })\nconsole.log(formatter.format(-1, \"day\")) // вчера\n// Приложение отдельно решает, почему выбрано -1 day.",
+      "takeaway": "Форматирование относительной величины не является алгоритмом календарной разницы.",
+      "pitfall": "Делить любую разницу timestamp на 24 часа и считать полученное число календарным «вчера».",
+      "topic": "JavaScript",
+      "moduleId": "javascript",
+      "popular": false,
+      "order": 5,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Форматирование относительной величины не является алгоритмом календарной разницы.",
+        "keywords": ["JavaScript", "Даты и интернационализация"],
+        "kind": "explanation",
+        "reviewStatus": "imported",
+        "goalIds": ["core", "js-intl-relative-time"],
+        "relatedQuestionIds": [],
+        "priority": "extended",
+        "sourceRefs": ["ref-e484ff2a7694ec34"]
+      },
+      "answerFile": "answers/javascript/js-intl-relative-time.md"
+    },
+    {
+      "id": "js-intl-list-format",
+      "difficulty": "Базовый",
+      "title": "Чем ListFormat отличается от array.join при выводе списка для пользователя?",
+      "summary": "Локальные союзы, стили списка и отделение данных от HTML.",
+      "code": "const formatter = new Intl.ListFormat(\"ru\", { style: \"long\", type: \"conjunction\" })\nconst text = formatter.format([\"HTML\", \"CSS\", \"JavaScript\"])\n// Локализованный список, а не машинный формат обмена.",
+      "takeaway": "Грамматика пользовательского списка отличается от простого разделителя и формата обмена.",
+      "pitfall": "Использовать локализованный список вместо CSV или вручную ставить английский and для всех locale.",
+      "topic": "JavaScript",
+      "moduleId": "javascript",
+      "popular": false,
+      "order": 6,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Грамматика пользовательского списка отличается от простого разделителя и формата обмена.",
+        "keywords": ["JavaScript", "Даты и интернационализация"],
+        "kind": "explanation",
+        "reviewStatus": "imported",
+        "goalIds": ["core", "js-intl-list-format"],
+        "relatedQuestionIds": [],
+        "priority": "extended",
+        "sourceRefs": ["ref-72c4c48c91b6edc1"]
+      },
+      "answerFile": "answers/javascript/js-intl-list-format.md"
+    }
+  ]
+}

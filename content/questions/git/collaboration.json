@@ -1,0 +1,112 @@
+{
+  "$schema": "../question-bundle.schema.json",
+  "sectionId": "git",
+  "subsectionId": "collaboration",
+  "scope": "Удалённые ветки, конфликты и публикация.",
+  "coverageGoals": [
+    {
+      "id": "core",
+      "title": "Совместная работа",
+      "description": "Обзор и взаимосвязи навыков: Удалённые ветки, конфликты и публикация.",
+      "requiredDifficulties": [],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": ["git-fetch-pull", "git-merge-conflict", "git-force-with-lease"]
+    },
+    {
+      "id": "git-fetch-pull",
+      "title": "Чем fetch отличается от pull?",
+      "description": "Объяснить и применить правило с учётом его границ: Получение истории и её интеграция - отдельные действия.",
+      "requiredDifficulties": ["Базовый"],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "git-merge-conflict",
+      "title": "Что означает конфликт слияния и как выбрать правильное решение?",
+      "description": "Объяснить и применить правило с учётом его границ: Разрешение конфликта должно сохранять смысл обеих изменений.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "git-force-with-lease",
+      "title": "Почему force-with-lease безопаснее обычного force push?",
+      "description": "Объяснить и применить правило с учётом его границ: Lease добавляет проверку ожидания, но не заменяет договорённость об истории.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": []
+    }
+  ],
+  "questions": [
+    {
+      "id": "git-fetch-pull",
+      "title": "Чем fetch отличается от pull?",
+      "topic": "Git",
+      "difficulty": "Базовый",
+      "summary": "Получение удалённых объектов и интеграция.",
+      "takeaway": "Получение истории и её интеграция - отдельные действия.",
+      "moduleId": "git",
+      "order": 0,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Получение истории и её интеграция - отдельные действия.",
+        "keywords": ["Git", "Совместная работа"],
+        "kind": "explanation",
+        "reviewStatus": "imported",
+        "goalIds": ["core", "git-fetch-pull"],
+        "relatedQuestionIds": [],
+        "priority": "core",
+        "sourceRefs": []
+      },
+      "answerFile": "answers/git/git-fetch-pull.md"
+    },
+    {
+      "id": "git-merge-conflict",
+      "title": "Что означает конфликт слияния и как выбрать правильное решение?",
+      "topic": "Git",
+      "difficulty": "Средний",
+      "summary": "Несовместимые изменения и смысл результата.",
+      "takeaway": "Разрешение конфликта должно сохранять смысл обеих изменений.",
+      "moduleId": "git",
+      "order": 1,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Разрешение конфликта должно сохранять смысл обеих изменений.",
+        "keywords": ["Git", "Совместная работа"],
+        "kind": "explanation",
+        "reviewStatus": "imported",
+        "goalIds": ["core", "git-merge-conflict"],
+        "relatedQuestionIds": [],
+        "priority": "core",
+        "sourceRefs": []
+      },
+      "answerFile": "answers/git/git-merge-conflict.md"
+    },
+    {
+      "id": "git-force-with-lease",
+      "title": "Почему force-with-lease безопаснее обычного force push?",
+      "topic": "Git",
+      "difficulty": "Средний",
+      "summary": "Условное обновление удалённой ссылки.",
+      "takeaway": "Lease добавляет проверку ожидания, но не заменяет договорённость об истории.",
+      "moduleId": "git",
+      "order": 2,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Lease добавляет проверку ожидания, но не заменяет договорённость об истории.",
+        "keywords": ["Git", "Совместная работа"],
+        "kind": "explanation",
+        "reviewStatus": "imported",
+        "goalIds": ["core", "git-force-with-lease"],
+        "relatedQuestionIds": [],
+        "priority": "core",
+        "sourceRefs": []
+      },
+      "answerFile": "answers/git/git-force-with-lease.md"
+    }
+  ]
+}

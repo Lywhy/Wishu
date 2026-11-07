@@ -1,0 +1,112 @@
+{
+  "$schema": "../question-bundle.schema.json",
+  "sectionId": "vue",
+  "subsectionId": "composition",
+  "scope": "Наблюдатели, composables и жизненный цикл.",
+  "coverageGoals": [
+    {
+      "id": "core",
+      "title": "Composition API",
+      "description": "Обзор и взаимосвязи навыков: Наблюдатели, composables и жизненный цикл.",
+      "requiredDifficulties": [],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": ["vue-watch", "vue-lifecycle-cleanup", "vue-composables"]
+    },
+    {
+      "id": "vue-watch",
+      "title": "Чем watch отличается от watchEffect?",
+      "description": "Объяснить и применить правило с учётом его границ: Выбирайте источник наблюдения и явно управляйте ресурсами.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "vue-lifecycle-cleanup",
+      "title": "Когда использовать onMounted и onUnmounted?",
+      "description": "Объяснить и применить правило с учётом его границ: Привязывайте создание и освобождение ресурсов к экземпляру компонента.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "vue-composables",
+      "title": "Что такое composable и разделяют ли его вызовы состояние?",
+      "description": "Объяснить и применить правило с учётом его границ: Область создания состояния определяет, кто его разделяет.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": []
+    }
+  ],
+  "questions": [
+    {
+      "id": "vue-watch",
+      "title": "Чем watch отличается от watchEffect?",
+      "topic": "Vue",
+      "difficulty": "Средний",
+      "summary": "Явный источник наблюдения и автоматический сбор зависимостей.",
+      "takeaway": "Выбирайте источник наблюдения и явно управляйте ресурсами.",
+      "moduleId": "vue",
+      "order": 0,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Выбирайте источник наблюдения и явно управляйте ресурсами.",
+        "keywords": ["Vue", "Composition API"],
+        "kind": "explanation",
+        "reviewStatus": "imported",
+        "goalIds": ["core", "vue-watch"],
+        "relatedQuestionIds": [],
+        "priority": "core",
+        "sourceRefs": []
+      },
+      "answerFile": "answers/vue/vue-watch.md"
+    },
+    {
+      "id": "vue-lifecycle-cleanup",
+      "title": "Когда использовать onMounted и onUnmounted?",
+      "topic": "Vue",
+      "difficulty": "Средний",
+      "summary": "Доступ к DOM и освобождение ресурсов.",
+      "takeaway": "Привязывайте создание и освобождение ресурсов к экземпляру компонента.",
+      "moduleId": "vue",
+      "order": 1,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Привязывайте создание и освобождение ресурсов к экземпляру компонента.",
+        "keywords": ["Vue", "Composition API"],
+        "kind": "explanation",
+        "reviewStatus": "imported",
+        "goalIds": ["core", "vue-lifecycle-cleanup"],
+        "relatedQuestionIds": [],
+        "priority": "core",
+        "sourceRefs": []
+      },
+      "answerFile": "answers/vue/vue-lifecycle-cleanup.md"
+    },
+    {
+      "id": "vue-composables",
+      "title": "Что такое composable и разделяют ли его вызовы состояние?",
+      "topic": "Vue",
+      "difficulty": "Средний",
+      "summary": "Переиспользование логики Composition API.",
+      "takeaway": "Область создания состояния определяет, кто его разделяет.",
+      "moduleId": "vue",
+      "order": 2,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Область создания состояния определяет, кто его разделяет.",
+        "keywords": ["Vue", "Composition API"],
+        "kind": "explanation",
+        "reviewStatus": "imported",
+        "goalIds": ["core", "vue-composables"],
+        "relatedQuestionIds": [],
+        "priority": "core",
+        "sourceRefs": []
+      },
+      "answerFile": "answers/vue/vue-composables.md"
+    }
+  ]
+}

@@ -1,0 +1,220 @@
+{
+  "$schema": "../question-bundle.schema.json",
+  "sectionId": "react",
+  "subsectionId": "refs",
+  "scope": "Служебные значения, фокус, императивный API и порталы.",
+  "coverageGoals": [
+    {
+      "id": "core",
+      "title": "Refs и работа с DOM",
+      "description": "Обзор и взаимосвязи навыков: Служебные значения, фокус, императивный API и порталы.",
+      "requiredDifficulties": [],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": [
+        "react-ref-state",
+        "react-ref-prop",
+        "react-imperative-handle",
+        "react-portals",
+        "react-callback-ref-cleanup",
+        "react-widget-dom-ownership"
+      ]
+    },
+    {
+      "id": "react-ref-state",
+      "title": "Чем useRef отличается от useState?",
+      "description": "Объяснить и применить правило с учётом его границ: Ref хранит служебное значение, state управляет представлением.",
+      "requiredDifficulties": ["Базовый"],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "react-ref-prop",
+      "title": "Как передать ref через свой компонент в React 19?",
+      "description": "Объяснить и применить правило с учётом его границ: Учитывайте версию React при выборе способа передачи ref.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "react-imperative-handle",
+      "title": "Зачем нужен useImperativeHandle?",
+      "description": "Объяснить и применить правило с учётом его границ: Открывайте через ref минимальный набор необходимых действий.",
+      "requiredDifficulties": ["Продвинутый"],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "react-portals",
+      "title": "Как Portal влияет на DOM, события и Context?",
+      "description": "Объяснить и применить правило с учётом его границ: Portal меняет DOM-размещение, сохраняя связи дерева React.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "react-callback-ref-cleanup",
+      "title": "Как callback ref помогает учитывать динамические DOM-узлы и очищать связанные ресурсы?",
+      "description": "Объяснить и применить правило с учётом его границ: Callback ref связывает императивный ресурс с конкретным DOM-узлом и симметричной очисткой.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "react-widget-dom-ownership",
+      "title": "Как встроить сторонний редактор или карту, не конфликтуя с управлением DOM у React?",
+      "description": "Объяснить и применить правило с учётом его границ: Назначьте одного владельца каждому изменяемому DOM-поддереву и явный жизненный цикл виджета.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": []
+    }
+  ],
+  "questions": [
+    {
+      "id": "react-ref-state",
+      "title": "Чем useRef отличается от useState?",
+      "topic": "React",
+      "difficulty": "Базовый",
+      "summary": "Сохраняемое значение и участие в рендеринге.",
+      "code": "function FocusField() {\n  const inputRef = useRef(null)\n  return <><input ref={inputRef} /><button onClick={() => inputRef.current?.focus()}>Фокус</button></>\n}",
+      "takeaway": "Ref хранит служебное значение, state управляет представлением.",
+      "moduleId": "react",
+      "order": 0,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Ref хранит служебное значение, state управляет представлением.",
+        "keywords": ["React", "Refs и работа с DOM"],
+        "kind": "explanation",
+        "reviewStatus": "imported",
+        "goalIds": ["core", "react-ref-state"],
+        "relatedQuestionIds": [],
+        "priority": "core",
+        "sourceRefs": []
+      },
+      "answerFile": "answers/react/react-ref-state.md"
+    },
+    {
+      "id": "react-ref-prop",
+      "title": "Как передать ref через свой компонент в React 19?",
+      "topic": "React",
+      "difficulty": "Средний",
+      "summary": "Ref как prop и совместимость с forwardRef.",
+      "code": "function TextField({ ref, ...props }) {\n  return <input {...props} ref={ref} />\n}",
+      "takeaway": "Учитывайте версию React при выборе способа передачи ref.",
+      "moduleId": "react",
+      "order": 1,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Учитывайте версию React при выборе способа передачи ref.",
+        "keywords": ["React", "Refs и работа с DOM"],
+        "kind": "explanation",
+        "reviewStatus": "imported",
+        "goalIds": ["core", "react-ref-prop"],
+        "relatedQuestionIds": [],
+        "priority": "core",
+        "sourceRefs": []
+      },
+      "answerFile": "answers/react/react-ref-prop.md"
+    },
+    {
+      "id": "react-imperative-handle",
+      "title": "Зачем нужен useImperativeHandle?",
+      "topic": "React",
+      "difficulty": "Продвинутый",
+      "summary": "Ограниченный императивный интерфейс компонента.",
+      "code": "function SearchField({ ref }) {\n  const inputRef = useRef(null)\n  useImperativeHandle(ref, () => ({ focus: () => inputRef.current?.focus() }), [])\n  return <input ref={inputRef} />\n}",
+      "takeaway": "Открывайте через ref минимальный набор необходимых действий.",
+      "moduleId": "react",
+      "order": 2,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Открывайте через ref минимальный набор необходимых действий.",
+        "keywords": ["React", "Refs и работа с DOM"],
+        "kind": "explanation",
+        "reviewStatus": "imported",
+        "goalIds": ["core", "react-imperative-handle"],
+        "relatedQuestionIds": [],
+        "priority": "core",
+        "sourceRefs": []
+      },
+      "answerFile": "answers/react/react-imperative-handle.md"
+    },
+    {
+      "id": "react-portals",
+      "title": "Как Portal влияет на DOM, события и Context?",
+      "topic": "React",
+      "difficulty": "Средний",
+      "summary": "Физическое размещение узла и логическое дерево React.",
+      "code": "import { createPortal } from \"react-dom\"\n\nfunction Overlay({ children }) {\n  return createPortal(children, document.body)\n}",
+      "takeaway": "Portal меняет DOM-размещение, сохраняя связи дерева React.",
+      "moduleId": "react",
+      "order": 3,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Portal меняет DOM-размещение, сохраняя связи дерева React.",
+        "keywords": ["React", "Refs и работа с DOM"],
+        "kind": "explanation",
+        "reviewStatus": "imported",
+        "goalIds": ["core", "react-portals"],
+        "relatedQuestionIds": [],
+        "priority": "core",
+        "sourceRefs": []
+      },
+      "answerFile": "answers/react/react-portals.md"
+    },
+    {
+      "id": "react-callback-ref-cleanup",
+      "title": "Как callback ref помогает учитывать динамические DOM-узлы и очищать связанные ресурсы?",
+      "summary": "Привязка записи к появлению узла и cleanup-функция callback ref в React 19.",
+      "code": "import { useCallback } from \"react\"\nfunction Row({ id, nodes }) {\n  const bind = useCallback(node => {\n    nodes.set(id, node)\n    return () => { nodes.delete(id) }\n  }, [id, nodes])\n  return <li ref={bind}>{id}</li>\n}\n// nodes - стабильный реестр, принадлежащий вызывающему коду.",
+      "takeaway": "Callback ref связывает императивный ресурс с конкретным DOM-узлом и симметричной очисткой.",
+      "pitfall": "Возвращать node или Map.set из ref-callback, когда ожидается отсутствие результата либо cleanup.",
+      "difficulty": "Средний",
+      "topic": "React",
+      "moduleId": "react",
+      "popular": false,
+      "order": 4,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Callback ref связывает императивный ресурс с конкретным DOM-узлом и симметричной очисткой.",
+        "keywords": ["React", "Refs и работа с DOM"],
+        "kind": "explanation",
+        "reviewStatus": "imported",
+        "goalIds": ["core", "react-callback-ref-cleanup"],
+        "relatedQuestionIds": [],
+        "priority": "core",
+        "sourceRefs": ["ref-fa183dea181b018b"]
+      },
+      "answerFile": "answers/react/react-callback-ref-cleanup.md"
+    },
+    {
+      "id": "react-widget-dom-ownership",
+      "title": "Как встроить сторонний редактор или карту, не конфликтуя с управлением DOM у React?",
+      "summary": "Явный владелец поддерева, создание виджета и независимая синхронизация его настроек.",
+      "code": "import { useEffect, useRef } from \"react\"\nfunction WidgetHost({ createWidget }) {\n  const host = useRef(null)\n  useEffect(() => {\n    const widget = createWidget(host.current)\n    return () => widget.destroy()\n  }, [createWidget])\n  return <div ref={host} />\n}\n// createWidget стабилен по контракту; внутренностями host управляет виджет.",
+      "takeaway": "Назначьте одного владельца каждому изменяемому DOM-поддереву и явный жизненный цикл виджета.",
+      "pitfall": "Менять innerHTML узла, чьи дети одновременно описаны React JSX.",
+      "difficulty": "Средний",
+      "topic": "React",
+      "moduleId": "react",
+      "popular": false,
+      "order": 5,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Назначьте одного владельца каждому изменяемому DOM-поддереву и явный жизненный цикл виджета.",
+        "keywords": ["React", "Refs и работа с DOM"],
+        "kind": "explanation",
+        "reviewStatus": "imported",
+        "goalIds": ["core", "react-widget-dom-ownership"],
+        "relatedQuestionIds": [],
+        "priority": "core",
+        "sourceRefs": ["ref-4d23b49b0284f9ac"]
+      },
+      "answerFile": "answers/react/react-widget-dom-ownership.md"
+    }
+  ]
+}

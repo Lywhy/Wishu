@@ -1,0 +1,286 @@
+{
+  "$schema": "../question-bundle.schema.json",
+  "sectionId": "html-css",
+  "subsectionId": "responsive",
+  "scope": "Единицы, точки перелома и изображения.",
+  "coverageGoals": [
+    {
+      "id": "core",
+      "title": "Адаптивность",
+      "description": "Обзор и взаимосвязи навыков: Единицы, точки перелома и изображения.",
+      "requiredDifficulties": [],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": [
+        "css-media-container",
+        "css-relative-units",
+        "html-responsive-images",
+        "css-logical-properties",
+        "css-image-fitting",
+        "css-fluid-type",
+        "css-text-wrapping",
+        "css-font-loading"
+      ]
+    },
+    {
+      "id": "css-media-container",
+      "title": "Чем media query отличается от container query?",
+      "description": "Объяснить и применить правило с учётом его границ: Адаптируйте страницу к среде, а компонент - к доступному месту.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "css-relative-units",
+      "title": "Чем rem, em, проценты и viewport-единицы отличаются?",
+      "description": "Объяснить и применить правило с учётом его границ: У каждой относительной единицы есть своя база расчёта.",
+      "requiredDifficulties": ["Базовый"],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "html-responsive-images",
+      "title": "Для чего нужны srcset, sizes и размеры изображения?",
+      "description": "Объяснить и применить правило с учётом его границ: Передавайте браузеру варианты ресурса и сведения о его месте в макете.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "css-logical-properties",
+      "title": "Зачем использовать logical properties вместо left, right, width и height?",
+      "description": "Объяснить и применить правило с учётом его границ: Стили по направлению содержимого легче адаптировать к другому языку и writing mode.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "css-image-fitting",
+      "title": "Как aspect-ratio и object-fit решают разные задачи изображения?",
+      "description": "Объяснить и применить правило с учётом его границ: Размер коробки, вписывание картинки и выбор загружаемого ресурса - три разных решения.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "css-fluid-type",
+      "title": "Как сделать плавный размер текста через clamp и сохранить читаемость?",
+      "description": "Объяснить и применить правило с учётом его границ: Плавная типографика должна иметь разумные пределы и сохранять доступность при масштабировании.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "css-text-wrapping",
+      "title": "Как выбрать между переносом длинного слова и визуальным обрезанием текста?",
+      "description": "Объяснить и применить правило с учётом его границ: Обрезание и перенос решают разные задачи; text-overflow не заменяет ограничение размеров.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "css-font-loading",
+      "title": "Как загрузка веб-шрифта влияет на текст и сдвиги макета?",
+      "description": "Объяснить и применить правило с учётом его границ: Быстро показать текст и сохранить его геометрию - связанные, но разные задачи.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": []
+    }
+  ],
+  "questions": [
+    {
+      "id": "css-media-container",
+      "title": "Чем media query отличается от container query?",
+      "topic": "HTML и CSS",
+      "difficulty": "Средний",
+      "summary": "Условия для окна и для размера контейнера.",
+      "takeaway": "Адаптируйте страницу к среде, а компонент - к доступному месту.",
+      "moduleId": "html-css",
+      "order": 0,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Адаптируйте страницу к среде, а компонент - к доступному месту.",
+        "keywords": ["HTML и CSS", "Адаптивность"],
+        "kind": "explanation",
+        "reviewStatus": "imported",
+        "goalIds": ["core", "css-media-container"],
+        "relatedQuestionIds": [],
+        "priority": "core",
+        "sourceRefs": []
+      },
+      "answerFile": "answers/html-css/css-media-container.md"
+    },
+    {
+      "id": "css-relative-units",
+      "title": "Чем rem, em, проценты и viewport-единицы отличаются?",
+      "topic": "HTML и CSS",
+      "difficulty": "Базовый",
+      "summary": "Основа расчёта относительного размера.",
+      "takeaway": "У каждой относительной единицы есть своя база расчёта.",
+      "moduleId": "html-css",
+      "order": 1,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: У каждой относительной единицы есть своя база расчёта.",
+        "keywords": ["HTML и CSS", "Адаптивность"],
+        "kind": "explanation",
+        "reviewStatus": "imported",
+        "goalIds": ["core", "css-relative-units"],
+        "relatedQuestionIds": [],
+        "priority": "core",
+        "sourceRefs": []
+      },
+      "answerFile": "answers/html-css/css-relative-units.md"
+    },
+    {
+      "id": "html-responsive-images",
+      "title": "Для чего нужны srcset, sizes и размеры изображения?",
+      "topic": "HTML и CSS",
+      "difficulty": "Средний",
+      "summary": "Выбор ресурса и предотвращение сдвигов макета.",
+      "takeaway": "Передавайте браузеру варианты ресурса и сведения о его месте в макете.",
+      "moduleId": "html-css",
+      "order": 2,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Передавайте браузеру варианты ресурса и сведения о его месте в макете.",
+        "keywords": ["HTML и CSS", "Адаптивность"],
+        "kind": "explanation",
+        "reviewStatus": "imported",
+        "goalIds": ["core", "html-responsive-images"],
+        "relatedQuestionIds": [],
+        "priority": "core",
+        "sourceRefs": []
+      },
+      "answerFile": "answers/html-css/html-responsive-images.md"
+    },
+    {
+      "id": "css-logical-properties",
+      "title": "Зачем использовать logical properties вместо left, right, width и height?",
+      "summary": "Привязка размеров и отступов к направлению письма и layout-осям.",
+      "code": ".article { max-inline-size: 70ch; margin-inline: auto; padding-inline: 1rem; }\n.notice { border-inline-start: .25rem solid currentColor; padding-inline-start: 1rem; }",
+      "takeaway": "Стили по направлению содержимого легче адаптировать к другому языку и writing mode.",
+      "pitfall": "Считать inline синонимом horizontal при любом направлении письма.",
+      "difficulty": "Средний",
+      "topic": "HTML и CSS",
+      "moduleId": "html-css",
+      "popular": false,
+      "order": 3,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Стили по направлению содержимого легче адаптировать к другому языку и writing mode.",
+        "keywords": ["HTML и CSS", "Адаптивность"],
+        "kind": "explanation",
+        "reviewStatus": "imported",
+        "goalIds": ["core", "css-logical-properties"],
+        "relatedQuestionIds": [],
+        "priority": "core",
+        "sourceRefs": ["ref-9aae9eceffcbe326"]
+      },
+      "answerFile": "answers/html-css/css-logical-properties.md"
+    },
+    {
+      "id": "css-image-fitting",
+      "title": "Как aspect-ratio и object-fit решают разные задачи изображения?",
+      "summary": "Пропорции контейнера и вписывание содержимого заменяемого элемента.",
+      "code": ".preview { inline-size: 100%; aspect-ratio: 16 / 9; object-fit: cover; object-position: center; }",
+      "takeaway": "Размер коробки, вписывание картинки и выбор загружаемого ресурса - три разных решения.",
+      "pitfall": "Ожидать экономии трафика от одного object-fit или применять cover к диаграмме с важными краями.",
+      "difficulty": "Средний",
+      "topic": "HTML и CSS",
+      "moduleId": "html-css",
+      "popular": false,
+      "order": 4,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Размер коробки, вписывание картинки и выбор загружаемого ресурса - три разных решения.",
+        "keywords": ["HTML и CSS", "Адаптивность"],
+        "kind": "explanation",
+        "reviewStatus": "imported",
+        "goalIds": ["core", "css-image-fitting"],
+        "relatedQuestionIds": [],
+        "priority": "core",
+        "sourceRefs": ["ref-deaa389a2708acfc"]
+      },
+      "answerFile": "answers/html-css/css-image-fitting.md"
+    },
+    {
+      "id": "css-fluid-type",
+      "title": "Как сделать плавный размер текста через clamp и сохранить читаемость?",
+      "summary": "Нижняя и верхняя границы адаптивной типографики с учётом масштаба.",
+      "code": ".title { font-size: clamp(1.5rem, 1rem + 2vw, 3rem); line-height: 1.2; }\n.article { font-size: 1rem; line-height: 1.6; }",
+      "takeaway": "Плавная типографика должна иметь разумные пределы и сохранять доступность при масштабировании.",
+      "pitfall": "Использовать чистый vw для всего текста и считать адаптивность автоматически доступной.",
+      "difficulty": "Средний",
+      "topic": "HTML и CSS",
+      "moduleId": "html-css",
+      "popular": false,
+      "order": 5,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Плавная типографика должна иметь разумные пределы и сохранять доступность при масштабировании.",
+        "keywords": ["HTML и CSS", "Адаптивность"],
+        "kind": "explanation",
+        "reviewStatus": "imported",
+        "goalIds": ["core", "css-fluid-type"],
+        "relatedQuestionIds": [],
+        "priority": "core",
+        "sourceRefs": ["ref-e29a53bc447a465f"]
+      },
+      "answerFile": "answers/html-css/css-fluid-type.md"
+    },
+    {
+      "id": "css-text-wrapping",
+      "title": "Как выбрать между переносом длинного слова и визуальным обрезанием текста?",
+      "summary": "Overflow-wrap, word-break и условия работы text-overflow.",
+      "code": ".url { overflow-wrap: anywhere; }\n.summary { min-inline-size: 0; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; }",
+      "takeaway": "Обрезание и перенос решают разные задачи; text-overflow не заменяет ограничение размеров.",
+      "pitfall": "Добавлять ellipsis, когда элемент растёт по содержимому и не создаёт область переполнения.",
+      "difficulty": "Средний",
+      "topic": "HTML и CSS",
+      "moduleId": "html-css",
+      "popular": false,
+      "order": 6,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Обрезание и перенос решают разные задачи; text-overflow не заменяет ограничение размеров.",
+        "keywords": ["HTML и CSS", "Адаптивность"],
+        "kind": "explanation",
+        "reviewStatus": "imported",
+        "goalIds": ["core", "css-text-wrapping"],
+        "relatedQuestionIds": [],
+        "priority": "core",
+        "sourceRefs": ["ref-69abf55470cf24d3"]
+      },
+      "answerFile": "answers/html-css/css-text-wrapping.md"
+    },
+    {
+      "id": "css-font-loading",
+      "title": "Как загрузка веб-шрифта влияет на текст и сдвиги макета?",
+      "summary": "Font-display, запасной шрифт и несовпадающие метрики текста.",
+      "code": "@font-face {\n  font-family: \"Article\"; src: url(\"/fonts/article.woff2\") format(\"woff2\");\n  font-style: normal; font-weight: 400; font-display: swap;\n}\n.article { font-family: \"Article\", system-ui, sans-serif; }",
+      "takeaway": "Быстро показать текст и сохранить его геометрию - связанные, но разные задачи.",
+      "pitfall": "Считать swap решением любых проблем шрифта, не проверяя метрики fallback и размер загрузки.",
+      "difficulty": "Средний",
+      "topic": "HTML и CSS",
+      "moduleId": "html-css",
+      "popular": false,
+      "order": 7,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Быстро показать текст и сохранить его геометрию - связанные, но разные задачи.",
+        "keywords": ["HTML и CSS", "Адаптивность"],
+        "kind": "explanation",
+        "reviewStatus": "imported",
+        "goalIds": ["core", "css-font-loading"],
+        "relatedQuestionIds": [],
+        "priority": "core",
+        "sourceRefs": ["ref-aafd2bca27fe488e"]
+      },
+      "answerFile": "answers/html-css/css-font-loading.md"
+    }
+  ]
+}

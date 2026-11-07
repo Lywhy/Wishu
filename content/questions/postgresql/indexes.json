@@ -1,0 +1,115 @@
+{
+  "$schema": "../question-bundle.schema.json",
+  "sectionId": "postgresql",
+  "subsectionId": "indexes",
+  "scope": "Порядок столбцов и чтение плана выполнения.",
+  "coverageGoals": [
+    {
+      "id": "core",
+      "title": "Индексы и запросы",
+      "description": "Обзор и взаимосвязи навыков: Порядок столбцов и чтение плана выполнения.",
+      "requiredDifficulties": [],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": ["postgresql-indexes", "pg-composite-index", "pg-explain-analyze"]
+    },
+    {
+      "id": "postgresql-indexes",
+      "title": "Зачем нужны индексы и почему они не всегда ускоряют запрос?",
+      "description": "Объяснить и применить правило с учётом его границ: Пользу индекса оценивают по запросу и плану выполнения, а не только по наличию индекса.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "pg-composite-index",
+      "title": "Почему порядок столбцов составного B-tree индекса важен?",
+      "description": "Объяснить и применить правило с учётом его границ: Проектируйте индекс под набор условий и порядок результата.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "pg-explain-analyze",
+      "title": "Чем EXPLAIN отличается от EXPLAIN ANALYZE?",
+      "description": "Объяснить и применить правило с учётом его границ: Фактические измерения требуют выполнения команды.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": []
+    }
+  ],
+  "questions": [
+    {
+      "id": "postgresql-indexes",
+      "title": "Зачем нужны индексы и почему они не всегда ускоряют запрос?",
+      "topic": "PostgreSQL",
+      "difficulty": "Средний",
+      "summary": "Поиск данных, селективность и стоимость обновления индекса.",
+      "code": "CREATE INDEX users_email_idx ON users (email);",
+      "takeaway": "Пользу индекса оценивают по запросу и плану выполнения, а не только по наличию индекса.",
+      "moduleId": "postgresql",
+      "order": 0,
+      "popular": false,
+      "pitfall": "Добавлять индекс на каждый столбец и ожидать ускорения любого запроса. Индексы увеличивают стоимость записи и выбираются планировщиком по стоимости.",
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Пользу индекса оценивают по запросу и плану выполнения, а не только по наличию индекса.",
+        "keywords": ["PostgreSQL", "Индексы и запросы"],
+        "kind": "explanation",
+        "reviewStatus": "imported",
+        "goalIds": ["core", "postgresql-indexes"],
+        "relatedQuestionIds": [],
+        "priority": "core",
+        "sourceRefs": []
+      },
+      "answerFile": "answers/postgresql/postgresql-indexes.md"
+    },
+    {
+      "id": "pg-composite-index",
+      "title": "Почему порядок столбцов составного B-tree индекса важен?",
+      "topic": "PostgreSQL",
+      "difficulty": "Средний",
+      "summary": "Условия равенства, диапазоны и сортировка.",
+      "takeaway": "Проектируйте индекс под набор условий и порядок результата.",
+      "moduleId": "postgresql",
+      "order": 1,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Проектируйте индекс под набор условий и порядок результата.",
+        "keywords": ["PostgreSQL", "Индексы и запросы"],
+        "kind": "explanation",
+        "reviewStatus": "imported",
+        "goalIds": ["core", "pg-composite-index"],
+        "relatedQuestionIds": [],
+        "priority": "core",
+        "sourceRefs": []
+      },
+      "answerFile": "answers/postgresql/pg-composite-index.md"
+    },
+    {
+      "id": "pg-explain-analyze",
+      "title": "Чем EXPLAIN отличается от EXPLAIN ANALYZE?",
+      "topic": "PostgreSQL",
+      "difficulty": "Средний",
+      "summary": "Оценка плана и фактическое выполнение.",
+      "code": "EXPLAIN SELECT id FROM users WHERE email = 'reader@example.com';",
+      "takeaway": "Фактические измерения требуют выполнения команды.",
+      "moduleId": "postgresql",
+      "order": 2,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Фактические измерения требуют выполнения команды.",
+        "keywords": ["PostgreSQL", "Индексы и запросы"],
+        "kind": "explanation",
+        "reviewStatus": "imported",
+        "goalIds": ["core", "pg-explain-analyze"],
+        "relatedQuestionIds": [],
+        "priority": "core",
+        "sourceRefs": []
+      },
+      "answerFile": "answers/postgresql/pg-explain-analyze.md"
+    }
+  ]
+}

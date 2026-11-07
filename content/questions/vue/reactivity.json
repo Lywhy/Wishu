@@ -1,0 +1,116 @@
+{
+  "$schema": "../question-bundle.schema.json",
+  "sectionId": "vue",
+  "subsectionId": "reactivity",
+  "scope": "Ref, reactive и вычисляемые значения.",
+  "coverageGoals": [
+    {
+      "id": "core",
+      "title": "Реактивность",
+      "description": "Обзор и взаимосвязи навыков: Ref, reactive и вычисляемые значения.",
+      "requiredDifficulties": [],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": ["vue-ref-reactive", "vue-computed", "vue-destructure"]
+    },
+    {
+      "id": "vue-ref-reactive",
+      "title": "Чем ref отличается от reactive?",
+      "description": "Объяснить и применить правило с учётом его границ: Ref удобен для заменяемого значения, reactive - для реактивного объекта.",
+      "requiredDifficulties": ["Базовый"],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "vue-computed",
+      "title": "Чем computed отличается от метода в шаблоне?",
+      "description": "Объяснить и применить правило с учётом его границ: Computed хранит производное значение, а не выполняет команду.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "vue-destructure",
+      "title": "Когда деструктуризация reactive теряет реактивную связь?",
+      "description": "Объяснить и применить правило с учётом его границ: Различайте копию значения и ссылку на реактивное свойство.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": []
+    }
+  ],
+  "questions": [
+    {
+      "id": "vue-ref-reactive",
+      "title": "Чем ref отличается от reactive?",
+      "topic": "Vue",
+      "difficulty": "Базовый",
+      "summary": "Контейнер значения и Proxy объекта.",
+      "code": "import { ref, reactive } from \"vue\"\nconst count = ref(0)\nconst form = reactive({ name: \"\" })\ncount.value++\nform.name = \"Анна\"",
+      "takeaway": "Ref удобен для заменяемого значения, reactive - для реактивного объекта.",
+      "moduleId": "vue",
+      "order": 0,
+      "popular": false,
+      "pitfall": "Передать примитив в reactive или потерять связь со свойством, извлекая его текущее примитивное значение. Для самостоятельного значения используйте ref.",
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Ref удобен для заменяемого значения, reactive - для реактивного объекта.",
+        "keywords": ["Vue", "Реактивность"],
+        "kind": "explanation",
+        "reviewStatus": "imported",
+        "goalIds": ["core", "vue-ref-reactive"],
+        "relatedQuestionIds": [],
+        "priority": "core",
+        "sourceRefs": []
+      },
+      "answerFile": "answers/vue/vue-ref-reactive.md"
+    },
+    {
+      "id": "vue-computed",
+      "title": "Чем computed отличается от метода в шаблоне?",
+      "topic": "Vue",
+      "difficulty": "Средний",
+      "summary": "Кеширование по реактивным зависимостям.",
+      "code": "const fullName = computed(() => firstName.value + \" \" + lastName.value)",
+      "takeaway": "Computed хранит производное значение, а не выполняет команду.",
+      "moduleId": "vue",
+      "order": 1,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Computed хранит производное значение, а не выполняет команду.",
+        "keywords": ["Vue", "Реактивность"],
+        "kind": "explanation",
+        "reviewStatus": "imported",
+        "goalIds": ["core", "vue-computed"],
+        "relatedQuestionIds": [],
+        "priority": "core",
+        "sourceRefs": []
+      },
+      "answerFile": "answers/vue/vue-computed.md"
+    },
+    {
+      "id": "vue-destructure",
+      "title": "Когда деструктуризация reactive теряет реактивную связь?",
+      "topic": "Vue",
+      "difficulty": "Средний",
+      "summary": "Свойства Proxy и ссылки toRef/toRefs.",
+      "code": "const state = reactive({ count: 0 })\nconst { count } = toRefs(state)\nstate.count++ // count.value теперь 1",
+      "takeaway": "Различайте копию значения и ссылку на реактивное свойство.",
+      "moduleId": "vue",
+      "order": 2,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Различайте копию значения и ссылку на реактивное свойство.",
+        "keywords": ["Vue", "Реактивность"],
+        "kind": "explanation",
+        "reviewStatus": "imported",
+        "goalIds": ["core", "vue-destructure"],
+        "relatedQuestionIds": [],
+        "priority": "core",
+        "sourceRefs": []
+      },
+      "answerFile": "answers/vue/vue-destructure.md"
+    }
+  ]
+}

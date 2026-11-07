@@ -1,0 +1,112 @@
+{
+  "$schema": "../question-bundle.schema.json",
+  "sectionId": "nestjs",
+  "subsectionId": "integration",
+  "scope": "Конфигурация, транзакции и замена зависимостей.",
+  "coverageGoals": [
+    {
+      "id": "core",
+      "title": "Интеграции и проверяемость",
+      "description": "Обзор и взаимосвязи навыков: Конфигурация, транзакции и замена зависимостей.",
+      "requiredDifficulties": [],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": ["nest-config-validation", "nest-db-transaction", "nest-testing-providers"]
+    },
+    {
+      "id": "nest-config-validation",
+      "title": "Зачем проверять конфигурацию при старте приложения?",
+      "description": "Объяснить и применить правило с учётом его границ: Некорректная конфигурация должна обнаруживаться до первого запроса.",
+      "requiredDifficulties": ["Базовый"],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "nest-db-transaction",
+      "title": "Почему несколько запросов из сервиса не образуют транзакцию автоматически?",
+      "description": "Объяснить и применить правило с учётом его границ: Атомарность сценария требует явного владения транзакционным соединением.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "nest-testing-providers",
+      "title": "Как DI помогает изолированно проверить сервис NestJS?",
+      "description": "Объяснить и применить правило с учётом его границ: DI позволяет подменить границу, сохранив проверку бизнес-поведения.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": []
+    }
+  ],
+  "questions": [
+    {
+      "id": "nest-config-validation",
+      "title": "Зачем проверять конфигурацию при старте приложения?",
+      "topic": "NestJS",
+      "difficulty": "Базовый",
+      "summary": "Переменные окружения и ранняя диагностика.",
+      "takeaway": "Некорректная конфигурация должна обнаруживаться до первого запроса.",
+      "moduleId": "nestjs",
+      "order": 0,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Некорректная конфигурация должна обнаруживаться до первого запроса.",
+        "keywords": ["NestJS", "Интеграции и проверяемость"],
+        "kind": "explanation",
+        "reviewStatus": "imported",
+        "goalIds": ["core", "nest-config-validation"],
+        "relatedQuestionIds": [],
+        "priority": "core",
+        "sourceRefs": []
+      },
+      "answerFile": "answers/nestjs/nest-config-validation.md"
+    },
+    {
+      "id": "nest-db-transaction",
+      "title": "Почему несколько запросов из сервиса не образуют транзакцию автоматически?",
+      "topic": "NestJS",
+      "difficulty": "Средний",
+      "summary": "Общий connection и атомарность сценария.",
+      "takeaway": "Атомарность сценария требует явного владения транзакционным соединением.",
+      "moduleId": "nestjs",
+      "order": 1,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Атомарность сценария требует явного владения транзакционным соединением.",
+        "keywords": ["NestJS", "Интеграции и проверяемость"],
+        "kind": "explanation",
+        "reviewStatus": "imported",
+        "goalIds": ["core", "nest-db-transaction"],
+        "relatedQuestionIds": [],
+        "priority": "core",
+        "sourceRefs": []
+      },
+      "answerFile": "answers/nestjs/nest-db-transaction.md"
+    },
+    {
+      "id": "nest-testing-providers",
+      "title": "Как DI помогает изолированно проверить сервис NestJS?",
+      "topic": "NestJS",
+      "difficulty": "Средний",
+      "summary": "TestingModule и замена инфраструктурных зависимостей.",
+      "takeaway": "DI позволяет подменить границу, сохранив проверку бизнес-поведения.",
+      "moduleId": "nestjs",
+      "order": 2,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: DI позволяет подменить границу, сохранив проверку бизнес-поведения.",
+        "keywords": ["NestJS", "Интеграции и проверяемость"],
+        "kind": "explanation",
+        "reviewStatus": "imported",
+        "goalIds": ["core", "nest-testing-providers"],
+        "relatedQuestionIds": [],
+        "priority": "core",
+        "sourceRefs": []
+      },
+      "answerFile": "answers/nestjs/nest-testing-providers.md"
+    }
+  ]
+}

@@ -1,0 +1,112 @@
+{
+  "$schema": "../question-bundle.schema.json",
+  "sectionId": "vue",
+  "subsectionId": "communication",
+  "scope": "Props, события и слоты.",
+  "coverageGoals": [
+    {
+      "id": "core",
+      "title": "Взаимодействие компонентов",
+      "description": "Обзор и взаимосвязи навыков: Props, события и слоты.",
+      "requiredDifficulties": [],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": ["vue-props-events", "vue-v-model", "vue-slots"]
+    },
+    {
+      "id": "vue-props-events",
+      "title": "Почему дочерний компонент не должен изменять props?",
+      "description": "Объяснить и применить правило с учётом его границ: Владелец данных обновляет их в ответ на событие ребёнка.",
+      "requiredDifficulties": ["Базовый"],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "vue-v-model",
+      "title": "Как устроен v-model у собственного компонента?",
+      "description": "Объяснить и применить правило с учётом его границ: V-model - согласованный контракт передачи значения и уведомления.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "vue-slots",
+      "title": "Что передают обычные и scoped slots?",
+      "description": "Объяснить и применить правило с учётом его границ: Слот передаёт разметку, slot props передают доступные ей данные.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": []
+    }
+  ],
+  "questions": [
+    {
+      "id": "vue-props-events",
+      "title": "Почему дочерний компонент не должен изменять props?",
+      "topic": "Vue",
+      "difficulty": "Базовый",
+      "summary": "Однонаправленные данные и события компонента.",
+      "takeaway": "Владелец данных обновляет их в ответ на событие ребёнка.",
+      "moduleId": "vue",
+      "order": 0,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Владелец данных обновляет их в ответ на событие ребёнка.",
+        "keywords": ["Vue", "Взаимодействие компонентов"],
+        "kind": "explanation",
+        "reviewStatus": "imported",
+        "goalIds": ["core", "vue-props-events"],
+        "relatedQuestionIds": [],
+        "priority": "core",
+        "sourceRefs": []
+      },
+      "answerFile": "answers/vue/vue-props-events.md"
+    },
+    {
+      "id": "vue-v-model",
+      "title": "Как устроен v-model у собственного компонента?",
+      "topic": "Vue",
+      "difficulty": "Средний",
+      "summary": "Контракт значения и события обновления.",
+      "takeaway": "V-model - согласованный контракт передачи значения и уведомления.",
+      "moduleId": "vue",
+      "order": 1,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: V-model - согласованный контракт передачи значения и уведомления.",
+        "keywords": ["Vue", "Взаимодействие компонентов"],
+        "kind": "explanation",
+        "reviewStatus": "imported",
+        "goalIds": ["core", "vue-v-model"],
+        "relatedQuestionIds": [],
+        "priority": "core",
+        "sourceRefs": []
+      },
+      "answerFile": "answers/vue/vue-v-model.md"
+    },
+    {
+      "id": "vue-slots",
+      "title": "Что передают обычные и scoped slots?",
+      "topic": "Vue",
+      "difficulty": "Средний",
+      "summary": "Композиция разметки и данные слота.",
+      "takeaway": "Слот передаёт разметку, slot props передают доступные ей данные.",
+      "moduleId": "vue",
+      "order": 2,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Слот передаёт разметку, slot props передают доступные ей данные.",
+        "keywords": ["Vue", "Взаимодействие компонентов"],
+        "kind": "explanation",
+        "reviewStatus": "imported",
+        "goalIds": ["core", "vue-slots"],
+        "relatedQuestionIds": [],
+        "priority": "core",
+        "sourceRefs": []
+      },
+      "answerFile": "answers/vue/vue-slots.md"
+    }
+  ]
+}

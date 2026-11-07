@@ -1,0 +1,114 @@
+{
+  "$schema": "../question-bundle.schema.json",
+  "sectionId": "nodejs",
+  "subsectionId": "io",
+  "scope": "Buffer, backpressure и pipeline.",
+  "coverageGoals": [
+    {
+      "id": "core",
+      "title": "Потоки и бинарные данные",
+      "description": "Обзор и взаимосвязи навыков: Buffer, backpressure и pipeline.",
+      "requiredDifficulties": [],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": ["node-buffer", "node-backpressure", "node-pipeline"]
+    },
+    {
+      "id": "node-buffer",
+      "title": "Для чего нужен Buffer и почему длина строки не равна числу байт?",
+      "description": "Объяснить и применить правило с учётом его границ: В I/O измеряйте байты в выбранной кодировке.",
+      "requiredDifficulties": ["Базовый"],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "node-backpressure",
+      "title": "Что такое backpressure в Node.js Streams?",
+      "description": "Объяснить и применить правило с учётом его границ: Производитель должен учитывать способность потребителя принимать данные.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "node-pipeline",
+      "title": "Почему pipeline часто удобнее ручной цепочки data и write?",
+      "description": "Объяснить и применить правило с учётом его границ: Потоковая цепочка должна иметь единый путь успеха и ошибки.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": []
+    }
+  ],
+  "questions": [
+    {
+      "id": "node-buffer",
+      "title": "Для чего нужен Buffer и почему длина строки не равна числу байт?",
+      "topic": "Node.js",
+      "difficulty": "Базовый",
+      "summary": "Бинарное представление и кодировка.",
+      "code": "const bytes = Buffer.from(\"Привет\", \"utf8\")\nconsole.log(bytes.byteLength)\nconsole.log(bytes.toString(\"utf8\"))",
+      "takeaway": "В I/O измеряйте байты в выбранной кодировке.",
+      "moduleId": "nodejs",
+      "order": 0,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: В I/O измеряйте байты в выбранной кодировке.",
+        "keywords": ["Node.js", "Потоки и бинарные данные"],
+        "kind": "explanation",
+        "reviewStatus": "imported",
+        "goalIds": ["core", "node-buffer"],
+        "relatedQuestionIds": [],
+        "priority": "core",
+        "sourceRefs": []
+      },
+      "answerFile": "answers/nodejs/node-buffer.md"
+    },
+    {
+      "id": "node-backpressure",
+      "title": "Что такое backpressure в Node.js Streams?",
+      "topic": "Node.js",
+      "difficulty": "Средний",
+      "summary": "Разница скорости производителя и потребителя.",
+      "takeaway": "Производитель должен учитывать способность потребителя принимать данные.",
+      "moduleId": "nodejs",
+      "order": 1,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Производитель должен учитывать способность потребителя принимать данные.",
+        "keywords": ["Node.js", "Потоки и бинарные данные"],
+        "kind": "explanation",
+        "reviewStatus": "imported",
+        "goalIds": ["core", "node-backpressure"],
+        "relatedQuestionIds": [],
+        "priority": "core",
+        "sourceRefs": []
+      },
+      "answerFile": "answers/nodejs/node-backpressure.md"
+    },
+    {
+      "id": "node-pipeline",
+      "title": "Почему pipeline часто удобнее ручной цепочки data и write?",
+      "topic": "Node.js",
+      "difficulty": "Средний",
+      "summary": "Потоковая композиция и распространение ошибок.",
+      "code": "import { createReadStream, createWriteStream } from \"node:fs\"\nimport { pipeline } from \"node:stream/promises\"\nawait pipeline(createReadStream(\"input.txt\"), createWriteStream(\"copy.txt\"))",
+      "takeaway": "Потоковая цепочка должна иметь единый путь успеха и ошибки.",
+      "moduleId": "nodejs",
+      "order": 2,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Потоковая цепочка должна иметь единый путь успеха и ошибки.",
+        "keywords": ["Node.js", "Потоки и бинарные данные"],
+        "kind": "explanation",
+        "reviewStatus": "imported",
+        "goalIds": ["core", "node-pipeline"],
+        "relatedQuestionIds": [],
+        "priority": "core",
+        "sourceRefs": []
+      },
+      "answerFile": "answers/nodejs/node-pipeline.md"
+    }
+  ]
+}

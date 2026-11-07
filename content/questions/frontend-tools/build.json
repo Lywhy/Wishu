@@ -1,0 +1,112 @@
+{
+  "$schema": "../question-bundle.schema.json",
+  "sectionId": "frontend-tools",
+  "subsectionId": "build",
+  "scope": "Vite, TypeScript и отладочная информация.",
+  "coverageGoals": [
+    {
+      "id": "core",
+      "title": "Сборка и преобразования",
+      "description": "Обзор и взаимосвязи навыков: Vite, TypeScript и отладочная информация.",
+      "requiredDifficulties": [],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": ["tools-vite-modes", "tools-transpile-typecheck", "tools-source-maps"]
+    },
+    {
+      "id": "tools-vite-modes",
+      "title": "Чем dev-сервер Vite отличается от production-сборки?",
+      "description": "Объяснить и применить правило с учётом его границ: Dev и build решают разные задачи жизненного цикла приложения.",
+      "requiredDifficulties": ["Базовый"],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "tools-transpile-typecheck",
+      "title": "Почему успешное преобразование TypeScript не означает отсутствие ошибок типов?",
+      "description": "Объяснить и применить правило с учётом его границ: Преобразование синтаксиса, проверка типов и runtime-валидация независимы.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "tools-source-maps",
+      "title": "Зачем нужны source maps и что учитывать при публикации?",
+      "description": "Объяснить и применить правило с учётом его границ: Source map улучшает диагностику, но требует продуманной публикации.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": []
+    }
+  ],
+  "questions": [
+    {
+      "id": "tools-vite-modes",
+      "title": "Чем dev-сервер Vite отличается от production-сборки?",
+      "topic": "Frontend инструменты",
+      "difficulty": "Базовый",
+      "summary": "Быстрая разработка и подготовка артефактов.",
+      "takeaway": "Dev и build решают разные задачи жизненного цикла приложения.",
+      "moduleId": "frontend-tools",
+      "order": 0,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Dev и build решают разные задачи жизненного цикла приложения.",
+        "keywords": ["Frontend инструменты", "Сборка и преобразования"],
+        "kind": "explanation",
+        "reviewStatus": "imported",
+        "goalIds": ["core", "tools-vite-modes"],
+        "relatedQuestionIds": [],
+        "priority": "core",
+        "sourceRefs": []
+      },
+      "answerFile": "answers/frontend-tools/tools-vite-modes.md"
+    },
+    {
+      "id": "tools-transpile-typecheck",
+      "title": "Почему успешное преобразование TypeScript не означает отсутствие ошибок типов?",
+      "topic": "Frontend инструменты",
+      "difficulty": "Средний",
+      "summary": "Удаление типов и отдельный статический анализ.",
+      "takeaway": "Преобразование синтаксиса, проверка типов и runtime-валидация независимы.",
+      "moduleId": "frontend-tools",
+      "order": 1,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Преобразование синтаксиса, проверка типов и runtime-валидация независимы.",
+        "keywords": ["Frontend инструменты", "Сборка и преобразования"],
+        "kind": "explanation",
+        "reviewStatus": "imported",
+        "goalIds": ["core", "tools-transpile-typecheck"],
+        "relatedQuestionIds": [],
+        "priority": "core",
+        "sourceRefs": []
+      },
+      "answerFile": "answers/frontend-tools/tools-transpile-typecheck.md"
+    },
+    {
+      "id": "tools-source-maps",
+      "title": "Зачем нужны source maps и что учитывать при публикации?",
+      "topic": "Frontend инструменты",
+      "difficulty": "Средний",
+      "summary": "Связь собранного кода с исходниками.",
+      "takeaway": "Source map улучшает диагностику, но требует продуманной публикации.",
+      "moduleId": "frontend-tools",
+      "order": 2,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Source map улучшает диагностику, но требует продуманной публикации.",
+        "keywords": ["Frontend инструменты", "Сборка и преобразования"],
+        "kind": "explanation",
+        "reviewStatus": "imported",
+        "goalIds": ["core", "tools-source-maps"],
+        "relatedQuestionIds": [],
+        "priority": "core",
+        "sourceRefs": []
+      },
+      "answerFile": "answers/frontend-tools/tools-source-maps.md"
+    }
+  ]
+}

@@ -1,0 +1,274 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Wishu: вопросы подраздела",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["sectionId", "subsectionId", "scope", "coverageGoals", "questions"],
+  "properties": {
+    "$schema": {
+      "type": "string"
+    },
+    "sectionId": {
+      "$ref": "#/$defs/id"
+    },
+    "subsectionId": {
+      "$ref": "#/$defs/id"
+    },
+    "scope": {
+      "type": "string",
+      "minLength": 1
+    },
+    "coverageGoals": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/goal"
+      }
+    },
+    "questions": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/question"
+      }
+    }
+  },
+  "$defs": {
+    "id": {
+      "type": "string",
+      "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+    },
+    "text": {
+      "type": "string",
+      "minLength": 1
+    },
+    "texts": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/text"
+      },
+      "uniqueItems": true
+    },
+    "difficulty": {
+      "enum": ["Базовый", "Средний", "Продвинутый"]
+    },
+    "goal": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "title", "description", "requiredDifficulties", "reviewed"],
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/id"
+        },
+        "title": {
+          "$ref": "#/$defs/text"
+        },
+        "description": {
+          "$ref": "#/$defs/text"
+        },
+        "requiredDifficulties": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "$ref": "#/$defs/difficulty"
+          }
+        },
+        "reviewed": {
+          "type": "boolean",
+          "description": "Редактор подтвердил границы этой учебной цели. Это не оценка полноты всего раздела."
+        },
+        "priority": {
+          "enum": ["core", "extended", "specialist"]
+        },
+        "relatedSkillIds": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "$ref": "#/$defs/id"
+          }
+        }
+      }
+    },
+    "question": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "title",
+        "topic",
+        "difficulty",
+        "summary",
+        "takeaway",
+        "moduleId",
+        "order",
+        "editorial"
+      ],
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/id"
+        },
+        "title": {
+          "$ref": "#/$defs/text"
+        },
+        "topic": {
+          "$ref": "#/$defs/text"
+        },
+        "difficulty": {
+          "$ref": "#/$defs/difficulty"
+        },
+        "summary": {
+          "$ref": "#/$defs/text"
+        },
+        "answer": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/$defs/text"
+          }
+        },
+        "code": {
+          "$ref": "#/$defs/text"
+        },
+        "takeaway": {
+          "$ref": "#/$defs/text"
+        },
+        "pitfall": {
+          "$ref": "#/$defs/text"
+        },
+        "moduleId": {
+          "$ref": "#/$defs/text"
+        },
+        "order": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "popular": {
+          "type": "boolean"
+        },
+        "editorial": {
+          "$ref": "#/$defs/editorial"
+        },
+        "answerFile": {
+          "type": "string",
+          "pattern": "^answers/[a-z0-9-]+/[a-z0-9-]+\\.md$"
+        }
+      },
+      "oneOf": [
+        {
+          "required": ["answer"],
+          "not": {
+            "required": ["answerFile"]
+          }
+        },
+        {
+          "required": ["answerFile"],
+          "not": {
+            "required": ["answer"]
+          }
+        }
+      ]
+    },
+    "editorial": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "learningGoal",
+        "keywords",
+        "kind",
+        "reviewStatus",
+        "goalIds",
+        "relatedQuestionIds"
+      ],
+      "properties": {
+        "learningGoal": {
+          "$ref": "#/$defs/text"
+        },
+        "keywords": {
+          "$ref": "#/$defs/texts"
+        },
+        "kind": {
+          "enum": ["explanation", "application", "code-reading"]
+        },
+        "reviewStatus": {
+          "enum": ["imported", "draft", "ready"],
+          "description": "draft не попадает в seed. imported сохраняет прежние вопросы, не утверждая, что редактор проверил учебные цели."
+        },
+        "goalIds": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "$ref": "#/$defs/id"
+          }
+        },
+        "relatedQuestionIds": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "$ref": "#/$defs/id"
+          }
+        },
+        "sources": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["title", "url"],
+            "properties": {
+              "title": {
+                "$ref": "#/$defs/text"
+              },
+              "url": {
+                "type": "string",
+                "pattern": "^https?://"
+              }
+            }
+          }
+        },
+        "priority": {
+          "enum": ["core", "extended", "specialist"]
+        },
+        "sourceRefs": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "$ref": "#/$defs/id"
+          }
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "reviewStatus": {
+                "const": "ready"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "sources": {
+                "minItems": 1
+              },
+              "sourceRefs": {
+                "minItems": 1
+              }
+            }
+          }
+        }
+      ],
+      "oneOf": [
+        {
+          "required": ["sources"],
+          "not": {
+            "required": ["sourceRefs"]
+          }
+        },
+        {
+          "required": ["sourceRefs"],
+          "not": {
+            "required": ["sources"]
+          }
+        }
+      ]
+    }
+  }
+}

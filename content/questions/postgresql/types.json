@@ -1,0 +1,112 @@
+{
+  "$schema": "../question-bundle.schema.json",
+  "sectionId": "postgresql",
+  "subsectionId": "types",
+  "scope": "JSONB, время и точные числа.",
+  "coverageGoals": [
+    {
+      "id": "core",
+      "title": "Типы данных",
+      "description": "Обзор и взаимосвязи навыков: JSONB, время и точные числа.",
+      "requiredDifficulties": [],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": ["pg-json-jsonb", "pg-timestamptz", "pg-numeric-money"]
+    },
+    {
+      "id": "pg-json-jsonb",
+      "title": "Чем json отличается от jsonb и когда JSON не заменяет таблицы?",
+      "description": "Объяснить и применить правило с учётом его границ: Выбирайте JSONB по модели доступа, а не ради отказа от схемы.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "pg-timestamptz",
+      "title": "Хранит ли timestamptz исходный часовой пояс пользователя?",
+      "description": "Объяснить и применить правило с учётом его границ: Момент и часовой пояс его интерпретации - разные данные.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "pg-numeric-money",
+      "title": "Почему для денежных сумм часто выбирают numeric или целые минимальные единицы?",
+      "description": "Объяснить и применить правило с учётом его границ: Точность определяется всей цепочкой хранения, вычисления и сериализации.",
+      "requiredDifficulties": ["Базовый"],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": []
+    }
+  ],
+  "questions": [
+    {
+      "id": "pg-json-jsonb",
+      "title": "Чем json отличается от jsonb и когда JSON не заменяет таблицы?",
+      "topic": "PostgreSQL",
+      "difficulty": "Средний",
+      "summary": "Представление документа и индексирование.",
+      "takeaway": "Выбирайте JSONB по модели доступа, а не ради отказа от схемы.",
+      "moduleId": "postgresql",
+      "order": 0,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Выбирайте JSONB по модели доступа, а не ради отказа от схемы.",
+        "keywords": ["PostgreSQL", "Типы данных"],
+        "kind": "explanation",
+        "reviewStatus": "imported",
+        "goalIds": ["core", "pg-json-jsonb"],
+        "relatedQuestionIds": [],
+        "priority": "core",
+        "sourceRefs": []
+      },
+      "answerFile": "answers/postgresql/pg-json-jsonb.md"
+    },
+    {
+      "id": "pg-timestamptz",
+      "title": "Хранит ли timestamptz исходный часовой пояс пользователя?",
+      "topic": "PostgreSQL",
+      "difficulty": "Средний",
+      "summary": "Момент времени и представление в сессии.",
+      "takeaway": "Момент и часовой пояс его интерпретации - разные данные.",
+      "moduleId": "postgresql",
+      "order": 1,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Момент и часовой пояс его интерпретации - разные данные.",
+        "keywords": ["PostgreSQL", "Типы данных"],
+        "kind": "explanation",
+        "reviewStatus": "imported",
+        "goalIds": ["core", "pg-timestamptz"],
+        "relatedQuestionIds": [],
+        "priority": "core",
+        "sourceRefs": []
+      },
+      "answerFile": "answers/postgresql/pg-timestamptz.md"
+    },
+    {
+      "id": "pg-numeric-money",
+      "title": "Почему для денежных сумм часто выбирают numeric или целые минимальные единицы?",
+      "topic": "PostgreSQL",
+      "difficulty": "Базовый",
+      "summary": "Точное представление и правила округления.",
+      "takeaway": "Точность определяется всей цепочкой хранения, вычисления и сериализации.",
+      "moduleId": "postgresql",
+      "order": 2,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Точность определяется всей цепочкой хранения, вычисления и сериализации.",
+        "keywords": ["PostgreSQL", "Типы данных"],
+        "kind": "explanation",
+        "reviewStatus": "imported",
+        "goalIds": ["core", "pg-numeric-money"],
+        "relatedQuestionIds": [],
+        "priority": "core",
+        "sourceRefs": []
+      },
+      "answerFile": "answers/postgresql/pg-numeric-money.md"
+    }
+  ]
+}

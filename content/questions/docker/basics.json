@@ -1,0 +1,113 @@
+{
+  "$schema": "../question-bundle.schema.json",
+  "sectionId": "docker",
+  "subsectionId": "basics",
+  "scope": "Изоляция, слои и процесс контейнера.",
+  "coverageGoals": [
+    {
+      "id": "core",
+      "title": "Образы и контейнеры",
+      "description": "Обзор и взаимосвязи навыков: Изоляция, слои и процесс контейнера.",
+      "requiredDifficulties": [],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": ["docker-image-container", "docker-layers", "docker-pid-one"]
+    },
+    {
+      "id": "docker-image-container",
+      "title": "Чем образ отличается от контейнера?",
+      "description": "Объяснить и применить правило с учётом его границ: Образ воспроизводит окружение, контейнер выполняет конкретный экземпляр.",
+      "requiredDifficulties": ["Базовый"],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "docker-layers",
+      "title": "Зачем образу слои и почему удаление секрета следующим RUN не спасает?",
+      "description": "Объяснить и применить правило с учётом его границ: Не помещайте секрет в образ даже с намерением удалить его позже.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "docker-pid-one",
+      "title": "Почему контейнер завершается при остановке главного процесса?",
+      "description": "Объяснить и применить правило с учётом его границ: Состояние контейнера должно отражать жизненный цикл приложения.",
+      "requiredDifficulties": ["Базовый"],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": []
+    }
+  ],
+  "questions": [
+    {
+      "id": "docker-image-container",
+      "title": "Чем образ отличается от контейнера?",
+      "topic": "Docker",
+      "difficulty": "Базовый",
+      "summary": "Шаблон файловой системы и запущенный экземпляр.",
+      "takeaway": "Образ воспроизводит окружение, контейнер выполняет конкретный экземпляр.",
+      "moduleId": "docker",
+      "order": 0,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Образ воспроизводит окружение, контейнер выполняет конкретный экземпляр.",
+        "keywords": ["Docker", "Образы и контейнеры"],
+        "kind": "explanation",
+        "reviewStatus": "imported",
+        "goalIds": ["core", "docker-image-container"],
+        "relatedQuestionIds": [],
+        "priority": "core",
+        "sourceRefs": []
+      },
+      "answerFile": "answers/docker/docker-image-container.md"
+    },
+    {
+      "id": "docker-layers",
+      "title": "Зачем образу слои и почему удаление секрета следующим RUN не спасает?",
+      "topic": "Docker",
+      "difficulty": "Средний",
+      "summary": "Неизменяемая история файловой системы.",
+      "takeaway": "Не помещайте секрет в образ даже с намерением удалить его позже.",
+      "moduleId": "docker",
+      "order": 1,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Не помещайте секрет в образ даже с намерением удалить его позже.",
+        "keywords": ["Docker", "Образы и контейнеры"],
+        "kind": "explanation",
+        "reviewStatus": "imported",
+        "goalIds": ["core", "docker-layers"],
+        "relatedQuestionIds": [],
+        "priority": "core",
+        "sourceRefs": []
+      },
+      "answerFile": "answers/docker/docker-layers.md"
+    },
+    {
+      "id": "docker-pid-one",
+      "title": "Почему контейнер завершается при остановке главного процесса?",
+      "topic": "Docker",
+      "difficulty": "Базовый",
+      "summary": "Жизненный цикл и передача сигналов.",
+      "code": "CMD [\"node\", \"dist/main.js\"]",
+      "takeaway": "Состояние контейнера должно отражать жизненный цикл приложения.",
+      "moduleId": "docker",
+      "order": 2,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Состояние контейнера должно отражать жизненный цикл приложения.",
+        "keywords": ["Docker", "Образы и контейнеры"],
+        "kind": "explanation",
+        "reviewStatus": "imported",
+        "goalIds": ["core", "docker-pid-one"],
+        "relatedQuestionIds": [],
+        "priority": "core",
+        "sourceRefs": []
+      },
+      "answerFile": "answers/docker/docker-pid-one.md"
+    }
+  ]
+}

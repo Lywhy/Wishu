@@ -1,0 +1,113 @@
+{
+  "$schema": "../question-bundle.schema.json",
+  "sectionId": "git",
+  "subsectionId": "recovery",
+  "scope": "Restore, revert и reflog.",
+  "coverageGoals": [
+    {
+      "id": "core",
+      "title": "Отмена и восстановление",
+      "description": "Обзор и взаимосвязи навыков: Restore, revert и reflog.",
+      "requiredDifficulties": [],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": ["git-restore", "git-revert", "git-reflog"]
+    },
+    {
+      "id": "git-restore",
+      "title": "Что делает git restore и почему важно выбрать источник?",
+      "description": "Объяснить и применить правило с учётом его границ: Явно определяйте источник и место восстановления.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "git-revert",
+      "title": "Когда подходит revert вместо переписывания истории?",
+      "description": "Объяснить и применить правило с учётом его границ: Для общей истории часто нужна явная отмена, а не удаление прошлого.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "git-reflog",
+      "title": "Как reflog помогает найти потерянный коммит?",
+      "description": "Объяснить и применить правило с учётом его границ: Reflog помогает найти сохранённые объекты, пока они ещё доступны.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": []
+    }
+  ],
+  "questions": [
+    {
+      "id": "git-restore",
+      "title": "Что делает git restore и почему важно выбрать источник?",
+      "topic": "Git",
+      "difficulty": "Средний",
+      "summary": "Восстановление рабочего дерева или индекса.",
+      "takeaway": "Явно определяйте источник и место восстановления.",
+      "moduleId": "git",
+      "order": 0,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Явно определяйте источник и место восстановления.",
+        "keywords": ["Git", "Отмена и восстановление"],
+        "kind": "explanation",
+        "reviewStatus": "imported",
+        "goalIds": ["core", "git-restore"],
+        "relatedQuestionIds": [],
+        "priority": "core",
+        "sourceRefs": []
+      },
+      "answerFile": "answers/git/git-restore.md"
+    },
+    {
+      "id": "git-revert",
+      "title": "Когда подходит revert вместо переписывания истории?",
+      "topic": "Git",
+      "difficulty": "Средний",
+      "summary": "Обратное изменение отдельным коммитом.",
+      "takeaway": "Для общей истории часто нужна явная отмена, а не удаление прошлого.",
+      "moduleId": "git",
+      "order": 1,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Для общей истории часто нужна явная отмена, а не удаление прошлого.",
+        "keywords": ["Git", "Отмена и восстановление"],
+        "kind": "explanation",
+        "reviewStatus": "imported",
+        "goalIds": ["core", "git-revert"],
+        "relatedQuestionIds": [],
+        "priority": "core",
+        "sourceRefs": []
+      },
+      "answerFile": "answers/git/git-revert.md"
+    },
+    {
+      "id": "git-reflog",
+      "title": "Как reflog помогает найти потерянный коммит?",
+      "topic": "Git",
+      "difficulty": "Средний",
+      "summary": "Локальная история движения ссылок.",
+      "code": "git reflog\ngit show <commit-id>\ngit branch recovered-work <commit-id>",
+      "takeaway": "Reflog помогает найти сохранённые объекты, пока они ещё доступны.",
+      "moduleId": "git",
+      "order": 2,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Reflog помогает найти сохранённые объекты, пока они ещё доступны.",
+        "keywords": ["Git", "Отмена и восстановление"],
+        "kind": "explanation",
+        "reviewStatus": "imported",
+        "goalIds": ["core", "git-reflog"],
+        "relatedQuestionIds": [],
+        "priority": "core",
+        "sourceRefs": []
+      },
+      "answerFile": "answers/git/git-reflog.md"
+    }
+  ]
+}

@@ -1,0 +1,219 @@
+{
+  "$schema": "../question-bundle.schema.json",
+  "sectionId": "react",
+  "subsectionId": "forms",
+  "scope": "Управляемые поля, доступность, отправка и Actions в React 19.",
+  "coverageGoals": [
+    {
+      "id": "core",
+      "title": "Формы и пользовательский ввод",
+      "description": "Обзор и взаимосвязи навыков: Управляемые поля, доступность, отправка и Actions в React 19.",
+      "requiredDifficulties": [],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": [
+        "react-controlled-input",
+        "react-form-submit",
+        "react-accessible-fields",
+        "react-action-state",
+        "react-form-status",
+        "react-input-composition"
+      ]
+    },
+    {
+      "id": "react-controlled-input",
+      "title": "Чем управляемое поле отличается от неуправляемого?",
+      "description": "Объяснить и применить правило с учётом его границ: У поля должен быть определён один источник текущего значения.",
+      "requiredDifficulties": ["Базовый"],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "react-form-submit",
+      "title": "Как обработать отправку формы и получить её данные?",
+      "description": "Объяснить и применить правило с учётом его границ: Обрабатывайте отправку на форме и явно задавайте тип вспомогательных кнопок.",
+      "requiredDifficulties": ["Базовый"],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "react-accessible-fields",
+      "title": "Как связать label и сообщение об ошибке с полем?",
+      "description": "Объяснить и применить правило с учётом его границ: Полю нужны доступное имя и связанное с ним объяснение ошибки.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "react-action-state",
+      "title": "Как useActionState помогает обрабатывать форму в React 19?",
+      "description": "Объяснить и применить правило с учётом его границ: useActionState связывает результат действия и его ожидающее состояние.",
+      "requiredDifficulties": ["Продвинутый"],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": ["next-server-actions"]
+    },
+    {
+      "id": "react-form-status",
+      "title": "Почему useFormStatus не видит форму из того же компонента?",
+      "description": "Объяснить и применить правило с учётом его границ: Компонент с useFormStatus должен находиться внутри нужной формы.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "react-input-composition",
+      "title": "Почему форматирование управляемого поля может ломать каретку и IME-ввод?",
+      "description": "Объяснить и применить правило с учётом его границ: Промежуточное состояние редактора не обязано совпадать с готовым бизнес-значением.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": []
+    }
+  ],
+  "questions": [
+    {
+      "id": "react-controlled-input",
+      "title": "Чем управляемое поле отличается от неуправляемого?",
+      "topic": "React",
+      "difficulty": "Базовый",
+      "summary": "Value, defaultValue и источник значения.",
+      "code": "function NameField() {\n  const [name, setName] = useState(\"\")\n  return <input value={name} onChange={event => setName(event.target.value)} />\n}",
+      "takeaway": "У поля должен быть определён один источник текущего значения.",
+      "moduleId": "react",
+      "order": 0,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: У поля должен быть определён один источник текущего значения.",
+        "keywords": ["React", "Формы и пользовательский ввод"],
+        "kind": "explanation",
+        "reviewStatus": "imported",
+        "goalIds": ["core", "react-controlled-input"],
+        "relatedQuestionIds": [],
+        "priority": "core",
+        "sourceRefs": []
+      },
+      "answerFile": "answers/react/react-controlled-input.md"
+    },
+    {
+      "id": "react-form-submit",
+      "title": "Как обработать отправку формы и получить её данные?",
+      "topic": "React",
+      "difficulty": "Базовый",
+      "summary": "Событие submit, FormData и имена полей.",
+      "code": "function SearchForm() {\n  function submit(event) {\n    event.preventDefault()\n    const data = new FormData(event.currentTarget)\n    console.log(data.get(\"query\"))\n  }\n  return <form onSubmit={submit}><input name=\"query\" /><button type=\"submit\">Найти</button></form>\n}",
+      "takeaway": "Обрабатывайте отправку на форме и явно задавайте тип вспомогательных кнопок.",
+      "moduleId": "react",
+      "order": 1,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Обрабатывайте отправку на форме и явно задавайте тип вспомогательных кнопок.",
+        "keywords": ["React", "Формы и пользовательский ввод"],
+        "kind": "explanation",
+        "reviewStatus": "imported",
+        "goalIds": ["core", "react-form-submit"],
+        "relatedQuestionIds": [],
+        "priority": "core",
+        "sourceRefs": []
+      },
+      "answerFile": "answers/react/react-form-submit.md"
+    },
+    {
+      "id": "react-accessible-fields",
+      "title": "Как связать label и сообщение об ошибке с полем?",
+      "topic": "React",
+      "difficulty": "Средний",
+      "summary": "UseId, доступное имя и описание ошибки.",
+      "code": "function EmailField({ error }) {\n  const id = useId()\n  return <>\n    <label htmlFor={id}>Email</label>\n    <input id={id} type=\"email\" aria-invalid={Boolean(error)} aria-describedby={error ? id + \"-error\" : undefined} />\n    {error && <p id={id + \"-error\"}>{error}</p>}\n  </>\n}",
+      "takeaway": "Полю нужны доступное имя и связанное с ним объяснение ошибки.",
+      "moduleId": "react",
+      "order": 2,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Полю нужны доступное имя и связанное с ним объяснение ошибки.",
+        "keywords": ["React", "Формы и пользовательский ввод"],
+        "kind": "explanation",
+        "reviewStatus": "imported",
+        "goalIds": ["core", "react-accessible-fields"],
+        "relatedQuestionIds": [],
+        "priority": "core",
+        "sourceRefs": []
+      },
+      "answerFile": "answers/react/react-accessible-fields.md"
+    },
+    {
+      "id": "react-action-state",
+      "title": "Как useActionState помогает обрабатывать форму в React 19?",
+      "topic": "React",
+      "difficulty": "Продвинутый",
+      "summary": "Результат Action, ожидающее состояние и FormData.",
+      "code": "function NameForm() {\n  const [message, formAction, pending] = useActionState(\n    async (_previous, data) => String(data.get(\"name\") ?? \"\").trim() ? \"Имя принято\" : \"Введите имя\",\n    \"\"\n  )\n  return <form action={formAction}>\n    <input name=\"name\" /><button disabled={pending}>Проверить</button><p aria-live=\"polite\">{message}</p>\n  </form>\n}",
+      "takeaway": "useActionState связывает результат действия и его ожидающее состояние.",
+      "moduleId": "react",
+      "order": 3,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: useActionState связывает результат действия и его ожидающее состояние.",
+        "keywords": ["React", "Формы и пользовательский ввод"],
+        "kind": "explanation",
+        "reviewStatus": "imported",
+        "goalIds": ["core", "react-action-state"],
+        "relatedQuestionIds": ["next-server-actions"],
+        "priority": "core",
+        "sourceRefs": []
+      },
+      "answerFile": "answers/react/react-action-state.md"
+    },
+    {
+      "id": "react-form-status",
+      "title": "Почему useFormStatus не видит форму из того же компонента?",
+      "topic": "React",
+      "difficulty": "Средний",
+      "summary": "Граница формы и состояние её Action.",
+      "code": "import { useFormStatus } from \"react-dom\"\n\nfunction SubmitButton() {\n  const { pending } = useFormStatus()\n  return <button type=\"submit\" disabled={pending}>{pending ? \"Отправка...\" : \"Отправить\"}</button>\n}\n// Использование: <form action={saveAction}><SubmitButton /></form>",
+      "takeaway": "Компонент с useFormStatus должен находиться внутри нужной формы.",
+      "moduleId": "react",
+      "order": 4,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Компонент с useFormStatus должен находиться внутри нужной формы.",
+        "keywords": ["React", "Формы и пользовательский ввод"],
+        "kind": "explanation",
+        "reviewStatus": "imported",
+        "goalIds": ["core", "react-form-status"],
+        "relatedQuestionIds": [],
+        "priority": "core",
+        "sourceRefs": []
+      },
+      "answerFile": "answers/react/react-form-status.md"
+    },
+    {
+      "id": "react-input-composition",
+      "title": "Почему форматирование управляемого поля может ломать каретку и IME-ввод?",
+      "summary": "Отделение редактируемой строки от нормализованного доменного значения.",
+      "code": "import { useState } from \"react\"\nfunction NameField() {\n  const [draft, setDraft] = useState(\"\")\n  return <label>Имя<input value={draft} onChange={event => setDraft(event.target.value)} /></label>\n}\n// Текст хранится без принудительного trim/upperCase на каждом символе.",
+      "takeaway": "Промежуточное состояние редактора не обязано совпадать с готовым бизнес-значением.",
+      "pitfall": "Превращать каждое нажатие в нормализованное число или менять строку без учёта каретки и композиции.",
+      "difficulty": "Средний",
+      "topic": "React",
+      "moduleId": "react",
+      "popular": false,
+      "order": 5,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Промежуточное состояние редактора не обязано совпадать с готовым бизнес-значением.",
+        "keywords": ["React", "Формы и пользовательский ввод"],
+        "kind": "explanation",
+        "reviewStatus": "imported",
+        "goalIds": ["core", "react-input-composition"],
+        "relatedQuestionIds": [],
+        "priority": "core",
+        "sourceRefs": ["ref-123e26bb70073d17"]
+      },
+      "answerFile": "answers/react/react-input-composition.md"
+    }
+  ]
+}

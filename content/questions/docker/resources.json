@@ -1,0 +1,113 @@
+{
+  "$schema": "../question-bundle.schema.json",
+  "sectionId": "docker",
+  "subsectionId": "resources",
+  "scope": "Volumes, адреса сервисов и порты.",
+  "coverageGoals": [
+    {
+      "id": "core",
+      "title": "Данные и сеть",
+      "description": "Обзор и взаимосвязи навыков: Volumes, адреса сервисов и порты.",
+      "requiredDifficulties": [],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": ["docker-volume-bind", "docker-compose-dns", "docker-published-port"]
+    },
+    {
+      "id": "docker-volume-bind",
+      "title": "Чем volume отличается от bind mount?",
+      "description": "Объяснить и применить правило с учётом его границ: Постоянство данных требует отдельного хранилища и резервирования.",
+      "requiredDifficulties": ["Базовый"],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "docker-compose-dns",
+      "title": "Почему localhost из API-контейнера не указывает на PostgreSQL-контейнер?",
+      "description": "Объяснить и применить правило с учётом его границ: Выбирайте адрес с точки зрения того, где выполняется клиент.",
+      "requiredDifficulties": ["Базовый"],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "docker-published-port",
+      "title": "Чем публикация 127.0.0.1:15432:5432 отличается от 15432:5432?",
+      "description": "Объяснить и применить правило с учётом его границ: Различайте интерфейс хоста, host-порт и порт приложения внутри контейнера.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": []
+    }
+  ],
+  "questions": [
+    {
+      "id": "docker-volume-bind",
+      "title": "Чем volume отличается от bind mount?",
+      "topic": "Docker",
+      "difficulty": "Базовый",
+      "summary": "Управление постоянными данными и связь с путём хоста.",
+      "takeaway": "Постоянство данных требует отдельного хранилища и резервирования.",
+      "moduleId": "docker",
+      "order": 0,
+      "popular": false,
+      "pitfall": "Считать volume резервной копией. Он отделяет данные от контейнера, но сам может быть удалён или повреждён.",
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Постоянство данных требует отдельного хранилища и резервирования.",
+        "keywords": ["Docker", "Данные и сеть"],
+        "kind": "explanation",
+        "reviewStatus": "imported",
+        "goalIds": ["core", "docker-volume-bind"],
+        "relatedQuestionIds": [],
+        "priority": "core",
+        "sourceRefs": []
+      },
+      "answerFile": "answers/docker/docker-volume-bind.md"
+    },
+    {
+      "id": "docker-compose-dns",
+      "title": "Почему localhost из API-контейнера не указывает на PostgreSQL-контейнер?",
+      "topic": "Docker",
+      "difficulty": "Базовый",
+      "summary": "Сетевое пространство контейнера и имя сервиса.",
+      "takeaway": "Выбирайте адрес с точки зрения того, где выполняется клиент.",
+      "moduleId": "docker",
+      "order": 1,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Выбирайте адрес с точки зрения того, где выполняется клиент.",
+        "keywords": ["Docker", "Данные и сеть"],
+        "kind": "explanation",
+        "reviewStatus": "imported",
+        "goalIds": ["core", "docker-compose-dns"],
+        "relatedQuestionIds": [],
+        "priority": "core",
+        "sourceRefs": []
+      },
+      "answerFile": "answers/docker/docker-compose-dns.md"
+    },
+    {
+      "id": "docker-published-port",
+      "title": "Чем публикация 127.0.0.1:15432:5432 отличается от 15432:5432?",
+      "topic": "Docker",
+      "difficulty": "Средний",
+      "summary": "Интерфейс хоста и внутренний порт контейнера.",
+      "takeaway": "Различайте интерфейс хоста, host-порт и порт приложения внутри контейнера.",
+      "moduleId": "docker",
+      "order": 2,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Различайте интерфейс хоста, host-порт и порт приложения внутри контейнера.",
+        "keywords": ["Docker", "Данные и сеть"],
+        "kind": "explanation",
+        "reviewStatus": "imported",
+        "goalIds": ["core", "docker-published-port"],
+        "relatedQuestionIds": [],
+        "priority": "core",
+        "sourceRefs": []
+      },
+      "answerFile": "answers/docker/docker-published-port.md"
+    }
+  ]
+}

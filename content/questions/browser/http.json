@@ -1,0 +1,113 @@
+{
+  "$schema": "../question-bundle.schema.json",
+  "sectionId": "browser",
+  "subsectionId": "http",
+  "scope": "Методы, статусы, свежесть и проверки актуальности.",
+  "coverageGoals": [
+    {
+      "id": "core",
+      "title": "HTTP и кеширование",
+      "description": "Обзор и взаимосвязи навыков: Методы, статусы, свежесть и проверки актуальности.",
+      "requiredDifficulties": [],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": ["http-cache", "http-idempotency", "http-status-codes"]
+    },
+    {
+      "id": "http-cache",
+      "title": "Чем Cache-Control отличается от ETag?",
+      "description": "Объяснить и применить правило с учётом его границ: Свежесть и проверка актуальности - разные задачи, которые дополняют друг друга.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "http-idempotency",
+      "title": "Что означает идемпотентность HTTP-метода?",
+      "description": "Объяснить и применить правило с учётом его границ: Идемпотентность описывает эффект, а не одинаковость ответов.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "http-status-codes",
+      "title": "Как различать 401, 403, 404 и 409 в API?",
+      "description": "Объяснить и применить правило с учётом его границ: Статус сообщает тип исхода, тело уточняет причину.",
+      "requiredDifficulties": ["Базовый"],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": []
+    }
+  ],
+  "questions": [
+    {
+      "id": "http-cache",
+      "title": "Чем Cache-Control отличается от ETag?",
+      "topic": "Web",
+      "difficulty": "Средний",
+      "summary": "Свежесть кеша и условные HTTP-запросы.",
+      "takeaway": "Свежесть и проверка актуальности - разные задачи, которые дополняют друг друга.",
+      "moduleId": "browser",
+      "order": 0,
+      "popular": false,
+      "pitfall": "Путать no-cache с запретом хранения. No-cache требует проверки перед повторным использованием, no-store запрещает хранение кешем.",
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Свежесть и проверка актуальности - разные задачи, которые дополняют друг друга.",
+        "keywords": ["Браузер и HTTP", "HTTP и кеширование"],
+        "kind": "explanation",
+        "reviewStatus": "imported",
+        "goalIds": ["core", "http-cache"],
+        "relatedQuestionIds": [],
+        "priority": "core",
+        "sourceRefs": []
+      },
+      "answerFile": "answers/browser/http-cache.md"
+    },
+    {
+      "id": "http-idempotency",
+      "title": "Что означает идемпотентность HTTP-метода?",
+      "topic": "Web",
+      "difficulty": "Средний",
+      "summary": "Повтор запроса и итоговое состояние ресурса.",
+      "takeaway": "Идемпотентность описывает эффект, а не одинаковость ответов.",
+      "moduleId": "browser",
+      "order": 1,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Идемпотентность описывает эффект, а не одинаковость ответов.",
+        "keywords": ["Браузер и HTTP", "HTTP и кеширование"],
+        "kind": "explanation",
+        "reviewStatus": "imported",
+        "goalIds": ["core", "http-idempotency"],
+        "relatedQuestionIds": [],
+        "priority": "core",
+        "sourceRefs": []
+      },
+      "answerFile": "answers/browser/http-idempotency.md"
+    },
+    {
+      "id": "http-status-codes",
+      "title": "Как различать 401, 403, 404 и 409 в API?",
+      "topic": "Web",
+      "difficulty": "Базовый",
+      "summary": "Смысл клиентских ошибок и контракт ответа.",
+      "takeaway": "Статус сообщает тип исхода, тело уточняет причину.",
+      "moduleId": "browser",
+      "order": 2,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Статус сообщает тип исхода, тело уточняет причину.",
+        "keywords": ["Браузер и HTTP", "HTTP и кеширование"],
+        "kind": "explanation",
+        "reviewStatus": "imported",
+        "goalIds": ["core", "http-status-codes"],
+        "relatedQuestionIds": [],
+        "priority": "core",
+        "sourceRefs": []
+      },
+      "answerFile": "answers/browser/http-status-codes.md"
+    }
+  ]
+}

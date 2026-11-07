@@ -1,0 +1,217 @@
+{
+  "$schema": "../question-bundle.schema.json",
+  "sectionId": "react",
+  "subsectionId": "context",
+  "scope": "Передача общих данных, подписки и выбор места хранения.",
+  "coverageGoals": [
+    {
+      "id": "core",
+      "title": "Context и управление состоянием",
+      "description": "Обзор и взаимосвязи навыков: Передача общих данных, подписки и выбор места хранения.",
+      "requiredDifficulties": [],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": [
+        "react-context",
+        "react-context-renders",
+        "react-state-location",
+        "react-external-store",
+        "react-url-state",
+        "react-ssr-state-isolation"
+      ]
+    },
+    {
+      "id": "react-context",
+      "title": "Как Context передаёт данные и откуда берётся значение по умолчанию?",
+      "description": "Объяснить и применить правило с учётом его границ: Потребитель читает ближайший провайдер выше себя.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "react-context-renders",
+      "title": "Почему потребители Context рендерятся при изменении value?",
+      "description": "Объяснить и применить правило с учётом его границ: У Context важна идентичность value и размер области подписки.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "react-state-location",
+      "title": "Как выбрать между props, Context и внешним store?",
+      "description": "Объяснить и применить правило с учётом его границ: Способ хранения должен соответствовать владельцу и потребителям данных.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "react-external-store",
+      "title": "Для чего предназначен useSyncExternalStore?",
+      "description": "Объяснить и применить правило с учётом его границ: Внешний store должен давать стабильный снимок и корректную отписку.",
+      "requiredDifficulties": ["Продвинутый"],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "react-url-state",
+      "title": "Какие состояния интерфейса стоит хранить в URL и как избежать второго источника истины?",
+      "description": "Объяснить и применить правило с учётом его границ: URL должен хранить намеренно восстанавливаемое состояние с понятной историей переходов.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "react-ssr-state-isolation",
+      "title": "Почему пользовательское состояние SSR нельзя бездумно хранить в singleton-store модуля?",
+      "description": "Объяснить и применить правило с учётом его границ: Состояние пользователя должно быть изолировано по запросу и согласовано с начальным клиентским деревом.",
+      "requiredDifficulties": ["Продвинутый"],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": []
+    }
+  ],
+  "questions": [
+    {
+      "id": "react-context",
+      "title": "Как Context передаёт данные и откуда берётся значение по умолчанию?",
+      "topic": "React",
+      "difficulty": "Средний",
+      "summary": "Провайдеры, ближайшее значение и fallback.",
+      "code": "const ThemeContext = createContext(\"light\")\n\nfunction ThemeName() {\n  return <span>{useContext(ThemeContext)}</span>\n}",
+      "takeaway": "Потребитель читает ближайший провайдер выше себя.",
+      "moduleId": "react",
+      "order": 0,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Потребитель читает ближайший провайдер выше себя.",
+        "keywords": ["React", "Context и управление состоянием"],
+        "kind": "explanation",
+        "reviewStatus": "imported",
+        "goalIds": ["core", "react-context"],
+        "relatedQuestionIds": [],
+        "priority": "core",
+        "sourceRefs": []
+      },
+      "answerFile": "answers/react/react-context.md"
+    },
+    {
+      "id": "react-context-renders",
+      "title": "Почему потребители Context рендерятся при изменении value?",
+      "topic": "React",
+      "difficulty": "Средний",
+      "summary": "Сравнение ссылки и границы мемоизации.",
+      "takeaway": "У Context важна идентичность value и размер области подписки.",
+      "moduleId": "react",
+      "order": 1,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: У Context важна идентичность value и размер области подписки.",
+        "keywords": ["React", "Context и управление состоянием"],
+        "kind": "explanation",
+        "reviewStatus": "imported",
+        "goalIds": ["core", "react-context-renders"],
+        "relatedQuestionIds": [],
+        "priority": "core",
+        "sourceRefs": []
+      },
+      "answerFile": "answers/react/react-context-renders.md"
+    },
+    {
+      "id": "react-state-location",
+      "title": "Как выбрать между props, Context и внешним store?",
+      "topic": "React",
+      "difficulty": "Средний",
+      "summary": "Владелец данных, область доступа и частота обновлений.",
+      "takeaway": "Способ хранения должен соответствовать владельцу и потребителям данных.",
+      "moduleId": "react",
+      "order": 2,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Способ хранения должен соответствовать владельцу и потребителям данных.",
+        "keywords": ["React", "Context и управление состоянием"],
+        "kind": "explanation",
+        "reviewStatus": "imported",
+        "goalIds": ["core", "react-state-location"],
+        "relatedQuestionIds": [],
+        "priority": "core",
+        "sourceRefs": []
+      },
+      "answerFile": "answers/react/react-state-location.md"
+    },
+    {
+      "id": "react-external-store",
+      "title": "Для чего предназначен useSyncExternalStore?",
+      "topic": "React",
+      "difficulty": "Продвинутый",
+      "summary": "Подписка на внешний источник и согласованный снимок.",
+      "takeaway": "Внешний store должен давать стабильный снимок и корректную отписку.",
+      "moduleId": "react",
+      "order": 3,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Внешний store должен давать стабильный снимок и корректную отписку.",
+        "keywords": ["React", "Context и управление состоянием"],
+        "kind": "explanation",
+        "reviewStatus": "imported",
+        "goalIds": ["core", "react-external-store"],
+        "relatedQuestionIds": [],
+        "priority": "core",
+        "sourceRefs": []
+      },
+      "answerFile": "answers/react/react-external-store.md"
+    },
+    {
+      "id": "react-url-state",
+      "title": "Какие состояния интерфейса стоит хранить в URL и как избежать второго источника истины?",
+      "summary": "Восстановимые фильтры, браузерная история и локальные несохранённые данные.",
+      "code": "import { useSearchParams } from \"react-router-dom\"\nfunction Search() {\n  const [params, setParams] = useSearchParams()\n  const query = params.get(\"q\") ?? \"\"\n  return <label>Поиск<input value={query} onChange={event => {\n    const next = new URLSearchParams(params)\n    next.set(\"q\", event.target.value); next.delete(\"page\")\n    setParams(next, { replace: true })\n  }} /></label>\n}",
+      "takeaway": "URL должен хранить намеренно восстанавливаемое состояние с понятной историей переходов.",
+      "pitfall": "Синхронизировать один фильтр в URL и локальном state двумя взаимными эффектами.",
+      "difficulty": "Средний",
+      "topic": "React",
+      "moduleId": "react",
+      "popular": false,
+      "order": 4,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: URL должен хранить намеренно восстанавливаемое состояние с понятной историей переходов.",
+        "keywords": ["React", "Context и управление состоянием"],
+        "kind": "explanation",
+        "reviewStatus": "imported",
+        "goalIds": ["core", "react-url-state"],
+        "relatedQuestionIds": [],
+        "priority": "core",
+        "sourceRefs": ["ref-e1169371ff06e00d", "ref-753634473fba230c"]
+      },
+      "answerFile": "answers/react/react-url-state.md"
+    },
+    {
+      "id": "react-ssr-state-isolation",
+      "title": "Почему пользовательское состояние SSR нельзя бездумно хранить в singleton-store модуля?",
+      "summary": "Изоляция запросов и совпадение начального снимка при гидратации.",
+      "code": "function createRequestSnapshot(session) {\n  return { user: { id: session.user.id, name: session.user.name } }\n}\n// Создаётся для текущего запроса и передаётся его дереву.\n// Модульный let currentUser для всех запросов не подходит.",
+      "takeaway": "Состояние пользователя должно быть изолировано по запросу и согласовано с начальным клиентским деревом.",
+      "pitfall": "Хранить текущую серверную сессию в изменяемом глобальном store и надеяться на разделение React-компонентами.",
+      "difficulty": "Продвинутый",
+      "topic": "React",
+      "moduleId": "react",
+      "popular": false,
+      "order": 5,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Состояние пользователя должно быть изолировано по запросу и согласовано с начальным клиентским деревом.",
+        "keywords": ["React", "Context и управление состоянием"],
+        "kind": "explanation",
+        "reviewStatus": "imported",
+        "goalIds": ["core", "react-ssr-state-isolation"],
+        "relatedQuestionIds": [],
+        "priority": "core",
+        "sourceRefs": ["ref-7d08dbaf713df20f"]
+      },
+      "answerFile": "answers/react/react-ssr-state-isolation.md"
+    }
+  ]
+}

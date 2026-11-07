@@ -1,0 +1,85 @@
+{
+  "$schema": "../question-bundle.schema.json",
+  "sectionId": "html-css",
+  "subsectionId": "html-resources",
+  "scope": "Предварительная подготовка ресурсов, iframe и границы доверия.",
+  "coverageGoals": [
+    {
+      "id": "core",
+      "title": "Ресурсы и встраивание",
+      "description": "Обзор и взаимосвязи навыков: Предварительная подготовка ресурсов, iframe и границы доверия.",
+      "requiredDifficulties": [],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": ["html-iframe-boundary", "html-resource-hints"]
+    },
+    {
+      "id": "html-iframe-boundary",
+      "title": "Как определить границу доверия для iframe?",
+      "description": "Объяснить и применить правило с учётом его границ: Встраивание чужого документа требует отдельной модели разрешений и обмена данными.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "html-resource-hints",
+      "title": "Когда использовать preload, prefetch и preconnect?",
+      "description": "Объяснить и применить правило с учётом его границ: Resource hints помогают расписанию загрузок только при верно выбранной и действительно нужной зависимости.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": []
+    }
+  ],
+  "questions": [
+    {
+      "id": "html-iframe-boundary",
+      "title": "Как определить границу доверия для iframe?",
+      "summary": "Отдельный документ, sandbox-разрешения и проверка сообщений между окнами.",
+      "code": "<iframe src=\"https://example.org/embed\"\n        title=\"Предпросмотр документа\" loading=\"lazy\"\n        sandbox=\"allow-scripts\" referrerpolicy=\"no-referrer\"></iframe>",
+      "takeaway": "Встраивание чужого документа требует отдельной модели разрешений и обмена данными.",
+      "pitfall": "Считать iframe доверенным только потому, что он визуально расположен внутри вашего интерфейса.",
+      "difficulty": "Средний",
+      "topic": "HTML и CSS",
+      "moduleId": "html-css",
+      "popular": false,
+      "order": 0,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Встраивание чужого документа требует отдельной модели разрешений и обмена данными.",
+        "keywords": ["HTML и CSS", "Ресурсы и встраивание"],
+        "kind": "explanation",
+        "reviewStatus": "imported",
+        "goalIds": ["core", "html-iframe-boundary"],
+        "relatedQuestionIds": [],
+        "priority": "core",
+        "sourceRefs": ["ref-34161b13a7d0c678"]
+      },
+      "answerFile": "answers/html-css/html-iframe-boundary.md"
+    },
+    {
+      "id": "html-resource-hints",
+      "title": "Когда использовать preload, prefetch и preconnect?",
+      "summary": "Разные уровни подготовки ресурса без обещания немедленного исполнения.",
+      "code": "<link rel=\"preconnect\" href=\"https://fonts.example.org\" crossorigin>\n<link rel=\"preload\" href=\"/fonts/body.woff2\" as=\"font\" type=\"font/woff2\" crossorigin>\n<!-- Подставьте реально используемые origin и ресурс; это пример контракта. -->",
+      "takeaway": "Resource hints помогают расписанию загрузок только при верно выбранной и действительно нужной зависимости.",
+      "pitfall": "Ожидать выполнения JavaScript от preload или предварительно загружать все ресурсы без измерений.",
+      "difficulty": "Средний",
+      "topic": "HTML и CSS",
+      "moduleId": "html-css",
+      "popular": false,
+      "order": 1,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Resource hints помогают расписанию загрузок только при верно выбранной и действительно нужной зависимости.",
+        "keywords": ["HTML и CSS", "Ресурсы и встраивание"],
+        "kind": "explanation",
+        "reviewStatus": "imported",
+        "goalIds": ["core", "html-resource-hints"],
+        "relatedQuestionIds": [],
+        "priority": "core",
+        "sourceRefs": ["ref-563da44f2a96cd5f"]
+      },
+      "answerFile": "answers/html-css/html-resource-hints.md"
+    }
+  ]
+}

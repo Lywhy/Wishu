@@ -1,0 +1,113 @@
+{
+  "$schema": "../question-bundle.schema.json",
+  "sectionId": "sql",
+  "subsectionId": "queries",
+  "scope": "EXISTS, UNION и постраничная выборка.",
+  "coverageGoals": [
+    {
+      "id": "core",
+      "title": "Составные запросы",
+      "description": "Обзор и взаимосвязи навыков: EXISTS, UNION и постраничная выборка.",
+      "requiredDifficulties": [],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": ["sql-exists", "sql-union-all", "sql-keyset-pagination"]
+    },
+    {
+      "id": "sql-exists",
+      "title": "Когда EXISTS удобнее JOIN?",
+      "description": "Объяснить и применить правило с учётом его границ: Для вопроса «есть ли связь» используйте условие существования.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "sql-union-all",
+      "title": "Чем UNION отличается от UNION ALL?",
+      "description": "Объяснить и применить правило с учётом его границ: Удаляйте повторы только тогда, когда этого требует смысл результата.",
+      "requiredDifficulties": ["Базовый"],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "sql-keyset-pagination",
+      "title": "Почему OFFSET-пагинация может замедляться и чем помогает курсор?",
+      "description": "Объяснить и применить правило с учётом его границ: Курсор продолжает порядок по значениям, а не по числу пропущенных строк.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": []
+    }
+  ],
+  "questions": [
+    {
+      "id": "sql-exists",
+      "title": "Когда EXISTS удобнее JOIN?",
+      "topic": "SQL",
+      "difficulty": "Средний",
+      "summary": "Проверка наличия связи без размножения результата.",
+      "code": "SELECT u.id FROM users u\nWHERE EXISTS (SELECT 1 FROM orders o WHERE o.user_id = u.id);",
+      "takeaway": "Для вопроса «есть ли связь» используйте условие существования.",
+      "moduleId": "sql",
+      "order": 0,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Для вопроса «есть ли связь» используйте условие существования.",
+        "keywords": ["SQL", "Составные запросы"],
+        "kind": "explanation",
+        "reviewStatus": "imported",
+        "goalIds": ["core", "sql-exists"],
+        "relatedQuestionIds": [],
+        "priority": "core",
+        "sourceRefs": []
+      },
+      "answerFile": "answers/sql/sql-exists.md"
+    },
+    {
+      "id": "sql-union-all",
+      "title": "Чем UNION отличается от UNION ALL?",
+      "topic": "SQL",
+      "difficulty": "Базовый",
+      "summary": "Объединение результатов и устранение повторов.",
+      "takeaway": "Удаляйте повторы только тогда, когда этого требует смысл результата.",
+      "moduleId": "sql",
+      "order": 1,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Удаляйте повторы только тогда, когда этого требует смысл результата.",
+        "keywords": ["SQL", "Составные запросы"],
+        "kind": "explanation",
+        "reviewStatus": "imported",
+        "goalIds": ["core", "sql-union-all"],
+        "relatedQuestionIds": [],
+        "priority": "core",
+        "sourceRefs": []
+      },
+      "answerFile": "answers/sql/sql-union-all.md"
+    },
+    {
+      "id": "sql-keyset-pagination",
+      "title": "Почему OFFSET-пагинация может замедляться и чем помогает курсор?",
+      "topic": "SQL",
+      "difficulty": "Средний",
+      "summary": "Стоимость пропуска и стабильный порядок.",
+      "takeaway": "Курсор продолжает порядок по значениям, а не по числу пропущенных строк.",
+      "moduleId": "sql",
+      "order": 2,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Курсор продолжает порядок по значениям, а не по числу пропущенных строк.",
+        "keywords": ["SQL", "Составные запросы"],
+        "kind": "explanation",
+        "reviewStatus": "imported",
+        "goalIds": ["core", "sql-keyset-pagination"],
+        "relatedQuestionIds": [],
+        "priority": "core",
+        "sourceRefs": []
+      },
+      "answerFile": "answers/sql/sql-keyset-pagination.md"
+    }
+  ]
+}

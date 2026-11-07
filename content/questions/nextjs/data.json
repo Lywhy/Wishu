@@ -1,0 +1,112 @@
+{
+  "$schema": "../question-bundle.schema.json",
+  "sectionId": "nextjs",
+  "subsectionId": "data",
+  "scope": "Загрузка, инвалидирование и изменение данных.",
+  "coverageGoals": [
+    {
+      "id": "core",
+      "title": "Данные и кеширование",
+      "description": "Обзор и взаимосвязи навыков: Загрузка, инвалидирование и изменение данных.",
+      "requiredDifficulties": [],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": ["next-cache-policy", "next-revalidation", "next-server-actions"]
+    },
+    {
+      "id": "next-cache-policy",
+      "title": "Почему нельзя считать, что любой fetch в Next.js всегда кешируется?",
+      "description": "Объяснить и применить правило с учётом его границ: Делайте политику кеша явной и привязанной к версии приложения.",
+      "requiredDifficulties": ["Продвинутый"],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "next-revalidation",
+      "title": "Чем инвалидирование кеша отличается от обновления клиентского интерфейса?",
+      "description": "Объяснить и применить правило с учётом его границ: Свежие данные и повторный рендер маршрута - связанные, но разные операции.",
+      "requiredDifficulties": ["Продвинутый"],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "next-server-actions",
+      "title": "Почему Server Action требует проверки прав, даже если кнопка скрыта?",
+      "description": "Объяснить и применить правило с учётом его границ: Каждую серверную мутацию рассматривайте как доступную входную границу.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": []
+    }
+  ],
+  "questions": [
+    {
+      "id": "next-cache-policy",
+      "title": "Почему нельзя считать, что любой fetch в Next.js всегда кешируется?",
+      "topic": "Next.js",
+      "difficulty": "Продвинутый",
+      "summary": "Версия, конфигурация и явная политика свежести.",
+      "takeaway": "Делайте политику кеша явной и привязанной к версии приложения.",
+      "moduleId": "nextjs",
+      "order": 0,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Делайте политику кеша явной и привязанной к версии приложения.",
+        "keywords": ["Next.js", "Данные и кеширование"],
+        "kind": "explanation",
+        "reviewStatus": "imported",
+        "goalIds": ["core", "next-cache-policy"],
+        "relatedQuestionIds": [],
+        "priority": "core",
+        "sourceRefs": []
+      },
+      "answerFile": "answers/nextjs/next-cache-policy.md"
+    },
+    {
+      "id": "next-revalidation",
+      "title": "Чем инвалидирование кеша отличается от обновления клиентского интерфейса?",
+      "topic": "Next.js",
+      "difficulty": "Продвинутый",
+      "summary": "Свежесть серверных данных и повторная навигационная загрузка.",
+      "takeaway": "Свежие данные и повторный рендер маршрута - связанные, но разные операции.",
+      "moduleId": "nextjs",
+      "order": 1,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Свежие данные и повторный рендер маршрута - связанные, но разные операции.",
+        "keywords": ["Next.js", "Данные и кеширование"],
+        "kind": "explanation",
+        "reviewStatus": "imported",
+        "goalIds": ["core", "next-revalidation"],
+        "relatedQuestionIds": [],
+        "priority": "core",
+        "sourceRefs": []
+      },
+      "answerFile": "answers/nextjs/next-revalidation.md"
+    },
+    {
+      "id": "next-server-actions",
+      "title": "Почему Server Action требует проверки прав, даже если кнопка скрыта?",
+      "topic": "Next.js",
+      "difficulty": "Средний",
+      "summary": "Серверное изменение данных и доверие входу.",
+      "takeaway": "Каждую серверную мутацию рассматривайте как доступную входную границу.",
+      "moduleId": "nextjs",
+      "order": 2,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Каждую серверную мутацию рассматривайте как доступную входную границу.",
+        "keywords": ["Next.js", "Данные и кеширование"],
+        "kind": "explanation",
+        "reviewStatus": "imported",
+        "goalIds": ["core", "next-server-actions"],
+        "relatedQuestionIds": [],
+        "priority": "core",
+        "sourceRefs": ["ref-69fd10b8153c30a3"]
+      },
+      "answerFile": "answers/nextjs/next-server-actions.md"
+    }
+  ]
+}

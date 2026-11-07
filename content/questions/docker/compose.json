@@ -1,0 +1,113 @@
+{
+  "$schema": "../question-bundle.schema.json",
+  "sectionId": "docker",
+  "subsectionId": "compose",
+  "scope": "Готовность, конфигурация и диагностика.",
+  "coverageGoals": [
+    {
+      "id": "core",
+      "title": "Compose и эксплуатация",
+      "description": "Обзор и взаимосвязи навыков: Готовность, конфигурация и диагностика.",
+      "requiredDifficulties": [],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": ["docker-readiness", "docker-env-interpolation", "docker-diagnosis"]
+    },
+    {
+      "id": "docker-readiness",
+      "title": "Гарантирует ли depends_on готовность базы принимать запросы?",
+      "description": "Объяснить и применить правило с учётом его границ: Запущен, готов и способен обслужить запрос - разные состояния.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "docker-env-interpolation",
+      "title": "Чем подстановка .env в Compose отличается от окружения контейнера?",
+      "description": "Объяснить и применить правило с учётом его границ: Подстановка конфигурации и окружение запущенного процесса - разные этапы.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "docker-diagnosis",
+      "title": "С чего начать диагностику контейнера, который постоянно перезапускается?",
+      "description": "Объяснить и применить правило с учётом его границ: Ищите причину завершения, а не маскируйте её политикой рестартов.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": []
+    }
+  ],
+  "questions": [
+    {
+      "id": "docker-readiness",
+      "title": "Гарантирует ли depends_on готовность базы принимать запросы?",
+      "topic": "Docker",
+      "difficulty": "Средний",
+      "summary": "Порядок создания и healthcheck.",
+      "takeaway": "Запущен, готов и способен обслужить запрос - разные состояния.",
+      "moduleId": "docker",
+      "order": 0,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Запущен, готов и способен обслужить запрос - разные состояния.",
+        "keywords": ["Docker", "Compose и эксплуатация"],
+        "kind": "explanation",
+        "reviewStatus": "imported",
+        "goalIds": ["core", "docker-readiness"],
+        "relatedQuestionIds": [],
+        "priority": "core",
+        "sourceRefs": []
+      },
+      "answerFile": "answers/docker/docker-readiness.md"
+    },
+    {
+      "id": "docker-env-interpolation",
+      "title": "Чем подстановка .env в Compose отличается от окружения контейнера?",
+      "topic": "Docker",
+      "difficulty": "Средний",
+      "summary": "Конфигурация Compose и передача переменных процессу.",
+      "takeaway": "Подстановка конфигурации и окружение запущенного процесса - разные этапы.",
+      "moduleId": "docker",
+      "order": 1,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Подстановка конфигурации и окружение запущенного процесса - разные этапы.",
+        "keywords": ["Docker", "Compose и эксплуатация"],
+        "kind": "explanation",
+        "reviewStatus": "imported",
+        "goalIds": ["core", "docker-env-interpolation"],
+        "relatedQuestionIds": [],
+        "priority": "core",
+        "sourceRefs": []
+      },
+      "answerFile": "answers/docker/docker-env-interpolation.md"
+    },
+    {
+      "id": "docker-diagnosis",
+      "title": "С чего начать диагностику контейнера, который постоянно перезапускается?",
+      "topic": "Docker",
+      "difficulty": "Средний",
+      "summary": "Причина завершения, логи и конфигурация.",
+      "code": "docker compose ps\ndocker compose logs --tail 100 api",
+      "takeaway": "Ищите причину завершения, а не маскируйте её политикой рестартов.",
+      "moduleId": "docker",
+      "order": 2,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Ищите причину завершения, а не маскируйте её политикой рестартов.",
+        "keywords": ["Docker", "Compose и эксплуатация"],
+        "kind": "explanation",
+        "reviewStatus": "imported",
+        "goalIds": ["core", "docker-diagnosis"],
+        "relatedQuestionIds": [],
+        "priority": "core",
+        "sourceRefs": []
+      },
+      "answerFile": "answers/docker/docker-diagnosis.md"
+    }
+  ]
+}

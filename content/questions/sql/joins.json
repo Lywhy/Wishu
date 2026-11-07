@@ -1,0 +1,114 @@
+{
+  "$schema": "../question-bundle.schema.json",
+  "sectionId": "sql",
+  "subsectionId": "joins",
+  "scope": "JOIN, кратность и фильтрация.",
+  "coverageGoals": [
+    {
+      "id": "core",
+      "title": "Соединение таблиц",
+      "description": "Обзор и взаимосвязи навыков: JOIN, кратность и фильтрация.",
+      "requiredDifficulties": [],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": ["sql-inner-left", "sql-left-filter", "sql-join-duplicates"]
+    },
+    {
+      "id": "sql-inner-left",
+      "title": "Чем INNER JOIN отличается от LEFT JOIN?",
+      "description": "Объяснить и применить правило с учётом его границ: Тип JOIN определяет сохранение строк, а ключи - число совпадений.",
+      "requiredDifficulties": ["Базовый"],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "sql-left-filter",
+      "title": "Почему WHERE по правой таблице может изменить смысл LEFT JOIN?",
+      "description": "Объяснить и применить правило с учётом его границ: ON определяет совпадения, WHERE фильтрует уже полученные строки.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "sql-join-duplicates",
+      "title": "Почему после соединения двух связей один ко многим завышается SUM?",
+      "description": "Объяснить и применить правило с учётом его границ: Перед SUM определите, одну какую сущность представляет строка.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": []
+    }
+  ],
+  "questions": [
+    {
+      "id": "sql-inner-left",
+      "title": "Чем INNER JOIN отличается от LEFT JOIN?",
+      "topic": "SQL",
+      "difficulty": "Базовый",
+      "summary": "Совпадающие строки и сохранение левой стороны.",
+      "code": "SELECT u.id, o.id AS order_id\nFROM users u\nLEFT JOIN orders o ON o.user_id = u.id;",
+      "takeaway": "Тип JOIN определяет сохранение строк, а ключи - число совпадений.",
+      "moduleId": "sql",
+      "order": 0,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Тип JOIN определяет сохранение строк, а ключи - число совпадений.",
+        "keywords": ["SQL", "Соединение таблиц"],
+        "kind": "explanation",
+        "reviewStatus": "imported",
+        "goalIds": ["core", "sql-inner-left"],
+        "relatedQuestionIds": [],
+        "priority": "core",
+        "sourceRefs": []
+      },
+      "answerFile": "answers/sql/sql-inner-left.md"
+    },
+    {
+      "id": "sql-left-filter",
+      "title": "Почему WHERE по правой таблице может изменить смысл LEFT JOIN?",
+      "topic": "SQL",
+      "difficulty": "Средний",
+      "summary": "Место фильтра и строки без совпадения.",
+      "code": "SELECT u.id, o.id AS paid_order_id\nFROM users u\nLEFT JOIN orders o ON o.user_id = u.id AND o.status = 'paid';",
+      "takeaway": "ON определяет совпадения, WHERE фильтрует уже полученные строки.",
+      "moduleId": "sql",
+      "order": 1,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: ON определяет совпадения, WHERE фильтрует уже полученные строки.",
+        "keywords": ["SQL", "Соединение таблиц"],
+        "kind": "explanation",
+        "reviewStatus": "imported",
+        "goalIds": ["core", "sql-left-filter"],
+        "relatedQuestionIds": [],
+        "priority": "core",
+        "sourceRefs": []
+      },
+      "answerFile": "answers/sql/sql-left-filter.md"
+    },
+    {
+      "id": "sql-join-duplicates",
+      "title": "Почему после соединения двух связей один ко многим завышается SUM?",
+      "topic": "SQL",
+      "difficulty": "Средний",
+      "summary": "Размножение строк и уровень агрегации.",
+      "takeaway": "Перед SUM определите, одну какую сущность представляет строка.",
+      "moduleId": "sql",
+      "order": 2,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Перед SUM определите, одну какую сущность представляет строка.",
+        "keywords": ["SQL", "Соединение таблиц"],
+        "kind": "explanation",
+        "reviewStatus": "imported",
+        "goalIds": ["core", "sql-join-duplicates"],
+        "relatedQuestionIds": [],
+        "priority": "core",
+        "sourceRefs": []
+      },
+      "answerFile": "answers/sql/sql-join-duplicates.md"
+    }
+  ]
+}

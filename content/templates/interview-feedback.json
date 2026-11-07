@@ -1,0 +1,9 @@
+{
+  "id": "replace-with-observation-id",
+  "date": "2026-11-07",
+  "sectionId": "javascript",
+  "profileId": "frontend-middle",
+  "questionIds": ["closures"],
+  "observation": "Заменить реальным наблюдением с собеседования: что спросили и где возникло затруднение.",
+  "nextAction": "Уточнить объяснение или создать отдельный навык, если текущий вопрос его не раскрывает."
+}

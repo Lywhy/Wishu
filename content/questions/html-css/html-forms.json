@@ -1,0 +1,118 @@
+{
+  "$schema": "../question-bundle.schema.json",
+  "sectionId": "html-css",
+  "subsectionId": "html-forms",
+  "scope": "Payload формы, нативная валидация, автозаполнение и способы ввода.",
+  "coverageGoals": [
+    {
+      "id": "core",
+      "title": "Формы и ввод данных",
+      "description": "Обзор и взаимосвязи навыков: Payload формы, нативная валидация, автозаполнение и способы ввода.",
+      "requiredDifficulties": [],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": ["html-form-entry-list", "html-native-validation", "html-input-hints"]
+    },
+    {
+      "id": "html-form-entry-list",
+      "title": "Какие поля попадают в данные формы и почему disabled отличается от readonly?",
+      "description": "Объяснить и применить правило с учётом его границ: Payload определяется правилами контролов, а не всем текстом, видимым внутри form.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "html-native-validation",
+      "title": "Что проверяет встроенная валидация формы и где нужны собственные проверки?",
+      "description": "Объяснить и применить правило с учётом его границ: Нативная проверка помогает пользователю, но не заменяет проверку данных и правил на сервере.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "html-input-hints",
+      "title": "Чем различаются type, inputmode и autocomplete у поля?",
+      "description": "Объяснить и применить правило с учётом его границ: Описывайте назначение и способ ввода, не превращая строковый идентификатор в арифметическое число.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": []
+    }
+  ],
+  "questions": [
+    {
+      "id": "html-form-entry-list",
+      "title": "Какие поля попадают в данные формы и почему disabled отличается от readonly?",
+      "summary": "Name, состояние контролов, повторяющиеся имена и данные submit-кнопки.",
+      "code": "<form method=\"post\">\n  <input name=\"account\" value=\"u1\" readonly aria-label=\"Аккаунт\">\n  <input name=\"internal\" value=\"не отправляется\" disabled aria-label=\"Служебное поле\">\n  <label><input type=\"checkbox\" name=\"topic\" value=\"react\">React</label>\n  <button type=\"submit\" name=\"intent\" value=\"save\">Сохранить</button>\n</form>",
+      "takeaway": "Payload определяется правилами контролов, а не всем текстом, видимым внутри form.",
+      "pitfall": "Заменять readonly на disabled и неожиданно терять значение при отправке.",
+      "difficulty": "Средний",
+      "topic": "HTML и CSS",
+      "moduleId": "html-css",
+      "popular": false,
+      "order": 0,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Payload определяется правилами контролов, а не всем текстом, видимым внутри form.",
+        "keywords": ["HTML и CSS", "Формы и ввод данных"],
+        "kind": "explanation",
+        "reviewStatus": "imported",
+        "goalIds": ["core", "html-form-entry-list"],
+        "relatedQuestionIds": [],
+        "priority": "core",
+        "sourceRefs": ["ref-c1cdc5505222fbc6"]
+      },
+      "answerFile": "answers/html-css/html-form-entry-list.md"
+    },
+    {
+      "id": "html-native-validation",
+      "title": "Что проверяет встроенная валидация формы и где нужны собственные проверки?",
+      "summary": "Constraint validation, checkValidity, reportValidity и обязательная серверная граница.",
+      "code": "<form>\n  <label for=\"age\">Возраст, от 18 до 120</label>\n  <input id=\"age\" name=\"age\" type=\"number\" min=\"18\" max=\"120\" required>\n  <button type=\"submit\">Продолжить</button>\n</form>",
+      "takeaway": "Нативная проверка помогает пользователю, но не заменяет проверку данных и правил на сервере.",
+      "pitfall": "Оставлять setCustomValidity с прежним сообщением после исправления значения.",
+      "difficulty": "Средний",
+      "topic": "HTML и CSS",
+      "moduleId": "html-css",
+      "popular": false,
+      "order": 1,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Нативная проверка помогает пользователю, но не заменяет проверку данных и правил на сервере.",
+        "keywords": ["HTML и CSS", "Формы и ввод данных"],
+        "kind": "explanation",
+        "reviewStatus": "imported",
+        "goalIds": ["core", "html-native-validation"],
+        "relatedQuestionIds": [],
+        "priority": "core",
+        "sourceRefs": ["ref-8dc19488153757ed"]
+      },
+      "answerFile": "answers/html-css/html-native-validation.md"
+    },
+    {
+      "id": "html-input-hints",
+      "title": "Чем различаются type, inputmode и autocomplete у поля?",
+      "summary": "Семантика значения, подсказка клавиатуры и назначение данных для автозаполнения.",
+      "code": "<label for=\"code\">Код подтверждения</label>\n<input id=\"code\" name=\"code\" type=\"text\" inputmode=\"numeric\"\n       autocomplete=\"one-time-code\" pattern=\"[0-9]{6}\" maxlength=\"6\">",
+      "takeaway": "Описывайте назначение и способ ввода, не превращая строковый идентификатор в арифметическое число.",
+      "pitfall": "Использовать type=\"number\" для любого набора цифр и считать inputmode проверкой допустимых символов.",
+      "difficulty": "Средний",
+      "topic": "HTML и CSS",
+      "moduleId": "html-css",
+      "popular": false,
+      "order": 2,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Описывайте назначение и способ ввода, не превращая строковый идентификатор в арифметическое число.",
+        "keywords": ["HTML и CSS", "Формы и ввод данных"],
+        "kind": "explanation",
+        "reviewStatus": "imported",
+        "goalIds": ["core", "html-input-hints"],
+        "relatedQuestionIds": [],
+        "priority": "core",
+        "sourceRefs": ["ref-acbab30c2f86e9e7"]
+      },
+      "answerFile": "answers/html-css/html-input-hints.md"
+    }
+  ]
+}

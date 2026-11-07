@@ -1,0 +1,286 @@
+{
+  "$schema": "../question-bundle.schema.json",
+  "sectionId": "typescript",
+  "subsectionId": "types",
+  "scope": "Примитивы, литералы, null, unknown, any, void, never и enum.",
+  "coverageGoals": [
+    {
+      "id": "core",
+      "title": "Базовые и специальные типы",
+      "description": "Обзор и взаимосвязи навыков: Примитивы, литералы, null, unknown, any, void, never и enum.",
+      "requiredDifficulties": [],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": [
+        "ts-primitive-types",
+        "ts-nullability",
+        "ts-literal-types",
+        "unknown-any",
+        "ts-void",
+        "ts-never",
+        "ts-enums",
+        "ts-empty-object-types"
+      ]
+    },
+    {
+      "id": "ts-primitive-types",
+      "title": "Какие примитивные типы описывает TypeScript и почему используют string вместо String?",
+      "description": "Объяснить и применить правило с учётом его границ: Аннотации примитивов пишут со строчной буквы и связывают с реальными возможностями JavaScript.",
+      "requiredDifficulties": ["Базовый"],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "ts-nullability",
+      "title": "Как strictNullChecks меняет работу с null и undefined?",
+      "description": "Объяснить и применить правило с учётом его границ: Возможное отсутствие нужно честно описывать и обрабатывать, а не стирать утверждением.",
+      "requiredDifficulties": ["Базовый"],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "ts-literal-types",
+      "title": "Что такое литеральный тип и как сохранить точное значение через as const?",
+      "description": "Объяснить и применить правило с учётом его границ: Литеральный тип сохраняет конкретный вариант вместо слишком общего типа.",
+      "requiredDifficulties": ["Базовый"],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "unknown-any",
+      "title": "Когда использовать unknown вместо any и чем опасно необоснованное any?",
+      "description": "Объяснить и применить правило с учётом его границ: Unknown требует доказать тип, any позволяет обойти проверку и переносит риск дальше.",
+      "requiredDifficulties": ["Базовый"],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "ts-void",
+      "title": "Что означает void в результате функции и почему callback может вернуть значение?",
+      "description": "Объяснить и применить правило с учётом его границ: Контекстный () => void позволяет игнорировать результат, а не стирает его во время выполнения.",
+      "requiredDifficulties": ["Базовый"],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "ts-never",
+      "title": "Что означает never и чем он отличается от void?",
+      "description": "Объяснить и применить правило с учётом его границ: Never означает невозможность значения, а void - неиспользуемый результат нормального завершения.",
+      "requiredDifficulties": ["Базовый"],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "ts-enums",
+      "title": "Для чего нужен enum и какие есть альтернативы?",
+      "description": "Объяснить и применить правило с учётом его границ: Enum создаёт отдельный контракт и часто runtime-код; литеральные union и as const решают близкие задачи иначе.",
+      "requiredDifficulties": ["Базовый"],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "ts-empty-object-types",
+      "title": "Чем различаются object, Object и {}?",
+      "description": "Объяснить и применить правило с учётом его границ: Выбирайте тип по допустимым значениям: {} не является контрактом пустого объекта.",
+      "requiredDifficulties": ["Базовый"],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": []
+    }
+  ],
+  "questions": [
+    {
+      "id": "ts-primitive-types",
+      "title": "Какие примитивные типы описывает TypeScript и почему используют string вместо String?",
+      "topic": "TypeScript",
+      "difficulty": "Базовый",
+      "summary": "Примитивы JavaScript, аннотации и требования runtime.",
+      "code": "const label: string = \"JS\";\nconst amount: number = 3.5;\nconst active: boolean = true;\n// В runtime с поддержкой BigInt:\nconst large: bigint = 9007199254740993n;\nconst key: symbol = Symbol(\"key\");",
+      "takeaway": "Аннотации примитивов пишут со строчной буквы и связывают с реальными возможностями JavaScript.",
+      "moduleId": "typescript",
+      "order": 0,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Аннотации примитивов пишут со строчной буквы и связывают с реальными возможностями JavaScript.",
+        "keywords": ["TypeScript", "Базовые и специальные типы"],
+        "kind": "explanation",
+        "reviewStatus": "imported",
+        "goalIds": ["core", "ts-primitive-types"],
+        "relatedQuestionIds": [],
+        "priority": "core",
+        "sourceRefs": []
+      },
+      "answerFile": "answers/typescript/ts-primitive-types.md"
+    },
+    {
+      "id": "ts-nullability",
+      "title": "Как strictNullChecks меняет работу с null и undefined?",
+      "topic": "TypeScript",
+      "difficulty": "Базовый",
+      "summary": "Явное отсутствие значения, union и проверка перед доступом.",
+      "code": "function displayName(user: { name: string } | null): string {\n  return user?.name ?? \"гость\";\n}\nfunction length(value: string | undefined): number {\n  if (value === undefined) return 0;\n  return value.length;\n}",
+      "takeaway": "Возможное отсутствие нужно честно описывать и обрабатывать, а не стирать утверждением.",
+      "moduleId": "typescript",
+      "order": 1,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Возможное отсутствие нужно честно описывать и обрабатывать, а не стирать утверждением.",
+        "keywords": ["TypeScript", "Базовые и специальные типы"],
+        "kind": "explanation",
+        "reviewStatus": "imported",
+        "goalIds": ["core", "ts-nullability"],
+        "relatedQuestionIds": [],
+        "priority": "core",
+        "sourceRefs": []
+      },
+      "answerFile": "answers/typescript/ts-nullability.md"
+    },
+    {
+      "id": "ts-literal-types",
+      "title": "Что такое литеральный тип и как сохранить точное значение через as const?",
+      "topic": "TypeScript",
+      "difficulty": "Базовый",
+      "summary": "Ограниченные значения, расширение типа и константное представление.",
+      "code": "type Status = \"loading\" | \"ready\" | \"error\";\nconst status: Status = \"ready\";\nconst response = { status: \"ready\", code: 200 } as const;\ntype ResponseStatus = typeof response.status; // \"ready\"\nconst coordinates = [10, 20] as const; // readonly [10, 20]",
+      "takeaway": "Литеральный тип сохраняет конкретный вариант вместо слишком общего типа.",
+      "moduleId": "typescript",
+      "order": 2,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Литеральный тип сохраняет конкретный вариант вместо слишком общего типа.",
+        "keywords": ["TypeScript", "Базовые и специальные типы"],
+        "kind": "explanation",
+        "reviewStatus": "imported",
+        "goalIds": ["core", "ts-literal-types"],
+        "relatedQuestionIds": [],
+        "priority": "core",
+        "sourceRefs": []
+      },
+      "answerFile": "answers/typescript/ts-literal-types.md"
+    },
+    {
+      "id": "unknown-any",
+      "title": "Когда использовать unknown вместо any и чем опасно необоснованное any?",
+      "topic": "TypeScript",
+      "difficulty": "Базовый",
+      "summary": "Границы неизвестных данных и явное отключение проверок.",
+      "code": "function format(value: unknown): string {\n  if (typeof value === \"string\") return value.trim();\n  return \"\";\n}\n// Вызов value.trim() без проверки для unknown не проходит проверку типов.",
+      "takeaway": "Unknown требует доказать тип, any позволяет обойти проверку и переносит риск дальше.",
+      "moduleId": "typescript",
+      "order": 3,
+      "popular": false,
+      "pitfall": "Считать, что приведение as проверяет внешние данные во время выполнения. Оно меняет представление типов для компилятора, а не валидирует значение.",
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Unknown требует доказать тип, any позволяет обойти проверку и переносит риск дальше.",
+        "keywords": ["TypeScript", "Базовые и специальные типы"],
+        "kind": "explanation",
+        "reviewStatus": "imported",
+        "goalIds": ["core", "unknown-any"],
+        "relatedQuestionIds": [],
+        "priority": "core",
+        "sourceRefs": []
+      },
+      "answerFile": "answers/typescript/unknown-any.md"
+    },
+    {
+      "id": "ts-void",
+      "title": "Что означает void в результате функции и почему callback может вернуть значение?",
+      "topic": "TypeScript",
+      "difficulty": "Базовый",
+      "summary": "Игнорируемый результат и отличие контекстного типа от явной аннотации.",
+      "code": "const values: number[] = [];\nconst add: (value: number) => void = (value) => values.push(value);\nconst result = add(1); // статический тип void\n// Реальный callback вернул результат push, но контракт add его не предоставляет.",
+      "takeaway": "Контекстный () => void позволяет игнорировать результат, а не стирает его во время выполнения.",
+      "moduleId": "typescript",
+      "order": 4,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Контекстный () => void позволяет игнорировать результат, а не стирает его во время выполнения.",
+        "keywords": ["TypeScript", "Базовые и специальные типы"],
+        "kind": "explanation",
+        "reviewStatus": "imported",
+        "goalIds": ["core", "ts-void"],
+        "relatedQuestionIds": [],
+        "priority": "core",
+        "sourceRefs": []
+      },
+      "answerFile": "answers/typescript/ts-void.md"
+    },
+    {
+      "id": "ts-never",
+      "title": "Что означает never и чем он отличается от void?",
+      "topic": "TypeScript",
+      "difficulty": "Базовый",
+      "summary": "Невозможное значение, незавершающийся путь и модель множеств.",
+      "code": "function fail(message: string): never {\n  throw new Error(message);\n}\ntype Possible = string | never; // string\ntype Impossible = string & number; // never\nfunction assertNever(value: never): never { return fail(\"Неизвестный вариант\"); }",
+      "takeaway": "Never означает невозможность значения, а void - неиспользуемый результат нормального завершения.",
+      "moduleId": "typescript",
+      "order": 5,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Never означает невозможность значения, а void - неиспользуемый результат нормального завершения.",
+        "keywords": ["TypeScript", "Базовые и специальные типы"],
+        "kind": "explanation",
+        "reviewStatus": "imported",
+        "goalIds": ["core", "ts-never"],
+        "relatedQuestionIds": [],
+        "priority": "core",
+        "sourceRefs": []
+      },
+      "answerFile": "answers/typescript/ts-never.md"
+    },
+    {
+      "id": "ts-enums",
+      "title": "Для чего нужен enum и какие есть альтернативы?",
+      "topic": "TypeScript",
+      "difficulty": "Базовый",
+      "summary": "Набор именованных значений, генерируемый код и литеральные варианты.",
+      "code": "enum Direction { Up = \"up\", Down = \"down\" }\nconst directions = { Up: \"up\", Down: \"down\" } as const;\ntype DirectionValue = typeof directions[keyof typeof directions];\nconst value: DirectionValue = \"up\";",
+      "takeaway": "Enum создаёт отдельный контракт и часто runtime-код; литеральные union и as const решают близкие задачи иначе.",
+      "moduleId": "typescript",
+      "order": 6,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Enum создаёт отдельный контракт и часто runtime-код; литеральные union и as const решают близкие задачи иначе.",
+        "keywords": ["TypeScript", "Базовые и специальные типы"],
+        "kind": "explanation",
+        "reviewStatus": "imported",
+        "goalIds": ["core", "ts-enums"],
+        "relatedQuestionIds": [],
+        "priority": "core",
+        "sourceRefs": []
+      },
+      "answerFile": "answers/typescript/ts-enums.md"
+    },
+    {
+      "id": "ts-empty-object-types",
+      "title": "Чем различаются object, Object и {}?",
+      "summary": "Границы типов для объектов и значений без null и undefined при strictNullChecks.",
+      "code": "const a: {} = 42 // Допустимо при strictNullChecks\nconst b: object = { name: 'Анна' }\n// const c: object = 42 // Ошибка: примитив\n// const d: {} = null // Ошибка при strictNullChecks",
+      "takeaway": "Выбирайте тип по допустимым значениям: {} не является контрактом пустого объекта.",
+      "pitfall": "Использовать {} как универсальный безопасный тип объекта или замену unknown.",
+      "difficulty": "Базовый",
+      "topic": "TypeScript",
+      "moduleId": "typescript",
+      "order": 7,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Выбирайте тип по допустимым значениям: {} не является контрактом пустого объекта.",
+        "keywords": ["TypeScript", "Базовые и специальные типы"],
+        "kind": "explanation",
+        "reviewStatus": "imported",
+        "goalIds": ["core", "ts-empty-object-types"],
+        "relatedQuestionIds": [],
+        "priority": "core",
+        "sourceRefs": ["ref-1ec6ef05cd7c0c00"]
+      },
+      "answerFile": "answers/typescript/ts-empty-object-types.md"
+    }
+  ]
+}

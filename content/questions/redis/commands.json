@@ -1,0 +1,120 @@
+{
+  "$schema": "../question-bundle.schema.json",
+  "sectionId": "redis",
+  "subsectionId": "commands",
+  "scope": "Условная запись, pipeline и транзакции.",
+  "coverageGoals": [
+    {
+      "id": "core",
+      "title": "Атомарность и пакетирование",
+      "description": "Обзор и взаимосвязи навыков: Условная запись, pipeline и транзакции.",
+      "requiredDifficulties": [],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": ["redis-set-nx", "redis-pipeline", "redis-transactions"]
+    },
+    {
+      "id": "redis-set-nx",
+      "title": "Почему SET key value NX EX лучше, чем отдельные SETNX и EXPIRE?",
+      "description": "Объяснить и применить правило с учётом его границ: Условие создания и TTL должны устанавливаться атомарно.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "redis-pipeline",
+      "title": "Чем pipeline отличается от транзакции Redis?",
+      "description": "Объяснить и применить правило с учётом его границ: Pipeline оптимизирует транспорт, а не даёт транзакционный контракт.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "redis-transactions",
+      "title": "Что гарантируют MULTI/EXEC и зачем WATCH?",
+      "description": "Объяснить и применить правило с учётом его границ: Изоляция последовательности Redis не означает SQL-подобный откат.",
+      "requiredDifficulties": ["Продвинутый"],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": []
+    }
+  ],
+  "questions": [
+    {
+      "id": "redis-set-nx",
+      "title": "Почему SET key value NX EX лучше, чем отдельные SETNX и EXPIRE?",
+      "topic": "Redis",
+      "difficulty": "Средний",
+      "summary": "Атомарное условие записи и срок жизни.",
+      "code": "SET job:42:lease unique-owner-token NX EX 30",
+      "takeaway": "Условие создания и TTL должны устанавливаться атомарно.",
+      "moduleId": "redis",
+      "order": 0,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Условие создания и TTL должны устанавливаться атомарно.",
+        "keywords": ["Redis", "Атомарность и пакетирование"],
+        "kind": "explanation",
+        "reviewStatus": "imported",
+        "goalIds": ["core", "redis-set-nx"],
+        "relatedQuestionIds": [],
+        "priority": "core",
+        "sourceRefs": []
+      },
+      "answerFile": "answers/redis/redis-set-nx.md"
+    },
+    {
+      "id": "redis-pipeline",
+      "title": "Чем pipeline отличается от транзакции Redis?",
+      "topic": "Redis",
+      "difficulty": "Средний",
+      "summary": "Экономия сетевых ожиданий и отсутствие изоляции пакета.",
+      "takeaway": "Pipeline оптимизирует транспорт, а не даёт транзакционный контракт.",
+      "moduleId": "redis",
+      "order": 1,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Pipeline оптимизирует транспорт, а не даёт транзакционный контракт.",
+        "keywords": [
+          "Redis",
+          "Атомарность и пакетирование",
+          "транзакция",
+          "транзакции",
+          "transaction"
+        ],
+        "kind": "explanation",
+        "reviewStatus": "imported",
+        "goalIds": ["core", "redis-pipeline"],
+        "relatedQuestionIds": [],
+        "priority": "core",
+        "sourceRefs": []
+      },
+      "answerFile": "answers/redis/redis-pipeline.md"
+    },
+    {
+      "id": "redis-transactions",
+      "title": "Что гарантируют MULTI/EXEC и зачем WATCH?",
+      "topic": "Redis",
+      "difficulty": "Продвинутый",
+      "summary": "Последовательное выполнение и оптимистическая проверка.",
+      "takeaway": "Изоляция последовательности Redis не означает SQL-подобный откат.",
+      "moduleId": "redis",
+      "order": 2,
+      "popular": false,
+      "pitfall": "Ожидать SQL-подобного rollback при ошибке одной команды EXEC. Выполненные команды не откатываются автоматически.",
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Изоляция последовательности Redis не означает SQL-подобный откат.",
+        "keywords": ["Redis", "Атомарность и пакетирование"],
+        "kind": "explanation",
+        "reviewStatus": "imported",
+        "goalIds": ["core", "redis-transactions"],
+        "relatedQuestionIds": [],
+        "priority": "core",
+        "sourceRefs": []
+      },
+      "answerFile": "answers/redis/redis-transactions.md"
+    }
+  ]
+}

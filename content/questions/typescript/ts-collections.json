@@ -1,0 +1,220 @@
+{
+  "$schema": "../question-bundle.schema.json",
+  "sectionId": "typescript",
+  "subsectionId": "ts-collections",
+  "scope": "Типы элементов, readonly, позиции кортежа, Set и Map.",
+  "coverageGoals": [
+    {
+      "id": "core",
+      "title": "Массивы, кортежи и коллекции",
+      "description": "Обзор и взаимосвязи навыков: Типы элементов, readonly, позиции кортежа, Set и Map.",
+      "requiredDifficulties": [],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": [
+        "ts-array-types",
+        "ts-readonly-arrays",
+        "ts-tuples",
+        "ts-set-map",
+        "ts-variadic-tuples",
+        "ts-nonempty-array"
+      ]
+    },
+    {
+      "id": "ts-array-types",
+      "title": "Как типизировать обычный, смешанный и двумерный массив?",
+      "description": "Объяснить и применить правило с учётом его границ: Тип элемента и вложенность массива не являются гарантией его длины и формы матрицы.",
+      "requiredDifficulties": ["Базовый"],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "ts-readonly-arrays",
+      "title": "Чем readonly T[] и ReadonlyArray<T> отличаются от изменяемого массива?",
+      "description": "Объяснить и применить правило с учётом его границ: Readonly-массив ограничивает доступ через тип, а не замораживает общий объект.",
+      "requiredDifficulties": ["Базовый"],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "ts-tuples",
+      "title": "Что такое кортеж и чем он отличается от массива?",
+      "description": "Объяснить и применить правило с учётом его границ: Кортеж описывает позиции и их связь, массив - общий тип произвольных элементов.",
+      "requiredDifficulties": ["Базовый"],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "ts-set-map",
+      "title": "Как типизировать Set и Map и почему важен тип ключа?",
+      "description": "Объяснить и применить правило с учётом его границ: Generics коллекций задают контракт элементов, но отсутствие записи остаётся частью чтения Map.",
+      "requiredDifficulties": ["Базовый"],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "ts-variadic-tuples",
+      "title": "Как variadic tuple types сохраняют позиции при объединении аргументов?",
+      "description": "Объяснить и применить правило с учётом его границ: Кортеж сохраняет отношения между позициями, пока информация о них есть во входном типе.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "ts-nonempty-array",
+      "title": "Как выразить непустой массив и подтвердить это во время выполнения?",
+      "description": "Объяснить и применить правило с учётом его границ: Минимальную длину можно выразить кортежем, но реальный вход всё равно нужно проверить.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": []
+    }
+  ],
+  "questions": [
+    {
+      "id": "ts-array-types",
+      "title": "Как типизировать обычный, смешанный и двумерный массив?",
+      "topic": "TypeScript",
+      "difficulty": "Базовый",
+      "summary": "Синтаксис T[], Array<T>, union элементов и вложенные массивы.",
+      "code": "const names: string[] = [\"Аня\"];\nconst sameSyntax: Array<string> = names;\nconst mixed: (string | number)[] = [\"JS\", 42];\nconst matrix: number[][] = [[1, 2], [3]];\n// Неодинаковая длина строк не нарушает number[][].",
+      "takeaway": "Тип элемента и вложенность массива не являются гарантией его длины и формы матрицы.",
+      "moduleId": "typescript",
+      "order": 0,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Тип элемента и вложенность массива не являются гарантией его длины и формы матрицы.",
+        "keywords": ["TypeScript", "Массивы, кортежи и коллекции"],
+        "kind": "explanation",
+        "reviewStatus": "imported",
+        "goalIds": ["core", "ts-array-types"],
+        "relatedQuestionIds": [],
+        "priority": "core",
+        "sourceRefs": []
+      },
+      "answerFile": "answers/typescript/ts-array-types.md"
+    },
+    {
+      "id": "ts-readonly-arrays",
+      "title": "Чем readonly T[] и ReadonlyArray<T> отличаются от изменяемого массива?",
+      "topic": "TypeScript",
+      "difficulty": "Базовый",
+      "summary": "Контракт чтения, допустимые методы и поверхностность ограничения.",
+      "code": "function total(values: readonly number[]): number {\n  return values.reduce((sum, value) => sum + value, 0);\n}\nconst values: ReadonlyArray<number> = [1, 2];\nconst copy: number[] = [...values];\ncopy.push(3);\ntotal(values); // 3",
+      "takeaway": "Readonly-массив ограничивает доступ через тип, а не замораживает общий объект.",
+      "moduleId": "typescript",
+      "order": 1,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Readonly-массив ограничивает доступ через тип, а не замораживает общий объект.",
+        "keywords": ["TypeScript", "Массивы, кортежи и коллекции"],
+        "kind": "explanation",
+        "reviewStatus": "imported",
+        "goalIds": ["core", "ts-readonly-arrays"],
+        "relatedQuestionIds": [],
+        "priority": "core",
+        "sourceRefs": []
+      },
+      "answerFile": "answers/typescript/ts-readonly-arrays.md"
+    },
+    {
+      "id": "ts-tuples",
+      "title": "Что такое кортеж и чем он отличается от массива?",
+      "topic": "TypeScript",
+      "difficulty": "Базовый",
+      "summary": "Типы по позициям, известная длина, optional и rest.",
+      "code": "type Entry = [name: string, score: number];\nconst entry: Entry = [\"Аня\", 10];\nconst name = entry[0]; // string\nconst pair = [10, 20] as const; // readonly [10, 20]\ntype Log = [message: string, ...codes: number[]];",
+      "takeaway": "Кортеж описывает позиции и их связь, массив - общий тип произвольных элементов.",
+      "moduleId": "typescript",
+      "order": 2,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Кортеж описывает позиции и их связь, массив - общий тип произвольных элементов.",
+        "keywords": ["TypeScript", "Массивы, кортежи и коллекции"],
+        "kind": "explanation",
+        "reviewStatus": "imported",
+        "goalIds": ["core", "ts-tuples"],
+        "relatedQuestionIds": [],
+        "priority": "core",
+        "sourceRefs": []
+      },
+      "answerFile": "answers/typescript/ts-tuples.md"
+    },
+    {
+      "id": "ts-set-map",
+      "title": "Как типизировать Set и Map и почему важен тип ключа?",
+      "topic": "TypeScript",
+      "difficulty": "Базовый",
+      "summary": "Параметры коллекций, вывод и результат get.",
+      "code": "const ids = new Set<number>([1, 2]);\nconst users = new Map<number, { name: string }>();\nusers.set(1, { name: \"Аня\" });\nconst name: string = users.get(1)?.name ?? \"нет пользователя\";\n// users.set(\"1\", ...) не соответствует типу ключа number.",
+      "takeaway": "Generics коллекций задают контракт элементов, но отсутствие записи остаётся частью чтения Map.",
+      "moduleId": "typescript",
+      "order": 3,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Generics коллекций задают контракт элементов, но отсутствие записи остаётся частью чтения Map.",
+        "keywords": ["TypeScript", "Массивы, кортежи и коллекции"],
+        "kind": "explanation",
+        "reviewStatus": "imported",
+        "goalIds": ["core", "ts-set-map"],
+        "relatedQuestionIds": [],
+        "priority": "core",
+        "sourceRefs": []
+      },
+      "answerFile": "answers/typescript/ts-set-map.md"
+    },
+    {
+      "id": "ts-variadic-tuples",
+      "title": "Как variadic tuple types сохраняют позиции при объединении аргументов?",
+      "summary": "Типизация операций над наборами аргументов без потери порядка и длины.",
+      "code": "type Concat<A extends readonly unknown[], B extends readonly unknown[]> =\n  readonly [...A, ...B]\n\ntype Args = Concat<readonly [name: string], readonly [count: number, enabled: boolean]>\n// readonly [name: string, count: number, enabled: boolean]",
+      "takeaway": "Кортеж сохраняет отношения между позициями, пока информация о них есть во входном типе.",
+      "pitfall": "Ожидать восстановления точной длины после передачи обычного string[] вместо кортежа.",
+      "difficulty": "Средний",
+      "topic": "TypeScript",
+      "moduleId": "typescript",
+      "order": 4,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Кортеж сохраняет отношения между позициями, пока информация о них есть во входном типе.",
+        "keywords": ["TypeScript", "Массивы, кортежи и коллекции"],
+        "kind": "explanation",
+        "reviewStatus": "imported",
+        "goalIds": ["core", "ts-variadic-tuples"],
+        "relatedQuestionIds": [],
+        "priority": "core",
+        "sourceRefs": ["ref-125ea5f1b7c79b97"]
+      },
+      "answerFile": "answers/typescript/ts-variadic-tuples.md"
+    },
+    {
+      "id": "ts-nonempty-array",
+      "title": "Как выразить непустой массив и подтвердить это во время выполнения?",
+      "summary": "Моделирование хотя бы одного элемента без безусловного non-null assertion.",
+      "code": "function isNonEmpty<T>(items: readonly T[]): items is readonly [T, ...T[]] {\n  return items.length > 0\n}\nfunction firstLabel(items: readonly string[]) {\n  if (!isNonEmpty(items)) return 'Нет элементов'\n  return items[0].toUpperCase()\n}",
+      "takeaway": "Минимальную длину можно выразить кортежем, но реальный вход всё равно нужно проверить.",
+      "pitfall": "Подменять проверку длины приведением items as [T, ...T[]].",
+      "difficulty": "Средний",
+      "topic": "TypeScript",
+      "moduleId": "typescript",
+      "order": 5,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Минимальную длину можно выразить кортежем, но реальный вход всё равно нужно проверить.",
+        "keywords": ["TypeScript", "Массивы, кортежи и коллекции"],
+        "kind": "explanation",
+        "reviewStatus": "imported",
+        "goalIds": ["core", "ts-nonempty-array"],
+        "relatedQuestionIds": [],
+        "priority": "core",
+        "sourceRefs": ["ref-e93a21d416404bfe"]
+      },
+      "answerFile": "answers/typescript/ts-nonempty-array.md"
+    }
+  ]
+}

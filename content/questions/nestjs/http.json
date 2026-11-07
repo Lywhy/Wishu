@@ -1,0 +1,113 @@
+{
+  "$schema": "../question-bundle.schema.json",
+  "sectionId": "nestjs",
+  "subsectionId": "http",
+  "scope": "Контроллеры, DTO и ошибки.",
+  "coverageGoals": [
+    {
+      "id": "core",
+      "title": "HTTP и входные данные",
+      "description": "Обзор и взаимосвязи навыков: Контроллеры, DTO и ошибки.",
+      "requiredDifficulties": [],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": ["nest-controller-service", "nest-validation-dto", "nest-exception-filter"]
+    },
+    {
+      "id": "nest-controller-service",
+      "title": "Почему контроллер стоит отделять от бизнес-логики сервиса?",
+      "description": "Объяснить и применить правило с учётом его границ: Контроллер адаптирует транспорт, сервис выполняет сценарий.",
+      "requiredDifficulties": ["Базовый"],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "nest-validation-dto",
+      "title": "Почему DTO-интерфейс не заменяет ValidationPipe?",
+      "description": "Объяснить и применить правило с учётом его границ: Тип DTO и проверка фактического HTTP-входа решают разные задачи.",
+      "requiredDifficulties": ["Базовый"],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "nest-exception-filter",
+      "title": "Для чего нужен Exception Filter?",
+      "description": "Объяснить и применить правило с учётом его границ: Фильтр определяет границу представления ошибки, а не исправляет её причину.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": []
+    }
+  ],
+  "questions": [
+    {
+      "id": "nest-controller-service",
+      "title": "Почему контроллер стоит отделять от бизнес-логики сервиса?",
+      "topic": "NestJS",
+      "difficulty": "Базовый",
+      "summary": "HTTP-адаптер и правила предметной области.",
+      "takeaway": "Контроллер адаптирует транспорт, сервис выполняет сценарий.",
+      "moduleId": "nestjs",
+      "order": 0,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Контроллер адаптирует транспорт, сервис выполняет сценарий.",
+        "keywords": ["NestJS", "HTTP и входные данные"],
+        "kind": "explanation",
+        "reviewStatus": "imported",
+        "goalIds": ["core", "nest-controller-service"],
+        "relatedQuestionIds": [],
+        "priority": "core",
+        "sourceRefs": []
+      },
+      "answerFile": "answers/nestjs/nest-controller-service.md"
+    },
+    {
+      "id": "nest-validation-dto",
+      "title": "Почему DTO-интерфейс не заменяет ValidationPipe?",
+      "topic": "NestJS",
+      "difficulty": "Базовый",
+      "summary": "Проверка недоверенных данных во время выполнения.",
+      "takeaway": "Тип DTO и проверка фактического HTTP-входа решают разные задачи.",
+      "moduleId": "nestjs",
+      "order": 1,
+      "popular": false,
+      "code": "import { IsString, MaxLength } from \"class-validator\"\n\nexport class CreateNoteDto {\n  @IsString()\n  @MaxLength(200)\n  title!: string\n}\n// ValidationPipe подключается отдельно на уровне приложения или маршрута.",
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Тип DTO и проверка фактического HTTP-входа решают разные задачи.",
+        "keywords": ["NestJS", "HTTP и входные данные"],
+        "kind": "explanation",
+        "reviewStatus": "imported",
+        "goalIds": ["core", "nest-validation-dto"],
+        "relatedQuestionIds": [],
+        "priority": "core",
+        "sourceRefs": []
+      },
+      "answerFile": "answers/nestjs/nest-validation-dto.md"
+    },
+    {
+      "id": "nest-exception-filter",
+      "title": "Для чего нужен Exception Filter?",
+      "topic": "NestJS",
+      "difficulty": "Средний",
+      "summary": "Перевод исключения в согласованный ответ.",
+      "takeaway": "Фильтр определяет границу представления ошибки, а не исправляет её причину.",
+      "moduleId": "nestjs",
+      "order": 2,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Фильтр определяет границу представления ошибки, а не исправляет её причину.",
+        "keywords": ["NestJS", "HTTP и входные данные"],
+        "kind": "explanation",
+        "reviewStatus": "imported",
+        "goalIds": ["core", "nest-exception-filter"],
+        "relatedQuestionIds": [],
+        "priority": "core",
+        "sourceRefs": []
+      },
+      "answerFile": "answers/nestjs/nest-exception-filter.md"
+    }
+  ]
+}

@@ -1,0 +1,112 @@
+{
+  "$schema": "../question-bundle.schema.json",
+  "sectionId": "seo",
+  "subsectionId": "measurement",
+  "scope": "Структурированные данные и Search Console.",
+  "coverageGoals": [
+    {
+      "id": "core",
+      "title": "Разметка и диагностика",
+      "description": "Обзор и взаимосвязи навыков: Структурированные данные и Search Console.",
+      "requiredDifficulties": [],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": ["seo-structured-data", "seo-search-console", "seo-performance"]
+    },
+    {
+      "id": "seo-structured-data",
+      "title": "Что дают структурированные данные и гарантируют ли они расширенный результат?",
+      "description": "Объяснить и применить правило с учётом его границ: Размечайте реальные данные, не обещая гарантированный вид результата.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "seo-search-console",
+      "title": "Как исследовать страницу, которая не появляется в Google?",
+      "description": "Объяснить и применить правило с учётом его границ: Диагностируйте конкретный URL и различайте текущий ответ и состояние индекса.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "seo-performance",
+      "title": "Почему хороший показатель скорости не гарантирует высокую позицию в поиске?",
+      "description": "Объяснить и применить правило с учётом его границ: Скорость дополняет полезный контент, а не заменяет его.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": []
+    }
+  ],
+  "questions": [
+    {
+      "id": "seo-structured-data",
+      "title": "Что дают структурированные данные и гарантируют ли они расширенный результат?",
+      "topic": "SEO",
+      "difficulty": "Средний",
+      "summary": "Машиночитаемое описание содержимого.",
+      "takeaway": "Размечайте реальные данные, не обещая гарантированный вид результата.",
+      "moduleId": "seo",
+      "order": 0,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Размечайте реальные данные, не обещая гарантированный вид результата.",
+        "keywords": ["SEO", "Разметка и диагностика"],
+        "kind": "explanation",
+        "reviewStatus": "imported",
+        "goalIds": ["core", "seo-structured-data"],
+        "relatedQuestionIds": [],
+        "priority": "core",
+        "sourceRefs": []
+      },
+      "answerFile": "answers/seo/seo-structured-data.md"
+    },
+    {
+      "id": "seo-search-console",
+      "title": "Как исследовать страницу, которая не появляется в Google?",
+      "topic": "SEO",
+      "difficulty": "Средний",
+      "summary": "Проверка URL, индексации и фактического ответа.",
+      "takeaway": "Диагностируйте конкретный URL и различайте текущий ответ и состояние индекса.",
+      "moduleId": "seo",
+      "order": 1,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Диагностируйте конкретный URL и различайте текущий ответ и состояние индекса.",
+        "keywords": ["SEO", "Разметка и диагностика"],
+        "kind": "explanation",
+        "reviewStatus": "imported",
+        "goalIds": ["core", "seo-search-console"],
+        "relatedQuestionIds": [],
+        "priority": "core",
+        "sourceRefs": []
+      },
+      "answerFile": "answers/seo/seo-search-console.md"
+    },
+    {
+      "id": "seo-performance",
+      "title": "Почему хороший показатель скорости не гарантирует высокую позицию в поиске?",
+      "topic": "SEO",
+      "difficulty": "Средний",
+      "summary": "Пользовательский опыт и релевантность.",
+      "takeaway": "Скорость дополняет полезный контент, а не заменяет его.",
+      "moduleId": "seo",
+      "order": 2,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Скорость дополняет полезный контент, а не заменяет его.",
+        "keywords": ["SEO", "Разметка и диагностика"],
+        "kind": "explanation",
+        "reviewStatus": "imported",
+        "goalIds": ["core", "seo-performance"],
+        "relatedQuestionIds": [],
+        "priority": "core",
+        "sourceRefs": []
+      },
+      "answerFile": "answers/seo/seo-performance.md"
+    }
+  ]
+}

@@ -1,0 +1,115 @@
+{
+  "$schema": "../question-bundle.schema.json",
+  "sectionId": "redis",
+  "subsectionId": "types",
+  "scope": "Строки, hash и sorted set.",
+  "coverageGoals": [
+    {
+      "id": "core",
+      "title": "Типы данных",
+      "description": "Обзор и взаимосвязи навыков: Строки, hash и sorted set.",
+      "requiredDifficulties": [],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": ["redis-string", "redis-hash", "redis-sorted-set"]
+    },
+    {
+      "id": "redis-string",
+      "title": "Что хранит Redis String и почему это не только текст?",
+      "description": "Объяснить и применить правило с учётом его границ: Выбирайте команду по операции над значением, а не только по его формату.",
+      "requiredDifficulties": ["Базовый"],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "redis-hash",
+      "title": "Когда Redis Hash удобнее JSON-строки?",
+      "description": "Объяснить и применить правило с учётом его границ: Hash полезен для адресного доступа к полям с понятной схемой.",
+      "requiredDifficulties": ["Базовый"],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "redis-sorted-set",
+      "title": "Как Sorted Set подходит для таблицы рейтинга?",
+      "description": "Объяснить и применить правило с учётом его границ: Sorted Set сочетает уникальность участника и порядок по оценке.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": []
+    }
+  ],
+  "questions": [
+    {
+      "id": "redis-string",
+      "title": "Что хранит Redis String и почему это не только текст?",
+      "topic": "Redis",
+      "difficulty": "Базовый",
+      "summary": "Байтовое значение, сериализация и счётчики.",
+      "code": "SET views:article:42 0\nINCR views:article:42\nGET views:article:42",
+      "takeaway": "Выбирайте команду по операции над значением, а не только по его формату.",
+      "moduleId": "redis",
+      "order": 0,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Выбирайте команду по операции над значением, а не только по его формату.",
+        "keywords": ["Redis", "Типы данных"],
+        "kind": "explanation",
+        "reviewStatus": "imported",
+        "goalIds": ["core", "redis-string"],
+        "relatedQuestionIds": [],
+        "priority": "core",
+        "sourceRefs": []
+      },
+      "answerFile": "answers/redis/redis-string.md"
+    },
+    {
+      "id": "redis-hash",
+      "title": "Когда Redis Hash удобнее JSON-строки?",
+      "topic": "Redis",
+      "difficulty": "Базовый",
+      "summary": "Обновление отдельных полей объекта.",
+      "code": "HSET user:42 name \"Anna\" role \"reader\"\nHGET user:42 name",
+      "takeaway": "Hash полезен для адресного доступа к полям с понятной схемой.",
+      "moduleId": "redis",
+      "order": 1,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Hash полезен для адресного доступа к полям с понятной схемой.",
+        "keywords": ["Redis", "Типы данных"],
+        "kind": "explanation",
+        "reviewStatus": "imported",
+        "goalIds": ["core", "redis-hash"],
+        "relatedQuestionIds": [],
+        "priority": "core",
+        "sourceRefs": []
+      },
+      "answerFile": "answers/redis/redis-hash.md"
+    },
+    {
+      "id": "redis-sorted-set",
+      "title": "Как Sorted Set подходит для таблицы рейтинга?",
+      "topic": "Redis",
+      "difficulty": "Средний",
+      "summary": "Уникальный участник, score и упорядоченная выборка.",
+      "code": "ZADD leaderboard 120 player:1 150 player:2\nZRANGE leaderboard 0 9 REV WITHSCORES",
+      "takeaway": "Sorted Set сочетает уникальность участника и порядок по оценке.",
+      "moduleId": "redis",
+      "order": 2,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Sorted Set сочетает уникальность участника и порядок по оценке.",
+        "keywords": ["Redis", "Типы данных"],
+        "kind": "explanation",
+        "reviewStatus": "imported",
+        "goalIds": ["core", "redis-sorted-set"],
+        "relatedQuestionIds": [],
+        "priority": "core",
+        "sourceRefs": []
+      },
+      "answerFile": "answers/redis/redis-sorted-set.md"
+    }
+  ]
+}

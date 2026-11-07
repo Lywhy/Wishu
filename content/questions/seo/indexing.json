@@ -1,0 +1,113 @@
+{
+  "$schema": "../question-bundle.schema.json",
+  "sectionId": "seo",
+  "subsectionId": "indexing",
+  "scope": "Доступность страниц для поискового робота.",
+  "coverageGoals": [
+    {
+      "id": "core",
+      "title": "Обход и индексация",
+      "description": "Обзор и взаимосвязи навыков: Доступность страниц для поискового робота.",
+      "requiredDifficulties": [],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": ["seo-crawl-index", "seo-robots-noindex", "seo-javascript"]
+    },
+    {
+      "id": "seo-crawl-index",
+      "title": "Чем обход страницы отличается от её индексации?",
+      "description": "Объяснить и применить правило с учётом его границ: Возможность загрузить страницу не равна присутствию в поиске.",
+      "requiredDifficulties": ["Базовый"],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "seo-robots-noindex",
+      "title": "Чем robots.txt отличается от noindex?",
+      "description": "Объяснить и применить правило с учётом его границ: Ограничение обхода, запрет индексации и защита доступа - разные задачи.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "seo-javascript",
+      "title": "Какие SEO-риски возникают у сайта, который показывает контент только после JavaScript?",
+      "description": "Объяснить и применить правило с учётом его границ: Проверяйте представление, которое действительно получает робот.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": []
+    }
+  ],
+  "questions": [
+    {
+      "id": "seo-crawl-index",
+      "title": "Чем обход страницы отличается от её индексации?",
+      "topic": "SEO",
+      "difficulty": "Базовый",
+      "summary": "Обнаружение, загрузка и включение в поисковый индекс.",
+      "takeaway": "Возможность загрузить страницу не равна присутствию в поиске.",
+      "moduleId": "seo",
+      "order": 0,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Возможность загрузить страницу не равна присутствию в поиске.",
+        "keywords": ["SEO", "Обход и индексация"],
+        "kind": "explanation",
+        "reviewStatus": "imported",
+        "goalIds": ["core", "seo-crawl-index"],
+        "relatedQuestionIds": [],
+        "priority": "core",
+        "sourceRefs": []
+      },
+      "answerFile": "answers/seo/seo-crawl-index.md"
+    },
+    {
+      "id": "seo-robots-noindex",
+      "title": "Чем robots.txt отличается от noindex?",
+      "topic": "SEO",
+      "difficulty": "Средний",
+      "summary": "Ограничение обхода и запрет включения в индекс.",
+      "takeaway": "Ограничение обхода, запрет индексации и защита доступа - разные задачи.",
+      "moduleId": "seo",
+      "order": 1,
+      "popular": false,
+      "pitfall": "Использовать robots.txt как защиту приватного содержимого или одновременно запрещать обход и ожидать чтения noindex. Доступ защищают авторизацией.",
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Ограничение обхода, запрет индексации и защита доступа - разные задачи.",
+        "keywords": ["SEO", "Обход и индексация"],
+        "kind": "explanation",
+        "reviewStatus": "imported",
+        "goalIds": ["core", "seo-robots-noindex"],
+        "relatedQuestionIds": [],
+        "priority": "core",
+        "sourceRefs": []
+      },
+      "answerFile": "answers/seo/seo-robots-noindex.md"
+    },
+    {
+      "id": "seo-javascript",
+      "title": "Какие SEO-риски возникают у сайта, который показывает контент только после JavaScript?",
+      "topic": "SEO",
+      "difficulty": "Средний",
+      "summary": "Рендеринг роботом и доступность основного содержимого.",
+      "takeaway": "Проверяйте представление, которое действительно получает робот.",
+      "moduleId": "seo",
+      "order": 2,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Проверяйте представление, которое действительно получает робот.",
+        "keywords": ["SEO", "Обход и индексация"],
+        "kind": "explanation",
+        "reviewStatus": "imported",
+        "goalIds": ["core", "seo-javascript"],
+        "relatedQuestionIds": [],
+        "priority": "core",
+        "sourceRefs": []
+      },
+      "answerFile": "answers/seo/seo-javascript.md"
+    }
+  ]
+}

@@ -1,0 +1,112 @@
+{
+  "$schema": "../question-bundle.schema.json",
+  "sectionId": "docker",
+  "subsectionId": "build",
+  "scope": "Кеш, стадии и build secrets.",
+  "coverageGoals": [
+    {
+      "id": "core",
+      "title": "Сборка образа",
+      "description": "Обзор и взаимосвязи навыков: Кеш, стадии и build secrets.",
+      "requiredDifficulties": [],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": ["docker-build-cache", "docker-multi-stage", "docker-build-secrets"]
+    },
+    {
+      "id": "docker-build-cache",
+      "title": "Почему зависимости часто копируют и устанавливают до исходников?",
+      "description": "Объяснить и применить правило с учётом его границ: Размещайте редкие и дорогие изменения раньше частых.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "docker-multi-stage",
+      "title": "Что даёт multi-stage build?",
+      "description": "Объяснить и применить правило с учётом его границ: Итоговому образу нужны runtime-артефакты, а не весь build toolchain.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "docker-build-secrets",
+      "title": "Почему ARG и ENV не подходят для приватного токена сборки?",
+      "description": "Объяснить и применить правило с учётом его границ: Секрет сборки должен быть временным входом конкретного шага.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": []
+    }
+  ],
+  "questions": [
+    {
+      "id": "docker-build-cache",
+      "title": "Почему зависимости часто копируют и устанавливают до исходников?",
+      "topic": "Docker",
+      "difficulty": "Средний",
+      "summary": "Инвалидирование кеша шагов сборки.",
+      "takeaway": "Размещайте редкие и дорогие изменения раньше частых.",
+      "moduleId": "docker",
+      "order": 0,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Размещайте редкие и дорогие изменения раньше частых.",
+        "keywords": ["Docker", "Сборка образа"],
+        "kind": "explanation",
+        "reviewStatus": "imported",
+        "goalIds": ["core", "docker-build-cache"],
+        "relatedQuestionIds": [],
+        "priority": "core",
+        "sourceRefs": []
+      },
+      "answerFile": "answers/docker/docker-build-cache.md"
+    },
+    {
+      "id": "docker-multi-stage",
+      "title": "Что даёт multi-stage build?",
+      "topic": "Docker",
+      "difficulty": "Средний",
+      "summary": "Разделение инструментов сборки и runtime.",
+      "takeaway": "Итоговому образу нужны runtime-артефакты, а не весь build toolchain.",
+      "moduleId": "docker",
+      "order": 1,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Итоговому образу нужны runtime-артефакты, а не весь build toolchain.",
+        "keywords": ["Docker", "Сборка образа"],
+        "kind": "explanation",
+        "reviewStatus": "imported",
+        "goalIds": ["core", "docker-multi-stage"],
+        "relatedQuestionIds": [],
+        "priority": "core",
+        "sourceRefs": []
+      },
+      "answerFile": "answers/docker/docker-multi-stage.md"
+    },
+    {
+      "id": "docker-build-secrets",
+      "title": "Почему ARG и ENV не подходят для приватного токена сборки?",
+      "topic": "Docker",
+      "difficulty": "Средний",
+      "summary": "Доступность значения в метаданных и слоях.",
+      "takeaway": "Секрет сборки должен быть временным входом конкретного шага.",
+      "moduleId": "docker",
+      "order": 2,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Секрет сборки должен быть временным входом конкретного шага.",
+        "keywords": ["Docker", "Сборка образа"],
+        "kind": "explanation",
+        "reviewStatus": "imported",
+        "goalIds": ["core", "docker-build-secrets"],
+        "relatedQuestionIds": [],
+        "priority": "core",
+        "sourceRefs": []
+      },
+      "answerFile": "answers/docker/docker-build-secrets.md"
+    }
+  ]
+}

@@ -1,0 +1,113 @@
+{
+  "$schema": "../question-bundle.schema.json",
+  "sectionId": "nextjs",
+  "subsectionId": "responses",
+  "scope": "Route Handlers, ошибки и метаданные.",
+  "coverageGoals": [
+    {
+      "id": "core",
+      "title": "HTTP и отображение",
+      "description": "Обзор и взаимосвязи навыков: Route Handlers, ошибки и метаданные.",
+      "requiredDifficulties": [],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": ["next-route-handler", "next-route-errors", "next-metadata"]
+    },
+    {
+      "id": "next-route-handler",
+      "title": "Для чего нужен route.ts и как он отличается от page.tsx?",
+      "description": "Объяснить и применить правило с учётом его границ: Выбирайте route для HTTP-контракта, page - для интерфейса.",
+      "requiredDifficulties": ["Базовый"],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "next-route-errors",
+      "title": "Чем error.tsx отличается от not-found.tsx?",
+      "description": "Объяснить и применить правило с учётом его границ: Различайте отсутствие сущности, ожидаемую ошибку и аварийный сбой.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "next-metadata",
+      "title": "Когда использовать metadata и generateMetadata?",
+      "description": "Объяснить и применить правило с учётом его границ: Метаданные маршрута должны быть согласованы с его реальными данными.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": []
+    }
+  ],
+  "questions": [
+    {
+      "id": "next-route-handler",
+      "title": "Для чего нужен route.ts и как он отличается от page.tsx?",
+      "topic": "Next.js",
+      "difficulty": "Базовый",
+      "summary": "HTTP-ответ вместо компонента страницы.",
+      "takeaway": "Выбирайте route для HTTP-контракта, page - для интерфейса.",
+      "moduleId": "nextjs",
+      "order": 0,
+      "popular": false,
+      "code": "// app/api/health/route.ts\nexport async function GET() {\n  return Response.json({ status: \"ok\" })\n}",
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Выбирайте route для HTTP-контракта, page - для интерфейса.",
+        "keywords": ["Next.js", "HTTP и отображение"],
+        "kind": "explanation",
+        "reviewStatus": "imported",
+        "goalIds": ["core", "next-route-handler"],
+        "relatedQuestionIds": [],
+        "priority": "core",
+        "sourceRefs": []
+      },
+      "answerFile": "answers/nextjs/next-route-handler.md"
+    },
+    {
+      "id": "next-route-errors",
+      "title": "Чем error.tsx отличается от not-found.tsx?",
+      "topic": "Next.js",
+      "difficulty": "Средний",
+      "summary": "Сбой выполнения и отсутствие ресурса.",
+      "takeaway": "Различайте отсутствие сущности, ожидаемую ошибку и аварийный сбой.",
+      "moduleId": "nextjs",
+      "order": 1,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Различайте отсутствие сущности, ожидаемую ошибку и аварийный сбой.",
+        "keywords": ["Next.js", "HTTP и отображение"],
+        "kind": "explanation",
+        "reviewStatus": "imported",
+        "goalIds": ["core", "next-route-errors"],
+        "relatedQuestionIds": [],
+        "priority": "core",
+        "sourceRefs": []
+      },
+      "answerFile": "answers/nextjs/next-route-errors.md"
+    },
+    {
+      "id": "next-metadata",
+      "title": "Когда использовать metadata и generateMetadata?",
+      "topic": "Next.js",
+      "difficulty": "Средний",
+      "summary": "Статические и зависящие от данных метаданные.",
+      "takeaway": "Метаданные маршрута должны быть согласованы с его реальными данными.",
+      "moduleId": "nextjs",
+      "order": 2,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Метаданные маршрута должны быть согласованы с его реальными данными.",
+        "keywords": ["Next.js", "HTTP и отображение"],
+        "kind": "explanation",
+        "reviewStatus": "imported",
+        "goalIds": ["core", "next-metadata"],
+        "relatedQuestionIds": [],
+        "priority": "core",
+        "sourceRefs": []
+      },
+      "answerFile": "answers/nextjs/next-metadata.md"
+    }
+  ]
+}

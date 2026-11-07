@@ -109,3 +109,7 @@ ORM, аккаунты и выполнение пользовательского
 
 Первый запуск, миграции, наполнение и ручная проверка описаны в [QUESTIONS.md](QUESTIONS.md).
 Перед открытием вопросов выполните `pnpm db:init` из корня проекта.
+
+## Исходники каталога
+
+`database/seeds/questions.json` формируется из `../content/questions`. Перед db:init/db:seed автоматически проверяется согласованность исходников и артефактов. После редактирования выполните из корня `pnpm content:report`, затем `pnpm content:build`, `pnpm content:check` и `pnpm db:seed`. Процесс не требует новых миграций. Подробнее: [подготовка контента](../docs/question-content-workflow.md).

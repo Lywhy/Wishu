@@ -1,0 +1,391 @@
+{
+  "$schema": "../question-bundle.schema.json",
+  "sectionId": "html-css",
+  "subsectionId": "semantics",
+  "scope": "Структура документа, формы и нативные элементы.",
+  "coverageGoals": [
+    {
+      "id": "core",
+      "title": "Семантика и доступность",
+      "description": "Обзор и взаимосвязи навыков: Структура документа, формы и нативные элементы.",
+      "requiredDifficulties": [],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": [
+        "semantic-button",
+        "html-landmarks",
+        "html-form-label",
+        "html-doctype-mode",
+        "html-parser-content-model",
+        "html-accessible-name",
+        "html-focus-order",
+        "html-hiding-contract",
+        "html-native-dialog",
+        "html-table-relations",
+        "html-live-status"
+      ]
+    },
+    {
+      "id": "semantic-button",
+      "title": "Почему для действия лучше использовать button, а не div?",
+      "description": "Объяснить и применить правило с учётом его границ: Нативная семантика даёт доступное поведение по умолчанию.",
+      "requiredDifficulties": ["Базовый"],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "html-landmarks",
+      "title": "Зачем нужны main, nav, header и section?",
+      "description": "Объяснить и применить правило с учётом его границ: Выбирайте элемент по смыслу содержимого.",
+      "requiredDifficulties": ["Базовый"],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "html-form-label",
+      "title": "Почему placeholder не заменяет label у поля?",
+      "description": "Объяснить и применить правило с учётом его границ: У каждого поля должно быть доступное постоянное имя.",
+      "requiredDifficulties": ["Базовый"],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "html-doctype-mode",
+      "title": "Зачем нужен <!doctype html> и что меняет quirks mode?",
+      "description": "Объяснить и применить правило с учётом его границ: Doctype выбирает режим совместимости, но не является валидатором разметки.",
+      "requiredDifficulties": ["Базовый"],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "html-parser-content-model",
+      "title": "Почему DOM может отличаться от написанной HTML-разметки?",
+      "description": "Объяснить и применить правило с учётом его границ: Проверяйте структуру по модели содержимого, а не только по визуальному результату.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "html-accessible-name",
+      "title": "Чем доступное имя элемента отличается от роли и описания?",
+      "description": "Объяснить и применить правило с учётом его границ: У интерактивного элемента должны быть понятны и роль, и имя; описание дополняет их.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "html-focus-order",
+      "title": "Как управлять фокусом, не нарушая естественный порядок Tab?",
+      "description": "Объяснить и применить правило с учётом его границ: Порядок DOM и нативная навигация должны быть основой, а программный фокус - осмысленным переходом.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "html-hiding-contract",
+      "title": "Чем различаются display: none, visibility, opacity, aria-hidden и inert?",
+      "description": "Объяснить и применить правило с учётом его границ: Выбирайте скрытие по нужному поведению layout, фокуса и accessibility, а не только по внешнему виду.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "html-native-dialog",
+      "title": "Чем showModal() у dialog отличается от простого показа блока?",
+      "description": "Объяснить и применить правило с учётом его границ: Модальный dialog - это контракт слоя и взаимодействия, а не только position: fixed.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "html-table-relations",
+      "title": "Как сделать таблицу данных понятной без визуального расположения ячеек?",
+      "description": "Объяснить и применить правило с учётом его границ: Отношения таблицы должны выражаться разметкой, а не только цветом и расположением.",
+      "requiredDifficulties": ["Базовый"],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "html-live-status",
+      "title": "Как сообщать об изменении статуса без неожиданного перемещения фокуса?",
+      "description": "Объяснить и применить правило с учётом его границ: Асинхронный результат должен быть доступен без захвата фокуса и лишних прерываний.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": []
+    }
+  ],
+  "questions": [
+    {
+      "id": "semantic-button",
+      "title": "Почему для действия лучше использовать button, а не div?",
+      "topic": "Web",
+      "difficulty": "Базовый",
+      "summary": "Семантика, фокус и клавиатурное управление.",
+      "code": "<button type=\"button\">Сохранить</button>",
+      "takeaway": "Нативная семантика даёт доступное поведение по умолчанию.",
+      "moduleId": "html-css",
+      "order": 0,
+      "popular": false,
+      "pitfall": "Добавить div только role=\"button\" и считать поведение кнопки готовым. Клавиатурную активацию и фокус пришлось бы реализовывать отдельно.",
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Нативная семантика даёт доступное поведение по умолчанию.",
+        "keywords": ["HTML и CSS", "Семантика и доступность"],
+        "kind": "explanation",
+        "reviewStatus": "imported",
+        "goalIds": ["core", "semantic-button"],
+        "relatedQuestionIds": [],
+        "priority": "core",
+        "sourceRefs": []
+      },
+      "answerFile": "answers/html-css/semantic-button.md"
+    },
+    {
+      "id": "html-landmarks",
+      "title": "Зачем нужны main, nav, header и section?",
+      "topic": "HTML и CSS",
+      "difficulty": "Базовый",
+      "summary": "Смысловая структура документа и навигация по областям.",
+      "takeaway": "Выбирайте элемент по смыслу содержимого.",
+      "moduleId": "html-css",
+      "order": 1,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Выбирайте элемент по смыслу содержимого.",
+        "keywords": ["HTML и CSS", "Семантика и доступность"],
+        "kind": "explanation",
+        "reviewStatus": "imported",
+        "goalIds": ["core", "html-landmarks"],
+        "relatedQuestionIds": [],
+        "priority": "core",
+        "sourceRefs": []
+      },
+      "answerFile": "answers/html-css/html-landmarks.md"
+    },
+    {
+      "id": "html-form-label",
+      "title": "Почему placeholder не заменяет label у поля?",
+      "topic": "HTML и CSS",
+      "difficulty": "Базовый",
+      "summary": "Доступное имя, связь поля и подписи.",
+      "code": "<label for=\"email\">Email</label>\n<input id=\"email\" name=\"email\" type=\"email\" aria-describedby=\"email-hint\">\n<p id=\"email-hint\">Используйте рабочий адрес.</p>",
+      "takeaway": "У каждого поля должно быть доступное постоянное имя.",
+      "moduleId": "html-css",
+      "order": 2,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: У каждого поля должно быть доступное постоянное имя.",
+        "keywords": ["HTML и CSS", "Семантика и доступность"],
+        "kind": "explanation",
+        "reviewStatus": "imported",
+        "goalIds": ["core", "html-form-label"],
+        "relatedQuestionIds": [],
+        "priority": "core",
+        "sourceRefs": []
+      },
+      "answerFile": "answers/html-css/html-form-label.md"
+    },
+    {
+      "id": "html-doctype-mode",
+      "title": "Зачем нужен <!doctype html> и что меняет quirks mode?",
+      "summary": "Выбор режима интерпретации документа, а не подключение библиотеки или стандарта по сети.",
+      "code": "<!doctype html>\n<html lang=\"ru\">\n  <head><meta charset=\"utf-8\"><title>Документ</title></head>\n  <body><main><h1>Содержимое</h1></main></body>\n</html>",
+      "takeaway": "Doctype выбирает режим совместимости, но не является валидатором разметки.",
+      "pitfall": "Считать doctype ссылкой на внешнюю DTD или гарантией корректного HTML.",
+      "difficulty": "Базовый",
+      "topic": "HTML и CSS",
+      "moduleId": "html-css",
+      "popular": false,
+      "order": 3,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Doctype выбирает режим совместимости, но не является валидатором разметки.",
+        "keywords": ["HTML и CSS", "Семантика и доступность"],
+        "kind": "explanation",
+        "reviewStatus": "imported",
+        "goalIds": ["core", "html-doctype-mode"],
+        "relatedQuestionIds": [],
+        "priority": "core",
+        "sourceRefs": ["ref-4b3d68eb8698813c"]
+      },
+      "answerFile": "answers/html-css/html-doctype-mode.md"
+    },
+    {
+      "id": "html-parser-content-model",
+      "title": "Почему DOM может отличаться от написанной HTML-разметки?",
+      "summary": "Модели содержимого элементов и исправление недопустимой вложенности парсером.",
+      "code": "<!-- Неправильно: div не относится к допустимому содержимому p. -->\n<!-- <p>Вводный текст<div>Блок</div></p> -->\n<p>Вводный текст</p>\n<div>Отдельный блок</div>",
+      "takeaway": "Проверяйте структуру по модели содержимого, а не только по визуальному результату.",
+      "pitfall": "Предполагать, что браузер просто сохранит любое взаимное вложение тегов.",
+      "difficulty": "Средний",
+      "topic": "HTML и CSS",
+      "moduleId": "html-css",
+      "popular": false,
+      "order": 4,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Проверяйте структуру по модели содержимого, а не только по визуальному результату.",
+        "keywords": ["HTML и CSS", "Семантика и доступность"],
+        "kind": "explanation",
+        "reviewStatus": "imported",
+        "goalIds": ["core", "html-parser-content-model"],
+        "relatedQuestionIds": [],
+        "priority": "core",
+        "sourceRefs": ["ref-3987811ea032a5be"]
+      },
+      "answerFile": "answers/html-css/html-parser-content-model.md"
+    },
+    {
+      "id": "html-accessible-name",
+      "title": "Чем доступное имя элемента отличается от роли и описания?",
+      "summary": "Назначение имени, типа элемента и вспомогательной инструкции для assistive technologies.",
+      "code": "<button type=\"button\" aria-describedby=\"delete-note\">Удалить запись</button>\n<p id=\"delete-note\">Действие удалит запись из списка.</p>",
+      "takeaway": "У интерактивного элемента должны быть понятны и роль, и имя; описание дополняет их.",
+      "pitfall": "Добавить role=\"button\" и считать, что элемент получил имя и нативное поведение кнопки.",
+      "difficulty": "Средний",
+      "topic": "HTML и CSS",
+      "moduleId": "html-css",
+      "popular": false,
+      "order": 5,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: У интерактивного элемента должны быть понятны и роль, и имя; описание дополняет их.",
+        "keywords": ["HTML и CSS", "Семантика и доступность"],
+        "kind": "explanation",
+        "reviewStatus": "imported",
+        "goalIds": ["core", "html-accessible-name"],
+        "relatedQuestionIds": [],
+        "priority": "core",
+        "sourceRefs": ["ref-0606c5949143f3e5"]
+      },
+      "answerFile": "answers/html-css/html-accessible-name.md"
+    },
+    {
+      "id": "html-focus-order",
+      "title": "Как управлять фокусом, не нарушая естественный порядок Tab?",
+      "summary": "Различие программного фокуса и последовательной клавиатурной навигации.",
+      "code": "<a href=\"#content\">К содержимому</a>\n<main id=\"content\" tabindex=\"-1\">\n  <h1>Основное содержимое</h1>\n  <button type=\"button\">Продолжить</button>\n</main>",
+      "takeaway": "Порядок DOM и нативная навигация должны быть основой, а программный фокус - осмысленным переходом.",
+      "pitfall": "Чинить визуальный порядок положительными tabindex или делать каждый текстовый блок фокусируемым.",
+      "difficulty": "Средний",
+      "topic": "HTML и CSS",
+      "moduleId": "html-css",
+      "popular": false,
+      "order": 6,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Порядок DOM и нативная навигация должны быть основой, а программный фокус - осмысленным переходом.",
+        "keywords": ["HTML и CSS", "Семантика и доступность"],
+        "kind": "explanation",
+        "reviewStatus": "imported",
+        "goalIds": ["core", "html-focus-order"],
+        "relatedQuestionIds": [],
+        "priority": "core",
+        "sourceRefs": ["ref-4003a4c798d350f7"]
+      },
+      "answerFile": "answers/html-css/html-focus-order.md"
+    },
+    {
+      "id": "html-hiding-contract",
+      "title": "Чем различаются display: none, visibility, opacity, aria-hidden и inert?",
+      "summary": "Независимые требования к видимости, занимаемому месту, фокусу и доступности.",
+      "code": "<section inert aria-label=\"Неактивная панель\">\n  <button type=\"button\">Недоступно до завершения шага</button>\n</section>\n<p hidden>Скрытое содержимое</p>",
+      "takeaway": "Выбирайте скрытие по нужному поведению layout, фокуса и accessibility, а не только по внешнему виду.",
+      "pitfall": "Делать окно прозрачным и ожидать, что пользователь больше не попадёт в его поля с клавиатуры.",
+      "difficulty": "Средний",
+      "topic": "HTML и CSS",
+      "moduleId": "html-css",
+      "popular": false,
+      "order": 7,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Выбирайте скрытие по нужному поведению layout, фокуса и accessibility, а не только по внешнему виду.",
+        "keywords": ["HTML и CSS", "Семантика и доступность"],
+        "kind": "explanation",
+        "reviewStatus": "imported",
+        "goalIds": ["core", "html-hiding-contract"],
+        "relatedQuestionIds": [],
+        "priority": "core",
+        "sourceRefs": ["ref-958bfed88e109665"]
+      },
+      "answerFile": "answers/html-css/html-hiding-contract.md"
+    },
+    {
+      "id": "html-native-dialog",
+      "title": "Чем showModal() у dialog отличается от простого показа блока?",
+      "summary": "Модальность, top layer, доступное имя и жизненный цикл фокуса.",
+      "code": "<button type=\"button\" onclick=\"document.getElementById('confirm').showModal()\">Открыть</button>\n<dialog id=\"confirm\" aria-labelledby=\"confirm-title\">\n  <h2 id=\"confirm-title\">Подтвердите действие</h2>\n  <form method=\"dialog\"><button autofocus>Закрыть</button></form>\n</dialog>",
+      "takeaway": "Модальный dialog - это контракт слоя и взаимодействия, а не только position: fixed.",
+      "pitfall": "Поднимать обычный div огромным z-index и считать фокус и неактивность фона уже решёнными.",
+      "difficulty": "Средний",
+      "topic": "HTML и CSS",
+      "moduleId": "html-css",
+      "popular": false,
+      "order": 8,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Модальный dialog - это контракт слоя и взаимодействия, а не только position: fixed.",
+        "keywords": ["HTML и CSS", "Семантика и доступность"],
+        "kind": "explanation",
+        "reviewStatus": "imported",
+        "goalIds": ["core", "html-native-dialog"],
+        "relatedQuestionIds": [],
+        "priority": "core",
+        "sourceRefs": ["ref-ebdc29af4df80b95"]
+      },
+      "answerFile": "answers/html-css/html-native-dialog.md"
+    },
+    {
+      "id": "html-table-relations",
+      "title": "Как сделать таблицу данных понятной без визуального расположения ячеек?",
+      "summary": "Caption, заголовочные ячейки и связь строк и столбцов.",
+      "code": "<table>\n  <caption>Результаты проверки</caption>\n  <thead><tr><th scope=\"col\">Задача</th><th scope=\"col\">Статус</th></tr></thead>\n  <tbody><tr><th scope=\"row\">Сортировка</th><td>Пройдена</td></tr></tbody>\n</table>",
+      "takeaway": "Отношения таблицы должны выражаться разметкой, а не только цветом и расположением.",
+      "pitfall": "Делать все ячейки td и рассчитывать, что жирный шрифт заменит заголовок.",
+      "difficulty": "Базовый",
+      "topic": "HTML и CSS",
+      "moduleId": "html-css",
+      "popular": false,
+      "order": 9,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Отношения таблицы должны выражаться разметкой, а не только цветом и расположением.",
+        "keywords": ["HTML и CSS", "Семантика и доступность"],
+        "kind": "explanation",
+        "reviewStatus": "imported",
+        "goalIds": ["core", "html-table-relations"],
+        "relatedQuestionIds": [],
+        "priority": "core",
+        "sourceRefs": ["ref-8dc103a1299a62ab"]
+      },
+      "answerFile": "answers/html-css/html-table-relations.md"
+    },
+    {
+      "id": "html-live-status",
+      "title": "Как сообщать об изменении статуса без неожиданного перемещения фокуса?",
+      "summary": "Live regions для асинхронных результатов и умеренная срочность сообщений.",
+      "code": "<p id=\"save-status\" role=\"status\" aria-atomic=\"true\"></p>\n<!-- После сохранения обновляется текст существующей области: -->\n<!-- Сохранено. Изменения доступны в списке. -->",
+      "takeaway": "Асинхронный результат должен быть доступен без захвата фокуса и лишних прерываний.",
+      "pitfall": "Использовать alert для каждого символа поиска или фокусировать уведомление после любого обновления.",
+      "difficulty": "Средний",
+      "topic": "HTML и CSS",
+      "moduleId": "html-css",
+      "popular": false,
+      "order": 10,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Асинхронный результат должен быть доступен без захвата фокуса и лишних прерываний.",
+        "keywords": ["HTML и CSS", "Семантика и доступность"],
+        "kind": "explanation",
+        "reviewStatus": "imported",
+        "goalIds": ["core", "html-live-status"],
+        "relatedQuestionIds": [],
+        "priority": "core",
+        "sourceRefs": ["ref-4a1ef0fcca10ea57"]
+      },
+      "answerFile": "answers/html-css/html-live-status.md"
+    }
+  ]
+}

@@ -1,0 +1,360 @@
+{
+  "$schema": "../question-bundle.schema.json",
+  "sectionId": "javascript",
+  "subsectionId": "network",
+  "scope": "Fetch, владение телом ответа, backpressure, URL и границы браузерной безопасности.",
+  "coverageGoals": [
+    {
+      "id": "core",
+      "title": "Сеть, потоки и безопасность",
+      "description": "Обзор и взаимосвязи навыков: Fetch, владение телом ответа, backpressure, URL и границы браузерной безопасности.",
+      "requiredDifficulties": [],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": [
+        "js-cors-origin-boundary",
+        "js-fetch-body-contract",
+        "js-response-body-ownership",
+        "js-stream-backpressure",
+        "js-reader-lock-cancel",
+        "js-stream-text-boundaries",
+        "js-url-query-model",
+        "js-eventsource-delivery",
+        "js-csrf-cookie-boundary",
+        "js-csp-trusted-types"
+      ]
+    },
+    {
+      "id": "js-cors-origin-boundary",
+      "title": "Что CORS разрешает браузерному JavaScript и почему это не авторизация?",
+      "description": "Объяснить и применить правило с учётом его границ: Разрешение прочитать cross-origin ответ, отправка запроса и право изменить данные - разные проверки.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "js-fetch-body-contract",
+      "title": "Как выбрать тело fetch и правильно задать Content-Type?",
+      "description": "Объяснить и применить правило с учётом его границ: Заголовок и сериализованное тело должны описывать один и тот же формат.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "js-response-body-ownership",
+      "title": "Почему Response нельзя прочитать через json() дважды и что даёт clone()?",
+      "description": "Объяснить и применить правило с учётом его границ: Поток тела имеет владельца потребления; повторное использование нужно проектировать явно.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "js-stream-backpressure",
+      "title": "Что такое backpressure в Streams API и почему простое накопление чанков его нарушает?",
+      "description": "Объяснить и применить правило с учётом его границ: Поток полезен, когда цепочка реально ограничивает накопление между этапами.",
+      "requiredDifficulties": ["Продвинутый"],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": ["streams"]
+    },
+    {
+      "id": "js-reader-lock-cancel",
+      "title": "Чем releaseLock отличается от cancel у stream-reader?",
+      "description": "Объяснить и применить правило с учётом его границ: Освободить владельца чтения и остановить источник - разные решения.",
+      "requiredDifficulties": ["Продвинутый"],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": ["streams", "js-response-body-ownership"]
+    },
+    {
+      "id": "js-stream-text-boundaries",
+      "title": "Почему сетевой чанк нельзя считать целой строкой или целым JSON-сообщением?",
+      "description": "Объяснить и применить правило с учётом его границ: Граница транспортного чанка не является границей текста или бизнес-сообщения.",
+      "requiredDifficulties": ["Продвинутый"],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "js-url-query-model",
+      "title": "Как URL и URLSearchParams помогают не собирать адрес строковой конкатенацией?",
+      "description": "Объяснить и применить правило с учётом его границ: Структурный API помогает строить адрес, но разрешение цели остаётся прикладной проверкой.",
+      "requiredDifficulties": ["Базовый"],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "js-eventsource-delivery",
+      "title": "Когда EventSource подходит лучше polling или WebSocket?",
+      "description": "Объяснить и применить правило с учётом его границ: Выбирайте транспорт по направлениям обмена и требуемой семантике восстановления.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "js-csrf-cookie-boundary",
+      "title": "Почему cookie-аутентификация требует отдельной защиты от CSRF?",
+      "description": "Объяснить и применить правило с учётом его границ: Автоматически отправляемые cookie не доказывают намерение пользователя выполнить конкретное действие.",
+      "requiredDifficulties": ["Продвинутый"],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "js-csp-trusted-types",
+      "title": "Как CSP и Trusted Types дополняют безопасную работу с DOM?",
+      "description": "Объяснить и применить правило с учётом его границ: Политики усиливают границу исполнения, но не превращают произвольный HTML в безопасный автоматически.",
+      "requiredDifficulties": ["Продвинутый"],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": []
+    }
+  ],
+  "questions": [
+    {
+      "id": "js-cors-origin-boundary",
+      "difficulty": "Средний",
+      "title": "Что CORS разрешает браузерному JavaScript и почему это не авторизация?",
+      "summary": "Same-origin policy, доступ к ответу, preflight и credentials.",
+      "code": "// fetch(\"https://api.example.org/data\", { credentials: \"include\" })\n// Сервер должен разрешить подходящий origin и credentialed-доступ.\n// Добавление mode: \"no-cors\" не откроет response.json().",
+      "takeaway": "Разрешение прочитать cross-origin ответ, отправка запроса и право изменить данные - разные проверки.",
+      "pitfall": "Использовать CORS как единственную защиту серверного API или чинить ошибку через no-cors.",
+      "topic": "JavaScript",
+      "moduleId": "javascript",
+      "popular": false,
+      "order": 0,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Разрешение прочитать cross-origin ответ, отправка запроса и право изменить данные - разные проверки.",
+        "keywords": ["JavaScript", "Сеть, потоки и безопасность"],
+        "kind": "explanation",
+        "reviewStatus": "imported",
+        "goalIds": ["core", "js-cors-origin-boundary"],
+        "relatedQuestionIds": [],
+        "priority": "core",
+        "sourceRefs": ["ref-6265cf02838595fc"]
+      },
+      "answerFile": "answers/javascript/js-cors-origin-boundary.md"
+    },
+    {
+      "id": "js-fetch-body-contract",
+      "difficulty": "Средний",
+      "title": "Как выбрать тело fetch и правильно задать Content-Type?",
+      "summary": "JSON, FormData, URLSearchParams и граница multipart.",
+      "code": "const data = new FormData()\ndata.append(\"title\", \"Документ\")\n// fetch(\"/upload\", { method: \"POST\", body: data })\n// Не добавляем вручную multipart Content-Type без boundary.\nconst body = JSON.stringify({ title: \"Документ\" })",
+      "takeaway": "Заголовок и сериализованное тело должны описывать один и тот же формат.",
+      "pitfall": "Передать обычный объект как body и ожидать JSON из-за одного заголовка.",
+      "topic": "JavaScript",
+      "moduleId": "javascript",
+      "popular": false,
+      "order": 1,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Заголовок и сериализованное тело должны описывать один и тот же формат.",
+        "keywords": ["JavaScript", "Сеть, потоки и безопасность"],
+        "kind": "explanation",
+        "reviewStatus": "imported",
+        "goalIds": ["core", "js-fetch-body-contract"],
+        "relatedQuestionIds": [],
+        "priority": "core",
+        "sourceRefs": ["ref-f10cc26ad8cc531b"]
+      },
+      "answerFile": "answers/javascript/js-fetch-body-contract.md"
+    },
+    {
+      "id": "js-response-body-ownership",
+      "difficulty": "Средний",
+      "title": "Почему Response нельзя прочитать через json() дважды и что даёт clone()?",
+      "summary": "Одноразовый поток тела, bodyUsed и цена разветвления.",
+      "code": "async function read(response) {\n  if (!response.ok) throw new Error(\"HTTP \" + response.status)\n  const data = await response.json()\n  return { data, sameData: data }\n}\n// Для независимой ветви response.clone() вызывают до потребления тела.",
+      "takeaway": "Поток тела имеет владельца потребления; повторное использование нужно проектировать явно.",
+      "pitfall": "Считать Response.json кешируемым getter, который можно вызывать неограниченно.",
+      "topic": "JavaScript",
+      "moduleId": "javascript",
+      "popular": false,
+      "order": 2,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Поток тела имеет владельца потребления; повторное использование нужно проектировать явно.",
+        "keywords": ["JavaScript", "Сеть, потоки и безопасность"],
+        "kind": "explanation",
+        "reviewStatus": "imported",
+        "goalIds": ["core", "js-response-body-ownership"],
+        "relatedQuestionIds": [],
+        "priority": "core",
+        "sourceRefs": ["ref-7244f432abd74f21"]
+      },
+      "answerFile": "answers/javascript/js-response-body-ownership.md"
+    },
+    {
+      "id": "js-stream-backpressure",
+      "difficulty": "Продвинутый",
+      "title": "Что такое backpressure в Streams API и почему простое накопление чанков его нарушает?",
+      "summary": "Баланс скоростей producer/consumer и пределы очереди.",
+      "code": "async function copy(readable, writable) {\n  await readable.pipeTo(writable)\n}\n// Реальные source/sink задают ограничения и поведение ошибок.\n// Это не то же самое, что прочитать весь ресурс в один массив.",
+      "takeaway": "Поток полезен, когда цепочка реально ограничивает накопление между этапами.",
+      "pitfall": "Назвать обработку потоковой, но бессрочно складывать все чанки и write-промисы в массив.",
+      "topic": "JavaScript",
+      "moduleId": "javascript",
+      "popular": false,
+      "order": 3,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Поток полезен, когда цепочка реально ограничивает накопление между этапами.",
+        "keywords": ["JavaScript", "Сеть, потоки и безопасность"],
+        "kind": "explanation",
+        "reviewStatus": "imported",
+        "goalIds": ["core", "js-stream-backpressure"],
+        "relatedQuestionIds": ["streams"],
+        "priority": "core",
+        "sourceRefs": ["ref-33a95e79dd4a80a5"]
+      },
+      "answerFile": "answers/javascript/js-stream-backpressure.md"
+    },
+    {
+      "id": "js-reader-lock-cancel",
+      "difficulty": "Продвинутый",
+      "title": "Чем releaseLock отличается от cancel у stream-reader?",
+      "summary": "Владение чтением и сигнал отказа от дальнейшего ресурса.",
+      "code": "async function firstChunk(stream) {\n  const reader = stream.getReader()\n  try {\n    const item = await reader.read()\n    await reader.cancel(\"дальше не нужно\")\n    return item\n  } finally { reader.releaseLock() }\n}",
+      "takeaway": "Освободить владельца чтения и остановить источник - разные решения.",
+      "pitfall": "Использовать releaseLock как гарантию прекращения сетевой загрузки.",
+      "topic": "JavaScript",
+      "moduleId": "javascript",
+      "popular": false,
+      "order": 4,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Освободить владельца чтения и остановить источник - разные решения.",
+        "keywords": ["JavaScript", "Сеть, потоки и безопасность"],
+        "kind": "explanation",
+        "reviewStatus": "imported",
+        "goalIds": ["core", "js-reader-lock-cancel"],
+        "relatedQuestionIds": ["streams", "js-response-body-ownership"],
+        "priority": "core",
+        "sourceRefs": ["ref-c82c81148aeb5e13"]
+      },
+      "answerFile": "answers/javascript/js-reader-lock-cancel.md"
+    },
+    {
+      "id": "js-stream-text-boundaries",
+      "difficulty": "Продвинутый",
+      "title": "Почему сетевой чанк нельзя считать целой строкой или целым JSON-сообщением?",
+      "summary": "Произвольные границы доставки, Unicode и буфер незавершённой записи.",
+      "code": "const decoder = new TextDecoder(\"utf-8\")\nlet text = \"\"\n// Для каждого byteChunk: text += decoder.decode(byteChunk, { stream: true })\n// После конца: text += decoder.decode()\n// Затем отдельно выделяются сообщения по контракту протокола.",
+      "takeaway": "Граница транспортного чанка не является границей текста или бизнес-сообщения.",
+      "pitfall": "Вызывать JSON.parse на каждом произвольном чанке fetch-body.",
+      "topic": "JavaScript",
+      "moduleId": "javascript",
+      "popular": false,
+      "order": 5,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Граница транспортного чанка не является границей текста или бизнес-сообщения.",
+        "keywords": ["JavaScript", "Сеть, потоки и безопасность"],
+        "kind": "explanation",
+        "reviewStatus": "imported",
+        "goalIds": ["core", "js-stream-text-boundaries"],
+        "relatedQuestionIds": [],
+        "priority": "core",
+        "sourceRefs": ["ref-10b25e100d9c4f2f"]
+      },
+      "answerFile": "answers/javascript/js-stream-text-boundaries.md"
+    },
+    {
+      "id": "js-url-query-model",
+      "difficulty": "Базовый",
+      "title": "Как URL и URLSearchParams помогают не собирать адрес строковой конкатенацией?",
+      "summary": "Относительный адрес, base URL, повторяющиеся параметры и сериализация.",
+      "code": "const url = new URL(\"/search\", \"https://example.org\")\nurl.searchParams.append(\"tag\", \"a&b\")\nurl.searchParams.append(\"tag\", \"react\")\nconsole.log(url.searchParams.getAll(\"tag\")) // [\"a&b\", \"react\"]",
+      "takeaway": "Структурный API помогает строить адрес, но разрешение цели остаётся прикладной проверкой.",
+      "pitfall": "Использовать new URL как автоматическое разрешение любой схемы перехода.",
+      "topic": "JavaScript",
+      "moduleId": "javascript",
+      "popular": false,
+      "order": 6,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Структурный API помогает строить адрес, но разрешение цели остаётся прикладной проверкой.",
+        "keywords": ["JavaScript", "Сеть, потоки и безопасность"],
+        "kind": "explanation",
+        "reviewStatus": "imported",
+        "goalIds": ["core", "js-url-query-model"],
+        "relatedQuestionIds": [],
+        "priority": "core",
+        "sourceRefs": ["ref-4c31b22a38004d58"]
+      },
+      "answerFile": "answers/javascript/js-url-query-model.md"
+    },
+    {
+      "id": "js-eventsource-delivery",
+      "difficulty": "Средний",
+      "title": "Когда EventSource подходит лучше polling или WebSocket?",
+      "summary": "Однонаправленный поток событий, переподключение и повторная доставка.",
+      "code": "const source = new EventSource(\"/events\")\nsource.addEventListener(\"message\", event => {\n  // event.data разбирается согласно согласованной схеме.\n})\n// Когда подписка больше не нужна:\nsource.close()",
+      "takeaway": "Выбирайте транспорт по направлениям обмена и требуемой семантике восстановления.",
+      "pitfall": "Считать автоматическое переподключение гарантией отсутствия пропусков или дубликатов.",
+      "topic": "JavaScript",
+      "moduleId": "javascript",
+      "popular": false,
+      "order": 7,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Выбирайте транспорт по направлениям обмена и требуемой семантике восстановления.",
+        "keywords": ["JavaScript", "Сеть, потоки и безопасность"],
+        "kind": "explanation",
+        "reviewStatus": "imported",
+        "goalIds": ["core", "js-eventsource-delivery"],
+        "relatedQuestionIds": [],
+        "priority": "core",
+        "sourceRefs": ["ref-63c188439029aeaf"]
+      },
+      "answerFile": "answers/javascript/js-eventsource-delivery.md"
+    },
+    {
+      "id": "js-csrf-cookie-boundary",
+      "difficulty": "Продвинутый",
+      "title": "Почему cookie-аутентификация требует отдельной защиты от CSRF?",
+      "summary": "Автоматическая отправка credentials и различие чтения ответа от совершения действия.",
+      "code": "// Клиент может передать согласованный токен:\n// fetch(\"/settings\", { method: \"POST\", headers: { \"X-CSRF-Token\": token }, body })\n// Его наличие имеет смысл только при правильной серверной проверке.\n// Конкретную схему определяет серверная архитектура.",
+      "takeaway": "Автоматически отправляемые cookie не доказывают намерение пользователя выполнить конкретное действие.",
+      "pitfall": "Считать CORS или одно клиентское поле достаточной проверкой CSRF.",
+      "topic": "JavaScript",
+      "moduleId": "javascript",
+      "popular": false,
+      "order": 8,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Автоматически отправляемые cookie не доказывают намерение пользователя выполнить конкретное действие.",
+        "keywords": ["JavaScript", "Сеть, потоки и безопасность"],
+        "kind": "explanation",
+        "reviewStatus": "imported",
+        "goalIds": ["core", "js-csrf-cookie-boundary"],
+        "relatedQuestionIds": [],
+        "priority": "core",
+        "sourceRefs": ["ref-8edfb658f22c7a5f"]
+      },
+      "answerFile": "answers/javascript/js-csrf-cookie-boundary.md"
+    },
+    {
+      "id": "js-csp-trusted-types",
+      "difficulty": "Продвинутый",
+      "title": "Как CSP и Trusted Types дополняют безопасную работу с DOM?",
+      "summary": "Политика исполнения, контролируемые sinks и отсутствие автоматической санитаризации.",
+      "code": "function showText(untrustedText) {\n  const node = document.createElement(\"p\")\n  node.textContent = untrustedText\n  return node\n}\n// Для обычного текста не нужен HTML-parser sink.\n// Доверенный HTML требует отдельной корректной политики и обработки.",
+      "takeaway": "Политики усиливают границу исполнения, но не превращают произвольный HTML в безопасный автоматически.",
+      "pitfall": "Создать Trusted Types policy, возвращающую входную строку как есть, и назвать это санитаризацией.",
+      "topic": "JavaScript",
+      "moduleId": "javascript",
+      "popular": false,
+      "order": 9,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Политики усиливают границу исполнения, но не превращают произвольный HTML в безопасный автоматически.",
+        "keywords": ["JavaScript", "Сеть, потоки и безопасность"],
+        "kind": "explanation",
+        "reviewStatus": "imported",
+        "goalIds": ["core", "js-csp-trusted-types"],
+        "relatedQuestionIds": [],
+        "priority": "core",
+        "sourceRefs": ["ref-667cae19ad9c93fe"]
+      },
+      "answerFile": "answers/javascript/js-csp-trusted-types.md"
+    }
+  ]
+}

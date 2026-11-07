@@ -1,0 +1,320 @@
+{
+  "$schema": "../question-bundle.schema.json",
+  "sectionId": "typescript",
+  "subsectionId": "ts-classes",
+  "scope": "Поля, видимость, абстракции, implements и generic-классы.",
+  "coverageGoals": [
+    {
+      "id": "core",
+      "title": "Типизация классов и ООП",
+      "description": "Обзор и взаимосвязи навыков: Поля, видимость, абстракции, implements и generic-классы.",
+      "requiredDifficulties": [],
+      "reviewed": false,
+      "priority": "extended",
+      "relatedSkillIds": [
+        "ts-class-members",
+        "ts-constructor-overloads",
+        "ts-class-visibility",
+        "ts-abstract-classes",
+        "ts-implements-extends",
+        "ts-generic-classes",
+        "ts-override-contract",
+        "ts-polymorphic-this",
+        "ts-decorators-models"
+      ]
+    },
+    {
+      "id": "ts-class-members",
+      "title": "Что TypeScript добавляет к типизации полей, методов и конструктора класса?",
+      "description": "Объяснить и применить правило с учётом его границ: Аннотации уточняют контракт класса, а реальную инициализацию выполняет JavaScript-код.",
+      "requiredDifficulties": ["Базовый"],
+      "reviewed": false,
+      "priority": "extended",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "ts-constructor-overloads",
+      "title": "Как объявить перегрузки конструктора, если runtime-конструктор один?",
+      "description": "Объяснить и применить правило с учётом его границ: Перегрузки уточняют допустимые аргументы, но все варианты обслуживает один constructor.",
+      "requiredDifficulties": ["Базовый"],
+      "reviewed": false,
+      "priority": "extended",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "ts-class-visibility",
+      "title": "Как public, private и protected отличаются от JavaScript-приватности через #?",
+      "description": "Объяснить и применить правило с учётом его границ: TypeScript private - статический контракт доступа, # - отдельная приватность JavaScript.",
+      "requiredDifficulties": ["Базовый"],
+      "reviewed": false,
+      "priority": "extended",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "ts-abstract-classes",
+      "title": "Для чего нужен abstract class и чем он отличается от интерфейса?",
+      "description": "Объяснить и применить правило с учётом его границ: Абстрактный класс сочетает общую реализацию с требованиями к конкретному наследнику.",
+      "requiredDifficulties": ["Базовый"],
+      "reviewed": false,
+      "priority": "extended",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "ts-implements-extends",
+      "title": "Чем implements отличается от extends?",
+      "description": "Объяснить и применить правило с учётом его границ: Implements проверяет контракт экземпляра, extends наследует реализацию и прототипную связь.",
+      "requiredDifficulties": ["Базовый"],
+      "reviewed": false,
+      "priority": "extended",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "ts-generic-classes",
+      "title": "Как generic-класс связывает тип полей и методов экземпляра?",
+      "description": "Объяснить и применить правило с учётом его границ: Generic-класс связывает типы экземпляра, но не создаёт отдельные static-члены для каждого T.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": false,
+      "priority": "extended",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "ts-override-contract",
+      "title": "Зачем нужны override и noImplicitOverride?",
+      "description": "Объяснить и применить правило с учётом его границ: Override делает связь с родительским членом проверяемым намерением.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": false,
+      "priority": "extended",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "ts-polymorphic-this",
+      "title": "Как полиморфный this сохраняет тип наследника в цепочке методов?",
+      "description": "Объяснить и применить правило с учётом его границ: Тип this сохраняет подтип получателя в fluent API без дублирования методов родителя.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": false,
+      "priority": "extended",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "ts-decorators-models",
+      "title": "Чем современные декораторы TypeScript отличаются от legacy-декораторов?",
+      "description": "Объяснить и применить правило с учётом его границ: Модель декораторов выбирается вместе с инструментами и требованиями фреймворка.",
+      "requiredDifficulties": ["Продвинутый"],
+      "reviewed": false,
+      "priority": "extended",
+      "relatedSkillIds": []
+    }
+  ],
+  "questions": [
+    {
+      "id": "ts-class-members",
+      "title": "Что TypeScript добавляет к типизации полей, методов и конструктора класса?",
+      "topic": "TypeScript",
+      "difficulty": "Базовый",
+      "summary": "Контракт экземпляра, результат методов и инициализация полей.",
+      "code": "class User {\n  name: string;\n  score = 0;\n  static category: string = \"user\";\n  constructor(name: string) { this.name = name; }\n  describe(): string { return this.name; }\n}\nconst user: User = new User(\"Аня\");",
+      "takeaway": "Аннотации уточняют контракт класса, а реальную инициализацию выполняет JavaScript-код.",
+      "moduleId": "typescript",
+      "order": 0,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Аннотации уточняют контракт класса, а реальную инициализацию выполняет JavaScript-код.",
+        "keywords": ["TypeScript", "Типизация классов и ООП"],
+        "kind": "explanation",
+        "reviewStatus": "imported",
+        "goalIds": ["core", "ts-class-members"],
+        "relatedQuestionIds": [],
+        "priority": "extended",
+        "sourceRefs": []
+      },
+      "answerFile": "answers/typescript/ts-class-members.md"
+    },
+    {
+      "id": "ts-constructor-overloads",
+      "title": "Как объявить перегрузки конструктора, если runtime-конструктор один?",
+      "topic": "TypeScript",
+      "difficulty": "Базовый",
+      "summary": "Несколько сигнатур создания и единая реализация.",
+      "code": "class Identifier {\n  value: string;\n  constructor(value: string);\n  constructor(value: number);\n  constructor(value: string | number) { this.value = String(value); }\n}\nconst first = new Identifier(\"a\");\nconst second = new Identifier(1);",
+      "takeaway": "Перегрузки уточняют допустимые аргументы, но все варианты обслуживает один constructor.",
+      "moduleId": "typescript",
+      "order": 1,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Перегрузки уточняют допустимые аргументы, но все варианты обслуживает один constructor.",
+        "keywords": ["TypeScript", "Типизация классов и ООП"],
+        "kind": "explanation",
+        "reviewStatus": "imported",
+        "goalIds": ["core", "ts-constructor-overloads"],
+        "relatedQuestionIds": [],
+        "priority": "extended",
+        "sourceRefs": []
+      },
+      "answerFile": "answers/typescript/ts-constructor-overloads.md"
+    },
+    {
+      "id": "ts-class-visibility",
+      "title": "Как public, private и protected отличаются от JavaScript-приватности через #?",
+      "topic": "TypeScript",
+      "difficulty": "Базовый",
+      "summary": "Статические ограничения доступа и runtime-защита.",
+      "code": "class Account {\n  public name = \"гость\";\n  protected role = \"reader\";\n  private internalCode = \"example\";\n  #secret = 1;\n  describe(): string { return `${this.name}:${this.#secret}`; }\n}\n// private и # проверяются разными механизмами.",
+      "takeaway": "TypeScript private - статический контракт доступа, # - отдельная приватность JavaScript.",
+      "moduleId": "typescript",
+      "order": 2,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: TypeScript private - статический контракт доступа, # - отдельная приватность JavaScript.",
+        "keywords": ["TypeScript", "Типизация классов и ООП"],
+        "kind": "explanation",
+        "reviewStatus": "imported",
+        "goalIds": ["core", "ts-class-visibility"],
+        "relatedQuestionIds": [],
+        "priority": "extended",
+        "sourceRefs": []
+      },
+      "answerFile": "answers/typescript/ts-class-visibility.md"
+    },
+    {
+      "id": "ts-abstract-classes",
+      "title": "Для чего нужен abstract class и чем он отличается от интерфейса?",
+      "topic": "TypeScript",
+      "difficulty": "Базовый",
+      "summary": "Общая реализация, абстрактные члены и конкретный наследник.",
+      "code": "abstract class Formatter {\n  abstract format(value: number): string;\n  label(value: number): string { return `Значение: ${this.format(value)}`; }\n}\nclass DecimalFormatter extends Formatter {\n  format(value: number): string { return value.toFixed(2); }\n}",
+      "takeaway": "Абстрактный класс сочетает общую реализацию с требованиями к конкретному наследнику.",
+      "moduleId": "typescript",
+      "order": 3,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Абстрактный класс сочетает общую реализацию с требованиями к конкретному наследнику.",
+        "keywords": ["TypeScript", "Типизация классов и ООП"],
+        "kind": "explanation",
+        "reviewStatus": "imported",
+        "goalIds": ["core", "ts-abstract-classes"],
+        "relatedQuestionIds": [],
+        "priority": "extended",
+        "sourceRefs": []
+      },
+      "answerFile": "answers/typescript/ts-abstract-classes.md"
+    },
+    {
+      "id": "ts-implements-extends",
+      "title": "Чем implements отличается от extends?",
+      "topic": "TypeScript",
+      "difficulty": "Базовый",
+      "summary": "Проверка формы и наследование runtime-поведения.",
+      "code": "interface Named { name: string }\nclass User implements Named { name = \"гость\"; }\nclass Admin extends User { role = \"admin\"; }\nnew Admin().name; // \"гость\": реальное наследование\n// implements само по себе не создало бы name.",
+      "takeaway": "Implements проверяет контракт экземпляра, extends наследует реализацию и прототипную связь.",
+      "moduleId": "typescript",
+      "order": 4,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Implements проверяет контракт экземпляра, extends наследует реализацию и прототипную связь.",
+        "keywords": ["TypeScript", "Типизация классов и ООП", "прототип", "prototype"],
+        "kind": "explanation",
+        "reviewStatus": "imported",
+        "goalIds": ["core", "ts-implements-extends"],
+        "relatedQuestionIds": [],
+        "priority": "extended",
+        "sourceRefs": []
+      },
+      "answerFile": "answers/typescript/ts-implements-extends.md"
+    },
+    {
+      "id": "ts-generic-classes",
+      "title": "Как generic-класс связывает тип полей и методов экземпляра?",
+      "topic": "TypeScript",
+      "difficulty": "Средний",
+      "summary": "Параметр типа экземпляра, вывод и ограничения static.",
+      "code": "class Box<T> {\n  constructor(public value: T) {}\n  read(): T { return this.value; }\n}\nconst box = new Box(42); // Box<number>\nconst value = box.read(); // number\n// static defaultValue: T в таком классе не допускается.",
+      "takeaway": "Generic-класс связывает типы экземпляра, но не создаёт отдельные static-члены для каждого T.",
+      "moduleId": "typescript",
+      "order": 5,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Generic-класс связывает типы экземпляра, но не создаёт отдельные static-члены для каждого T.",
+        "keywords": ["TypeScript", "Типизация классов и ООП"],
+        "kind": "explanation",
+        "reviewStatus": "imported",
+        "goalIds": ["core", "ts-generic-classes"],
+        "relatedQuestionIds": [],
+        "priority": "extended",
+        "sourceRefs": []
+      },
+      "answerFile": "answers/typescript/ts-generic-classes.md"
+    },
+    {
+      "id": "ts-override-contract",
+      "title": "Зачем нужны override и noImplicitOverride?",
+      "summary": "Защита намеренного переопределения при изменении базового класса.",
+      "code": "class Base {\n  format(value: string): string { return value }\n}\nclass Trimmed extends Base {\n  override format(value: string): string {\n    return super.format(value).trim()\n  }\n}",
+      "takeaway": "Override делает связь с родительским членом проверяемым намерением.",
+      "pitfall": "Думать, что override сам вызывает реализацию родителя или снимает проверку совместимости.",
+      "difficulty": "Средний",
+      "topic": "TypeScript",
+      "moduleId": "typescript",
+      "order": 6,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Override делает связь с родительским членом проверяемым намерением.",
+        "keywords": ["TypeScript", "Типизация классов и ООП"],
+        "kind": "explanation",
+        "reviewStatus": "imported",
+        "goalIds": ["core", "ts-override-contract"],
+        "relatedQuestionIds": [],
+        "priority": "extended",
+        "sourceRefs": ["ref-56877450f8207778"]
+      },
+      "answerFile": "answers/typescript/ts-override-contract.md"
+    },
+    {
+      "id": "ts-polymorphic-this",
+      "title": "Как полиморфный this сохраняет тип наследника в цепочке методов?",
+      "summary": "Fluent API, в котором методы родителя не теряют конкретный тип объекта.",
+      "code": "class Query {\n  where(_condition: string): this { return this }\n}\nclass PagedQuery extends Query {\n  limit(_count: number): this { return this }\n}\nnew PagedQuery().where('active = true').limit(10)",
+      "takeaway": "Тип this сохраняет подтип получателя в fluent API без дублирования методов родителя.",
+      "pitfall": "Считать возврат this автоматической проверкой порядка всех шагов builder.",
+      "difficulty": "Средний",
+      "topic": "TypeScript",
+      "moduleId": "typescript",
+      "order": 7,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Тип this сохраняет подтип получателя в fluent API без дублирования методов родителя.",
+        "keywords": ["TypeScript", "Типизация классов и ООП"],
+        "kind": "explanation",
+        "reviewStatus": "imported",
+        "goalIds": ["core", "ts-polymorphic-this"],
+        "relatedQuestionIds": [],
+        "priority": "extended",
+        "sourceRefs": ["ref-56877450f8207778"]
+      },
+      "answerFile": "answers/typescript/ts-polymorphic-this.md"
+    },
+    {
+      "id": "ts-decorators-models",
+      "title": "Чем современные декораторы TypeScript отличаются от legacy-декораторов?",
+      "summary": "Модель value/context, experimentalDecorators и ограничения совместимости метаданных.",
+      "code": "// Современная модель TypeScript 5.0+, не legacy experimentalDecorators.\nfunction traced<This, Args extends unknown[], R>(\n  method: (this: This, ...args: Args) => R,\n  context: ClassMethodDecoratorContext<This, (this: This, ...args: Args) => R>,\n) {\n  return function (this: This, ...args: Args): R {\n    console.log(String(context.name))\n    return method.apply(this, args)\n  }\n}",
+      "takeaway": "Модель декораторов выбирается вместе с инструментами и требованиями фреймворка.",
+      "pitfall": "Переносить legacy-декоратор или DI-метаданные в современный режим без изменения контракта.",
+      "difficulty": "Продвинутый",
+      "topic": "TypeScript",
+      "moduleId": "typescript",
+      "order": 8,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Модель декораторов выбирается вместе с инструментами и требованиями фреймворка.",
+        "keywords": ["TypeScript", "Типизация классов и ООП"],
+        "kind": "explanation",
+        "reviewStatus": "imported",
+        "goalIds": ["core", "ts-decorators-models"],
+        "relatedQuestionIds": [],
+        "priority": "extended",
+        "sourceRefs": ["ref-f3bc0c0e7bc0b54f"]
+      },
+      "answerFile": "answers/typescript/ts-decorators-models.md"
+    }
+  ]
+}

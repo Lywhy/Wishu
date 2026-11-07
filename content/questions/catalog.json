@@ -1,0 +1,925 @@
+{
+  "$schema": "./catalog.schema.json",
+  "schemaVersion": 1,
+  "groups": [
+    {
+      "id": "frontend",
+      "title": "Frontend",
+      "description": "Язык, интерфейсы и всё, что происходит в браузере.",
+      "order": 0
+    },
+    {
+      "id": "backend",
+      "title": "Backend",
+      "description": "Серверная логика, API и работа с данными.",
+      "order": 1
+    },
+    {
+      "id": "tools",
+      "title": "Инструменты",
+      "description": "Навыки для ежедневной работы над проектом.",
+      "order": 2
+    },
+    {
+      "id": "databases",
+      "title": "Базы данных",
+      "description": "Запросы, хранение и организация данных.",
+      "order": 3
+    }
+  ],
+  "sections": [
+    {
+      "id": "javascript",
+      "title": "JavaScript",
+      "description": "От устройства языка до асинхронного выполнения кода.",
+      "groupId": "frontend",
+      "moduleId": "javascript",
+      "mark": "JS",
+      "order": 0,
+      "inDevelopment": false
+    },
+    {
+      "id": "typescript",
+      "title": "TypeScript",
+      "description": "Безопасность типов и выразительные контракты кода.",
+      "groupId": "frontend",
+      "moduleId": "typescript",
+      "mark": "TS",
+      "order": 1,
+      "inDevelopment": false
+    },
+    {
+      "id": "react",
+      "title": "React",
+      "description": "Компоненты, состояние, эффекты, формы, производительность и серверный рендеринг.",
+      "groupId": "frontend",
+      "moduleId": "react",
+      "mark": "R",
+      "order": 2,
+      "inDevelopment": false
+    },
+    {
+      "id": "html-css",
+      "title": "HTML и CSS",
+      "description": "Семантика, доступность, каскад, макеты и адаптивные интерфейсы.",
+      "groupId": "frontend",
+      "moduleId": "html-css",
+      "mark": "HC",
+      "order": 3,
+      "inDevelopment": false
+    },
+    {
+      "id": "browser",
+      "title": "Браузер и HTTP",
+      "description": "HTTP, соединения, безопасность браузера и доставка ресурсов.",
+      "groupId": "frontend",
+      "moduleId": "browser",
+      "mark": "WEB",
+      "order": 4,
+      "inDevelopment": false
+    },
+    {
+      "id": "nestjs",
+      "title": "NestJS",
+      "description": "DI, HTTP, обработка запроса и проверяемые интеграции.",
+      "groupId": "backend",
+      "moduleId": "nestjs",
+      "mark": "N",
+      "order": 5,
+      "inDevelopment": false
+    },
+    {
+      "id": "postgresql",
+      "title": "PostgreSQL",
+      "description": "Индексы, MVCC, типы, блокировки и обслуживание PostgreSQL.",
+      "groupId": "databases",
+      "moduleId": "postgresql",
+      "mark": "PG",
+      "order": 6,
+      "inDevelopment": false
+    },
+    {
+      "id": "git",
+      "title": "Git",
+      "description": "Рабочие изменения, история, совместная работа и восстановление.",
+      "groupId": "tools",
+      "moduleId": "git",
+      "mark": "git",
+      "order": 7,
+      "inDevelopment": false
+    },
+    {
+      "id": "vue",
+      "title": "Vue",
+      "description": "Vue 3: шаблоны, реактивность, компоненты и Composition API.",
+      "groupId": "frontend",
+      "moduleId": "vue",
+      "mark": "V",
+      "order": 8,
+      "inDevelopment": false
+    },
+    {
+      "id": "nextjs",
+      "title": "Next.js",
+      "description": "App Router, границы компонентов, данные и серверные маршруты.",
+      "groupId": "frontend",
+      "moduleId": "nextjs",
+      "mark": "NX",
+      "order": 9,
+      "inDevelopment": false
+    },
+    {
+      "id": "seo",
+      "title": "SEO",
+      "description": "Обход, индексация, содержимое, адреса и диагностика поиска.",
+      "groupId": "frontend",
+      "moduleId": "seo",
+      "mark": "SEO",
+      "order": 10,
+      "inDevelopment": false
+    },
+    {
+      "id": "frontend-tools",
+      "title": "Frontend инструменты",
+      "description": "Пакеты, сборка, инструменты качества и окружение проекта.",
+      "groupId": "frontend",
+      "moduleId": "frontend-tools",
+      "mark": "FE",
+      "order": 11,
+      "inDevelopment": false
+    },
+    {
+      "id": "nodejs",
+      "title": "Node.js",
+      "description": "Модули, асинхронная работа, потоки и ресурсы сервера.",
+      "groupId": "backend",
+      "moduleId": "nodejs",
+      "mark": "NJ",
+      "order": 12,
+      "inDevelopment": false
+    },
+    {
+      "id": "java",
+      "title": "Java",
+      "description": "Типы, объектные контракты, коллекции, исключения и конкуренция.",
+      "groupId": "backend",
+      "moduleId": "java",
+      "mark": "J",
+      "order": 13,
+      "inDevelopment": false
+    },
+    {
+      "id": "docker",
+      "title": "Docker",
+      "description": "Образы, сборка, данные, сеть и эксплуатация Compose.",
+      "groupId": "tools",
+      "moduleId": "docker",
+      "mark": "D",
+      "order": 14,
+      "inDevelopment": false
+    },
+    {
+      "id": "sql",
+      "title": "SQL",
+      "description": "Реляционная модель, соединения, агрегаты и составные запросы.",
+      "groupId": "databases",
+      "moduleId": "sql",
+      "mark": "SQL",
+      "order": 15,
+      "inDevelopment": false
+    },
+    {
+      "id": "redis",
+      "title": "Redis",
+      "description": "Типы данных, атомарность, кеширование и надёжность Redis.",
+      "groupId": "databases",
+      "moduleId": "redis",
+      "mark": "RD",
+      "order": 16,
+      "inDevelopment": false
+    }
+  ],
+  "subsections": [
+    {
+      "id": "fundamentals",
+      "sectionId": "javascript",
+      "title": "Основы языка",
+      "description": "Типы данных, переменные, операторы, объекты и управление выполнением.",
+      "order": 0
+    },
+    {
+      "id": "functions",
+      "sectionId": "javascript",
+      "title": "Функции",
+      "description": "Вызовы и аргументы, this, замыкания, генераторы, рекурсия и функциональные приёмы.",
+      "order": 1
+    },
+    {
+      "id": "objects",
+      "sectionId": "javascript",
+      "title": "Объекты и прототипы",
+      "description": "Свойства и копирование, дескрипторы, прототипное наследование, Reflect и Proxy.",
+      "order": 2
+    },
+    {
+      "id": "asynchronous",
+      "sectionId": "javascript",
+      "title": "Асинхронность",
+      "description": "Event loop, Promise, async/await, отмена, таймеры, Workers и потоки данных.",
+      "order": 4
+    },
+    {
+      "id": "types",
+      "sectionId": "typescript",
+      "title": "Базовые и специальные типы",
+      "description": "Примитивы, литералы, null, unknown, any, void, never и enum.",
+      "order": 1
+    },
+    {
+      "id": "generics",
+      "sectionId": "typescript",
+      "title": "Дженерики",
+      "description": "Связи входа и результата, ограничения, контейнеры и значения по умолчанию.",
+      "order": 7
+    },
+    {
+      "id": "components",
+      "sectionId": "react",
+      "title": "Компоненты и рендеринг",
+      "description": "JSX, props, композиция, события, списки и идентичность компонентов.",
+      "order": 0
+    },
+    {
+      "id": "hooks",
+      "sectionId": "react",
+      "title": "Хуки и эффекты",
+      "description": "Правила хуков, зависимости, cleanup, замыкания и синхронизация.",
+      "order": 2
+    },
+    {
+      "id": "semantics",
+      "sectionId": "html-css",
+      "title": "Семантика и доступность",
+      "description": "Структура документа, формы и нативные элементы.",
+      "order": 0
+    },
+    {
+      "id": "http",
+      "sectionId": "browser",
+      "title": "HTTP и кеширование",
+      "description": "Методы, статусы, свежесть и проверки актуальности.",
+      "order": 0
+    },
+    {
+      "id": "architecture",
+      "sectionId": "nestjs",
+      "title": "Архитектура приложения",
+      "description": "Провайдеры, токены и области жизни.",
+      "order": 0
+    },
+    {
+      "id": "indexes",
+      "sectionId": "postgresql",
+      "title": "Индексы и запросы",
+      "description": "Порядок столбцов и чтение плана выполнения.",
+      "order": 0
+    },
+    {
+      "id": "history",
+      "sectionId": "git",
+      "title": "Ветки и история",
+      "description": "Коммиты, HEAD и объединение изменений.",
+      "order": 1
+    },
+    {
+      "id": "arrays",
+      "sectionId": "javascript",
+      "title": "Массивы и структуры данных",
+      "description": "Методы массивов, преобразования, вложенные данные, Map, Set и слабые коллекции.",
+      "order": 3
+    },
+    {
+      "id": "dom",
+      "title": "DOM и браузерные API",
+      "description": "Документ, события, формы, хранилища и другие возможности браузера.",
+      "order": 5,
+      "sectionId": "javascript"
+    },
+    {
+      "id": "classes",
+      "title": "Классы",
+      "description": "Конструкторы, поля, методы, наследование и приватные элементы.",
+      "order": 6,
+      "sectionId": "javascript"
+    },
+    {
+      "id": "errors",
+      "title": "Ошибки и отладка",
+      "description": "Виды ошибок, диагностика, собственные типы и работа с отладчиком.",
+      "order": 7,
+      "sectionId": "javascript"
+    },
+    {
+      "id": "modern",
+      "title": "Современный JavaScript",
+      "description": "Стандарт языка, модули, шаблоны и асинхронная загрузка кода.",
+      "order": 8,
+      "sectionId": "javascript"
+    },
+    {
+      "id": "performance",
+      "title": "Производительность",
+      "description": "Измерения, память, рендеринг, загрузка и распределение работы.",
+      "order": 9,
+      "sectionId": "javascript"
+    },
+    {
+      "id": "advanced",
+      "title": "Продвинутые темы",
+      "description": "Контексты выполнения, слабые ссылки, общая память и Temporal.",
+      "order": 10,
+      "sectionId": "javascript"
+    },
+    {
+      "id": "ts-fundamentals",
+      "sectionId": "typescript",
+      "title": "Основы TypeScript",
+      "description": "Статическая проверка, границы гарантий, вывод типов и настройки проекта.",
+      "order": 0
+    },
+    {
+      "id": "ts-objects",
+      "sectionId": "typescript",
+      "title": "Объектные типы и интерфейсы",
+      "description": "Type, interface, свойства, расширение контрактов и рекурсивные структуры.",
+      "order": 2
+    },
+    {
+      "id": "ts-collections",
+      "sectionId": "typescript",
+      "title": "Массивы, кортежи и коллекции",
+      "description": "Типы элементов, readonly, позиции кортежа, Set и Map.",
+      "order": 3
+    },
+    {
+      "id": "ts-functions",
+      "sectionId": "typescript",
+      "title": "Типизация функций",
+      "description": "Сигнатуры, параметры, возвращаемые значения, async и перегрузки.",
+      "order": 4
+    },
+    {
+      "id": "ts-unions",
+      "sectionId": "typescript",
+      "title": "Union и Intersection Types",
+      "description": "Альтернативы значений, совместные требования и конфликты свойств.",
+      "order": 5
+    },
+    {
+      "id": "ts-narrowing",
+      "sectionId": "typescript",
+      "title": "Сужение типов и Type Guards",
+      "description": "Поток управления, предикаты, assertion functions и полнота вариантов.",
+      "order": 6
+    },
+    {
+      "id": "ts-type-operators",
+      "sectionId": "typescript",
+      "title": "Операторы типов и преобразования",
+      "description": "Keyof, typeof, indexed access, mapped, conditional, infer и дистрибутивность.",
+      "order": 8
+    },
+    {
+      "id": "ts-utility-types",
+      "sectionId": "typescript",
+      "title": "Utility Types",
+      "description": "Готовые преобразования свойств, union, сигнатур и строковых типов.",
+      "order": 9
+    },
+    {
+      "id": "ts-classes",
+      "sectionId": "typescript",
+      "title": "Типизация классов и ООП",
+      "description": "Поля, видимость, абстракции, implements и generic-классы.",
+      "order": 10
+    },
+    {
+      "id": "ts-practices",
+      "sectionId": "typescript",
+      "title": "Практики, ограничения и антипаттерны",
+      "description": "Strict, assertions, диагностические директивы, глобальные типы и сложность.",
+      "order": 11
+    },
+    {
+      "id": "state",
+      "sectionId": "react",
+      "title": "Состояние и поток данных",
+      "description": "Снимки состояния, очередь обновлений, иммутабельность и владение данными.",
+      "order": 1
+    },
+    {
+      "id": "refs",
+      "sectionId": "react",
+      "title": "Refs и работа с DOM",
+      "description": "Служебные значения, фокус, императивный API и порталы.",
+      "order": 3
+    },
+    {
+      "id": "context",
+      "sectionId": "react",
+      "title": "Context и управление состоянием",
+      "description": "Передача общих данных, подписки и выбор места хранения.",
+      "order": 4
+    },
+    {
+      "id": "forms",
+      "sectionId": "react",
+      "title": "Формы и пользовательский ввод",
+      "description": "Управляемые поля, доступность, отправка и Actions в React 19.",
+      "order": 5
+    },
+    {
+      "id": "performance",
+      "sectionId": "react",
+      "title": "Производительность",
+      "description": "Мемоизация, профилирование, виртуализация и React Compiler.",
+      "order": 6
+    },
+    {
+      "id": "async-ui",
+      "sectionId": "react",
+      "title": "Асинхронный интерфейс",
+      "description": "Гонки запросов, Suspense, отложенные обновления и оптимистичный UI.",
+      "order": 7
+    },
+    {
+      "id": "server-rendering",
+      "sectionId": "react",
+      "title": "Серверный рендеринг и React 19",
+      "description": "CSR, SSR, гидратация, Server Components и чтение ресурсов.",
+      "order": 8
+    },
+    {
+      "id": "testing",
+      "sectionId": "react",
+      "title": "Ошибки и тестирование",
+      "description": "Error Boundary, проверка поведения, асинхронные тесты и cleanup.",
+      "order": 9
+    },
+    {
+      "id": "cascade",
+      "sectionId": "html-css",
+      "title": "Каскад и блочная модель",
+      "description": "Приоритет правил, размеры и наследование.",
+      "order": 1
+    },
+    {
+      "id": "layout",
+      "sectionId": "html-css",
+      "title": "Построение макета",
+      "description": "Flexbox, Grid и позиционирование.",
+      "order": 2
+    },
+    {
+      "id": "responsive",
+      "sectionId": "html-css",
+      "title": "Адаптивность",
+      "description": "Единицы, точки перелома и изображения.",
+      "order": 3
+    },
+    {
+      "id": "transport",
+      "sectionId": "browser",
+      "title": "Сеть и соединения",
+      "description": "DNS, TLS и версии HTTP.",
+      "order": 1
+    },
+    {
+      "id": "security",
+      "sectionId": "browser",
+      "title": "Границы безопасности",
+      "description": "Origin, cookies и межсайтовые запросы.",
+      "order": 2
+    },
+    {
+      "id": "delivery",
+      "sectionId": "browser",
+      "title": "Доставка и диагностика",
+      "description": "CDN, сжатие и анализ сетевой загрузки.",
+      "order": 3
+    },
+    {
+      "id": "templates",
+      "sectionId": "vue",
+      "title": "Компоненты и шаблоны",
+      "description": "Single-File Components, условия и списки.",
+      "order": 0
+    },
+    {
+      "id": "reactivity",
+      "sectionId": "vue",
+      "title": "Реактивность",
+      "description": "Ref, reactive и вычисляемые значения.",
+      "order": 1
+    },
+    {
+      "id": "communication",
+      "sectionId": "vue",
+      "title": "Взаимодействие компонентов",
+      "description": "Props, события и слоты.",
+      "order": 2
+    },
+    {
+      "id": "composition",
+      "sectionId": "vue",
+      "title": "Composition API",
+      "description": "Наблюдатели, composables и жизненный цикл.",
+      "order": 3
+    },
+    {
+      "id": "routing",
+      "sectionId": "nextjs",
+      "title": "App Router и маршруты",
+      "description": "Структура app, layouts и навигация.",
+      "order": 0
+    },
+    {
+      "id": "boundaries",
+      "sectionId": "nextjs",
+      "title": "Границы выполнения",
+      "description": "Server/Client Components и серверные зависимости.",
+      "order": 1
+    },
+    {
+      "id": "data",
+      "sectionId": "nextjs",
+      "title": "Данные и кеширование",
+      "description": "Загрузка, инвалидирование и изменение данных.",
+      "order": 2
+    },
+    {
+      "id": "responses",
+      "sectionId": "nextjs",
+      "title": "HTTP и отображение",
+      "description": "Route Handlers, ошибки и метаданные.",
+      "order": 3
+    },
+    {
+      "id": "indexing",
+      "sectionId": "seo",
+      "title": "Обход и индексация",
+      "description": "Доступность страниц для поискового робота.",
+      "order": 0
+    },
+    {
+      "id": "content",
+      "sectionId": "seo",
+      "title": "Содержимое и метаданные",
+      "description": "Заголовки, ссылки и понятный контент.",
+      "order": 1
+    },
+    {
+      "id": "urls",
+      "sectionId": "seo",
+      "title": "Адреса и дубли",
+      "description": "Канонические URL, редиректы и sitemap.",
+      "order": 2
+    },
+    {
+      "id": "measurement",
+      "sectionId": "seo",
+      "title": "Разметка и диагностика",
+      "description": "Структурированные данные и Search Console.",
+      "order": 3
+    },
+    {
+      "id": "dependencies",
+      "sectionId": "frontend-tools",
+      "title": "Зависимости и пакеты",
+      "description": "Manifest, lockfile и диапазоны версий.",
+      "order": 0
+    },
+    {
+      "id": "build",
+      "sectionId": "frontend-tools",
+      "title": "Сборка и преобразования",
+      "description": "Vite, TypeScript и отладочная информация.",
+      "order": 1
+    },
+    {
+      "id": "quality",
+      "sectionId": "frontend-tools",
+      "title": "Качество и автоматизация",
+      "description": "Линтер, форматтер, тесты и CI.",
+      "order": 2
+    },
+    {
+      "id": "environment",
+      "sectionId": "frontend-tools",
+      "title": "Окружение проекта",
+      "description": "Переменные, proxy и пути импорта.",
+      "order": 3
+    },
+    {
+      "id": "http",
+      "sectionId": "nestjs",
+      "title": "HTTP и входные данные",
+      "description": "Контроллеры, DTO и ошибки.",
+      "order": 1
+    },
+    {
+      "id": "pipeline",
+      "sectionId": "nestjs",
+      "title": "Обработка запроса",
+      "description": "Middleware, guards и interceptors.",
+      "order": 2
+    },
+    {
+      "id": "integration",
+      "sectionId": "nestjs",
+      "title": "Интеграции и проверяемость",
+      "description": "Конфигурация, транзакции и замена зависимостей.",
+      "order": 3
+    },
+    {
+      "id": "runtime",
+      "sectionId": "nodejs",
+      "title": "Среда выполнения и модули",
+      "description": "ESM, файлы и worker threads.",
+      "order": 0
+    },
+    {
+      "id": "async",
+      "sectionId": "nodejs",
+      "title": "Асинхронная работа Node.js",
+      "description": "Event loop, пул и события.",
+      "order": 1
+    },
+    {
+      "id": "io",
+      "sectionId": "nodejs",
+      "title": "Потоки и бинарные данные",
+      "description": "Buffer, backpressure и pipeline.",
+      "order": 2
+    },
+    {
+      "id": "operations",
+      "sectionId": "nodejs",
+      "title": "Ресурсы приложения",
+      "description": "Окружение, соединения и завершение.",
+      "order": 3
+    },
+    {
+      "id": "language",
+      "sectionId": "java",
+      "title": "Типы и значения",
+      "description": "Примитивы, передача аргументов и равенство.",
+      "order": 0
+    },
+    {
+      "id": "objects",
+      "sectionId": "java",
+      "title": "Объекты и контракты",
+      "description": "Интерфейсы, методы и неизменяемость.",
+      "order": 1
+    },
+    {
+      "id": "collections",
+      "sectionId": "java",
+      "title": "Коллекции и Stream API",
+      "description": "Структуры данных и обработка последовательностей.",
+      "order": 2
+    },
+    {
+      "id": "runtime",
+      "sectionId": "java",
+      "title": "Ошибки и ресурсы",
+      "description": "Исключения, закрытие ресурсов и конкуренция.",
+      "order": 3
+    },
+    {
+      "id": "working-tree",
+      "sectionId": "git",
+      "title": "Рабочие изменения",
+      "description": "Индекс, diff и правила игнорирования.",
+      "order": 0
+    },
+    {
+      "id": "collaboration",
+      "sectionId": "git",
+      "title": "Совместная работа",
+      "description": "Удалённые ветки, конфликты и публикация.",
+      "order": 2
+    },
+    {
+      "id": "recovery",
+      "sectionId": "git",
+      "title": "Отмена и восстановление",
+      "description": "Restore, revert и reflog.",
+      "order": 3
+    },
+    {
+      "id": "basics",
+      "sectionId": "docker",
+      "title": "Образы и контейнеры",
+      "description": "Изоляция, слои и процесс контейнера.",
+      "order": 0
+    },
+    {
+      "id": "build",
+      "sectionId": "docker",
+      "title": "Сборка образа",
+      "description": "Кеш, стадии и build secrets.",
+      "order": 1
+    },
+    {
+      "id": "resources",
+      "sectionId": "docker",
+      "title": "Данные и сеть",
+      "description": "Volumes, адреса сервисов и порты.",
+      "order": 2
+    },
+    {
+      "id": "compose",
+      "sectionId": "docker",
+      "title": "Compose и эксплуатация",
+      "description": "Готовность, конфигурация и диагностика.",
+      "order": 3
+    },
+    {
+      "id": "model",
+      "sectionId": "sql",
+      "title": "Реляционная модель",
+      "description": "Ключи, NULL и безопасный вход.",
+      "order": 0
+    },
+    {
+      "id": "joins",
+      "sectionId": "sql",
+      "title": "Соединение таблиц",
+      "description": "JOIN, кратность и фильтрация.",
+      "order": 1
+    },
+    {
+      "id": "aggregation",
+      "sectionId": "sql",
+      "title": "Агрегация и окна",
+      "description": "Группировка, подсчёт и ранжирование.",
+      "order": 2
+    },
+    {
+      "id": "queries",
+      "sectionId": "sql",
+      "title": "Составные запросы",
+      "description": "EXISTS, UNION и постраничная выборка.",
+      "order": 3
+    },
+    {
+      "id": "transactions",
+      "sectionId": "postgresql",
+      "title": "Конкурентный доступ",
+      "description": "MVCC, изоляция и защита обновлений.",
+      "order": 1
+    },
+    {
+      "id": "types",
+      "sectionId": "postgresql",
+      "title": "Типы данных",
+      "description": "JSONB, время и точные числа.",
+      "order": 2
+    },
+    {
+      "id": "maintenance",
+      "sectionId": "postgresql",
+      "title": "Обслуживание и надёжность",
+      "description": "Vacuum, блокировки и восстановление.",
+      "order": 3
+    },
+    {
+      "id": "types",
+      "sectionId": "redis",
+      "title": "Типы данных",
+      "description": "Строки, hash и sorted set.",
+      "order": 0
+    },
+    {
+      "id": "commands",
+      "sectionId": "redis",
+      "title": "Атомарность и пакетирование",
+      "description": "Условная запись, pipeline и транзакции.",
+      "order": 1
+    },
+    {
+      "id": "cache",
+      "sectionId": "redis",
+      "title": "Кеширование",
+      "description": "TTL, актуальность и одновременные промахи.",
+      "order": 2
+    },
+    {
+      "id": "operations",
+      "sectionId": "redis",
+      "title": "Надёжность и обслуживание",
+      "description": "Persistence, репликация и обход ключей.",
+      "order": 3
+    },
+    {
+      "id": "code-reading",
+      "sectionId": "javascript",
+      "title": "Разбор кода",
+      "description": "Предскажите результат, объясните механизм и найдите типичную ошибку до раскрытия ответа.",
+      "order": 11
+    },
+    {
+      "id": "ts-modules",
+      "title": "Модули и сборка",
+      "description": "Типовые импорты, разрешение модулей, декларации, ESM/CJS и границы проектов.",
+      "order": 12,
+      "sectionId": "typescript"
+    },
+    {
+      "id": "ts-api-design",
+      "title": "Проектирование типобезопасных API",
+      "description": "Проверенные границы данных, связи параметров, доменные контракты и ограничения обёрток.",
+      "order": 13,
+      "sectionId": "typescript"
+    },
+    {
+      "id": "html-forms",
+      "title": "Формы и ввод данных",
+      "description": "Payload формы, нативная валидация, автозаполнение и способы ввода.",
+      "order": 4,
+      "sectionId": "html-css"
+    },
+    {
+      "id": "html-resources",
+      "title": "Ресурсы и встраивание",
+      "description": "Предварительная подготовка ресурсов, iframe и границы доверия.",
+      "order": 5,
+      "sectionId": "html-css"
+    },
+    {
+      "id": "css-visual",
+      "title": "Визуальные состояния и анимации",
+      "description": "Движение, фокус, темы и предпочтения пользователя.",
+      "order": 6,
+      "sectionId": "html-css"
+    },
+    {
+      "id": "numbers",
+      "sectionId": "javascript",
+      "title": "Числа и арифметика",
+      "description": "Безопасные целые, разбор чисел, округление, остаток и побитовые операции.",
+      "order": 12
+    },
+    {
+      "id": "strings",
+      "sectionId": "javascript",
+      "title": "Строки и Unicode",
+      "description": "Code units, графемы, нормализация, поиск, срезы и кодирование.",
+      "order": 13
+    },
+    {
+      "id": "regexp",
+      "sectionId": "javascript",
+      "title": "Регулярные выражения",
+      "description": "Шаблоны, группы, Unicode, поиск, замены и ограничения безопасности.",
+      "order": 14
+    },
+    {
+      "id": "intl",
+      "sectionId": "javascript",
+      "title": "Даты и интернационализация",
+      "description": "Календарные операции, часовые пояса и локализованное представление.",
+      "order": 15
+    },
+    {
+      "id": "binary",
+      "sectionId": "javascript",
+      "title": "Бинарные данные и общая память",
+      "description": "Представления буфера, transfer, кодирование, Atomics и владение ресурсами.",
+      "order": 16
+    },
+    {
+      "id": "iteration",
+      "sectionId": "javascript",
+      "title": "Итерация и управление ресурсами",
+      "description": "Делегирование, закрытие итераторов, ленивые последовательности и disposal.",
+      "order": 17
+    },
+    {
+      "id": "network",
+      "sectionId": "javascript",
+      "title": "Сеть, потоки и безопасность",
+      "description": "Fetch, владение телом ответа, backpressure, URL и границы браузерной безопасности.",
+      "order": 18
+    },
+    {
+      "id": "storage",
+      "sectionId": "javascript",
+      "title": "Хранилища и координация вкладок",
+      "description": "Транзакции IndexedDB, квоты, устойчивость данных и обмен сообщениями.",
+      "order": 19
+    }
+  ]
+}

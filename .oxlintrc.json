@@ -1,23 +1,13 @@
 {
   "$schema": "./node_modules/oxlint/configuration_schema.json",
-  "plugins": [
-    "react",
-    "typescript",
-    "oxc",
-    "jsx-a11y"
-  ],
+  "plugins": ["react", "typescript", "oxc", "jsx-a11y"],
   "categories": {
     "correctness": "error"
   },
   "env": {
     "browser": true
   },
-  "ignorePatterns": [
-    "**/node_modules/**",
-    "**/dist/**",
-    "**/dist-ssr/**",
-    "**/coverage/**"
-  ],
+  "ignorePatterns": ["**/node_modules/**", "**/dist/**", "**/dist-ssr/**", "**/coverage/**"],
   "rules": {
     "react/rules-of-hooks": "error",
     "react/exhaustive-deps": "warn",
@@ -31,26 +21,27 @@
   },
   "overrides": [
     {
-      "files": [
-        "vite.config.ts"
-      ],
+      "files": ["vite.config.ts"],
       "env": {
         "browser": false,
         "node": true
       }
     },
     {
-      "files": [
-        "src/components/ui/**/*.tsx"
-      ],
+      "files": ["src/components/ui/**/*.tsx"],
       "rules": {
         "react/only-export-components": "off"
       }
     },
     {
-      "files": [
-        "server/**/*.ts"
-      ],
+      "files": ["server/**/*.ts"],
+      "env": {
+        "browser": false,
+        "node": true
+      }
+    },
+    {
+      "files": ["scripts/questions/**/*.mjs"],
       "env": {
         "browser": false,
         "node": true

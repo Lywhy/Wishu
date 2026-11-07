@@ -1,0 +1,101 @@
+{
+  "schemaVersion": 1,
+  "profiles": [
+    {
+      "id": "frontend-junior",
+      "role": "Frontend Junior",
+      "focusSections": ["javascript", "html-css", "typescript", "react", "browser", "git"],
+      "targetLevels": ["Базовый", "Средний"],
+      "focus": "Объяснить основные механизмы и написать небольшой корректный пример. Уровни направляют подготовку, но не скрывают вопросы."
+    },
+    {
+      "id": "frontend-middle",
+      "role": "Frontend Middle",
+      "focusSections": [
+        "javascript",
+        "typescript",
+        "react",
+        "html-css",
+        "browser",
+        "frontend-tools"
+      ],
+      "targetLevels": ["Средний", "Продвинутый"],
+      "focus": "Применять механизмы, диагностировать ошибки и объяснять ограничения решений."
+    },
+    {
+      "id": "frontend-senior",
+      "role": "Frontend Senior",
+      "focusSections": ["javascript", "typescript", "react", "browser", "frontend-tools", "nextjs"],
+      "targetLevels": ["Средний", "Продвинутый"],
+      "focus": "Аргументировать архитектурный выбор, границы среды, компромиссы и производительность; сохранять владение основами."
+    },
+    {
+      "id": "backend-node",
+      "role": "Backend Node.js",
+      "focusSections": ["nodejs", "nestjs", "postgresql", "sql", "redis", "docker", "javascript"],
+      "targetLevels": ["Базовый", "Средний", "Продвинутый"],
+      "focus": "Согласовать runtime, API, конкурентность и хранение данных с требованиями целевой роли."
+    }
+  ],
+  "exemplars": [
+    {
+      "questionIds": ["closures"],
+      "level": "Базовый",
+      "why": "Прямое определение, применение и нюансы без лишнего объёма. Пример кода хранится в карточке."
+    },
+    {
+      "questionIds": ["closures-in-loops"],
+      "level": "Средний",
+      "why": "Разбор конкретной ошибки, явное объяснение привязок и пример до/после. В новых ответах не повторять одинаковые пункты."
+    },
+    {
+      "questionIds": ["js-proxy-internal-slots"],
+      "level": "Продвинутый",
+      "why": "Механизм, предел прозрачности, практическая ошибка и ссылки на основы."
+    }
+  ],
+  "boundaries": [
+    {
+      "concept": "Замыкания",
+      "canonicalQuestionIds": ["closures", "closures-in-loops"],
+      "appliedQuestionIds": ["react-stale-closures", "ts-narrowing-closures"],
+      "rule": "Определение и модель привязок объясняются в JavaScript; React и TypeScript рассматривают свои прикладные гарантии со ссылкой на основы."
+    },
+    {
+      "concept": "Event loop",
+      "canonicalQuestionIds": ["event-loop"],
+      "appliedQuestionIds": ["node-loop-responsibility"],
+      "rule": "Браузерную модель не выдавать за точную модель Node.js; сравнивать host-специфические механизмы явно."
+    },
+    {
+      "concept": "HTTP-кеширование",
+      "canonicalQuestionIds": ["http-cache"],
+      "appliedQuestionIds": ["http-cdn"],
+      "rule": "HTTP-контракт держать канонически в browser; прикладные кеши фреймворка связывать с ним без повторения всего ответа."
+    }
+  ],
+  "versionNotes": [
+    {
+      "id": "sync-async-close",
+      "questionIds": ["js-for-await-sync-rejection"],
+      "environments": ["browser", "nodejs"],
+      "recheckWhen": "Меняется целевой runtime или используется старый источник об AsyncFromSync закрытии.",
+      "lastVerifiedAt": null
+    },
+    {
+      "id": "resource-management",
+      "questionIds": ["js-using-disposal", "js-await-using-disposal", "js-disposable-stack"],
+      "environments": ["browser", "nodejs", "toolchain"],
+      "recheckWhen": "Меняются версии среды и инструментов преобразования; различать синтаксис и наличие runtime API.",
+      "lastVerifiedAt": null
+    },
+    {
+      "id": "temporal-target",
+      "questionIds": ["temporal-api"],
+      "environments": ["browser", "nodejs"],
+      "recheckWhen": "Уточняется матрица поддержки проекта; не выводить доступность из наличия типов.",
+      "lastVerifiedAt": null
+    }
+  ],
+  "interviewFeedback": []
+}

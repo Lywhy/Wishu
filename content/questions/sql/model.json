@@ -1,0 +1,115 @@
+{
+  "$schema": "../question-bundle.schema.json",
+  "sectionId": "sql",
+  "subsectionId": "model",
+  "scope": "Ключи, NULL и безопасный вход.",
+  "coverageGoals": [
+    {
+      "id": "core",
+      "title": "Реляционная модель",
+      "description": "Обзор и взаимосвязи навыков: Ключи, NULL и безопасный вход.",
+      "requiredDifficulties": [],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": ["sql-keys-constraints", "sql-null", "sql-parameters"]
+    },
+    {
+      "id": "sql-keys-constraints",
+      "title": "Чем PRIMARY KEY, UNIQUE и FOREIGN KEY отличаются?",
+      "description": "Объяснить и применить правило с учётом его границ: Ключи выражают разные правила целостности данных.",
+      "requiredDifficulties": ["Базовый"],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "sql-null",
+      "title": "Почему сравнение column = NULL не находит пустые значения?",
+      "description": "Объяснить и применить правило с учётом его границ: NULL требует явной проверки, а не обычного равенства.",
+      "requiredDifficulties": ["Базовый"],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "sql-parameters",
+      "title": "Почему параметры запроса защищают лучше конкатенации строк?",
+      "description": "Объяснить и применить правило с учётом его границ: Пользователь задаёт данные, структура запроса остаётся под контролем приложения.",
+      "requiredDifficulties": ["Базовый"],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": []
+    }
+  ],
+  "questions": [
+    {
+      "id": "sql-keys-constraints",
+      "title": "Чем PRIMARY KEY, UNIQUE и FOREIGN KEY отличаются?",
+      "topic": "SQL",
+      "difficulty": "Базовый",
+      "summary": "Идентичность строки и целостность связей.",
+      "takeaway": "Ключи выражают разные правила целостности данных.",
+      "moduleId": "sql",
+      "order": 0,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Ключи выражают разные правила целостности данных.",
+        "keywords": ["SQL", "Реляционная модель"],
+        "kind": "explanation",
+        "reviewStatus": "imported",
+        "goalIds": ["core", "sql-keys-constraints"],
+        "relatedQuestionIds": [],
+        "priority": "core",
+        "sourceRefs": []
+      },
+      "answerFile": "answers/sql/sql-keys-constraints.md"
+    },
+    {
+      "id": "sql-null",
+      "title": "Почему сравнение column = NULL не находит пустые значения?",
+      "topic": "SQL",
+      "difficulty": "Базовый",
+      "summary": "Неизвестное значение и трёхзначная логика.",
+      "code": "SELECT id FROM users WHERE deleted_at IS NULL;",
+      "takeaway": "NULL требует явной проверки, а не обычного равенства.",
+      "moduleId": "sql",
+      "order": 1,
+      "popular": false,
+      "pitfall": "Проверять отсутствие значения через = NULL вместо IS NULL. В WHERE сохраняются только строки с истинным условием.",
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: NULL требует явной проверки, а не обычного равенства.",
+        "keywords": ["SQL", "Реляционная модель"],
+        "kind": "explanation",
+        "reviewStatus": "imported",
+        "goalIds": ["core", "sql-null"],
+        "relatedQuestionIds": [],
+        "priority": "core",
+        "sourceRefs": []
+      },
+      "answerFile": "answers/sql/sql-null.md"
+    },
+    {
+      "id": "sql-parameters",
+      "title": "Почему параметры запроса защищают лучше конкатенации строк?",
+      "topic": "SQL",
+      "difficulty": "Базовый",
+      "summary": "Разделение структуры SQL и пользовательского значения.",
+      "code": "// Пример для драйвера pg, а не SQL-консоли.\nawait client.query(\"SELECT id FROM users WHERE email = $1\", [email])",
+      "takeaway": "Пользователь задаёт данные, структура запроса остаётся под контролем приложения.",
+      "moduleId": "sql",
+      "order": 2,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Пользователь задаёт данные, структура запроса остаётся под контролем приложения.",
+        "keywords": ["SQL", "Реляционная модель"],
+        "kind": "explanation",
+        "reviewStatus": "imported",
+        "goalIds": ["core", "sql-parameters"],
+        "relatedQuestionIds": [],
+        "priority": "core",
+        "sourceRefs": []
+      },
+      "answerFile": "answers/sql/sql-parameters.md"
+    }
+  ]
+}

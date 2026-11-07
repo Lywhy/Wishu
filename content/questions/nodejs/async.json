@@ -1,0 +1,114 @@
+{
+  "$schema": "../question-bundle.schema.json",
+  "sectionId": "nodejs",
+  "subsectionId": "async",
+  "scope": "Event loop, пул и события.",
+  "coverageGoals": [
+    {
+      "id": "core",
+      "title": "Асинхронная работа Node.js",
+      "description": "Обзор и взаимосвязи навыков: Event loop, пул и события.",
+      "requiredDifficulties": [],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": ["node-loop-responsibility", "node-libuv-pool", "node-event-emitter"]
+    },
+    {
+      "id": "node-loop-responsibility",
+      "title": "Что именно может блокировать event loop Node.js?",
+      "description": "Объяснить и применить правило с учётом его границ: Асинхронный вход не делает синхронную обработку неблокирующей.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "node-libuv-pool",
+      "title": "Какие операции используют пул libuv и почему это важно?",
+      "description": "Объяснить и применить правило с учётом его границ: Различайте основной поток, внутренний пул и пользовательские workers.",
+      "requiredDifficulties": ["Продвинутый"],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "node-event-emitter",
+      "title": "Вызывает ли EventEmitter слушателей асинхронно?",
+      "description": "Объяснить и применить правило с учётом его границ: Событийный интерфейс не означает автоматическую асинхронность.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": []
+    }
+  ],
+  "questions": [
+    {
+      "id": "node-loop-responsibility",
+      "title": "Что именно может блокировать event loop Node.js?",
+      "topic": "Node.js",
+      "difficulty": "Средний",
+      "summary": "Работа callback и справедливость обслуживания.",
+      "takeaway": "Асинхронный вход не делает синхронную обработку неблокирующей.",
+      "moduleId": "nodejs",
+      "order": 0,
+      "popular": false,
+      "pitfall": "Объявить тяжёлое вычисление async и считать, что оно автоматически перенеслось в отдельный поток.",
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Асинхронный вход не делает синхронную обработку неблокирующей.",
+        "keywords": ["Node.js", "Асинхронная работа Node.js", "event loop", "цикл событий"],
+        "kind": "explanation",
+        "reviewStatus": "imported",
+        "goalIds": ["core", "node-loop-responsibility"],
+        "relatedQuestionIds": [],
+        "priority": "core",
+        "sourceRefs": []
+      },
+      "answerFile": "answers/nodejs/node-loop-responsibility.md"
+    },
+    {
+      "id": "node-libuv-pool",
+      "title": "Какие операции используют пул libuv и почему это важно?",
+      "topic": "Node.js",
+      "difficulty": "Продвинутый",
+      "summary": "Фоновая работа и общий ограниченный ресурс.",
+      "takeaway": "Различайте основной поток, внутренний пул и пользовательские workers.",
+      "moduleId": "nodejs",
+      "order": 1,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Различайте основной поток, внутренний пул и пользовательские workers.",
+        "keywords": ["Node.js", "Асинхронная работа Node.js"],
+        "kind": "explanation",
+        "reviewStatus": "imported",
+        "goalIds": ["core", "node-libuv-pool"],
+        "relatedQuestionIds": [],
+        "priority": "core",
+        "sourceRefs": []
+      },
+      "answerFile": "answers/nodejs/node-libuv-pool.md"
+    },
+    {
+      "id": "node-event-emitter",
+      "title": "Вызывает ли EventEmitter слушателей асинхронно?",
+      "topic": "Node.js",
+      "difficulty": "Средний",
+      "summary": "Порядок emit и особое событие error.",
+      "code": "import { EventEmitter } from \"node:events\"\nconst bus = new EventEmitter()\nbus.on(\"ready\", () => console.log(\"listener\"))\nbus.emit(\"ready\")\nconsole.log(\"after emit\")",
+      "takeaway": "Событийный интерфейс не означает автоматическую асинхронность.",
+      "moduleId": "nodejs",
+      "order": 2,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Событийный интерфейс не означает автоматическую асинхронность.",
+        "keywords": ["Node.js", "Асинхронная работа Node.js"],
+        "kind": "explanation",
+        "reviewStatus": "imported",
+        "goalIds": ["core", "node-event-emitter"],
+        "relatedQuestionIds": [],
+        "priority": "core",
+        "sourceRefs": []
+      },
+      "answerFile": "answers/nodejs/node-event-emitter.md"
+    }
+  ]
+}

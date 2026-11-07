@@ -1,0 +1,112 @@
+{
+  "$schema": "../question-bundle.schema.json",
+  "sectionId": "seo",
+  "subsectionId": "content",
+  "scope": "Заголовки, ссылки и понятный контент.",
+  "coverageGoals": [
+    {
+      "id": "core",
+      "title": "Содержимое и метаданные",
+      "description": "Обзор и взаимосвязи навыков: Заголовки, ссылки и понятный контент.",
+      "requiredDifficulties": [],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": ["seo-title-description", "seo-headings", "seo-internal-links"]
+    },
+    {
+      "id": "seo-title-description",
+      "title": "Какую роль играют title и meta description?",
+      "description": "Объяснить и применить правило с учётом его границ: Метаданные должны точно и кратко представлять конкретную страницу.",
+      "requiredDifficulties": ["Базовый"],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "seo-headings",
+      "title": "Зачем нужна понятная иерархия заголовков?",
+      "description": "Объяснить и применить правило с учётом его границ: Заголовок обозначает структуру, а не приём продвижения.",
+      "requiredDifficulties": ["Базовый"],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "seo-internal-links",
+      "title": "Почему для важных внутренних переходов нужны обычные ссылки?",
+      "description": "Объяснить и применить правило с учётом его границ: Явная ссылка делает адрес и смысл перехода доступными.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": []
+    }
+  ],
+  "questions": [
+    {
+      "id": "seo-title-description",
+      "title": "Какую роль играют title и meta description?",
+      "topic": "SEO",
+      "difficulty": "Базовый",
+      "summary": "Название результата и возможный текст сниппета.",
+      "takeaway": "Метаданные должны точно и кратко представлять конкретную страницу.",
+      "moduleId": "seo",
+      "order": 0,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Метаданные должны точно и кратко представлять конкретную страницу.",
+        "keywords": ["SEO", "Содержимое и метаданные"],
+        "kind": "explanation",
+        "reviewStatus": "imported",
+        "goalIds": ["core", "seo-title-description"],
+        "relatedQuestionIds": [],
+        "priority": "core",
+        "sourceRefs": []
+      },
+      "answerFile": "answers/seo/seo-title-description.md"
+    },
+    {
+      "id": "seo-headings",
+      "title": "Зачем нужна понятная иерархия заголовков?",
+      "topic": "SEO",
+      "difficulty": "Базовый",
+      "summary": "Структура материала для человека и поисковой системы.",
+      "takeaway": "Заголовок обозначает структуру, а не приём продвижения.",
+      "moduleId": "seo",
+      "order": 1,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Заголовок обозначает структуру, а не приём продвижения.",
+        "keywords": ["SEO", "Содержимое и метаданные"],
+        "kind": "explanation",
+        "reviewStatus": "imported",
+        "goalIds": ["core", "seo-headings"],
+        "relatedQuestionIds": [],
+        "priority": "core",
+        "sourceRefs": []
+      },
+      "answerFile": "answers/seo/seo-headings.md"
+    },
+    {
+      "id": "seo-internal-links",
+      "title": "Почему для важных внутренних переходов нужны обычные ссылки?",
+      "topic": "SEO",
+      "difficulty": "Средний",
+      "summary": "Обнаружение URL и контекст анкоров.",
+      "takeaway": "Явная ссылка делает адрес и смысл перехода доступными.",
+      "moduleId": "seo",
+      "order": 2,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Явная ссылка делает адрес и смысл перехода доступными.",
+        "keywords": ["SEO", "Содержимое и метаданные"],
+        "kind": "explanation",
+        "reviewStatus": "imported",
+        "goalIds": ["core", "seo-internal-links"],
+        "relatedQuestionIds": [],
+        "priority": "core",
+        "sourceRefs": []
+      },
+      "answerFile": "answers/seo/seo-internal-links.md"
+    }
+  ]
+}

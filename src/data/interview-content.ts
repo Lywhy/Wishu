@@ -1,3 +1,4 @@
+import { javascriptInterviewTasks } from "./javascript-interview-tasks"
 import { additionalTasks } from "./additional-tasks"
 
 export type Difficulty = "Базовый" | "Средний" | "Продвинутый"
@@ -176,4 +177,5 @@ export const practiceTasks: PracticeTask[] = [
     moduleId: "browser",
   },
   ...additionalTasks,
+  ...javascriptInterviewTasks,
 ]

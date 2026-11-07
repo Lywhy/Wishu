@@ -1,0 +1,2931 @@
+{
+  "schemaVersion": 1,
+  "topics": [
+    {
+      "sectionId": "javascript",
+      "subsectionId": "fundamentals",
+      "scope": "Типы данных, переменные, операторы, объекты и управление выполнением.",
+      "sources": [
+        {
+          "title": ", иногда продолжает предыдущее выражение.**\n### Механизм и границы\n\n### Как рассуждать\nСначала определите, может ли текущая конструкция грамматически продолжаться. Для return, throw и некоторых других форм действуют ограничения переноса. Нельзя исправить смысл программы надеждой на форматирование.\n\nИспользуйте согласованный стиль и защитную точку с запятой перед неоднозначным началом выражения. Форматтер упорядочивает синтаксис, но не узнаёт намерение автора.\n### Источник\n\n[MDN: Lexical_grammar",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Lexical_grammar#automatic_semicolon_insertion",
+          "checkedAt": null,
+          "id": "ref-68e4e92de9d5e4af"
+        },
+        {
+          "title": "MDN: Operators/Operator_precedence",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Operator_precedence",
+          "checkedAt": null,
+          "id": "ref-8c4479aa1b198deb"
+        },
+        {
+          "title": "MDN: Operators/Logical_OR_assignment",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Logical_OR_assignment",
+          "checkedAt": null,
+          "id": "ref-97ab3d038bf5202a"
+        },
+        {
+          "title": "MDN: Operators/Comma_operator",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Comma_operator",
+          "checkedAt": null,
+          "id": "ref-1ce633020b954d68"
+        },
+        {
+          "title": "MDN: Statements/switch",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/switch",
+          "checkedAt": null,
+          "id": "ref-2bc960506e87eedb"
+        },
+        {
+          "title": "MDN: Operators/Destructuring",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring",
+          "checkedAt": null,
+          "id": "ref-499bb8ebcc531c5d"
+        },
+        {
+          "title": "MDN: Global_Objects/String",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String#string_primitives_and_string_objects",
+          "checkedAt": null,
+          "id": "ref-b0442bbe6a79faaf"
+        },
+        {
+          "title": "Официальная документация раздела",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript",
+          "checkedAt": null,
+          "notes": "Начальная точка поиска, не замена источнику конкретного технического утверждения.",
+          "id": "ref-1f297cad465f26f9"
+        }
+      ],
+      "caveats": [
+        "Перенесено из существующего ответа; актуальность страницы и совместимость нужно перепроверить при подготовке пакета."
+      ]
+    },
+    {
+      "sectionId": "javascript",
+      "subsectionId": "functions",
+      "scope": "Вызовы и аргументы, this, замыкания, генераторы, рекурсия и функциональные приёмы.",
+      "sources": [
+        {
+          "title": "Документация",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions",
+          "checkedAt": null,
+          "id": "ref-0e855e225867cf9b"
+        },
+        {
+          "title": "MDN: Functions/Default_parameters",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Default_parameters",
+          "checkedAt": null,
+          "id": "ref-c714e34636a8601d"
+        },
+        {
+          "title": "MDN: Global_Objects/Function/length",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/length",
+          "checkedAt": null,
+          "id": "ref-98d5c565831f65d8"
+        },
+        {
+          "title": "MDN: Operators/new.target",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/new.target",
+          "checkedAt": null,
+          "id": "ref-39884eb1247ed8cf"
+        },
+        {
+          "title": "MDN: Global_Objects/WeakMap",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/WeakMap",
+          "checkedAt": null,
+          "id": "ref-c6792a3ff1585b44"
+        },
+        {
+          "title": "MDN: Global_Objects/WeakSet",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/WeakSet",
+          "checkedAt": null,
+          "id": "ref-78b25db5b931b233"
+        },
+        {
+          "title": "Официальная документация раздела",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript",
+          "checkedAt": null,
+          "notes": "Начальная точка поиска, не замена источнику конкретного технического утверждения.",
+          "id": "ref-1f297cad465f26f9"
+        }
+      ],
+      "caveats": [
+        "Перенесено из существующего ответа; актуальность страницы и совместимость нужно перепроверить при подготовке пакета."
+      ]
+    },
+    {
+      "sectionId": "javascript",
+      "subsectionId": "objects",
+      "scope": "Свойства и копирование, дескрипторы, прототипное наследование, Reflect и Proxy.",
+      "sources": [
+        {
+          "title": "MDN: Operators/Property_accessors",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Property_accessors",
+          "checkedAt": null,
+          "id": "ref-a57fb67bf837cbe6"
+        },
+        {
+          "title": "MDN: Global_Objects/Reflect/get",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Reflect/get",
+          "checkedAt": null,
+          "id": "ref-ee46005f0ec990e5"
+        },
+        {
+          "title": "MDN: Global_Objects/Proxy",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Proxy",
+          "checkedAt": null,
+          "id": "ref-3710453b59e48537"
+        },
+        {
+          "title": "MDN: Global_Objects/Proxy/revocable",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Proxy/revocable",
+          "checkedAt": null,
+          "id": "ref-c3ecfa7e68263dc6"
+        },
+        {
+          "title": "MDN: Global_Objects/Object/fromEntries",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/fromEntries",
+          "checkedAt": null,
+          "id": "ref-d26f859611e6c236"
+        },
+        {
+          "title": "MDN: Global_Objects/Object/is",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/is",
+          "checkedAt": null,
+          "id": "ref-4736b651f14b4d87"
+        },
+        {
+          "title": "MDN: Global_Objects/JSON",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON",
+          "checkedAt": null,
+          "id": "ref-31a6feb5ec967b55"
+        },
+        {
+          "title": "Официальная документация раздела",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript",
+          "checkedAt": null,
+          "notes": "Начальная точка поиска, не замена источнику конкретного технического утверждения.",
+          "id": "ref-1f297cad465f26f9"
+        }
+      ],
+      "caveats": [
+        "Перенесено из существующего ответа; актуальность страницы и совместимость нужно перепроверить при подготовке пакета."
+      ]
+    },
+    {
+      "sectionId": "javascript",
+      "subsectionId": "arrays",
+      "scope": "Методы массивов, преобразования, вложенные данные, Map, Set и слабые коллекции.",
+      "sources": [
+        {
+          "title": "Документация",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array",
+          "checkedAt": null,
+          "id": "ref-f81a889fd09330d6"
+        },
+        {
+          "title": "MDN: Global_Objects/Map",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map",
+          "checkedAt": null,
+          "id": "ref-c6ceb1b3cc7f5be3"
+        },
+        {
+          "title": "MDN: Global_Objects/Array",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array#iterative_methods",
+          "checkedAt": null,
+          "id": "ref-b0eb1297e6add96b"
+        },
+        {
+          "title": "MDN: Global_Objects/Array/includes",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/includes",
+          "checkedAt": null,
+          "id": "ref-47a9af47b7299d1a"
+        },
+        {
+          "title": "MDN: Global_Objects/Object/groupBy",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/groupBy",
+          "checkedAt": null,
+          "id": "ref-5c3b111f83f73dbc"
+        },
+        {
+          "title": "MDN: Global_Objects/Set",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set",
+          "checkedAt": null,
+          "id": "ref-3afad7684d5b78cb"
+        },
+        {
+          "title": "Официальная документация раздела",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript",
+          "checkedAt": null,
+          "notes": "Начальная точка поиска, не замена источнику конкретного технического утверждения.",
+          "id": "ref-1f297cad465f26f9"
+        }
+      ],
+      "caveats": [
+        "Перенесено из существующего ответа; актуальность страницы и совместимость нужно перепроверить при подготовке пакета."
+      ]
+    },
+    {
+      "sectionId": "javascript",
+      "subsectionId": "asynchronous",
+      "scope": "Event loop, Promise, async/await, отмена, таймеры, Workers и потоки данных.",
+      "sources": [
+        {
+          "title": "Документация",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/then",
+          "checkedAt": null,
+          "id": "ref-77fe4232baef3295"
+        },
+        {
+          "title": "Документация",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/allSettled",
+          "checkedAt": null,
+          "id": "ref-d8b78644bce10d26"
+        },
+        {
+          "title": "Документация",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/API/WebSocket",
+          "checkedAt": null,
+          "id": "ref-1a235d735ad81a13"
+        },
+        {
+          "title": "Документация",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API/Using_Service_Workers",
+          "checkedAt": null,
+          "id": "ref-c2d0deaa8de02652"
+        },
+        {
+          "title": "MDN: Global_Objects/Promise",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise",
+          "checkedAt": null,
+          "id": "ref-2299ce0a0990f829"
+        },
+        {
+          "title": "MDN: Statements/async_function",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/async_function",
+          "checkedAt": null,
+          "id": "ref-eea8ad460168cd5e"
+        },
+        {
+          "title": "MDN: AbortSignal/any_static",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/API/AbortSignal/any_static",
+          "checkedAt": null,
+          "id": "ref-5e4fdfcf84b45b9c"
+        },
+        {
+          "title": "MDN: Global_Objects/Promise/resolve",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/resolve",
+          "checkedAt": null,
+          "id": "ref-6386ee68ed438b6f"
+        },
+        {
+          "title": "MDN: Web_Workers_API/Using_web_workers",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API/Using_web_workers",
+          "checkedAt": null,
+          "id": "ref-b3c3320cd57f4d0e"
+        },
+        {
+          "title": "Официальная документация раздела",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript",
+          "checkedAt": null,
+          "notes": "Начальная точка поиска, не замена источнику конкретного технического утверждения.",
+          "id": "ref-1f297cad465f26f9"
+        }
+      ],
+      "caveats": [
+        "Перенесено из существующего ответа; актуальность страницы и совместимость нужно перепроверить при подготовке пакета."
+      ]
+    },
+    {
+      "sectionId": "javascript",
+      "subsectionId": "dom",
+      "scope": "Документ, события, формы, хранилища и другие возможности браузера.",
+      "sources": [
+        {
+          "title": "Документация",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/API/History_API/Working_with_the_History_API",
+          "checkedAt": null,
+          "id": "ref-6d3507067179c522"
+        },
+        {
+          "title": "Документация",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/API/MutationObserver",
+          "checkedAt": null,
+          "id": "ref-97e20fbf83fe5b83"
+        },
+        {
+          "title": "Документация",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/API/Window/pageshow_event",
+          "checkedAt": null,
+          "id": "ref-d6aecc8de7f47323"
+        },
+        {
+          "title": "MDN: Node",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/API/Node",
+          "checkedAt": null,
+          "id": "ref-a4d645fdcc290420"
+        },
+        {
+          "title": "MDN: Element/getBoundingClientRect",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/API/Element/getBoundingClientRect",
+          "checkedAt": null,
+          "id": "ref-ef475b2f465dba7f"
+        },
+        {
+          "title": "MDN: Window/getComputedStyle",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/API/Window/getComputedStyle",
+          "checkedAt": null,
+          "id": "ref-a51ebb76f16e9381"
+        },
+        {
+          "title": "MDN: ResizeObserver",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/API/ResizeObserver",
+          "checkedAt": null,
+          "id": "ref-8574102411462ff6"
+        },
+        {
+          "title": "MDN: Event/composed",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/API/Event/composed",
+          "checkedAt": null,
+          "id": "ref-cb37acc54e75624c"
+        },
+        {
+          "title": "MDN: EventTarget/dispatchEvent",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/dispatchEvent",
+          "checkedAt": null,
+          "id": "ref-c929f013ab795b77"
+        },
+        {
+          "title": "MDN: Web_components/Using_custom_elements",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/API/Web_components/Using_custom_elements",
+          "checkedAt": null,
+          "id": "ref-1defb63c612ca04a"
+        },
+        {
+          "title": "MDN: CSS/escape_static",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/API/CSS/escape_static",
+          "checkedAt": null,
+          "id": "ref-9f600f08c79cddac"
+        },
+        {
+          "title": "MDN: Range",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/API/Range",
+          "checkedAt": null,
+          "id": "ref-57ee347f644da308"
+        },
+        {
+          "title": "MDN: UserActivation",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/API/UserActivation",
+          "checkedAt": null,
+          "id": "ref-0ae9cf8d8db6af63"
+        },
+        {
+          "title": "Официальная документация раздела",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript",
+          "checkedAt": null,
+          "notes": "Начальная точка поиска, не замена источнику конкретного технического утверждения.",
+          "id": "ref-1f297cad465f26f9"
+        }
+      ],
+      "caveats": [
+        "Перенесено из существующего ответа; актуальность страницы и совместимость нужно перепроверить при подготовке пакета."
+      ]
+    },
+    {
+      "sectionId": "javascript",
+      "subsectionId": "classes",
+      "scope": "Конструкторы, поля, методы, наследование и приватные элементы.",
+      "sources": [
+        {
+          "title": "MDN: Classes/Private_elements",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes/Private_elements",
+          "checkedAt": null,
+          "id": "ref-bef9a389da4e635f"
+        },
+        {
+          "title": "MDN: Operators/super",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/super",
+          "checkedAt": null,
+          "id": "ref-131f13d7d3c6484a"
+        },
+        {
+          "title": "MDN: Global_Objects/Symbol/species",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Symbol/species",
+          "checkedAt": null,
+          "id": "ref-6a1f0301f7edad21"
+        },
+        {
+          "title": "Официальная документация раздела",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript",
+          "checkedAt": null,
+          "notes": "Начальная точка поиска, не замена источнику конкретного технического утверждения.",
+          "id": "ref-1f297cad465f26f9"
+        }
+      ],
+      "caveats": [
+        "Перенесено из существующего ответа; актуальность страницы и совместимость нужно перепроверить при подготовке пакета."
+      ]
+    },
+    {
+      "sectionId": "javascript",
+      "subsectionId": "errors",
+      "scope": "Виды ошибок, диагностика, собственные типы и работа с отладчиком.",
+      "sources": [
+        {
+          "title": "Документация",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/SuppressedError",
+          "checkedAt": null,
+          "id": "ref-ce1f1c65c13d3b05"
+        },
+        {
+          "title": "MDN: Window/unhandledrejection_event",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/API/Window/unhandledrejection_event",
+          "checkedAt": null,
+          "id": "ref-93b22e2057ee8a25"
+        },
+        {
+          "title": "Официальная документация раздела",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript",
+          "checkedAt": null,
+          "notes": "Начальная точка поиска, не замена источнику конкретного технического утверждения.",
+          "id": "ref-1f297cad465f26f9"
+        }
+      ],
+      "caveats": [
+        "Перенесено из существующего ответа; актуальность страницы и совместимость нужно перепроверить при подготовке пакета."
+      ]
+    },
+    {
+      "sectionId": "javascript",
+      "subsectionId": "modern",
+      "scope": "Стандарт языка, модули, шаблоны и асинхронная загрузка кода.",
+      "sources": [
+        {
+          "title": "MDN: Statements/import",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/import",
+          "checkedAt": null,
+          "id": "ref-cc24e8c530c72fad"
+        },
+        {
+          "title": "MDN: Operators/import",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/import",
+          "checkedAt": null,
+          "id": "ref-133e9ddc6c917624"
+        },
+        {
+          "title": "MDN: Statements/import/with",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/import/with",
+          "checkedAt": null,
+          "id": "ref-78c8a187a8bb979d"
+        },
+        {
+          "title": "MDN: Statements/using",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/using",
+          "checkedAt": null,
+          "id": "ref-1d2c4a603f2d62f7"
+        },
+        {
+          "title": "MDN: Statements/await_using",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/await_using",
+          "checkedAt": null,
+          "id": "ref-e0caaeddfe5ae228"
+        },
+        {
+          "title": "MDN: Global_Objects/DisposableStack",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DisposableStack",
+          "checkedAt": null,
+          "id": "ref-66411f89fd00c45b"
+        },
+        {
+          "title": "MDN: JavaScript language overview",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Language_overview",
+          "checkedAt": null,
+          "id": "ref-df36d692c02dad1d"
+        },
+        {
+          "title": "Официальная документация раздела",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript",
+          "checkedAt": null,
+          "notes": "Начальная точка поиска, не замена источнику конкретного технического утверждения.",
+          "id": "ref-1f297cad465f26f9"
+        }
+      ],
+      "caveats": [
+        "Перенесено из существующего ответа; актуальность страницы и совместимость нужно перепроверить при подготовке пакета."
+      ]
+    },
+    {
+      "sectionId": "javascript",
+      "subsectionId": "performance",
+      "scope": "Измерения, память, рендеринг, загрузка и распределение работы.",
+      "sources": [
+        {
+          "title": "V8: Fast properties (детали реализации)",
+          "url": "https://v8.dev/blog/fast-properties",
+          "checkedAt": null,
+          "id": "ref-10a11bf6c1a1f47a"
+        },
+        {
+          "title": "V8: Elements kinds (детали реализации)",
+          "url": "https://v8.dev/blog/elements-kinds",
+          "checkedAt": null,
+          "id": "ref-7aa5e2486865162e"
+        },
+        {
+          "title": "MDN: Performance/mark",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/API/Performance/mark",
+          "checkedAt": null,
+          "id": "ref-17477b02e979afc5"
+        },
+        {
+          "title": "Официальная документация раздела",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript",
+          "checkedAt": null,
+          "notes": "Начальная точка поиска, не замена источнику конкретного технического утверждения.",
+          "id": "ref-1f297cad465f26f9"
+        }
+      ],
+      "caveats": [
+        "Перенесено из существующего ответа; актуальность страницы и совместимость нужно перепроверить при подготовке пакета."
+      ]
+    },
+    {
+      "sectionId": "javascript",
+      "subsectionId": "advanced",
+      "scope": "Контексты выполнения, слабые ссылки, общая память и Temporal.",
+      "sources": [
+        {
+          "title": "ECMAScript: Realms",
+          "url": "https://tc39.es/ecma262/#sec-code-realms",
+          "checkedAt": null,
+          "notes": "Перенесено из существующего ответа; актуальность страницы и совместимость нужно перепроверить при подготовке пакета.",
+          "id": "ref-d9c82cdcde643850"
+        },
+        {
+          "title": "Официальная документация раздела",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript",
+          "checkedAt": null,
+          "notes": "Начальная точка поиска, не замена источнику конкретного технического утверждения.",
+          "id": "ref-1f297cad465f26f9"
+        }
+      ],
+      "caveats": []
+    },
+    {
+      "sectionId": "javascript",
+      "subsectionId": "code-reading",
+      "scope": "Предскажите результат, объясните механизм и найдите типичную ошибку до раскрытия ответа.",
+      "sources": [
+        {
+          "title": "MDN: forEach",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach",
+          "checkedAt": null,
+          "id": "ref-b60c999c659f2d7a"
+        },
+        {
+          "title": "ECMAScript: актуальный living draft",
+          "url": "https://tc39.es/ecma262/",
+          "checkedAt": null,
+          "id": "ref-80655998e01e12c8"
+        },
+        {
+          "title": "Официальная документация раздела",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript",
+          "checkedAt": null,
+          "notes": "Начальная точка поиска, не замена источнику конкретного технического утверждения.",
+          "id": "ref-1f297cad465f26f9"
+        }
+      ],
+      "caveats": [
+        "Перенесено из существующего ответа; актуальность страницы и совместимость нужно перепроверить при подготовке пакета."
+      ]
+    },
+    {
+      "sectionId": "javascript",
+      "subsectionId": "numbers",
+      "scope": "Безопасные целые, разбор чисел, округление, остаток и побитовые операции.",
+      "sources": [
+        {
+          "title": "MDN: Operators/Bitwise_AND",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Bitwise_AND",
+          "checkedAt": null,
+          "id": "ref-0c059a012661ef53"
+        },
+        {
+          "title": "MDN: Global_Objects/Number/isSafeInteger",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/isSafeInteger",
+          "checkedAt": null,
+          "id": "ref-1d32dd960097eb68"
+        },
+        {
+          "title": "MDN: Global_Objects/parseInt",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/parseInt",
+          "checkedAt": null,
+          "id": "ref-475ac14ea9812acb"
+        },
+        {
+          "title": "MDN: Global_Objects/Math/round",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/round",
+          "checkedAt": null,
+          "id": "ref-9e1bd68c331b63f5"
+        },
+        {
+          "title": "MDN: Global_Objects/Number/toFixed",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/toFixed",
+          "checkedAt": null,
+          "id": "ref-b53059501d1ea8cc"
+        },
+        {
+          "title": "MDN: Operators/Remainder",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Remainder",
+          "checkedAt": null,
+          "id": "ref-aab2305fe7bdc501"
+        },
+        {
+          "title": "MDN: Global_Objects/Math/random",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random",
+          "checkedAt": null,
+          "id": "ref-53f551b33cf6e29e"
+        },
+        {
+          "title": "Официальная документация раздела",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript",
+          "checkedAt": null,
+          "notes": "Начальная точка поиска, не замена источнику конкретного технического утверждения.",
+          "id": "ref-1f297cad465f26f9"
+        }
+      ],
+      "caveats": [
+        "Перенесено из существующего ответа; актуальность страницы и совместимость нужно перепроверить при подготовке пакета."
+      ]
+    },
+    {
+      "sectionId": "javascript",
+      "subsectionId": "strings",
+      "scope": "Code units, графемы, нормализация, поиск, срезы и кодирование.",
+      "sources": [
+        {
+          "title": "MDN: Global_Objects/String",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String#utf-16_characters_unicode_code_points_and_grapheme_clusters",
+          "checkedAt": null,
+          "id": "ref-02d0e67fadfa571b"
+        },
+        {
+          "title": "MDN: Global_Objects/String/normalize",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/normalize",
+          "checkedAt": null,
+          "id": "ref-e0d917e67bc016ae"
+        },
+        {
+          "title": "MDN: Global_Objects/String",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String",
+          "checkedAt": null,
+          "id": "ref-52509c865352161c"
+        },
+        {
+          "title": "MDN: Global_Objects/String/raw",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/raw",
+          "checkedAt": null,
+          "id": "ref-f49caaf1e6911801"
+        },
+        {
+          "title": "MDN: Global_Objects/String/trim",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/trim",
+          "checkedAt": null,
+          "id": "ref-726499796deecfc9"
+        },
+        {
+          "title": "MDN: Global_Objects/encodeURIComponent",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/encodeURIComponent",
+          "checkedAt": null,
+          "id": "ref-f001b89b0e7890d2"
+        },
+        {
+          "title": "MDN: Global_Objects/Intl/Collator",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/Collator",
+          "checkedAt": null,
+          "id": "ref-f7463a0acebdcb6a"
+        },
+        {
+          "title": "Официальная документация раздела",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript",
+          "checkedAt": null,
+          "notes": "Начальная точка поиска, не замена источнику конкретного технического утверждения.",
+          "id": "ref-1f297cad465f26f9"
+        }
+      ],
+      "caveats": [
+        "Перенесено из существующего ответа; актуальность страницы и совместимость нужно перепроверить при подготовке пакета."
+      ]
+    },
+    {
+      "sectionId": "javascript",
+      "subsectionId": "regexp",
+      "scope": "Шаблоны, группы, Unicode, поиск, замены и ограничения безопасности.",
+      "sources": [
+        {
+          "title": "MDN: Global_Objects/RegExp/escape",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp/escape",
+          "checkedAt": null,
+          "id": "ref-bf19ed0551520d2b"
+        },
+        {
+          "title": "MDN: Global_Objects/RegExp/unicodeSets",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp/unicodeSets",
+          "checkedAt": null,
+          "id": "ref-bfa5ffdfed632031"
+        },
+        {
+          "title": "MDN: Regular_expressions/Quantifier",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Regular_expressions/Quantifier",
+          "checkedAt": null,
+          "id": "ref-83e130096a37a19e"
+        },
+        {
+          "title": "MDN: Regular_expressions/Capturing_group",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Regular_expressions/Capturing_group",
+          "checkedAt": null,
+          "id": "ref-1be4962a815f2a92"
+        },
+        {
+          "title": "MDN: Regular_expressions/Lookahead_assertion",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Regular_expressions/Lookahead_assertion",
+          "checkedAt": null,
+          "id": "ref-4e15bcebca47fc5f"
+        },
+        {
+          "title": "MDN: Global_Objects/RegExp/multiline",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp/multiline",
+          "checkedAt": null,
+          "id": "ref-815a59d9e03b2956"
+        },
+        {
+          "title": "MDN: Global_Objects/String/matchAll",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/matchAll",
+          "checkedAt": null,
+          "id": "ref-31a0b8a92d79c7ef"
+        },
+        {
+          "title": "MDN: Global_Objects/String/replace",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/replace",
+          "checkedAt": null,
+          "id": "ref-d421ccbbb7526b8e"
+        },
+        {
+          "title": "OWASP: ReDoS",
+          "url": "https://community.owasp.org/attacks/Regular_expression_Denial_of_Service_-_ReDoS",
+          "checkedAt": null,
+          "id": "ref-5d1409067073e79d"
+        },
+        {
+          "title": "Официальная документация раздела",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript",
+          "checkedAt": null,
+          "notes": "Начальная точка поиска, не замена источнику конкретного технического утверждения.",
+          "id": "ref-1f297cad465f26f9"
+        }
+      ],
+      "caveats": [
+        "Перенесено из существующего ответа; актуальность страницы и совместимость нужно перепроверить при подготовке пакета."
+      ]
+    },
+    {
+      "sectionId": "javascript",
+      "subsectionId": "intl",
+      "scope": "Календарные операции, часовые пояса и локализованное представление.",
+      "sources": [
+        {
+          "title": "MDN: Global_Objects/Date",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date",
+          "checkedAt": null,
+          "id": "ref-9ca39db57b1de11c"
+        },
+        {
+          "title": "MDN: Global_Objects/Intl/DateTimeFormat",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/DateTimeFormat",
+          "checkedAt": null,
+          "id": "ref-a6932f365414e9ff"
+        },
+        {
+          "title": "MDN: Global_Objects/Intl/NumberFormat",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/NumberFormat",
+          "checkedAt": null,
+          "id": "ref-adae1e5f175c97a9"
+        },
+        {
+          "title": "MDN: Global_Objects/Intl/Collator",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/Collator",
+          "checkedAt": null,
+          "id": "ref-f7463a0acebdcb6a"
+        },
+        {
+          "title": "MDN: Global_Objects/Intl/PluralRules",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/PluralRules",
+          "checkedAt": null,
+          "id": "ref-6aaabd7701d8b937"
+        },
+        {
+          "title": "MDN: Global_Objects/Intl/RelativeTimeFormat",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/RelativeTimeFormat",
+          "checkedAt": null,
+          "id": "ref-e484ff2a7694ec34"
+        },
+        {
+          "title": "MDN: Global_Objects/Intl/ListFormat",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/ListFormat",
+          "checkedAt": null,
+          "id": "ref-72c4c48c91b6edc1"
+        },
+        {
+          "title": "Официальная документация раздела",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript",
+          "checkedAt": null,
+          "notes": "Начальная точка поиска, не замена источнику конкретного технического утверждения.",
+          "id": "ref-1f297cad465f26f9"
+        }
+      ],
+      "caveats": [
+        "Перенесено из существующего ответа; актуальность страницы и совместимость нужно перепроверить при подготовке пакета."
+      ]
+    },
+    {
+      "sectionId": "javascript",
+      "subsectionId": "binary",
+      "scope": "Представления буфера, transfer, кодирование, Atomics и владение ресурсами.",
+      "sources": [
+        {
+          "title": "MDN: Global_Objects/TypedArray",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray",
+          "checkedAt": null,
+          "id": "ref-e033551d722fe920"
+        },
+        {
+          "title": "MDN: Global_Objects/ArrayBuffer/transfer",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/ArrayBuffer/transfer",
+          "checkedAt": null,
+          "id": "ref-99df322f519ec4b7"
+        },
+        {
+          "title": "MDN: Global_Objects/DataView",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DataView",
+          "checkedAt": null,
+          "id": "ref-1f79dc43429aa5fa"
+        },
+        {
+          "title": "MDN: TextDecoder",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/API/TextDecoder",
+          "checkedAt": null,
+          "id": "ref-10b25e100d9c4f2f"
+        },
+        {
+          "title": "MDN: Blob",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/API/Blob",
+          "checkedAt": null,
+          "id": "ref-a3cb083eae4e9e79"
+        },
+        {
+          "title": "MDN: Global_Objects/Atomics",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Atomics",
+          "checkedAt": null,
+          "id": "ref-f75747b1fa38c25b"
+        },
+        {
+          "title": "MDN: Global_Objects/Atomics/waitAsync",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Atomics/waitAsync",
+          "checkedAt": null,
+          "id": "ref-87d824cadf6d3f24"
+        },
+        {
+          "title": "Официальная документация раздела",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript",
+          "checkedAt": null,
+          "notes": "Начальная точка поиска, не замена источнику конкретного технического утверждения.",
+          "id": "ref-1f297cad465f26f9"
+        }
+      ],
+      "caveats": [
+        "Перенесено из существующего ответа; актуальность страницы и совместимость нужно перепроверить при подготовке пакета."
+      ]
+    },
+    {
+      "sectionId": "javascript",
+      "subsectionId": "iteration",
+      "scope": "Делегирование, закрытие итераторов, ленивые последовательности и disposal.",
+      "sources": [
+        {
+          "title": "MDN: Iteration_protocols",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Iteration_protocols",
+          "checkedAt": null,
+          "id": "ref-a8ff88db0af1694a"
+        },
+        {
+          "title": "MDN: Operators/yield*",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/yield*",
+          "checkedAt": null,
+          "id": "ref-f6cf60adce058693"
+        },
+        {
+          "title": "MDN: Global_Objects/Generator/return",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Generator/return",
+          "checkedAt": null,
+          "id": "ref-ae8d334787dedbb5"
+        },
+        {
+          "title": "MDN: Global_Objects/Iterator",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Iterator",
+          "checkedAt": null,
+          "id": "ref-4d780395a7e862d3"
+        },
+        {
+          "title": "MDN: Global_Objects/Array/fromAsync",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/fromAsync",
+          "checkedAt": null,
+          "id": "ref-f9e3681a24b5a718"
+        },
+        {
+          "title": "MDN: Global_Objects/AsyncGenerator",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/AsyncGenerator",
+          "checkedAt": null,
+          "id": "ref-8ce34baa91687cff"
+        },
+        {
+          "title": "MDN: Statements/for-await...of",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for-await...of",
+          "checkedAt": null,
+          "id": "ref-a956740156132837"
+        },
+        {
+          "title": "Официальная документация раздела",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript",
+          "checkedAt": null,
+          "notes": "Начальная точка поиска, не замена источнику конкретного технического утверждения.",
+          "id": "ref-1f297cad465f26f9"
+        }
+      ],
+      "caveats": [
+        "Перенесено из существующего ответа; актуальность страницы и совместимость нужно перепроверить при подготовке пакета."
+      ]
+    },
+    {
+      "sectionId": "javascript",
+      "subsectionId": "network",
+      "scope": "Fetch, владение телом ответа, backpressure, URL и границы браузерной безопасности.",
+      "sources": [
+        {
+          "title": "MDN: CORS",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/CORS",
+          "checkedAt": null,
+          "id": "ref-6265cf02838595fc"
+        },
+        {
+          "title": "MDN: Fetch_API/Using_Fetch",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch",
+          "checkedAt": null,
+          "id": "ref-f10cc26ad8cc531b"
+        },
+        {
+          "title": "MDN: Response/clone",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/API/Response/clone",
+          "checkedAt": null,
+          "id": "ref-7244f432abd74f21"
+        },
+        {
+          "title": "MDN: Streams_API/Using_readable_streams",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/API/Streams_API/Using_readable_streams",
+          "checkedAt": null,
+          "id": "ref-33a95e79dd4a80a5"
+        },
+        {
+          "title": "MDN: ReadableStreamDefaultReader",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/API/ReadableStreamDefaultReader",
+          "checkedAt": null,
+          "id": "ref-c82c81148aeb5e13"
+        },
+        {
+          "title": "MDN: TextDecoder",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/API/TextDecoder",
+          "checkedAt": null,
+          "id": "ref-10b25e100d9c4f2f"
+        },
+        {
+          "title": "MDN: URLSearchParams",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/API/URLSearchParams",
+          "checkedAt": null,
+          "id": "ref-4c31b22a38004d58"
+        },
+        {
+          "title": "MDN: EventSource",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/API/EventSource",
+          "checkedAt": null,
+          "id": "ref-63c188439029aeaf"
+        },
+        {
+          "title": "OWASP: CSRF Prevention",
+          "url": "https://cheatsheetseries.owasp.org/cheatsheets/Cross-Site_Request_Forgery_Prevention_Cheat_Sheet.html",
+          "checkedAt": null,
+          "id": "ref-8edfb658f22c7a5f"
+        },
+        {
+          "title": "MDN: Content Security Policy",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/CSP",
+          "checkedAt": null,
+          "id": "ref-667cae19ad9c93fe"
+        },
+        {
+          "title": "Официальная документация раздела",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript",
+          "checkedAt": null,
+          "notes": "Начальная точка поиска, не замена источнику конкретного технического утверждения.",
+          "id": "ref-1f297cad465f26f9"
+        }
+      ],
+      "caveats": [
+        "Перенесено из существующего ответа; актуальность страницы и совместимость нужно перепроверить при подготовке пакета."
+      ]
+    },
+    {
+      "sectionId": "javascript",
+      "subsectionId": "storage",
+      "scope": "Транзакции IndexedDB, квоты, устойчивость данных и обмен сообщениями.",
+      "sources": [
+        {
+          "title": "MDN: IndexedDB_API/Using_IndexedDB",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API/Using_IndexedDB",
+          "checkedAt": null,
+          "id": "ref-270dfb7aeda2dbca"
+        },
+        {
+          "title": "MDN: Storage_API/Storage_quotas_and_eviction_criteria",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/API/Storage_API/Storage_quotas_and_eviction_criteria",
+          "checkedAt": null,
+          "id": "ref-c3fde32989fa5e12"
+        },
+        {
+          "title": "MDN: BroadcastChannel",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/API/BroadcastChannel",
+          "checkedAt": null,
+          "id": "ref-0fcdff4df3e3729c"
+        },
+        {
+          "title": "Официальная документация раздела",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript",
+          "checkedAt": null,
+          "notes": "Начальная точка поиска, не замена источнику конкретного технического утверждения.",
+          "id": "ref-1f297cad465f26f9"
+        }
+      ],
+      "caveats": [
+        "Перенесено из существующего ответа; актуальность страницы и совместимость нужно перепроверить при подготовке пакета."
+      ]
+    },
+    {
+      "sectionId": "typescript",
+      "subsectionId": "ts-fundamentals",
+      "scope": "Статическая проверка, границы гарантий, вывод типов и настройки проекта.",
+      "sources": [
+        {
+          "title": "Официальная документация раздела",
+          "url": "https://www.typescriptlang.org/docs/",
+          "checkedAt": null,
+          "notes": "Начальная точка поиска, не замена источнику конкретного технического утверждения.",
+          "id": "ref-d1ea49db3568981e"
+        }
+      ],
+      "caveats": []
+    },
+    {
+      "sectionId": "typescript",
+      "subsectionId": "types",
+      "scope": "Примитивы, литералы, null, unknown, any, void, never и enum.",
+      "sources": [
+        {
+          "title": "Документация TypeScript",
+          "url": "https://www.typescriptlang.org/docs/handbook/2/everyday-types.html",
+          "checkedAt": null,
+          "notes": "Перенесено из существующего ответа; актуальность страницы и совместимость нужно перепроверить при подготовке пакета.",
+          "id": "ref-1ec6ef05cd7c0c00"
+        },
+        {
+          "title": "Официальная документация раздела",
+          "url": "https://www.typescriptlang.org/docs/",
+          "checkedAt": null,
+          "notes": "Начальная точка поиска, не замена источнику конкретного технического утверждения.",
+          "id": "ref-d1ea49db3568981e"
+        }
+      ],
+      "caveats": []
+    },
+    {
+      "sectionId": "typescript",
+      "subsectionId": "ts-objects",
+      "scope": "Type, interface, свойства, расширение контрактов и рекурсивные структуры.",
+      "sources": [
+        {
+          "title": "Документация TypeScript",
+          "url": "https://www.typescriptlang.org/docs/handbook/type-compatibility.html",
+          "checkedAt": null,
+          "notes": "Перенесено из существующего ответа; актуальность страницы и совместимость нужно перепроверить при подготовке пакета.",
+          "id": "ref-b1f557c0324024a7"
+        },
+        {
+          "title": "Официальная документация раздела",
+          "url": "https://www.typescriptlang.org/docs/",
+          "checkedAt": null,
+          "notes": "Начальная точка поиска, не замена источнику конкретного технического утверждения.",
+          "id": "ref-d1ea49db3568981e"
+        }
+      ],
+      "caveats": []
+    },
+    {
+      "sectionId": "typescript",
+      "subsectionId": "ts-collections",
+      "scope": "Типы элементов, readonly, позиции кортежа, Set и Map.",
+      "sources": [
+        {
+          "title": "Документация TypeScript",
+          "url": "https://www.typescriptlang.org/docs/handbook/release-notes/typescript-4-0.html",
+          "checkedAt": null,
+          "id": "ref-125ea5f1b7c79b97"
+        },
+        {
+          "title": "Документация TypeScript",
+          "url": "https://www.typescriptlang.org/docs/handbook/2/objects.html",
+          "checkedAt": null,
+          "id": "ref-e93a21d416404bfe"
+        },
+        {
+          "title": "Официальная документация раздела",
+          "url": "https://www.typescriptlang.org/docs/",
+          "checkedAt": null,
+          "notes": "Начальная точка поиска, не замена источнику конкретного технического утверждения.",
+          "id": "ref-d1ea49db3568981e"
+        }
+      ],
+      "caveats": [
+        "Перенесено из существующего ответа; актуальность страницы и совместимость нужно перепроверить при подготовке пакета."
+      ]
+    },
+    {
+      "sectionId": "typescript",
+      "subsectionId": "ts-functions",
+      "scope": "Сигнатуры, параметры, возвращаемые значения, async и перегрузки.",
+      "sources": [
+        {
+          "title": "Документация TypeScript",
+          "url": "https://www.typescriptlang.org/tsconfig/strictFunctionTypes.html",
+          "checkedAt": null,
+          "id": "ref-9c236532a3d8bc5a"
+        },
+        {
+          "title": "Документация TypeScript",
+          "url": "https://www.typescriptlang.org/docs/handbook/2/functions.html",
+          "checkedAt": null,
+          "id": "ref-db1c5af3b94742b6"
+        },
+        {
+          "title": "Документация TypeScript",
+          "url": "https://www.typescriptlang.org/docs/handbook/release-notes/typescript-3-6.html",
+          "checkedAt": null,
+          "id": "ref-cb5d5b49e0662695"
+        },
+        {
+          "title": "Официальная документация раздела",
+          "url": "https://www.typescriptlang.org/docs/",
+          "checkedAt": null,
+          "notes": "Начальная точка поиска, не замена источнику конкретного технического утверждения.",
+          "id": "ref-d1ea49db3568981e"
+        }
+      ],
+      "caveats": [
+        "Перенесено из существующего ответа; актуальность страницы и совместимость нужно перепроверить при подготовке пакета."
+      ]
+    },
+    {
+      "sectionId": "typescript",
+      "subsectionId": "ts-unions",
+      "scope": "Альтернативы значений, совместные требования и конфликты свойств.",
+      "sources": [
+        {
+          "title": "Официальная документация раздела",
+          "url": "https://www.typescriptlang.org/docs/",
+          "checkedAt": null,
+          "notes": "Начальная точка поиска, не замена источнику конкретного технического утверждения.",
+          "id": "ref-d1ea49db3568981e"
+        }
+      ],
+      "caveats": []
+    },
+    {
+      "sectionId": "typescript",
+      "subsectionId": "ts-narrowing",
+      "scope": "Поток управления, предикаты, assertion functions и полнота вариантов.",
+      "sources": [
+        {
+          "title": "Документация TypeScript",
+          "url": "https://www.typescriptlang.org/docs/handbook/release-notes/typescript-5-4.html",
+          "checkedAt": null,
+          "notes": "Перенесено из существующего ответа; актуальность страницы и совместимость нужно перепроверить при подготовке пакета.",
+          "id": "ref-36c5f0cd57b1b768"
+        },
+        {
+          "title": "Официальная документация раздела",
+          "url": "https://www.typescriptlang.org/docs/",
+          "checkedAt": null,
+          "notes": "Начальная точка поиска, не замена источнику конкретного технического утверждения.",
+          "id": "ref-d1ea49db3568981e"
+        }
+      ],
+      "caveats": []
+    },
+    {
+      "sectionId": "typescript",
+      "subsectionId": "generics",
+      "scope": "Связи входа и результата, ограничения, контейнеры и значения по умолчанию.",
+      "sources": [
+        {
+          "title": "Документация TypeScript",
+          "url": "https://www.typescriptlang.org/docs/handbook/release-notes/typescript-5-0.html",
+          "checkedAt": null,
+          "id": "ref-f3bc0c0e7bc0b54f"
+        },
+        {
+          "title": "Документация TypeScript",
+          "url": "https://www.typescriptlang.org/docs/handbook/2/functions.html",
+          "checkedAt": null,
+          "id": "ref-db1c5af3b94742b6"
+        },
+        {
+          "title": "Документация TypeScript",
+          "url": "https://www.typescriptlang.org/docs/handbook/2/generics.html",
+          "checkedAt": null,
+          "id": "ref-b8c0426b8b77a2f0"
+        },
+        {
+          "title": "Официальная документация раздела",
+          "url": "https://www.typescriptlang.org/docs/",
+          "checkedAt": null,
+          "notes": "Начальная точка поиска, не замена источнику конкретного технического утверждения.",
+          "id": "ref-d1ea49db3568981e"
+        }
+      ],
+      "caveats": [
+        "Перенесено из существующего ответа; актуальность страницы и совместимость нужно перепроверить при подготовке пакета."
+      ]
+    },
+    {
+      "sectionId": "typescript",
+      "subsectionId": "ts-type-operators",
+      "scope": "Keyof, typeof, indexed access, mapped, conditional, infer и дистрибутивность.",
+      "sources": [
+        {
+          "title": "Документация TypeScript",
+          "url": "https://www.typescriptlang.org/docs/handbook/2/template-literal-types.html",
+          "checkedAt": null,
+          "id": "ref-b02446746e720604"
+        },
+        {
+          "title": "Документация TypeScript",
+          "url": "https://www.typescriptlang.org/docs/handbook/2/mapped-types.html",
+          "checkedAt": null,
+          "id": "ref-bad15debd501fec2"
+        },
+        {
+          "title": "Официальная документация раздела",
+          "url": "https://www.typescriptlang.org/docs/",
+          "checkedAt": null,
+          "notes": "Начальная точка поиска, не замена источнику конкретного технического утверждения.",
+          "id": "ref-d1ea49db3568981e"
+        }
+      ],
+      "caveats": [
+        "Перенесено из существующего ответа; актуальность страницы и совместимость нужно перепроверить при подготовке пакета."
+      ]
+    },
+    {
+      "sectionId": "typescript",
+      "subsectionId": "ts-utility-types",
+      "scope": "Готовые преобразования свойств, union, сигнатур и строковых типов.",
+      "sources": [
+        {
+          "title": "Документация TypeScript",
+          "url": "https://www.typescriptlang.org/docs/handbook/release-notes/typescript-5-4.html",
+          "checkedAt": null,
+          "notes": "Перенесено из существующего ответа; актуальность страницы и совместимость нужно перепроверить при подготовке пакета.",
+          "id": "ref-36c5f0cd57b1b768"
+        },
+        {
+          "title": "Официальная документация раздела",
+          "url": "https://www.typescriptlang.org/docs/",
+          "checkedAt": null,
+          "notes": "Начальная точка поиска, не замена источнику конкретного технического утверждения.",
+          "id": "ref-d1ea49db3568981e"
+        }
+      ],
+      "caveats": []
+    },
+    {
+      "sectionId": "typescript",
+      "subsectionId": "ts-classes",
+      "scope": "Поля, видимость, абстракции, implements и generic-классы.",
+      "sources": [
+        {
+          "title": "Документация TypeScript",
+          "url": "https://www.typescriptlang.org/docs/handbook/2/classes.html",
+          "checkedAt": null,
+          "id": "ref-56877450f8207778"
+        },
+        {
+          "title": "Документация TypeScript",
+          "url": "https://www.typescriptlang.org/docs/handbook/release-notes/typescript-5-0.html",
+          "checkedAt": null,
+          "id": "ref-f3bc0c0e7bc0b54f"
+        },
+        {
+          "title": "Официальная документация раздела",
+          "url": "https://www.typescriptlang.org/docs/",
+          "checkedAt": null,
+          "notes": "Начальная точка поиска, не замена источнику конкретного технического утверждения.",
+          "id": "ref-d1ea49db3568981e"
+        }
+      ],
+      "caveats": [
+        "Перенесено из существующего ответа; актуальность страницы и совместимость нужно перепроверить при подготовке пакета."
+      ]
+    },
+    {
+      "sectionId": "typescript",
+      "subsectionId": "ts-practices",
+      "scope": "Strict, assertions, диагностические директивы, глобальные типы и сложность.",
+      "sources": [
+        {
+          "title": "Документация TypeScript",
+          "url": "https://www.typescriptlang.org/docs/handbook/release-notes/typescript-4-9.html",
+          "checkedAt": null,
+          "id": "ref-0787a3c8c4833124"
+        },
+        {
+          "title": "Документация TypeScript",
+          "url": "https://www.typescriptlang.org/tsconfig/noUncheckedIndexedAccess.html",
+          "checkedAt": null,
+          "id": "ref-279269d9eceb533b"
+        },
+        {
+          "title": "Документация TypeScript",
+          "url": "https://www.typescriptlang.org/docs/handbook/release-notes/typescript-3-7.html",
+          "checkedAt": null,
+          "id": "ref-c714383cf00adfbf"
+        },
+        {
+          "title": "Документация TypeScript",
+          "url": "https://www.typescriptlang.org/docs/handbook/dom-manipulation.html",
+          "checkedAt": null,
+          "id": "ref-79aee076d7c2cb3d"
+        },
+        {
+          "title": "Официальная документация раздела",
+          "url": "https://www.typescriptlang.org/docs/",
+          "checkedAt": null,
+          "notes": "Начальная точка поиска, не замена источнику конкретного технического утверждения.",
+          "id": "ref-d1ea49db3568981e"
+        }
+      ],
+      "caveats": [
+        "Перенесено из существующего ответа; актуальность страницы и совместимость нужно перепроверить при подготовке пакета."
+      ]
+    },
+    {
+      "sectionId": "typescript",
+      "subsectionId": "ts-modules",
+      "scope": "Типовые импорты, разрешение модулей, декларации, ESM/CJS и границы проектов.",
+      "sources": [
+        {
+          "title": "Документация TypeScript",
+          "url": "https://www.typescriptlang.org/docs/handbook/release-notes/typescript-5-0.html",
+          "checkedAt": null,
+          "id": "ref-f3bc0c0e7bc0b54f"
+        },
+        {
+          "title": "Документация TypeScript",
+          "url": "https://www.typescriptlang.org/docs/handbook/modules/reference.html",
+          "checkedAt": null,
+          "id": "ref-5d5a35066078b134"
+        },
+        {
+          "title": "Документация TypeScript",
+          "url": "https://www.typescriptlang.org/docs/handbook/declaration-files/introduction.html",
+          "checkedAt": null,
+          "id": "ref-c1de2736df1411d9"
+        },
+        {
+          "title": "Документация TypeScript",
+          "url": "https://www.typescriptlang.org/docs/handbook/declaration-files/publishing.html",
+          "checkedAt": null,
+          "id": "ref-2867a7ff346ce328"
+        },
+        {
+          "title": "Документация TypeScript",
+          "url": "https://www.typescriptlang.org/docs/handbook/modules/appendices/esm-cjs-interop.html",
+          "checkedAt": null,
+          "id": "ref-ed6daa68cea06c9b"
+        },
+        {
+          "title": "Документация TypeScript",
+          "url": "https://www.typescriptlang.org/docs/handbook/release-notes/typescript-5-5.html",
+          "checkedAt": null,
+          "id": "ref-93859c354bdf1f3b"
+        },
+        {
+          "title": "Документация TypeScript",
+          "url": "https://www.typescriptlang.org/docs/handbook/project-references.html",
+          "checkedAt": null,
+          "id": "ref-f31d37d8de59b590"
+        },
+        {
+          "title": "Документация TypeScript",
+          "url": "https://www.typescriptlang.org/tsconfig/types.html",
+          "checkedAt": null,
+          "id": "ref-0cc3e0974cc08536"
+        },
+        {
+          "title": "Документация TypeScript",
+          "url": "https://www.typescriptlang.org/docs/handbook/type-checking-javascript-files.html",
+          "checkedAt": null,
+          "id": "ref-8c00e42e01267e0d"
+        },
+        {
+          "title": "Документация TypeScript",
+          "url": "https://www.typescriptlang.org/tsconfig/skipLibCheck.html",
+          "checkedAt": null,
+          "id": "ref-368dd47648bb886b"
+        },
+        {
+          "title": "Официальная документация раздела",
+          "url": "https://www.typescriptlang.org/docs/",
+          "checkedAt": null,
+          "notes": "Начальная точка поиска, не замена источнику конкретного технического утверждения.",
+          "id": "ref-d1ea49db3568981e"
+        }
+      ],
+      "caveats": [
+        "Перенесено из существующего ответа; актуальность страницы и совместимость нужно перепроверить при подготовке пакета."
+      ]
+    },
+    {
+      "sectionId": "typescript",
+      "subsectionId": "ts-api-design",
+      "scope": "Проверенные границы данных, связи параметров, доменные контракты и ограничения обёрток.",
+      "sources": [
+        {
+          "title": "Документация TypeScript",
+          "url": "https://www.typescriptlang.org/docs/handbook/type-compatibility.html",
+          "checkedAt": null,
+          "id": "ref-b1f557c0324024a7"
+        },
+        {
+          "title": "Документация TypeScript",
+          "url": "https://www.typescriptlang.org/docs/handbook/2/everyday-types.html",
+          "checkedAt": null,
+          "id": "ref-1ec6ef05cd7c0c00"
+        },
+        {
+          "title": "Документация TypeScript",
+          "url": "https://www.typescriptlang.org/docs/handbook/2/narrowing.html",
+          "checkedAt": null,
+          "id": "ref-b2adaad06a21a777"
+        },
+        {
+          "title": "Документация TypeScript",
+          "url": "https://www.typescriptlang.org/docs/handbook/2/indexed-access-types.html",
+          "checkedAt": null,
+          "id": "ref-75c2147e0f5ee08f"
+        },
+        {
+          "title": "Документация TypeScript",
+          "url": "https://www.typescriptlang.org/docs/handbook/2/objects.html",
+          "checkedAt": null,
+          "id": "ref-e93a21d416404bfe"
+        },
+        {
+          "title": "Документация TypeScript",
+          "url": "https://www.typescriptlang.org/docs/handbook/2/functions.html",
+          "checkedAt": null,
+          "id": "ref-db1c5af3b94742b6"
+        },
+        {
+          "title": "Официальная документация раздела",
+          "url": "https://www.typescriptlang.org/docs/",
+          "checkedAt": null,
+          "notes": "Начальная точка поиска, не замена источнику конкретного технического утверждения.",
+          "id": "ref-d1ea49db3568981e"
+        }
+      ],
+      "caveats": [
+        "Перенесено из существующего ответа; актуальность страницы и совместимость нужно перепроверить при подготовке пакета."
+      ]
+    },
+    {
+      "sectionId": "react",
+      "subsectionId": "components",
+      "scope": "JSX, props, композиция, события, списки и идентичность компонентов.",
+      "sources": [
+        {
+          "title": "Документация",
+          "url": "https://react.dev/learn/passing-props-to-a-component",
+          "checkedAt": null,
+          "id": "ref-43f69f505491d316"
+        },
+        {
+          "title": "Документация",
+          "url": "https://react.dev/reference/react/Children",
+          "checkedAt": null,
+          "id": "ref-7ff72cc317007615"
+        },
+        {
+          "title": "Документация",
+          "url": "https://react.dev/reference/react-dom/components/common",
+          "checkedAt": null,
+          "id": "ref-fa183dea181b018b"
+        },
+        {
+          "title": "Документация",
+          "url": "https://react.dev/reference/react/Activity",
+          "checkedAt": null,
+          "id": "ref-a6d6a99f438f8aad"
+        },
+        {
+          "title": "Официальная документация раздела",
+          "url": "https://react.dev/learn",
+          "checkedAt": null,
+          "notes": "Начальная точка поиска, не замена источнику конкретного технического утверждения.",
+          "id": "ref-8234962172f4a6ef"
+        }
+      ],
+      "caveats": [
+        "Перенесено из существующего ответа; актуальность страницы и совместимость нужно перепроверить при подготовке пакета."
+      ]
+    },
+    {
+      "sectionId": "react",
+      "subsectionId": "state",
+      "scope": "Снимки состояния, очередь обновлений, иммутабельность и владение данными.",
+      "sources": [
+        {
+          "title": "Документация",
+          "url": "https://react.dev/learn/choosing-the-state-structure",
+          "checkedAt": null,
+          "id": "ref-753634473fba230c"
+        },
+        {
+          "title": "Документация",
+          "url": "https://react.dev/learn/you-might-not-need-an-effect",
+          "checkedAt": null,
+          "id": "ref-8b892800e16f2524"
+        },
+        {
+          "title": "Официальная документация раздела",
+          "url": "https://react.dev/learn",
+          "checkedAt": null,
+          "notes": "Начальная точка поиска, не замена источнику конкретного технического утверждения.",
+          "id": "ref-8234962172f4a6ef"
+        }
+      ],
+      "caveats": [
+        "Перенесено из существующего ответа; актуальность страницы и совместимость нужно перепроверить при подготовке пакета."
+      ]
+    },
+    {
+      "sectionId": "react",
+      "subsectionId": "hooks",
+      "scope": "Правила хуков, зависимости, cleanup, замыкания и синхронизация.",
+      "sources": [
+        {
+          "title": "Документация",
+          "url": "https://react.dev/reference/react/useEffectEvent",
+          "checkedAt": null,
+          "notes": "Перенесено из существующего ответа; актуальность страницы и совместимость нужно перепроверить при подготовке пакета.",
+          "id": "ref-59681255a6b236ea"
+        },
+        {
+          "title": "Официальная документация раздела",
+          "url": "https://react.dev/learn",
+          "checkedAt": null,
+          "notes": "Начальная точка поиска, не замена источнику конкретного технического утверждения.",
+          "id": "ref-8234962172f4a6ef"
+        }
+      ],
+      "caveats": []
+    },
+    {
+      "sectionId": "react",
+      "subsectionId": "refs",
+      "scope": "Служебные значения, фокус, императивный API и порталы.",
+      "sources": [
+        {
+          "title": "Документация",
+          "url": "https://react.dev/reference/react-dom/components/common",
+          "checkedAt": null,
+          "id": "ref-fa183dea181b018b"
+        },
+        {
+          "title": "Документация",
+          "url": "https://react.dev/reference/react/useEffect",
+          "checkedAt": null,
+          "id": "ref-4d23b49b0284f9ac"
+        },
+        {
+          "title": "Официальная документация раздела",
+          "url": "https://react.dev/learn",
+          "checkedAt": null,
+          "notes": "Начальная точка поиска, не замена источнику конкретного технического утверждения.",
+          "id": "ref-8234962172f4a6ef"
+        }
+      ],
+      "caveats": [
+        "Перенесено из существующего ответа; актуальность страницы и совместимость нужно перепроверить при подготовке пакета."
+      ]
+    },
+    {
+      "sectionId": "react",
+      "subsectionId": "context",
+      "scope": "Передача общих данных, подписки и выбор места хранения.",
+      "sources": [
+        {
+          "title": "React Router 7: useSearchParams",
+          "url": "https://reactrouter.com/7.18.5/api/hooks/useSearchParams",
+          "checkedAt": null,
+          "id": "ref-e1169371ff06e00d"
+        },
+        {
+          "title": "Документация",
+          "url": "https://react.dev/learn/choosing-the-state-structure",
+          "checkedAt": null,
+          "id": "ref-753634473fba230c"
+        },
+        {
+          "title": "Документация",
+          "url": "https://react.dev/reference/react/useSyncExternalStore",
+          "checkedAt": null,
+          "id": "ref-7d08dbaf713df20f"
+        },
+        {
+          "title": "Официальная документация раздела",
+          "url": "https://react.dev/learn",
+          "checkedAt": null,
+          "notes": "Начальная точка поиска, не замена источнику конкретного технического утверждения.",
+          "id": "ref-8234962172f4a6ef"
+        }
+      ],
+      "caveats": [
+        "Перенесено из существующего ответа; актуальность страницы и совместимость нужно перепроверить при подготовке пакета."
+      ]
+    },
+    {
+      "sectionId": "react",
+      "subsectionId": "forms",
+      "scope": "Управляемые поля, доступность, отправка и Actions в React 19.",
+      "sources": [
+        {
+          "title": "Документация",
+          "url": "https://react.dev/reference/react-dom/components/input",
+          "checkedAt": null,
+          "notes": "Перенесено из существующего ответа; актуальность страницы и совместимость нужно перепроверить при подготовке пакета.",
+          "id": "ref-123e26bb70073d17"
+        },
+        {
+          "title": "Официальная документация раздела",
+          "url": "https://react.dev/learn",
+          "checkedAt": null,
+          "notes": "Начальная точка поиска, не замена источнику конкретного технического утверждения.",
+          "id": "ref-8234962172f4a6ef"
+        }
+      ],
+      "caveats": []
+    },
+    {
+      "sectionId": "react",
+      "subsectionId": "performance",
+      "scope": "Мемоизация, профилирование, виртуализация и React Compiler.",
+      "sources": [
+        {
+          "title": "Документация",
+          "url": "https://react.dev/reference/react-dom/flushSync",
+          "checkedAt": null,
+          "notes": "Перенесено из существующего ответа; актуальность страницы и совместимость нужно перепроверить при подготовке пакета.",
+          "id": "ref-631195ee29f40d5e"
+        },
+        {
+          "title": "Официальная документация раздела",
+          "url": "https://react.dev/learn",
+          "checkedAt": null,
+          "notes": "Начальная точка поиска, не замена источнику конкретного технического утверждения.",
+          "id": "ref-8234962172f4a6ef"
+        }
+      ],
+      "caveats": []
+    },
+    {
+      "sectionId": "react",
+      "subsectionId": "async-ui",
+      "scope": "Гонки запросов, Suspense, отложенные обновления и оптимистичный UI.",
+      "sources": [
+        {
+          "title": "React: Suspense",
+          "url": "https://react.dev/reference/react/Suspense",
+          "checkedAt": null,
+          "id": "ref-f8f3016ad77e9e80"
+        },
+        {
+          "title": "Документация",
+          "url": "https://react.dev/reference/react/useEffect",
+          "checkedAt": null,
+          "id": "ref-4d23b49b0284f9ac"
+        },
+        {
+          "title": "Официальная документация раздела",
+          "url": "https://react.dev/learn",
+          "checkedAt": null,
+          "notes": "Начальная точка поиска, не замена источнику конкретного технического утверждения.",
+          "id": "ref-8234962172f4a6ef"
+        }
+      ],
+      "caveats": [
+        "Перенесено из существующего ответа; актуальность страницы и совместимость нужно перепроверить при подготовке пакета."
+      ]
+    },
+    {
+      "sectionId": "react",
+      "subsectionId": "server-rendering",
+      "scope": "CSR, SSR, гидратация, Server Components и чтение ресурсов.",
+      "sources": [
+        {
+          "title": "React: streaming API",
+          "url": "https://react.dev/reference/react-dom/server/renderToPipeableStream",
+          "checkedAt": null,
+          "id": "ref-87026ec90e170e0b"
+        },
+        {
+          "title": "Документация",
+          "url": "https://react.dev/reference/react/cache",
+          "checkedAt": null,
+          "id": "ref-5cc0be94fa258224"
+        },
+        {
+          "title": "Официальная документация раздела",
+          "url": "https://react.dev/learn",
+          "checkedAt": null,
+          "notes": "Начальная точка поиска, не замена источнику конкретного технического утверждения.",
+          "id": "ref-8234962172f4a6ef"
+        }
+      ],
+      "caveats": [
+        "Перенесено из существующего ответа; актуальность страницы и совместимость нужно перепроверить при подготовке пакета."
+      ]
+    },
+    {
+      "sectionId": "react",
+      "subsectionId": "testing",
+      "scope": "Error Boundary, проверка поведения, асинхронные тесты и cleanup.",
+      "sources": [
+        {
+          "title": "Документация",
+          "url": "https://github.com/jsdom/jsdom#unimplemented-parts-of-the-web-platform",
+          "checkedAt": null,
+          "notes": "Перенесено из существующего ответа; актуальность страницы и совместимость нужно перепроверить при подготовке пакета.",
+          "id": "ref-21f0cf93f224731f"
+        },
+        {
+          "title": "Официальная документация раздела",
+          "url": "https://react.dev/learn",
+          "checkedAt": null,
+          "notes": "Начальная точка поиска, не замена источнику конкретного технического утверждения.",
+          "id": "ref-8234962172f4a6ef"
+        }
+      ],
+      "caveats": []
+    },
+    {
+      "sectionId": "html-css",
+      "subsectionId": "semantics",
+      "scope": "Структура документа, формы и нативные элементы.",
+      "sources": [
+        {
+          "title": "Документация",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/HTML/Guides/Quirks_mode_and_standards_mode",
+          "checkedAt": null,
+          "id": "ref-4b3d68eb8698813c"
+        },
+        {
+          "title": "Документация",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/p",
+          "checkedAt": null,
+          "id": "ref-3987811ea032a5be"
+        },
+        {
+          "title": "Документация",
+          "url": "https://developer.mozilla.org/en-US/docs/Glossary/Accessible_name",
+          "checkedAt": null,
+          "id": "ref-0606c5949143f3e5"
+        },
+        {
+          "title": "Документация",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Global_attributes/tabindex",
+          "checkedAt": null,
+          "id": "ref-4003a4c798d350f7"
+        },
+        {
+          "title": "Документация",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-hidden",
+          "checkedAt": null,
+          "id": "ref-958bfed88e109665"
+        },
+        {
+          "title": "Документация",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/dialog",
+          "checkedAt": null,
+          "id": "ref-ebdc29af4df80b95"
+        },
+        {
+          "title": "Документация",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/table",
+          "checkedAt": null,
+          "id": "ref-8dc103a1299a62ab"
+        },
+        {
+          "title": "Документация",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Guides/Live_regions",
+          "checkedAt": null,
+          "id": "ref-4a1ef0fcca10ea57"
+        },
+        {
+          "title": "Официальная документация раздела",
+          "url": "https://developer.mozilla.org/en-US/docs/Web",
+          "checkedAt": null,
+          "notes": "Начальная точка поиска, не замена источнику конкретного технического утверждения.",
+          "id": "ref-316115636f085f86"
+        }
+      ],
+      "caveats": [
+        "Перенесено из существующего ответа; актуальность страницы и совместимость нужно перепроверить при подготовке пакета."
+      ]
+    },
+    {
+      "sectionId": "html-css",
+      "subsectionId": "cascade",
+      "scope": "Приоритет правил, размеры и наследование.",
+      "sources": [
+        {
+          "title": "Документация",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_cascade/Specificity",
+          "checkedAt": null,
+          "id": "ref-ff2c757eaf3567bb"
+        },
+        {
+          "title": "Документация",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Cascading_variables/Using_custom_properties",
+          "checkedAt": null,
+          "id": "ref-e5f2c561a9a5c57f"
+        },
+        {
+          "title": "Документация",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/content-visibility",
+          "checkedAt": null,
+          "id": "ref-19d8f99de9bcb263"
+        },
+        {
+          "title": "Документация",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/At-rules/@supports",
+          "checkedAt": null,
+          "id": "ref-7377f648185f56bf"
+        },
+        {
+          "title": "Официальная документация раздела",
+          "url": "https://developer.mozilla.org/en-US/docs/Web",
+          "checkedAt": null,
+          "notes": "Начальная точка поиска, не замена источнику конкретного технического утверждения.",
+          "id": "ref-316115636f085f86"
+        }
+      ],
+      "caveats": [
+        "Перенесено из существующего ответа; актуальность страницы и совместимость нужно перепроверить при подготовке пакета."
+      ]
+    },
+    {
+      "sectionId": "html-css",
+      "subsectionId": "layout",
+      "scope": "Flexbox, Grid и позиционирование.",
+      "sources": [
+        {
+          "title": "Документация",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_box_model/Mastering_margin_collapsing",
+          "checkedAt": null,
+          "id": "ref-0a1af27d56d8fe79"
+        },
+        {
+          "title": "Документация",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/display",
+          "checkedAt": null,
+          "id": "ref-91a0eddf35bd422b"
+        },
+        {
+          "title": "Документация",
+          "url": "https://developer.mozilla.org/en-US/docs/Glossary/Intrinsic_Size",
+          "checkedAt": null,
+          "id": "ref-ddf26eda9ef1d40e"
+        },
+        {
+          "title": "Документация",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/position",
+          "checkedAt": null,
+          "id": "ref-266760f8f9b207c0"
+        },
+        {
+          "title": "Документация",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_flexible_box_layout/Controlling_ratios_of_flex_items_along_the_main_axis",
+          "checkedAt": null,
+          "id": "ref-a7effa5821d087a1"
+        },
+        {
+          "title": "Документация",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_grid_layout/Basic_concepts_of_grid_layout",
+          "checkedAt": null,
+          "id": "ref-9df908c536c2352b"
+        },
+        {
+          "title": "Документация",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Grid_layout/Subgrid",
+          "checkedAt": null,
+          "id": "ref-c3d244d39c9e3aa0"
+        },
+        {
+          "title": "Документация",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_box_alignment/Box_alignment_in_flexbox",
+          "checkedAt": null,
+          "id": "ref-87e7ed2701e64e14"
+        },
+        {
+          "title": "Документация",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/overflow",
+          "checkedAt": null,
+          "id": "ref-b72c181aea3fa605"
+        },
+        {
+          "title": "Официальная документация раздела",
+          "url": "https://developer.mozilla.org/en-US/docs/Web",
+          "checkedAt": null,
+          "notes": "Начальная точка поиска, не замена источнику конкретного технического утверждения.",
+          "id": "ref-316115636f085f86"
+        }
+      ],
+      "caveats": [
+        "Перенесено из существующего ответа; актуальность страницы и совместимость нужно перепроверить при подготовке пакета."
+      ]
+    },
+    {
+      "sectionId": "html-css",
+      "subsectionId": "responsive",
+      "scope": "Единицы, точки перелома и изображения.",
+      "sources": [
+        {
+          "title": "Документация",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_logical_properties_and_values",
+          "checkedAt": null,
+          "id": "ref-9aae9eceffcbe326"
+        },
+        {
+          "title": "Документация",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/object-fit",
+          "checkedAt": null,
+          "id": "ref-deaa389a2708acfc"
+        },
+        {
+          "title": "Документация",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Values/clamp",
+          "checkedAt": null,
+          "id": "ref-e29a53bc447a465f"
+        },
+        {
+          "title": "Документация",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/overflow-wrap",
+          "checkedAt": null,
+          "id": "ref-69abf55470cf24d3"
+        },
+        {
+          "title": "Документация",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display",
+          "checkedAt": null,
+          "id": "ref-aafd2bca27fe488e"
+        },
+        {
+          "title": "Официальная документация раздела",
+          "url": "https://developer.mozilla.org/en-US/docs/Web",
+          "checkedAt": null,
+          "notes": "Начальная точка поиска, не замена источнику конкретного технического утверждения.",
+          "id": "ref-316115636f085f86"
+        }
+      ],
+      "caveats": [
+        "Перенесено из существующего ответа; актуальность страницы и совместимость нужно перепроверить при подготовке пакета."
+      ]
+    },
+    {
+      "sectionId": "html-css",
+      "subsectionId": "html-forms",
+      "scope": "Payload формы, нативная валидация, автозаполнение и способы ввода.",
+      "sources": [
+        {
+          "title": "Документация",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/API/FormData/FormData",
+          "checkedAt": null,
+          "id": "ref-c1cdc5505222fbc6"
+        },
+        {
+          "title": "Документация",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/HTML/Guides/Constraint_validation",
+          "checkedAt": null,
+          "id": "ref-8dc19488153757ed"
+        },
+        {
+          "title": "Документация",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/input",
+          "checkedAt": null,
+          "id": "ref-acbab30c2f86e9e7"
+        },
+        {
+          "title": "Официальная документация раздела",
+          "url": "https://developer.mozilla.org/en-US/docs/Web",
+          "checkedAt": null,
+          "notes": "Начальная точка поиска, не замена источнику конкретного технического утверждения.",
+          "id": "ref-316115636f085f86"
+        }
+      ],
+      "caveats": [
+        "Перенесено из существующего ответа; актуальность страницы и совместимость нужно перепроверить при подготовке пакета."
+      ]
+    },
+    {
+      "sectionId": "html-css",
+      "subsectionId": "html-resources",
+      "scope": "Предварительная подготовка ресурсов, iframe и границы доверия.",
+      "sources": [
+        {
+          "title": "Документация",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/iframe",
+          "checkedAt": null,
+          "id": "ref-34161b13a7d0c678"
+        },
+        {
+          "title": "Документация",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Attributes/rel/preload",
+          "checkedAt": null,
+          "id": "ref-563da44f2a96cd5f"
+        },
+        {
+          "title": "Официальная документация раздела",
+          "url": "https://developer.mozilla.org/en-US/docs/Web",
+          "checkedAt": null,
+          "notes": "Начальная точка поиска, не замена источнику конкретного технического утверждения.",
+          "id": "ref-316115636f085f86"
+        }
+      ],
+      "caveats": [
+        "Перенесено из существующего ответа; актуальность страницы и совместимость нужно перепроверить при подготовке пакета."
+      ]
+    },
+    {
+      "sectionId": "html-css",
+      "subsectionId": "css-visual",
+      "scope": "Движение, фокус, темы и предпочтения пользователя.",
+      "sources": [
+        {
+          "title": "Документация",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_animations/Using_CSS_animations",
+          "checkedAt": null,
+          "id": "ref-347a11de9df656e9"
+        },
+        {
+          "title": "Документация",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/At-rules/@media/prefers-reduced-motion",
+          "checkedAt": null,
+          "id": "ref-a893493200c86881"
+        },
+        {
+          "title": "Документация",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/:focus-visible",
+          "checkedAt": null,
+          "id": "ref-8aec0767bcda7192"
+        },
+        {
+          "title": "Документация",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/color-scheme",
+          "checkedAt": null,
+          "id": "ref-f628e2cfe314f388"
+        },
+        {
+          "title": "Официальная документация раздела",
+          "url": "https://developer.mozilla.org/en-US/docs/Web",
+          "checkedAt": null,
+          "notes": "Начальная точка поиска, не замена источнику конкретного технического утверждения.",
+          "id": "ref-316115636f085f86"
+        }
+      ],
+      "caveats": [
+        "Перенесено из существующего ответа; актуальность страницы и совместимость нужно перепроверить при подготовке пакета."
+      ]
+    },
+    {
+      "sectionId": "browser",
+      "subsectionId": "http",
+      "scope": "Методы, статусы, свежесть и проверки актуальности.",
+      "sources": [
+        {
+          "title": "Официальная документация раздела",
+          "url": "https://developer.mozilla.org/en-US/docs/Web",
+          "checkedAt": null,
+          "notes": "Начальная точка поиска, не замена источнику конкретного технического утверждения.",
+          "id": "ref-316115636f085f86"
+        }
+      ],
+      "caveats": []
+    },
+    {
+      "sectionId": "browser",
+      "subsectionId": "transport",
+      "scope": "DNS, TLS и версии HTTP.",
+      "sources": [
+        {
+          "title": "Официальная документация раздела",
+          "url": "https://developer.mozilla.org/en-US/docs/Web",
+          "checkedAt": null,
+          "notes": "Начальная точка поиска, не замена источнику конкретного технического утверждения.",
+          "id": "ref-316115636f085f86"
+        }
+      ],
+      "caveats": []
+    },
+    {
+      "sectionId": "browser",
+      "subsectionId": "security",
+      "scope": "Origin, cookies и межсайтовые запросы.",
+      "sources": [
+        {
+          "title": "Официальная документация раздела",
+          "url": "https://developer.mozilla.org/en-US/docs/Web",
+          "checkedAt": null,
+          "notes": "Начальная точка поиска, не замена источнику конкретного технического утверждения.",
+          "id": "ref-316115636f085f86"
+        }
+      ],
+      "caveats": []
+    },
+    {
+      "sectionId": "browser",
+      "subsectionId": "delivery",
+      "scope": "CDN, сжатие и анализ сетевой загрузки.",
+      "sources": [
+        {
+          "title": "Официальная документация раздела",
+          "url": "https://developer.mozilla.org/en-US/docs/Web",
+          "checkedAt": null,
+          "notes": "Начальная точка поиска, не замена источнику конкретного технического утверждения.",
+          "id": "ref-316115636f085f86"
+        }
+      ],
+      "caveats": []
+    },
+    {
+      "sectionId": "vue",
+      "subsectionId": "templates",
+      "scope": "Single-File Components, условия и списки.",
+      "sources": [
+        {
+          "title": "Официальная документация раздела",
+          "url": "https://vuejs.org/guide/",
+          "checkedAt": null,
+          "notes": "Начальная точка поиска, не замена источнику конкретного технического утверждения.",
+          "id": "ref-5510303a749a5e68"
+        }
+      ],
+      "caveats": []
+    },
+    {
+      "sectionId": "vue",
+      "subsectionId": "reactivity",
+      "scope": "Ref, reactive и вычисляемые значения.",
+      "sources": [
+        {
+          "title": "Официальная документация раздела",
+          "url": "https://vuejs.org/guide/",
+          "checkedAt": null,
+          "notes": "Начальная точка поиска, не замена источнику конкретного технического утверждения.",
+          "id": "ref-5510303a749a5e68"
+        }
+      ],
+      "caveats": []
+    },
+    {
+      "sectionId": "vue",
+      "subsectionId": "communication",
+      "scope": "Props, события и слоты.",
+      "sources": [
+        {
+          "title": "Официальная документация раздела",
+          "url": "https://vuejs.org/guide/",
+          "checkedAt": null,
+          "notes": "Начальная точка поиска, не замена источнику конкретного технического утверждения.",
+          "id": "ref-5510303a749a5e68"
+        }
+      ],
+      "caveats": []
+    },
+    {
+      "sectionId": "vue",
+      "subsectionId": "composition",
+      "scope": "Наблюдатели, composables и жизненный цикл.",
+      "sources": [
+        {
+          "title": "Официальная документация раздела",
+          "url": "https://vuejs.org/guide/",
+          "checkedAt": null,
+          "notes": "Начальная точка поиска, не замена источнику конкретного технического утверждения.",
+          "id": "ref-5510303a749a5e68"
+        }
+      ],
+      "caveats": []
+    },
+    {
+      "sectionId": "nextjs",
+      "subsectionId": "routing",
+      "scope": "Структура app, layouts и навигация.",
+      "sources": [
+        {
+          "title": "Официальная документация раздела",
+          "url": "https://nextjs.org/docs",
+          "checkedAt": null,
+          "notes": "Начальная точка поиска, не замена источнику конкретного технического утверждения.",
+          "id": "ref-9529d5dabe8a726a"
+        }
+      ],
+      "caveats": []
+    },
+    {
+      "sectionId": "nextjs",
+      "subsectionId": "boundaries",
+      "scope": "Server/Client Components и серверные зависимости.",
+      "sources": [
+        {
+          "title": "React: поддерживаемые значения",
+          "url": "https://react.dev/reference/rsc/use-client#serializable-types-returned-by-server-components",
+          "checkedAt": null,
+          "notes": "Перенесено из существующего ответа; актуальность страницы и совместимость нужно перепроверить при подготовке пакета.",
+          "id": "ref-c86da125f953aa56"
+        },
+        {
+          "title": "Официальная документация раздела",
+          "url": "https://nextjs.org/docs",
+          "checkedAt": null,
+          "notes": "Начальная точка поиска, не замена источнику конкретного технического утверждения.",
+          "id": "ref-9529d5dabe8a726a"
+        }
+      ],
+      "caveats": []
+    },
+    {
+      "sectionId": "nextjs",
+      "subsectionId": "data",
+      "scope": "Загрузка, инвалидирование и изменение данных.",
+      "sources": [
+        {
+          "title": "React: Server Functions",
+          "url": "https://react.dev/reference/rsc/use-server",
+          "checkedAt": null,
+          "notes": "Перенесено из существующего ответа; актуальность страницы и совместимость нужно перепроверить при подготовке пакета.",
+          "id": "ref-69fd10b8153c30a3"
+        },
+        {
+          "title": "Официальная документация раздела",
+          "url": "https://nextjs.org/docs",
+          "checkedAt": null,
+          "notes": "Начальная точка поиска, не замена источнику конкретного технического утверждения.",
+          "id": "ref-9529d5dabe8a726a"
+        }
+      ],
+      "caveats": []
+    },
+    {
+      "sectionId": "nextjs",
+      "subsectionId": "responses",
+      "scope": "Route Handlers, ошибки и метаданные.",
+      "sources": [
+        {
+          "title": "Официальная документация раздела",
+          "url": "https://nextjs.org/docs",
+          "checkedAt": null,
+          "notes": "Начальная точка поиска, не замена источнику конкретного технического утверждения.",
+          "id": "ref-9529d5dabe8a726a"
+        }
+      ],
+      "caveats": []
+    },
+    {
+      "sectionId": "seo",
+      "subsectionId": "indexing",
+      "scope": "Доступность страниц для поискового робота.",
+      "sources": [
+        {
+          "title": "Официальная документация раздела",
+          "url": "https://developers.google.com/search/docs",
+          "checkedAt": null,
+          "notes": "Начальная точка поиска, не замена источнику конкретного технического утверждения.",
+          "id": "ref-f9567a52a5e7c8ab"
+        }
+      ],
+      "caveats": []
+    },
+    {
+      "sectionId": "seo",
+      "subsectionId": "content",
+      "scope": "Заголовки, ссылки и понятный контент.",
+      "sources": [
+        {
+          "title": "Официальная документация раздела",
+          "url": "https://developers.google.com/search/docs",
+          "checkedAt": null,
+          "notes": "Начальная точка поиска, не замена источнику конкретного технического утверждения.",
+          "id": "ref-f9567a52a5e7c8ab"
+        }
+      ],
+      "caveats": []
+    },
+    {
+      "sectionId": "seo",
+      "subsectionId": "urls",
+      "scope": "Канонические URL, редиректы и sitemap.",
+      "sources": [
+        {
+          "title": "Официальная документация раздела",
+          "url": "https://developers.google.com/search/docs",
+          "checkedAt": null,
+          "notes": "Начальная точка поиска, не замена источнику конкретного технического утверждения.",
+          "id": "ref-f9567a52a5e7c8ab"
+        }
+      ],
+      "caveats": []
+    },
+    {
+      "sectionId": "seo",
+      "subsectionId": "measurement",
+      "scope": "Структурированные данные и Search Console.",
+      "sources": [
+        {
+          "title": "Официальная документация раздела",
+          "url": "https://developers.google.com/search/docs",
+          "checkedAt": null,
+          "notes": "Начальная точка поиска, не замена источнику конкретного технического утверждения.",
+          "id": "ref-f9567a52a5e7c8ab"
+        }
+      ],
+      "caveats": []
+    },
+    {
+      "sectionId": "frontend-tools",
+      "subsectionId": "dependencies",
+      "scope": "Manifest, lockfile и диапазоны версий.",
+      "sources": [
+        {
+          "title": "Официальная документация раздела",
+          "url": "https://vite.dev/guide/",
+          "checkedAt": null,
+          "notes": "Начальная точка поиска, не замена источнику конкретного технического утверждения.",
+          "id": "ref-cf35f9d1b5111098"
+        }
+      ],
+      "caveats": []
+    },
+    {
+      "sectionId": "frontend-tools",
+      "subsectionId": "build",
+      "scope": "Vite, TypeScript и отладочная информация.",
+      "sources": [
+        {
+          "title": "Официальная документация раздела",
+          "url": "https://vite.dev/guide/",
+          "checkedAt": null,
+          "notes": "Начальная точка поиска, не замена источнику конкретного технического утверждения.",
+          "id": "ref-cf35f9d1b5111098"
+        }
+      ],
+      "caveats": []
+    },
+    {
+      "sectionId": "frontend-tools",
+      "subsectionId": "quality",
+      "scope": "Линтер, форматтер, тесты и CI.",
+      "sources": [
+        {
+          "title": "Официальная документация раздела",
+          "url": "https://vite.dev/guide/",
+          "checkedAt": null,
+          "notes": "Начальная точка поиска, не замена источнику конкретного технического утверждения.",
+          "id": "ref-cf35f9d1b5111098"
+        }
+      ],
+      "caveats": []
+    },
+    {
+      "sectionId": "frontend-tools",
+      "subsectionId": "environment",
+      "scope": "Переменные, proxy и пути импорта.",
+      "sources": [
+        {
+          "title": "Официальная документация раздела",
+          "url": "https://vite.dev/guide/",
+          "checkedAt": null,
+          "notes": "Начальная точка поиска, не замена источнику конкретного технического утверждения.",
+          "id": "ref-cf35f9d1b5111098"
+        }
+      ],
+      "caveats": []
+    },
+    {
+      "sectionId": "nestjs",
+      "subsectionId": "architecture",
+      "scope": "Провайдеры, токены и области жизни.",
+      "sources": [
+        {
+          "title": "Официальная документация раздела",
+          "url": "https://docs.nestjs.com/",
+          "checkedAt": null,
+          "notes": "Начальная точка поиска, не замена источнику конкретного технического утверждения.",
+          "id": "ref-3eb14a2b16109cf4"
+        }
+      ],
+      "caveats": []
+    },
+    {
+      "sectionId": "nestjs",
+      "subsectionId": "http",
+      "scope": "Контроллеры, DTO и ошибки.",
+      "sources": [
+        {
+          "title": "Официальная документация раздела",
+          "url": "https://docs.nestjs.com/",
+          "checkedAt": null,
+          "notes": "Начальная точка поиска, не замена источнику конкретного технического утверждения.",
+          "id": "ref-3eb14a2b16109cf4"
+        }
+      ],
+      "caveats": []
+    },
+    {
+      "sectionId": "nestjs",
+      "subsectionId": "pipeline",
+      "scope": "Middleware, guards и interceptors.",
+      "sources": [
+        {
+          "title": "Официальная документация раздела",
+          "url": "https://docs.nestjs.com/",
+          "checkedAt": null,
+          "notes": "Начальная точка поиска, не замена источнику конкретного технического утверждения.",
+          "id": "ref-3eb14a2b16109cf4"
+        }
+      ],
+      "caveats": []
+    },
+    {
+      "sectionId": "nestjs",
+      "subsectionId": "integration",
+      "scope": "Конфигурация, транзакции и замена зависимостей.",
+      "sources": [
+        {
+          "title": "Официальная документация раздела",
+          "url": "https://docs.nestjs.com/",
+          "checkedAt": null,
+          "notes": "Начальная точка поиска, не замена источнику конкретного технического утверждения.",
+          "id": "ref-3eb14a2b16109cf4"
+        }
+      ],
+      "caveats": []
+    },
+    {
+      "sectionId": "nodejs",
+      "subsectionId": "runtime",
+      "scope": "ESM, файлы и worker threads.",
+      "sources": [
+        {
+          "title": "Официальная документация раздела",
+          "url": "https://nodejs.org/api/",
+          "checkedAt": null,
+          "notes": "Начальная точка поиска, не замена источнику конкретного технического утверждения.",
+          "id": "ref-937d6dc1e1dae60b"
+        }
+      ],
+      "caveats": []
+    },
+    {
+      "sectionId": "nodejs",
+      "subsectionId": "async",
+      "scope": "Event loop, пул и события.",
+      "sources": [
+        {
+          "title": "Официальная документация раздела",
+          "url": "https://nodejs.org/api/",
+          "checkedAt": null,
+          "notes": "Начальная точка поиска, не замена источнику конкретного технического утверждения.",
+          "id": "ref-937d6dc1e1dae60b"
+        }
+      ],
+      "caveats": []
+    },
+    {
+      "sectionId": "nodejs",
+      "subsectionId": "io",
+      "scope": "Buffer, backpressure и pipeline.",
+      "sources": [
+        {
+          "title": "Официальная документация раздела",
+          "url": "https://nodejs.org/api/",
+          "checkedAt": null,
+          "notes": "Начальная точка поиска, не замена источнику конкретного технического утверждения.",
+          "id": "ref-937d6dc1e1dae60b"
+        }
+      ],
+      "caveats": []
+    },
+    {
+      "sectionId": "nodejs",
+      "subsectionId": "operations",
+      "scope": "Окружение, соединения и завершение.",
+      "sources": [
+        {
+          "title": "Официальная документация раздела",
+          "url": "https://nodejs.org/api/",
+          "checkedAt": null,
+          "notes": "Начальная точка поиска, не замена источнику конкретного технического утверждения.",
+          "id": "ref-937d6dc1e1dae60b"
+        }
+      ],
+      "caveats": []
+    },
+    {
+      "sectionId": "java",
+      "subsectionId": "language",
+      "scope": "Примитивы, передача аргументов и равенство.",
+      "sources": [
+        {
+          "title": "Официальная документация раздела",
+          "url": "https://dev.java/learn/",
+          "checkedAt": null,
+          "notes": "Начальная точка поиска, не замена источнику конкретного технического утверждения.",
+          "id": "ref-c29e1b3136571dff"
+        }
+      ],
+      "caveats": []
+    },
+    {
+      "sectionId": "java",
+      "subsectionId": "objects",
+      "scope": "Интерфейсы, методы и неизменяемость.",
+      "sources": [
+        {
+          "title": "Официальная документация раздела",
+          "url": "https://dev.java/learn/",
+          "checkedAt": null,
+          "notes": "Начальная точка поиска, не замена источнику конкретного технического утверждения.",
+          "id": "ref-c29e1b3136571dff"
+        }
+      ],
+      "caveats": []
+    },
+    {
+      "sectionId": "java",
+      "subsectionId": "collections",
+      "scope": "Структуры данных и обработка последовательностей.",
+      "sources": [
+        {
+          "title": "Официальная документация раздела",
+          "url": "https://dev.java/learn/",
+          "checkedAt": null,
+          "notes": "Начальная точка поиска, не замена источнику конкретного технического утверждения.",
+          "id": "ref-c29e1b3136571dff"
+        }
+      ],
+      "caveats": []
+    },
+    {
+      "sectionId": "java",
+      "subsectionId": "runtime",
+      "scope": "Исключения, закрытие ресурсов и конкуренция.",
+      "sources": [
+        {
+          "title": "Официальная документация раздела",
+          "url": "https://dev.java/learn/",
+          "checkedAt": null,
+          "notes": "Начальная точка поиска, не замена источнику конкретного технического утверждения.",
+          "id": "ref-c29e1b3136571dff"
+        }
+      ],
+      "caveats": []
+    },
+    {
+      "sectionId": "git",
+      "subsectionId": "working-tree",
+      "scope": "Индекс, diff и правила игнорирования.",
+      "sources": [
+        {
+          "title": "Официальная документация раздела",
+          "url": "https://git-scm.com/docs",
+          "checkedAt": null,
+          "notes": "Начальная точка поиска, не замена источнику конкретного технического утверждения.",
+          "id": "ref-055ae1f190585281"
+        }
+      ],
+      "caveats": []
+    },
+    {
+      "sectionId": "git",
+      "subsectionId": "history",
+      "scope": "Коммиты, HEAD и объединение изменений.",
+      "sources": [
+        {
+          "title": "Официальная документация раздела",
+          "url": "https://git-scm.com/docs",
+          "checkedAt": null,
+          "notes": "Начальная точка поиска, не замена источнику конкретного технического утверждения.",
+          "id": "ref-055ae1f190585281"
+        }
+      ],
+      "caveats": []
+    },
+    {
+      "sectionId": "git",
+      "subsectionId": "collaboration",
+      "scope": "Удалённые ветки, конфликты и публикация.",
+      "sources": [
+        {
+          "title": "Официальная документация раздела",
+          "url": "https://git-scm.com/docs",
+          "checkedAt": null,
+          "notes": "Начальная точка поиска, не замена источнику конкретного технического утверждения.",
+          "id": "ref-055ae1f190585281"
+        }
+      ],
+      "caveats": []
+    },
+    {
+      "sectionId": "git",
+      "subsectionId": "recovery",
+      "scope": "Restore, revert и reflog.",
+      "sources": [
+        {
+          "title": "Официальная документация раздела",
+          "url": "https://git-scm.com/docs",
+          "checkedAt": null,
+          "notes": "Начальная точка поиска, не замена источнику конкретного технического утверждения.",
+          "id": "ref-055ae1f190585281"
+        }
+      ],
+      "caveats": []
+    },
+    {
+      "sectionId": "docker",
+      "subsectionId": "basics",
+      "scope": "Изоляция, слои и процесс контейнера.",
+      "sources": [
+        {
+          "title": "Официальная документация раздела",
+          "url": "https://docs.docker.com/",
+          "checkedAt": null,
+          "notes": "Начальная точка поиска, не замена источнику конкретного технического утверждения.",
+          "id": "ref-7aa56c980a99ef36"
+        }
+      ],
+      "caveats": []
+    },
+    {
+      "sectionId": "docker",
+      "subsectionId": "build",
+      "scope": "Кеш, стадии и build secrets.",
+      "sources": [
+        {
+          "title": "Официальная документация раздела",
+          "url": "https://docs.docker.com/",
+          "checkedAt": null,
+          "notes": "Начальная точка поиска, не замена источнику конкретного технического утверждения.",
+          "id": "ref-7aa56c980a99ef36"
+        }
+      ],
+      "caveats": []
+    },
+    {
+      "sectionId": "docker",
+      "subsectionId": "resources",
+      "scope": "Volumes, адреса сервисов и порты.",
+      "sources": [
+        {
+          "title": "Официальная документация раздела",
+          "url": "https://docs.docker.com/",
+          "checkedAt": null,
+          "notes": "Начальная точка поиска, не замена источнику конкретного технического утверждения.",
+          "id": "ref-7aa56c980a99ef36"
+        }
+      ],
+      "caveats": []
+    },
+    {
+      "sectionId": "docker",
+      "subsectionId": "compose",
+      "scope": "Готовность, конфигурация и диагностика.",
+      "sources": [
+        {
+          "title": "Официальная документация раздела",
+          "url": "https://docs.docker.com/",
+          "checkedAt": null,
+          "notes": "Начальная точка поиска, не замена источнику конкретного технического утверждения.",
+          "id": "ref-7aa56c980a99ef36"
+        }
+      ],
+      "caveats": []
+    },
+    {
+      "sectionId": "postgresql",
+      "subsectionId": "indexes",
+      "scope": "Порядок столбцов и чтение плана выполнения.",
+      "sources": [
+        {
+          "title": "Официальная документация раздела",
+          "url": "https://www.postgresql.org/docs/",
+          "checkedAt": null,
+          "notes": "Начальная точка поиска, не замена источнику конкретного технического утверждения.",
+          "id": "ref-27e9451f668e59a1"
+        }
+      ],
+      "caveats": []
+    },
+    {
+      "sectionId": "postgresql",
+      "subsectionId": "transactions",
+      "scope": "MVCC, изоляция и защита обновлений.",
+      "sources": [
+        {
+          "title": "Официальная документация раздела",
+          "url": "https://www.postgresql.org/docs/",
+          "checkedAt": null,
+          "notes": "Начальная точка поиска, не замена источнику конкретного технического утверждения.",
+          "id": "ref-27e9451f668e59a1"
+        }
+      ],
+      "caveats": []
+    },
+    {
+      "sectionId": "postgresql",
+      "subsectionId": "types",
+      "scope": "JSONB, время и точные числа.",
+      "sources": [
+        {
+          "title": "Официальная документация раздела",
+          "url": "https://www.postgresql.org/docs/",
+          "checkedAt": null,
+          "notes": "Начальная точка поиска, не замена источнику конкретного технического утверждения.",
+          "id": "ref-27e9451f668e59a1"
+        }
+      ],
+      "caveats": []
+    },
+    {
+      "sectionId": "postgresql",
+      "subsectionId": "maintenance",
+      "scope": "Vacuum, блокировки и восстановление.",
+      "sources": [
+        {
+          "title": "Официальная документация раздела",
+          "url": "https://www.postgresql.org/docs/",
+          "checkedAt": null,
+          "notes": "Начальная точка поиска, не замена источнику конкретного технического утверждения.",
+          "id": "ref-27e9451f668e59a1"
+        }
+      ],
+      "caveats": []
+    },
+    {
+      "sectionId": "sql",
+      "subsectionId": "model",
+      "scope": "Ключи, NULL и безопасный вход.",
+      "sources": [
+        {
+          "title": "Официальная документация раздела",
+          "url": "https://www.postgresql.org/docs/current/sql.html",
+          "checkedAt": null,
+          "notes": "Начальная точка поиска, не замена источнику конкретного технического утверждения.",
+          "id": "ref-082cb619b5989932"
+        }
+      ],
+      "caveats": []
+    },
+    {
+      "sectionId": "sql",
+      "subsectionId": "joins",
+      "scope": "JOIN, кратность и фильтрация.",
+      "sources": [
+        {
+          "title": "Официальная документация раздела",
+          "url": "https://www.postgresql.org/docs/current/sql.html",
+          "checkedAt": null,
+          "notes": "Начальная точка поиска, не замена источнику конкретного технического утверждения.",
+          "id": "ref-082cb619b5989932"
+        }
+      ],
+      "caveats": []
+    },
+    {
+      "sectionId": "sql",
+      "subsectionId": "aggregation",
+      "scope": "Группировка, подсчёт и ранжирование.",
+      "sources": [
+        {
+          "title": "Официальная документация раздела",
+          "url": "https://www.postgresql.org/docs/current/sql.html",
+          "checkedAt": null,
+          "notes": "Начальная точка поиска, не замена источнику конкретного технического утверждения.",
+          "id": "ref-082cb619b5989932"
+        }
+      ],
+      "caveats": []
+    },
+    {
+      "sectionId": "sql",
+      "subsectionId": "queries",
+      "scope": "EXISTS, UNION и постраничная выборка.",
+      "sources": [
+        {
+          "title": "Официальная документация раздела",
+          "url": "https://www.postgresql.org/docs/current/sql.html",
+          "checkedAt": null,
+          "notes": "Начальная точка поиска, не замена источнику конкретного технического утверждения.",
+          "id": "ref-082cb619b5989932"
+        }
+      ],
+      "caveats": []
+    },
+    {
+      "sectionId": "redis",
+      "subsectionId": "types",
+      "scope": "Строки, hash и sorted set.",
+      "sources": [
+        {
+          "title": "Официальная документация раздела",
+          "url": "https://redis.io/docs/latest/",
+          "checkedAt": null,
+          "notes": "Начальная точка поиска, не замена источнику конкретного технического утверждения.",
+          "id": "ref-51b3f7ab365bee1a"
+        }
+      ],
+      "caveats": []
+    },
+    {
+      "sectionId": "redis",
+      "subsectionId": "commands",
+      "scope": "Условная запись, pipeline и транзакции.",
+      "sources": [
+        {
+          "title": "Официальная документация раздела",
+          "url": "https://redis.io/docs/latest/",
+          "checkedAt": null,
+          "notes": "Начальная точка поиска, не замена источнику конкретного технического утверждения.",
+          "id": "ref-51b3f7ab365bee1a"
+        }
+      ],
+      "caveats": []
+    },
+    {
+      "sectionId": "redis",
+      "subsectionId": "cache",
+      "scope": "TTL, актуальность и одновременные промахи.",
+      "sources": [
+        {
+          "title": "Официальная документация раздела",
+          "url": "https://redis.io/docs/latest/",
+          "checkedAt": null,
+          "notes": "Начальная точка поиска, не замена источнику конкретного технического утверждения.",
+          "id": "ref-51b3f7ab365bee1a"
+        }
+      ],
+      "caveats": []
+    },
+    {
+      "sectionId": "redis",
+      "subsectionId": "operations",
+      "scope": "Persistence, репликация и обход ключей.",
+      "sources": [
+        {
+          "title": "Официальная документация раздела",
+          "url": "https://redis.io/docs/latest/",
+          "checkedAt": null,
+          "notes": "Начальная точка поиска, не замена источнику конкретного технического утверждения.",
+          "id": "ref-51b3f7ab365bee1a"
+        }
+      ],
+      "caveats": []
+    }
+  ]
+}

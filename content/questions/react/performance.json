@@ -1,0 +1,215 @@
+{
+  "$schema": "../question-bundle.schema.json",
+  "sectionId": "react",
+  "subsectionId": "performance",
+  "scope": "Мемоизация, профилирование, виртуализация и React Compiler.",
+  "coverageGoals": [
+    {
+      "id": "core",
+      "title": "Производительность",
+      "description": "Обзор и взаимосвязи навыков: Мемоизация, профилирование, виртуализация и React Compiler.",
+      "requiredDifficulties": [],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": [
+        "react-memo",
+        "react-memo-callback",
+        "react-profiler",
+        "react-list-windowing",
+        "react-compiler",
+        "react-flush-sync"
+      ]
+    },
+    {
+      "id": "react-memo",
+      "title": "Какие рендеры может пропустить React.memo?",
+      "description": "Объяснить и применить правило с учётом его границ: memo оптимизирует повторные props, но не блокирует все обновления.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "react-memo-callback",
+      "title": "Чем useMemo отличается от useCallback?",
+      "description": "Объяснить и применить правило с учётом его границ: Мемоизируйте измеренную стоимость или необходимую идентичность, а не каждое выражение.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "react-profiler",
+      "title": "Как найти причину медленного взаимодействия в React?",
+      "description": "Объяснить и применить правило с учётом его границ: Оптимизация начинается с воспроизводимого замера.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "react-list-windowing",
+      "title": "Когда нужна виртуализация длинного списка?",
+      "description": "Объяснить и применить правило с учётом его границ: Скролл ограничивает видимость, виртуализация ограничивает количество узлов.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "react-compiler",
+      "title": "Что оптимизирует React Compiler и заменяет ли он правила React?",
+      "description": "Объяснить и применить правило с учётом его границ: Compiler помогает с мемоизацией, но не заменяет корректную модель данных.",
+      "requiredDifficulties": ["Продвинутый"],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "react-flush-sync",
+      "title": "Когда flushSync оправдан при интеграции с браузерным или сторонним API?",
+      "description": "Объяснить и применить правило с учётом его границ: Принудительная синхронность нужна для конкретного внешнего контракта и имеет цену.",
+      "requiredDifficulties": ["Продвинутый"],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": []
+    }
+  ],
+  "questions": [
+    {
+      "id": "react-memo",
+      "title": "Какие рендеры может пропустить React.memo?",
+      "topic": "React",
+      "difficulty": "Средний",
+      "summary": "Сравнение props и собственные источники обновлений.",
+      "takeaway": "memo оптимизирует повторные props, но не блокирует все обновления.",
+      "moduleId": "react",
+      "order": 0,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: memo оптимизирует повторные props, но не блокирует все обновления.",
+        "keywords": ["React", "Производительность"],
+        "kind": "explanation",
+        "reviewStatus": "imported",
+        "goalIds": ["core", "react-memo"],
+        "relatedQuestionIds": [],
+        "priority": "core",
+        "sourceRefs": []
+      },
+      "answerFile": "answers/react/react-memo.md"
+    },
+    {
+      "id": "react-memo-callback",
+      "title": "Чем useMemo отличается от useCallback?",
+      "topic": "React",
+      "difficulty": "Средний",
+      "summary": "Кеширование результата и идентичности функции.",
+      "code": "const visible = useMemo(() => items.filter(item => item.active), [items])\nconst onSelect = useCallback(id => setSelectedId(id), [])",
+      "takeaway": "Мемоизируйте измеренную стоимость или необходимую идентичность, а не каждое выражение.",
+      "moduleId": "react",
+      "order": 1,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Мемоизируйте измеренную стоимость или необходимую идентичность, а не каждое выражение.",
+        "keywords": ["React", "Производительность"],
+        "kind": "explanation",
+        "reviewStatus": "imported",
+        "goalIds": ["core", "react-memo-callback"],
+        "relatedQuestionIds": [],
+        "priority": "core",
+        "sourceRefs": []
+      },
+      "answerFile": "answers/react/react-memo-callback.md"
+    },
+    {
+      "id": "react-profiler",
+      "title": "Как найти причину медленного взаимодействия в React?",
+      "topic": "React",
+      "difficulty": "Средний",
+      "summary": "Профилирование рендера и отделение его от работы браузера.",
+      "takeaway": "Оптимизация начинается с воспроизводимого замера.",
+      "moduleId": "react",
+      "order": 2,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Оптимизация начинается с воспроизводимого замера.",
+        "keywords": ["React", "Производительность"],
+        "kind": "explanation",
+        "reviewStatus": "imported",
+        "goalIds": ["core", "react-profiler"],
+        "relatedQuestionIds": [],
+        "priority": "core",
+        "sourceRefs": []
+      },
+      "answerFile": "answers/react/react-profiler.md"
+    },
+    {
+      "id": "react-list-windowing",
+      "title": "Когда нужна виртуализация длинного списка?",
+      "topic": "React",
+      "difficulty": "Средний",
+      "summary": "Количество DOM-узлов, окно видимости и ограничения.",
+      "takeaway": "Скролл ограничивает видимость, виртуализация ограничивает количество узлов.",
+      "moduleId": "react",
+      "order": 3,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Скролл ограничивает видимость, виртуализация ограничивает количество узлов.",
+        "keywords": ["React", "Производительность"],
+        "kind": "explanation",
+        "reviewStatus": "imported",
+        "goalIds": ["core", "react-list-windowing"],
+        "relatedQuestionIds": [],
+        "priority": "core",
+        "sourceRefs": []
+      },
+      "answerFile": "answers/react/react-list-windowing.md"
+    },
+    {
+      "id": "react-compiler",
+      "title": "Что оптимизирует React Compiler и заменяет ли он правила React?",
+      "topic": "React",
+      "difficulty": "Продвинутый",
+      "summary": "Автоматическая мемоизация и её границы.",
+      "takeaway": "Compiler помогает с мемоизацией, но не заменяет корректную модель данных.",
+      "moduleId": "react",
+      "order": 4,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Compiler помогает с мемоизацией, но не заменяет корректную модель данных.",
+        "keywords": ["React", "Производительность", "мемоизация", "memoization"],
+        "kind": "explanation",
+        "reviewStatus": "imported",
+        "goalIds": ["core", "react-compiler"],
+        "relatedQuestionIds": [],
+        "priority": "core",
+        "sourceRefs": []
+      },
+      "answerFile": "answers/react/react-compiler.md"
+    },
+    {
+      "id": "react-flush-sync",
+      "title": "Когда flushSync оправдан при интеграции с браузерным или сторонним API?",
+      "summary": "Редкое требование обновить DOM до следующего императивного действия.",
+      "code": "import { flushSync } from \"react-dom\"\nfunction appendAndScroll(setItems, listRef, item) {\n  flushSync(() => setItems(items => [...items, item]))\n  listRef.current?.lastElementChild?.scrollIntoView({ block: \"nearest\" })\n}\n// Императивная интеграция; применять только при обоснованной необходимости.",
+      "takeaway": "Принудительная синхронность нужна для конкретного внешнего контракта и имеет цену.",
+      "pitfall": "Оборачивать все setState во flushSync ради предсказуемого console.log.",
+      "difficulty": "Продвинутый",
+      "topic": "React",
+      "moduleId": "react",
+      "popular": false,
+      "order": 5,
+      "editorial": {
+        "learningGoal": "Объяснить и применить правило с учётом его границ: Принудительная синхронность нужна для конкретного внешнего контракта и имеет цену.",
+        "keywords": ["React", "Производительность"],
+        "kind": "explanation",
+        "reviewStatus": "imported",
+        "goalIds": ["core", "react-flush-sync"],
+        "relatedQuestionIds": [],
+        "priority": "core",
+        "sourceRefs": ["ref-631195ee29f40d5e"]
+      },
+      "answerFile": "answers/react/react-flush-sync.md"
+    }
+  ]
+}
