@@ -1,0 +1,30 @@
+**`actualDuration` оценивает время рендера поддерева для текущего обновления, а `baseDuration` - оценку полной стоимости рендера без выигрыша от мемоизации.** Это метрики работы React, а не вся задержка до видимого ответа.
+
+<!-- wishu:answer-block -->
+
+### Как это работает
+
+- Низкий `actualDuration` при более высоком `baseDuration` может показывать пропуск части работы. Это повод проверить гипотезу, а не универсальный коэффициент качества.
+
+- phase отличает mount и update; `commitTime` помогает группировать измерения одного commit. Не складывайте вложенные Profiler без учёта пересекающихся поддеревьев.
+
+- Layout, paint, загрузка ресурсов и другая работа требуют браузерных инструментов. Сравнивайте повторяемый сценарий в сопоставимом окружении; dev-режим меняет накладные расходы.
+
+### Пример
+
+```jsx
+function onRender(id, phase, actualDuration, baseDuration) {
+  console.table({ id, phase, actualDuration, baseDuration })
+}
+;<Profiler id="catalog" onRender={onRender}>
+  <Catalog />
+</Profiler>
+```
+
+### Типичная ошибка
+
+Назвать `baseDuration` точным временем любого будущего рендера или считать `actualDuration` измерением всей отзывчивости страницы.
+
+### Источники
+
+- [React: react / Profiler](https://react.dev/reference/react/Profiler)

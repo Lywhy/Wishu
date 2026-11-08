@@ -1,3 +1,5 @@
+import { CompletedBadge } from "@/components/catalog/catalog-primitives"
+import { PageState } from "@/components/catalog/page-state"
 import { Toggle } from "@/components/ui/toggle"
 import { useWorkspace } from "@/stores/workspace"
 import { WorkspaceControls, PersonalNote, RelatedStudy } from "@/components/experience/study-tools"
@@ -33,12 +35,15 @@ export function LearningCoursePage() {
   const section = questionSections.find((item) => item.id === sectionId)
   if (!section || section.inDevelopment)
     return (
-      <div className="space-y-4 py-16">
-        <h1 className="text-xl font-semibold">Этот модуль пока недоступен</h1>
-        <Link className="text-primary underline" to="/learn">
-          Вернуться к обучению
-        </Link>
-      </div>
+      <PageState
+        kind="unavailable"
+        title="Этот модуль пока недоступен"
+        description="Выберите другой модуль, чтобы продолжить обучение."
+      >
+        <Button nativeButton={false} variant="outline" render={<Link to="/learn" />}>
+          К обучению
+        </Button>
+      </PageState>
     )
   const steps = courseSteps(section, questions)
   if (!steps.length) return <Navigate to="/learn" replace />
@@ -93,7 +98,7 @@ export function LearningCoursePage() {
               <Progress value={(100 * doneCount) / steps.length} aria-label="Прогресс обучения" />
               <nav
                 aria-label="Содержание модуля"
-                className="max-h-[65vh] space-y-1 overflow-y-auto"
+                className="max-h-[clamp(8rem,calc(100dvh-20rem),36rem)] space-y-1 overflow-y-auto overscroll-contain"
               >
                 {steps.map((item, i) => {
                   const passed = stepCompleted(section.id, item, completed)
@@ -103,7 +108,7 @@ export function LearningCoursePage() {
                       to={base + item.id}
                       aria-current={item.id === step.id ? "step" : undefined}
                       className={cn(
-                        "block rounded-lg border border-transparent p-3 outline-none focus-visible:ring-2 focus-visible:ring-ring",
+                        "block rounded-lg border border-transparent p-3 transition-colors duration-150 outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-inset motion-reduce:transition-none",
                         item.id === step.id
                           ? "border-primary/35 bg-primary/10 inset-shadow-[3px_0_0_var(--primary)]"
                           : "hover:bg-muted",
@@ -150,25 +155,18 @@ export function LearningCoursePage() {
                   мин чтения
                 </span>
               )}
-              {done && (
-                <Badge
-                  variant="outline"
-                  className="border-emerald-400/40 text-emerald-700 dark:text-emerald-400"
-                >
-                  Пройдено
-                </Badge>
-              )}
+              {done && <CompletedBadge>Пройдено</CompletedBadge>}
             </div>
             <h1
               id="learning-heading"
               tabIndex={-1}
-              className="text-2xl font-semibold tracking-tight outline-none sm:text-3xl"
+              className="text-2xl leading-tight font-semibold tracking-tight text-balance wrap-anywhere outline-none sm:text-3xl"
             >
               {step.title}
             </h1>
           </header>
           {step.kind === "lecture" ? (
-            <Card className="gap-5 rounded-xl p-5 shadow-none sm:p-8">
+            <Card className="gap-5 rounded-xl p-5 shadow-none sm:p-6 lg:p-8">
               <LectureOutline
                 content={step.markdown ?? ""}
                 prefix={"lecture-" + section.id + "-" + step.id}
@@ -231,7 +229,7 @@ export function LearningCoursePage() {
           <PersonalNote contentKey={"lecture:" + key} />
           <RelatedStudy moduleId={section.id} from={base + step.id} />
           <ContentFeedback contentKey={"lecture:" + key} />
-          <section className="rounded-xl border bg-muted/20 p-5" aria-label="Основы">
+          <section className="rounded-xl bg-muted/25 p-5" aria-label="Основы">
             <h2 className="text-sm font-semibold">Основы</h2>
             <p className="mt-1 text-xs leading-6 text-muted-foreground">
               Вернитесь к опорным материалам, если нужно освежить теорию.
@@ -259,7 +257,7 @@ export function LearningCoursePage() {
               <Button
                 nativeButton={false}
                 variant="outline"
-                className="h-10 flex-1"
+                className="h-auto min-h-10 min-w-0 flex-1 py-2 text-center whitespace-normal"
                 render={<Link to={base + steps[index - 1].id} />}
               >
                 Предыдущий этап

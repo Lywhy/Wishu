@@ -1,7 +1,9 @@
+import { PageHeading } from "@/components/catalog/page-heading"
+import { QuestionBreadcrumbs } from "@/components/questions/question-breadcrumbs"
 import { useState } from "react"
 import { Link } from "react-router-dom"
 import { Button } from "@/components/ui/button"
-import { Card } from "@/components/ui/card"
+import { AnimatedCard as Card } from "@/components/catalog/catalog-primitives"
 import { Progress } from "@/components/ui/progress"
 import {
   Select,
@@ -58,13 +60,17 @@ export function MockInterviewPage() {
   const labels = { learned: "Знаю", repeat: "Повторить", skipped: "Пропущено" }
   return (
     <div className="space-y-6">
-      <header className="space-y-3">
-        <p className="text-xs text-primary">Практика ответа вслух</p>
-        <h1 className="text-3xl font-semibold">Пробное собеседование</h1>
-        <p className="text-sm leading-7 text-muted-foreground">
-          Без таймера. Ответьте самостоятельно, раскройте объяснение и оцените свой ответ.
-        </p>
-      </header>
+      <QuestionBreadcrumbs
+        items={[
+          { label: "Короткая подготовка", to: "/questions/preparation" },
+          { label: "Пробное собеседование" },
+        ]}
+      />
+      <PageHeading
+        title="Пробное собеседование"
+        description="Без таймера. Ответьте самостоятельно, раскройте объяснение и оцените свой ответ."
+        meta={<p className="text-xs font-medium text-primary">Практика ответа вслух</p>}
+      />
       {session.phase === "setup" ? (
         <Card className="gap-5 p-5 shadow-none">
           <fieldset>

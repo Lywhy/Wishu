@@ -16,7 +16,19 @@
         "react-hydration",
         "react-server-components",
         "react-use-resource",
-        "react-server-cache"
+        "react-server-cache",
+        "react-streaming-shell",
+        "react-server-function-trust",
+        "react-root-lifecycle",
+        "react-ssr-browser-globals",
+        "react-ssr-effect-placeholder",
+        "react-ssr-hydrated-interaction",
+        "react-ssr-deterministic-locale",
+        "react-ssr-invalid-html-nesting",
+        "react-ssr-id-prefix-roots",
+        "react-hydration-external-dom-mutation",
+        "react-rsc-client-import-boundary",
+        "react-streaming-abort-deadline"
       ]
     },
     {
@@ -62,6 +74,114 @@
       "requiredDifficulties": ["Продвинутый"],
       "reviewed": false,
       "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "react-streaming-shell",
+      "title": "Чем shell в потоковом SSR отличается от готовности всего HTML?",
+      "description": "Различать onShellReady и onAllReady и учитывать момент отправки заголовков.",
+      "requiredDifficulties": ["Продвинутый"],
+      "reviewed": true,
+      "priority": "extended",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "react-server-function-trust",
+      "title": "Почему Server Function нужно проверять как публичную точку входа?",
+      "description": "Проверять авторизацию и входные данные на сервере независимо от видимости кнопки.",
+      "requiredDifficulties": ["Продвинутый"],
+      "reviewed": true,
+      "priority": "extended",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "react-root-lifecycle",
+      "title": "Когда нужны createRoot, hydrateRoot и root.unmount()?",
+      "description": "Выбрать клиентский корень по наличию серверной разметки и корректно завершить его жизнь.",
+      "requiredDifficulties": ["Базовый"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "react-ssr-browser-globals",
+      "title": "Почему window и localStorage нельзя читать бездумно при серверном рендеринге?",
+      "description": "Объяснить и применить: Учитывайте среду модуля и согласованность первого HTML.",
+      "requiredDifficulties": ["Базовый"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "react-ssr-effect-placeholder",
+      "title": "Почему содержимое, загружаемое только useEffect, отсутствует в исходном HTML?",
+      "description": "Объяснить и применить: Серверные данные нужно загружать через серверный контракт.",
+      "requiredDifficulties": ["Базовый"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "react-ssr-hydrated-interaction",
+      "title": "Чем видимая серверная кнопка отличается от уже гидратированной кнопки?",
+      "description": "Объяснить и применить: Разделяйте показ разметки и подключение интерактивного дерева.",
+      "requiredDifficulties": ["Базовый"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "react-ssr-deterministic-locale",
+      "title": "Как дата, часовой пояс и случайные значения вызывают несовпадение гидратации?",
+      "description": "Объяснить и применить: Детерминизм первой разметки включает среду форматирования.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "react-ssr-invalid-html-nesting",
+      "title": "Почему неверная HTML-вложенность может сломать гидратацию до запуска эффекта?",
+      "description": "Объяснить и применить: Проверяйте итоговую HTML-вложенность, а не только JSX каждого компонента отдельно.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "react-ssr-id-prefix-roots",
+      "title": "Как согласовать useId при нескольких серверных React-корнях?",
+      "description": "Объяснить и применить: Согласуйте и дерево, и пространство идентификаторов корня.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "react-hydration-external-dom-mutation",
+      "title": "Как сторонний скрипт, изменивший DOM до гидратации, влияет на React?",
+      "description": "Объяснить и применить: Каждая DOM-область должна иметь понятного владельца до и после гидратации.",
+      "requiredDifficulties": ["Продвинутый"],
+      "reviewed": true,
+      "priority": "extended",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "react-rsc-client-import-boundary",
+      "title": "Почему \"use client\" задаёт границу графа модулей, а не отдельный режим одного JSX-узла?",
+      "description": "Объяснить и применить: Отделяйте граф доставки кода от стратегии первоначального HTML.",
+      "requiredDifficulties": ["Продвинутый"],
+      "reviewed": true,
+      "priority": "extended",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "react-streaming-abort-deadline",
+      "title": "Как завершить зависший потоковый SSR по тайм-ауту, сохранив путь восстановления?",
+      "description": "Объяснить и применить: Срок жизни SSR-потока и его внешних ресурсов управляется совместно.",
+      "requiredDifficulties": ["Продвинутый"],
+      "reviewed": true,
+      "priority": "extended",
       "relatedSkillIds": []
     }
   ],
@@ -177,6 +297,270 @@
         "sourceRefs": ["ref-5cc0be94fa258224"]
       },
       "answerFile": "answers/react/react-server-cache.md"
+    },
+    {
+      "id": "react-streaming-shell",
+      "title": "Чем shell в потоковом SSR отличается от готовности всего HTML?",
+      "topic": "React",
+      "difficulty": "Продвинутый",
+      "summary": "Различать onShellReady и onAllReady и учитывать момент отправки заголовков.",
+      "moduleId": "react",
+      "order": 5,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Различать onShellReady и onAllReady и учитывать момент отправки заголовков.",
+        "keywords": ["React", "streaming", "shell"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "goalIds": ["core", "react-streaming-shell"],
+        "relatedQuestionIds": ["react-csr-ssr"],
+        "priority": "extended",
+        "sourceRefs": ["ref-87026ec90e170e0b"]
+      },
+      "takeaway": "Планируйте отдельно начало ответа, завершение потока и обработку ошибок.",
+      "answerFile": "answers/react/react-streaming-shell.md"
+    },
+    {
+      "id": "react-server-function-trust",
+      "title": "Почему Server Function нужно проверять как публичную точку входа?",
+      "topic": "React",
+      "difficulty": "Продвинутый",
+      "summary": "Проверять авторизацию и входные данные на сервере независимо от видимости кнопки.",
+      "moduleId": "react",
+      "order": 6,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Проверять авторизацию и входные данные на сервере независимо от видимости кнопки.",
+        "keywords": ["React", "server", "function", "trust"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "goalIds": ["core", "react-server-function-trust"],
+        "relatedQuestionIds": ["react-server-components"],
+        "priority": "extended",
+        "sourceRefs": ["ref-7d3fefc28f7d231f"]
+      },
+      "takeaway": "Серверный вызов - самостоятельная проверяемая граница доверия.",
+      "answerFile": "answers/react/react-server-function-trust.md"
+    },
+    {
+      "id": "react-root-lifecycle",
+      "title": "Когда нужны createRoot, hydrateRoot и root.unmount()?",
+      "topic": "React",
+      "difficulty": "Базовый",
+      "summary": "Выбрать клиентский корень по наличию серверной разметки и корректно завершить его жизнь.",
+      "moduleId": "react",
+      "order": 7,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Выбрать клиентский корень по наличию серверной разметки и корректно завершить его жизнь.",
+        "keywords": ["React", "root", "lifecycle"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "goalIds": ["core", "react-root-lifecycle"],
+        "relatedQuestionIds": ["react-hydration"],
+        "priority": "core",
+        "sourceRefs": ["ref-749d90531137fbfc", "ref-f814c0e28d2b8796"]
+      },
+      "takeaway": "Выбор и время жизни корня зависят от владельца DOM и способа начального рендера.",
+      "answerFile": "answers/react/react-root-lifecycle.md"
+    },
+    {
+      "id": "react-ssr-browser-globals",
+      "title": "Почему window и localStorage нельзя читать бездумно при серверном рендеринге?",
+      "topic": "React",
+      "difficulty": "Базовый",
+      "summary": "Учитывайте среду модуля и согласованность первого HTML.",
+      "answerFile": "answers/react/react-ssr-browser-globals.md",
+      "takeaway": "Учитывайте среду модуля и согласованность первого HTML.",
+      "moduleId": "react",
+      "order": 8,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить: Учитывайте среду модуля и согласованность первого HTML.",
+        "keywords": ["React", "ssr", "browser", "globals"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "goalIds": ["core", "react-ssr-browser-globals"],
+        "relatedQuestionIds": ["react-hydration"],
+        "priority": "core",
+        "sourceRefs": ["ref-4d23b49b0284f9ac"]
+      }
+    },
+    {
+      "id": "react-ssr-effect-placeholder",
+      "title": "Почему содержимое, загружаемое только useEffect, отсутствует в исходном HTML?",
+      "topic": "React",
+      "difficulty": "Базовый",
+      "summary": "Серверные данные нужно загружать через серверный контракт.",
+      "answerFile": "answers/react/react-ssr-effect-placeholder.md",
+      "takeaway": "Серверные данные нужно загружать через серверный контракт.",
+      "moduleId": "react",
+      "order": 9,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить: Серверные данные нужно загружать через серверный контракт.",
+        "keywords": ["React", "ssr", "effect", "placeholder"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "goalIds": ["core", "react-ssr-effect-placeholder"],
+        "relatedQuestionIds": ["react-hydration"],
+        "priority": "core",
+        "sourceRefs": ["ref-4d23b49b0284f9ac"]
+      }
+    },
+    {
+      "id": "react-ssr-hydrated-interaction",
+      "title": "Чем видимая серверная кнопка отличается от уже гидратированной кнопки?",
+      "topic": "React",
+      "difficulty": "Базовый",
+      "summary": "Разделяйте показ разметки и подключение интерактивного дерева.",
+      "answerFile": "answers/react/react-ssr-hydrated-interaction.md",
+      "takeaway": "Разделяйте показ разметки и подключение интерактивного дерева.",
+      "moduleId": "react",
+      "order": 10,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить: Разделяйте показ разметки и подключение интерактивного дерева.",
+        "keywords": ["React", "ssr", "hydrated", "interaction"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "goalIds": ["core", "react-ssr-hydrated-interaction"],
+        "relatedQuestionIds": ["react-hydration"],
+        "priority": "core",
+        "sourceRefs": ["ref-f814c0e28d2b8796"]
+      }
+    },
+    {
+      "id": "react-ssr-deterministic-locale",
+      "title": "Как дата, часовой пояс и случайные значения вызывают несовпадение гидратации?",
+      "topic": "React",
+      "difficulty": "Средний",
+      "summary": "Детерминизм первой разметки включает среду форматирования.",
+      "answerFile": "answers/react/react-ssr-deterministic-locale.md",
+      "takeaway": "Детерминизм первой разметки включает среду форматирования.",
+      "moduleId": "react",
+      "order": 11,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить: Детерминизм первой разметки включает среду форматирования.",
+        "keywords": ["React", "ssr", "deterministic", "locale"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "goalIds": ["core", "react-ssr-deterministic-locale"],
+        "relatedQuestionIds": ["react-hydration"],
+        "priority": "core",
+        "sourceRefs": ["ref-f814c0e28d2b8796"]
+      }
+    },
+    {
+      "id": "react-ssr-invalid-html-nesting",
+      "title": "Почему неверная HTML-вложенность может сломать гидратацию до запуска эффекта?",
+      "topic": "React",
+      "difficulty": "Средний",
+      "summary": "Проверяйте итоговую HTML-вложенность, а не только JSX каждого компонента отдельно.",
+      "answerFile": "answers/react/react-ssr-invalid-html-nesting.md",
+      "takeaway": "Проверяйте итоговую HTML-вложенность, а не только JSX каждого компонента отдельно.",
+      "moduleId": "react",
+      "order": 12,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить: Проверяйте итоговую HTML-вложенность, а не только JSX каждого компонента отдельно.",
+        "keywords": ["React", "ssr", "invalid", "html", "nesting"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "goalIds": ["core", "react-ssr-invalid-html-nesting"],
+        "relatedQuestionIds": ["react-hydration"],
+        "priority": "core",
+        "sourceRefs": ["ref-f814c0e28d2b8796"]
+      }
+    },
+    {
+      "id": "react-ssr-id-prefix-roots",
+      "title": "Как согласовать useId при нескольких серверных React-корнях?",
+      "topic": "React",
+      "difficulty": "Средний",
+      "summary": "Согласуйте и дерево, и пространство идентификаторов корня.",
+      "answerFile": "answers/react/react-ssr-id-prefix-roots.md",
+      "takeaway": "Согласуйте и дерево, и пространство идентификаторов корня.",
+      "moduleId": "react",
+      "order": 13,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить: Согласуйте и дерево, и пространство идентификаторов корня.",
+        "keywords": ["React", "ssr", "id", "prefix", "roots"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "goalIds": ["core", "react-ssr-id-prefix-roots"],
+        "relatedQuestionIds": ["react-hydration", "react-accessible-fields"],
+        "priority": "core",
+        "sourceRefs": ["ref-8cba5ec939af78c5"]
+      }
+    },
+    {
+      "id": "react-hydration-external-dom-mutation",
+      "title": "Как сторонний скрипт, изменивший DOM до гидратации, влияет на React?",
+      "topic": "React",
+      "difficulty": "Продвинутый",
+      "summary": "Каждая DOM-область должна иметь понятного владельца до и после гидратации.",
+      "answerFile": "answers/react/react-hydration-external-dom-mutation.md",
+      "takeaway": "Каждая DOM-область должна иметь понятного владельца до и после гидратации.",
+      "moduleId": "react",
+      "order": 14,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить: Каждая DOM-область должна иметь понятного владельца до и после гидратации.",
+        "keywords": ["React", "hydration", "external", "dom", "mutation"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "goalIds": ["core", "react-hydration-external-dom-mutation"],
+        "relatedQuestionIds": ["react-hydration"],
+        "priority": "extended",
+        "sourceRefs": ["ref-f814c0e28d2b8796"]
+      }
+    },
+    {
+      "id": "react-rsc-client-import-boundary",
+      "title": "Почему \"use client\" задаёт границу графа модулей, а не отдельный режим одного JSX-узла?",
+      "topic": "React",
+      "difficulty": "Продвинутый",
+      "summary": "Отделяйте граф доставки кода от стратегии первоначального HTML.",
+      "answerFile": "answers/react/react-rsc-client-import-boundary.md",
+      "takeaway": "Отделяйте граф доставки кода от стратегии первоначального HTML.",
+      "moduleId": "react",
+      "order": 15,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить: Отделяйте граф доставки кода от стратегии первоначального HTML.",
+        "keywords": ["React", "rsc", "client", "import", "boundary"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "goalIds": ["core", "react-rsc-client-import-boundary"],
+        "relatedQuestionIds": ["react-hydration", "react-server-components"],
+        "priority": "extended",
+        "sourceRefs": ["ref-710e8089a449fb7b"]
+      }
+    },
+    {
+      "id": "react-streaming-abort-deadline",
+      "title": "Как завершить зависший потоковый SSR по тайм-ауту, сохранив путь восстановления?",
+      "topic": "React",
+      "difficulty": "Продвинутый",
+      "summary": "Срок жизни SSR-потока и его внешних ресурсов управляется совместно.",
+      "answerFile": "answers/react/react-streaming-abort-deadline.md",
+      "takeaway": "Срок жизни SSR-потока и его внешних ресурсов управляется совместно.",
+      "moduleId": "react",
+      "order": 16,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить: Срок жизни SSR-потока и его внешних ресурсов управляется совместно.",
+        "keywords": ["React", "streaming", "abort", "deadline"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "goalIds": ["core", "react-streaming-abort-deadline"],
+        "relatedQuestionIds": ["react-hydration", "react-streaming-shell"],
+        "priority": "extended",
+        "sourceRefs": ["ref-87026ec90e170e0b"]
+      }
     }
   ]
 }

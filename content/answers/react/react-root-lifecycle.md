@@ -1,0 +1,32 @@
+**`createRoot` используют для клиентского дерева без серверного React-HTML, `hydrateRoot` - для подключения к соответствующей серверной разметке.** `root.unmount` завершает работу конкретного React-корня.
+
+<!-- wishu:answer-block -->
+
+### Как это работает
+
+- Обычно SPA создаёт один корень и дальше обновляет дерево через props и state, а не создаёт корень на каждый рендер.
+
+- При встраивании React в чужую страницу может быть несколько независимых корней. Context и локальное состояние не становятся общими между ними автоматически.
+
+- Если внешний код удаляет контейнер, сначала корректно размонтируйте корень, чтобы React выполнил очистку. После `root.unmount` прежний объект корня не используют для нового render.
+
+### Пример
+
+```jsx
+const root = createRoot(container)
+root.render(<Widget />)
+// При окончательном удалении виджета внешним приложением:
+root.unmount()
+// При исходном серверном React-HTML вместо createRoot:
+// const root = hydrateRoot(container, <Widget />)
+```
+
+### Типичная ошибка
+
+Запустить `createRoot` поверх серверного HTML и ожидать корректного сохранения и гидратации этой разметки.
+
+### Источники
+
+- [React: client / createRoot](https://react.dev/reference/react-dom/client/createRoot)
+
+- [React: client / hydrateRoot](https://react.dev/reference/react-dom/client/hydrateRoot)

@@ -25,8 +25,8 @@ export function CourseContents({
     <>
       <div className="space-y-3 rounded-xl border bg-card p-4 lg:hidden">
         <div className="flex items-center justify-between gap-3">
-          <div>
-            <p className="text-sm font-semibold">{title}</p>
+          <div className="min-w-0">
+            <p className="text-sm font-semibold wrap-anywhere">{title}</p>
             <p className="text-xs text-muted-foreground">
               Пройдено {done} из {total}
             </p>
@@ -42,7 +42,9 @@ export function CourseContents({
               <SheetDescription>
                 Выберите этап обучения. Прогресс сохраняется в этом браузере.
               </SheetDescription>
-              <div>{children}</div>
+              <div className="min-w-0 [&>[data-slot=card]]:border-0 [&>[data-slot=card]]:bg-transparent [&>[data-slot=card]]:p-0">
+                {children}
+              </div>
             </SheetContent>
           </Sheet>
         </div>

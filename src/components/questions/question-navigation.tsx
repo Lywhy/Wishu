@@ -55,7 +55,7 @@ export function QuestionNavigation({
   }, [pathname, query])
 
   return (
-    <Card className="gap-0 rounded-xl p-4 shadow-none">
+    <Card className="min-w-0 gap-0 rounded-xl p-4 shadow-none">
       <h2 className="px-1 text-sm leading-6 font-semibold">{title}</h2>
       <div className="mt-3 space-y-2">
         <div className="flex items-center justify-between gap-2 text-[11px] text-muted-foreground">
@@ -107,20 +107,20 @@ export function QuestionNavigation({
                   title={`${question.title} - ${statusLabel}`}
                   className={({ isActive }) =>
                     cn(
-                      "relative flex h-full items-start gap-2.5 rounded-lg border border-transparent p-2 text-xs leading-4 transition-colors outline-none focus-visible:ring-2 focus-visible:ring-ring",
+                      "relative flex h-full items-start gap-2.5 rounded-lg border border-transparent p-2 text-xs leading-5 transition-colors duration-150 outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-inset motion-reduce:transition-none",
                       isActive
                         ? "border-primary/35 bg-primary/10 font-medium text-foreground inset-shadow-[3px_0_0_var(--primary)]"
                         : "text-muted-foreground hover:bg-muted hover:text-foreground",
                     )
                   }
                 >
-                  <span className="shrink-0 font-mono text-[10px]">
+                  <span className="shrink-0 font-mono text-[11px] tabular-nums">
                     {String(index + 1).padStart(2, "0")}
                   </span>
                   <span className="min-w-0 flex-1">
                     <span className="line-clamp-2 wrap-break-word">{question.title}</span>
                     {status && (
-                      <span className="mt-0.5 block text-[10px] leading-3 text-muted-foreground">
+                      <span className="mt-0.5 block text-[11px] leading-4 text-muted-foreground">
                         {statusLabel}
                       </span>
                     )}
@@ -150,8 +150,8 @@ export function QuestionNavigation({
           В подборке нет вопросов с таким названием.
         </p>
       )}
-      {actions && <div className="mt-4 border-t pt-4">{actions}</div>}
-      {footer && <div className="mt-3 border-t pt-3">{footer}</div>}
+      {actions && <div className="mt-4 border-t border-border/60 pt-4">{actions}</div>}
+      {footer && <div className="mt-3 border-t border-border/60 pt-3">{footer}</div>}
     </Card>
   )
 }

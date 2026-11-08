@@ -44,3 +44,6 @@ coverage
 # Content draft writer locks
 /content/questions/*/*.json.lock
 /content/questions/*/*.json.*.tmp
+
+# Local feedback exports may contain user descriptions
+/exports/feedback/

@@ -16,15 +16,29 @@
         "react-test-behavior",
         "react-async-tests",
         "react-effect-test",
-        "react-test-browser-boundary"
+        "react-test-browser-boundary",
+        "react-test-role-queries",
+        "react-test-user-event",
+        "react-test-act-boundary",
+        "react-test-waitfor-purity",
+        "react-test-fake-timers",
+        "react-test-rerender-remount",
+        "react-test-empty-query",
+        "react-test-cleanup-isolation",
+        "react-test-snapshot-limits",
+        "react-test-provider-wrapper",
+        "react-test-network-contract",
+        "react-test-keyboard-flow",
+        "react-test-error-boundary-recovery",
+        "react-concurrent-test-observable-contract"
       ]
     },
     {
       "id": "react-error-boundary",
       "title": "Какие ошибки ловит Error Boundary и какие остаются снаружи?",
-      "description": "Объяснить и применить правило с учётом его границ: Расположите границы по областям отказа, остальные ошибки обрабатывайте явно.",
+      "description": "Граница ошибки должна сохранять полезный интерфейс и осмысленный путь восстановления.",
       "requiredDifficulties": ["Средний"],
-      "reviewed": false,
+      "reviewed": true,
       "priority": "core",
       "relatedSkillIds": []
     },
@@ -63,6 +77,132 @@
       "reviewed": false,
       "priority": "core",
       "relatedSkillIds": []
+    },
+    {
+      "id": "react-test-role-queries",
+      "title": "Почему в тестах предпочитают getByRole с доступным именем, а не CSS-селектор?",
+      "description": "Проверять доступный пользователю контракт элемента и осознанно выбирать test id.",
+      "requiredDifficulties": ["Базовый"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "react-test-user-event",
+      "title": "Чем userEvent отличается от fireEvent в компонентном тесте?",
+      "description": "Различать пользовательское взаимодействие и отправку отдельного DOM-события.",
+      "requiredDifficulties": ["Базовый"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "react-test-act-boundary",
+      "title": "Для чего нужен act и почему предупреждение нельзя просто подавить?",
+      "description": "Дождаться обновлений React от тестового действия и найти пропущенную асинхронную границу.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "react-test-waitfor-purity",
+      "title": "Почему нельзя нажимать кнопку внутри waitFor?",
+      "description": "Отделять однократное действие от повторяемой проверки асинхронного результата.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "react-test-fake-timers",
+      "title": "Как использовать fake timers вместе с userEvent и не зависнуть?",
+      "description": "Продвигать виртуальное время и восстанавливать таймеры без утечки между тестами.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "react-test-rerender-remount",
+      "title": "Чем rerender отличается от unmount и нового render при проверке состояния?",
+      "description": "Проверять обновление props и пересоздание компонента разными сценариями.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "react-test-empty-query",
+      "title": "Как проверить, что элемент отсутствует, не получив ошибку от getBy?",
+      "description": "Объяснить и применить: Выбирайте запрос по ожидаемому состоянию и времени проверки.",
+      "requiredDifficulties": ["Базовый"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "react-test-cleanup-isolation",
+      "title": "Зачем размонтировать дерево и очищать подписки между тестами?",
+      "description": "Объяснить и применить: Изолируйте и React-дерево, и внешние ресурсы теста.",
+      "requiredDifficulties": ["Базовый"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "react-test-snapshot-limits",
+      "title": "Почему snapshot-тест не заменяет проверку поведения формы?",
+      "description": "Объяснить и применить: Снимок дополняет проверку поведения, а не заменяет её.",
+      "requiredDifficulties": ["Базовый"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "react-test-provider-wrapper",
+      "title": "Как тестировать компонент с Context без мокирования useContext?",
+      "description": "Объяснить и применить: Подменяйте внешний вход контекста, сохраняя механизм его чтения.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "react-test-network-contract",
+      "title": "Почему сетевой mock часто полезнее мока внутреннего fetch-хука?",
+      "description": "Объяснить и применить: Сохраняйте реальную логику того уровня, который собираетесь проверить.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "react-test-keyboard-flow",
+      "title": "Как проверить путь по форме клавиатурой, а не только кликом мыши?",
+      "description": "Объяснить и применить: Доступность взаимодействия нужно проверять последовательностью действий.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "react-test-error-boundary-recovery",
+      "title": "Как проверить fallback Error Boundary и восстановление после ошибки?",
+      "description": "Объяснить и применить: Восстановление является отдельным пользовательским контрактом.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "react-concurrent-test-observable-contract",
+      "title": "Почему тест конкурентного UI не должен требовать конкретного количества рендеров?",
+      "description": "Объяснить и применить: Проверяйте контракт пользователя, допуская законное изменение расписания.",
+      "requiredDifficulties": ["Продвинутый"],
+      "reviewed": true,
+      "priority": "extended",
+      "relatedSkillIds": []
     }
   ],
   "questions": [
@@ -72,19 +212,19 @@
       "topic": "React",
       "difficulty": "Средний",
       "summary": "Резервный интерфейс и границы обработки исключений.",
-      "takeaway": "Расположите границы по областям отказа, остальные ошибки обрабатывайте явно.",
+      "takeaway": "Граница ошибки должна сохранять полезный интерфейс и осмысленный путь восстановления.",
       "moduleId": "react",
       "order": 0,
       "popular": false,
       "editorial": {
-        "learningGoal": "Объяснить и применить правило с учётом его границ: Расположите границы по областям отказа, остальные ошибки обрабатывайте явно.",
-        "keywords": ["React", "Ошибки и тестирование"],
+        "learningGoal": "Граница ошибки должна сохранять полезный интерфейс и осмысленный путь восстановления.",
+        "keywords": ["React", "error", "boundary", "Ошибки и тестирование"],
         "kind": "explanation",
-        "reviewStatus": "imported",
+        "reviewStatus": "ready",
         "goalIds": ["core", "react-error-boundary"],
-        "relatedQuestionIds": [],
+        "relatedQuestionIds": ["react-lazy-suspense", "react-test-behavior"],
         "priority": "core",
-        "sourceRefs": []
+        "sourceRefs": ["ref-85b61ca05a0610ef"]
       },
       "answerFile": "answers/react/react-error-boundary.md"
     },
@@ -176,6 +316,314 @@
         "sourceRefs": ["ref-21f0cf93f224731f"]
       },
       "answerFile": "answers/react/react-test-browser-boundary.md"
+    },
+    {
+      "id": "react-test-role-queries",
+      "title": "Почему в тестах предпочитают getByRole с доступным именем, а не CSS-селектор?",
+      "topic": "React",
+      "difficulty": "Базовый",
+      "summary": "Проверять доступный пользователю контракт элемента и осознанно выбирать test id.",
+      "moduleId": "react",
+      "order": 5,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Проверять доступный пользователю контракт элемента и осознанно выбирать test id.",
+        "keywords": ["React", "test", "role", "queries"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "goalIds": ["core", "react-test-role-queries"],
+        "relatedQuestionIds": ["react-test-behavior"],
+        "priority": "core",
+        "sourceRefs": ["ref-9bdd72a222f1aef9"]
+      },
+      "takeaway": "Запрос теста должен отражать пользовательский контракт элемента.",
+      "answerFile": "answers/react/react-test-role-queries.md"
+    },
+    {
+      "id": "react-test-user-event",
+      "title": "Чем userEvent отличается от fireEvent в компонентном тесте?",
+      "topic": "React",
+      "difficulty": "Базовый",
+      "summary": "Различать пользовательское взаимодействие и отправку отдельного DOM-события.",
+      "moduleId": "react",
+      "order": 6,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Различать пользовательское взаимодействие и отправку отдельного DOM-события.",
+        "keywords": ["React", "test", "user", "event"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "goalIds": ["core", "react-test-user-event"],
+        "relatedQuestionIds": ["react-async-tests"],
+        "priority": "core",
+        "sourceRefs": ["ref-a2c8203f15c5846b"]
+      },
+      "takeaway": "Моделируйте действие пользователя на нужном уровне, а не случайный одиночный event.",
+      "answerFile": "answers/react/react-test-user-event.md"
+    },
+    {
+      "id": "react-test-act-boundary",
+      "title": "Для чего нужен act и почему предупреждение нельзя просто подавить?",
+      "topic": "React",
+      "difficulty": "Средний",
+      "summary": "Дождаться обновлений React от тестового действия и найти пропущенную асинхронную границу.",
+      "moduleId": "react",
+      "order": 7,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Дождаться обновлений React от тестового действия и найти пропущенную асинхронную границу.",
+        "keywords": ["React", "test", "act", "boundary"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "goalIds": ["core", "react-test-act-boundary"],
+        "relatedQuestionIds": ["react-effect-test"],
+        "priority": "core",
+        "sourceRefs": ["ref-824659561a2dcf01"]
+      },
+      "takeaway": "Тест должен дождаться соответствующего обновления, а не заглушить его диагностику.",
+      "answerFile": "answers/react/react-test-act-boundary.md"
+    },
+    {
+      "id": "react-test-waitfor-purity",
+      "title": "Почему нельзя нажимать кнопку внутри waitFor?",
+      "topic": "React",
+      "difficulty": "Средний",
+      "summary": "Отделять однократное действие от повторяемой проверки асинхронного результата.",
+      "moduleId": "react",
+      "order": 8,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Отделять однократное действие от повторяемой проверки асинхронного результата.",
+        "keywords": ["React", "test", "waitfor", "purity"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "goalIds": ["core", "react-test-waitfor-purity"],
+        "relatedQuestionIds": ["react-async-tests"],
+        "priority": "core",
+        "sourceRefs": ["ref-eff04d7fee35bd18"]
+      },
+      "takeaway": "Повторять можно проверку результата, а не само пользовательское действие.",
+      "answerFile": "answers/react/react-test-waitfor-purity.md"
+    },
+    {
+      "id": "react-test-fake-timers",
+      "title": "Как использовать fake timers вместе с userEvent и не зависнуть?",
+      "topic": "React",
+      "difficulty": "Средний",
+      "summary": "Продвигать виртуальное время и восстанавливать таймеры без утечки между тестами.",
+      "moduleId": "react",
+      "order": 9,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Продвигать виртуальное время и восстанавливать таймеры без утечки между тестами.",
+        "keywords": ["React", "test", "fake", "timers"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "goalIds": ["core", "react-test-fake-timers"],
+        "relatedQuestionIds": ["react-effect-test"],
+        "priority": "core",
+        "sourceRefs": ["ref-344a358e874eaa00"]
+      },
+      "takeaway": "Виртуальное время нужно явно продвигать и изолировать между тестами.",
+      "answerFile": "answers/react/react-test-fake-timers.md"
+    },
+    {
+      "id": "react-test-rerender-remount",
+      "title": "Чем rerender отличается от unmount и нового render при проверке состояния?",
+      "topic": "React",
+      "difficulty": "Средний",
+      "summary": "Проверять обновление props и пересоздание компонента разными сценариями.",
+      "moduleId": "react",
+      "order": 10,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Проверять обновление props и пересоздание компонента разными сценариями.",
+        "keywords": ["React", "test", "rerender", "remount"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "goalIds": ["core", "react-test-rerender-remount"],
+        "relatedQuestionIds": ["react-state-identity"],
+        "priority": "core",
+        "sourceRefs": ["ref-f16e9dc5d993c88a", "ref-9b26fc7028b388ed"]
+      },
+      "takeaway": "Проверяйте обновление и пересоздание как разные жизненные сценарии.",
+      "answerFile": "answers/react/react-test-rerender-remount.md"
+    },
+    {
+      "id": "react-test-empty-query",
+      "title": "Как проверить, что элемент отсутствует, не получив ошибку от getBy?",
+      "topic": "React",
+      "difficulty": "Базовый",
+      "summary": "Выбирайте запрос по ожидаемому состоянию и времени проверки.",
+      "answerFile": "answers/react/react-test-empty-query.md",
+      "takeaway": "Выбирайте запрос по ожидаемому состоянию и времени проверки.",
+      "moduleId": "react",
+      "order": 11,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить: Выбирайте запрос по ожидаемому состоянию и времени проверки.",
+        "keywords": ["React", "test", "empty", "query"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "goalIds": ["core", "react-test-empty-query"],
+        "relatedQuestionIds": ["react-test-behavior"],
+        "priority": "core",
+        "sourceRefs": ["ref-9bdd72a222f1aef9"]
+      }
+    },
+    {
+      "id": "react-test-cleanup-isolation",
+      "title": "Зачем размонтировать дерево и очищать подписки между тестами?",
+      "topic": "React",
+      "difficulty": "Базовый",
+      "summary": "Изолируйте и React-дерево, и внешние ресурсы теста.",
+      "answerFile": "answers/react/react-test-cleanup-isolation.md",
+      "takeaway": "Изолируйте и React-дерево, и внешние ресурсы теста.",
+      "moduleId": "react",
+      "order": 12,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить: Изолируйте и React-дерево, и внешние ресурсы теста.",
+        "keywords": ["React", "test", "cleanup", "isolation"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "goalIds": ["core", "react-test-cleanup-isolation"],
+        "relatedQuestionIds": ["react-test-behavior"],
+        "priority": "core",
+        "sourceRefs": ["ref-7e3de8955ad3e613"]
+      }
+    },
+    {
+      "id": "react-test-snapshot-limits",
+      "title": "Почему snapshot-тест не заменяет проверку поведения формы?",
+      "topic": "React",
+      "difficulty": "Базовый",
+      "summary": "Снимок дополняет проверку поведения, а не заменяет её.",
+      "answerFile": "answers/react/react-test-snapshot-limits.md",
+      "takeaway": "Снимок дополняет проверку поведения, а не заменяет её.",
+      "moduleId": "react",
+      "order": 13,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить: Снимок дополняет проверку поведения, а не заменяет её.",
+        "keywords": ["React", "test", "snapshot", "limits"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "goalIds": ["core", "react-test-snapshot-limits"],
+        "relatedQuestionIds": ["react-test-behavior"],
+        "priority": "core",
+        "sourceRefs": ["ref-2f1f977514a088c3"]
+      }
+    },
+    {
+      "id": "react-test-provider-wrapper",
+      "title": "Как тестировать компонент с Context без мокирования useContext?",
+      "topic": "React",
+      "difficulty": "Средний",
+      "summary": "Подменяйте внешний вход контекста, сохраняя механизм его чтения.",
+      "answerFile": "answers/react/react-test-provider-wrapper.md",
+      "takeaway": "Подменяйте внешний вход контекста, сохраняя механизм его чтения.",
+      "moduleId": "react",
+      "order": 14,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить: Подменяйте внешний вход контекста, сохраняя механизм его чтения.",
+        "keywords": ["React", "test", "provider", "wrapper"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "goalIds": ["core", "react-test-provider-wrapper"],
+        "relatedQuestionIds": ["react-test-behavior"],
+        "priority": "core",
+        "sourceRefs": ["ref-25bc223dbef8b1a9"]
+      }
+    },
+    {
+      "id": "react-test-network-contract",
+      "title": "Почему сетевой mock часто полезнее мока внутреннего fetch-хука?",
+      "topic": "React",
+      "difficulty": "Средний",
+      "summary": "Сохраняйте реальную логику того уровня, который собираетесь проверить.",
+      "answerFile": "answers/react/react-test-network-contract.md",
+      "takeaway": "Сохраняйте реальную логику того уровня, который собираетесь проверить.",
+      "moduleId": "react",
+      "order": 15,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить: Сохраняйте реальную логику того уровня, который собираетесь проверить.",
+        "keywords": ["React", "test", "network", "contract"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "goalIds": ["core", "react-test-network-contract"],
+        "relatedQuestionIds": ["react-test-behavior"],
+        "priority": "core",
+        "sourceRefs": ["ref-ce2d68d70142c413"]
+      }
+    },
+    {
+      "id": "react-test-keyboard-flow",
+      "title": "Как проверить путь по форме клавиатурой, а не только кликом мыши?",
+      "topic": "React",
+      "difficulty": "Средний",
+      "summary": "Доступность взаимодействия нужно проверять последовательностью действий.",
+      "answerFile": "answers/react/react-test-keyboard-flow.md",
+      "takeaway": "Доступность взаимодействия нужно проверять последовательностью действий.",
+      "moduleId": "react",
+      "order": 16,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить: Доступность взаимодействия нужно проверять последовательностью действий.",
+        "keywords": ["React", "test", "keyboard", "flow"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "goalIds": ["core", "react-test-keyboard-flow"],
+        "relatedQuestionIds": ["react-test-behavior"],
+        "priority": "core",
+        "sourceRefs": ["ref-4a6247f566871a6d"]
+      }
+    },
+    {
+      "id": "react-test-error-boundary-recovery",
+      "title": "Как проверить fallback Error Boundary и восстановление после ошибки?",
+      "topic": "React",
+      "difficulty": "Средний",
+      "summary": "Восстановление является отдельным пользовательским контрактом.",
+      "answerFile": "answers/react/react-test-error-boundary-recovery.md",
+      "takeaway": "Восстановление является отдельным пользовательским контрактом.",
+      "moduleId": "react",
+      "order": 17,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить: Восстановление является отдельным пользовательским контрактом.",
+        "keywords": ["React", "test", "error", "boundary", "recovery"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "goalIds": ["core", "react-test-error-boundary-recovery"],
+        "relatedQuestionIds": ["react-test-behavior"],
+        "priority": "core",
+        "sourceRefs": ["ref-85b61ca05a0610ef"]
+      }
+    },
+    {
+      "id": "react-concurrent-test-observable-contract",
+      "title": "Почему тест конкурентного UI не должен требовать конкретного количества рендеров?",
+      "topic": "React",
+      "difficulty": "Продвинутый",
+      "summary": "Проверяйте контракт пользователя, допуская законное изменение расписания.",
+      "answerFile": "answers/react/react-concurrent-test-observable-contract.md",
+      "takeaway": "Проверяйте контракт пользователя, допуская законное изменение расписания.",
+      "moduleId": "react",
+      "order": 18,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить: Проверяйте контракт пользователя, допуская законное изменение расписания.",
+        "keywords": ["React", "concurrent", "test", "observable", "contract"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "goalIds": ["core", "react-concurrent-test-observable-contract"],
+        "relatedQuestionIds": ["react-test-behavior"],
+        "priority": "extended",
+        "sourceRefs": ["ref-824659561a2dcf01"]
+      }
     }
   ]
 }

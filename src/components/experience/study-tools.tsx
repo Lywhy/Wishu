@@ -40,7 +40,7 @@ export function WorkspaceControls({
     return () => window.removeEventListener("keydown", exit)
   }, [focus, setFocus])
   return (
-    <div className="mb-4 flex flex-wrap items-center justify-between gap-3 rounded-xl border bg-card px-4 py-3">
+    <div className="mb-6 flex flex-wrap items-center justify-between gap-3 rounded-xl bg-muted/30 px-4 py-3">
       {children}
       <Toggle
         className="h-10"
@@ -65,7 +65,7 @@ export function PersonalNote({ contentKey }: { contentKey: string }) {
     save = useWorkspace((s) => s.note)
   return (
     <Disclosure
-      className="rounded-xl border bg-card"
+      className="rounded-xl bg-muted/25"
       title={<> Моя заметка{text ? " · есть запись" : ""} </>}
     >
       <label htmlFor={noteId} className="mt-4 block text-xs text-muted-foreground">

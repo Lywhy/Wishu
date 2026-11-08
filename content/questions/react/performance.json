@@ -17,15 +17,25 @@
         "react-profiler",
         "react-list-windowing",
         "react-compiler",
-        "react-flush-sync"
+        "react-flush-sync",
+        "react-composition-render-locality",
+        "react-profiler-durations",
+        "react-perf-render-is-not-paint",
+        "react-perf-local-search-input",
+        "react-perf-memo-selector-cost",
+        "react-perf-windowing-identity",
+        "react-perf-browser-vs-react-profile",
+        "react-compiler-memo-boundary",
+        "react-memo-comparator-closure-bug",
+        "react-interaction-latency-budget"
       ]
     },
     {
       "id": "react-memo",
       "title": "Какие рендеры может пропустить React.memo?",
-      "description": "Объяснить и применить правило с учётом его границ: memo оптимизирует повторные props, но не блокирует все обновления.",
+      "description": "memo уменьшает подтверждённую работу, сохраняя тот же результат и поведение.",
       "requiredDifficulties": ["Средний"],
-      "reviewed": false,
+      "reviewed": true,
       "priority": "core",
       "relatedSkillIds": []
     },
@@ -73,6 +83,96 @@
       "reviewed": false,
       "priority": "core",
       "relatedSkillIds": []
+    },
+    {
+      "id": "react-composition-render-locality",
+      "title": "Как композиция через children помогает ограничить рендеры без memo?",
+      "description": "Отличать переиспользование элемента из родителя от создания дочернего JSX внутри владельца частого state.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "react-profiler-durations",
+      "title": "Что означают actualDuration и baseDuration в React Profiler?",
+      "description": "Интерпретировать время рендера поддерева отдельно от общего времени взаимодействия.",
+      "requiredDifficulties": ["Продвинутый"],
+      "reviewed": true,
+      "priority": "extended",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "react-perf-render-is-not-paint",
+      "title": "Почему console.log рендера не доказывает изменение DOM или отрисовку браузера?",
+      "description": "Объяснить и применить: Различайте вычисление React, commit DOM и отрисовку браузера.",
+      "requiredDifficulties": ["Базовый"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "react-perf-local-search-input",
+      "title": "Как вынести state поля, чтобы ввод не обновлял всё дерево страницы?",
+      "description": "Объяснить и применить: Сначала ограничьте область действительно частого обновления.",
+      "requiredDifficulties": ["Базовый"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "react-perf-memo-selector-cost",
+      "title": "Когда мемоизация вычисления дороже самого вычисления?",
+      "description": "Объяснить и применить: Мемоизация - измеряемый компромисс, а не обязательная оболочка вычисления.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "react-perf-windowing-identity",
+      "title": "Как сохранить выбор, фокус и состояние строк в виртуализированном списке?",
+      "description": "Объяснить и применить: Окно DOM может быть временным, а состояние записи - нет.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "react-perf-browser-vs-react-profile",
+      "title": "Как отличить медленный render React от долгого layout, paint или сети?",
+      "description": "Объяснить и применить: Выбирайте инструмент по тому этапу, который тормозит взаимодействие.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "react-compiler-memo-boundary",
+      "title": "Как оценить необходимость ручной мемоизации при включённом React Compiler?",
+      "description": "Объяснить и применить: Оптимизацию оценивают по работающей конфигурации, сохраняя чистоту и контракт API.",
+      "requiredDifficulties": ["Продвинутый"],
+      "reviewed": true,
+      "priority": "extended",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "react-memo-comparator-closure-bug",
+      "title": "Как пользовательский comparator memo может сохранить обработчик со старым замыканием?",
+      "description": "Объяснить и применить: Сохранённое поведение важнее визуально одинаковых props.",
+      "requiredDifficulties": ["Продвинутый"],
+      "reviewed": true,
+      "priority": "extended",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "react-interaction-latency-budget",
+      "title": "Как построить измерение медленного взаимодействия без смешивания render и полной задержки?",
+      "description": "Объяснить и применить: Метрика должна измерять явно заданный пользовательский результат.",
+      "requiredDifficulties": ["Продвинутый"],
+      "reviewed": true,
+      "priority": "extended",
+      "relatedSkillIds": []
     }
   ],
   "questions": [
@@ -82,19 +182,23 @@
       "topic": "React",
       "difficulty": "Средний",
       "summary": "Сравнение props и собственные источники обновлений.",
-      "takeaway": "memo оптимизирует повторные props, но не блокирует все обновления.",
+      "takeaway": "memo уменьшает подтверждённую работу, сохраняя тот же результат и поведение.",
       "moduleId": "react",
       "order": 0,
       "popular": false,
       "editorial": {
-        "learningGoal": "Объяснить и применить правило с учётом его границ: memo оптимизирует повторные props, но не блокирует все обновления.",
-        "keywords": ["React", "Производительность"],
+        "learningGoal": "memo уменьшает подтверждённую работу, сохраняя тот же результат и поведение.",
+        "keywords": ["React", "memo", "Производительность"],
         "kind": "explanation",
-        "reviewStatus": "imported",
+        "reviewStatus": "ready",
         "goalIds": ["core", "react-memo"],
-        "relatedQuestionIds": [],
+        "relatedQuestionIds": [
+          "react-composition-render-locality",
+          "react-profiler",
+          "react-compiler"
+        ],
         "priority": "core",
-        "sourceRefs": []
+        "sourceRefs": ["ref-8cc130c143b35c6f"]
       },
       "answerFile": "answers/react/react-memo.md"
     },
@@ -210,6 +314,226 @@
         "sourceRefs": ["ref-631195ee29f40d5e"]
       },
       "answerFile": "answers/react/react-flush-sync.md"
+    },
+    {
+      "id": "react-composition-render-locality",
+      "title": "Как композиция через children помогает ограничить рендеры без memo?",
+      "topic": "React",
+      "difficulty": "Средний",
+      "summary": "Отличать переиспользование элемента из родителя от создания дочернего JSX внутри владельца частого state.",
+      "moduleId": "react",
+      "order": 6,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Отличать переиспользование элемента из родителя от создания дочернего JSX внутри владельца частого state.",
+        "keywords": ["React", "composition", "render", "locality"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "goalIds": ["core", "react-composition-render-locality"],
+        "relatedQuestionIds": ["react-lifting-state"],
+        "priority": "core",
+        "sourceRefs": ["ref-8cc130c143b35c6f"]
+      },
+      "takeaway": "Расположение состояния и создание JSX влияют на область обновления.",
+      "answerFile": "answers/react/react-composition-render-locality.md"
+    },
+    {
+      "id": "react-profiler-durations",
+      "title": "Что означают actualDuration и baseDuration в React Profiler?",
+      "topic": "React",
+      "difficulty": "Продвинутый",
+      "summary": "Интерпретировать время рендера поддерева отдельно от общего времени взаимодействия.",
+      "moduleId": "react",
+      "order": 7,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Интерпретировать время рендера поддерева отдельно от общего времени взаимодействия.",
+        "keywords": ["React", "profiler", "durations"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "goalIds": ["core", "react-profiler-durations"],
+        "relatedQuestionIds": ["react-profiler"],
+        "priority": "extended",
+        "sourceRefs": ["ref-04cf3f3b426bd2e0"]
+      },
+      "takeaway": "Метрику нужно связывать с тем этапом, который она измеряет.",
+      "answerFile": "answers/react/react-profiler-durations.md"
+    },
+    {
+      "id": "react-perf-render-is-not-paint",
+      "title": "Почему console.log рендера не доказывает изменение DOM или отрисовку браузера?",
+      "topic": "React",
+      "difficulty": "Базовый",
+      "summary": "Различайте вычисление React, commit DOM и отрисовку браузера.",
+      "answerFile": "answers/react/react-perf-render-is-not-paint.md",
+      "takeaway": "Различайте вычисление React, commit DOM и отрисовку браузера.",
+      "moduleId": "react",
+      "order": 8,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить: Различайте вычисление React, commit DOM и отрисовку браузера.",
+        "keywords": ["React", "perf", "render", "is", "not", "paint"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "goalIds": ["core", "react-perf-render-is-not-paint"],
+        "relatedQuestionIds": ["react-profiler"],
+        "priority": "core",
+        "sourceRefs": ["ref-4da7647e12f36796"]
+      }
+    },
+    {
+      "id": "react-perf-local-search-input",
+      "title": "Как вынести state поля, чтобы ввод не обновлял всё дерево страницы?",
+      "topic": "React",
+      "difficulty": "Базовый",
+      "summary": "Сначала ограничьте область действительно частого обновления.",
+      "answerFile": "answers/react/react-perf-local-search-input.md",
+      "takeaway": "Сначала ограничьте область действительно частого обновления.",
+      "moduleId": "react",
+      "order": 9,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить: Сначала ограничьте область действительно частого обновления.",
+        "keywords": ["React", "perf", "local", "search", "input"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "goalIds": ["core", "react-perf-local-search-input"],
+        "relatedQuestionIds": ["react-profiler"],
+        "priority": "core",
+        "sourceRefs": ["ref-123e26bb70073d17"]
+      }
+    },
+    {
+      "id": "react-perf-memo-selector-cost",
+      "title": "Когда мемоизация вычисления дороже самого вычисления?",
+      "topic": "React",
+      "difficulty": "Средний",
+      "summary": "Мемоизация - измеряемый компромисс, а не обязательная оболочка вычисления.",
+      "answerFile": "answers/react/react-perf-memo-selector-cost.md",
+      "takeaway": "Мемоизация - измеряемый компромисс, а не обязательная оболочка вычисления.",
+      "moduleId": "react",
+      "order": 10,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить: Мемоизация - измеряемый компромисс, а не обязательная оболочка вычисления.",
+        "keywords": ["React", "perf", "memo", "selector", "cost"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "goalIds": ["core", "react-perf-memo-selector-cost"],
+        "relatedQuestionIds": ["react-profiler"],
+        "priority": "core",
+        "sourceRefs": ["ref-210c042adf85ebf9"]
+      }
+    },
+    {
+      "id": "react-perf-windowing-identity",
+      "title": "Как сохранить выбор, фокус и состояние строк в виртуализированном списке?",
+      "topic": "React",
+      "difficulty": "Средний",
+      "summary": "Окно DOM может быть временным, а состояние записи - нет.",
+      "answerFile": "answers/react/react-perf-windowing-identity.md",
+      "takeaway": "Окно DOM может быть временным, а состояние записи - нет.",
+      "moduleId": "react",
+      "order": 11,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить: Окно DOM может быть временным, а состояние записи - нет.",
+        "keywords": ["React", "perf", "windowing", "identity"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "goalIds": ["core", "react-perf-windowing-identity"],
+        "relatedQuestionIds": ["react-profiler"],
+        "priority": "core",
+        "sourceRefs": ["ref-f16e9dc5d993c88a"]
+      }
+    },
+    {
+      "id": "react-perf-browser-vs-react-profile",
+      "title": "Как отличить медленный render React от долгого layout, paint или сети?",
+      "topic": "React",
+      "difficulty": "Средний",
+      "summary": "Выбирайте инструмент по тому этапу, который тормозит взаимодействие.",
+      "answerFile": "answers/react/react-perf-browser-vs-react-profile.md",
+      "takeaway": "Выбирайте инструмент по тому этапу, который тормозит взаимодействие.",
+      "moduleId": "react",
+      "order": 12,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить: Выбирайте инструмент по тому этапу, который тормозит взаимодействие.",
+        "keywords": ["React", "perf", "browser", "vs", "react", "profile"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "goalIds": ["core", "react-perf-browser-vs-react-profile"],
+        "relatedQuestionIds": ["react-profiler"],
+        "priority": "core",
+        "sourceRefs": ["ref-04cf3f3b426bd2e0"]
+      }
+    },
+    {
+      "id": "react-compiler-memo-boundary",
+      "title": "Как оценить необходимость ручной мемоизации при включённом React Compiler?",
+      "topic": "React",
+      "difficulty": "Продвинутый",
+      "summary": "Оптимизацию оценивают по работающей конфигурации, сохраняя чистоту и контракт API.",
+      "answerFile": "answers/react/react-compiler-memo-boundary.md",
+      "takeaway": "Оптимизацию оценивают по работающей конфигурации, сохраняя чистоту и контракт API.",
+      "moduleId": "react",
+      "order": 13,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить: Оптимизацию оценивают по работающей конфигурации, сохраняя чистоту и контракт API.",
+        "keywords": ["React", "compiler", "memo", "boundary"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "goalIds": ["core", "react-compiler-memo-boundary"],
+        "relatedQuestionIds": ["react-profiler", "react-compiler"],
+        "priority": "extended",
+        "sourceRefs": ["ref-0cc5c69a239b263f"]
+      }
+    },
+    {
+      "id": "react-memo-comparator-closure-bug",
+      "title": "Как пользовательский comparator memo может сохранить обработчик со старым замыканием?",
+      "topic": "React",
+      "difficulty": "Продвинутый",
+      "summary": "Сохранённое поведение важнее визуально одинаковых props.",
+      "answerFile": "answers/react/react-memo-comparator-closure-bug.md",
+      "takeaway": "Сохранённое поведение важнее визуально одинаковых props.",
+      "moduleId": "react",
+      "order": 14,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить: Сохранённое поведение важнее визуально одинаковых props.",
+        "keywords": ["React", "memo", "comparator", "closure", "bug"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "goalIds": ["core", "react-memo-comparator-closure-bug"],
+        "relatedQuestionIds": ["react-profiler", "react-memo"],
+        "priority": "extended",
+        "sourceRefs": ["ref-8cc130c143b35c6f"]
+      }
+    },
+    {
+      "id": "react-interaction-latency-budget",
+      "title": "Как построить измерение медленного взаимодействия без смешивания render и полной задержки?",
+      "topic": "React",
+      "difficulty": "Продвинутый",
+      "summary": "Метрика должна измерять явно заданный пользовательский результат.",
+      "answerFile": "answers/react/react-interaction-latency-budget.md",
+      "takeaway": "Метрика должна измерять явно заданный пользовательский результат.",
+      "moduleId": "react",
+      "order": 15,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить: Метрика должна измерять явно заданный пользовательский результат.",
+        "keywords": ["React", "interaction", "latency", "budget"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "goalIds": ["core", "react-interaction-latency-budget"],
+        "relatedQuestionIds": ["react-profiler"],
+        "priority": "extended",
+        "sourceRefs": ["ref-04cf3f3b426bd2e0"]
+      }
     }
   ]
 }

@@ -1,0 +1,31 @@
+**Компонент описывает способ вычислить UI, element является описанием конкретного элемента, а node - более широким понятием допустимого содержимого React.** Эти понятия не равны DOM-узлу.
+
+<!-- wishu:answer-block -->
+
+### Как это работает
+
+- Функция Greeting - тип компонента. Выражение `<Greeting />` создаёт element, но само по себе не выполняет commit в DOM.
+
+- В качестве содержимого могут использоваться элементы, строки, числа, массивы допустимых узлов и пустые значения. Например, null и boolean не добавляют видимый текст.
+
+- `isValidElement` проверяет именно element: строка и число могут отображаться React, но проверка для них вернёт false. Произвольный объект данными ребёнка не становится.
+
+### Пример
+
+```jsx
+function Greeting() {
+  return <p>Привет</p>
+}
+const element = <Greeting />
+isValidElement(element) // true
+isValidElement("Привет") // false
+const content = [element, "!", null] // допустимые children
+```
+
+### Типичная ошибка
+
+Передать объект пользователя непосредственно в JSX вместо его поля: `<p>{user}</p>`.
+
+### Источники
+
+- [React: react / isValidElement](https://react.dev/reference/react/isValidElement)

@@ -1,0 +1,32 @@
+**Если Context обязан иметь провайдер, используйте отдельное значение отсутствия и проверяющий пользовательский хук.** Ошибка конфигурации тогда обнаруживается рядом с местом использования.
+
+<!-- wishu:answer-block -->
+
+### Как это работает
+
+- createContext(`defaultValue`) задаёт запасное значение только при отсутствии провайдера выше.
+
+- Провайдер с value={undefined} передаёт именно undefined, а не возвращает `defaultValue`. Если undefined является допустимыми данными, выберите другой sentinel.
+
+- Проверка не является механизмом авторизации. Она проверяет структуру дерева и помогает разработчику; доступ к защищённым данным обеспечивается отдельно.
+
+### Пример
+
+```jsx
+const SessionContext = createContext(undefined)
+function useSession() {
+  const session = useContext(SessionContext)
+  if (session === undefined) {
+    throw new Error("useSession требует SessionProvider")
+  }
+  return session
+}
+```
+
+### Типичная ошибка
+
+Вернуть фиктивного пользователя по умолчанию и долго не замечать, что часть приложения находится вне провайдера.
+
+### Источники
+
+- [React: react / useContext](https://react.dev/reference/react/useContext)

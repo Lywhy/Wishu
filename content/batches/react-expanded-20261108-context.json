@@ -1,0 +1,86 @@
+{
+  "schemaVersion": 1,
+  "id": "react-expanded-20261108-context",
+  "title": "React: расширение context",
+  "sectionId": "react",
+  "subsectionId": "context",
+  "currentPass": "complete",
+  "goalIds": [
+    "core",
+    "react-context-nearest-provider",
+    "react-context-sibling-boundary",
+    "react-context-value-is-not-store",
+    "react-context-provider-state-lifetime",
+    "react-context-module-identity",
+    "react-context-external-store-tearing"
+  ],
+  "questionIds": [
+    "react-context-nearest-provider",
+    "react-context-sibling-boundary",
+    "react-context-value-is-not-store",
+    "react-context-provider-state-lifetime",
+    "react-context-module-identity",
+    "react-context-external-store-tearing"
+  ],
+  "scopePass": {
+    "status": "complete",
+    "remaining": []
+  },
+  "answerPass": {
+    "status": "complete",
+    "remaining": []
+  },
+  "baseline": [
+    {
+      "id": "react-context",
+      "title": "Как Context передаёт данные и откуда берётся значение по умолчанию?",
+      "contentHash": "c8a1243222e68114fa2799cf5f4aa99c40b16c14c39e6a9995dc3045c71bc108"
+    },
+    {
+      "id": "react-context-renders",
+      "title": "Почему потребители Context рендерятся при изменении value?",
+      "contentHash": "a80a63f87ced86610d7c5e43f8b29b2791f4b39304dad114023524136aa4549f"
+    },
+    {
+      "id": "react-state-location",
+      "title": "Как выбрать между props, Context и внешним store?",
+      "contentHash": "456dff6ffca020eef529b2d62486bc7c022a7642f3320b085c5dd44f2d3f2449"
+    },
+    {
+      "id": "react-external-store",
+      "title": "Для чего предназначен useSyncExternalStore?",
+      "contentHash": "8189349fdd0948f74b7c0fdde291e581659a531b89ddf6f160ee5755b2270e08"
+    },
+    {
+      "id": "react-url-state",
+      "title": "Какие состояния интерфейса стоит хранить в URL и как избежать второго источника истины?",
+      "contentHash": "3e09c498db3a91f799c429106f73ee70e0a2b1794a5a0b111a172c5494cbf3e1"
+    },
+    {
+      "id": "react-ssr-state-isolation",
+      "title": "Почему пользовательское состояние SSR нельзя бездумно хранить в singleton-store модуля?",
+      "contentHash": "d4639e621feb3dabc98956d6f8cc219162ebf4f9ca73422c288f37e26e95a3b2"
+    },
+    {
+      "id": "react-context-required-provider",
+      "title": "Как обнаружить использование хука Context вне обязательного провайдера?",
+      "contentHash": "7a89918d5838ad01094c039b8f2caf6d1de06bd6609b892c863636f0491362a5"
+    },
+    {
+      "id": "react-reducer-context-split",
+      "title": "Как объединить useReducer и Context и зачем разделять state и dispatch?",
+      "contentHash": "dca90ceeb9ecea1635961e8654bf5a0f02b1ee1b946913ab24b74213b9ab7bc6"
+    }
+  ],
+  "notes": [
+    "120 новых вопросов React: 60 базовых / 40 средних / 20 продвинутых; Redux и Zustand дополнительно внутри React. Прежние 128 ID сохраняются.",
+    "Общие определения остаются в канонических ответах; прикладные вопросы различаются проверяемым сценарием. Routing включает библиотеку React Router 7 и не приписывает её API ядру React.",
+    "B: react-context-nearest-provider | Какой провайдер получит вложенный потребитель одного Context?",
+    "B: react-context-sibling-boundary | Почему провайдер не передаёт значение соседнему компоненту?",
+    "B: react-context-value-is-not-store | Почему Context сам не предоставляет setter и не хранит историю изменений?",
+    "M: react-context-provider-state-lifetime | Как положение провайдера в маршрутах влияет на сохранение общего состояния?",
+    "M: react-context-module-identity | Почему одинаково названный Context из двух копий модуля не является одним Context?",
+    "A: react-context-external-store-tearing | Почему самодельная подписка на store через useEffect может дать несогласованный снимок?",
+    "Завершено: 172 новых вопроса, в том числе React 60/40/20, Redux 28, Zustand 24. Все 128 прежних ID сохранены. Oxfmt, отчёт пересечений, content:build и полный content:check прошли для 1135 вопросов. Примеры, приложение и PostgreSQL seed не запускались."
+  ]
+}

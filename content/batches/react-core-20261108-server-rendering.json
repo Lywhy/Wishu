@@ -1,0 +1,58 @@
+{
+  "schemaVersion": 1,
+  "id": "react-core-20261108-server-rendering",
+  "title": "React: server-rendering",
+  "sectionId": "react",
+  "subsectionId": "server-rendering",
+  "currentPass": "complete",
+  "goalIds": [
+    "core",
+    "react-streaming-shell",
+    "react-server-function-trust",
+    "react-root-lifecycle"
+  ],
+  "questionIds": ["react-streaming-shell", "react-server-function-trust", "react-root-lifecycle"],
+  "scopePass": {
+    "status": "complete",
+    "remaining": []
+  },
+  "answerPass": {
+    "status": "complete",
+    "remaining": []
+  },
+  "baseline": [
+    {
+      "id": "react-csr-ssr",
+      "title": "Чем CSR отличается от SSR и статического рендеринга?",
+      "contentHash": "210dff67473a6832485ee0b8519b7fce8aeee792bfa094a0acb36c2e248be605"
+    },
+    {
+      "id": "react-hydration",
+      "title": "Что такое гидратация и почему возникает hydration mismatch?",
+      "contentHash": "3c8989e45235a3a6fc602af937f05f74712209c3295db00d1e31b676aa3e9b47"
+    },
+    {
+      "id": "react-server-components",
+      "title": "Чем Server Components отличаются от SSR и Client Components?",
+      "contentHash": "b0a8bf458b389a7cd78d87ead43f6728dccf51c06b0a34e07d6bccc7a58bf090"
+    },
+    {
+      "id": "react-use-resource",
+      "title": "Как API use читает Promise и чем отличается от await?",
+      "contentHash": "0a323c5e0571b448b999424230854a09f42a89aa2927393818e74b1a34965bda"
+    },
+    {
+      "id": "react-server-cache",
+      "title": "Чем cache в Server Components отличается от useMemo и постоянного серверного кеша?",
+      "contentHash": "0e21523e93046056cfb39d43b54ea5eb003b59bacc358f7a7995a3a1403c5354"
+    }
+  ],
+  "notes": [
+    "Сначала сопоставлены все 94 действующие React-карточки. Redux и Zustand сохраняются без повторного пересмотра.",
+    "react-streaming-shell: Различать onShellReady и onAllReady и учитывать момент отправки заголовков. Закрепление: react-csr-ssr",
+    "react-server-function-trust: Проверять авторизацию и входные данные на сервере независимо от видимости кнопки. Закрепление: react-server-components",
+    "react-root-lifecycle: Выбрать клиентский корень по наличию серверной разметки и корректно завершить его жизнь. Закрепление: react-hydration",
+    "Ключи, идентичность state, обработчики, очередь, эффекты, memo, controlled input, Error Boundary и правила хуков расширяются под прежними ID; useId и сравнение transition/deferred не дублируются.",
+    "Контент отформатирован. content:report: +34 новых, 11 расширенных ответов и 4 изменения общих источников; удалений и лексических кандидатов нет. content:build и полный content:check прошли для 963 вопросов. Примеры и приложение не запускались."
+  ]
+}

@@ -16,7 +16,17 @@
         "react-lazy-suspense",
         "react-transition-deferred",
         "react-optimistic-ui",
-        "react-data-waterfalls"
+        "react-data-waterfalls",
+        "react-suspense-first-mount-state",
+        "react-transition-request-order",
+        "react-async-ui-statuses",
+        "react-async-http-status",
+        "react-async-abort-controller-lifetime",
+        "react-async-data-error-retry",
+        "react-async-dedup-cache-key",
+        "react-transition-cpu-boundary",
+        "react-suspense-layout-effect-reconnect",
+        "react-optimistic-overlap-rebase"
       ]
     },
     {
@@ -31,9 +41,9 @@
     {
       "id": "react-lazy-suspense",
       "title": "Как работают lazy и Suspense и что они не отслеживают?",
-      "description": "Объяснить и применить правило с учётом его границ: Suspense работает с поддерживаемыми источниками ожидания.",
+      "description": "Загрузка ресурса и размещение интерфейса ожидания - связанные, но разные задачи.",
       "requiredDifficulties": ["Средний"],
-      "reviewed": false,
+      "reviewed": true,
       "priority": "core",
       "relatedSkillIds": ["next-loading-streaming"]
     },
@@ -62,6 +72,96 @@
       "requiredDifficulties": ["Средний"],
       "reviewed": false,
       "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "react-suspense-first-mount-state",
+      "title": "Что происходит с локальным состоянием, если компонент при первом рендере попал в Suspense?",
+      "description": "Учитывать отсутствие commit и не создавать нестабильный ресурс внутри приостанавливаемого компонента.",
+      "requiredDifficulties": ["Продвинутый"],
+      "reviewed": true,
+      "priority": "extended",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "react-transition-request-order",
+      "title": "Гарантирует ли startTransition правильный порядок завершения запросов?",
+      "description": "Отделять приоритет рендера от управления порядком сетевых ответов.",
+      "requiredDifficulties": ["Продвинутый"],
+      "reviewed": true,
+      "priority": "extended",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "react-async-ui-statuses",
+      "title": "Как различать загрузку, пустой ответ, ошибку и успешный результат в UI?",
+      "description": "Объяснить и применить: Отсутствие данных нужно интерпретировать вместе со статусом операции.",
+      "requiredDifficulties": ["Базовый"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "react-async-http-status",
+      "title": "Почему fetch может завершиться успешно при HTTP 404 и как это учесть в React?",
+      "description": "Объяснить и применить: Сетевой успех не равен успешному HTTP-ответу или корректным данным.",
+      "requiredDifficulties": ["Базовый"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "react-async-abort-controller-lifetime",
+      "title": "Что именно отменяет AbortController в эффекте и чего он не откатывает?",
+      "description": "Объяснить и применить: Отмена ожидания и откат бизнес-операции - разные механизмы.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "react-async-data-error-retry",
+      "title": "Как спроектировать повторную загрузку без потери полезных прежних данных?",
+      "description": "Объяснить и применить: Повторная попытка меняет операцию, но не обязана уничтожать полезный контекст.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "react-async-dedup-cache-key",
+      "title": "Почему два компонента с одинаковыми данными могут отправить два запроса?",
+      "description": "Объяснить и применить: Одинаковые данные требуют общего контракта идентичности и времени жизни.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "react-transition-cpu-boundary",
+      "title": "Почему startTransition не переносит тяжёлый синхронный расчёт в другой поток?",
+      "description": "Объяснить и применить: Приоритет обновления React и выполнение CPU-задачи - разные задачи.",
+      "requiredDifficulties": ["Продвинутый"],
+      "reviewed": true,
+      "priority": "extended",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "react-suspense-layout-effect-reconnect",
+      "title": "Что происходит с layout-эффектами, когда Suspense повторно скрывает показанный контент?",
+      "description": "Объяснить и применить: Видимость Suspense и жизнь layout-синхронизации связаны явно.",
+      "requiredDifficulties": ["Продвинутый"],
+      "reviewed": true,
+      "priority": "extended",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "react-optimistic-overlap-rebase",
+      "title": "Как обрабатывать несколько перекрывающихся оптимистичных изменений одной записи?",
+      "description": "Объяснить и применить: Откатывайте конкретное намерение, не весь мир к старому снимку.",
+      "requiredDifficulties": ["Продвинутый"],
+      "reviewed": true,
+      "priority": "extended",
       "relatedSkillIds": []
     }
   ],
@@ -95,20 +195,23 @@
       "topic": "React",
       "difficulty": "Средний",
       "summary": "Отложенный модуль и граница ожидания.",
-      "code": "import { lazy, Suspense } from \"react\"\n\n// Модуль Editor.jsx должен экспортировать компонент по умолчанию.\nconst Editor = lazy(() => import(\"./Editor.jsx\"))\nfunction EditorPage() {\n  return <Suspense fallback={<p>Загрузка...</p>}><Editor /></Suspense>\n}",
-      "takeaway": "Suspense работает с поддерживаемыми источниками ожидания.",
+      "takeaway": "Загрузка ресурса и размещение интерфейса ожидания - связанные, но разные задачи.",
       "moduleId": "react",
       "order": 1,
       "popular": false,
       "editorial": {
-        "learningGoal": "Объяснить и применить правило с учётом его границ: Suspense работает с поддерживаемыми источниками ожидания.",
-        "keywords": ["React", "Асинхронный интерфейс"],
+        "learningGoal": "Загрузка ресурса и размещение интерфейса ожидания - связанные, но разные задачи.",
+        "keywords": ["React", "lazy", "suspense", "Асинхронный интерфейс"],
         "kind": "explanation",
-        "reviewStatus": "imported",
+        "reviewStatus": "ready",
         "goalIds": ["core", "react-lazy-suspense"],
-        "relatedQuestionIds": ["next-loading-streaming"],
+        "relatedQuestionIds": [
+          "next-loading-streaming",
+          "react-suspense-first-mount-state",
+          "react-data-waterfalls"
+        ],
         "priority": "core",
-        "sourceRefs": ["ref-f8f3016ad77e9e80"]
+        "sourceRefs": ["ref-8bb473e33d201808", "ref-f8f3016ad77e9e80"]
       },
       "answerFile": "answers/react/react-lazy-suspense.md"
     },
@@ -179,6 +282,226 @@
         "sourceRefs": ["ref-4d23b49b0284f9ac"]
       },
       "answerFile": "answers/react/react-data-waterfalls.md"
+    },
+    {
+      "id": "react-suspense-first-mount-state",
+      "title": "Что происходит с локальным состоянием, если компонент при первом рендере попал в Suspense?",
+      "topic": "React",
+      "difficulty": "Продвинутый",
+      "summary": "Учитывать отсутствие commit и не создавать нестабильный ресурс внутри приостанавливаемого компонента.",
+      "moduleId": "react",
+      "order": 5,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Учитывать отсутствие commit и не создавать нестабильный ресурс внутри приостанавливаемого компонента.",
+        "keywords": ["React", "suspense", "first", "mount", "state"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "goalIds": ["core", "react-suspense-first-mount-state"],
+        "relatedQuestionIds": ["react-use-resource"],
+        "priority": "extended",
+        "sourceRefs": ["ref-f8f3016ad77e9e80"]
+      },
+      "takeaway": "Данные первой приостановки должны переживать повторный рендер вне локальной попытки mount.",
+      "answerFile": "answers/react/react-suspense-first-mount-state.md"
+    },
+    {
+      "id": "react-transition-request-order",
+      "title": "Гарантирует ли startTransition правильный порядок завершения запросов?",
+      "topic": "React",
+      "difficulty": "Продвинутый",
+      "summary": "Отделять приоритет рендера от управления порядком сетевых ответов.",
+      "moduleId": "react",
+      "order": 6,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Отделять приоритет рендера от управления порядком сетевых ответов.",
+        "keywords": ["React", "transition", "request", "order"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "goalIds": ["core", "react-transition-request-order"],
+        "relatedQuestionIds": ["react-transition-deferred"],
+        "priority": "extended",
+        "sourceRefs": ["ref-a045255777f9e8c7"]
+      },
+      "takeaway": "Приоритет рендера и порядок запросов - независимые контракты.",
+      "answerFile": "answers/react/react-transition-request-order.md"
+    },
+    {
+      "id": "react-async-ui-statuses",
+      "title": "Как различать загрузку, пустой ответ, ошибку и успешный результат в UI?",
+      "topic": "React",
+      "difficulty": "Базовый",
+      "summary": "Отсутствие данных нужно интерпретировать вместе со статусом операции.",
+      "answerFile": "answers/react/react-async-ui-statuses.md",
+      "takeaway": "Отсутствие данных нужно интерпретировать вместе со статусом операции.",
+      "moduleId": "react",
+      "order": 7,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить: Отсутствие данных нужно интерпретировать вместе со статусом операции.",
+        "keywords": ["React", "async", "ui", "statuses"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "goalIds": ["core", "react-async-ui-statuses"],
+        "relatedQuestionIds": ["react-fetch-races"],
+        "priority": "core",
+        "sourceRefs": ["ref-b04d97d915a308a9"]
+      }
+    },
+    {
+      "id": "react-async-http-status",
+      "title": "Почему fetch может завершиться успешно при HTTP 404 и как это учесть в React?",
+      "topic": "React",
+      "difficulty": "Базовый",
+      "summary": "Сетевой успех не равен успешному HTTP-ответу или корректным данным.",
+      "answerFile": "answers/react/react-async-http-status.md",
+      "takeaway": "Сетевой успех не равен успешному HTTP-ответу или корректным данным.",
+      "moduleId": "react",
+      "order": 8,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить: Сетевой успех не равен успешному HTTP-ответу или корректным данным.",
+        "keywords": ["React", "async", "http", "status"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "goalIds": ["core", "react-async-http-status"],
+        "relatedQuestionIds": ["react-fetch-races"],
+        "priority": "core",
+        "sourceRefs": ["ref-f10cc26ad8cc531b"]
+      }
+    },
+    {
+      "id": "react-async-abort-controller-lifetime",
+      "title": "Что именно отменяет AbortController в эффекте и чего он не откатывает?",
+      "topic": "React",
+      "difficulty": "Средний",
+      "summary": "Отмена ожидания и откат бизнес-операции - разные механизмы.",
+      "answerFile": "answers/react/react-async-abort-controller-lifetime.md",
+      "takeaway": "Отмена ожидания и откат бизнес-операции - разные механизмы.",
+      "moduleId": "react",
+      "order": 9,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить: Отмена ожидания и откат бизнес-операции - разные механизмы.",
+        "keywords": ["React", "async", "abort", "controller", "lifetime"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "goalIds": ["core", "react-async-abort-controller-lifetime"],
+        "relatedQuestionIds": ["react-fetch-races"],
+        "priority": "core",
+        "sourceRefs": ["ref-5bc2943c6bc558bf"]
+      }
+    },
+    {
+      "id": "react-async-data-error-retry",
+      "title": "Как спроектировать повторную загрузку без потери полезных прежних данных?",
+      "topic": "React",
+      "difficulty": "Средний",
+      "summary": "Повторная попытка меняет операцию, но не обязана уничтожать полезный контекст.",
+      "answerFile": "answers/react/react-async-data-error-retry.md",
+      "takeaway": "Повторная попытка меняет операцию, но не обязана уничтожать полезный контекст.",
+      "moduleId": "react",
+      "order": 10,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить: Повторная попытка меняет операцию, но не обязана уничтожать полезный контекст.",
+        "keywords": ["React", "async", "data", "error", "retry"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "goalIds": ["core", "react-async-data-error-retry"],
+        "relatedQuestionIds": ["react-fetch-races"],
+        "priority": "core",
+        "sourceRefs": ["ref-4d23b49b0284f9ac"]
+      }
+    },
+    {
+      "id": "react-async-dedup-cache-key",
+      "title": "Почему два компонента с одинаковыми данными могут отправить два запроса?",
+      "topic": "React",
+      "difficulty": "Средний",
+      "summary": "Одинаковые данные требуют общего контракта идентичности и времени жизни.",
+      "answerFile": "answers/react/react-async-dedup-cache-key.md",
+      "takeaway": "Одинаковые данные требуют общего контракта идентичности и времени жизни.",
+      "moduleId": "react",
+      "order": 11,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить: Одинаковые данные требуют общего контракта идентичности и времени жизни.",
+        "keywords": ["React", "async", "dedup", "cache", "key"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "goalIds": ["core", "react-async-dedup-cache-key"],
+        "relatedQuestionIds": ["react-fetch-races"],
+        "priority": "core",
+        "sourceRefs": ["ref-8b892800e16f2524"]
+      }
+    },
+    {
+      "id": "react-transition-cpu-boundary",
+      "title": "Почему startTransition не переносит тяжёлый синхронный расчёт в другой поток?",
+      "topic": "React",
+      "difficulty": "Продвинутый",
+      "summary": "Приоритет обновления React и выполнение CPU-задачи - разные задачи.",
+      "answerFile": "answers/react/react-transition-cpu-boundary.md",
+      "takeaway": "Приоритет обновления React и выполнение CPU-задачи - разные задачи.",
+      "moduleId": "react",
+      "order": 12,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить: Приоритет обновления React и выполнение CPU-задачи - разные задачи.",
+        "keywords": ["React", "transition", "cpu", "boundary"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "goalIds": ["core", "react-transition-cpu-boundary"],
+        "relatedQuestionIds": ["react-fetch-races", "react-transition-deferred"],
+        "priority": "extended",
+        "sourceRefs": ["ref-a045255777f9e8c7"]
+      }
+    },
+    {
+      "id": "react-suspense-layout-effect-reconnect",
+      "title": "Что происходит с layout-эффектами, когда Suspense повторно скрывает показанный контент?",
+      "topic": "React",
+      "difficulty": "Продвинутый",
+      "summary": "Видимость Suspense и жизнь layout-синхронизации связаны явно.",
+      "answerFile": "answers/react/react-suspense-layout-effect-reconnect.md",
+      "takeaway": "Видимость Suspense и жизнь layout-синхронизации связаны явно.",
+      "moduleId": "react",
+      "order": 13,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить: Видимость Suspense и жизнь layout-синхронизации связаны явно.",
+        "keywords": ["React", "suspense", "layout", "effect", "reconnect"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "goalIds": ["core", "react-suspense-layout-effect-reconnect"],
+        "relatedQuestionIds": ["react-fetch-races", "react-lazy-suspense"],
+        "priority": "extended",
+        "sourceRefs": ["ref-f8f3016ad77e9e80"]
+      }
+    },
+    {
+      "id": "react-optimistic-overlap-rebase",
+      "title": "Как обрабатывать несколько перекрывающихся оптимистичных изменений одной записи?",
+      "topic": "React",
+      "difficulty": "Продвинутый",
+      "summary": "Откатывайте конкретное намерение, не весь мир к старому снимку.",
+      "answerFile": "answers/react/react-optimistic-overlap-rebase.md",
+      "takeaway": "Откатывайте конкретное намерение, не весь мир к старому снимку.",
+      "moduleId": "react",
+      "order": 14,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить: Откатывайте конкретное намерение, не весь мир к старому снимку.",
+        "keywords": ["React", "optimistic", "overlap", "rebase"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "goalIds": ["core", "react-optimistic-overlap-rebase"],
+        "relatedQuestionIds": ["react-fetch-races", "react-optimistic-ui"],
+        "priority": "extended",
+        "sourceRefs": ["ref-8c5502e33932183e"]
+      }
     }
   ]
 }

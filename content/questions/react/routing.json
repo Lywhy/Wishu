@@ -1,0 +1,532 @@
+{
+  "$schema": "../question-bundle.schema.json",
+  "sectionId": "react",
+  "subsectionId": "routing",
+  "scope": "React Router 7: Declarative и Data mode; API режима явно обозначены.",
+  "coverageGoals": [
+    {
+      "id": "core",
+      "title": "Маршрутизация в React",
+      "description": "URL, вложенные маршруты, навигация и жизненный цикл данных.",
+      "requiredDifficulties": [],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": [
+        "react-router-browser-history",
+        "react-router-outlet-layout",
+        "react-router-index-route",
+        "react-router-params-string",
+        "react-router-link-navlink",
+        "react-router-search-params",
+        "react-router-replace-push",
+        "react-router-not-found",
+        "react-router-relative-links",
+        "react-router-loader-vs-effect",
+        "react-router-action-revalidation",
+        "react-router-location-state-limits",
+        "react-router-memory-tests",
+        "react-router-spa-host-fallback",
+        "react-router-request-cancellation",
+        "react-router-auth-server-boundary"
+      ]
+    },
+    {
+      "id": "react-router-browser-history",
+      "title": "Что делает BrowserRouter и чем клиентский переход отличается от полной загрузки документа?",
+      "description": "Объяснить и применить: Клиентский router управляет экраном и историей, а не серверной маршрутизацией.",
+      "requiredDifficulties": ["Базовый"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "react-router-outlet-layout",
+      "title": "Зачем нужен Outlet во вложенном маршруте?",
+      "description": "Объяснить и применить: Вложенному маршруту нужно явное место в layout.",
+      "requiredDifficulties": ["Базовый"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "react-router-index-route",
+      "title": "Чем index route отличается от дочернего маршрута с path?",
+      "description": "Объяснить и применить: Index - содержимое родительского URL по умолчанию.",
+      "requiredDifficulties": ["Базовый"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "react-router-params-string",
+      "title": "Почему useParams возвращает строковые параметры, а не проверенные числа?",
+      "description": "Объяснить и применить: URL задаёт входные данные, а не готовую валидированную сущность.",
+      "requiredDifficulties": ["Базовый"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "react-router-link-navlink",
+      "title": "Когда нужен NavLink вместо Link?",
+      "description": "Объяснить и применить: Используйте маршрутную семантику активности ссылки.",
+      "requiredDifficulties": ["Базовый"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "react-router-search-params",
+      "title": "Как обновить один query-параметр, не потеряв остальные?",
+      "description": "Объяснить и применить: Обновляйте URL как целый контракт, сохраняя независимые параметры.",
+      "requiredDifficulties": ["Базовый"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "react-router-replace-push",
+      "title": "Когда переход должен заменять запись истории, а когда добавлять новую?",
+      "description": "Объяснить и применить: История переходов является частью пользовательского поведения.",
+      "requiredDifficulties": ["Базовый"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "react-router-not-found",
+      "title": "Как показать страницу 404 для неизвестного клиентского пути?",
+      "description": "Объяснить и применить: Различайте отсутствие клиентского экрана и статус серверного ответа.",
+      "requiredDifficulties": ["Базовый"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "react-router-relative-links",
+      "title": "От чего зависит относительный путь Link во вложенном маршруте?",
+      "description": "Объяснить и применить: Относительный URL нужно читать в контексте совпавшего маршрута.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "react-router-loader-vs-effect",
+      "title": "Чем loader Data Router отличается от загрузки в useEffect страницы?",
+      "description": "Объяснить и применить: Механизм данных нужно выбирать вместе с режимом router.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "react-router-action-revalidation",
+      "title": "Как action маршрута связан с последующей revalidation данных?",
+      "description": "Объяснить и применить: Связывайте мутацию и актуализацию данных через выбранную интеграцию.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "react-router-location-state-limits",
+      "title": "Почему location.state нельзя считать надёжной заменой URL или серверного хранения?",
+      "description": "Объяснить и применить: Ключевые входные данные страницы должны иметь восстанавливаемый источник.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "react-router-memory-tests",
+      "title": "Как проверить переход и параметры маршрута через MemoryRouter?",
+      "description": "Объяснить и применить: Выберите тестовый router того же режима, что и проверяемый контракт.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "react-router-spa-host-fallback",
+      "title": "Почему клиентский маршрут работает по Link, но даёт 404 после обновления страницы?",
+      "description": "Объяснить и применить: Разделяйте маршруты клиента, API и статических файлов.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "react-router-request-cancellation",
+      "title": "Как Data Router обрабатывает конкурирующие навигации и что это значит для серверной мутации?",
+      "description": "Объяснить и применить: Router управляет навигационной актуальностью, не заменяя серверную согласованность.",
+      "requiredDifficulties": ["Продвинутый"],
+      "reviewed": true,
+      "priority": "extended",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "react-router-auth-server-boundary",
+      "title": "Почему защищённый клиентский маршрут не заменяет авторизацию loader или API?",
+      "description": "Объяснить и применить: Доступ к ресурсу проверяется там, где ресурс выдаётся или изменяется.",
+      "requiredDifficulties": ["Продвинутый"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    }
+  ],
+  "questions": [
+    {
+      "id": "react-router-browser-history",
+      "title": "Что делает BrowserRouter и чем клиентский переход отличается от полной загрузки документа?",
+      "topic": "React",
+      "difficulty": "Базовый",
+      "summary": "Клиентский router управляет экраном и историей, а не серверной маршрутизацией.",
+      "answerFile": "answers/react/react-router-browser-history.md",
+      "takeaway": "Клиентский router управляет экраном и историей, а не серверной маршрутизацией.",
+      "moduleId": "react",
+      "order": 0,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить: Клиентский router управляет экраном и историей, а не серверной маршрутизацией.",
+        "keywords": ["React", "router", "browser", "history"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "goalIds": ["core", "react-router-browser-history"],
+        "relatedQuestionIds": ["react-url-state"],
+        "priority": "core",
+        "sourceRefs": ["ref-bc667d13640435ef"]
+      }
+    },
+    {
+      "id": "react-router-outlet-layout",
+      "title": "Зачем нужен Outlet во вложенном маршруте?",
+      "topic": "React",
+      "difficulty": "Базовый",
+      "summary": "Вложенному маршруту нужно явное место в layout.",
+      "answerFile": "answers/react/react-router-outlet-layout.md",
+      "takeaway": "Вложенному маршруту нужно явное место в layout.",
+      "moduleId": "react",
+      "order": 1,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить: Вложенному маршруту нужно явное место в layout.",
+        "keywords": ["React", "router", "outlet", "layout"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "goalIds": ["core", "react-router-outlet-layout"],
+        "relatedQuestionIds": ["react-url-state", "react-router-browser-history"],
+        "priority": "core",
+        "sourceRefs": ["ref-bc667d13640435ef"]
+      }
+    },
+    {
+      "id": "react-router-index-route",
+      "title": "Чем index route отличается от дочернего маршрута с path?",
+      "topic": "React",
+      "difficulty": "Базовый",
+      "summary": "Index - содержимое родительского URL по умолчанию.",
+      "answerFile": "answers/react/react-router-index-route.md",
+      "takeaway": "Index - содержимое родительского URL по умолчанию.",
+      "moduleId": "react",
+      "order": 2,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить: Index - содержимое родительского URL по умолчанию.",
+        "keywords": ["React", "router", "index", "route"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "goalIds": ["core", "react-router-index-route"],
+        "relatedQuestionIds": ["react-url-state", "react-router-browser-history"],
+        "priority": "core",
+        "sourceRefs": ["ref-bc667d13640435ef"]
+      }
+    },
+    {
+      "id": "react-router-params-string",
+      "title": "Почему useParams возвращает строковые параметры, а не проверенные числа?",
+      "topic": "React",
+      "difficulty": "Базовый",
+      "summary": "URL задаёт входные данные, а не готовую валидированную сущность.",
+      "answerFile": "answers/react/react-router-params-string.md",
+      "takeaway": "URL задаёт входные данные, а не готовую валидированную сущность.",
+      "moduleId": "react",
+      "order": 3,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить: URL задаёт входные данные, а не готовую валидированную сущность.",
+        "keywords": ["React", "router", "params", "string"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "goalIds": ["core", "react-router-params-string"],
+        "relatedQuestionIds": ["react-url-state", "react-router-browser-history"],
+        "priority": "core",
+        "sourceRefs": ["ref-b8eb00ca0f393492"]
+      }
+    },
+    {
+      "id": "react-router-link-navlink",
+      "title": "Когда нужен NavLink вместо Link?",
+      "topic": "React",
+      "difficulty": "Базовый",
+      "summary": "Используйте маршрутную семантику активности ссылки.",
+      "answerFile": "answers/react/react-router-link-navlink.md",
+      "takeaway": "Используйте маршрутную семантику активности ссылки.",
+      "moduleId": "react",
+      "order": 4,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить: Используйте маршрутную семантику активности ссылки.",
+        "keywords": ["React", "router", "link", "navlink"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "goalIds": ["core", "react-router-link-navlink"],
+        "relatedQuestionIds": ["react-url-state", "react-router-browser-history"],
+        "priority": "core",
+        "sourceRefs": ["ref-b8c4665fe13f8e5b"]
+      }
+    },
+    {
+      "id": "react-router-search-params",
+      "title": "Как обновить один query-параметр, не потеряв остальные?",
+      "topic": "React",
+      "difficulty": "Базовый",
+      "summary": "Обновляйте URL как целый контракт, сохраняя независимые параметры.",
+      "answerFile": "answers/react/react-router-search-params.md",
+      "takeaway": "Обновляйте URL как целый контракт, сохраняя независимые параметры.",
+      "moduleId": "react",
+      "order": 5,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить: Обновляйте URL как целый контракт, сохраняя независимые параметры.",
+        "keywords": ["React", "router", "search", "params"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "goalIds": ["core", "react-router-search-params"],
+        "relatedQuestionIds": ["react-url-state", "react-router-browser-history"],
+        "priority": "core",
+        "sourceRefs": ["ref-e1169371ff06e00d"]
+      }
+    },
+    {
+      "id": "react-router-replace-push",
+      "title": "Когда переход должен заменять запись истории, а когда добавлять новую?",
+      "topic": "React",
+      "difficulty": "Базовый",
+      "summary": "История переходов является частью пользовательского поведения.",
+      "answerFile": "answers/react/react-router-replace-push.md",
+      "takeaway": "История переходов является частью пользовательского поведения.",
+      "moduleId": "react",
+      "order": 6,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить: История переходов является частью пользовательского поведения.",
+        "keywords": ["React", "router", "replace", "push"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "goalIds": ["core", "react-router-replace-push"],
+        "relatedQuestionIds": ["react-url-state", "react-router-browser-history"],
+        "priority": "core",
+        "sourceRefs": ["ref-b8c4665fe13f8e5b"]
+      }
+    },
+    {
+      "id": "react-router-not-found",
+      "title": "Как показать страницу 404 для неизвестного клиентского пути?",
+      "topic": "React",
+      "difficulty": "Базовый",
+      "summary": "Различайте отсутствие клиентского экрана и статус серверного ответа.",
+      "answerFile": "answers/react/react-router-not-found.md",
+      "takeaway": "Различайте отсутствие клиентского экрана и статус серверного ответа.",
+      "moduleId": "react",
+      "order": 7,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить: Различайте отсутствие клиентского экрана и статус серверного ответа.",
+        "keywords": ["React", "router", "not", "found"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "goalIds": ["core", "react-router-not-found"],
+        "relatedQuestionIds": ["react-url-state", "react-router-browser-history"],
+        "priority": "core",
+        "sourceRefs": ["ref-bc667d13640435ef"]
+      }
+    },
+    {
+      "id": "react-router-relative-links",
+      "title": "От чего зависит относительный путь Link во вложенном маршруте?",
+      "topic": "React",
+      "difficulty": "Средний",
+      "summary": "Относительный URL нужно читать в контексте совпавшего маршрута.",
+      "answerFile": "answers/react/react-router-relative-links.md",
+      "takeaway": "Относительный URL нужно читать в контексте совпавшего маршрута.",
+      "moduleId": "react",
+      "order": 8,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить: Относительный URL нужно читать в контексте совпавшего маршрута.",
+        "keywords": ["React", "router", "relative", "links"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "goalIds": ["core", "react-router-relative-links"],
+        "relatedQuestionIds": ["react-url-state", "react-router-browser-history"],
+        "priority": "core",
+        "sourceRefs": ["ref-4597ee0ae69a73d3"]
+      }
+    },
+    {
+      "id": "react-router-loader-vs-effect",
+      "title": "Чем loader Data Router отличается от загрузки в useEffect страницы?",
+      "topic": "React",
+      "difficulty": "Средний",
+      "summary": "Механизм данных нужно выбирать вместе с режимом router.",
+      "answerFile": "answers/react/react-router-loader-vs-effect.md",
+      "takeaway": "Механизм данных нужно выбирать вместе с режимом router.",
+      "moduleId": "react",
+      "order": 9,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить: Механизм данных нужно выбирать вместе с режимом router.",
+        "keywords": ["React", "router", "loader", "vs", "effect"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "goalIds": ["core", "react-router-loader-vs-effect"],
+        "relatedQuestionIds": ["react-url-state", "react-router-browser-history"],
+        "priority": "core",
+        "sourceRefs": ["ref-5cb34c0282a05a06"]
+      }
+    },
+    {
+      "id": "react-router-action-revalidation",
+      "title": "Как action маршрута связан с последующей revalidation данных?",
+      "topic": "React",
+      "difficulty": "Средний",
+      "summary": "Связывайте мутацию и актуализацию данных через выбранную интеграцию.",
+      "answerFile": "answers/react/react-router-action-revalidation.md",
+      "takeaway": "Связывайте мутацию и актуализацию данных через выбранную интеграцию.",
+      "moduleId": "react",
+      "order": 10,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить: Связывайте мутацию и актуализацию данных через выбранную интеграцию.",
+        "keywords": ["React", "router", "action", "revalidation"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "goalIds": ["core", "react-router-action-revalidation"],
+        "relatedQuestionIds": ["react-url-state", "react-router-browser-history"],
+        "priority": "core",
+        "sourceRefs": ["ref-10761fd937121ee9"]
+      }
+    },
+    {
+      "id": "react-router-location-state-limits",
+      "title": "Почему location.state нельзя считать надёжной заменой URL или серверного хранения?",
+      "topic": "React",
+      "difficulty": "Средний",
+      "summary": "Ключевые входные данные страницы должны иметь восстанавливаемый источник.",
+      "answerFile": "answers/react/react-router-location-state-limits.md",
+      "takeaway": "Ключевые входные данные страницы должны иметь восстанавливаемый источник.",
+      "moduleId": "react",
+      "order": 11,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить: Ключевые входные данные страницы должны иметь восстанавливаемый источник.",
+        "keywords": ["React", "router", "location", "state", "limits"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "goalIds": ["core", "react-router-location-state-limits"],
+        "relatedQuestionIds": ["react-url-state", "react-router-browser-history"],
+        "priority": "core",
+        "sourceRefs": ["ref-f4c62df8fe7e6e99"]
+      }
+    },
+    {
+      "id": "react-router-memory-tests",
+      "title": "Как проверить переход и параметры маршрута через MemoryRouter?",
+      "topic": "React",
+      "difficulty": "Средний",
+      "summary": "Выберите тестовый router того же режима, что и проверяемый контракт.",
+      "answerFile": "answers/react/react-router-memory-tests.md",
+      "takeaway": "Выберите тестовый router того же режима, что и проверяемый контракт.",
+      "moduleId": "react",
+      "order": 12,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить: Выберите тестовый router того же режима, что и проверяемый контракт.",
+        "keywords": ["React", "router", "memory", "tests"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "goalIds": ["core", "react-router-memory-tests"],
+        "relatedQuestionIds": ["react-url-state", "react-router-browser-history"],
+        "priority": "core",
+        "sourceRefs": ["ref-83802e033c58cfc0"]
+      }
+    },
+    {
+      "id": "react-router-spa-host-fallback",
+      "title": "Почему клиентский маршрут работает по Link, но даёт 404 после обновления страницы?",
+      "topic": "React",
+      "difficulty": "Средний",
+      "summary": "Разделяйте маршруты клиента, API и статических файлов.",
+      "answerFile": "answers/react/react-router-spa-host-fallback.md",
+      "takeaway": "Разделяйте маршруты клиента, API и статических файлов.",
+      "moduleId": "react",
+      "order": 13,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить: Разделяйте маршруты клиента, API и статических файлов.",
+        "keywords": ["React", "router", "spa", "host", "fallback"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "goalIds": ["core", "react-router-spa-host-fallback"],
+        "relatedQuestionIds": ["react-url-state", "react-router-browser-history"],
+        "priority": "core",
+        "sourceRefs": ["ref-42e0b206fe0f1f59"]
+      }
+    },
+    {
+      "id": "react-router-request-cancellation",
+      "title": "Как Data Router обрабатывает конкурирующие навигации и что это значит для серверной мутации?",
+      "topic": "React",
+      "difficulty": "Продвинутый",
+      "summary": "Router управляет навигационной актуальностью, не заменяя серверную согласованность.",
+      "answerFile": "answers/react/react-router-request-cancellation.md",
+      "takeaway": "Router управляет навигационной актуальностью, не заменяя серверную согласованность.",
+      "moduleId": "react",
+      "order": 14,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить: Router управляет навигационной актуальностью, не заменяя серверную согласованность.",
+        "keywords": ["React", "router", "request", "cancellation"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "goalIds": ["core", "react-router-request-cancellation"],
+        "relatedQuestionIds": ["react-url-state", "react-router-browser-history"],
+        "priority": "extended",
+        "sourceRefs": ["ref-dc37f79924e3dbf1"]
+      }
+    },
+    {
+      "id": "react-router-auth-server-boundary",
+      "title": "Почему защищённый клиентский маршрут не заменяет авторизацию loader или API?",
+      "topic": "React",
+      "difficulty": "Продвинутый",
+      "summary": "Доступ к ресурсу проверяется там, где ресурс выдаётся или изменяется.",
+      "answerFile": "answers/react/react-router-auth-server-boundary.md",
+      "takeaway": "Доступ к ресурсу проверяется там, где ресурс выдаётся или изменяется.",
+      "moduleId": "react",
+      "order": 15,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить: Доступ к ресурсу проверяется там, где ресурс выдаётся или изменяется.",
+        "keywords": ["React", "router", "auth", "server", "boundary"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "goalIds": ["core", "react-router-auth-server-boundary"],
+        "relatedQuestionIds": ["react-url-state", "react-router-browser-history"],
+        "priority": "core",
+        "sourceRefs": ["ref-ac99182319c886f0"]
+      }
+    }
+  ]
+}

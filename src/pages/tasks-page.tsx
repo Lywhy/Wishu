@@ -142,15 +142,18 @@ export function TasksPage() {
             )}
           </div>
           {items.length ? (
-            <div className="grid gap-3 sm:grid-cols-2">
-              {visibleItems.map((task) => (
+            <div className="grid gap-4 sm:grid-cols-2">
+              {visibleItems.map((task, index) => (
                 <Link
                   key={task.id}
                   to={`/tasks/${task.id}`}
                   state={{ taskList }}
                   className="group rounded-xl outline-none focus-visible:ring-2 focus-visible:ring-ring"
                 >
-                  <Card className="h-full gap-3 rounded-xl p-5 shadow-none transition-[background-color,box-shadow] duration-200 group-hover:bg-muted/40 group-hover:ring-primary/25">
+                  <Card
+                    introDelay={Math.min(index, 5) * 0.05}
+                    className="h-full gap-3 rounded-xl p-5 shadow-none transition-[background-color,border-color,box-shadow] duration-200 group-hover:border-primary/25 group-hover:bg-muted/30 motion-reduce:transition-none"
+                  >
                     <div className="flex flex-wrap items-center justify-between gap-2">
                       <TaskStatusBadge
                         status={

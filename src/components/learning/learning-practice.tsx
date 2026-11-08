@@ -87,7 +87,7 @@ export function LearningPractice({
           {done && <Badge variant="secondary">Пройдено</Badge>}
         </div>
         <p className="text-sm leading-7">{task.description}</p>
-        <ul className="list-disc space-y-2 pl-5 text-sm leading-6 text-muted-foreground">
+        <ul className="list-disc space-y-2 pl-5 text-sm leading-7 text-foreground/90">
           {task.requirements.map((item) => (
             <li key={item}>{item}</li>
           ))}
@@ -98,7 +98,7 @@ export function LearningPractice({
           label="Пример"
         />
       </div>
-      <div className="flex items-center justify-between gap-3 border-y px-4 py-3">
+      <div className="flex flex-wrap items-center justify-between gap-3 border-y border-border/60 bg-muted/15 px-4 py-3">
         <h4 className="text-sm font-semibold">Ваше решение</h4>
         {done ? (
           <output className="text-sm font-medium text-emerald-700 dark:text-emerald-400">
@@ -126,7 +126,11 @@ export function LearningPractice({
       </div>
       <TaskEditorBoundary value={code} onChange={edit}>
         <Suspense
-          fallback={<div className="p-8 text-sm text-muted-foreground">Загружаем редактор…</div>}
+          fallback={
+            <div className="flex min-h-[clamp(20rem,44vh,30rem)] items-center justify-center bg-background text-sm text-muted-foreground">
+              Загружаем редактор…
+            </div>
+          }
         >
           <Editor
             taskId={"learning-" + progressKey}

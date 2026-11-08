@@ -1,0 +1,372 @@
+{
+  "$schema": "../question-bundle.schema.json",
+  "sectionId": "browser",
+  "subsectionId": "sessions",
+  "scope": "Область и срок cookie, аутентификация, обновление credentials и logout.",
+  "coverageGoals": [
+    {
+      "id": "core",
+      "title": "Cookies, сессии и аутентификация",
+      "description": "Область и срок cookie, аутентификация, обновление credentials и logout.",
+      "requiredDifficulties": [],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": [
+        "browser-cookie-flags",
+        "cookie-http-flow",
+        "cookie-scope",
+        "cookie-lifetime",
+        "auth-session-flow",
+        "auth-authorization-header",
+        "cookie-delete-scope",
+        "auth-session-token",
+        "auth-refresh-lifecycle",
+        "auth-logout",
+        "cookie-third-party"
+      ]
+    },
+    {
+      "id": "browser-cookie-flags",
+      "title": "Что делают HttpOnly, Secure и SameSite у cookie?",
+      "description": "Объяснить и применить: Каждый cookie-флаг ограничивает отдельный аспект поведения.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "cookie-http-flow",
+      "title": "Как Set-Cookie и Cookie связывают ответы и последующие запросы?",
+      "description": "Объяснить и применить: Установка, доступ скрипта и отправка cookie имеют разные проверки.",
+      "requiredDifficulties": ["Базовый"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "cookie-scope",
+      "title": "Как Domain и Path влияют на отправку cookie?",
+      "description": "Объяснить и применить: Область отправки cookie и прикладной контроль доступа различаются.",
+      "requiredDifficulties": ["Базовый"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "cookie-lifetime",
+      "title": "Чем сессионная cookie отличается от cookie с Max-Age или Expires?",
+      "description": "Объяснить и применить: Срок cookie и срок серверного полномочия согласуют отдельно.",
+      "requiredDifficulties": ["Базовый"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "auth-session-flow",
+      "title": "Как работает вход с серверной сессией и непрозрачным идентификатором?",
+      "description": "Объяснить и применить: Аутентификация сессии дополняется авторизацией конкретного ресурса.",
+      "requiredDifficulties": ["Базовый"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "auth-authorization-header",
+      "title": "Как Authorization отличается от автоматически отправляемой cookie?",
+      "description": "Объяснить и применить: Выбор переноса credentials должен следовать модели угроз и API.",
+      "requiredDifficulties": ["Базовый"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "cookie-delete-scope",
+      "title": "Почему удаление cookie может не сработать при том же имени?",
+      "description": "Объяснить и применить: Для удаления важны идентичность cookie и отзыв соответствующего полномочия.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "auth-session-token",
+      "title": "Чем серверная сессия отличается от самодостаточного токена?",
+      "description": "Объяснить и применить: Выбирайте модель по проверке, сроку и отзыву полномочий.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "auth-refresh-lifecycle",
+      "title": "Как разделяют срок жизни access и refresh credentials?",
+      "description": "Объяснить и применить: Обновление доступа - отдельный координируемый жизненный цикл.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "auth-logout",
+      "title": "Какие состояния нужно завершить при выходе из аккаунта?",
+      "description": "Объяснить и применить: Завершайте сессию целиком, включая операции в полёте и другие контексты.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "cookie-third-party",
+      "title": "Почему cookies во встроенном или межсайтовом контексте могут не работать?",
+      "description": "Объяснить и применить: Поведение cookies нужно оценивать в реальном top-level и embedded-контексте.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    }
+  ],
+  "questions": [
+    {
+      "id": "browser-cookie-flags",
+      "title": "Что делают HttpOnly, Secure и SameSite у cookie?",
+      "topic": "Web",
+      "difficulty": "Средний",
+      "summary": "Каждый cookie-флаг ограничивает отдельный аспект поведения.",
+      "takeaway": "Каждый cookie-флаг ограничивает отдельный аспект поведения.",
+      "moduleId": "browser",
+      "order": 0,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить: Каждый cookie-флаг ограничивает отдельный аспект поведения.",
+        "keywords": ["Браузер и HTTP", "sessions", "browser", "cookie", "flags"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "goalIds": ["core", "browser-cookie-flags"],
+        "relatedQuestionIds": [],
+        "priority": "core",
+        "sourceRefs": ["ref-59e2ed660294603a"]
+      },
+      "answerFile": "answers/browser/browser-cookie-flags.md"
+    },
+    {
+      "id": "cookie-http-flow",
+      "title": "Как Set-Cookie и Cookie связывают ответы и последующие запросы?",
+      "topic": "Web",
+      "difficulty": "Базовый",
+      "summary": "Установка, доступ скрипта и отправка cookie имеют разные проверки.",
+      "takeaway": "Установка, доступ скрипта и отправка cookie имеют разные проверки.",
+      "moduleId": "browser",
+      "order": 1,
+      "popular": false,
+      "answerFile": "answers/browser/cookie-http-flow.md",
+      "editorial": {
+        "learningGoal": "Объяснить и применить: Установка, доступ скрипта и отправка cookie имеют разные проверки.",
+        "keywords": ["Браузер и HTTP", "sessions", "cookie", "http", "flow"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "goalIds": ["core", "cookie-http-flow"],
+        "relatedQuestionIds": ["document-cookie"],
+        "priority": "core",
+        "sourceRefs": ["ref-59e2ed660294603a"]
+      }
+    },
+    {
+      "id": "cookie-scope",
+      "title": "Как Domain и Path влияют на отправку cookie?",
+      "topic": "Web",
+      "difficulty": "Базовый",
+      "summary": "Область отправки cookie и прикладной контроль доступа различаются.",
+      "takeaway": "Область отправки cookie и прикладной контроль доступа различаются.",
+      "moduleId": "browser",
+      "order": 2,
+      "popular": false,
+      "answerFile": "answers/browser/cookie-scope.md",
+      "editorial": {
+        "learningGoal": "Объяснить и применить: Область отправки cookie и прикладной контроль доступа различаются.",
+        "keywords": ["Браузер и HTTP", "sessions", "cookie", "scope"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "goalIds": ["core", "cookie-scope"],
+        "relatedQuestionIds": ["browser-cookie-flags"],
+        "priority": "core",
+        "sourceRefs": ["ref-59e2ed660294603a"]
+      }
+    },
+    {
+      "id": "cookie-lifetime",
+      "title": "Чем сессионная cookie отличается от cookie с Max-Age или Expires?",
+      "topic": "Web",
+      "difficulty": "Базовый",
+      "summary": "Срок cookie и срок серверного полномочия согласуют отдельно.",
+      "takeaway": "Срок cookie и срок серверного полномочия согласуют отдельно.",
+      "moduleId": "browser",
+      "order": 3,
+      "popular": false,
+      "answerFile": "answers/browser/cookie-lifetime.md",
+      "editorial": {
+        "learningGoal": "Объяснить и применить: Срок cookie и срок серверного полномочия согласуют отдельно.",
+        "keywords": ["Браузер и HTTP", "sessions", "cookie", "lifetime"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "goalIds": ["core", "cookie-lifetime"],
+        "relatedQuestionIds": [],
+        "priority": "core",
+        "sourceRefs": ["ref-59e2ed660294603a"]
+      }
+    },
+    {
+      "id": "auth-session-flow",
+      "title": "Как работает вход с серверной сессией и непрозрачным идентификатором?",
+      "topic": "Web",
+      "difficulty": "Базовый",
+      "summary": "Аутентификация сессии дополняется авторизацией конкретного ресурса.",
+      "takeaway": "Аутентификация сессии дополняется авторизацией конкретного ресурса.",
+      "moduleId": "browser",
+      "order": 4,
+      "popular": false,
+      "answerFile": "answers/browser/auth-session-flow.md",
+      "editorial": {
+        "learningGoal": "Объяснить и применить: Аутентификация сессии дополняется авторизацией конкретного ресурса.",
+        "keywords": ["Браузер и HTTP", "sessions", "auth", "session", "flow"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "goalIds": ["core", "auth-session-flow"],
+        "relatedQuestionIds": ["browser-api-authorization"],
+        "priority": "core",
+        "sourceRefs": ["ref-7fa0f5ed50b53921"]
+      }
+    },
+    {
+      "id": "auth-authorization-header",
+      "title": "Как Authorization отличается от автоматически отправляемой cookie?",
+      "topic": "Web",
+      "difficulty": "Базовый",
+      "summary": "Выбор переноса credentials должен следовать модели угроз и API.",
+      "takeaway": "Выбор переноса credentials должен следовать модели угроз и API.",
+      "moduleId": "browser",
+      "order": 5,
+      "popular": false,
+      "answerFile": "answers/browser/auth-authorization-header.md",
+      "editorial": {
+        "learningGoal": "Объяснить и применить: Выбор переноса credentials должен следовать модели угроз и API.",
+        "keywords": ["Браузер и HTTP", "sessions", "auth", "authorization", "header"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "goalIds": ["core", "auth-authorization-header"],
+        "relatedQuestionIds": ["browser-csrf"],
+        "priority": "core",
+        "sourceRefs": ["ref-10c2347db109ea1e"]
+      }
+    },
+    {
+      "id": "cookie-delete-scope",
+      "title": "Почему удаление cookie может не сработать при том же имени?",
+      "topic": "Web",
+      "difficulty": "Средний",
+      "summary": "Для удаления важны идентичность cookie и отзыв соответствующего полномочия.",
+      "takeaway": "Для удаления важны идентичность cookie и отзыв соответствующего полномочия.",
+      "moduleId": "browser",
+      "order": 6,
+      "popular": false,
+      "answerFile": "answers/browser/cookie-delete-scope.md",
+      "editorial": {
+        "learningGoal": "Объяснить и применить: Для удаления важны идентичность cookie и отзыв соответствующего полномочия.",
+        "keywords": ["Браузер и HTTP", "sessions", "cookie", "delete", "scope"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "goalIds": ["core", "cookie-delete-scope"],
+        "relatedQuestionIds": ["auth-logout"],
+        "priority": "core",
+        "sourceRefs": ["ref-59e2ed660294603a"]
+      }
+    },
+    {
+      "id": "auth-session-token",
+      "title": "Чем серверная сессия отличается от самодостаточного токена?",
+      "topic": "Web",
+      "difficulty": "Средний",
+      "summary": "Выбирайте модель по проверке, сроку и отзыву полномочий.",
+      "takeaway": "Выбирайте модель по проверке, сроку и отзыву полномочий.",
+      "moduleId": "browser",
+      "order": 7,
+      "popular": false,
+      "answerFile": "answers/browser/auth-session-token.md",
+      "editorial": {
+        "learningGoal": "Объяснить и применить: Выбирайте модель по проверке, сроку и отзыву полномочий.",
+        "keywords": ["Браузер и HTTP", "sessions", "auth", "session", "token"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "goalIds": ["core", "auth-session-token"],
+        "relatedQuestionIds": ["auth-logout"],
+        "priority": "core",
+        "sourceRefs": ["ref-7fa0f5ed50b53921"]
+      }
+    },
+    {
+      "id": "auth-refresh-lifecycle",
+      "title": "Как разделяют срок жизни access и refresh credentials?",
+      "topic": "Web",
+      "difficulty": "Средний",
+      "summary": "Обновление доступа - отдельный координируемый жизненный цикл.",
+      "takeaway": "Обновление доступа - отдельный координируемый жизненный цикл.",
+      "moduleId": "browser",
+      "order": 8,
+      "popular": false,
+      "answerFile": "answers/browser/auth-refresh-lifecycle.md",
+      "editorial": {
+        "learningGoal": "Объяснить и применить: Обновление доступа - отдельный координируемый жизненный цикл.",
+        "keywords": ["Браузер и HTTP", "sessions", "auth", "refresh", "lifecycle"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "goalIds": ["core", "auth-refresh-lifecycle"],
+        "relatedQuestionIds": ["auth-logout"],
+        "priority": "core",
+        "sourceRefs": ["ref-7fa0f5ed50b53921"]
+      }
+    },
+    {
+      "id": "auth-logout",
+      "title": "Какие состояния нужно завершить при выходе из аккаунта?",
+      "topic": "Web",
+      "difficulty": "Средний",
+      "summary": "Завершайте сессию целиком, включая операции в полёте и другие контексты.",
+      "takeaway": "Завершайте сессию целиком, включая операции в полёте и другие контексты.",
+      "moduleId": "browser",
+      "order": 9,
+      "popular": false,
+      "answerFile": "answers/browser/auth-logout.md",
+      "editorial": {
+        "learningGoal": "Объяснить и применить: Завершайте сессию целиком, включая операции в полёте и другие контексты.",
+        "keywords": ["Браузер и HTTP", "sessions", "auth", "logout"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "goalIds": ["core", "auth-logout"],
+        "relatedQuestionIds": ["browser-bfcache-private"],
+        "priority": "core",
+        "sourceRefs": ["ref-7fa0f5ed50b53921"]
+      }
+    },
+    {
+      "id": "cookie-third-party",
+      "title": "Почему cookies во встроенном или межсайтовом контексте могут не работать?",
+      "topic": "Web",
+      "difficulty": "Средний",
+      "summary": "Поведение cookies нужно оценивать в реальном top-level и embedded-контексте.",
+      "takeaway": "Поведение cookies нужно оценивать в реальном top-level и embedded-контексте.",
+      "moduleId": "browser",
+      "order": 10,
+      "popular": false,
+      "answerFile": "answers/browser/cookie-third-party.md",
+      "editorial": {
+        "learningGoal": "Объяснить и применить: Поведение cookies нужно оценивать в реальном top-level и embedded-контексте.",
+        "keywords": ["Браузер и HTTP", "sessions", "cookie", "third", "party"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "goalIds": ["core", "cookie-third-party"],
+        "relatedQuestionIds": ["browser-partitioned-storage"],
+        "priority": "core",
+        "sourceRefs": ["ref-59e2ed660294603a"]
+      }
+    }
+  ]
+}

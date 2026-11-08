@@ -1,0 +1,197 @@
+{
+  "schemaVersion": 1,
+  "id": "react-expanded-20261108-components",
+  "title": "React: расширение components",
+  "sectionId": "react",
+  "subsectionId": "components",
+  "currentPass": "complete",
+  "goalIds": [
+    "core",
+    "react-renderer-boundary",
+    "react-jsx-capitalization",
+    "react-jsx-expression-boundary",
+    "react-jsx-boolean-attribute",
+    "react-jsx-style-contract",
+    "react-jsx-class-condition",
+    "react-jsx-aria-data",
+    "react-prop-default-null",
+    "react-jsx-whitespace",
+    "react-jsx-object-child",
+    "react-jsx-map-return",
+    "react-component-module-export",
+    "react-component-local-variable",
+    "react-component-slot-contract",
+    "react-ts-component-props",
+    "react-ts-children-node",
+    "react-ts-event-types",
+    "react-ts-state-null-union",
+    "react-event-current-target-async",
+    "react-focus-subtree-boundary",
+    "react-compound-component-contract",
+    "react-ts-discriminated-props",
+    "react-render-restart-external-mutation"
+  ],
+  "questionIds": [
+    "react-renderer-boundary",
+    "react-jsx-capitalization",
+    "react-jsx-expression-boundary",
+    "react-jsx-boolean-attribute",
+    "react-jsx-style-contract",
+    "react-jsx-class-condition",
+    "react-jsx-aria-data",
+    "react-prop-default-null",
+    "react-jsx-whitespace",
+    "react-jsx-object-child",
+    "react-jsx-map-return",
+    "react-component-module-export",
+    "react-component-local-variable",
+    "react-component-slot-contract",
+    "react-ts-component-props",
+    "react-ts-children-node",
+    "react-ts-event-types",
+    "react-ts-state-null-union",
+    "react-event-current-target-async",
+    "react-focus-subtree-boundary",
+    "react-compound-component-contract",
+    "react-ts-discriminated-props",
+    "react-render-restart-external-mutation"
+  ],
+  "scopePass": {
+    "status": "complete",
+    "remaining": []
+  },
+  "answerPass": {
+    "status": "complete",
+    "remaining": []
+  },
+  "baseline": [
+    {
+      "id": "react-purpose",
+      "title": "Что такое React и что означает декларативный интерфейс?",
+      "contentHash": "555a8a057b4990ed670b2397e84798f6c7d4e9785dfae551fbefabea1919d451"
+    },
+    {
+      "id": "react-jsx",
+      "title": "Что такое JSX и чем он отличается от HTML?",
+      "contentHash": "555c9c3392339067b4f47acb2db5b1efa386330da05a5e303118c38bf4c91d6d"
+    },
+    {
+      "id": "react-props-children",
+      "title": "Как работают props и children?",
+      "contentHash": "c1def0e4820593963cbfb68a07666a65de41c70bf29d21df508073d306fd3981"
+    },
+    {
+      "id": "react-render-commit",
+      "title": "Чем рендер отличается от изменения DOM?",
+      "contentHash": "b6c957aef4fa92b45ae66937db8220bf48a143f0ad34962242f77e5af842da9c"
+    },
+    {
+      "id": "react-conditional-rendering",
+      "title": "Какие ошибки возможны при условном рендеринге?",
+      "contentHash": "25b589c3bea10bcc29dbe4805938d1ed92dd026bd25dada88b5134b49ae186e1"
+    },
+    {
+      "id": "react-keys",
+      "title": "Зачем React нужен key в списках?",
+      "contentHash": "d4bab24d9ad61146bf39ab2873fdba04188b363e6dbaf4bc0006d7cf9f4d19cc"
+    },
+    {
+      "id": "react-fragments",
+      "title": "Зачем нужны Fragment и явный ключ у фрагмента?",
+      "contentHash": "9be0c77fe02761499b4f881a9c29007814bb350872d144303a0cbfb6bc077709"
+    },
+    {
+      "id": "react-state-identity",
+      "title": "Когда React сохраняет состояние, а когда сбрасывает его?",
+      "contentHash": "fc7756a6ce7a0e1616954d948dd58f8a6bd8bd5ef59fc5ff5efdfd25894eab23"
+    },
+    {
+      "id": "react-events",
+      "title": "Почему onClick={handleClick()} отличается от onClick={handleClick}?",
+      "contentHash": "f8ca64d1e12950bab5f17709042ac785957184dbe9775100a54837ca78378d73"
+    },
+    {
+      "id": "react-composition-patterns",
+      "title": "Как выбрать между children, render prop, HOC и пользовательским хуком?",
+      "contentHash": "88553fd0a328ec84daa765a050b2a337095284ba3b8afe7c9a76814440ca548f"
+    },
+    {
+      "id": "react-children-opaque",
+      "title": "Почему children нельзя считать обычным массивом готовых DOM-узлов?",
+      "contentHash": "4c0a67ba8797b7e4b0d9dc017049d6a3f590c4ea8143dd7c3aa6b65c360f1f87"
+    },
+    {
+      "id": "react-event-boundaries",
+      "title": "Как распространение React-событий связано с DOM и обработчиками capture?",
+      "contentHash": "57ffced7a99e08505658878b544dc41cbdaefd218d8fc8238d3d0f19bebbb64a"
+    },
+    {
+      "id": "react-activity-lifetime",
+      "title": "Как Activity скрывает интерфейс с сохранением состояния и что происходит с эффектами?",
+      "contentHash": "468c8be4642389fd6032499ee7b655a9c50d919af8f554710b09ec779903f94a"
+    },
+    {
+      "id": "react-render-purity",
+      "title": "Почему рендер компонента должен быть чистым?",
+      "contentHash": "fdfd85b7a120d678711e8b716a59a9fc2fb2646d7df400abce85c3c249d4b9c4"
+    },
+    {
+      "id": "react-component-call",
+      "title": "Почему компонент нужно использовать как <Panel />, а не вызывать Panel()?",
+      "contentHash": "6f56ad544a7a264518f37d68e575f6ebb225787ba7041d1125096de7b8631116"
+    },
+    {
+      "id": "react-element-node-component",
+      "title": "Чем отличаются компонент, React element и React node?",
+      "contentHash": "05387913b919eac0b53fbe3e7d71aa57cb5c0bad1ab52ad0a16386acdf4f7338"
+    },
+    {
+      "id": "react-jsx-html-safety",
+      "title": "Как JSX отображает пользовательский текст и чем опасен dangerouslySetInnerHTML?",
+      "contentHash": "ec9c5e925250e69f8be577b50c6733bd6d0bf852284dda462a2e4941f1de7e09"
+    },
+    {
+      "id": "react-prop-forwarding-contract",
+      "title": "Как правильно передавать props через компонент-обёртку?",
+      "contentHash": "4e7d7c26adabbad92efcd83c0d333042b6fd51053140ac98f1e95bacdb6ce497"
+    },
+    {
+      "id": "react-clone-element-contract",
+      "title": "Что делает cloneElement и какие ограничения есть у этого подхода?",
+      "contentHash": "6f6068ee45de89aa4aaf4480646b9b04962fb50fd5d85e8a4d2128522eef781c"
+    },
+    {
+      "id": "react-class-lifecycle-migration",
+      "title": "Как читать жизненный цикл классового компонента и переносить подписку в хук?",
+      "contentHash": "a554ef631dfb6b24317dcbfa79ca946054e46baaa96ffbfece9bcd0ed635c06d"
+    }
+  ],
+  "notes": [
+    "120 новых вопросов React: 60 базовых / 40 средних / 20 продвинутых; Redux и Zustand дополнительно внутри React. Прежние 128 ID сохраняются.",
+    "Общие определения остаются в канонических ответах; прикладные вопросы различаются проверяемым сценарием. Routing включает библиотеку React Router 7 и не приписывает её API ядру React.",
+    "B: react-renderer-boundary | Зачем отдельно нужны react и react-dom?",
+    "B: react-jsx-capitalization | Как React различает <button /> и <Button />?",
+    "B: react-jsx-expression-boundary | Почему внутри фигурных скобок JSX нельзя написать if или for?",
+    "B: react-jsx-boolean-attribute | Чем disabled={false} отличается от disabled=\"false\"?",
+    "B: react-jsx-style-contract | Как передавать числовые значения и CSS-переменные в style?",
+    "B: react-jsx-class-condition | Как собрать className, чтобы не получить строку false или undefined?",
+    "B: react-jsx-aria-data | Как записывать aria-* и data-* атрибуты в JSX?",
+    "B: react-prop-default-null | Когда значение по умолчанию prop не применяется к null?",
+    "B: react-jsx-whitespace | Почему перенос строки в JSX не всегда создаёт пробел между словами?",
+    "B: react-jsx-object-child | Почему объект нельзя вывести напрямую, но можно вывести его поля?",
+    "B: react-jsx-map-return | Почему map с фигурными скобками может не показать ни одного элемента?",
+    "B: react-component-module-export | Как отличить ошибку импорта компонента от ошибки его props?",
+    "B: react-component-local-variable | Почему обычная переменная в компоненте не заменяет state?",
+    "B: react-component-slot-contract | Когда слоту передавать готовый element, а когда тип компонента?",
+    "B: react-ts-component-props | Как типизировать обязательные и необязательные props функции-компонента?",
+    "B: react-ts-children-node | Как выбрать тип children: ReactNode, ReactElement или строка?",
+    "B: react-ts-event-types | Чем тип события input отличается от типа события button в TypeScript?",
+    "B: react-ts-state-null-union | Почему useState(null) иногда требует явного типа?",
+    "M: react-event-current-target-async | Как безопасно использовать currentTarget в асинхронном обработчике React?",
+    "M: react-focus-subtree-boundary | Как определить, что фокус покинул всё составное поле, а не перешёл к его кнопке?",
+    "M: react-compound-component-contract | Как Context помогает построить составной компонент с согласованными частями?",
+    "M: react-ts-discriminated-props | Как типами запретить несовместимые комбинации props компонента?",
+    "A: react-render-restart-external-mutation | Почему запись во внешний кеш во время render опасна при прерывании вычисления?",
+    "Завершено: 172 новых вопроса, в том числе React 60/40/20, Redux 28, Zustand 24. Все 128 прежних ID сохранены. Oxfmt, отчёт пересечений, content:build и полный content:check прошли для 1135 вопросов. Примеры, приложение и PostgreSQL seed не запускались."
+  ]
+}

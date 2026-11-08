@@ -39,13 +39,13 @@ function CodeBlockContent({ code, label = "Пример", language = "javascript
   }
 
   return (
-    <div className="min-w-0 overflow-hidden rounded-xl border bg-muted/40">
-      <div className="flex min-h-12 items-center justify-between gap-3 border-b px-4 py-1.5 text-xs text-muted-foreground">
+    <div className="min-w-0 overflow-hidden rounded-xl border border-border/60 bg-muted/25">
+      <div className="flex min-h-11 items-center justify-between gap-3 border-b border-border/60 px-4 py-1.5 text-xs text-muted-foreground">
         <span>{label}</span>
         <Button
           type="button"
           variant="ghost"
-          className="h-9 min-w-28 text-xs"
+          className="h-8 min-w-28 text-xs"
           onClick={() => void copy()}
         >
           {copiedCode === code ? "Скопировано" : "Скопировать"}
@@ -60,7 +60,7 @@ function CodeBlockContent({ code, label = "Пример", language = "javascript
             ? "Код скопирован"
             : ""}
       </p>
-      <pre className="overflow-x-auto p-4 font-mono text-xs leading-6 sm:text-[13px]">
+      <pre className="overflow-x-auto p-4 font-mono text-[13px] leading-6 sm:text-sm">
         <code>
           {lines.map((line, lineIndex) => (
             <Fragment key={lineIndex}>

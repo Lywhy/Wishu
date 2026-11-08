@@ -1,0 +1,61 @@
+{
+  "schemaVersion": 1,
+  "id": "react-core-20261108-async-ui",
+  "title": "React: async-ui",
+  "sectionId": "react",
+  "subsectionId": "async-ui",
+  "currentPass": "complete",
+  "goalIds": [
+    "core",
+    "react-suspense-first-mount-state",
+    "react-transition-request-order",
+    "react-lazy-suspense"
+  ],
+  "questionIds": [
+    "react-suspense-first-mount-state",
+    "react-transition-request-order",
+    "react-lazy-suspense"
+  ],
+  "scopePass": {
+    "status": "complete",
+    "remaining": []
+  },
+  "answerPass": {
+    "status": "complete",
+    "remaining": []
+  },
+  "baseline": [
+    {
+      "id": "react-fetch-races",
+      "title": "Как предотвратить гонку ответов при загрузке данных в эффекте?",
+      "contentHash": "3c2b8baf426338f3bdee028655af2fc1b9986ed07ae06ffcdaba74d028859246"
+    },
+    {
+      "id": "react-lazy-suspense",
+      "title": "Как работают lazy и Suspense и что они не отслеживают?",
+      "contentHash": "4c11e526996749466951d7925502a59e37b957a5ae7907d0934d6da5c90965f1"
+    },
+    {
+      "id": "react-transition-deferred",
+      "title": "Чем useTransition отличается от useDeferredValue?",
+      "contentHash": "b2bc7a5bc2a427846c1712089ac54db340545c5d5a3ce4679fae66d448627413"
+    },
+    {
+      "id": "react-optimistic-ui",
+      "title": "Как организовать оптимистичное обновление через useOptimistic?",
+      "contentHash": "a6739fce09a898df635fd003fabb0f200f411feed82eb3c02d742363dae3bb1f"
+    },
+    {
+      "id": "react-data-waterfalls",
+      "title": "Почему загрузка данных в дочерних эффектах может создавать waterfall?",
+      "contentHash": "cc7a042dd668148ecd5e193a671ccad783b04e4d12a808bdb8addac22db3ca7a"
+    }
+  ],
+  "notes": [
+    "Сначала сопоставлены все 94 действующие React-карточки. Redux и Zustand сохраняются без повторного пересмотра.",
+    "react-suspense-first-mount-state: Учитывать отсутствие commit и не создавать нестабильный ресурс внутри приостанавливаемого компонента. Закрепление: react-use-resource",
+    "react-transition-request-order: Отделять приоритет рендера от управления порядком сетевых ответов. Закрепление: react-transition-deferred",
+    "Ключи, идентичность state, обработчики, очередь, эффекты, memo, controlled input, Error Boundary и правила хуков расширяются под прежними ID; useId и сравнение transition/deferred не дублируются.",
+    "Контент отформатирован. content:report: +34 новых, 11 расширенных ответов и 4 изменения общих источников; удалений и лексических кандидатов нет. content:build и полный content:check прошли для 963 вопросов. Примеры и приложение не запускались."
+  ]
+}

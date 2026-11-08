@@ -9,15 +9,15 @@ import { cn } from "@/lib/utils"
 
 const difficultyColors: Record<Difficulty, string> = {
   Базовый:
-    "border-emerald-300 bg-transparent text-emerald-800 dark:border-emerald-700 dark:text-emerald-300",
+    "border-emerald-500/20 bg-emerald-500/5 text-emerald-800 dark:border-emerald-700 dark:text-emerald-300",
   Средний:
-    "border-amber-300 bg-transparent text-amber-800 dark:border-amber-700 dark:text-amber-300",
-  Продвинутый: "border-red-300 bg-transparent text-red-800 dark:border-red-700 dark:text-red-300",
+    "border-amber-500/20 bg-amber-500/5 text-amber-800 dark:border-amber-700 dark:text-amber-300",
+  Продвинутый: "border-red-500/20 bg-red-500/5 text-red-800 dark:border-red-700 dark:text-red-300",
 }
 
 export function DifficultyBadge({ level }: { level: Difficulty }) {
   return (
-    <Badge variant="outline" className={cn("text-[11px] font-normal", difficultyColors[level])}>
+    <Badge variant="outline" className={cn("text-[11px] font-medium", difficultyColors[level])}>
       {level}
     </Badge>
   )

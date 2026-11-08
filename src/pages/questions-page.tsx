@@ -124,6 +124,13 @@ export function QuestionsPage() {
         actions={
           <>
             <ShareCollection key={route.search} />
+            <Button
+              nativeButton={false}
+              variant="outline"
+              render={<Link to="/questions/preparation" />}
+            >
+              Короткая подготовка
+            </Button>
             <Button nativeButton={false} render={<Link to="/questions/new" />}>
               Добавить вопрос
             </Button>
@@ -226,7 +233,7 @@ export function QuestionsPage() {
                 if (!groupSections.length) return null
                 return (
                   <section key={group.id} aria-labelledby={`questions-group-${group.id}`}>
-                    <div className="mb-3 border-b pb-3">
+                    <div className="mb-4">
                       <h2
                         id={`questions-group-${group.id}`}
                         className="text-lg font-semibold tracking-tight"
@@ -237,15 +244,16 @@ export function QuestionsPage() {
                         {group.description}
                       </p>
                     </div>
-                    <div className="grid gap-3 sm:grid-cols-2 xl:grid-cols-3">
-                      {groupSections.map((section) => {
+                    <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-3">
+                      {groupSections.map((section, index) => {
                         const content = (
                           <Card
+                            introDelay={Math.min(index, 5) * 0.05}
                             className={cn(
                               "h-full gap-0 rounded-xl p-5 shadow-none",
                               section.inDevelopment
                                 ? "bg-muted/30"
-                                : "transition-[background-color,box-shadow] duration-200 group-hover:bg-muted/40 group-hover:ring-primary/25",
+                                : "transition-[background-color,border-color,box-shadow] duration-200 group-hover:border-primary/25 group-hover:bg-muted/30 motion-reduce:transition-none",
                             )}
                           >
                             <CategoryMark

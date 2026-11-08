@@ -2,111 +2,403 @@
   "$schema": "../question-bundle.schema.json",
   "sectionId": "browser",
   "subsectionId": "security",
-  "scope": "Origin, cookies и межсайтовые запросы.",
+  "scope": "XSS, CSRF, политики контента, iframe, доверие и разрешения.",
   "coverageGoals": [
     {
       "id": "core",
-      "title": "Границы безопасности",
-      "description": "Обзор и взаимосвязи навыков: Origin, cookies и межсайтовые запросы.",
+      "title": "Безопасность веб-приложений",
+      "description": "XSS, CSRF, политики контента, iframe, доверие и разрешения.",
       "requiredDifficulties": [],
       "reviewed": false,
       "priority": "core",
-      "relatedSkillIds": ["browser-cors", "browser-cookie-flags", "browser-csrf"]
-    },
-    {
-      "id": "browser-cors",
-      "title": "Что ограничивает same-origin policy и как CORS разрешает чтение ответа?",
-      "description": "Объяснить и применить правило с учётом его границ: CORS управляет доступом браузерного скрипта к ответу.",
-      "requiredDifficulties": ["Средний"],
-      "reviewed": false,
-      "priority": "core",
-      "relatedSkillIds": []
-    },
-    {
-      "id": "browser-cookie-flags",
-      "title": "Что делают HttpOnly, Secure и SameSite у cookie?",
-      "description": "Объяснить и применить правило с учётом его границ: Каждый флаг cookie защищает отдельную границу.",
-      "requiredDifficulties": ["Средний"],
-      "reviewed": false,
-      "priority": "core",
-      "relatedSkillIds": []
+      "relatedSkillIds": [
+        "browser-csrf",
+        "browser-xss-context",
+        "browser-sanitize-escape",
+        "browser-api-authorization",
+        "browser-secure-permissions",
+        "browser-xss-kinds",
+        "browser-csp",
+        "browser-clickjacking",
+        "browser-iframe-sandbox",
+        "browser-postmessage-validation",
+        "browser-integrity-referrer",
+        "browser-cross-origin-isolation"
+      ]
     },
     {
       "id": "browser-csrf",
       "title": "Чем CSRF отличается от XSS и как защищать изменение данных?",
-      "description": "Объяснить и применить правило с учётом его границ: Защищайте авторизованное действие, а не только чтение ответа.",
+      "description": "Объяснить и применить: Защищайте саму авторизованную операцию и путь недоверенного кода отдельно.",
       "requiredDifficulties": ["Средний"],
-      "reviewed": false,
+      "reviewed": true,
       "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "browser-xss-context",
+      "title": "Что приложение теряет, если недоверенный скрипт выполняется в его origin?",
+      "description": "Объяснить и применить: Защищайте путь недоверенных данных к выполнению кода и опасным DOM-операциям.",
+      "requiredDifficulties": ["Базовый"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "browser-sanitize-escape",
+      "title": "Чем экранирование текста отличается от санитизации HTML?",
+      "description": "Объяснить и применить: Выбирайте обработку по месту интерпретации и допустимому формату.",
+      "requiredDifficulties": ["Базовый"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "browser-api-authorization",
+      "title": "Почему скрытая кнопка и клиентская валидация не защищают API?",
+      "description": "Объяснить и применить: Доступ проверяется там, где данные выдаются или изменяются.",
+      "requiredDifficulties": ["Базовый"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "browser-secure-permissions",
+      "title": "Почему наличия API в браузере недостаточно для доступа к камере или Clipboard?",
+      "description": "Объяснить и применить: Возможность API зависит от контекста и разрешённого действия.",
+      "requiredDifficulties": ["Базовый"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "browser-xss-kinds",
+      "title": "Чем stored, reflected и DOM-based XSS отличаются по источнику и пути данных?",
+      "description": "Объяснить и применить: Разбирайте происхождение и интерпретацию данных, а не только название атаки.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "browser-csp",
+      "title": "Как CSP ограничивает выполнение скриптов и почему не заменяет исправление XSS?",
+      "description": "Объяснить и применить: Политика должна быть проверяемым ограничением, а не формальным заголовком.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "browser-clickjacking",
+      "title": "Как frame-ancestors и X-Frame-Options защищают от clickjacking?",
+      "description": "Объяснить и применить: Различайте, кого встраиваете вы и кто может встроить вас.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "browser-iframe-sandbox",
+      "title": "Как sandbox ограничивает встроенный iframe и почему важны разрешённые флаги?",
+      "description": "Объяснить и применить: Безопасность определяется итоговым набором возможностей и доверия.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "browser-postmessage-validation",
+      "title": "Что проверять при получении сообщения через postMessage?",
+      "description": "Объяснить и применить: Межоконное сообщение пересекает явную границу доверия.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "browser-integrity-referrer",
+      "title": "Какие разные задачи решают SRI и Referrer-Policy при подключении ресурсов?",
+      "description": "Объяснить и применить: Целостность ресурса и минимизация передаваемых метаданных решаются раздельно.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "browser-cross-origin-isolation",
+      "title": "Как COOP и COEP связаны с cross-origin isolation?",
+      "description": "Объяснить и применить: Изоляция - согласованный контракт документа, зависимостей и контекстов.",
+      "requiredDifficulties": ["Продвинутый"],
+      "reviewed": true,
+      "priority": "extended",
       "relatedSkillIds": []
     }
   ],
   "questions": [
     {
-      "id": "browser-cors",
-      "title": "Что ограничивает same-origin policy и как CORS разрешает чтение ответа?",
-      "topic": "Web",
-      "difficulty": "Средний",
-      "summary": "Origin, preflight и серверные разрешения.",
-      "takeaway": "CORS управляет доступом браузерного скрипта к ответу.",
-      "moduleId": "browser",
-      "order": 0,
-      "popular": false,
-      "editorial": {
-        "learningGoal": "Объяснить и применить правило с учётом его границ: CORS управляет доступом браузерного скрипта к ответу.",
-        "keywords": ["Браузер и HTTP", "Границы безопасности"],
-        "kind": "explanation",
-        "reviewStatus": "imported",
-        "goalIds": ["core", "browser-cors"],
-        "relatedQuestionIds": [],
-        "priority": "core",
-        "sourceRefs": []
-      },
-      "answerFile": "answers/browser/browser-cors.md"
-    },
-    {
-      "id": "browser-cookie-flags",
-      "title": "Что делают HttpOnly, Secure и SameSite у cookie?",
-      "topic": "Web",
-      "difficulty": "Средний",
-      "summary": "Ограничения доступа и отправки cookie.",
-      "takeaway": "Каждый флаг cookie защищает отдельную границу.",
-      "moduleId": "browser",
-      "order": 1,
-      "popular": false,
-      "editorial": {
-        "learningGoal": "Объяснить и применить правило с учётом его границ: Каждый флаг cookie защищает отдельную границу.",
-        "keywords": ["Браузер и HTTP", "Границы безопасности"],
-        "kind": "explanation",
-        "reviewStatus": "imported",
-        "goalIds": ["core", "browser-cookie-flags"],
-        "relatedQuestionIds": [],
-        "priority": "core",
-        "sourceRefs": []
-      },
-      "answerFile": "answers/browser/browser-cookie-flags.md"
-    },
-    {
       "id": "browser-csrf",
       "title": "Чем CSRF отличается от XSS и как защищать изменение данных?",
       "topic": "Web",
       "difficulty": "Средний",
-      "summary": "Чужой запрос с сессионными полномочиями.",
-      "takeaway": "Защищайте авторизованное действие, а не только чтение ответа.",
+      "summary": "Защищайте саму авторизованную операцию и путь недоверенного кода отдельно.",
+      "takeaway": "Защищайте саму авторизованную операцию и путь недоверенного кода отдельно.",
+      "moduleId": "browser",
+      "order": 0,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить: Защищайте саму авторизованную операцию и путь недоверенного кода отдельно.",
+        "keywords": ["Браузер и HTTP", "security", "browser", "csrf"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "goalIds": ["core", "browser-csrf"],
+        "relatedQuestionIds": ["browser-xss-context"],
+        "priority": "core",
+        "sourceRefs": ["ref-2ab16189ad222535"]
+      },
+      "answerFile": "answers/browser/browser-csrf.md"
+    },
+    {
+      "id": "browser-xss-context",
+      "title": "Что приложение теряет, если недоверенный скрипт выполняется в его origin?",
+      "topic": "Web",
+      "difficulty": "Базовый",
+      "summary": "Защищайте путь недоверенных данных к выполнению кода и опасным DOM-операциям.",
+      "takeaway": "Защищайте путь недоверенных данных к выполнению кода и опасным DOM-операциям.",
+      "moduleId": "browser",
+      "order": 1,
+      "popular": false,
+      "answerFile": "answers/browser/browser-xss-context.md",
+      "editorial": {
+        "learningGoal": "Объяснить и применить: Защищайте путь недоверенных данных к выполнению кода и опасным DOM-операциям.",
+        "keywords": ["Браузер и HTTP", "security", "browser", "xss", "context"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "goalIds": ["core", "browser-xss-context"],
+        "relatedQuestionIds": ["inner-html"],
+        "priority": "core",
+        "sourceRefs": ["ref-40a0540ddb38af3d"]
+      }
+    },
+    {
+      "id": "browser-sanitize-escape",
+      "title": "Чем экранирование текста отличается от санитизации HTML?",
+      "topic": "Web",
+      "difficulty": "Базовый",
+      "summary": "Выбирайте обработку по месту интерпретации и допустимому формату.",
+      "takeaway": "Выбирайте обработку по месту интерпретации и допустимому формату.",
       "moduleId": "browser",
       "order": 2,
       "popular": false,
+      "answerFile": "answers/browser/browser-sanitize-escape.md",
       "editorial": {
-        "learningGoal": "Объяснить и применить правило с учётом его границ: Защищайте авторизованное действие, а не только чтение ответа.",
-        "keywords": ["Браузер и HTTP", "Границы безопасности"],
-        "kind": "explanation",
-        "reviewStatus": "imported",
-        "goalIds": ["core", "browser-csrf"],
+        "learningGoal": "Объяснить и применить: Выбирайте обработку по месту интерпретации и допустимому формату.",
+        "keywords": ["Браузер и HTTP", "security", "browser", "sanitize", "escape"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "goalIds": ["core", "browser-sanitize-escape"],
+        "relatedQuestionIds": ["inner-html"],
+        "priority": "core",
+        "sourceRefs": ["ref-40a0540ddb38af3d"]
+      }
+    },
+    {
+      "id": "browser-api-authorization",
+      "title": "Почему скрытая кнопка и клиентская валидация не защищают API?",
+      "topic": "Web",
+      "difficulty": "Базовый",
+      "summary": "Доступ проверяется там, где данные выдаются или изменяются.",
+      "takeaway": "Доступ проверяется там, где данные выдаются или изменяются.",
+      "moduleId": "browser",
+      "order": 3,
+      "popular": false,
+      "answerFile": "answers/browser/browser-api-authorization.md",
+      "editorial": {
+        "learningGoal": "Объяснить и применить: Доступ проверяется там, где данные выдаются или изменяются.",
+        "keywords": ["Браузер и HTTP", "security", "browser", "api", "authorization"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "goalIds": ["core", "browser-api-authorization"],
+        "relatedQuestionIds": ["auth-session-flow"],
+        "priority": "core",
+        "sourceRefs": ["ref-10c2347db109ea1e"]
+      }
+    },
+    {
+      "id": "browser-secure-permissions",
+      "title": "Почему наличия API в браузере недостаточно для доступа к камере или Clipboard?",
+      "topic": "Web",
+      "difficulty": "Базовый",
+      "summary": "Возможность API зависит от контекста и разрешённого действия.",
+      "takeaway": "Возможность API зависит от контекста и разрешённого действия.",
+      "moduleId": "browser",
+      "order": 4,
+      "popular": false,
+      "answerFile": "answers/browser/browser-secure-permissions.md",
+      "editorial": {
+        "learningGoal": "Объяснить и применить: Возможность API зависит от контекста и разрешённого действия.",
+        "keywords": ["Браузер и HTTP", "security", "browser", "secure", "permissions"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "goalIds": ["core", "browser-secure-permissions"],
+        "relatedQuestionIds": ["js-browser-activation"],
+        "priority": "core",
+        "sourceRefs": ["ref-c5965f19925aaa8f"]
+      }
+    },
+    {
+      "id": "browser-xss-kinds",
+      "title": "Чем stored, reflected и DOM-based XSS отличаются по источнику и пути данных?",
+      "topic": "Web",
+      "difficulty": "Средний",
+      "summary": "Разбирайте происхождение и интерпретацию данных, а не только название атаки.",
+      "takeaway": "Разбирайте происхождение и интерпретацию данных, а не только название атаки.",
+      "moduleId": "browser",
+      "order": 5,
+      "popular": false,
+      "answerFile": "answers/browser/browser-xss-kinds.md",
+      "editorial": {
+        "learningGoal": "Объяснить и применить: Разбирайте происхождение и интерпретацию данных, а не только название атаки.",
+        "keywords": ["Браузер и HTTP", "security", "browser", "xss", "kinds"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "goalIds": ["core", "browser-xss-kinds"],
+        "relatedQuestionIds": ["browser-sanitize-escape"],
+        "priority": "core",
+        "sourceRefs": ["ref-40a0540ddb38af3d"]
+      }
+    },
+    {
+      "id": "browser-csp",
+      "title": "Как CSP ограничивает выполнение скриптов и почему не заменяет исправление XSS?",
+      "topic": "Web",
+      "difficulty": "Средний",
+      "summary": "Политика должна быть проверяемым ограничением, а не формальным заголовком.",
+      "takeaway": "Политика должна быть проверяемым ограничением, а не формальным заголовком.",
+      "moduleId": "browser",
+      "order": 6,
+      "popular": false,
+      "answerFile": "answers/browser/browser-csp.md",
+      "editorial": {
+        "learningGoal": "Объяснить и применить: Политика должна быть проверяемым ограничением, а не формальным заголовком.",
+        "keywords": ["Браузер и HTTP", "security", "browser", "csp"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "goalIds": ["core", "browser-csp"],
+        "relatedQuestionIds": ["browser-xss-context"],
+        "priority": "core",
+        "sourceRefs": ["ref-667cae19ad9c93fe"]
+      }
+    },
+    {
+      "id": "browser-clickjacking",
+      "title": "Как frame-ancestors и X-Frame-Options защищают от clickjacking?",
+      "topic": "Web",
+      "difficulty": "Средний",
+      "summary": "Различайте, кого встраиваете вы и кто может встроить вас.",
+      "takeaway": "Различайте, кого встраиваете вы и кто может встроить вас.",
+      "moduleId": "browser",
+      "order": 7,
+      "popular": false,
+      "answerFile": "answers/browser/browser-clickjacking.md",
+      "editorial": {
+        "learningGoal": "Объяснить и применить: Различайте, кого встраиваете вы и кто может встроить вас.",
+        "keywords": ["Браузер и HTTP", "security", "browser", "clickjacking"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "goalIds": ["core", "browser-clickjacking"],
         "relatedQuestionIds": [],
         "priority": "core",
-        "sourceRefs": []
-      },
-      "answerFile": "answers/browser/browser-csrf.md"
+        "sourceRefs": ["ref-bedac408ee421ece"]
+      }
+    },
+    {
+      "id": "browser-iframe-sandbox",
+      "title": "Как sandbox ограничивает встроенный iframe и почему важны разрешённые флаги?",
+      "topic": "Web",
+      "difficulty": "Средний",
+      "summary": "Безопасность определяется итоговым набором возможностей и доверия.",
+      "takeaway": "Безопасность определяется итоговым набором возможностей и доверия.",
+      "moduleId": "browser",
+      "order": 8,
+      "popular": false,
+      "answerFile": "answers/browser/browser-iframe-sandbox.md",
+      "editorial": {
+        "learningGoal": "Объяснить и применить: Безопасность определяется итоговым набором возможностей и доверия.",
+        "keywords": ["Браузер и HTTP", "security", "browser", "iframe", "sandbox"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "goalIds": ["core", "browser-iframe-sandbox"],
+        "relatedQuestionIds": ["browser-postmessage-validation"],
+        "priority": "core",
+        "sourceRefs": ["ref-34161b13a7d0c678"]
+      }
+    },
+    {
+      "id": "browser-postmessage-validation",
+      "title": "Что проверять при получении сообщения через postMessage?",
+      "topic": "Web",
+      "difficulty": "Средний",
+      "summary": "Межоконное сообщение пересекает явную границу доверия.",
+      "takeaway": "Межоконное сообщение пересекает явную границу доверия.",
+      "moduleId": "browser",
+      "order": 9,
+      "popular": false,
+      "answerFile": "answers/browser/browser-postmessage-validation.md",
+      "editorial": {
+        "learningGoal": "Объяснить и применить: Межоконное сообщение пересекает явную границу доверия.",
+        "keywords": ["Браузер и HTTP", "security", "browser", "postmessage", "validation"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "goalIds": ["core", "browser-postmessage-validation"],
+        "relatedQuestionIds": [],
+        "priority": "core",
+        "sourceRefs": ["ref-31ad551cc7f2aa88"]
+      }
+    },
+    {
+      "id": "browser-integrity-referrer",
+      "title": "Какие разные задачи решают SRI и Referrer-Policy при подключении ресурсов?",
+      "topic": "Web",
+      "difficulty": "Средний",
+      "summary": "Целостность ресурса и минимизация передаваемых метаданных решаются раздельно.",
+      "takeaway": "Целостность ресурса и минимизация передаваемых метаданных решаются раздельно.",
+      "moduleId": "browser",
+      "order": 10,
+      "popular": false,
+      "answerFile": "answers/browser/browser-integrity-referrer.md",
+      "editorial": {
+        "learningGoal": "Объяснить и применить: Целостность ресурса и минимизация передаваемых метаданных решаются раздельно.",
+        "keywords": ["Браузер и HTTP", "security", "browser", "integrity", "referrer"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "goalIds": ["core", "browser-integrity-referrer"],
+        "relatedQuestionIds": ["http-content-negotiation"],
+        "priority": "core",
+        "sourceRefs": ["ref-23cebc8cdf156ff6", "ref-f0fc70d8e163dfb7"]
+      }
+    },
+    {
+      "id": "browser-cross-origin-isolation",
+      "title": "Как COOP и COEP связаны с cross-origin isolation?",
+      "topic": "Web",
+      "difficulty": "Продвинутый",
+      "summary": "Изоляция - согласованный контракт документа, зависимостей и контекстов.",
+      "takeaway": "Изоляция - согласованный контракт документа, зависимостей и контекстов.",
+      "moduleId": "browser",
+      "order": 11,
+      "popular": false,
+      "answerFile": "answers/browser/browser-cross-origin-isolation.md",
+      "editorial": {
+        "learningGoal": "Объяснить и применить: Изоляция - согласованный контракт документа, зависимостей и контекстов.",
+        "keywords": ["Браузер и HTTP", "security", "browser", "cross", "origin", "isolation"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "goalIds": ["core", "browser-cross-origin-isolation"],
+        "relatedQuestionIds": ["shared-array-buffer"],
+        "priority": "extended",
+        "sourceRefs": ["ref-fec6f5945e323817", "ref-439cb37378c6bc5d", "ref-922798770ec7a5fe"]
+      }
     }
   ]
 }

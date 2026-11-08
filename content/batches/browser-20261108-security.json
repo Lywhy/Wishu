@@ -1,0 +1,67 @@
+{
+  "schemaVersion": 1,
+  "id": "browser-20261108-security",
+  "title": "Браузер и HTTP: security",
+  "sectionId": "browser",
+  "subsectionId": "security",
+  "currentPass": "complete",
+  "goalIds": [
+    "core",
+    "browser-csrf",
+    "browser-xss-context",
+    "browser-sanitize-escape",
+    "browser-api-authorization",
+    "browser-secure-permissions",
+    "browser-xss-kinds",
+    "browser-csp",
+    "browser-clickjacking",
+    "browser-iframe-sandbox",
+    "browser-postmessage-validation",
+    "browser-integrity-referrer",
+    "browser-cross-origin-isolation"
+  ],
+  "questionIds": [
+    "browser-csrf",
+    "browser-xss-context",
+    "browser-sanitize-escape",
+    "browser-api-authorization",
+    "browser-secure-permissions",
+    "browser-xss-kinds",
+    "browser-csp",
+    "browser-clickjacking",
+    "browser-iframe-sandbox",
+    "browser-postmessage-validation",
+    "browser-integrity-referrer",
+    "browser-cross-origin-isolation"
+  ],
+  "scopePass": {
+    "status": "complete",
+    "remaining": []
+  },
+  "answerPass": {
+    "status": "complete",
+    "remaining": []
+  },
+  "baseline": [
+    {
+      "id": "browser-cors",
+      "title": "Что ограничивает same-origin policy и как CORS разрешает чтение ответа?",
+      "contentHash": "d193dafce81402ae15e12b08a72730272b912e1843e922a0dd37f79c632c6327"
+    },
+    {
+      "id": "browser-cookie-flags",
+      "title": "Что делают HttpOnly, Secure и SameSite у cookie?",
+      "contentHash": "4f34a5ffbbdbbaf32969be16185977111c7491c25e51b3ade9a243145ad91e25"
+    },
+    {
+      "id": "browser-csrf",
+      "title": "Чем CSRF отличается от XSS и как защищать изменение данных?",
+      "contentHash": "f5d7b9c135c0d0ae431d1d80035608cf949df8127d2fd35bef2ece746b07e4b2"
+    }
+  ],
+  "notes": [
+    "Согласована карта из 14 подразделов. 12 прежних ID сохраняются. API JavaScript/HTML остаются каноническими в своих категориях; здесь рассматриваются сетевые и браузерные сценарии.",
+    "Cache-Control/ETag, идемпотентность, статусы, cookie-флаги, CORS, CSRF, DNS, HTTPS, HTTP/2/3, compression, CDN и waterfall расширяются под прежними ID.",
+    "Завершено: 131 новый вопрос (56 базовых, 64 средних, 11 продвинутых) и 12 расширенных канонических ответов в 14 подразделах. Все исходные ID сохранены, 7 вопросов перераспределены без изменения ID. Oxfmt, content:report, content:build и полный content:check прошли для 1266 вопросов. Приложение, код примеров и seed не запускались."
+  ]
+}

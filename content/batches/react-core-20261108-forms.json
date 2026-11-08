@@ -1,0 +1,72 @@
+{
+  "schemaVersion": 1,
+  "id": "react-core-20261108-forms",
+  "title": "React: forms",
+  "sectionId": "react",
+  "subsectionId": "forms",
+  "currentPass": "complete",
+  "goalIds": [
+    "core",
+    "react-select-textarea-values",
+    "react-file-input-contract",
+    "react-number-input-draft",
+    "react-form-reset-contract",
+    "react-controlled-input"
+  ],
+  "questionIds": [
+    "react-select-textarea-values",
+    "react-file-input-contract",
+    "react-number-input-draft",
+    "react-form-reset-contract",
+    "react-controlled-input"
+  ],
+  "scopePass": {
+    "status": "complete",
+    "remaining": []
+  },
+  "answerPass": {
+    "status": "complete",
+    "remaining": []
+  },
+  "baseline": [
+    {
+      "id": "react-controlled-input",
+      "title": "Чем управляемое поле отличается от неуправляемого?",
+      "contentHash": "8f5ff549eeb6b0019219ec3dd87ba1a9ae78cb2eaa2cdb692970a080c69c9a21"
+    },
+    {
+      "id": "react-form-submit",
+      "title": "Как обработать отправку формы и получить её данные?",
+      "contentHash": "8e04881d600a9147068b62e5ce6ce4f77bdd869e3792186f6c8fb92df0b1bcb9"
+    },
+    {
+      "id": "react-accessible-fields",
+      "title": "Как связать label и сообщение об ошибке с полем?",
+      "contentHash": "77086c2884960a2f00d85c915557f7bc15162ec38eb2be5bc70993c13fc2fed4"
+    },
+    {
+      "id": "react-action-state",
+      "title": "Как useActionState помогает обрабатывать форму в React 19?",
+      "contentHash": "20686c8dfa8266818f315dfcf8a8ccecc546e835cdfd7f60c091deb0d2ccb51d"
+    },
+    {
+      "id": "react-form-status",
+      "title": "Почему useFormStatus не видит форму из того же компонента?",
+      "contentHash": "1982fe9463d65433ccaf82d780cb2ae7b0e8eeb8d986205a66047b5c4a1818e8"
+    },
+    {
+      "id": "react-input-composition",
+      "title": "Почему форматирование управляемого поля может ломать каретку и IME-ввод?",
+      "contentHash": "1895247d738fa0a82ba3bab03aa567d8b9e4b3d103acd7090d1c9bc290a76e90"
+    }
+  ],
+  "notes": [
+    "Сначала сопоставлены все 94 действующие React-карточки. Redux и Zustand сохраняются без повторного пересмотра.",
+    "react-select-textarea-values: Корректно задавать value, defaultValue и массив выбранных значений. Закрепление: react-controlled-input",
+    "react-file-input-contract: Работать с FileList и отличать клиентскую проверку от серверной валидации файла. Закрепление: react-form-submit",
+    "react-number-input-draft: Сохранять пустое и промежуточное значение поля, преобразуя данные на границе использования. Закрепление: react-input-composition",
+    "react-form-reset-contract: Различать сброс DOM-контролов и состояния React, включая успешный form Action. Закрепление: react-action-state",
+    "Ключи, идентичность state, обработчики, очередь, эффекты, memo, controlled input, Error Boundary и правила хуков расширяются под прежними ID; useId и сравнение transition/deferred не дублируются.",
+    "Контент отформатирован. content:report: +34 новых, 11 расширенных ответов и 4 изменения общих источников; удалений и лексических кандидатов нет. content:build и полный content:check прошли для 963 вопросов. Примеры и приложение не запускались."
+  ]
+}

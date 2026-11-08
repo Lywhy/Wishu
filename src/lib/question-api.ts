@@ -1,3 +1,4 @@
+import type { FeedbackInput, FeedbackReceipt } from "@/lib/platform-feedback"
 import type { QuestionCatalog, QuestionStatus } from "@/data/question-catalog"
 import { questionSectionColors } from "@/data/question-section-colors"
 
@@ -71,6 +72,10 @@ async function request<T>(path: string, method = "GET", body?: unknown): Promise
 }
 
 export const questionApi = {
+  async platformFeedback(body: FeedbackInput): Promise<FeedbackReceipt> {
+    await questionApi.session()
+    return request<FeedbackReceipt>("/platform-feedback", "POST", body)
+  },
   async create(body: CreateQuestionInput): Promise<CreatedQuestion> {
     const question = await request<Omit<CreatedQuestion, "code"> & { code: string | null }>(
       "",

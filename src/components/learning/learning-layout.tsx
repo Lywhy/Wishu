@@ -1,3 +1,5 @@
+import { AnimatedBlock } from "@/components/catalog/catalog-primitives"
+import { PageState } from "@/components/catalog/page-state"
 import { CatalogLoading } from "@/components/catalog/catalog-loading"
 import { useEffect, useState } from "react"
 import { Outlet } from "react-router-dom"
@@ -25,23 +27,27 @@ export function LearningLayout() {
   }, [attempt])
   if (error)
     return (
-      <div className="space-y-4 py-16 text-center">
-        <h1 className="text-xl font-semibold">Не удалось загрузить обучение</h1>
-        <p className="text-sm text-muted-foreground">Проверьте подключение к серверу.</p>
+      <PageState
+        kind="error"
+        title="Не удалось загрузить обучение"
+        description="Проверьте подключение и попробуйте ещё раз."
+      >
         <Button
           onClick={() => {
             setError(false)
             setAttempt((value) => value + 1)
           }}
         >
-          Повторить
+          Повторить загрузку
         </Button>
-      </div>
+      </PageState>
     )
   if (!catalog) return <CatalogLoading label="Загружаем модули обучения…" />
   return (
     <QuestionCatalogContext.Provider value={catalog}>
-      <Outlet />
+      <AnimatedBlock className="min-w-0">
+        <Outlet />
+      </AnimatedBlock>
     </QuestionCatalogContext.Provider>
   )
 }

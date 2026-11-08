@@ -1,7 +1,13 @@
+import { PageHeading } from "@/components/catalog/page-heading"
+import { QuestionBreadcrumbs } from "@/components/questions/question-breadcrumbs"
 import { LocalSaveNotice } from "@/components/experience/local-save-notice"
 import { Link } from "react-router-dom"
 import { Button } from "@/components/ui/button"
-import { Card } from "@/components/ui/card"
+import {
+  AnimatedCard as Card,
+  AnimatedBlock,
+  AnimatedText,
+} from "@/components/catalog/catalog-primitives"
 import { Badge } from "@/components/ui/badge"
 import { Progress } from "@/components/ui/progress"
 import { useQuestionCatalog } from "@/lib/question-catalog-context"
@@ -31,7 +37,7 @@ export function StudySessionPage() {
   const next = unreviewed[0] ?? repeat[0] ?? skipped[0]
   const questionSession = {
     questionIds: items.map((item) => item.id),
-    returnTo: "/session",
+    returnTo: "/questions/preparation",
     title: "Короткая подготовка",
   }
   function start() {
@@ -47,25 +53,34 @@ export function StudySessionPage() {
     )
   }
   return (
-    <div className="mx-auto max-w-3xl space-y-6">
-      <Button nativeButton={false} variant="outline" render={<Link to="/mock-interview" />}>
-        Пробное собеседование
-      </Button>
-      <header className="space-y-3">
-        <h1 className="text-3xl font-semibold">Короткая подготовка</h1>
-        <p className="text-sm leading-7 text-muted-foreground">
-          До пяти вопросов и одна нерешённая задача. Прогресс сохраняется независимо от сессии.
-        </p>
-      </header>
+    <div className="mx-auto max-w-3xl min-w-0 space-y-6">
+      <QuestionBreadcrumbs
+        items={[{ label: "Вопросы", to: "/questions" }, { label: "Короткая подготовка" }]}
+      />
+      <PageHeading
+        title="Короткая подготовка"
+        description="До пяти вопросов и одна нерешённая задача. Прогресс сохраняется независимо от сессии."
+        actions={
+          <Button nativeButton={false} variant="outline" render={<Link to="/mock-interview" />}>
+            Пробное собеседование
+          </Button>
+        }
+      />
       <LocalSaveNotice area="short-session" />
       {!session.questionIds.length ? (
-        <Button onClick={start} disabled={!questions.length || pending > 0}>
-          Начать сессию
-        </Button>
+        <AnimatedBlock introDelay={0.14}>
+          <Button onClick={start} disabled={!questions.length || pending > 0}>
+            Начать сессию
+          </Button>
+        </AnimatedBlock>
       ) : (
         <>
-          <Card className="gap-5 p-5 shadow-none">
-            <h2 className="text-xl font-semibold">{summary ? "Итоги занятия" : "Ваша подборка"}</h2>
+          <Card introDelay={0.12} className="gap-5 p-5 shadow-none">
+            <h2 className="text-xl font-semibold">
+              <AnimatedText delay={0.16}>
+                {summary ? "Итоги занятия" : "Ваша подборка"}
+              </AnimatedText>
+            </h2>
             <Progress
               value={items.length ? (100 * done.length) / items.length : 0}
               aria-label="Разобранные вопросы сессии"
@@ -142,7 +157,9 @@ export function StudySessionPage() {
                 <Button
                   nativeButton={false}
                   variant="outline"
-                  render={<Link to={`/tasks/${task.id}`} state={{ returnTo: "/session" }} />}
+                  render={
+                    <Link to={`/tasks/${task.id}`} state={{ returnTo: "/questions/preparation" }} />
+                  }
                 >
                   {taskDone ? "Посмотреть задачу" : "Перейти к задаче"}
                 </Button>
@@ -161,24 +178,26 @@ export function StudySessionPage() {
           <ol className="space-y-2">
             {items.map((question, index) => (
               <li key={question.id}>
-                <Link
-                  to={`/questions/${question.id}`}
-                  state={{ questionSession }}
-                  className="flex items-center justify-between gap-3 rounded-xl border bg-card p-4 text-sm outline-none hover:bg-muted focus-visible:ring-2 focus-visible:ring-ring"
-                >
-                  <span>
-                    {index + 1}. {question.title}
-                  </span>
-                  {session.done.includes(question.id) && (
-                    <Badge variant="secondary">
-                      {statuses[question.id] === "learned"
-                        ? "Изучено"
-                        : statuses[question.id] === "repeat"
-                          ? "Повторить"
-                          : "Пропущено"}
-                    </Badge>
-                  )}
-                </Link>
+                <AnimatedBlock introDelay={0.18 + Math.min(index, 5) * 0.06}>
+                  <Link
+                    to={`/questions/${question.id}`}
+                    state={{ questionSession }}
+                    className="flex items-center justify-between gap-3 rounded-xl border bg-card p-4 text-sm transition-colors duration-150 outline-none hover:bg-muted focus-visible:ring-2 focus-visible:ring-ring motion-reduce:transition-none"
+                  >
+                    <span>
+                      {index + 1}. {question.title}
+                    </span>
+                    {session.done.includes(question.id) && (
+                      <Badge variant="secondary">
+                        {statuses[question.id] === "learned"
+                          ? "Изучено"
+                          : statuses[question.id] === "repeat"
+                            ? "Повторить"
+                            : "Пропущено"}
+                      </Badge>
+                    )}
+                  </Link>
+                </AnimatedBlock>
               </li>
             ))}
           </ol>
@@ -199,7 +218,7 @@ export function SessionBanner() {
   return (
     <Link
       className="mb-4 block rounded-lg border bg-primary/5 p-3 text-xs text-primary"
-      to="/session"
+      to="/questions/preparation"
     >
       {complete
         ? "Занятие завершено · Посмотреть итоги"

@@ -1,0 +1,340 @@
+{
+  "$schema": "../question-bundle.schema.json",
+  "sectionId": "browser",
+  "subsectionId": "storage",
+  "scope": "Выбор хранилища, квоты, IndexedDB и согласование вкладок.",
+  "coverageGoals": [
+    {
+      "id": "core",
+      "title": "Хранение данных и связь контекстов",
+      "description": "Выбор хранилища, квоты, IndexedDB и согласование вкладок.",
+      "requiredDifficulties": [],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": [
+        "browser-storage-choice",
+        "browser-cache-api",
+        "browser-storage-scope",
+        "browser-storage-quota",
+        "browser-idb-transaction",
+        "browser-idb-upgrade-tabs",
+        "browser-cross-tab-sync",
+        "browser-storage-fallback",
+        "browser-partitioned-storage",
+        "browser-idb-concurrent-migration"
+      ]
+    },
+    {
+      "id": "browser-storage-choice",
+      "title": "Как выбрать между cookies, Web Storage, IndexedDB и Cache API?",
+      "description": "Объяснить и применить: Хранилище выбирают по задаче и границе данных.",
+      "requiredDifficulties": ["Базовый"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "browser-cache-api",
+      "title": "Чем Cache API отличается от автоматического HTTP-кеша?",
+      "description": "Объяснить и применить: Ручной кеш требует явного жизненного цикла и стратегии актуальности.",
+      "requiredDifficulties": ["Базовый"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "browser-storage-scope",
+      "title": "Какая граница разделяет хранилища разных сайтов и вкладок?",
+      "description": "Объяснить и применить: Область хранения определяется конкретным API и браузерным контекстом.",
+      "requiredDifficulties": ["Базовый"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "browser-storage-quota",
+      "title": "Что делать при превышении квоты и почему сохранённые данные могут быть удалены?",
+      "description": "Объяснить и применить: Устойчивость приложения включает отказ и потерю локального хранения.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "browser-idb-transaction",
+      "title": "Почему успешный отдельный запрос IndexedDB ещё не означает commit всей транзакции?",
+      "description": "Объяснить и применить: Подтверждайте единицу работы на границе commit транзакции.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "browser-idb-upgrade-tabs",
+      "title": "Как открытая старая вкладка может мешать обновлению схемы IndexedDB?",
+      "description": "Объяснить и применить: Жизнь соединений других вкладок влияет на изменение схемы.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "browser-cross-tab-sync",
+      "title": "Когда использовать storage event и когда BroadcastChannel?",
+      "description": "Объяснить и применить: Разделяйте уведомление, авторитетное состояние и согласование версий.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "browser-storage-fallback",
+      "title": "Как приложение должно работать, если storage недоступен или содержит повреждённые данные?",
+      "description": "Объяснить и применить: Сбой локального хранения - предусмотренное состояние приложения.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "browser-partitioned-storage",
+      "title": "Как partitioning меняет доступ к cookies и storage во встроенном контексте?",
+      "description": "Объяснить и применить: Адрес embedded-ресурса не определяет всю область доступного ему состояния.",
+      "requiredDifficulties": ["Продвинутый"],
+      "reviewed": true,
+      "priority": "extended",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "browser-idb-concurrent-migration",
+      "title": "Как согласовать миграцию данных и запись из нескольких вкладок?",
+      "description": "Объяснить и применить: Версионность клиентов и данных должна быть частью протокола миграции.",
+      "requiredDifficulties": ["Продвинутый"],
+      "reviewed": true,
+      "priority": "extended",
+      "relatedSkillIds": []
+    }
+  ],
+  "questions": [
+    {
+      "id": "browser-storage-choice",
+      "title": "Как выбрать между cookies, Web Storage, IndexedDB и Cache API?",
+      "topic": "Web",
+      "difficulty": "Базовый",
+      "summary": "Хранилище выбирают по задаче и границе данных.",
+      "takeaway": "Хранилище выбирают по задаче и границе данных.",
+      "moduleId": "browser",
+      "order": 0,
+      "popular": false,
+      "answerFile": "answers/browser/browser-storage-choice.md",
+      "editorial": {
+        "learningGoal": "Объяснить и применить: Хранилище выбирают по задаче и границе данных.",
+        "keywords": ["Браузер и HTTP", "storage", "browser", "choice"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "goalIds": ["core", "browser-storage-choice"],
+        "relatedQuestionIds": ["indexed-db"],
+        "priority": "core",
+        "sourceRefs": ["ref-5a3b3e6af5674b12"]
+      }
+    },
+    {
+      "id": "browser-cache-api",
+      "title": "Чем Cache API отличается от автоматического HTTP-кеша?",
+      "topic": "Web",
+      "difficulty": "Базовый",
+      "summary": "Ручной кеш требует явного жизненного цикла и стратегии актуальности.",
+      "takeaway": "Ручной кеш требует явного жизненного цикла и стратегии актуальности.",
+      "moduleId": "browser",
+      "order": 1,
+      "popular": false,
+      "answerFile": "answers/browser/browser-cache-api.md",
+      "editorial": {
+        "learningGoal": "Объяснить и применить: Ручной кеш требует явного жизненного цикла и стратегии актуальности.",
+        "keywords": ["Браузер и HTTP", "storage", "browser", "cache", "api"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "goalIds": ["core", "browser-cache-api"],
+        "relatedQuestionIds": ["http-cache-layers"],
+        "priority": "core",
+        "sourceRefs": ["ref-3975a745d1ae69a0"]
+      }
+    },
+    {
+      "id": "browser-storage-scope",
+      "title": "Какая граница разделяет хранилища разных сайтов и вкладок?",
+      "topic": "Web",
+      "difficulty": "Базовый",
+      "summary": "Область хранения определяется конкретным API и браузерным контекстом.",
+      "takeaway": "Область хранения определяется конкретным API и браузерным контекстом.",
+      "moduleId": "browser",
+      "order": 2,
+      "popular": false,
+      "answerFile": "answers/browser/browser-storage-scope.md",
+      "editorial": {
+        "learningGoal": "Объяснить и применить: Область хранения определяется конкретным API и браузерным контекстом.",
+        "keywords": ["Браузер и HTTP", "storage", "browser", "scope"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "goalIds": ["core", "browser-storage-scope"],
+        "relatedQuestionIds": ["web-storage"],
+        "priority": "core",
+        "sourceRefs": ["ref-5a3b3e6af5674b12"]
+      }
+    },
+    {
+      "id": "browser-storage-quota",
+      "title": "Что делать при превышении квоты и почему сохранённые данные могут быть удалены?",
+      "topic": "Web",
+      "difficulty": "Средний",
+      "summary": "Устойчивость приложения включает отказ и потерю локального хранения.",
+      "takeaway": "Устойчивость приложения включает отказ и потерю локального хранения.",
+      "moduleId": "browser",
+      "order": 3,
+      "popular": false,
+      "answerFile": "answers/browser/browser-storage-quota.md",
+      "editorial": {
+        "learningGoal": "Объяснить и применить: Устойчивость приложения включает отказ и потерю локального хранения.",
+        "keywords": ["Браузер и HTTP", "storage", "browser", "quota"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "goalIds": ["core", "browser-storage-quota"],
+        "relatedQuestionIds": ["browser-storage-fallback"],
+        "priority": "core",
+        "sourceRefs": ["ref-c3fde32989fa5e12"]
+      }
+    },
+    {
+      "id": "browser-idb-transaction",
+      "title": "Почему успешный отдельный запрос IndexedDB ещё не означает commit всей транзакции?",
+      "topic": "Web",
+      "difficulty": "Средний",
+      "summary": "Подтверждайте единицу работы на границе commit транзакции.",
+      "takeaway": "Подтверждайте единицу работы на границе commit транзакции.",
+      "moduleId": "browser",
+      "order": 4,
+      "popular": false,
+      "answerFile": "answers/browser/browser-idb-transaction.md",
+      "editorial": {
+        "learningGoal": "Объяснить и применить: Подтверждайте единицу работы на границе commit транзакции.",
+        "keywords": ["Браузер и HTTP", "storage", "browser", "idb", "transaction"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "goalIds": ["core", "browser-idb-transaction"],
+        "relatedQuestionIds": ["indexed-db"],
+        "priority": "core",
+        "sourceRefs": ["ref-270dfb7aeda2dbca"]
+      }
+    },
+    {
+      "id": "browser-idb-upgrade-tabs",
+      "title": "Как открытая старая вкладка может мешать обновлению схемы IndexedDB?",
+      "topic": "Web",
+      "difficulty": "Средний",
+      "summary": "Жизнь соединений других вкладок влияет на изменение схемы.",
+      "takeaway": "Жизнь соединений других вкладок влияет на изменение схемы.",
+      "moduleId": "browser",
+      "order": 5,
+      "popular": false,
+      "answerFile": "answers/browser/browser-idb-upgrade-tabs.md",
+      "editorial": {
+        "learningGoal": "Объяснить и применить: Жизнь соединений других вкладок влияет на изменение схемы.",
+        "keywords": ["Браузер и HTTP", "storage", "browser", "idb", "upgrade", "tabs"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "goalIds": ["core", "browser-idb-upgrade-tabs"],
+        "relatedQuestionIds": [],
+        "priority": "core",
+        "sourceRefs": ["ref-270dfb7aeda2dbca"]
+      }
+    },
+    {
+      "id": "browser-cross-tab-sync",
+      "title": "Когда использовать storage event и когда BroadcastChannel?",
+      "topic": "Web",
+      "difficulty": "Средний",
+      "summary": "Разделяйте уведомление, авторитетное состояние и согласование версий.",
+      "takeaway": "Разделяйте уведомление, авторитетное состояние и согласование версий.",
+      "moduleId": "browser",
+      "order": 6,
+      "popular": false,
+      "answerFile": "answers/browser/browser-cross-tab-sync.md",
+      "editorial": {
+        "learningGoal": "Объяснить и применить: Разделяйте уведомление, авторитетное состояние и согласование версий.",
+        "keywords": ["Браузер и HTTP", "storage", "browser", "cross", "tab", "sync"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "goalIds": ["core", "browser-cross-tab-sync"],
+        "relatedQuestionIds": ["web-storage"],
+        "priority": "core",
+        "sourceRefs": ["ref-2c4f48756f5f01e5"]
+      }
+    },
+    {
+      "id": "browser-storage-fallback",
+      "title": "Как приложение должно работать, если storage недоступен или содержит повреждённые данные?",
+      "topic": "Web",
+      "difficulty": "Средний",
+      "summary": "Сбой локального хранения - предусмотренное состояние приложения.",
+      "takeaway": "Сбой локального хранения - предусмотренное состояние приложения.",
+      "moduleId": "browser",
+      "order": 7,
+      "popular": false,
+      "answerFile": "answers/browser/browser-storage-fallback.md",
+      "editorial": {
+        "learningGoal": "Объяснить и применить: Сбой локального хранения - предусмотренное состояние приложения.",
+        "keywords": ["Браузер и HTTP", "storage", "browser", "fallback"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "goalIds": ["core", "browser-storage-fallback"],
+        "relatedQuestionIds": ["browser-storage-choice"],
+        "priority": "core",
+        "sourceRefs": ["ref-c3fde32989fa5e12"]
+      }
+    },
+    {
+      "id": "browser-partitioned-storage",
+      "title": "Как partitioning меняет доступ к cookies и storage во встроенном контексте?",
+      "topic": "Web",
+      "difficulty": "Продвинутый",
+      "summary": "Адрес embedded-ресурса не определяет всю область доступного ему состояния.",
+      "takeaway": "Адрес embedded-ресурса не определяет всю область доступного ему состояния.",
+      "moduleId": "browser",
+      "order": 8,
+      "popular": false,
+      "answerFile": "answers/browser/browser-partitioned-storage.md",
+      "editorial": {
+        "learningGoal": "Объяснить и применить: Адрес embedded-ресурса не определяет всю область доступного ему состояния.",
+        "keywords": ["Браузер и HTTP", "storage", "browser", "partitioned"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "goalIds": ["core", "browser-partitioned-storage"],
+        "relatedQuestionIds": ["cookie-third-party"],
+        "priority": "extended",
+        "sourceRefs": ["ref-5e2cbd6738f4a9fd", "ref-407645b5d9854f76"]
+      }
+    },
+    {
+      "id": "browser-idb-concurrent-migration",
+      "title": "Как согласовать миграцию данных и запись из нескольких вкладок?",
+      "topic": "Web",
+      "difficulty": "Продвинутый",
+      "summary": "Версионность клиентов и данных должна быть частью протокола миграции.",
+      "takeaway": "Версионность клиентов и данных должна быть частью протокола миграции.",
+      "moduleId": "browser",
+      "order": 9,
+      "popular": false,
+      "answerFile": "answers/browser/browser-idb-concurrent-migration.md",
+      "editorial": {
+        "learningGoal": "Объяснить и применить: Версионность клиентов и данных должна быть частью протокола миграции.",
+        "keywords": ["Браузер и HTTP", "storage", "browser", "idb", "concurrent", "migration"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "goalIds": ["core", "browser-idb-concurrent-migration"],
+        "relatedQuestionIds": ["browser-idb-upgrade-tabs"],
+        "priority": "extended",
+        "sourceRefs": ["ref-270dfb7aeda2dbca"]
+      }
+    }
+  ]
+}

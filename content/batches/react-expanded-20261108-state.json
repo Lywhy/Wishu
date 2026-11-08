@@ -1,0 +1,130 @@
+{
+  "schemaVersion": 1,
+  "id": "react-expanded-20261108-state",
+  "title": "React: расширение state",
+  "sectionId": "react",
+  "subsectionId": "state",
+  "currentPass": "complete",
+  "goalIds": [
+    "core",
+    "react-state-object-is",
+    "react-state-remove-row",
+    "react-state-edit-row",
+    "react-state-sort-view",
+    "react-state-set-collection",
+    "react-state-selection-id",
+    "react-state-instance-isolation",
+    "react-state-event-next-value",
+    "react-state-previous-committed",
+    "react-state-edit-session-key",
+    "react-state-reducer-init",
+    "react-state-undo-model",
+    "react-state-transaction-boundary",
+    "react-state-versioned-server-merge"
+  ],
+  "questionIds": [
+    "react-state-object-is",
+    "react-state-remove-row",
+    "react-state-edit-row",
+    "react-state-sort-view",
+    "react-state-set-collection",
+    "react-state-selection-id",
+    "react-state-instance-isolation",
+    "react-state-event-next-value",
+    "react-state-previous-committed",
+    "react-state-edit-session-key",
+    "react-state-reducer-init",
+    "react-state-undo-model",
+    "react-state-transaction-boundary",
+    "react-state-versioned-server-merge"
+  ],
+  "scopePass": {
+    "status": "complete",
+    "remaining": []
+  },
+  "answerPass": {
+    "status": "complete",
+    "remaining": []
+  },
+  "baseline": [
+    {
+      "id": "react-state-snapshot",
+      "title": "Почему значение state не меняется сразу после setState?",
+      "contentHash": "1bcd3eeb7fc07419f3c6358c0917cfc00303994f518bb55b0d16e7e6481c9274"
+    },
+    {
+      "id": "react-state-queue",
+      "title": "Что выведут три вызова setCount и когда нужен updater?",
+      "contentHash": "01ee0a0abccc54db349a9c14f8d1b47254a6cc6202a9d6d8abea2b1fbcb06c9d"
+    },
+    {
+      "id": "react-state-immutability",
+      "title": "Почему нельзя изменять объект или массив в state напрямую?",
+      "contentHash": "cbde9f06c16bafbe4c8029ae085ccb7a170a47bbda44bf288095783eb48be148"
+    },
+    {
+      "id": "react-derived-state",
+      "title": "Почему вычисляемые значения обычно не нужно хранить в state?",
+      "contentHash": "eab54f877ace2200467e27216aa2bb4930620b8ea5deb271400d804046796605"
+    },
+    {
+      "id": "react-lifting-state",
+      "title": "Когда нужно поднимать состояние к общему родителю?",
+      "contentHash": "df18fb776f0041690cd102e5cb555e0d2f0fd529376f7b79f12617efdcbd1329"
+    },
+    {
+      "id": "react-use-reducer",
+      "title": "Когда useReducer удобнее useState?",
+      "contentHash": "de69e2362ddf9065f544eb549305719478a893edb638f3d843734e35a3020422"
+    },
+    {
+      "id": "react-lazy-state",
+      "title": "Как работает ленивое начальное состояние useState?",
+      "contentHash": "e67deb5a4212cf2afeeee7f9f1ac1de69f9d2321828008a836f625d69c67a904"
+    },
+    {
+      "id": "react-normalized-state",
+      "title": "Когда сущности в состоянии лучше хранить по ID, а не копировать в разные ветви?",
+      "contentHash": "82801265860aa615a3790408de51f0363bf2579fd79a9ac36e66dce81434a84f"
+    },
+    {
+      "id": "react-draft-conflicts",
+      "title": "Как сохранить пользовательский черновик при обновлении данных с сервера?",
+      "contentHash": "72778fcb2613e1733c1a3f5aae01760f1cb1b30fd5b4d8ca51784f755b12b9e2"
+    },
+    {
+      "id": "react-state-replacement",
+      "title": "Заменяет ли useState объект целиком или объединяет его поля?",
+      "contentHash": "0d956c9f70d383518715f27d02fbf724a5c5a0c411b0753546a11fc6c778739a"
+    },
+    {
+      "id": "react-state-function-value",
+      "title": "Как сохранить функцию в useState, чтобы React не вызвал её?",
+      "contentHash": "5a73448e20928550f1a1d696781da82dc3602e81dccc0b5a94fb824893586691"
+    },
+    {
+      "id": "react-state-status-model",
+      "title": "Почему status иногда лучше нескольких флагов isLoading, isSuccess и isError?",
+      "contentHash": "5cd7b0f3ed0017f3c3ff7fe528ffad252003122121645d613a66c6e4abc8e88a"
+    }
+  ],
+  "notes": [
+    "120 новых вопросов React: 60 базовых / 40 средних / 20 продвинутых; Redux и Zustand дополнительно внутри React. Прежние 128 ID сохраняются.",
+    "Общие определения остаются в канонических ответах; прикладные вопросы различаются проверяемым сценарием. Routing включает библиотеку React Router 7 и не приписывает её API ядру React.",
+    "B: react-state-object-is | Почему setter с тем же значением может не обновить интерфейс?",
+    "B: react-state-remove-row | Как удалить запись из массива state, не затронув остальные записи?",
+    "B: react-state-edit-row | Как обновить одну запись массива state по ID?",
+    "B: react-state-sort-view | Почему сортировку отображаемого списка нельзя делать прямо над props?",
+    "B: react-state-set-collection | Как хранить выбранные ID в Set, чтобы React увидел изменение?",
+    "B: react-state-selection-id | Почему выбранную запись удобно хранить как ID, а не копию объекта?",
+    "B: react-state-instance-isolation | Почему два одинаковых счётчика на странице не делят state?",
+    "B: react-state-event-next-value | Как использовать следующее значение сразу в обработчике без чтения старого state?",
+    "M: react-state-previous-committed | Как сохранить предыдущее зафиксированное значение для сравнения, не создавая новый источник истины?",
+    "M: react-state-edit-session-key | Как отличить смену редактируемой сущности от обновления её версии?",
+    "M: react-state-reducer-init | Как третий аргумент useReducer помогает инициализировать сложное состояние?",
+    "M: react-state-undo-model | Как организовать undo для локального редактора через историю состояний?",
+    "A: react-state-transaction-boundary | Почему несколько setter разных владельцев не являются бизнес-транзакцией?",
+    "A: react-state-versioned-server-merge | Как согласовать локальный optimistic draft с новой серверной версией без потери правок?",
+    "Завершено: 172 новых вопроса, в том числе React 60/40/20, Redux 28, Zustand 24. Все 128 прежних ID сохранены. Oxfmt, отчёт пересечений, content:build и полный content:check прошли для 1135 вопросов. Примеры, приложение и PostgreSQL seed не запускались."
+  ]
+}

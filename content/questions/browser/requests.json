@@ -1,0 +1,372 @@
+{
+  "$schema": "../question-bundle.schema.json",
+  "sectionId": "browser",
+  "subsectionId": "requests",
+  "scope": "Сетевые границы Fetch, credentials, отмена, тела и потоковая передача.",
+  "coverageGoals": [
+    {
+      "id": "core",
+      "title": "Запросы из JavaScript",
+      "description": "Сетевые границы Fetch, credentials, отмена, тела и потоковая передача.",
+      "requiredDifficulties": [],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": [
+        "fetch-outcome-levels",
+        "fetch-request-body",
+        "fetch-timeout-abort",
+        "fetch-api-choice",
+        "fetch-credentials",
+        "fetch-no-cors",
+        "fetch-body-reuse",
+        "fetch-stream-boundary",
+        "fetch-redirects",
+        "fetch-upload-progress",
+        "browser-stream-backpressure"
+      ]
+    },
+    {
+      "id": "fetch-outcome-levels",
+      "title": "Чем отличаются сетевая ошибка, HTTP-ошибка и ошибка чтения ответа?",
+      "description": "Объяснить и применить: Различайте транспорт, HTTP и контракт данных.",
+      "requiredDifficulties": ["Базовый"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "fetch-request-body",
+      "title": "Как выбрать формат тела запроса для JSON, формы или файла?",
+      "description": "Объяснить и применить: Передавайте данные в формате, который действительно понимает сервер.",
+      "requiredDifficulties": ["Базовый"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "fetch-timeout-abort",
+      "title": "Чем тайм-аут приложения отличается от отмены запроса?",
+      "description": "Объяснить и применить: Ожидание клиента, отмена транспорта и откат операции разделяются.",
+      "requiredDifficulties": ["Базовый"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "fetch-api-choice",
+      "title": "Когда для браузерного запроса нужен Fetch, а когда может понадобиться XHR?",
+      "description": "Объяснить и применить: Сравнивайте возможности API внутри общих ограничений браузера.",
+      "requiredDifficulties": ["Базовый"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "fetch-credentials",
+      "title": "Как credentials влияет на cookies в запросе Fetch?",
+      "description": "Объяснить и применить: Участие cookies определяется несколькими независимыми проверками.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "fetch-no-cors",
+      "title": "Почему mode: no-cors не исправляет запрет чтения междоменного API?",
+      "description": "Объяснить и применить: CORS-ограничение чтения не снимается клиентским флагом.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "fetch-body-reuse",
+      "title": "Почему тело Request или Response нельзя свободно читать повторно?",
+      "description": "Объяснить и применить: Планируйте владельца чтения тела и необходимость копии заранее.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "fetch-stream-boundary",
+      "title": "Почему один chunk потока не обязан совпадать с JSON-записью или строкой?",
+      "description": "Объяснить и применить: Транспортные порции нужно превратить в прикладные сообщения по формату.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "fetch-redirects",
+      "title": "Как редиректы меняют конечный URL и диагностику запроса Fetch?",
+      "description": "Объяснить и применить: Читайте всю цепочку до конечного представления.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "fetch-upload-progress",
+      "title": "Почему прогресс отправки файла и завершение обработки сервером - разные состояния?",
+      "description": "Объяснить и применить: Прогресс транспорта и готовность результата - разные этапы.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "browser-stream-backpressure",
+      "title": "Что такое backpressure при потоковой передаче и почему важен потребитель?",
+      "description": "Объяснить и применить: Контролируйте весь путь данных и способность источника уважать скорость потребления.",
+      "requiredDifficulties": ["Продвинутый"],
+      "reviewed": true,
+      "priority": "extended",
+      "relatedSkillIds": []
+    }
+  ],
+  "questions": [
+    {
+      "id": "fetch-outcome-levels",
+      "title": "Чем отличаются сетевая ошибка, HTTP-ошибка и ошибка чтения ответа?",
+      "topic": "Web",
+      "difficulty": "Базовый",
+      "summary": "Различайте транспорт, HTTP и контракт данных.",
+      "takeaway": "Различайте транспорт, HTTP и контракт данных.",
+      "moduleId": "browser",
+      "order": 0,
+      "popular": false,
+      "answerFile": "answers/browser/fetch-outcome-levels.md",
+      "editorial": {
+        "learningGoal": "Объяснить и применить: Различайте транспорт, HTTP и контракт данных.",
+        "keywords": ["Браузер и HTTP", "requests", "fetch", "outcome", "levels"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "goalIds": ["core", "fetch-outcome-levels"],
+        "relatedQuestionIds": ["async-fetch"],
+        "priority": "core",
+        "sourceRefs": ["ref-f10cc26ad8cc531b"]
+      }
+    },
+    {
+      "id": "fetch-request-body",
+      "title": "Как выбрать формат тела запроса для JSON, формы или файла?",
+      "topic": "Web",
+      "difficulty": "Базовый",
+      "summary": "Передавайте данные в формате, который действительно понимает сервер.",
+      "takeaway": "Передавайте данные в формате, который действительно понимает сервер.",
+      "moduleId": "browser",
+      "order": 1,
+      "popular": false,
+      "answerFile": "answers/browser/fetch-request-body.md",
+      "editorial": {
+        "learningGoal": "Объяснить и применить: Передавайте данные в формате, который действительно понимает сервер.",
+        "keywords": ["Браузер и HTTP", "requests", "fetch", "request", "body"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "goalIds": ["core", "fetch-request-body"],
+        "relatedQuestionIds": ["http-multipart-boundary"],
+        "priority": "core",
+        "sourceRefs": ["ref-f10cc26ad8cc531b"]
+      }
+    },
+    {
+      "id": "fetch-timeout-abort",
+      "title": "Чем тайм-аут приложения отличается от отмены запроса?",
+      "topic": "Web",
+      "difficulty": "Базовый",
+      "summary": "Ожидание клиента, отмена транспорта и откат операции разделяются.",
+      "takeaway": "Ожидание клиента, отмена транспорта и откат операции разделяются.",
+      "moduleId": "browser",
+      "order": 2,
+      "popular": false,
+      "answerFile": "answers/browser/fetch-timeout-abort.md",
+      "editorial": {
+        "learningGoal": "Объяснить и применить: Ожидание клиента, отмена транспорта и откат операции разделяются.",
+        "keywords": ["Браузер и HTTP", "requests", "fetch", "timeout", "abort"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "goalIds": ["core", "fetch-timeout-abort"],
+        "relatedQuestionIds": ["abort-controller"],
+        "priority": "core",
+        "sourceRefs": ["ref-5bc2943c6bc558bf"]
+      }
+    },
+    {
+      "id": "fetch-api-choice",
+      "title": "Когда для браузерного запроса нужен Fetch, а когда может понадобиться XHR?",
+      "topic": "Web",
+      "difficulty": "Базовый",
+      "summary": "Сравнивайте возможности API внутри общих ограничений браузера.",
+      "takeaway": "Сравнивайте возможности API внутри общих ограничений браузера.",
+      "moduleId": "browser",
+      "order": 3,
+      "popular": false,
+      "answerFile": "answers/browser/fetch-api-choice.md",
+      "editorial": {
+        "learningGoal": "Объяснить и применить: Сравнивайте возможности API внутри общих ограничений браузера.",
+        "keywords": ["Браузер и HTTP", "requests", "fetch", "api", "choice"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "goalIds": ["core", "fetch-api-choice"],
+        "relatedQuestionIds": ["browser-cors"],
+        "priority": "core",
+        "sourceRefs": ["ref-4d6c5707bdc20c56"]
+      }
+    },
+    {
+      "id": "fetch-credentials",
+      "title": "Как credentials влияет на cookies в запросе Fetch?",
+      "topic": "Web",
+      "difficulty": "Средний",
+      "summary": "Участие cookies определяется несколькими независимыми проверками.",
+      "takeaway": "Участие cookies определяется несколькими независимыми проверками.",
+      "moduleId": "browser",
+      "order": 4,
+      "popular": false,
+      "answerFile": "answers/browser/fetch-credentials.md",
+      "editorial": {
+        "learningGoal": "Объяснить и применить: Участие cookies определяется несколькими независимыми проверками.",
+        "keywords": ["Браузер и HTTP", "requests", "fetch", "credentials"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "goalIds": ["core", "fetch-credentials"],
+        "relatedQuestionIds": ["browser-cors-credentials"],
+        "priority": "core",
+        "sourceRefs": ["ref-f10cc26ad8cc531b"]
+      }
+    },
+    {
+      "id": "fetch-no-cors",
+      "title": "Почему mode: no-cors не исправляет запрет чтения междоменного API?",
+      "topic": "Web",
+      "difficulty": "Средний",
+      "summary": "CORS-ограничение чтения не снимается клиентским флагом.",
+      "takeaway": "CORS-ограничение чтения не снимается клиентским флагом.",
+      "moduleId": "browser",
+      "order": 5,
+      "popular": false,
+      "answerFile": "answers/browser/fetch-no-cors.md",
+      "editorial": {
+        "learningGoal": "Объяснить и применить: CORS-ограничение чтения не снимается клиентским флагом.",
+        "keywords": ["Браузер и HTTP", "requests", "fetch", "no", "cors"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "goalIds": ["core", "fetch-no-cors"],
+        "relatedQuestionIds": ["browser-cors"],
+        "priority": "core",
+        "sourceRefs": ["ref-f10cc26ad8cc531b"]
+      }
+    },
+    {
+      "id": "fetch-body-reuse",
+      "title": "Почему тело Request или Response нельзя свободно читать повторно?",
+      "topic": "Web",
+      "difficulty": "Средний",
+      "summary": "Планируйте владельца чтения тела и необходимость копии заранее.",
+      "takeaway": "Планируйте владельца чтения тела и необходимость копии заранее.",
+      "moduleId": "browser",
+      "order": 6,
+      "popular": false,
+      "answerFile": "answers/browser/fetch-body-reuse.md",
+      "editorial": {
+        "learningGoal": "Объяснить и применить: Планируйте владельца чтения тела и необходимость копии заранее.",
+        "keywords": ["Браузер и HTTP", "requests", "fetch", "body", "reuse"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "goalIds": ["core", "fetch-body-reuse"],
+        "relatedQuestionIds": ["async-fetch"],
+        "priority": "core",
+        "sourceRefs": ["ref-f10cc26ad8cc531b"]
+      }
+    },
+    {
+      "id": "fetch-stream-boundary",
+      "title": "Почему один chunk потока не обязан совпадать с JSON-записью или строкой?",
+      "topic": "Web",
+      "difficulty": "Средний",
+      "summary": "Транспортные порции нужно превратить в прикладные сообщения по формату.",
+      "takeaway": "Транспортные порции нужно превратить в прикладные сообщения по формату.",
+      "moduleId": "browser",
+      "order": 7,
+      "popular": false,
+      "answerFile": "answers/browser/fetch-stream-boundary.md",
+      "editorial": {
+        "learningGoal": "Объяснить и применить: Транспортные порции нужно превратить в прикладные сообщения по формату.",
+        "keywords": ["Браузер и HTTP", "requests", "fetch", "stream", "boundary"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "goalIds": ["core", "fetch-stream-boundary"],
+        "relatedQuestionIds": ["streams"],
+        "priority": "core",
+        "sourceRefs": ["ref-dbefe5849ecdce4d"]
+      }
+    },
+    {
+      "id": "fetch-redirects",
+      "title": "Как редиректы меняют конечный URL и диагностику запроса Fetch?",
+      "topic": "Web",
+      "difficulty": "Средний",
+      "summary": "Читайте всю цепочку до конечного представления.",
+      "takeaway": "Читайте всю цепочку до конечного представления.",
+      "moduleId": "browser",
+      "order": 8,
+      "popular": false,
+      "answerFile": "answers/browser/fetch-redirects.md",
+      "editorial": {
+        "learningGoal": "Объяснить и применить: Читайте всю цепочку до конечного представления.",
+        "keywords": ["Браузер и HTTP", "requests", "fetch", "redirects"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "goalIds": ["core", "fetch-redirects"],
+        "relatedQuestionIds": ["http-redirect-method"],
+        "priority": "core",
+        "sourceRefs": ["ref-f10cc26ad8cc531b"]
+      }
+    },
+    {
+      "id": "fetch-upload-progress",
+      "title": "Почему прогресс отправки файла и завершение обработки сервером - разные состояния?",
+      "topic": "Web",
+      "difficulty": "Средний",
+      "summary": "Прогресс транспорта и готовность результата - разные этапы.",
+      "takeaway": "Прогресс транспорта и готовность результата - разные этапы.",
+      "moduleId": "browser",
+      "order": 9,
+      "popular": false,
+      "answerFile": "answers/browser/fetch-upload-progress.md",
+      "editorial": {
+        "learningGoal": "Объяснить и применить: Прогресс транспорта и готовность результата - разные этапы.",
+        "keywords": ["Браузер и HTTP", "requests", "fetch", "upload", "progress"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "goalIds": ["core", "fetch-upload-progress"],
+        "relatedQuestionIds": ["http-success-statuses"],
+        "priority": "core",
+        "sourceRefs": ["ref-4d6c5707bdc20c56"]
+      }
+    },
+    {
+      "id": "browser-stream-backpressure",
+      "title": "Что такое backpressure при потоковой передаче и почему важен потребитель?",
+      "topic": "Web",
+      "difficulty": "Продвинутый",
+      "summary": "Контролируйте весь путь данных и способность источника уважать скорость потребления.",
+      "takeaway": "Контролируйте весь путь данных и способность источника уважать скорость потребления.",
+      "moduleId": "browser",
+      "order": 10,
+      "popular": false,
+      "answerFile": "answers/browser/browser-stream-backpressure.md",
+      "editorial": {
+        "learningGoal": "Объяснить и применить: Контролируйте весь путь данных и способность источника уважать скорость потребления.",
+        "keywords": ["Браузер и HTTP", "requests", "browser", "stream", "backpressure"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "goalIds": ["core", "browser-stream-backpressure"],
+        "relatedQuestionIds": ["streams"],
+        "priority": "extended",
+        "sourceRefs": ["ref-dbefe5849ecdce4d"]
+      }
+    }
+  ]
+}

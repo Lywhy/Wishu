@@ -14,14 +14,14 @@ export function LectureOutline({
     headings.length > (compact ? 3 : 1) ? (
       <nav
         aria-label={compact ? "Разделы ответа" : "В этой лекции"}
-        className={compact ? "" : "rounded-xl border bg-muted/20 p-4"}
+        className={compact ? "" : "rounded-lg bg-muted/25 p-4"}
       >
         {!compact && <h2 className="text-sm font-semibold">В этой лекции</h2>}
         <ol className="mt-3 space-y-2 text-xs">
           {headings.map((item) => (
             <li key={item.line} className={item.depth === 3 ? "pl-4" : ""}>
               <a
-                className="text-primary underline underline-offset-4"
+                className="rounded-sm text-primary underline decoration-primary/30 underline-offset-4 transition-colors hover:decoration-primary focus-visible:outline-2 focus-visible:outline-ring motion-reduce:transition-none"
                 href={`#${prefix}-line-${item.line}`}
               >
                 {item.title}

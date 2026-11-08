@@ -1,0 +1,308 @@
+{
+  "$schema": "../question-bundle.schema.json",
+  "sectionId": "browser",
+  "subsectionId": "https",
+  "scope": "TLS, сертификаты, постоянные соединения, HTTP/2 и HTTP/3.",
+  "coverageGoals": [
+    {
+      "id": "core",
+      "title": "HTTPS и версии HTTP",
+      "description": "TLS, сертификаты, постоянные соединения, HTTP/2 и HTTP/3.",
+      "requiredDifficulties": [],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": [
+        "network-https",
+        "http-multiplexing",
+        "tls-certificate",
+        "http-one-keepalive",
+        "https-mixed-content",
+        "https-hsts",
+        "http-multiplexing-bottleneck",
+        "https-trust-proxy",
+        "http-three-loss"
+      ]
+    },
+    {
+      "id": "network-https",
+      "title": "Что защищает HTTPS и чего он не гарантирует?",
+      "description": "Объяснить и применить: Шифрование канала дополняет, а не заменяет безопасность приложения.",
+      "requiredDifficulties": ["Базовый"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "http-multiplexing",
+      "title": "Чем HTTP/2 и HTTP/3 отличаются в работе с соединениями?",
+      "description": "Объяснить и применить: Разделяйте семантику HTTP, framing потоков и ограничения транспорта.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "tls-certificate",
+      "title": "Что подтверждает сертификат сайта и почему важна цепочка доверия?",
+      "description": "Объяснить и применить: Сертификат подтверждает конкретный аспект серверной идентичности, а не безопасность всего приложения.",
+      "requiredDifficulties": ["Базовый"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "http-one-keepalive",
+      "title": "Как постоянное соединение HTTP/1.1 помогает нескольким запросам?",
+      "description": "Объяснить и применить: Повторное использование снижает накладные расходы, но не снимает все ограничения протокола.",
+      "requiredDifficulties": ["Базовый"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "https-mixed-content",
+      "title": "Что такое mixed content и почему ресурс может быть заблокирован на HTTPS-странице?",
+      "description": "Объяснить и применить: Проверяйте защищённость всей цепочки ресурсов страницы.",
+      "requiredDifficulties": ["Базовый"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "https-hsts",
+      "title": "Как HSTS отличается от обычного редиректа с HTTP на HTTPS?",
+      "description": "Объяснить и применить: Учитывайте момент применения политики и готовность всей области хостов.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "http-multiplexing-bottleneck",
+      "title": "Почему мультиплексирование не устраняет все очереди и ограничения сети?",
+      "description": "Объяснить и применить: Протокол снижает часть накладных расходов, а приоритеты и ресурсы остаются ограниченными.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "https-trust-proxy",
+      "title": "Где заканчивается TLS при использовании CDN или reverse proxy?",
+      "description": "Объяснить и применить: Проследите границы TLS и доверия на каждом участке доставки.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "http-three-loss",
+      "title": "Какие ограничения HTTP/3 остаются при потерях пакетов и плохой сети?",
+      "description": "Объяснить и применить: Измеряйте конкретный сетевой сценарий и сохраняйте прикладную семантику повторов.",
+      "requiredDifficulties": ["Продвинутый"],
+      "reviewed": true,
+      "priority": "extended",
+      "relatedSkillIds": []
+    }
+  ],
+  "questions": [
+    {
+      "id": "network-https",
+      "title": "Что защищает HTTPS и чего он не гарантирует?",
+      "topic": "Web",
+      "difficulty": "Базовый",
+      "summary": "Шифрование канала дополняет, а не заменяет безопасность приложения.",
+      "takeaway": "Шифрование канала дополняет, а не заменяет безопасность приложения.",
+      "moduleId": "browser",
+      "order": 0,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить: Шифрование канала дополняет, а не заменяет безопасность приложения.",
+        "keywords": ["Браузер и HTTP", "https", "network"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "goalIds": ["core", "network-https"],
+        "relatedQuestionIds": [],
+        "priority": "core",
+        "sourceRefs": ["ref-01b3018cd767935c"]
+      },
+      "answerFile": "answers/browser/network-https.md"
+    },
+    {
+      "id": "http-multiplexing",
+      "title": "Чем HTTP/2 и HTTP/3 отличаются в работе с соединениями?",
+      "topic": "Web",
+      "difficulty": "Средний",
+      "summary": "Разделяйте семантику HTTP, framing потоков и ограничения транспорта.",
+      "takeaway": "Разделяйте семантику HTTP, framing потоков и ограничения транспорта.",
+      "moduleId": "browser",
+      "order": 1,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить: Разделяйте семантику HTTP, framing потоков и ограничения транспорта.",
+        "keywords": ["Браузер и HTTP", "https", "http", "multiplexing"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "goalIds": ["core", "http-multiplexing"],
+        "relatedQuestionIds": [],
+        "priority": "core",
+        "sourceRefs": ["ref-eec262789a418d64"]
+      },
+      "answerFile": "answers/browser/http-multiplexing.md"
+    },
+    {
+      "id": "tls-certificate",
+      "title": "Что подтверждает сертификат сайта и почему важна цепочка доверия?",
+      "topic": "Web",
+      "difficulty": "Базовый",
+      "summary": "Сертификат подтверждает конкретный аспект серверной идентичности, а не безопасность всего приложения.",
+      "takeaway": "Сертификат подтверждает конкретный аспект серверной идентичности, а не безопасность всего приложения.",
+      "moduleId": "browser",
+      "order": 2,
+      "popular": false,
+      "answerFile": "answers/browser/tls-certificate.md",
+      "editorial": {
+        "learningGoal": "Объяснить и применить: Сертификат подтверждает конкретный аспект серверной идентичности, а не безопасность всего приложения.",
+        "keywords": ["Браузер и HTTP", "https", "tls", "certificate"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "goalIds": ["core", "tls-certificate"],
+        "relatedQuestionIds": ["network-https"],
+        "priority": "core",
+        "sourceRefs": ["ref-01b3018cd767935c"]
+      }
+    },
+    {
+      "id": "http-one-keepalive",
+      "title": "Как постоянное соединение HTTP/1.1 помогает нескольким запросам?",
+      "topic": "Web",
+      "difficulty": "Базовый",
+      "summary": "Повторное использование снижает накладные расходы, но не снимает все ограничения протокола.",
+      "takeaway": "Повторное использование снижает накладные расходы, но не снимает все ограничения протокола.",
+      "moduleId": "browser",
+      "order": 3,
+      "popular": false,
+      "answerFile": "answers/browser/http-one-keepalive.md",
+      "editorial": {
+        "learningGoal": "Объяснить и применить: Повторное использование снижает накладные расходы, но не снимает все ограничения протокола.",
+        "keywords": ["Браузер и HTTP", "https", "http", "one", "keepalive"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "goalIds": ["core", "http-one-keepalive"],
+        "relatedQuestionIds": ["http-multiplexing"],
+        "priority": "core",
+        "sourceRefs": ["ref-eec262789a418d64"]
+      }
+    },
+    {
+      "id": "https-mixed-content",
+      "title": "Что такое mixed content и почему ресурс может быть заблокирован на HTTPS-странице?",
+      "topic": "Web",
+      "difficulty": "Базовый",
+      "summary": "Проверяйте защищённость всей цепочки ресурсов страницы.",
+      "takeaway": "Проверяйте защищённость всей цепочки ресурсов страницы.",
+      "moduleId": "browser",
+      "order": 4,
+      "popular": false,
+      "answerFile": "answers/browser/https-mixed-content.md",
+      "editorial": {
+        "learningGoal": "Объяснить и применить: Проверяйте защищённость всей цепочки ресурсов страницы.",
+        "keywords": ["Браузер и HTTP", "https", "mixed", "content"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "goalIds": ["core", "https-mixed-content"],
+        "relatedQuestionIds": ["browser-cors"],
+        "priority": "core",
+        "sourceRefs": ["ref-1c12e46a221ee898"]
+      }
+    },
+    {
+      "id": "https-hsts",
+      "title": "Как HSTS отличается от обычного редиректа с HTTP на HTTPS?",
+      "topic": "Web",
+      "difficulty": "Средний",
+      "summary": "Учитывайте момент применения политики и готовность всей области хостов.",
+      "takeaway": "Учитывайте момент применения политики и готовность всей области хостов.",
+      "moduleId": "browser",
+      "order": 5,
+      "popular": false,
+      "answerFile": "answers/browser/https-hsts.md",
+      "editorial": {
+        "learningGoal": "Объяснить и применить: Учитывайте момент применения политики и готовность всей области хостов.",
+        "keywords": ["Браузер и HTTP", "https", "hsts"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "goalIds": ["core", "https-hsts"],
+        "relatedQuestionIds": ["network-https"],
+        "priority": "core",
+        "sourceRefs": ["ref-196f3a8769ea36a7"]
+      }
+    },
+    {
+      "id": "http-multiplexing-bottleneck",
+      "title": "Почему мультиплексирование не устраняет все очереди и ограничения сети?",
+      "topic": "Web",
+      "difficulty": "Средний",
+      "summary": "Протокол снижает часть накладных расходов, а приоритеты и ресурсы остаются ограниченными.",
+      "takeaway": "Протокол снижает часть накладных расходов, а приоритеты и ресурсы остаются ограниченными.",
+      "moduleId": "browser",
+      "order": 6,
+      "popular": false,
+      "answerFile": "answers/browser/http-multiplexing-bottleneck.md",
+      "editorial": {
+        "learningGoal": "Объяснить и применить: Протокол снижает часть накладных расходов, а приоритеты и ресурсы остаются ограниченными.",
+        "keywords": ["Браузер и HTTP", "https", "http", "multiplexing", "bottleneck"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "goalIds": ["core", "http-multiplexing-bottleneck"],
+        "relatedQuestionIds": ["http-multiplexing"],
+        "priority": "core",
+        "sourceRefs": ["ref-eec262789a418d64"]
+      }
+    },
+    {
+      "id": "https-trust-proxy",
+      "title": "Где заканчивается TLS при использовании CDN или reverse proxy?",
+      "topic": "Web",
+      "difficulty": "Средний",
+      "summary": "Проследите границы TLS и доверия на каждом участке доставки.",
+      "takeaway": "Проследите границы TLS и доверия на каждом участке доставки.",
+      "moduleId": "browser",
+      "order": 7,
+      "popular": false,
+      "answerFile": "answers/browser/https-trust-proxy.md",
+      "editorial": {
+        "learningGoal": "Объяснить и применить: Проследите границы TLS и доверия на каждом участке доставки.",
+        "keywords": ["Браузер и HTTP", "https", "trust", "proxy"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "goalIds": ["core", "https-trust-proxy"],
+        "relatedQuestionIds": ["http-cdn"],
+        "priority": "core",
+        "sourceRefs": ["ref-01b3018cd767935c"]
+      }
+    },
+    {
+      "id": "http-three-loss",
+      "title": "Какие ограничения HTTP/3 остаются при потерях пакетов и плохой сети?",
+      "topic": "Web",
+      "difficulty": "Продвинутый",
+      "summary": "Измеряйте конкретный сетевой сценарий и сохраняйте прикладную семантику повторов.",
+      "takeaway": "Измеряйте конкретный сетевой сценарий и сохраняйте прикладную семантику повторов.",
+      "moduleId": "browser",
+      "order": 8,
+      "popular": false,
+      "answerFile": "answers/browser/http-three-loss.md",
+      "editorial": {
+        "learningGoal": "Объяснить и применить: Измеряйте конкретный сетевой сценарий и сохраняйте прикладную семантику повторов.",
+        "keywords": ["Браузер и HTTP", "https", "http", "three", "loss"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "goalIds": ["core", "http-three-loss"],
+        "relatedQuestionIds": ["http-multiplexing"],
+        "priority": "extended",
+        "sourceRefs": ["ref-619f8fc7ff502856"]
+      }
+    }
+  ]
+}

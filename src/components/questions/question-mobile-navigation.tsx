@@ -39,7 +39,7 @@ export function QuestionMobileNavigation({
         <SheetTrigger render={<Button variant="outline" className="h-10 w-full" />}>
           Вопросы и действия ({questions.length})
         </SheetTrigger>
-        <SheetContent>
+        <SheetContent className="[&>[data-slot=card]]:border-0 [&>[data-slot=card]]:bg-transparent [&>[data-slot=card]]:p-0">
           <SheetTitle>Вопросы и действия</SheetTitle>
           <SheetDescription>Сейчас: {currentTitle}</SheetDescription>
           <QuestionSidebar

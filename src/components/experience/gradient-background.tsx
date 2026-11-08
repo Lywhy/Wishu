@@ -18,7 +18,7 @@ export function GradientBackground() {
   return (
     <div
       aria-hidden="true"
-      className="pointer-events-none fixed inset-0 -z-10 overflow-hidden opacity-25 select-none dark:opacity-35"
+      className="pointer-events-none fixed inset-0 -z-10 overflow-hidden mask-[radial-gradient(ellipse_at_center,rgba(0,0,0,0.12)_20%,black_90%)] opacity-25 select-none dark:opacity-35"
     >
       <Suspense fallback={null}>
         <GradientASCII

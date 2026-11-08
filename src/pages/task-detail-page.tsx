@@ -1,3 +1,4 @@
+import { TaskStatusBadge } from "@/components/catalog/catalog-primitives"
 import { Toggle } from "@/components/ui/toggle"
 import { LocalSaveNotice } from "@/components/experience/local-save-notice"
 import { useWorkspace } from "@/stores/workspace"
@@ -177,20 +178,15 @@ function TaskView({ task }: { task: PracticeTask }) {
         <div className="mb-3 flex flex-wrap items-center gap-2">
           <Badge variant="secondary">{task.topic}</Badge>
           <DifficultyBadge level={task.difficulty} />
-          {solved && (
-            <Badge
-              variant="outline"
-              className="border-emerald-300 text-emerald-700 dark:text-emerald-300"
-            >
-              Решена
-            </Badge>
-          )}
+          {solved && <TaskStatusBadge status="solved" />}
           <span className="text-xs text-muted-foreground">Около {task.duration}</span>
           <span className="ml-auto text-xs text-muted-foreground">
             Задача {index + 1} из {siblings.length}
           </span>
         </div>
-        <h1 className="text-2xl font-semibold tracking-tight sm:text-3xl">{task.title}</h1>
+        <h1 className="text-2xl leading-tight font-semibold tracking-tight text-balance wrap-anywhere sm:text-3xl">
+          {task.title}
+        </h1>
         <Button
           nativeButton={false}
           variant="outline"
@@ -207,7 +203,7 @@ function TaskView({ task }: { task: PracticeTask }) {
         condition={
           <div className="min-w-0 space-y-4">
             <Card className="gap-4 rounded-xl p-4 shadow-none sm:p-5">
-              <div className="flex items-center justify-between gap-3 border-b pb-3">
+              <div className="flex items-center justify-between gap-3 border-b border-border/60 pb-3">
                 <h2 className="text-sm font-semibold">Условие задачи</h2>
                 <Button variant="outline" size="sm" onClick={() => setSolutionOpen(true)}>
                   Подсказки и разбор
@@ -220,7 +216,7 @@ function TaskView({ task }: { task: PracticeTask }) {
                 </div>
                 <div>
                   <h3 className="text-sm font-semibold">Требования и крайние случаи</h3>
-                  <ul className="mt-2 list-disc space-y-2 pl-5 text-sm leading-6 text-muted-foreground">
+                  <ul className="mt-2 list-disc space-y-2 pl-5 text-sm leading-7 text-foreground/90">
                     {task.requirements.map((item) => (
                       <li key={item}>{item}</li>
                     ))}
@@ -268,7 +264,7 @@ function TaskView({ task }: { task: PracticeTask }) {
       >
         <div id="task-editor" tabIndex={-1} className="min-w-0 scroll-mt-5 space-y-3 outline-none">
           <Card className="gap-0 overflow-hidden rounded-xl py-0 shadow-none">
-            <div className="flex flex-wrap items-center justify-between gap-3 border-b p-4">
+            <div className="flex flex-wrap items-center justify-between gap-3 border-b border-border/60 bg-muted/15 p-4 [&>div:last-child]:w-full sm:[&>div:last-child]:w-auto">
               <div className="flex items-center gap-3">
                 <h2 className="text-sm font-semibold">Ваше решение</h2>
                 <span className="font-mono text-xs text-muted-foreground">
@@ -322,7 +318,7 @@ function TaskView({ task }: { task: PracticeTask }) {
               <TaskEditorBoundary value={code} onChange={updateCode}>
                 <Suspense
                   fallback={
-                    <div className="flex min-h-96 items-center justify-center text-sm text-muted-foreground">
+                    <div className="flex min-h-[clamp(20rem,44vh,30rem)] items-center justify-center bg-background text-sm text-muted-foreground">
                       Загружаем редактор…
                     </div>
                   }

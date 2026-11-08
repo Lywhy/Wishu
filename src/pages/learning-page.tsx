@@ -1,5 +1,6 @@
 import { EmptyResults } from "@/components/catalog/catalog-controls"
 import { Toggle } from "@/components/ui/toggle"
+import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group"
 import { Link, useSearchParams } from "react-router-dom"
 import {
   AnimatedCard as Card,
@@ -21,6 +22,17 @@ export function LearningPage() {
   const [params, setParams] = useSearchParams()
   const query = params.get("q") ?? ""
   const savedOnly = params.get("saved") === "1"
+  const selectedGroup = groups.find((group) => group.id === params.get("group"))?.id ?? "all"
+  const setGroup = (value: string) =>
+    setParams(
+      (current) => {
+        const next = new URLSearchParams(current)
+        if (value === "all") next.delete("group")
+        else next.set("group", value)
+        return next
+      },
+      { replace: true },
+    )
   const setQuery = (value: string) =>
     setParams(
       (current) => {
@@ -49,6 +61,7 @@ export function LearningPage() {
   const completed = useLearningProgress((state) => state.completed)
   const visible = questionSections.filter(
     (section) =>
+      (selectedGroup === "all" || section.group === selectedGroup) &&
       (!savedOnly || saved.includes(section.id)) &&
       `${section.title} ${section.description}`
         .toLocaleLowerCase("ru")
@@ -94,39 +107,45 @@ export function LearningPage() {
           </Button>
         </Card>
       )}
-      <div className="mb-8 flex flex-wrap items-center gap-3 rounded-xl border bg-card p-4">
-        <SearchField
-          className="flex-1 basis-60"
-          label="Поиск модулей обучения"
-          placeholder="Найти модуль…"
-          value={query}
-          onValueChange={setQuery}
-        />
-        <Toggle
-          variant="outline"
-          pressed={savedOnly}
-          onPressedChange={setSavedOnly}
-          className="h-10"
+      <div className="mb-8 space-y-4 rounded-xl bg-card p-4 ring-1 ring-border/60">
+        <div className="flex flex-wrap items-center gap-3">
+          <SearchField
+            className="flex-1 basis-60"
+            label="Поиск модулей обучения"
+            placeholder="Найти модуль…"
+            value={query}
+            onValueChange={setQuery}
+          />
+          <Toggle
+            variant="outline"
+            pressed={savedOnly}
+            onPressedChange={setSavedOnly}
+            className="h-10"
+          >
+            Мой план
+          </Toggle>
+        </div>
+        <ToggleGroup
+          aria-label="Группы обучения"
+          value={[selectedGroup]}
+          onValueChange={(values) => setGroup(values[0] ?? "all")}
+          className="w-full flex-wrap justify-start"
+          size="sm"
         >
-          Мой план
-        </Toggle>
+          {[{ id: "all", title: "Все группы" }, ...groups].map((group) => (
+            <ToggleGroupItem
+              key={group.id}
+              value={group.id}
+              className="aria-pressed:bg-primary/10 aria-pressed:text-primary"
+            >
+              {group.title}
+            </ToggleGroupItem>
+          ))}
+        </ToggleGroup>
       </div>
       <output className="sr-only" aria-live="polite" aria-atomic="true">
         Найдено модулей: {visible.length}
       </output>
-      <nav aria-label="Группы обучения" className="mb-6 flex flex-wrap gap-2">
-        {groups
-          .filter((group) => visible.some((section) => section.group === group.id))
-          .map((group) => (
-            <a
-              key={group.id}
-              href={"#" + group.id}
-              className="rounded-lg border bg-card px-3 py-2 text-xs outline-none hover:bg-muted focus-visible:ring-2 focus-visible:ring-ring"
-            >
-              {group.title}
-            </a>
-          ))}
-      </nav>
       <div className="space-y-9">
         {groups.map((group) => {
           const sections = visible.filter((section) => section.group === group.id)
@@ -138,7 +157,7 @@ export function LearningPage() {
               </h2>
               <p className="mt-1 text-xs leading-6 text-muted-foreground">{group.description}</p>
               <div className="mt-4 grid gap-4 sm:grid-cols-2 xl:grid-cols-3">
-                {sections.map((section) => {
+                {sections.map((section, index) => {
                   const steps = courseSteps(section, questions),
                     disabled = section.inDevelopment || !steps.length
                   const done = steps.filter((step) =>
@@ -154,7 +173,8 @@ export function LearningPage() {
                   return (
                     <Card
                       key={section.id}
-                      className={`gap-4 rounded-xl p-5 shadow-none ${disabled ? "bg-muted/30" : "transition-[background-color,box-shadow] duration-200 hover:bg-muted/40 hover:ring-primary/25"}`}
+                      introDelay={Math.min(index, 5) * 0.05}
+                      className={`gap-4 rounded-xl p-5 shadow-none ${disabled ? "bg-muted/30" : "transition-[background-color,border-color,box-shadow] duration-200 hover:border-primary/25 hover:bg-muted/30 motion-reduce:transition-none"}`}
                     >
                       <div className="flex items-center justify-between gap-3">
                         <CategoryMark mark={section.mark} color={section.color} />
@@ -231,7 +251,7 @@ export function LearningPage() {
       {!visible.length && (
         <EmptyResults
           title="Модули не найдены"
-          description="Измените поиск или отключите «Мой план»."
+          description="Измените поиск, выберите другую группу или отключите «Мой план»."
           onReset={() => setParams({}, { replace: true })}
         />
       )}

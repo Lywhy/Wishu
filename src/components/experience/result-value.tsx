@@ -106,7 +106,7 @@ function JsonBranch({
       <CollapsibleTrigger className="group inline-flex max-w-full items-center gap-2 rounded py-1 text-left outline-none hover:text-primary focus-visible:ring-2 focus-visible:ring-ring">
         <ChevronDown
           aria-hidden="true"
-          className="size-3 shrink-0 transition-transform group-aria-expanded:rotate-180"
+          className="size-3 shrink-0 transition-transform duration-150 group-aria-expanded:rotate-180 motion-reduce:transition-none"
         />
         <span className="wrap-anywhere">
           {name !== undefined ? name + ": " : ""}
@@ -165,7 +165,10 @@ export function ResultValue({
   return (
     <div className="min-w-0">
       <h4 className="mb-2 text-xs font-medium text-muted-foreground">{label}</h4>
-      <div className="max-h-72 overflow-auto rounded-lg border bg-muted/40 p-3 font-mono text-xs leading-6 wrap-anywhere">
+      <div
+        aria-label={label}
+        className="max-h-72 overflow-auto overscroll-contain rounded-lg bg-muted/40 p-3 font-mono text-xs leading-6 wrap-anywhere outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-inset"
+      >
         {parsed !== undefined ? (
           <JsonNode value={parsed} peer={peer === undefined ? missing : peer} compare={highlight} />
         ) : (

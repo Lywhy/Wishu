@@ -21,7 +21,7 @@ export function changeQuestionMark(id: string, status: QuestionStatus | null) {
     previous,
     reviewBefore: useReviewSchedule.getState().entries[id] ?? null,
     next: status,
-    until: Date.now() + 15000,
+    until: Date.now() + 3000,
     wasDone: useShortSession.getState().done.includes(id),
   }
   listeners.forEach((fn) => fn())

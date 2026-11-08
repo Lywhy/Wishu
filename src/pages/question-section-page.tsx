@@ -1,4 +1,6 @@
 import { JavaScriptPreparationGuide } from "@/components/questions/javascript-preparation"
+import { PageHeading } from "@/components/catalog/page-heading"
+import { PageState } from "@/components/catalog/page-state"
 import { CategoryMark } from "@/components/catalog/catalog-primitives"
 import { useQuestionCatalog } from "@/lib/question-catalog-context"
 import { Link, useParams } from "react-router-dom"
@@ -30,33 +32,27 @@ export function QuestionSectionPage() {
           { label: section.title },
         ]}
       />
-      <header className="mb-6">
-        <CategoryMark mark={section.mark} color={section.color} className="mb-3" />
-        <h1
-          data-question-heading
-          tabIndex={-1}
-          className="text-3xl font-semibold tracking-tight outline-none sm:text-4xl"
-        >
-          {section.title}
-        </h1>
-        <p className="mt-2 max-w-2xl text-sm leading-6 text-muted-foreground">
-          {section.description} Выберите подраздел для повторения.
-        </p>
-      </header>
+      <PageHeading
+        title={section.title}
+        description={section.description + " Выберите подраздел для повторения."}
+        mark={<CategoryMark mark={section.mark} color={section.color} />}
+        questionHeading
+        headingProps={{ tabIndex: -1 }}
+      />
       {section.id === "javascript" && <JavaScriptPreparationGuide />}
-      <div className="grid items-start gap-7 lg:grid-cols-[minmax(0,1fr)_280px]">
-        <section aria-label="Подразделы" className="grid gap-3 sm:grid-cols-2">
+      <div className="grid items-start gap-6 lg:grid-cols-[minmax(0,1fr)_280px]">
+        <section aria-label="Подразделы" className="grid min-w-0 gap-4 sm:grid-cols-2">
           {section.subsections.map((subsection, index) => (
             <Link
               key={subsection.id}
               to={rememberedQuestionList(subsectionPath(section.id, subsection.id))}
-              className="group block rounded-2xl outline-none focus-visible:ring-2 focus-visible:ring-ring"
+              className="group block min-w-0 rounded-xl outline-none focus-visible:ring-2 focus-visible:ring-ring"
             >
-              <Card className="h-full gap-0 rounded-2xl p-4 shadow-none transition-shadow group-hover:shadow-md dark:group-hover:shadow-black/20">
+              <Card className="h-full min-w-0 gap-0 rounded-xl p-5 shadow-none transition-[background-color,border-color] duration-200 group-hover:border-primary/25 group-hover:bg-muted/30 motion-reduce:transition-none">
                 <span className="mb-2 font-mono text-xs text-muted-foreground">
                   {String(index + 1).padStart(2, "0")}
                 </span>
-                <h2 className="text-lg font-semibold group-hover:text-primary">
+                <h2 className="text-base leading-6 font-semibold wrap-anywhere group-hover:text-primary">
                   {subsection.title}
                 </h2>
                 <p className="mt-1.5 flex-1 text-xs leading-5 text-muted-foreground">
@@ -85,14 +81,13 @@ export function QuestionSectionPage() {
 
 export function MissingQuestionPage() {
   return (
-    <section className="mx-auto flex min-h-[60vh] max-w-lg flex-col items-center justify-center text-center">
-      <h1 className="text-3xl font-semibold">Страница не найдена</h1>
-      <p className="mt-3 text-sm leading-7 text-muted-foreground">
-        Такого раздела, подраздела или вопроса нет. Выберите тему в каталоге.
-      </p>
-      <Button nativeButton={false} className="mt-6" render={<Link to="/questions" />}>
+    <PageState
+      title="Страница не найдена"
+      description="Такого раздела, подраздела или вопроса нет. Выберите тему в каталоге."
+    >
+      <Button nativeButton={false} render={<Link to="/questions" />}>
         К разделам вопросов
       </Button>
-    </section>
+    </PageState>
   )
 }

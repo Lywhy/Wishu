@@ -7,7 +7,7 @@
 | Область                               | Точки входа                                                                                 | Данные и связанные компоненты                                                                                                                      |
 | ------------------------------------- | ------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Запуск UI и провайдеры                | `src/main.tsx`, `src/App.tsx`                                                               | `ThemeProvider`, `InterfaceMotion`; маршруты React Router                                                                                          |
-| Общая оболочка                        | `src/components/app-layout.tsx`                                                             | Шапка, навигация, правила показа footer                                                                                                            |
+| Общая оболочка                        | `src/components/app-layout.tsx`                                                             | Шапка, навигация, правила показа footer; `catalog/page-appearance.tsx` - появление страниц без перемонтирования                                    |
 | Общие стили и компоненты              | `src/index.css`, `src/components/ui/`                                                       | Tailwind, shadcn Base UI; общие блоки каталога в `src/components/catalog/` (заголовки, фильтры, загрузка); раскрытия в `experience/disclosure.tsx` |
 | Обучение                              | `src/pages/learning-page.tsx`, `learning-course-page.tsx`                                   | `src/data/learning-modules.ts`, `learning-course.ts`, `src/components/learning/`, `src/stores/learning-progress.ts`                                |
 | Каталог вопросов                      | `src/pages/questions-page.tsx`, `question-section-page.tsx`, `question-subsection-page.tsx` | `src/components/questions/questions-layout.tsx`, `src/lib/question-api.ts`, `src/lib/question-catalog-context.ts`                                  |
@@ -23,7 +23,7 @@
 
 ## Пробное собеседование, повторение и общий поиск
 
-Маршрут /mock-interview расположен внутри QuestionsLayout; вход со страницы /session или через общий поиск. Состояние - stores/mock-interview.ts. Интервальное повторение - stores/review-schedule.ts, запись даты выполняется после сохранения серверной отметки. Подборка «На сегодня» находится в questions-page.tsx.
+Маршрут /mock-interview расположен внутри QuestionsLayout; вход со страницы /questions/preparation или через общий поиск. /session сохранён как перенаправление. Короткая подготовка открывается кнопкой со страницы вопросов. Состояние - stores/mock-interview.ts. Интервальное повторение - stores/review-schedule.ts, запись даты выполняется после сохранения серверной отметки. Подборка «На сегодня» находится в questions-page.tsx.
 
 Общий поиск - experience/global-search.tsx и shadcn ui/command.tsx. Ссылки на подборки - experience/share-collection.tsx. Разбор встречи - interviews/interview-debrief.tsx и необязательное поле debrief в InterviewRecord. [Поведение и ручная проверка](mock-interview-and-search.md).
 
@@ -33,6 +33,12 @@
 
 Состояние Monaco и вкладки: stores/task-experience.ts. Разбор результатов: experience/result-value.tsx. План подготовки в трекере: interviews/interview-preparation.tsx и необязательное поле preparation в InterviewRecord. [Описание и ручная проверка](ux-preparation-workflow.md).
 
+## Визуальный стиль
+
+Шаблоны дочерних страниц, состояния, статусные метки и страница образцов `/dev/ui` (только dev): [визуальная система](ui-system.md).
+
+Единые поверхности, Markdown и правила анимаций: [описание и ручная проверка](visual-style-and-motion.md).
+
 ## Декоративный фон React Bits
 
 В components.json зарегистрирован @react-bits: https://reactbits.dev/r/{name}.json. Установка новых компонентов: pnpm exec shadcn add @react-bits/<Name>-TS-TW. Использовать TypeScript/Tailwind варианты.
@@ -40,6 +46,10 @@
 GradientASCII.tsx - исходник React Bits с проектными визуальными значениями по умолчанию. Размер символов, плотность, свечение, скорость и другие базовые параметры менять в аргументах этого компонента; обёртка их не дублирует. experience/gradient-background.tsx задаёт кофейные палитры, прозрачность, уменьшенное движение и отключение взаимодействий. Компонент загружается лениво из AppLayout один раз на оболочку; отдельные страницы не должны создавать свои canvas. При отсутствии WebGL2 остаётся базовый цвет темы. Приложение и проверки запускает пользователь.
 
 ## Вопросы: два пути поступления
+
+Браузер и HTTP: [143 вопроса, распределение и редакторские границы](browser-content-20261108.md).
+
+React: [пакет контента 2026-11-08, границы и следующие шаги](react-content-20261108.md). [Расширение: 120 React + Redux/Zustand, уровни и границы](react-expanded-20261108.md).
 
 Редакторский каталог:
 
@@ -55,6 +65,10 @@ content/questions/catalog.json + <section>/<subsection>.json
 Пользовательская форма: `QuestionCreatePage -> POST /api/questions -> PostgreSQL`. Записи не экспортируются автоматически в редакторские исходники. Seed делает upsert по ID и не удаляет пользовательские вопросы.
 
 Для подготовки контента сначала смотреть `content/generated/question-index.json` и `question-coverage.json`, затем один исходник подраздела. Рабочие правила: `content/AGENTS.md`, [процесс наполнения](question-content-workflow.md), [качество вопросов](question-authoring-policy.md).
+
+## Баги и предложения
+
+Маршрут /feedback, вход из шапки: pages/feedback-page.tsx, components/feedback/feedback-topic-fields.tsx, lib/platform-feedback.ts и stores/feedback-drafts.ts. POST /api/questions/platform-feedback, DTO/сервис/контроллер внутри modules/questions. Новая миграция 005_platform_feedback.sql. Передача автору: GitHub issue с подтверждением пользователя или JSON. [Формы, хранение и ручная проверка](platform-feedback.md), [локальная установка](local-setup.md).
 
 ## Сервер
 

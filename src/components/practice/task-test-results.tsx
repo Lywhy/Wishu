@@ -96,7 +96,7 @@ export function TaskTestResults({
           </div>
         </div>
         {checking && (
-          <div className="space-y-3 p-4">
+          <div className="min-h-40 space-y-3 p-4">
             <p className="text-xs text-muted-foreground">
               {testCount === 1
                 ? "Проверяем задание по материалу…"
@@ -141,8 +141,8 @@ export function TaskTestResults({
               <div
                 className={
                   expanded
-                    ? "max-h-[65dvh] overflow-y-auto p-4"
-                    : "max-h-[32rem] overflow-y-auto p-4"
+                    ? "max-h-[65dvh] overflow-y-auto overscroll-contain p-4"
+                    : "max-h-[32rem] overflow-y-auto overscroll-contain p-4"
                 }
               >
                 {failuresOnly && !failures && (
@@ -165,7 +165,7 @@ export function TaskTestResults({
                         key={id}
                         value={id}
                         data-failed={!result.passed}
-                        className="rounded-xl border px-3 not-last:border-b"
+                        className="rounded-lg border border-border/60 px-3 not-last:border-b"
                       >
                         <AccordionTrigger className="items-center gap-2 py-3 hover:no-underline">
                           <span className="flex min-w-0 flex-1 flex-wrap items-center gap-2 text-xs">
@@ -227,7 +227,7 @@ export function TaskTestResults({
             </>
           )}
           {!checking && !checks && (
-            <p className="p-5 text-xs leading-6 text-muted-foreground">
+            <p className="flex min-h-40 items-center px-5 py-6 text-sm leading-7 text-muted-foreground">
               Нажмите «Проверить». Здесь появятся входные данные, ожидаемые и фактические
               результаты. Случайные параметры обновляются при каждой проверке.
             </p>
@@ -237,11 +237,11 @@ export function TaskTestResults({
           value="console"
           className={
             expanded
-              ? "m-0 max-h-[65dvh] overflow-y-auto p-4"
-              : "m-0 max-h-[32rem] overflow-y-auto p-4"
+              ? "m-0 max-h-[65dvh] overflow-y-auto overscroll-contain p-4"
+              : "m-0 max-h-[32rem] overflow-y-auto overscroll-contain p-4"
           }
         >
-          <pre className="min-h-24 font-mono text-xs leading-6 wrap-anywhere whitespace-pre-wrap">
+          <pre className="min-h-28 font-mono text-xs leading-6 wrap-anywhere whitespace-pre-wrap">
             {logs.length
               ? logs.join("\n")
               : checking

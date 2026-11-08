@@ -1,0 +1,160 @@
+{
+  "schemaVersion": 1,
+  "id": "react-expanded-20261108-zustand",
+  "title": "React: расширение zustand",
+  "sectionId": "react",
+  "subsectionId": "zustand",
+  "currentPass": "complete",
+  "goalIds": [
+    "core",
+    "zustand-state-creator-arguments",
+    "zustand-functional-set",
+    "zustand-read-after-set",
+    "zustand-replace-actions",
+    "zustand-select-by-id",
+    "zustand-select-action",
+    "zustand-vanilla-react-bridge",
+    "zustand-initial-snapshot",
+    "zustand-array-update",
+    "zustand-primitive-store",
+    "zustand-module-instance",
+    "zustand-local-vs-shared",
+    "zustand-persist-partialize",
+    "zustand-persist-storage",
+    "zustand-persist-nested-merge",
+    "zustand-hydration-observation",
+    "zustand-devtools-labels",
+    "zustand-slices-composition",
+    "zustand-map-set-update",
+    "zustand-transient-dom-updates",
+    "zustand-ssr-manual-hydration",
+    "zustand-typescript-middleware-order",
+    "zustand-test-isolated-factory",
+    "zustand-v5-selector-fallback"
+  ],
+  "questionIds": [
+    "zustand-state-creator-arguments",
+    "zustand-functional-set",
+    "zustand-read-after-set",
+    "zustand-replace-actions",
+    "zustand-select-by-id",
+    "zustand-select-action",
+    "zustand-vanilla-react-bridge",
+    "zustand-initial-snapshot",
+    "zustand-array-update",
+    "zustand-primitive-store",
+    "zustand-module-instance",
+    "zustand-local-vs-shared",
+    "zustand-persist-partialize",
+    "zustand-persist-storage",
+    "zustand-persist-nested-merge",
+    "zustand-hydration-observation",
+    "zustand-devtools-labels",
+    "zustand-slices-composition",
+    "zustand-map-set-update",
+    "zustand-transient-dom-updates",
+    "zustand-ssr-manual-hydration",
+    "zustand-typescript-middleware-order",
+    "zustand-test-isolated-factory",
+    "zustand-v5-selector-fallback"
+  ],
+  "scopePass": {
+    "status": "complete",
+    "remaining": []
+  },
+  "answerPass": {
+    "status": "complete",
+    "remaining": []
+  },
+  "baseline": [
+    {
+      "id": "zustand-store-basics",
+      "title": "Что создаёт create в Zustand и нужен ли Provider?",
+      "contentHash": "ac268585991e101b5fba595664ec40e7cfde344aa0bad6259b0f52bf6366a4d0"
+    },
+    {
+      "id": "zustand-selector-shallow",
+      "title": "Как selector и useShallow влияют на обновления Zustand-компонента?",
+      "contentHash": "1071c834075989c3e5b296d9925c125f0e79f9115283d5336026e9f7271e0e1f"
+    },
+    {
+      "id": "zustand-set-merge",
+      "title": "Как set объединяет состояние и почему вложенный объект нужно копировать?",
+      "contentHash": "eed8c3e2497e476865eb8a6be3006c81f564ba1d15779ed0592a9653a4dd1c8c"
+    },
+    {
+      "id": "zustand-async-actions",
+      "title": "Как писать async-действия Zustand и защищаться от устаревшего ответа?",
+      "contentHash": "2f132a84c5743dc04b6c96806344aa3ae96ac7e6981216616b6805b3a5dab564"
+    },
+    {
+      "id": "zustand-imperative-access",
+      "title": "Чем useStore(selector) отличается от useStore.getState()?",
+      "contentHash": "c429964d190ac8497fdc75d6a63d792a5d6c4ec7bc56320a61607d8dd27f044c"
+    },
+    {
+      "id": "zustand-selective-subscribe",
+      "title": "Когда нужен subscribeWithSelector и как освобождать подписку?",
+      "contentHash": "0466ac226e086c9dc360ae349317fc528c476d516a4f0e4ffbecdff22e1ceef8"
+    },
+    {
+      "id": "zustand-persist-hydration",
+      "title": "Что сохраняет persist и почему гидратация не всегда завершается сразу?",
+      "contentHash": "90b92dcc5b5f1adf420b13d88f8f011fbf548bdb0cf0719774437076f7bcab18"
+    },
+    {
+      "id": "zustand-persist-migration",
+      "title": "Как version и migrate помогают изменить формат сохранённого Zustand-state?",
+      "contentHash": "88447ae68da41684e101cf31cc5114a7044a90309e09b53e60342e099ec147a5"
+    },
+    {
+      "id": "zustand-scoped-store",
+      "title": "Как создать независимый Zustand-store для каждого экземпляра виджета?",
+      "contentHash": "63d8f872d00794a27753222352dc621da4c059b31d68ae5466ad5886f6d0389c"
+    },
+    {
+      "id": "zustand-immer-middleware",
+      "title": "Что разрешает immer middleware в Zustand и чего обычный set не делает?",
+      "contentHash": "3996c38864719126cb5587d104109e64867c77f7172d4f4a0df85b5b2b7b20b2"
+    },
+    {
+      "id": "zustand-typescript-store",
+      "title": "Как типизировать данные и actions Zustand через create<State>()()?",
+      "contentHash": "80ee3a0a74747ca76582ebfad910071ac4b23c367e0adec8d2653e7b9463db03"
+    },
+    {
+      "id": "zustand-reset-lifetime",
+      "title": "Как сбросить Zustand-state и почему logout требует большего, чем clearStorage?",
+      "contentHash": "89d5e20b5e15173c62277e8eb572b3025894733c26d995046c88990af3d25d5e"
+    }
+  ],
+  "notes": [
+    "120 новых вопросов React: 60 базовых / 40 средних / 20 продвинутых; Redux и Zustand дополнительно внутри React. Прежние 128 ID сохраняются.",
+    "Общие определения остаются в канонических ответах; прикладные вопросы различаются проверяемым сценарием. Routing включает библиотеку React Router 7 и не приписывает её API ядру React.",
+    "B: zustand-state-creator-arguments | Что получают set, get и api внутри state creator Zustand?",
+    "B: zustand-functional-set | Когда в set Zustand нужна функция от предыдущего состояния?",
+    "B: zustand-read-after-set | Что get() возвращает сразу после синхронного set()?",
+    "B: zustand-replace-actions | Почему setState(next, true) может удалить actions из Zustand-store?",
+    "B: zustand-select-by-id | Как подписать компонент только на запись по переданному ID?",
+    "B: zustand-select-action | Почему компоненту с одной кнопкой достаточно подписки на action?",
+    "B: zustand-vanilla-react-bridge | Как useStore подключает vanilla createStore к React?",
+    "B: zustand-initial-snapshot | Чем getInitialState отличается от getState?",
+    "B: zustand-array-update | Как заменить один элемент массива Zustand-state без прямой мутации?",
+    "B: zustand-primitive-store | Как обновляется Zustand-store, если его state является числом?",
+    "B: zustand-module-instance | Почему два импорта одного store обычно читают один экземпляр состояния?",
+    "B: zustand-local-vs-shared | Когда локальный useState проще и правильнее общего Zustand-store?",
+    "M: zustand-persist-partialize | Как partialize ограничивает сохраняемую часть Zustand-state?",
+    "M: zustand-persist-storage | Как createJSONStorage подключает sessionStorage или асинхронное хранилище?",
+    "M: zustand-persist-nested-merge | Почему восстановление вложенного persisted-объекта может потерять новые поля?",
+    "M: zustand-hydration-observation | Как hasHydrated, onHydrate и onFinishHydration отражают восстановление persist?",
+    "M: zustand-devtools-labels | Как подписывать изменения для Redux DevTools через middleware Zustand?",
+    "M: zustand-slices-composition | Как собрать несколько slices в один Zustand-store и где применять middleware?",
+    "M: zustand-map-set-update | Почему Map и Set в Zustand нужно заменять новыми экземплярами?",
+    "M: zustand-transient-dom-updates | Когда внешняя подписка Zustand полезна для частых обновлений без React-рендера?",
+    "A: zustand-ssr-manual-hydration | Как skipHydration помогает согласовать persist с SSR, не решая авторизацию?",
+    "A: zustand-typescript-middleware-order | Почему порядок middleware влияет на типизированный API Zustand-store?",
+    "A: zustand-test-isolated-factory | Как изолировать Zustand-state и persist между тестами?",
+    "A: zustand-v5-selector-fallback | Почему fallback-функция или новый массив в selector могут вызвать цикл в Zustand 5?",
+    "Завершено: 172 новых вопроса, в том числе React 60/40/20, Redux 28, Zustand 24. Все 128 прежних ID сохранены. Oxfmt, отчёт пересечений, content:build и полный content:check прошли для 1135 вопросов. Примеры, приложение и PostgreSQL seed не запускались."
+  ]
+}

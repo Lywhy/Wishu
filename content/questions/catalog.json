@@ -266,9 +266,9 @@
     {
       "id": "http",
       "sectionId": "browser",
-      "title": "HTTP и кеширование",
-      "description": "Методы, статусы, свежесть и проверки актуальности.",
-      "order": 0
+      "title": "Основы HTTP и методы",
+      "description": "Запросы и ответы, методы, безопасность, идемпотентность и повтор операций.",
+      "order": 2
     },
     {
       "id": "architecture",
@@ -490,23 +490,23 @@
     {
       "id": "transport",
       "sectionId": "browser",
-      "title": "Сеть и соединения",
-      "description": "DNS, TLS и версии HTTP.",
+      "title": "URL, DNS и соединения",
+      "description": "Адресация, разрешение имён, транспорт и повторное использование соединений.",
       "order": 1
     },
     {
       "id": "security",
       "sectionId": "browser",
-      "title": "Границы безопасности",
-      "description": "Origin, cookies и межсайтовые запросы.",
-      "order": 2
+      "title": "Безопасность веб-приложений",
+      "description": "XSS, CSRF, политики контента, iframe, доверие и разрешения.",
+      "order": 9
     },
     {
       "id": "delivery",
       "sectionId": "browser",
       "title": "Доставка и диагностика",
-      "description": "CDN, сжатие и анализ сетевой загрузки.",
-      "order": 3
+      "description": "CDN, DevTools, размеры, waterfall и пользовательские метрики.",
+      "order": 13
     },
     {
       "id": "templates",
@@ -969,6 +969,83 @@
       "title": "Zustand",
       "description": "Создание store, подписки, обновления, persist и жизненный цикл.",
       "order": 11
+    },
+    {
+      "id": "routing",
+      "sectionId": "react",
+      "title": "Маршрутизация в React",
+      "description": "React Router: маршруты, URL, навигация, данные и границы клиентского доступа.",
+      "order": 12
+    },
+    {
+      "id": "architecture",
+      "sectionId": "browser",
+      "title": "Устройство браузера и навигация",
+      "description": "Компоненты браузера, потоки, навигация, процессы и восстановление страницы.",
+      "order": 0
+    },
+    {
+      "id": "representations",
+      "sectionId": "browser",
+      "title": "Статусы, заголовки и представления",
+      "description": "Статусы, форматы, согласование содержимого, кодирование и передача файлов.",
+      "order": 3
+    },
+    {
+      "id": "https",
+      "sectionId": "browser",
+      "title": "HTTPS и версии HTTP",
+      "description": "TLS, сертификаты, постоянные соединения, HTTP/2 и HTTP/3.",
+      "order": 4
+    },
+    {
+      "id": "caching",
+      "sectionId": "browser",
+      "title": "HTTP-кеширование",
+      "description": "Свежесть, валидация, общие кеши, версии ресурсов и инвалидирование.",
+      "order": 5
+    },
+    {
+      "id": "requests",
+      "sectionId": "browser",
+      "title": "Запросы из JavaScript",
+      "description": "Сетевые границы Fetch, credentials, отмена, тела и потоковая передача.",
+      "order": 6
+    },
+    {
+      "id": "origin",
+      "sectionId": "browser",
+      "title": "Origin, SOP и CORS",
+      "description": "Границы чтения браузера, preflight, credentials и диагностика.",
+      "order": 7
+    },
+    {
+      "id": "sessions",
+      "sectionId": "browser",
+      "title": "Cookies, сессии и аутентификация",
+      "description": "Область и срок cookie, аутентификация, обновление credentials и logout.",
+      "order": 8
+    },
+    {
+      "id": "storage",
+      "sectionId": "browser",
+      "title": "Хранение данных и связь контекстов",
+      "description": "Выбор хранилища, квоты, IndexedDB и согласование вкладок.",
+      "order": 10
+    },
+    {
+      "id": "rendering",
+      "sectionId": "browser",
+      "title": "Рендеринг и жизненный цикл страницы",
+      "description": "Путь к пикселям, критические ресурсы, макет и жизненный цикл.",
+      "order": 11
+    },
+    {
+      "id": "realtime",
+      "sectionId": "browser",
+      "title": "Realtime, Workers и offline",
+      "description": "Транспорты сообщений, восстановление соединения и Service Worker.",
+      "order": 12
     }
   ]
 }

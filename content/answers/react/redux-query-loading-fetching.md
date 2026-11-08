@@ -1,0 +1,31 @@
+**IsLoading отражает первый запрос без доступных данных, а isFetching - активную загрузку, в том числе при уже показанном результате.**
+
+<!-- wishu:answer-block -->
+
+### Механизм и границы
+
+- Это позволяет не заменять полезный список полным skeleton при refetch.
+
+- Учитывайте data и currentData при смене аргумента: прежние данные и данные текущего ключа имеют разный смысл. Одного флага недостаточно для всех UX-состояний.
+
+### Пример
+
+```jsx
+const { data, isLoading, isFetching } = useGetPostsQuery(topic)
+if (isLoading) return <Skeleton />
+return <List rows={data ?? []} updating={isFetching} />
+```
+
+### Типичная ошибка
+
+Скрывать всю страницу при каждом isFetching и терять контекст пользователя.
+
+### Для закрепления
+
+- [Как устроен поток данных Redux: store, action, dispatch и reducer?](/questions/redux-data-flow)
+
+- [Чем RTK Query отличается от запроса внутри createAsyncThunk?](/questions/redux-query-cache)
+
+### Источник
+
+[Redux: queries](https://redux.js.org/toolkit/rtk-query/usage/queries)

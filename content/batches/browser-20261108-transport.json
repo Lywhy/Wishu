@@ -1,0 +1,61 @@
+{
+  "schemaVersion": 1,
+  "id": "browser-20261108-transport",
+  "title": "Браузер и HTTP: transport",
+  "sectionId": "browser",
+  "subsectionId": "transport",
+  "currentPass": "complete",
+  "goalIds": [
+    "core",
+    "network-dns",
+    "url-parts",
+    "url-relative-resolution",
+    "network-host-port",
+    "network-tcp-udp",
+    "network-dns-records",
+    "network-dns-caches",
+    "network-reuse",
+    "network-latency-throughput"
+  ],
+  "questionIds": [
+    "network-dns",
+    "url-parts",
+    "url-relative-resolution",
+    "network-host-port",
+    "network-tcp-udp",
+    "network-dns-records",
+    "network-dns-caches",
+    "network-reuse",
+    "network-latency-throughput"
+  ],
+  "scopePass": {
+    "status": "complete",
+    "remaining": []
+  },
+  "answerPass": {
+    "status": "complete",
+    "remaining": []
+  },
+  "baseline": [
+    {
+      "id": "network-dns",
+      "title": "Зачем браузеру DNS перед HTTPS-запросом?",
+      "contentHash": "f582277cf2b6e7be933fbf600d2129b563d600f519eb601add601013e21cdb88"
+    },
+    {
+      "id": "network-https",
+      "title": "Что защищает HTTPS и чего он не гарантирует?",
+      "contentHash": "e1936514fe23b1922063050a8498c906f891a308dc94f36f1929ce99ca3aeca7"
+    },
+    {
+      "id": "http-multiplexing",
+      "title": "Чем HTTP/2 и HTTP/3 отличаются в работе с соединениями?",
+      "contentHash": "b775d07c2783430e2e4b23c0b9e6bbc611eb11881e6d2c6a89bdbcb4322c17c2"
+    }
+  ],
+  "notes": [
+    "Согласована карта из 14 подразделов. 12 прежних ID сохраняются. API JavaScript/HTML остаются каноническими в своих категориях; здесь рассматриваются сетевые и браузерные сценарии.",
+    "Cache-Control/ETag, идемпотентность, статусы, cookie-флаги, CORS, CSRF, DNS, HTTPS, HTTP/2/3, compression, CDN и waterfall расширяются под прежними ID.",
+    "Завершено: 131 новый вопрос (56 базовых, 64 средних, 11 продвинутых) и 12 расширенных канонических ответов в 14 подразделах. Все исходные ID сохранены, 7 вопросов перераспределены без изменения ID. Oxfmt, content:report, content:build и полный content:check прошли для 1266 вопросов. Приложение, код примеров и seed не запускались."
+  ]
+}

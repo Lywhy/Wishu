@@ -1,0 +1,84 @@
+{
+  "schemaVersion": 1,
+  "id": "react-core-20261108-state",
+  "title": "React: state",
+  "sectionId": "react",
+  "subsectionId": "state",
+  "currentPass": "complete",
+  "goalIds": [
+    "core",
+    "react-state-replacement",
+    "react-state-function-value",
+    "react-state-status-model",
+    "react-state-queue"
+  ],
+  "questionIds": [
+    "react-state-replacement",
+    "react-state-function-value",
+    "react-state-status-model",
+    "react-state-queue"
+  ],
+  "scopePass": {
+    "status": "complete",
+    "remaining": []
+  },
+  "answerPass": {
+    "status": "complete",
+    "remaining": []
+  },
+  "baseline": [
+    {
+      "id": "react-state-snapshot",
+      "title": "Почему значение state не меняется сразу после setState?",
+      "contentHash": "1bcd3eeb7fc07419f3c6358c0917cfc00303994f518bb55b0d16e7e6481c9274"
+    },
+    {
+      "id": "react-state-queue",
+      "title": "Что выведут три вызова setCount и когда нужен updater?",
+      "contentHash": "28a3f84c99ff0ec2e86a2982612c209b55a74eb70bfcaed4b5d784eee28544a6"
+    },
+    {
+      "id": "react-state-immutability",
+      "title": "Почему нельзя изменять объект или массив в state напрямую?",
+      "contentHash": "cbde9f06c16bafbe4c8029ae085ccb7a170a47bbda44bf288095783eb48be148"
+    },
+    {
+      "id": "react-derived-state",
+      "title": "Почему вычисляемые значения обычно не нужно хранить в state?",
+      "contentHash": "eab54f877ace2200467e27216aa2bb4930620b8ea5deb271400d804046796605"
+    },
+    {
+      "id": "react-lifting-state",
+      "title": "Когда нужно поднимать состояние к общему родителю?",
+      "contentHash": "df18fb776f0041690cd102e5cb555e0d2f0fd529376f7b79f12617efdcbd1329"
+    },
+    {
+      "id": "react-use-reducer",
+      "title": "Когда useReducer удобнее useState?",
+      "contentHash": "de69e2362ddf9065f544eb549305719478a893edb638f3d843734e35a3020422"
+    },
+    {
+      "id": "react-lazy-state",
+      "title": "Как работает ленивое начальное состояние useState?",
+      "contentHash": "e67deb5a4212cf2afeeee7f9f1ac1de69f9d2321828008a836f625d69c67a904"
+    },
+    {
+      "id": "react-normalized-state",
+      "title": "Когда сущности в состоянии лучше хранить по ID, а не копировать в разные ветви?",
+      "contentHash": "49d3595fd7b86809c4219d48809e6ab1f224113f18f3f80613122bc6795c0f14"
+    },
+    {
+      "id": "react-draft-conflicts",
+      "title": "Как сохранить пользовательский черновик при обновлении данных с сервера?",
+      "contentHash": "72778fcb2613e1733c1a3f5aae01760f1cb1b30fd5b4d8ca51784f755b12b9e2"
+    }
+  ],
+  "notes": [
+    "Сначала сопоставлены все 94 действующие React-карточки. Redux и Zustand сохраняются без повторного пересмотра.",
+    "react-state-replacement: Сохранять нужные поля при обновлении объекта и отличать setter хука от setState класса. Закрепление: react-state-immutability",
+    "react-state-function-value: Различать функцию-значение, инициализатор и updater по позиции API. Закрепление: react-lazy-state",
+    "react-state-status-model: Не допускать противоречивых комбинаций состояния запроса. Закрепление: react-derived-state",
+    "Ключи, идентичность state, обработчики, очередь, эффекты, memo, controlled input, Error Boundary и правила хуков расширяются под прежними ID; useId и сравнение transition/deferred не дублируются.",
+    "Контент отформатирован. content:report: +34 новых, 11 расширенных ответов и 4 изменения общих источников; удалений и лексических кандидатов нет. content:build и полный content:check прошли для 963 вопросов. Примеры и приложение не запускались."
+  ]
+}

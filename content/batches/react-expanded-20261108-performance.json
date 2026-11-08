@@ -1,0 +1,92 @@
+{
+  "schemaVersion": 1,
+  "id": "react-expanded-20261108-performance",
+  "title": "React: расширение performance",
+  "sectionId": "react",
+  "subsectionId": "performance",
+  "currentPass": "complete",
+  "goalIds": [
+    "core",
+    "react-perf-render-is-not-paint",
+    "react-perf-local-search-input",
+    "react-perf-memo-selector-cost",
+    "react-perf-windowing-identity",
+    "react-perf-browser-vs-react-profile",
+    "react-compiler-memo-boundary",
+    "react-memo-comparator-closure-bug",
+    "react-interaction-latency-budget"
+  ],
+  "questionIds": [
+    "react-perf-render-is-not-paint",
+    "react-perf-local-search-input",
+    "react-perf-memo-selector-cost",
+    "react-perf-windowing-identity",
+    "react-perf-browser-vs-react-profile",
+    "react-compiler-memo-boundary",
+    "react-memo-comparator-closure-bug",
+    "react-interaction-latency-budget"
+  ],
+  "scopePass": {
+    "status": "complete",
+    "remaining": []
+  },
+  "answerPass": {
+    "status": "complete",
+    "remaining": []
+  },
+  "baseline": [
+    {
+      "id": "react-memo",
+      "title": "Какие рендеры может пропустить React.memo?",
+      "contentHash": "fd67611db36d2ef6555c9952af216c576c02cfe12a9a6f533b71a4b27cb387f0"
+    },
+    {
+      "id": "react-memo-callback",
+      "title": "Чем useMemo отличается от useCallback?",
+      "contentHash": "cd3677d4de2061baa319a4184197a56b8e455ec37b699b858f5f7fccd8b76dcf"
+    },
+    {
+      "id": "react-profiler",
+      "title": "Как найти причину медленного взаимодействия в React?",
+      "contentHash": "f113ea5e59fd4aa639de190db0282ef6c9d22634f52da0b3514c69e90eaf5351"
+    },
+    {
+      "id": "react-list-windowing",
+      "title": "Когда нужна виртуализация длинного списка?",
+      "contentHash": "cedbf08b8fe7a54a6c4edd011c73f9cb33daf2fb1822802f874b77b1f4148f8a"
+    },
+    {
+      "id": "react-compiler",
+      "title": "Что оптимизирует React Compiler и заменяет ли он правила React?",
+      "contentHash": "66b4f43837860c1fcbe6a8d9d2cef9c4a8e3895835f261d439f3b6793f5ce596"
+    },
+    {
+      "id": "react-flush-sync",
+      "title": "Когда flushSync оправдан при интеграции с браузерным или сторонним API?",
+      "contentHash": "cfe9aa4d99e98ef4dcb098448f9556d78d86e5a1cfb01d603d50e2864a75229c"
+    },
+    {
+      "id": "react-composition-render-locality",
+      "title": "Как композиция через children помогает ограничить рендеры без memo?",
+      "contentHash": "40d890824b20200ab9131e1ef9922fa1d3945045ee9766d3dbfd98fc8ece0e70"
+    },
+    {
+      "id": "react-profiler-durations",
+      "title": "Что означают actualDuration и baseDuration в React Profiler?",
+      "contentHash": "3d4b02024519627b59ee685dc08778491da236b6ebeb79399161dc3fa7b29845"
+    }
+  ],
+  "notes": [
+    "120 новых вопросов React: 60 базовых / 40 средних / 20 продвинутых; Redux и Zustand дополнительно внутри React. Прежние 128 ID сохраняются.",
+    "Общие определения остаются в канонических ответах; прикладные вопросы различаются проверяемым сценарием. Routing включает библиотеку React Router 7 и не приписывает её API ядру React.",
+    "B: react-perf-render-is-not-paint | Почему console.log рендера не доказывает изменение DOM или отрисовку браузера?",
+    "B: react-perf-local-search-input | Как вынести state поля, чтобы ввод не обновлял всё дерево страницы?",
+    "M: react-perf-memo-selector-cost | Когда мемоизация вычисления дороже самого вычисления?",
+    "M: react-perf-windowing-identity | Как сохранить выбор, фокус и состояние строк в виртуализированном списке?",
+    "M: react-perf-browser-vs-react-profile | Как отличить медленный render React от долгого layout, paint или сети?",
+    "A: react-compiler-memo-boundary | Как оценить необходимость ручной мемоизации при включённом React Compiler?",
+    "A: react-memo-comparator-closure-bug | Как пользовательский comparator memo может сохранить обработчик со старым замыканием?",
+    "A: react-interaction-latency-budget | Как построить измерение медленного взаимодействия без смешивания render и полной задержки?",
+    "Завершено: 172 новых вопроса, в том числе React 60/40/20, Redux 28, Zustand 24. Все 128 прежних ID сохранены. Oxfmt, отчёт пересечений, content:build и полный content:check прошли для 1135 вопросов. Примеры, приложение и PostgreSQL seed не запускались."
+  ]
+}

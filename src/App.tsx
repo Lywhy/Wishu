@@ -1,3 +1,6 @@
+import { FeedbackPageView } from "@/pages/feedback-page"
+import { lazy, Suspense } from "react"
+import { CatalogLoading } from "@/components/catalog/catalog-loading"
 import { MockInterviewPage } from "@/pages/mock-interview-page"
 import { QuestionCreatePage } from "@/pages/question-create-page"
 import { InterviewsPage } from "@/pages/interviews-page"
@@ -15,19 +18,32 @@ import { QuestionSubsectionPage } from "@/pages/question-subsection-page"
 import { TasksPage } from "@/pages/tasks-page"
 import { TaskDetailPage } from "@/pages/task-detail-page"
 
+const UiShowcasePage = import.meta.env.DEV ? lazy(() => import("@/pages/ui-showcase-page")) : null
+
 function App() {
   return (
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Navigate to="/learn" replace />} />
         <Route element={<AppLayout />}>
+          {UiShowcasePage && (
+            <Route
+              path="/dev/ui"
+              element={
+                <Suspense fallback={<CatalogLoading label="Загружаем образцы интерфейса…" />}>
+                  <UiShowcasePage />
+                </Suspense>
+              }
+            />
+          )}
           <Route element={<LearningLayout />}>
             <Route path="/learn" element={<LearningPage />} />
             <Route path="/learn/:sectionId" element={<LearningCoursePage />} />
             <Route path="/learn/:sectionId/:stepId" element={<LearningCoursePage />} />
           </Route>
           <Route element={<QuestionsLayout />}>
-            <Route path="/session" element={<StudySessionPage />} />
+            <Route path="/session" element={<Navigate to="/questions/preparation" replace />} />
+            <Route path="/questions/preparation" element={<StudySessionPage />} />
             <Route path="/mock-interview" element={<MockInterviewPage />} />
             <Route path="/questions" element={<QuestionsPage />} />
             <Route path="/questions/sections/:sectionId" element={<QuestionSectionPage />} />
@@ -38,6 +54,7 @@ function App() {
             <Route path="/questions/new" element={<QuestionCreatePage />} />
             <Route path="/questions/:questionId" element={<QuestionDetailPage />} />
           </Route>
+          <Route path="/feedback" element={<FeedbackPageView />} />
           <Route path="/interviews" element={<InterviewsPage />} />
           <Route path="/tasks" element={<TasksPage />} />
           <Route path="/tasks/:taskId" element={<TaskDetailPage />} />

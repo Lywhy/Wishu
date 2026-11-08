@@ -1,0 +1,404 @@
+{
+  "$schema": "../question-bundle.schema.json",
+  "sectionId": "browser",
+  "subsectionId": "caching",
+  "scope": "Свежесть, валидация, общие кеши, версии ресурсов и инвалидирование.",
+  "coverageGoals": [
+    {
+      "id": "core",
+      "title": "HTTP-кеширование",
+      "description": "Свежесть, валидация, общие кеши, версии ресурсов и инвалидирование.",
+      "requiredDifficulties": [],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": [
+        "http-cache",
+        "http-cache-layers",
+        "http-cache-directives",
+        "http-cache-private-public",
+        "http-cache-versioned-assets",
+        "http-cache-validation",
+        "http-cache-vary",
+        "http-cache-smaxage",
+        "http-cache-stale",
+        "http-cache-invalidation",
+        "http-cache-personalization",
+        "http-cache-attacks"
+      ]
+    },
+    {
+      "id": "http-cache",
+      "title": "Чем Cache-Control отличается от ETag?",
+      "description": "Объяснить и применить: Свежесть, хранение и валидация - три согласованных, но разных решения.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "http-cache-layers",
+      "title": "Какие кеши могут участвовать в загрузке одного ресурса?",
+      "description": "Объяснить и применить: Назовите конкретный слой кеширования перед диагностикой.",
+      "requiredDifficulties": ["Базовый"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "http-cache-directives",
+      "title": "Чем no-cache отличается от no-store и max-age=0?",
+      "description": "Объяснить и применить: Разделяйте хранение, свежесть и обязательную проверку.",
+      "requiredDifficulties": ["Базовый"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "http-cache-private-public",
+      "title": "Когда ответ должен быть private и когда допустим общий кеш?",
+      "description": "Объяснить и применить: Область допустимого повторного использования должна совпадать с областью данных.",
+      "requiredDifficulties": ["Базовый"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "http-cache-versioned-assets",
+      "title": "Зачем добавлять хеш содержимого к имени CSS или JavaScript-файла?",
+      "description": "Объяснить и применить: Долгий кеш безопаснее при неизменяемой адресуемой версии ресурса.",
+      "requiredDifficulties": ["Базовый"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "http-cache-validation",
+      "title": "Как If-None-Match и If-Modified-Since связаны с ответом 304?",
+      "description": "Объяснить и применить: Валидация подтверждает использование сохранённого представления.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "http-cache-vary",
+      "title": "Как Vary влияет на выбор кешированного ответа?",
+      "description": "Объяснить и применить: Ключ повторного использования должен включать значимые параметры представления.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "http-cache-smaxage",
+      "title": "Чем s-maxage отличается от max-age и как понимать Age?",
+      "description": "Объяснить и применить: Свежесть описывает разрешённое использование ответа, а не историю сущности.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "http-cache-stale",
+      "title": "Как stale-while-revalidate позволяет показать устаревший ответ?",
+      "description": "Объяснить и применить: Скорость и допустимая устарелость согласуются явно.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "http-cache-invalidation",
+      "title": "Как обновлять HTML и хешированные ресурсы без несовместимой смеси версий?",
+      "description": "Объяснить и применить: Обновляйте набор версий как совместимую систему ресурсов.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "http-cache-personalization",
+      "title": "Как проверить, что общий кеш не смешивает данные пользователей?",
+      "description": "Объяснить и применить: Общий кеш должен уважать границу пользователей и представлений.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "http-cache-attacks",
+      "title": "Чем cache poisoning отличается от cache deception?",
+      "description": "Объяснить и применить: Общий кеш безопасен только при согласованных ключе, маршруте и границе данных.",
+      "requiredDifficulties": ["Продвинутый"],
+      "reviewed": true,
+      "priority": "extended",
+      "relatedSkillIds": []
+    }
+  ],
+  "questions": [
+    {
+      "id": "http-cache",
+      "title": "Чем Cache-Control отличается от ETag?",
+      "topic": "Web",
+      "difficulty": "Средний",
+      "summary": "Свежесть, хранение и валидация - три согласованных, но разных решения.",
+      "takeaway": "Свежесть, хранение и валидация - три согласованных, но разных решения.",
+      "moduleId": "browser",
+      "order": 0,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить: Свежесть, хранение и валидация - три согласованных, но разных решения.",
+        "keywords": ["Браузер и HTTP", "caching", "http", "cache"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "goalIds": ["core", "http-cache"],
+        "relatedQuestionIds": [],
+        "priority": "core",
+        "sourceRefs": ["ref-4a1b57bfe9b2ba79"]
+      },
+      "answerFile": "answers/browser/http-cache.md"
+    },
+    {
+      "id": "http-cache-layers",
+      "title": "Какие кеши могут участвовать в загрузке одного ресурса?",
+      "topic": "Web",
+      "difficulty": "Базовый",
+      "summary": "Назовите конкретный слой кеширования перед диагностикой.",
+      "takeaway": "Назовите конкретный слой кеширования перед диагностикой.",
+      "moduleId": "browser",
+      "order": 1,
+      "popular": false,
+      "answerFile": "answers/browser/http-cache-layers.md",
+      "editorial": {
+        "learningGoal": "Объяснить и применить: Назовите конкретный слой кеширования перед диагностикой.",
+        "keywords": ["Браузер и HTTP", "caching", "http", "cache", "layers"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "goalIds": ["core", "http-cache-layers"],
+        "relatedQuestionIds": ["browser-cache-api"],
+        "priority": "core",
+        "sourceRefs": ["ref-4a1b57bfe9b2ba79"]
+      }
+    },
+    {
+      "id": "http-cache-directives",
+      "title": "Чем no-cache отличается от no-store и max-age=0?",
+      "topic": "Web",
+      "difficulty": "Базовый",
+      "summary": "Разделяйте хранение, свежесть и обязательную проверку.",
+      "takeaway": "Разделяйте хранение, свежесть и обязательную проверку.",
+      "moduleId": "browser",
+      "order": 2,
+      "popular": false,
+      "answerFile": "answers/browser/http-cache-directives.md",
+      "editorial": {
+        "learningGoal": "Объяснить и применить: Разделяйте хранение, свежесть и обязательную проверку.",
+        "keywords": ["Браузер и HTTP", "caching", "http", "cache", "directives"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "goalIds": ["core", "http-cache-directives"],
+        "relatedQuestionIds": ["http-cache"],
+        "priority": "core",
+        "sourceRefs": ["ref-e1fa04c54b112027"]
+      }
+    },
+    {
+      "id": "http-cache-private-public",
+      "title": "Когда ответ должен быть private и когда допустим общий кеш?",
+      "topic": "Web",
+      "difficulty": "Базовый",
+      "summary": "Область допустимого повторного использования должна совпадать с областью данных.",
+      "takeaway": "Область допустимого повторного использования должна совпадать с областью данных.",
+      "moduleId": "browser",
+      "order": 3,
+      "popular": false,
+      "answerFile": "answers/browser/http-cache-private-public.md",
+      "editorial": {
+        "learningGoal": "Объяснить и применить: Область допустимого повторного использования должна совпадать с областью данных.",
+        "keywords": ["Браузер и HTTP", "caching", "http", "cache", "private", "public"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "goalIds": ["core", "http-cache-private-public"],
+        "relatedQuestionIds": ["http-cdn"],
+        "priority": "core",
+        "sourceRefs": ["ref-4a1b57bfe9b2ba79"]
+      }
+    },
+    {
+      "id": "http-cache-versioned-assets",
+      "title": "Зачем добавлять хеш содержимого к имени CSS или JavaScript-файла?",
+      "topic": "Web",
+      "difficulty": "Базовый",
+      "summary": "Долгий кеш безопаснее при неизменяемой адресуемой версии ресурса.",
+      "takeaway": "Долгий кеш безопаснее при неизменяемой адресуемой версии ресурса.",
+      "moduleId": "browser",
+      "order": 4,
+      "popular": false,
+      "answerFile": "answers/browser/http-cache-versioned-assets.md",
+      "editorial": {
+        "learningGoal": "Объяснить и применить: Долгий кеш безопаснее при неизменяемой адресуемой версии ресурса.",
+        "keywords": ["Браузер и HTTP", "caching", "http", "cache", "versioned", "assets"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "goalIds": ["core", "http-cache-versioned-assets"],
+        "relatedQuestionIds": [],
+        "priority": "core",
+        "sourceRefs": ["ref-4a1b57bfe9b2ba79"]
+      }
+    },
+    {
+      "id": "http-cache-validation",
+      "title": "Как If-None-Match и If-Modified-Since связаны с ответом 304?",
+      "topic": "Web",
+      "difficulty": "Средний",
+      "summary": "Валидация подтверждает использование сохранённого представления.",
+      "takeaway": "Валидация подтверждает использование сохранённого представления.",
+      "moduleId": "browser",
+      "order": 5,
+      "popular": false,
+      "answerFile": "answers/browser/http-cache-validation.md",
+      "editorial": {
+        "learningGoal": "Объяснить и применить: Валидация подтверждает использование сохранённого представления.",
+        "keywords": ["Браузер и HTTP", "caching", "http", "cache", "validation"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "goalIds": ["core", "http-cache-validation"],
+        "relatedQuestionIds": ["http-cache"],
+        "priority": "core",
+        "sourceRefs": ["ref-e1fa04c54b112027"]
+      }
+    },
+    {
+      "id": "http-cache-vary",
+      "title": "Как Vary влияет на выбор кешированного ответа?",
+      "topic": "Web",
+      "difficulty": "Средний",
+      "summary": "Ключ повторного использования должен включать значимые параметры представления.",
+      "takeaway": "Ключ повторного использования должен включать значимые параметры представления.",
+      "moduleId": "browser",
+      "order": 6,
+      "popular": false,
+      "answerFile": "answers/browser/http-cache-vary.md",
+      "editorial": {
+        "learningGoal": "Объяснить и применить: Ключ повторного использования должен включать значимые параметры представления.",
+        "keywords": ["Браузер и HTTP", "caching", "http", "cache", "vary"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "goalIds": ["core", "http-cache-vary"],
+        "relatedQuestionIds": [],
+        "priority": "core",
+        "sourceRefs": ["ref-e1fa04c54b112027"]
+      }
+    },
+    {
+      "id": "http-cache-smaxage",
+      "title": "Чем s-maxage отличается от max-age и как понимать Age?",
+      "topic": "Web",
+      "difficulty": "Средний",
+      "summary": "Свежесть описывает разрешённое использование ответа, а не историю сущности.",
+      "takeaway": "Свежесть описывает разрешённое использование ответа, а не историю сущности.",
+      "moduleId": "browser",
+      "order": 7,
+      "popular": false,
+      "answerFile": "answers/browser/http-cache-smaxage.md",
+      "editorial": {
+        "learningGoal": "Объяснить и применить: Свежесть описывает разрешённое использование ответа, а не историю сущности.",
+        "keywords": ["Браузер и HTTP", "caching", "http", "cache", "smaxage"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "goalIds": ["core", "http-cache-smaxage"],
+        "relatedQuestionIds": [],
+        "priority": "core",
+        "sourceRefs": ["ref-e1fa04c54b112027"]
+      }
+    },
+    {
+      "id": "http-cache-stale",
+      "title": "Как stale-while-revalidate позволяет показать устаревший ответ?",
+      "topic": "Web",
+      "difficulty": "Средний",
+      "summary": "Скорость и допустимая устарелость согласуются явно.",
+      "takeaway": "Скорость и допустимая устарелость согласуются явно.",
+      "moduleId": "browser",
+      "order": 8,
+      "popular": false,
+      "answerFile": "answers/browser/http-cache-stale.md",
+      "editorial": {
+        "learningGoal": "Объяснить и применить: Скорость и допустимая устарелость согласуются явно.",
+        "keywords": ["Браузер и HTTP", "caching", "http", "cache", "stale"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "goalIds": ["core", "http-cache-stale"],
+        "relatedQuestionIds": ["browser-offline-strategies"],
+        "priority": "core",
+        "sourceRefs": ["ref-9166d803cf3a38b0"]
+      }
+    },
+    {
+      "id": "http-cache-invalidation",
+      "title": "Как обновлять HTML и хешированные ресурсы без несовместимой смеси версий?",
+      "topic": "Web",
+      "difficulty": "Средний",
+      "summary": "Обновляйте набор версий как совместимую систему ресурсов.",
+      "takeaway": "Обновляйте набор версий как совместимую систему ресурсов.",
+      "moduleId": "browser",
+      "order": 9,
+      "popular": false,
+      "answerFile": "answers/browser/http-cache-invalidation.md",
+      "editorial": {
+        "learningGoal": "Объяснить и применить: Обновляйте набор версий как совместимую систему ресурсов.",
+        "keywords": ["Браузер и HTTP", "caching", "http", "cache", "invalidation"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "goalIds": ["core", "http-cache-invalidation"],
+        "relatedQuestionIds": ["browser-sw-version-race"],
+        "priority": "core",
+        "sourceRefs": ["ref-4a1b57bfe9b2ba79"]
+      }
+    },
+    {
+      "id": "http-cache-personalization",
+      "title": "Как проверить, что общий кеш не смешивает данные пользователей?",
+      "topic": "Web",
+      "difficulty": "Средний",
+      "summary": "Общий кеш должен уважать границу пользователей и представлений.",
+      "takeaway": "Общий кеш должен уважать границу пользователей и представлений.",
+      "moduleId": "browser",
+      "order": 10,
+      "popular": false,
+      "answerFile": "answers/browser/http-cache-personalization.md",
+      "editorial": {
+        "learningGoal": "Объяснить и применить: Общий кеш должен уважать границу пользователей и представлений.",
+        "keywords": ["Браузер и HTTP", "caching", "http", "cache", "personalization"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "goalIds": ["core", "http-cache-personalization"],
+        "relatedQuestionIds": ["http-cdn"],
+        "priority": "core",
+        "sourceRefs": ["ref-4a1b57bfe9b2ba79"]
+      }
+    },
+    {
+      "id": "http-cache-attacks",
+      "title": "Чем cache poisoning отличается от cache deception?",
+      "topic": "Web",
+      "difficulty": "Продвинутый",
+      "summary": "Общий кеш безопасен только при согласованных ключе, маршруте и границе данных.",
+      "takeaway": "Общий кеш безопасен только при согласованных ключе, маршруте и границе данных.",
+      "moduleId": "browser",
+      "order": 11,
+      "popular": false,
+      "answerFile": "answers/browser/http-cache-attacks.md",
+      "editorial": {
+        "learningGoal": "Объяснить и применить: Общий кеш безопасен только при согласованных ключе, маршруте и границе данных.",
+        "keywords": ["Браузер и HTTP", "caching", "http", "cache", "attacks"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "goalIds": ["core", "http-cache-attacks"],
+        "relatedQuestionIds": ["http-cache-personalization"],
+        "priority": "extended",
+        "sourceRefs": ["ref-8d62fd428dc188d9", "ref-0f4cba78270861d8"]
+      }
+    }
+  ]
+}

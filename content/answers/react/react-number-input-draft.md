@@ -1,0 +1,38 @@
+**У поля ввода есть текстовое промежуточное состояние, даже если итоговое значение должно быть числом.** Строковый черновик позволяет сохранить пустое поле, не превращая его немедленно в ноль.
+
+<!-- wishu:answer-block -->
+
+### Как это работает
+
+- value текстового контрола является строкой. Number("") даёт 0, поэтому раннее преобразование меняет смысл пустого ввода.
+
+- Преобразуйте данные при отправке или перед вычислением и отдельно обработайте пустое значение и недопустимый результат.
+
+- Поведение допустимых промежуточных символов type=number зависит от браузера. Для особого формата можно выбрать text с `inputMode`, но `inputMode` не является валидацией.
+
+### Пример
+
+```jsx
+function AmountField() {
+  const [amount, setAmount] = useState("")
+  const parsed = amount.trim() === "" ? null : Number(amount)
+  const valid = parsed !== null && Number.isFinite(parsed)
+  return (
+    <>
+      <label>
+        Сумма
+        <input type="number" value={amount} onChange={(event) => setAmount(event.target.value)} />
+      </label>
+      <output>{valid ? parsed : "Введите число"}</output>
+    </>
+  )
+}
+```
+
+### Типичная ошибка
+
+Хранить Number(event.target.value) на каждом символе и лишать пользователя возможности полностью очистить поле.
+
+### Источники
+
+- [React: components / input](https://react.dev/reference/react-dom/components/input)

@@ -25,7 +25,7 @@ function BreadcrumbItem({ className, ...props }: React.ComponentProps<"li">) {
   return (
     <li
       data-slot="breadcrumb-item"
-      className={cn("inline-flex items-center gap-1", className)}
+      className={cn("inline-flex min-w-0 items-center gap-1", className)}
       {...props}
     />
   )
@@ -36,7 +36,10 @@ function BreadcrumbLink({ className, render, ...props }: useRender.ComponentProp
     defaultTagName: "a",
     props: mergeProps<"a">(
       {
-        className: cn("transition-colors hover:text-foreground", className),
+        className: cn(
+          "rounded-sm transition-colors duration-150 outline-none hover:text-foreground focus-visible:ring-2 focus-visible:ring-ring motion-reduce:transition-none",
+          className,
+        ),
       },
       props,
     ),

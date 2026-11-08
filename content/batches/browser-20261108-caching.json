@@ -1,0 +1,51 @@
+{
+  "schemaVersion": 1,
+  "id": "browser-20261108-caching",
+  "title": "Браузер и HTTP: caching",
+  "sectionId": "browser",
+  "subsectionId": "caching",
+  "currentPass": "complete",
+  "goalIds": [
+    "core",
+    "http-cache",
+    "http-cache-layers",
+    "http-cache-directives",
+    "http-cache-private-public",
+    "http-cache-versioned-assets",
+    "http-cache-validation",
+    "http-cache-vary",
+    "http-cache-smaxage",
+    "http-cache-stale",
+    "http-cache-invalidation",
+    "http-cache-personalization",
+    "http-cache-attacks"
+  ],
+  "questionIds": [
+    "http-cache",
+    "http-cache-layers",
+    "http-cache-directives",
+    "http-cache-private-public",
+    "http-cache-versioned-assets",
+    "http-cache-validation",
+    "http-cache-vary",
+    "http-cache-smaxage",
+    "http-cache-stale",
+    "http-cache-invalidation",
+    "http-cache-personalization",
+    "http-cache-attacks"
+  ],
+  "scopePass": {
+    "status": "complete",
+    "remaining": []
+  },
+  "answerPass": {
+    "status": "complete",
+    "remaining": []
+  },
+  "baseline": [],
+  "notes": [
+    "Согласована карта из 14 подразделов. 12 прежних ID сохраняются. API JavaScript/HTML остаются каноническими в своих категориях; здесь рассматриваются сетевые и браузерные сценарии.",
+    "Cache-Control/ETag, идемпотентность, статусы, cookie-флаги, CORS, CSRF, DNS, HTTPS, HTTP/2/3, compression, CDN и waterfall расширяются под прежними ID.",
+    "Завершено: 131 новый вопрос (56 базовых, 64 средних, 11 продвинутых) и 12 расширенных канонических ответов в 14 подразделах. Все исходные ID сохранены, 7 вопросов перераспределены без изменения ID. Oxfmt, content:report, content:build и полный content:check прошли для 1266 вопросов. Приложение, код примеров и seed не запускались."
+  ]
+}

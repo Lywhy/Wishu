@@ -1,5 +1,15 @@
 import { useContext, useId, useRef, useState, type ChangeEvent, type FormEvent } from "react"
 import { Link, useNavigate, useSearchParams } from "react-router-dom"
+import { PageHeading } from "@/components/catalog/page-heading"
+import { PageState } from "@/components/catalog/page-state"
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogFooter,
+  DialogHeader,
+  DialogTitle,
+} from "@/components/ui/dialog"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
@@ -102,6 +112,8 @@ export function QuestionCreatePage() {
     }
   })
   const [busy, setBusy] = useState(false)
+  const [attempted, setAttempted] = useState(false)
+  const [discardOpen, setDiscardOpen] = useState(false)
   const [error, setError] = useState("")
   const section = available.find((item) => item.id === value.sectionId)
   const topic = section?.title ?? "JavaScript"
@@ -112,11 +124,13 @@ export function QuestionCreatePage() {
   async function submit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault()
     if (sending.current || !addQuestion) return
+    setAttempted(true)
     const invalid = fields.find(
       (field) =>
         "required" in field && field.required && value[field.key].trim().length < field.min,
     )
     if (invalid && "min" in invalid) {
+      document.getElementById(prefix + "-" + invalid.key)?.focus()
       setError(
         "Заполните поле «" +
           invalid.label +
@@ -147,20 +161,22 @@ export function QuestionCreatePage() {
       <QuestionBreadcrumbs
         items={[{ label: "Вопросы", to: "/questions" }, { label: "Новый вопрос" }]}
       />
-      <header className="mb-6 space-y-2">
-        <h1 className="text-3xl font-semibold tracking-tight">Добавить вопрос</h1>
-        <p className="max-w-2xl text-sm leading-6 text-muted-foreground">
-          Выберите тему и подготовьте ответ с примерами. После сохранения вопрос появится в общем
-          каталоге платформы.
-        </p>
-      </header>
+      <PageHeading
+        title="Добавить вопрос"
+        description="Выберите тему и подготовьте ответ с примерами. После сохранения вопрос появится в общем каталоге платформы."
+      />
       {!available.length ? (
-        <p className="rounded-xl border p-6 text-sm">
-          Пока нет доступных подразделов для добавления вопросов.
-        </p>
+        <PageState
+          heading="h2"
+          kind="unavailable"
+          title="Подразделы пока недоступны"
+          description="Пока нет доступных подразделов для добавления вопросов."
+        />
       ) : (
         <form
           onSubmit={submit}
+          aria-busy={busy}
+          onInvalidCapture={() => setAttempted(true)}
           className="grid items-start gap-6 xl:grid-cols-[minmax(0,1fr)_minmax(0,1fr)]"
         >
           <fieldset
@@ -260,13 +276,21 @@ export function QuestionCreatePage() {
             {fields.map((field) => {
               const id = prefix + "-" + field.key
               const required = "required" in field && field.required
+              const fieldError =
+                attempted &&
+                required &&
+                "min" in field &&
+                value[field.key].trim().length < field.min
+                  ? `Укажите не менее ${field.min} символов без пробелов по краям.`
+                  : ""
               const common = {
                 id,
                 value: value[field.key],
                 required,
                 maxLength: field.max,
                 minLength: "min" in field ? field.min : undefined,
-                "aria-describedby": id + "-hint",
+                "aria-describedby": id + "-hint" + (fieldError ? " " + id + "-error" : ""),
+                "aria-invalid": !!fieldError,
                 onChange: (event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) =>
                   update(field.key, event.target.value),
               }
@@ -288,6 +312,11 @@ export function QuestionCreatePage() {
                   <p id={id + "-hint"} className="text-xs leading-5 text-muted-foreground">
                     {field.hint}
                   </p>
+                  {fieldError && (
+                    <p id={id + "-error"} className="text-xs leading-6 text-destructive">
+                      {fieldError}
+                    </p>
+                  )}
                 </div>
               )
             })}
@@ -308,12 +337,8 @@ export function QuestionCreatePage() {
                 variant="outline"
                 disabled={busy}
                 onClick={() => {
-                  if (
-                    fields.some((field) => value[field.key].trim()) &&
-                    !window.confirm("Уйти без сохранения вопроса?")
-                  )
-                    return
-                  navigate("/questions")
+                  if (fields.some((field) => value[field.key].trim())) setDiscardOpen(true)
+                  else navigate("/questions")
                 }}
               >
                 Отмена
@@ -321,7 +346,7 @@ export function QuestionCreatePage() {
             </div>
           </fieldset>
           <aside
-            className="min-w-0 rounded-xl border bg-card p-5 sm:p-6 xl:sticky xl:top-6 xl:max-h-[calc(100dvh-3rem)] xl:overflow-y-auto"
+            className="min-w-0 rounded-xl border bg-card p-5 sm:p-6 xl:sticky xl:top-24 xl:max-h-[calc(100dvh-7.5rem)] xl:overflow-y-auto xl:overscroll-contain"
             aria-label="Предпросмотр вопроса"
           >
             <p className="mb-5 text-xs font-medium tracking-wide text-muted-foreground">
@@ -362,6 +387,25 @@ export function QuestionCreatePage() {
           </aside>
         </form>
       )}
+      <Dialog open={discardOpen} onOpenChange={setDiscardOpen}>
+        <DialogContent>
+          <DialogHeader>
+            <DialogTitle>Уйти без сохранения вопроса?</DialogTitle>
+            <DialogDescription>
+              Введённое содержимое будет потеряно. Можно вернуться к редактированию и сохранить
+              вопрос.
+            </DialogDescription>
+          </DialogHeader>
+          <DialogFooter>
+            <Button variant="outline" onClick={() => setDiscardOpen(false)}>
+              Продолжить редактирование
+            </Button>
+            <Button variant="destructive" onClick={() => navigate("/questions")}>
+              Уйти без сохранения
+            </Button>
+          </DialogFooter>
+        </DialogContent>
+      </Dialog>
       <p className="mt-6 text-xs text-muted-foreground">
         Вернуться к{" "}
         <Link className="text-primary underline underline-offset-4" to="/questions">

@@ -1,0 +1,73 @@
+{
+  "schemaVersion": 1,
+  "id": "react-core-20261108-testing",
+  "title": "React: testing",
+  "sectionId": "react",
+  "subsectionId": "testing",
+  "currentPass": "complete",
+  "goalIds": [
+    "core",
+    "react-test-role-queries",
+    "react-test-user-event",
+    "react-test-act-boundary",
+    "react-test-waitfor-purity",
+    "react-test-fake-timers",
+    "react-test-rerender-remount",
+    "react-error-boundary"
+  ],
+  "questionIds": [
+    "react-test-role-queries",
+    "react-test-user-event",
+    "react-test-act-boundary",
+    "react-test-waitfor-purity",
+    "react-test-fake-timers",
+    "react-test-rerender-remount",
+    "react-error-boundary"
+  ],
+  "scopePass": {
+    "status": "complete",
+    "remaining": []
+  },
+  "answerPass": {
+    "status": "complete",
+    "remaining": []
+  },
+  "baseline": [
+    {
+      "id": "react-error-boundary",
+      "title": "Какие ошибки ловит Error Boundary и какие остаются снаружи?",
+      "contentHash": "071c355dbe729bbe7124e9fb9c31c21abdd4550a5cd3988e9bd0de15cd9d4fa0"
+    },
+    {
+      "id": "react-test-behavior",
+      "title": "Что стоит проверять в тесте React-компонента?",
+      "contentHash": "952d27cc0266c8bdff3fcb2f9dd805cc34063fafa87a42c4b17eaddbb562f9e8"
+    },
+    {
+      "id": "react-async-tests",
+      "title": "Чем getBy, queryBy и findBy отличаются в асинхронном тесте?",
+      "contentHash": "190922997c06a609baf6088136d408ea92b4df34565af52aae378c345f0304a8"
+    },
+    {
+      "id": "react-effect-test",
+      "title": "Как проверить корректность подписки и cleanup компонента?",
+      "contentHash": "5cfac5319559bb43a013af3250c62c8a531d8d3890607a7c66c9b6f5dbf6565f"
+    },
+    {
+      "id": "react-test-browser-boundary",
+      "title": "Почему компонентный тест в jsdom не доказывает корректность layout и реального фокуса?",
+      "contentHash": "b9a3e5a5deff7a5df6803619853d29484b782333991ae631fd18f9ed2db016de"
+    }
+  ],
+  "notes": [
+    "Сначала сопоставлены все 94 действующие React-карточки. Redux и Zustand сохраняются без повторного пересмотра.",
+    "react-test-role-queries: Проверять доступный пользователю контракт элемента и осознанно выбирать test id. Закрепление: react-test-behavior",
+    "react-test-user-event: Различать пользовательское взаимодействие и отправку отдельного DOM-события. Закрепление: react-async-tests",
+    "react-test-act-boundary: Дождаться обновлений React от тестового действия и найти пропущенную асинхронную границу. Закрепление: react-effect-test",
+    "react-test-waitfor-purity: Отделять однократное действие от повторяемой проверки асинхронного результата. Закрепление: react-async-tests",
+    "react-test-fake-timers: Продвигать виртуальное время и восстанавливать таймеры без утечки между тестами. Закрепление: react-effect-test",
+    "react-test-rerender-remount: Проверять обновление props и пересоздание компонента разными сценариями. Закрепление: react-state-identity",
+    "Ключи, идентичность state, обработчики, очередь, эффекты, memo, controlled input, Error Boundary и правила хуков расширяются под прежними ID; useId и сравнение transition/deferred не дублируются.",
+    "Контент отформатирован. content:report: +34 новых, 11 расширенных ответов и 4 изменения общих источников; удалений и лексических кандидатов нет. content:build и полный content:check прошли для 963 вопросов. Примеры и приложение не запускались."
+  ]
+}

@@ -20,12 +20,12 @@ export function UndoQuestionMark() {
   useEffect(() => subscribeQuestionMarkUndo(() => setUndo(getQuestionMarkUndo())), [])
   useEffect(() => {
     if (!undo) return
-    const timer = setTimeout(() => setUndo(null), Math.max(0, undo.until - Date.now()))
+    const timer = setTimeout(clearQuestionMarkUndo, Math.max(0, undo.until - Date.now()))
     return () => clearTimeout(timer)
   }, [undo])
   if (!undo) return null
   return (
-    <div className="fixed right-4 bottom-4 left-4 z-40 flex items-center justify-between gap-3 rounded-xl border bg-popover p-3 text-xs text-popover-foreground shadow-lg sm:right-auto sm:left-6 sm:w-96">
+    <div className="fixed right-4 bottom-4 left-4 z-40 flex animate-in items-center justify-between gap-3 rounded-xl border bg-popover p-3 text-xs text-popover-foreground shadow-lg duration-350 ease-[cubic-bezier(0.22,0.61,0.36,1)] fade-in slide-in-from-bottom-1 motion-reduce:animate-none! sm:right-auto sm:left-6 sm:w-96">
       <div className="min-w-0 flex-1">
         <output className="block font-medium">
           {saving

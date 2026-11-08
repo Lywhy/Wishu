@@ -1,4 +1,6 @@
+import { AnimatedBlock } from "@/components/catalog/catalog-primitives"
 import { clearQuestionMarkUndo } from "@/lib/question-mark-actions"
+import { PageState } from "@/components/catalog/page-state"
 import { CatalogLoading } from "@/components/catalog/catalog-loading"
 import { useEffect, useState } from "react"
 import { Outlet } from "react-router-dom"
@@ -64,13 +66,12 @@ export function QuestionsLayout() {
 
   if (failed)
     return (
-      <section className="flex min-h-[60vh] flex-col items-center justify-center text-center">
-        <h1 className="text-2xl font-semibold">Не удалось загрузить вопросы</h1>
-        <p className="mt-3 max-w-md text-sm leading-7 text-muted-foreground">
-          Проверьте подключение и попробуйте ещё раз.
-        </p>
+      <PageState
+        kind="error"
+        title="Не удалось загрузить вопросы"
+        description="Проверьте подключение и попробуйте ещё раз."
+      >
         <Button
-          className="mt-6"
           onClick={() => {
             setFailed(false)
             setAttempt((value) => value + 1)
@@ -78,7 +79,7 @@ export function QuestionsLayout() {
         >
           Повторить загрузку
         </Button>
-      </section>
+      </PageState>
     )
   if (!catalog) return <CatalogLoading label="Загружаем разделы и ваш прогресс…" />
   return (
@@ -113,9 +114,9 @@ export function QuestionsLayout() {
         }}
       >
         <QuestionRouteHistory />
-        <div className="[overflow-anchor:none]">
+        <AnimatedBlock className="min-w-0 [overflow-anchor:none]">
           <Outlet />
-        </div>
+        </AnimatedBlock>
       </AddQuestionContext.Provider>
       <div
         className="pointer-events-none fixed top-4 right-4 z-50 w-[calc(100%-2rem)] max-w-sm"

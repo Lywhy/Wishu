@@ -1,12 +1,15 @@
+import { PageState } from "@/components/catalog/page-state"
+import { PageAppearance } from "@/components/catalog/page-appearance"
 import { GlobalSearch } from "@/components/experience/global-search"
 import { InterfaceSettings } from "@/components/experience/interface-settings"
 import { useQuestionExperience } from "@/stores/question-experience"
 import { GradientBackground } from "@/components/experience/gradient-background"
 import { SessionBanner } from "@/pages/study-session-page"
 import { CatalogScrollRestoration } from "@/components/experience/catalog-scroll-restoration"
-import { Braces, Moon, Sun } from "lucide-react"
+import { useFeedbackDrafts } from "@/stores/feedback-drafts"
+import { feedbackPageForPath } from "@/lib/platform-feedback"
+import { MessageSquare, Moon, Sun } from "lucide-react"
 import { Link, NavLink, Outlet, useLocation } from "react-router-dom"
-import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { cn } from "@/lib/utils"
 import { useTheme } from "@/lib/theme-context"
@@ -15,7 +18,6 @@ const navigation = [
   { to: "/learn", title: "Обучение" },
   { to: "/questions", title: "Вопросы" },
   { to: "/tasks", title: "Задачи" },
-  { to: "/session", title: "Короткая подготовка" },
   { to: "/interviews", title: "Собеседования" },
 ]
 
@@ -30,7 +32,7 @@ export function AppLayout() {
   const requestedReturn =
     route.state?.returnTo ??
     (typeof sessionReturn === "string" &&
-    /^\/(interviews|session|mock-interview)(?:\?|$)/.test(sessionReturn)
+    /^\/(interviews|session|questions\/preparation|mock-interview)(?:\?|$)/.test(sessionReturn)
       ? sessionReturn
       : null)
   const returnTo =
@@ -51,8 +53,8 @@ export function AppLayout() {
       >
         К содержимому
       </a>
-      <header className="sticky top-0 z-30 border-b bg-background/95 backdrop-blur-sm">
-        <div className="mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-x-4 gap-y-3 px-5 pt-5 sm:px-8 lg:h-16 lg:flex-nowrap lg:gap-x-8 lg:gap-y-0 lg:pt-0">
+      <header className="sticky top-0 z-30 border-b border-border/70 bg-background/95 backdrop-blur-sm">
+        <div className="mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-x-4 gap-y-3 px-4 pt-4 sm:px-8 lg:h-16 lg:flex-nowrap lg:gap-x-8 lg:gap-y-0 lg:pt-0">
           <Link
             to="/learn"
             aria-label="Wishu - главная"
@@ -64,7 +66,7 @@ export function AppLayout() {
           </Link>
           <nav
             aria-label="Главная навигация"
-            className="order-3 -mb-px flex w-full justify-between gap-4 overflow-x-auto sm:gap-6 lg:order-0 lg:h-full lg:w-auto lg:justify-start"
+            className="order-3 -mb-px flex w-full justify-between gap-4 overflow-x-auto overscroll-x-contain sm:gap-6 lg:order-0 lg:h-full lg:w-auto lg:justify-start"
           >
             {navigation.map(({ to, title }) => (
               <NavLink
@@ -72,7 +74,7 @@ export function AppLayout() {
                 to={to === "/questions" ? to + questionSearch : to}
                 className={({ isActive }) =>
                   cn(
-                    "flex shrink-0 items-center border-b-2 px-1 py-4 text-xs font-medium transition-colors outline-none focus-visible:ring-2 focus-visible:ring-ring sm:text-sm lg:py-0",
+                    "flex shrink-0 items-center border-b-2 px-1 py-4 text-xs font-medium transition-colors duration-150 outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-inset motion-reduce:transition-none sm:text-sm lg:py-0",
                     isActive
                       ? "border-primary text-primary"
                       : "border-transparent text-muted-foreground hover:text-foreground",
@@ -85,6 +87,22 @@ export function AppLayout() {
           </nav>
           <div className="flex items-center gap-1 sm:gap-3">
             <GlobalSearch />
+            <Button
+              nativeButton={false}
+              variant="outline"
+              size="icon"
+              aria-current={pathname === "/feedback" ? "page" : undefined}
+              aria-label="Баги и предложения"
+              title="Баги и предложения"
+              render={<Link to="/feedback" state={{ feedbackOrigin: pathname }} />}
+              onClick={() => {
+                const draft = useFeedbackDrafts.getState()
+                if (pathname !== "/feedback" && !draft.bug.details.trim())
+                  draft.updateBug({ page: feedbackPageForPath(pathname), path: pathname })
+              }}
+            >
+              <MessageSquare aria-hidden="true" />
+            </Button>
             <InterfaceSettings />
             <Button
               variant="outline"
@@ -98,22 +116,27 @@ export function AppLayout() {
           </div>
         </div>
       </header>
-      <main id="main" className="mx-auto w-full max-w-7xl flex-1 px-5 py-6 sm:px-8 lg:py-8">
+      <main
+        id="main"
+        className="mx-auto w-full max-w-7xl min-w-0 flex-1 scroll-mt-28 px-4 py-6 sm:px-8 lg:py-8"
+      >
         <CatalogScrollRestoration />
         <SessionBanner />
         {returnTo && (
           <Link className="mb-4 block text-xs text-primary underline" to={returnTo}>
             {returnTo.startsWith("/interviews")
               ? "Вернуться к собеседованию"
-              : returnTo === "/session"
+              : returnTo === "/session" || returnTo === "/questions/preparation"
                 ? "Вернуться к занятию"
                 : "Вернуться к исходному материалу"}
           </Link>
         )}
-        <Outlet />
+        <PageAppearance routeKey={pathname}>
+          <Outlet />
+        </PageAppearance>
       </main>
       {showFooter && (
-        <footer className="mx-auto flex w-full max-w-7xl shrink-0 flex-col gap-2 px-5 py-7 text-xs text-muted-foreground sm:flex-row sm:items-center sm:justify-between sm:px-8">
+        <footer className="mx-auto flex w-full max-w-7xl shrink-0 flex-col gap-2 px-4 py-7 text-xs text-muted-foreground sm:flex-row sm:items-center sm:justify-between sm:px-8">
           <span className="font-medium">
             wishu. <span className="ml-2 font-normal">Каждый день - на шаг увереннее.</span>
           </span>
@@ -126,16 +149,10 @@ export function AppLayout() {
 
 export function ComingSoonPage({ title, description }: { title: string; description: string }) {
   return (
-    <section className="mx-auto flex min-h-[65vh] max-w-lg flex-col items-center justify-center text-center">
-      <span className="mb-6 flex size-16 items-center justify-center rounded-2xl border bg-background text-primary">
-        <Braces className="size-7" aria-hidden="true" />
-      </span>
-      <Badge variant="secondary">Не найдено</Badge>
-      <h1 className="mt-4 text-3xl font-semibold tracking-tight">{title}</h1>
-      <p className="mt-3 text-sm leading-7 text-muted-foreground">{description}</p>
-      <Button nativeButton={false} className="mt-7" render={<Link to="/learn" />}>
+    <PageState title={title} description={description}>
+      <Button nativeButton={false} render={<Link to="/learn" />}>
         К обучению
       </Button>
-    </section>
+    </PageState>
   )
 }

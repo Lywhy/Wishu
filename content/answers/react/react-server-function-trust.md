@@ -1,0 +1,32 @@
+**Server Function должна проверять входные данные, пользователя и право на конкретную операцию на сервере.** Скрытая кнопка или TypeScript-тип не является границей безопасности.
+
+<!-- wishu:answer-block -->
+
+### Как это работает
+
+- В поддерживающей RSC-интеграции клиент получает ссылку на серверную функцию. Вызов нельзя считать доверенным только потому, что его обычно делает ваш компонент.
+
+- Проверяйте владение изменяемой сущностью, а не только наличие сессии. Не доверяйте userId или роли, переданным клиентом.
+
+- Возвращайте допустимые для протокола данные и безопасные сообщения об ошибках. Само указание "use server" не добавляет авторизацию. В обычном Vite SPA такая инфраструктура не возникает автоматически.
+
+### Пример
+
+```jsx
+"use server"
+export async function renameProject(projectId, title) {
+  const user = await requireUser()
+  const project = await loadProject(projectId)
+  if (project.ownerId !== user.id) throw new Error("Нет доступа")
+  return saveTitle(projectId, validateTitle(title))
+}
+// requireUser, loadProject и validateTitle реализует сервер приложения.
+```
+
+### Типичная ошибка
+
+Проверить право только при рендере страницы, но не повторить проверку при самой серверной операции.
+
+### Источники
+
+- [React: rsc / server-functions](https://react.dev/reference/rsc/server-functions)

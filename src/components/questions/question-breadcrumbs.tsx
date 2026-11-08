@@ -11,8 +11,8 @@ import {
 
 export function QuestionBreadcrumbs({ items }: { items: { label: string; to?: string }[] }) {
   return (
-    <Breadcrumb aria-label="Хлебные крошки" className="mb-7">
-      <BreadcrumbList className="text-xs">
+    <Breadcrumb aria-label="Хлебные крошки" className="mb-5 sm:mb-6">
+      <BreadcrumbList className="gap-y-2 text-xs leading-5 wrap-anywhere">
         {items.map((item, index) => (
           <Fragment key={`${item.label}-${index}`}>
             {index > 0 && <BreadcrumbSeparator />}

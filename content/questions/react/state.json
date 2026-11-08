@@ -20,7 +20,24 @@
         "react-use-reducer",
         "react-lazy-state",
         "react-normalized-state",
-        "react-draft-conflicts"
+        "react-draft-conflicts",
+        "react-state-replacement",
+        "react-state-function-value",
+        "react-state-status-model",
+        "react-state-object-is",
+        "react-state-remove-row",
+        "react-state-edit-row",
+        "react-state-sort-view",
+        "react-state-set-collection",
+        "react-state-selection-id",
+        "react-state-instance-isolation",
+        "react-state-event-next-value",
+        "react-state-previous-committed",
+        "react-state-edit-session-key",
+        "react-state-reducer-init",
+        "react-state-undo-model",
+        "react-state-transaction-boundary",
+        "react-state-versioned-server-merge"
       ]
     },
     {
@@ -35,9 +52,9 @@
     {
       "id": "react-state-queue",
       "title": "Что выведут три вызова setCount и когда нужен updater?",
-      "description": "Объяснить и применить правило с учётом его границ: Если новое состояние зависит от предыдущего, используйте updater.",
+      "description": "Снимок объясняет чтение state, очередь updater - вычисление следующего state.",
       "requiredDifficulties": ["Средний"],
-      "reviewed": false,
+      "reviewed": true,
       "priority": "core",
       "relatedSkillIds": []
     },
@@ -103,6 +120,159 @@
       "reviewed": false,
       "priority": "core",
       "relatedSkillIds": []
+    },
+    {
+      "id": "react-state-replacement",
+      "title": "Заменяет ли useState объект целиком или объединяет его поля?",
+      "description": "Сохранять нужные поля при обновлении объекта и отличать setter хука от setState класса.",
+      "requiredDifficulties": ["Базовый"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "react-state-function-value",
+      "title": "Как сохранить функцию в useState, чтобы React не вызвал её?",
+      "description": "Различать функцию-значение, инициализатор и updater по позиции API.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "react-state-status-model",
+      "title": "Почему status иногда лучше нескольких флагов isLoading, isSuccess и isError?",
+      "description": "Не допускать противоречивых комбинаций состояния запроса.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "react-state-object-is",
+      "title": "Почему setter с тем же значением может не обновить интерфейс?",
+      "description": "Объяснить и применить: Сравнивается идентичность значения, а не глубокое содержимое.",
+      "requiredDifficulties": ["Базовый"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "react-state-remove-row",
+      "title": "Как удалить запись из массива state, не затронув остальные записи?",
+      "description": "Объяснить и применить: Удаляйте по идентичности записи, возвращая новый массив.",
+      "requiredDifficulties": ["Базовый"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "react-state-edit-row",
+      "title": "Как обновить одну запись массива state по ID?",
+      "description": "Объяснить и применить: Заменяйте именно изменённую ветку данных.",
+      "requiredDifficulties": ["Базовый"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "react-state-sort-view",
+      "title": "Почему сортировку отображаемого списка нельзя делать прямо над props?",
+      "description": "Объяснить и применить: Сортируйте новое представление, не изменяя входные данные.",
+      "requiredDifficulties": ["Базовый"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "react-state-set-collection",
+      "title": "Как хранить выбранные ID в Set, чтобы React увидел изменение?",
+      "description": "Объяснить и применить: Изменение коллекции тоже должно создавать новый снимок.",
+      "requiredDifficulties": ["Базовый"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "react-state-selection-id",
+      "title": "Почему выбранную запись удобно хранить как ID, а не копию объекта?",
+      "description": "Объяснить и применить: Храните идентичность выбора, а данные получайте из текущего источника.",
+      "requiredDifficulties": ["Базовый"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "react-state-instance-isolation",
+      "title": "Почему два одинаковых счётчика на странице не делят state?",
+      "description": "Объяснить и применить: State принадлежит конкретной идентичности компонента в дереве.",
+      "requiredDifficulties": ["Базовый"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "react-state-event-next-value",
+      "title": "Как использовать следующее значение сразу в обработчике без чтения старого state?",
+      "description": "Объяснить и применить: Известный результат события можно использовать напрямую без ожидания нового render.",
+      "requiredDifficulties": ["Базовый"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "react-state-previous-committed",
+      "title": "Как сохранить предыдущее зафиксированное значение для сравнения, не создавая новый источник истины?",
+      "description": "Объяснить и применить: Определите, предыдущий относительно какого события снимок вам нужен.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "react-state-edit-session-key",
+      "title": "Как отличить смену редактируемой сущности от обновления её версии?",
+      "description": "Объяснить и применить: Срок жизни редактора должен следовать намерению пользователя, а не частоте обновлений.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "react-state-reducer-init",
+      "title": "Как третий аргумент useReducer помогает инициализировать сложное состояние?",
+      "description": "Объяснить и применить: Разделяйте исходный аргумент, чистую инициализацию и последующие переходы.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "react-state-undo-model",
+      "title": "Как организовать undo для локального редактора через историю состояний?",
+      "description": "Объяснить и применить: Истории нужны неизменяемые снимки и определённая единица правки.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "react-state-transaction-boundary",
+      "title": "Почему несколько setter разных владельцев не являются бизнес-транзакцией?",
+      "description": "Объяснить и применить: Атомарность модели и пакетирование рендера находятся на разных уровнях.",
+      "requiredDifficulties": ["Продвинутый"],
+      "reviewed": true,
+      "priority": "extended",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "react-state-versioned-server-merge",
+      "title": "Как согласовать локальный optimistic draft с новой серверной версией без потери правок?",
+      "description": "Объяснить и применить: Черновик, база редактирования и серверная версия - три разные сущности.",
+      "requiredDifficulties": ["Продвинутый"],
+      "reviewed": true,
+      "priority": "extended",
+      "relatedSkillIds": []
     }
   ],
   "questions": [
@@ -136,20 +306,19 @@
       "topic": "React",
       "difficulty": "Средний",
       "summary": "Очередь обновлений и пакетная обработка.",
-      "code": "function incrementThreeTimes() {\n  setCount(value => value + 1)\n  setCount(value => value + 1)\n  setCount(value => value + 1)\n}",
-      "takeaway": "Если новое состояние зависит от предыдущего, используйте updater.",
+      "takeaway": "Снимок объясняет чтение state, очередь updater - вычисление следующего state.",
       "moduleId": "react",
       "order": 1,
       "popular": false,
       "editorial": {
-        "learningGoal": "Объяснить и применить правило с учётом его границ: Если новое состояние зависит от предыдущего, используйте updater.",
-        "keywords": ["React", "Состояние и поток данных"],
+        "learningGoal": "Снимок объясняет чтение state, очередь updater - вычисление следующего state.",
+        "keywords": ["React", "state", "queue", "Состояние и поток данных"],
         "kind": "explanation",
-        "reviewStatus": "imported",
+        "reviewStatus": "ready",
         "goalIds": ["core", "react-state-queue"],
-        "relatedQuestionIds": [],
+        "relatedQuestionIds": ["react-state-snapshot", "react-state-replacement"],
         "priority": "core",
-        "sourceRefs": []
+        "sourceRefs": ["ref-0cb6df4c90364f44"]
       },
       "answerFile": "answers/react/react-state-queue.md"
     },
@@ -315,6 +484,380 @@
         "sourceRefs": ["ref-8b892800e16f2524"]
       },
       "answerFile": "answers/react/react-draft-conflicts.md"
+    },
+    {
+      "id": "react-state-replacement",
+      "title": "Заменяет ли useState объект целиком или объединяет его поля?",
+      "topic": "React",
+      "difficulty": "Базовый",
+      "summary": "Сохранять нужные поля при обновлении объекта и отличать setter хука от setState класса.",
+      "moduleId": "react",
+      "order": 9,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Сохранять нужные поля при обновлении объекта и отличать setter хука от setState класса.",
+        "keywords": ["React", "state", "replacement"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "goalIds": ["core", "react-state-replacement"],
+        "relatedQuestionIds": ["react-state-immutability"],
+        "priority": "core",
+        "sourceRefs": ["ref-d02f06bac391e604"]
+      },
+      "takeaway": "useState хранит одно значение; правила объединения задаёт ваш код.",
+      "answerFile": "answers/react/react-state-replacement.md"
+    },
+    {
+      "id": "react-state-function-value",
+      "title": "Как сохранить функцию в useState, чтобы React не вызвал её?",
+      "topic": "React",
+      "difficulty": "Средний",
+      "summary": "Различать функцию-значение, инициализатор и updater по позиции API.",
+      "moduleId": "react",
+      "order": 10,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Различать функцию-значение, инициализатор и updater по позиции API.",
+        "keywords": ["React", "state", "function", "value"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "goalIds": ["core", "react-state-function-value"],
+        "relatedQuestionIds": ["react-lazy-state"],
+        "priority": "core",
+        "sourceRefs": ["ref-d02f06bac391e604"]
+      },
+      "takeaway": "Функция как данные и функция как инструкция обновления различаются обёрткой.",
+      "answerFile": "answers/react/react-state-function-value.md"
+    },
+    {
+      "id": "react-state-status-model",
+      "title": "Почему status иногда лучше нескольких флагов isLoading, isSuccess и isError?",
+      "topic": "React",
+      "difficulty": "Средний",
+      "summary": "Не допускать противоречивых комбинаций состояния запроса.",
+      "moduleId": "react",
+      "order": 11,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Не допускать противоречивых комбинаций состояния запроса.",
+        "keywords": ["React", "state", "status", "model"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "goalIds": ["core", "react-state-status-model"],
+        "relatedQuestionIds": ["react-derived-state"],
+        "priority": "core",
+        "sourceRefs": ["ref-753634473fba230c"]
+      },
+      "takeaway": "Структура state должна исключать невозможные комбинации.",
+      "answerFile": "answers/react/react-state-status-model.md"
+    },
+    {
+      "id": "react-state-object-is",
+      "title": "Почему setter с тем же значением может не обновить интерфейс?",
+      "topic": "React",
+      "difficulty": "Базовый",
+      "summary": "Сравнивается идентичность значения, а не глубокое содержимое.",
+      "answerFile": "answers/react/react-state-object-is.md",
+      "takeaway": "Сравнивается идентичность значения, а не глубокое содержимое.",
+      "moduleId": "react",
+      "order": 12,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить: Сравнивается идентичность значения, а не глубокое содержимое.",
+        "keywords": ["React", "state", "object", "is"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "goalIds": ["core", "react-state-object-is"],
+        "relatedQuestionIds": ["react-state-immutability", "react-state-replacement"],
+        "priority": "core",
+        "sourceRefs": ["ref-d02f06bac391e604"]
+      }
+    },
+    {
+      "id": "react-state-remove-row",
+      "title": "Как удалить запись из массива state, не затронув остальные записи?",
+      "topic": "React",
+      "difficulty": "Базовый",
+      "summary": "Удаляйте по идентичности записи, возвращая новый массив.",
+      "answerFile": "answers/react/react-state-remove-row.md",
+      "takeaway": "Удаляйте по идентичности записи, возвращая новый массив.",
+      "moduleId": "react",
+      "order": 13,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить: Удаляйте по идентичности записи, возвращая новый массив.",
+        "keywords": ["React", "state", "remove", "row"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "goalIds": ["core", "react-state-remove-row"],
+        "relatedQuestionIds": ["react-state-immutability"],
+        "priority": "core",
+        "sourceRefs": ["ref-780ad74e1370bb9e"]
+      }
+    },
+    {
+      "id": "react-state-edit-row",
+      "title": "Как обновить одну запись массива state по ID?",
+      "topic": "React",
+      "difficulty": "Базовый",
+      "summary": "Заменяйте именно изменённую ветку данных.",
+      "answerFile": "answers/react/react-state-edit-row.md",
+      "takeaway": "Заменяйте именно изменённую ветку данных.",
+      "moduleId": "react",
+      "order": 14,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить: Заменяйте именно изменённую ветку данных.",
+        "keywords": ["React", "state", "edit", "row"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "goalIds": ["core", "react-state-edit-row"],
+        "relatedQuestionIds": ["react-state-immutability"],
+        "priority": "core",
+        "sourceRefs": ["ref-780ad74e1370bb9e"]
+      }
+    },
+    {
+      "id": "react-state-sort-view",
+      "title": "Почему сортировку отображаемого списка нельзя делать прямо над props?",
+      "topic": "React",
+      "difficulty": "Базовый",
+      "summary": "Сортируйте новое представление, не изменяя входные данные.",
+      "answerFile": "answers/react/react-state-sort-view.md",
+      "takeaway": "Сортируйте новое представление, не изменяя входные данные.",
+      "moduleId": "react",
+      "order": 15,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить: Сортируйте новое представление, не изменяя входные данные.",
+        "keywords": ["React", "state", "sort", "view"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "goalIds": ["core", "react-state-sort-view"],
+        "relatedQuestionIds": ["react-state-immutability"],
+        "priority": "core",
+        "sourceRefs": ["ref-780ad74e1370bb9e"]
+      }
+    },
+    {
+      "id": "react-state-set-collection",
+      "title": "Как хранить выбранные ID в Set, чтобы React увидел изменение?",
+      "topic": "React",
+      "difficulty": "Базовый",
+      "summary": "Изменение коллекции тоже должно создавать новый снимок.",
+      "answerFile": "answers/react/react-state-set-collection.md",
+      "takeaway": "Изменение коллекции тоже должно создавать новый снимок.",
+      "moduleId": "react",
+      "order": 16,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить: Изменение коллекции тоже должно создавать новый снимок.",
+        "keywords": ["React", "state", "set", "collection"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "goalIds": ["core", "react-state-set-collection"],
+        "relatedQuestionIds": ["react-state-immutability"],
+        "priority": "core",
+        "sourceRefs": ["ref-d02f06bac391e604"]
+      }
+    },
+    {
+      "id": "react-state-selection-id",
+      "title": "Почему выбранную запись удобно хранить как ID, а не копию объекта?",
+      "topic": "React",
+      "difficulty": "Базовый",
+      "summary": "Храните идентичность выбора, а данные получайте из текущего источника.",
+      "answerFile": "answers/react/react-state-selection-id.md",
+      "takeaway": "Храните идентичность выбора, а данные получайте из текущего источника.",
+      "moduleId": "react",
+      "order": 17,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить: Храните идентичность выбора, а данные получайте из текущего источника.",
+        "keywords": ["React", "state", "selection", "id"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "goalIds": ["core", "react-state-selection-id"],
+        "relatedQuestionIds": ["react-state-immutability", "react-normalized-state"],
+        "priority": "core",
+        "sourceRefs": ["ref-753634473fba230c"]
+      }
+    },
+    {
+      "id": "react-state-instance-isolation",
+      "title": "Почему два одинаковых счётчика на странице не делят state?",
+      "topic": "React",
+      "difficulty": "Базовый",
+      "summary": "State принадлежит конкретной идентичности компонента в дереве.",
+      "answerFile": "answers/react/react-state-instance-isolation.md",
+      "takeaway": "State принадлежит конкретной идентичности компонента в дереве.",
+      "moduleId": "react",
+      "order": 18,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить: State принадлежит конкретной идентичности компонента в дереве.",
+        "keywords": ["React", "state", "instance", "isolation"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "goalIds": ["core", "react-state-instance-isolation"],
+        "relatedQuestionIds": ["react-state-immutability", "react-state-identity"],
+        "priority": "core",
+        "sourceRefs": ["ref-009386030813e936"]
+      }
+    },
+    {
+      "id": "react-state-event-next-value",
+      "title": "Как использовать следующее значение сразу в обработчике без чтения старого state?",
+      "topic": "React",
+      "difficulty": "Базовый",
+      "summary": "Известный результат события можно использовать напрямую без ожидания нового render.",
+      "answerFile": "answers/react/react-state-event-next-value.md",
+      "takeaway": "Известный результат события можно использовать напрямую без ожидания нового render.",
+      "moduleId": "react",
+      "order": 19,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить: Известный результат события можно использовать напрямую без ожидания нового render.",
+        "keywords": ["React", "state", "event", "next", "value"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "goalIds": ["core", "react-state-event-next-value"],
+        "relatedQuestionIds": ["react-state-immutability", "react-state-snapshot"],
+        "priority": "core",
+        "sourceRefs": ["ref-d02f06bac391e604"]
+      }
+    },
+    {
+      "id": "react-state-previous-committed",
+      "title": "Как сохранить предыдущее зафиксированное значение для сравнения, не создавая новый источник истины?",
+      "topic": "React",
+      "difficulty": "Средний",
+      "summary": "Определите, предыдущий относительно какого события снимок вам нужен.",
+      "answerFile": "answers/react/react-state-previous-committed.md",
+      "takeaway": "Определите, предыдущий относительно какого события снимок вам нужен.",
+      "moduleId": "react",
+      "order": 20,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить: Определите, предыдущий относительно какого события снимок вам нужен.",
+        "keywords": ["React", "state", "previous", "committed"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "goalIds": ["core", "react-state-previous-committed"],
+        "relatedQuestionIds": ["react-state-immutability", "react-ref-state"],
+        "priority": "core",
+        "sourceRefs": ["ref-1b61fba5c5c8d219"]
+      }
+    },
+    {
+      "id": "react-state-edit-session-key",
+      "title": "Как отличить смену редактируемой сущности от обновления её версии?",
+      "topic": "React",
+      "difficulty": "Средний",
+      "summary": "Срок жизни редактора должен следовать намерению пользователя, а не частоте обновлений.",
+      "answerFile": "answers/react/react-state-edit-session-key.md",
+      "takeaway": "Срок жизни редактора должен следовать намерению пользователя, а не частоте обновлений.",
+      "moduleId": "react",
+      "order": 21,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить: Срок жизни редактора должен следовать намерению пользователя, а не частоте обновлений.",
+        "keywords": ["React", "state", "edit", "session", "key"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "goalIds": ["core", "react-state-edit-session-key"],
+        "relatedQuestionIds": ["react-state-immutability", "react-draft-conflicts"],
+        "priority": "core",
+        "sourceRefs": ["ref-f16e9dc5d993c88a"]
+      }
+    },
+    {
+      "id": "react-state-reducer-init",
+      "title": "Как третий аргумент useReducer помогает инициализировать сложное состояние?",
+      "topic": "React",
+      "difficulty": "Средний",
+      "summary": "Разделяйте исходный аргумент, чистую инициализацию и последующие переходы.",
+      "answerFile": "answers/react/react-state-reducer-init.md",
+      "takeaway": "Разделяйте исходный аргумент, чистую инициализацию и последующие переходы.",
+      "moduleId": "react",
+      "order": 22,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить: Разделяйте исходный аргумент, чистую инициализацию и последующие переходы.",
+        "keywords": ["React", "state", "reducer", "init"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "goalIds": ["core", "react-state-reducer-init"],
+        "relatedQuestionIds": ["react-state-immutability", "react-use-reducer"],
+        "priority": "core",
+        "sourceRefs": ["ref-be89a5515af7c19d"]
+      }
+    },
+    {
+      "id": "react-state-undo-model",
+      "title": "Как организовать undo для локального редактора через историю состояний?",
+      "topic": "React",
+      "difficulty": "Средний",
+      "summary": "Истории нужны неизменяемые снимки и определённая единица правки.",
+      "answerFile": "answers/react/react-state-undo-model.md",
+      "takeaway": "Истории нужны неизменяемые снимки и определённая единица правки.",
+      "moduleId": "react",
+      "order": 23,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить: Истории нужны неизменяемые снимки и определённая единица правки.",
+        "keywords": ["React", "state", "undo", "model"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "goalIds": ["core", "react-state-undo-model"],
+        "relatedQuestionIds": ["react-state-immutability", "react-use-reducer"],
+        "priority": "core",
+        "sourceRefs": ["ref-0e83d2105268d73c"]
+      }
+    },
+    {
+      "id": "react-state-transaction-boundary",
+      "title": "Почему несколько setter разных владельцев не являются бизнес-транзакцией?",
+      "topic": "React",
+      "difficulty": "Продвинутый",
+      "summary": "Атомарность модели и пакетирование рендера находятся на разных уровнях.",
+      "answerFile": "answers/react/react-state-transaction-boundary.md",
+      "takeaway": "Атомарность модели и пакетирование рендера находятся на разных уровнях.",
+      "moduleId": "react",
+      "order": 24,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить: Атомарность модели и пакетирование рендера находятся на разных уровнях.",
+        "keywords": ["React", "state", "transaction", "boundary"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "goalIds": ["core", "react-state-transaction-boundary"],
+        "relatedQuestionIds": ["react-state-immutability"],
+        "priority": "extended",
+        "sourceRefs": ["ref-0cb6df4c90364f44"]
+      }
+    },
+    {
+      "id": "react-state-versioned-server-merge",
+      "title": "Как согласовать локальный optimistic draft с новой серверной версией без потери правок?",
+      "topic": "React",
+      "difficulty": "Продвинутый",
+      "summary": "Черновик, база редактирования и серверная версия - три разные сущности.",
+      "answerFile": "answers/react/react-state-versioned-server-merge.md",
+      "takeaway": "Черновик, база редактирования и серверная версия - три разные сущности.",
+      "moduleId": "react",
+      "order": 25,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить: Черновик, база редактирования и серверная версия - три разные сущности.",
+        "keywords": ["React", "state", "versioned", "server", "merge"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "goalIds": ["core", "react-state-versioned-server-merge"],
+        "relatedQuestionIds": ["react-state-immutability", "react-draft-conflicts"],
+        "priority": "extended",
+        "sourceRefs": ["ref-8b892800e16f2524"]
+      }
     }
   ]
 }

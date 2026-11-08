@@ -17,15 +17,29 @@
         "react-accessible-fields",
         "react-action-state",
         "react-form-status",
-        "react-input-composition"
+        "react-input-composition",
+        "react-select-textarea-values",
+        "react-file-input-contract",
+        "react-number-input-draft",
+        "react-form-reset-contract",
+        "react-form-checkbox-group",
+        "react-form-radio-group",
+        "react-form-submit-button-type",
+        "react-form-repeated-names",
+        "react-form-native-validity",
+        "react-form-readonly-disabled",
+        "react-form-submitter-intent",
+        "react-form-server-field-errors",
+        "react-form-keyboard-ime-submit",
+        "react-form-action-error-boundary"
       ]
     },
     {
       "id": "react-controlled-input",
       "title": "Чем управляемое поле отличается от неуправляемого?",
-      "description": "Объяснить и применить правило с учётом его границ: У поля должен быть определён один источник текущего значения.",
+      "description": "У текущего значения поля должен быть один понятный владелец.",
       "requiredDifficulties": ["Базовый"],
-      "reviewed": false,
+      "reviewed": true,
       "priority": "core",
       "relatedSkillIds": []
     },
@@ -73,6 +87,132 @@
       "reviewed": false,
       "priority": "core",
       "relatedSkillIds": []
+    },
+    {
+      "id": "react-select-textarea-values",
+      "title": "Как управлять select и textarea в React, включая multiple?",
+      "description": "Корректно задавать value, defaultValue и массив выбранных значений.",
+      "requiredDifficulties": ["Базовый"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "react-file-input-contract",
+      "title": "Как читать выбранные файлы в React и почему нельзя задавать путь через value?",
+      "description": "Работать с FileList и отличать клиентскую проверку от серверной валидации файла.",
+      "requiredDifficulties": ["Базовый"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "react-number-input-draft",
+      "title": "Почему число в input полезно хранить как строковый черновик?",
+      "description": "Сохранять пустое и промежуточное значение поля, преобразуя данные на границе использования.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "react-form-reset-contract",
+      "title": "Что сбрасывает form.reset() и как сбросить управляемые поля?",
+      "description": "Различать сброс DOM-контролов и состояния React, включая успешный form Action.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "react-form-checkbox-group",
+      "title": "Как управлять несколькими checkbox с независимыми значениями?",
+      "description": "Объяснить и применить: Разделяйте идентификатор пункта и его выбранность.",
+      "requiredDifficulties": ["Базовый"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "react-form-radio-group",
+      "title": "Как связать группу radio с одним React-state?",
+      "description": "Объяснить и применить: Один выбор группы удобно описывается одним значением.",
+      "requiredDifficulties": ["Базовый"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "react-form-submit-button-type",
+      "title": "Почему вспомогательная кнопка внутри формы неожиданно отправляет данные?",
+      "description": "Объяснить и применить: Смысл кнопки формы нужно задать явно.",
+      "requiredDifficulties": ["Базовый"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "react-form-repeated-names",
+      "title": "Как прочитать несколько значений одного name через FormData?",
+      "description": "Объяснить и применить: Способ чтения формы должен учитывать кратность поля.",
+      "requiredDifficulties": ["Базовый"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "react-form-native-validity",
+      "title": "Как использовать required и onInvalid вместе с React-состоянием ошибки?",
+      "description": "Объяснить и применить: Выберите согласованное взаимодействие браузерной и прикладной валидации.",
+      "requiredDifficulties": ["Базовый"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "react-form-readonly-disabled",
+      "title": "Чем readOnly отличается от disabled при редактировании и отправке формы?",
+      "description": "Объяснить и применить: Неизменяемое значение и отключённый контрол имеют разную семантику.",
+      "requiredDifficulties": ["Базовый"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "react-form-submitter-intent",
+      "title": "Как различить несколько submit-кнопок одной формы?",
+      "description": "Объяснить и применить: Передавайте намерение как часть контракта отправки.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "react-form-server-field-errors",
+      "title": "Как связать ошибки полей от сервера с текущей попыткой отправки?",
+      "description": "Объяснить и применить: Ошибка относится к проверяемому снимку данных и попытке операции.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "react-form-keyboard-ime-submit",
+      "title": "Почему Enter во время IME-композиции не должен преждевременно отправлять форму?",
+      "description": "Объяснить и применить: Клавиатурная команда должна учитывать состояние композиции.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "react-form-action-error-boundary",
+      "title": "Какие ошибки React Action могут попасть в Error Boundary, а какие лучше вернуть как данные?",
+      "description": "Объяснить и применить: Разделяйте ожидаемый результат валидации и аварийный сбой Action.",
+      "requiredDifficulties": ["Продвинутый"],
+      "reviewed": true,
+      "priority": "extended",
+      "relatedSkillIds": []
     }
   ],
   "questions": [
@@ -82,20 +222,23 @@
       "topic": "React",
       "difficulty": "Базовый",
       "summary": "Value, defaultValue и источник значения.",
-      "code": "function NameField() {\n  const [name, setName] = useState(\"\")\n  return <input value={name} onChange={event => setName(event.target.value)} />\n}",
-      "takeaway": "У поля должен быть определён один источник текущего значения.",
+      "takeaway": "У текущего значения поля должен быть один понятный владелец.",
       "moduleId": "react",
       "order": 0,
       "popular": false,
       "editorial": {
-        "learningGoal": "Объяснить и применить правило с учётом его границ: У поля должен быть определён один источник текущего значения.",
-        "keywords": ["React", "Формы и пользовательский ввод"],
+        "learningGoal": "У текущего значения поля должен быть один понятный владелец.",
+        "keywords": ["React", "controlled", "input", "Формы и пользовательский ввод"],
         "kind": "explanation",
-        "reviewStatus": "imported",
+        "reviewStatus": "ready",
         "goalIds": ["core", "react-controlled-input"],
-        "relatedQuestionIds": [],
+        "relatedQuestionIds": [
+          "react-form-submit",
+          "react-number-input-draft",
+          "react-file-input-contract"
+        ],
         "priority": "core",
-        "sourceRefs": []
+        "sourceRefs": ["ref-123e26bb70073d17"]
       },
       "answerFile": "answers/react/react-controlled-input.md"
     },
@@ -214,6 +357,314 @@
         "sourceRefs": ["ref-123e26bb70073d17"]
       },
       "answerFile": "answers/react/react-input-composition.md"
+    },
+    {
+      "id": "react-select-textarea-values",
+      "title": "Как управлять select и textarea в React, включая multiple?",
+      "topic": "React",
+      "difficulty": "Базовый",
+      "summary": "Корректно задавать value, defaultValue и массив выбранных значений.",
+      "moduleId": "react",
+      "order": 6,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Корректно задавать value, defaultValue и массив выбранных значений.",
+        "keywords": ["React", "select", "textarea", "values"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "goalIds": ["core", "react-select-textarea-values"],
+        "relatedQuestionIds": ["react-controlled-input"],
+        "priority": "core",
+        "sourceRefs": ["ref-7f76ab5dff7dfb83", "ref-c25285663f429201"]
+      },
+      "takeaway": "Значением управляют на уровне контрола, сохраняя его режим.",
+      "answerFile": "answers/react/react-select-textarea-values.md"
+    },
+    {
+      "id": "react-file-input-contract",
+      "title": "Как читать выбранные файлы в React и почему нельзя задавать путь через value?",
+      "topic": "React",
+      "difficulty": "Базовый",
+      "summary": "Работать с FileList и отличать клиентскую проверку от серверной валидации файла.",
+      "moduleId": "react",
+      "order": 7,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Работать с FileList и отличать клиентскую проверку от серверной валидации файла.",
+        "keywords": ["React", "file", "input", "contract"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "goalIds": ["core", "react-file-input-contract"],
+        "relatedQuestionIds": ["react-form-submit"],
+        "priority": "core",
+        "sourceRefs": ["ref-123e26bb70073d17", "ref-35348c25dcfd40c8"]
+      },
+      "takeaway": "Выбор файла принадлежит пользователю и браузеру; приложение получает File.",
+      "answerFile": "answers/react/react-file-input-contract.md"
+    },
+    {
+      "id": "react-number-input-draft",
+      "title": "Почему число в input полезно хранить как строковый черновик?",
+      "topic": "React",
+      "difficulty": "Средний",
+      "summary": "Сохранять пустое и промежуточное значение поля, преобразуя данные на границе использования.",
+      "moduleId": "react",
+      "order": 8,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Сохранять пустое и промежуточное значение поля, преобразуя данные на границе использования.",
+        "keywords": ["React", "number", "input", "draft"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "goalIds": ["core", "react-number-input-draft"],
+        "relatedQuestionIds": ["react-input-composition"],
+        "priority": "core",
+        "sourceRefs": ["ref-123e26bb70073d17"]
+      },
+      "takeaway": "Черновик ввода и проверенное число - разные уровни данных.",
+      "answerFile": "answers/react/react-number-input-draft.md"
+    },
+    {
+      "id": "react-form-reset-contract",
+      "title": "Что сбрасывает form.reset() и как сбросить управляемые поля?",
+      "topic": "React",
+      "difficulty": "Средний",
+      "summary": "Различать сброс DOM-контролов и состояния React, включая успешный form Action.",
+      "moduleId": "react",
+      "order": 9,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Различать сброс DOM-контролов и состояния React, включая успешный form Action.",
+        "keywords": ["React", "form", "reset", "contract"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "goalIds": ["core", "react-form-reset-contract"],
+        "relatedQuestionIds": ["react-action-state"],
+        "priority": "core",
+        "sourceRefs": ["ref-8dc2f80871436bd1"]
+      },
+      "takeaway": "Сброс формы и сброс модели React нужно согласовать.",
+      "answerFile": "answers/react/react-form-reset-contract.md"
+    },
+    {
+      "id": "react-form-checkbox-group",
+      "title": "Как управлять несколькими checkbox с независимыми значениями?",
+      "topic": "React",
+      "difficulty": "Базовый",
+      "summary": "Разделяйте идентификатор пункта и его выбранность.",
+      "answerFile": "answers/react/react-form-checkbox-group.md",
+      "takeaway": "Разделяйте идентификатор пункта и его выбранность.",
+      "moduleId": "react",
+      "order": 10,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить: Разделяйте идентификатор пункта и его выбранность.",
+        "keywords": ["React", "form", "checkbox", "group"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "goalIds": ["core", "react-form-checkbox-group"],
+        "relatedQuestionIds": ["react-controlled-input"],
+        "priority": "core",
+        "sourceRefs": ["ref-123e26bb70073d17"]
+      }
+    },
+    {
+      "id": "react-form-radio-group",
+      "title": "Как связать группу radio с одним React-state?",
+      "topic": "React",
+      "difficulty": "Базовый",
+      "summary": "Один выбор группы удобно описывается одним значением.",
+      "answerFile": "answers/react/react-form-radio-group.md",
+      "takeaway": "Один выбор группы удобно описывается одним значением.",
+      "moduleId": "react",
+      "order": 11,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить: Один выбор группы удобно описывается одним значением.",
+        "keywords": ["React", "form", "radio", "group"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "goalIds": ["core", "react-form-radio-group"],
+        "relatedQuestionIds": ["react-controlled-input"],
+        "priority": "core",
+        "sourceRefs": ["ref-123e26bb70073d17"]
+      }
+    },
+    {
+      "id": "react-form-submit-button-type",
+      "title": "Почему вспомогательная кнопка внутри формы неожиданно отправляет данные?",
+      "topic": "React",
+      "difficulty": "Базовый",
+      "summary": "Смысл кнопки формы нужно задать явно.",
+      "answerFile": "answers/react/react-form-submit-button-type.md",
+      "takeaway": "Смысл кнопки формы нужно задать явно.",
+      "moduleId": "react",
+      "order": 12,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить: Смысл кнопки формы нужно задать явно.",
+        "keywords": ["React", "form", "submit", "button", "type"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "goalIds": ["core", "react-form-submit-button-type"],
+        "relatedQuestionIds": ["react-controlled-input"],
+        "priority": "core",
+        "sourceRefs": ["ref-8dc2f80871436bd1"]
+      }
+    },
+    {
+      "id": "react-form-repeated-names",
+      "title": "Как прочитать несколько значений одного name через FormData?",
+      "topic": "React",
+      "difficulty": "Базовый",
+      "summary": "Способ чтения формы должен учитывать кратность поля.",
+      "answerFile": "answers/react/react-form-repeated-names.md",
+      "takeaway": "Способ чтения формы должен учитывать кратность поля.",
+      "moduleId": "react",
+      "order": 13,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить: Способ чтения формы должен учитывать кратность поля.",
+        "keywords": ["React", "form", "repeated", "names"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "goalIds": ["core", "react-form-repeated-names"],
+        "relatedQuestionIds": ["react-controlled-input", "react-form-submit"],
+        "priority": "core",
+        "sourceRefs": ["ref-8dc2f80871436bd1"]
+      }
+    },
+    {
+      "id": "react-form-native-validity",
+      "title": "Как использовать required и onInvalid вместе с React-состоянием ошибки?",
+      "topic": "React",
+      "difficulty": "Базовый",
+      "summary": "Выберите согласованное взаимодействие браузерной и прикладной валидации.",
+      "answerFile": "answers/react/react-form-native-validity.md",
+      "takeaway": "Выберите согласованное взаимодействие браузерной и прикладной валидации.",
+      "moduleId": "react",
+      "order": 14,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить: Выберите согласованное взаимодействие браузерной и прикладной валидации.",
+        "keywords": ["React", "form", "native", "validity"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "goalIds": ["core", "react-form-native-validity"],
+        "relatedQuestionIds": ["react-controlled-input"],
+        "priority": "core",
+        "sourceRefs": ["ref-123e26bb70073d17"]
+      }
+    },
+    {
+      "id": "react-form-readonly-disabled",
+      "title": "Чем readOnly отличается от disabled при редактировании и отправке формы?",
+      "topic": "React",
+      "difficulty": "Базовый",
+      "summary": "Неизменяемое значение и отключённый контрол имеют разную семантику.",
+      "answerFile": "answers/react/react-form-readonly-disabled.md",
+      "takeaway": "Неизменяемое значение и отключённый контрол имеют разную семантику.",
+      "moduleId": "react",
+      "order": 15,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить: Неизменяемое значение и отключённый контрол имеют разную семантику.",
+        "keywords": ["React", "form", "readonly", "disabled"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "goalIds": ["core", "react-form-readonly-disabled"],
+        "relatedQuestionIds": ["react-controlled-input"],
+        "priority": "core",
+        "sourceRefs": ["ref-123e26bb70073d17"]
+      }
+    },
+    {
+      "id": "react-form-submitter-intent",
+      "title": "Как различить несколько submit-кнопок одной формы?",
+      "topic": "React",
+      "difficulty": "Средний",
+      "summary": "Передавайте намерение как часть контракта отправки.",
+      "answerFile": "answers/react/react-form-submitter-intent.md",
+      "takeaway": "Передавайте намерение как часть контракта отправки.",
+      "moduleId": "react",
+      "order": 16,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить: Передавайте намерение как часть контракта отправки.",
+        "keywords": ["React", "form", "submitter", "intent"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "goalIds": ["core", "react-form-submitter-intent"],
+        "relatedQuestionIds": ["react-controlled-input"],
+        "priority": "core",
+        "sourceRefs": ["ref-8dc2f80871436bd1"]
+      }
+    },
+    {
+      "id": "react-form-server-field-errors",
+      "title": "Как связать ошибки полей от сервера с текущей попыткой отправки?",
+      "topic": "React",
+      "difficulty": "Средний",
+      "summary": "Ошибка относится к проверяемому снимку данных и попытке операции.",
+      "answerFile": "answers/react/react-form-server-field-errors.md",
+      "takeaway": "Ошибка относится к проверяемому снимку данных и попытке операции.",
+      "moduleId": "react",
+      "order": 17,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить: Ошибка относится к проверяемому снимку данных и попытке операции.",
+        "keywords": ["React", "form", "server", "field", "errors"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "goalIds": ["core", "react-form-server-field-errors"],
+        "relatedQuestionIds": ["react-controlled-input"],
+        "priority": "core",
+        "sourceRefs": ["ref-8dc2f80871436bd1"]
+      }
+    },
+    {
+      "id": "react-form-keyboard-ime-submit",
+      "title": "Почему Enter во время IME-композиции не должен преждевременно отправлять форму?",
+      "topic": "React",
+      "difficulty": "Средний",
+      "summary": "Клавиатурная команда должна учитывать состояние композиции.",
+      "answerFile": "answers/react/react-form-keyboard-ime-submit.md",
+      "takeaway": "Клавиатурная команда должна учитывать состояние композиции.",
+      "moduleId": "react",
+      "order": 18,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить: Клавиатурная команда должна учитывать состояние композиции.",
+        "keywords": ["React", "form", "keyboard", "ime", "submit"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "goalIds": ["core", "react-form-keyboard-ime-submit"],
+        "relatedQuestionIds": ["react-controlled-input"],
+        "priority": "core",
+        "sourceRefs": ["ref-fa183dea181b018b"]
+      }
+    },
+    {
+      "id": "react-form-action-error-boundary",
+      "title": "Какие ошибки React Action могут попасть в Error Boundary, а какие лучше вернуть как данные?",
+      "topic": "React",
+      "difficulty": "Продвинутый",
+      "summary": "Разделяйте ожидаемый результат валидации и аварийный сбой Action.",
+      "answerFile": "answers/react/react-form-action-error-boundary.md",
+      "takeaway": "Разделяйте ожидаемый результат валидации и аварийный сбой Action.",
+      "moduleId": "react",
+      "order": 19,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить: Разделяйте ожидаемый результат валидации и аварийный сбой Action.",
+        "keywords": ["React", "form", "action", "error", "boundary"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "goalIds": ["core", "react-form-action-error-boundary"],
+        "relatedQuestionIds": ["react-controlled-input", "react-action-state"],
+        "priority": "extended",
+        "sourceRefs": ["ref-f773318257650341"]
+      }
     }
   ]
 }

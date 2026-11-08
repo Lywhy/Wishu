@@ -1,0 +1,172 @@
+{
+  "schemaVersion": 1,
+  "id": "react-expanded-20261108-redux",
+  "title": "React: расширение redux",
+  "sectionId": "react",
+  "subsectionId": "redux",
+  "currentPass": "complete",
+  "goalIds": [
+    "core",
+    "redux-action-creator-payload",
+    "redux-initial-unknown-action",
+    "redux-reducer-key-shape",
+    "redux-shared-action",
+    "redux-prepare-callback",
+    "redux-immer-return-rule",
+    "redux-dispatch-result",
+    "redux-sync-read-after-dispatch",
+    "redux-selector-root-state",
+    "redux-local-state-choice",
+    "redux-devtools-action-trace",
+    "redux-preloaded-state",
+    "redux-thunk-cancel-condition",
+    "redux-extra-reducers-builder",
+    "redux-query-skip-lazy",
+    "redux-query-loading-fetching",
+    "redux-mutation-result-reset",
+    "redux-query-tags-specificity",
+    "redux-query-store-wiring",
+    "redux-thunk-reject-value",
+    "redux-query-cache-lifetime",
+    "redux-query-select-result",
+    "redux-listener-cancellation",
+    "redux-optimistic-rollback-race",
+    "redux-api-inject-endpoints",
+    "redux-combine-slices-injection",
+    "redux-query-stream-lifetime",
+    "redux-query-normalization-boundary"
+  ],
+  "questionIds": [
+    "redux-action-creator-payload",
+    "redux-initial-unknown-action",
+    "redux-reducer-key-shape",
+    "redux-shared-action",
+    "redux-prepare-callback",
+    "redux-immer-return-rule",
+    "redux-dispatch-result",
+    "redux-sync-read-after-dispatch",
+    "redux-selector-root-state",
+    "redux-local-state-choice",
+    "redux-devtools-action-trace",
+    "redux-preloaded-state",
+    "redux-thunk-cancel-condition",
+    "redux-extra-reducers-builder",
+    "redux-query-skip-lazy",
+    "redux-query-loading-fetching",
+    "redux-mutation-result-reset",
+    "redux-query-tags-specificity",
+    "redux-query-store-wiring",
+    "redux-thunk-reject-value",
+    "redux-query-cache-lifetime",
+    "redux-query-select-result",
+    "redux-listener-cancellation",
+    "redux-optimistic-rollback-race",
+    "redux-api-inject-endpoints",
+    "redux-combine-slices-injection",
+    "redux-query-stream-lifetime",
+    "redux-query-normalization-boundary"
+  ],
+  "scopePass": {
+    "status": "complete",
+    "remaining": []
+  },
+  "answerPass": {
+    "status": "complete",
+    "remaining": []
+  },
+  "baseline": [
+    {
+      "id": "redux-data-flow",
+      "title": "Как устроен поток данных Redux: store, action, dispatch и reducer?",
+      "contentHash": "578721359c62938e4e9fd990741a6bf64b2c7925a6299c7e77a31a89c45cc0ba"
+    },
+    {
+      "id": "redux-toolkit-role",
+      "title": "Чем Redux Toolkit отличается от Redux и React-Redux?",
+      "contentHash": "5aeff798382da3e3d90848e0257e8185a9f915b98a9b46a43c5653786dfed4e7"
+    },
+    {
+      "id": "redux-store-provider",
+      "title": "Как configureStore и Provider подключают Redux к React?",
+      "contentHash": "7480367b46d7b35a2da8cae1d390d661af5e92ab33b476e8894a39707e760fff"
+    },
+    {
+      "id": "redux-slice-immer",
+      "title": "Что создаёт createSlice и почему в его reducer разрешена запись state.value++?",
+      "contentHash": "f554a1b23dd8b5ef99fedf8a1f1b859a0117c1417430d71ce2dbc4982da63d72"
+    },
+    {
+      "id": "redux-selector-equality",
+      "title": "Когда useSelector обновляет компонент и почему новый объект в selector мешает?",
+      "contentHash": "c4e688a462f843149860980c2c24425a076349c799914516898bda2e4ed9fb92"
+    },
+    {
+      "id": "redux-memoized-selector",
+      "title": "Как createSelector мемоизирует производные данные?",
+      "contentHash": "f71058f5e3d643ddb8b1b9c2e0559e76468e12170950b3ad140542654365dcf2"
+    },
+    {
+      "id": "redux-async-thunk",
+      "title": "Что делает createAsyncThunk и зачем нужен unwrap?",
+      "contentHash": "318b7b2157342c08d77e279551de57ce5f2848294a365b8588fbb8cb62f97f7c"
+    },
+    {
+      "id": "redux-query-cache",
+      "title": "Чем RTK Query отличается от запроса внутри createAsyncThunk?",
+      "contentHash": "f083fcb39ae5d9774a278f43b6bf8b8f33089a4dc988fa24b4dfd295fbf78672"
+    },
+    {
+      "id": "redux-entity-adapter",
+      "title": "Как createEntityAdapter помогает хранить и обновлять коллекцию?",
+      "contentHash": "a09bf817d90a3a4f7ada45f863efe8fac1ae621a29908cd7c76c7cbfd484660c"
+    },
+    {
+      "id": "redux-serializable-state",
+      "title": "Почему в Redux обычно не хранят Promise, функции и DOM-узлы?",
+      "contentHash": "32196df78e2325e1f694c0e36275a5e2a7f2f0aec4459edfaf3c19da833630bb"
+    },
+    {
+      "id": "redux-middleware-effects",
+      "title": "Для чего middleware и listenerMiddleware нужны вне reducer?",
+      "contentHash": "df6181ed3a4de5a304d0e98158aeba0466d5480eb89c63c18368ea378098a60f"
+    },
+    {
+      "id": "redux-typescript-hooks",
+      "title": "Как вывести RootState и AppDispatch и типизировать React-Redux hooks?",
+      "contentHash": "a7aa530436cfa665fa537bfaf442657129208f79d8124ed5e5efbb12fcdd01a3"
+    }
+  ],
+  "notes": [
+    "120 новых вопросов React: 60 базовых / 40 средних / 20 продвинутых; Redux и Zustand дополнительно внутри React. Прежние 128 ID сохраняются.",
+    "Общие определения остаются в канонических ответах; прикладные вопросы различаются проверяемым сценарием. Routing включает библиотеку React Router 7 и не приписывает её API ядру React.",
+    "B: redux-action-creator-payload | Чем action creator отличается от action и где находится payload?",
+    "B: redux-initial-unknown-action | Что reducer должен вернуть для undefined state и неизвестного action?",
+    "B: redux-reducer-key-shape | Как ключ reducer в configureStore определяет путь к данным в state?",
+    "B: redux-shared-action | Могут ли несколько slices обработать одно действие?",
+    "B: redux-prepare-callback | Когда нужен prepare callback в createSlice?",
+    "B: redux-immer-return-rule | Почему case reducer не должен одновременно менять draft и возвращать новый объект?",
+    "B: redux-dispatch-result | Что возвращает dispatch обычного action и thunk?",
+    "B: redux-sync-read-after-dispatch | Когда getState видит результат обычного синхронного dispatch?",
+    "B: redux-selector-root-state | Почему selector принимает root state, а не state отдельного slice?",
+    "B: redux-local-state-choice | Какие данные формы не стоит автоматически переносить в Redux?",
+    "B: redux-devtools-action-trace | Как читать последовательность actions и снимки state в Redux DevTools?",
+    "B: redux-preloaded-state | Для чего нужен preloadedState и почему это не замена серверной изоляции store?",
+    "M: redux-thunk-cancel-condition | Чем condition, abort и requestId отличаются в createAsyncThunk?",
+    "M: redux-extra-reducers-builder | Чем extraReducers отличается от reducers в createSlice?",
+    "M: redux-query-skip-lazy | Когда применять skipToken и когда lazy query в RTK Query?",
+    "M: redux-query-loading-fetching | Чем isLoading отличается от isFetching в RTK Query?",
+    "M: redux-mutation-result-reset | Как обработать результат mutation через unwrap и сбросить локальное состояние результата?",
+    "M: redux-query-tags-specificity | Как выбрать общий тег списка и тег отдельной записи для invalidation?",
+    "M: redux-query-store-wiring | Почему RTK Query требует и reducer, и middleware при подключении API?",
+    "M: redux-thunk-reject-value | Когда нужен rejectWithValue и чем он отличается от throw?",
+    "M: redux-query-cache-lifetime | Как keepUnusedDataFor связан с числом подписчиков кеша?",
+    "M: redux-query-select-result | Как selectFromResult уменьшает обновления компонента RTK Query?",
+    "A: redux-listener-cancellation | Как listenerMiddleware отменяет устаревший сценарий и реализует takeLatest-поведение?",
+    "A: redux-optimistic-rollback-race | Почему undo оптимистичного patch опасен при перекрывающихся мутациях?",
+    "A: redux-api-inject-endpoints | Как injectEndpoints помогает разделить код одного RTK Query API?",
+    "A: redux-combine-slices-injection | Как combineSlices поддерживает динамическое подключение reducer?",
+    "A: redux-query-stream-lifetime | Как связать WebSocket с жизненным циклом cache entry RTK Query?",
+    "A: redux-query-normalization-boundary | Почему RTK Query не является единым нормализованным кешем всех сущностей?",
+    "Завершено: 172 новых вопроса, в том числе React 60/40/20, Redux 28, Zustand 24. Все 128 прежних ID сохранены. Oxfmt, отчёт пересечений, content:build и полный content:check прошли для 1135 вопросов. Примеры, приложение и PostgreSQL seed не запускались."
+  ]
+}

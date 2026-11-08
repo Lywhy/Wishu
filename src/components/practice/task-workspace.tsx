@@ -60,7 +60,7 @@ export function TaskWorkspace({
         disabled={!horizontal}
         aria-label="Изменить ширину условия задачи"
         className={cn(
-          "mx-2 w-2 shrink-0 rounded-full bg-transparent transition-colors hover:bg-primary/15 focus-visible:bg-primary/15 [&>div]:bg-primary/45",
+          "mx-2 w-2 shrink-0 rounded-full bg-transparent transition-colors duration-150 hover:bg-primary/15 focus-visible:bg-primary/15 motion-reduce:transition-none [&>div]:bg-primary/45",
           !horizontal && "hidden",
         )}
       />

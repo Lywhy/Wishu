@@ -2,112 +2,339 @@
   "$schema": "../question-bundle.schema.json",
   "sectionId": "browser",
   "subsectionId": "http",
-  "scope": "Методы, статусы, свежесть и проверки актуальности.",
+  "scope": "Запросы и ответы, методы, безопасность, идемпотентность и повтор операций.",
   "coverageGoals": [
     {
       "id": "core",
-      "title": "HTTP и кеширование",
-      "description": "Обзор и взаимосвязи навыков: Методы, статусы, свежесть и проверки актуальности.",
+      "title": "Основы HTTP и методы",
+      "description": "Запросы и ответы, методы, безопасность, идемпотентность и повтор операций.",
       "requiredDifficulties": [],
       "reviewed": false,
       "priority": "core",
-      "relatedSkillIds": ["http-cache", "http-idempotency", "http-status-codes"]
-    },
-    {
-      "id": "http-cache",
-      "title": "Чем Cache-Control отличается от ETag?",
-      "description": "Объяснить и применить правило с учётом его границ: Свежесть и проверка актуальности - разные задачи, которые дополняют друг друга.",
-      "requiredDifficulties": ["Средний"],
-      "reviewed": false,
-      "priority": "core",
-      "relatedSkillIds": []
+      "relatedSkillIds": [
+        "http-idempotency",
+        "http-message-model",
+        "http-stateless",
+        "http-method-choice",
+        "http-head-options",
+        "http-get-input",
+        "http-put-patch",
+        "http-retry-key",
+        "http-retry-policy",
+        "http-if-match-conflict"
+      ]
     },
     {
       "id": "http-idempotency",
       "title": "Что означает идемпотентность HTTP-метода?",
-      "description": "Объяснить и применить правило с учётом его границ: Идемпотентность описывает эффект, а не одинаковость ответов.",
+      "description": "Объяснить и применить: Оценивайте повторяемый эффект операции, а не совпадение байтов ответа.",
       "requiredDifficulties": ["Средний"],
-      "reviewed": false,
+      "reviewed": true,
       "priority": "core",
       "relatedSkillIds": []
     },
     {
-      "id": "http-status-codes",
-      "title": "Как различать 401, 403, 404 и 409 в API?",
-      "description": "Объяснить и применить правило с учётом его границ: Статус сообщает тип исхода, тело уточняет причину.",
+      "id": "http-message-model",
+      "title": "Как устроены HTTP-запрос и HTTP-ответ?",
+      "description": "Объяснить и применить: Сначала прочитайте семантику сообщения, затем обрабатывайте его тело.",
       "requiredDifficulties": ["Базовый"],
-      "reviewed": false,
+      "reviewed": true,
       "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "http-stateless",
+      "title": "Что означает отсутствие состояния у HTTP и как тогда работают сессии?",
+      "description": "Объяснить и применить: Прикладная сессия строится над HTTP отдельным механизмом.",
+      "requiredDifficulties": ["Базовый"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "http-method-choice",
+      "title": "Когда применять GET, POST, PUT, PATCH и DELETE?",
+      "description": "Объяснить и применить: Выбирайте метод по намерению и гарантиям операции.",
+      "requiredDifficulties": ["Базовый"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "http-head-options",
+      "title": "Для чего нужны HEAD и OPTIONS?",
+      "description": "Объяснить и применить: Описывайте назначение метода отдельно от конкретного сценария его использования.",
+      "requiredDifficulties": ["Базовый"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "http-get-input",
+      "title": "Как query и тело запроса участвуют в контракте API?",
+      "description": "Объяснить и применить: Согласуйте способ передачи входа с методом и адресуемостью результата.",
+      "requiredDifficulties": ["Базовый"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "http-put-patch",
+      "title": "Чем полная замена PUT отличается от частичного изменения PATCH?",
+      "description": "Объяснить и применить: Различайте целевое состояние и операцию преобразования.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "http-retry-key",
+      "title": "Как ключ идемпотентности помогает безопасно повторить создание операции?",
+      "description": "Объяснить и применить: Идентичность бизнес-операции должна переживать повтор транспорта.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "http-retry-policy",
+      "title": "Какие запросы можно повторять после тайм-аута и почему нужен backoff?",
+      "description": "Объяснить и применить: Повтор должен сохранять корректность операции и не усугублять сбой.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "http-if-match-conflict",
+      "title": "Как If-Match помогает не потерять конкурентное изменение ресурса?",
+      "description": "Объяснить и применить: Защита от lost update требует серверного атомарного условия версии.",
+      "requiredDifficulties": ["Продвинутый"],
+      "reviewed": true,
+      "priority": "extended",
       "relatedSkillIds": []
     }
   ],
   "questions": [
     {
-      "id": "http-cache",
-      "title": "Чем Cache-Control отличается от ETag?",
-      "topic": "Web",
-      "difficulty": "Средний",
-      "summary": "Свежесть кеша и условные HTTP-запросы.",
-      "takeaway": "Свежесть и проверка актуальности - разные задачи, которые дополняют друг друга.",
-      "moduleId": "browser",
-      "order": 0,
-      "popular": false,
-      "pitfall": "Путать no-cache с запретом хранения. No-cache требует проверки перед повторным использованием, no-store запрещает хранение кешем.",
-      "editorial": {
-        "learningGoal": "Объяснить и применить правило с учётом его границ: Свежесть и проверка актуальности - разные задачи, которые дополняют друг друга.",
-        "keywords": ["Браузер и HTTP", "HTTP и кеширование"],
-        "kind": "explanation",
-        "reviewStatus": "imported",
-        "goalIds": ["core", "http-cache"],
-        "relatedQuestionIds": [],
-        "priority": "core",
-        "sourceRefs": []
-      },
-      "answerFile": "answers/browser/http-cache.md"
-    },
-    {
       "id": "http-idempotency",
       "title": "Что означает идемпотентность HTTP-метода?",
       "topic": "Web",
       "difficulty": "Средний",
-      "summary": "Повтор запроса и итоговое состояние ресурса.",
-      "takeaway": "Идемпотентность описывает эффект, а не одинаковость ответов.",
+      "summary": "Оценивайте повторяемый эффект операции, а не совпадение байтов ответа.",
+      "takeaway": "Оценивайте повторяемый эффект операции, а не совпадение байтов ответа.",
       "moduleId": "browser",
-      "order": 1,
+      "order": 0,
       "popular": false,
       "editorial": {
-        "learningGoal": "Объяснить и применить правило с учётом его границ: Идемпотентность описывает эффект, а не одинаковость ответов.",
-        "keywords": ["Браузер и HTTP", "HTTP и кеширование"],
-        "kind": "explanation",
-        "reviewStatus": "imported",
+        "learningGoal": "Объяснить и применить: Оценивайте повторяемый эффект операции, а не совпадение байтов ответа.",
+        "keywords": ["Браузер и HTTP", "http", "idempotency"],
+        "kind": "application",
+        "reviewStatus": "ready",
         "goalIds": ["core", "http-idempotency"],
         "relatedQuestionIds": [],
         "priority": "core",
-        "sourceRefs": []
+        "sourceRefs": ["ref-2cb5855a8b539c9f"]
       },
       "answerFile": "answers/browser/http-idempotency.md"
     },
     {
-      "id": "http-status-codes",
-      "title": "Как различать 401, 403, 404 и 409 в API?",
+      "id": "http-message-model",
+      "title": "Как устроены HTTP-запрос и HTTP-ответ?",
       "topic": "Web",
       "difficulty": "Базовый",
-      "summary": "Смысл клиентских ошибок и контракт ответа.",
-      "takeaway": "Статус сообщает тип исхода, тело уточняет причину.",
+      "summary": "Сначала прочитайте семантику сообщения, затем обрабатывайте его тело.",
+      "takeaway": "Сначала прочитайте семантику сообщения, затем обрабатывайте его тело.",
+      "moduleId": "browser",
+      "order": 1,
+      "popular": false,
+      "answerFile": "answers/browser/http-message-model.md",
+      "editorial": {
+        "learningGoal": "Объяснить и применить: Сначала прочитайте семантику сообщения, затем обрабатывайте его тело.",
+        "keywords": ["Браузер и HTTP", "http", "message", "model"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "goalIds": ["core", "http-message-model"],
+        "relatedQuestionIds": [],
+        "priority": "core",
+        "sourceRefs": ["ref-360a828b02b7f2a4"]
+      }
+    },
+    {
+      "id": "http-stateless",
+      "title": "Что означает отсутствие состояния у HTTP и как тогда работают сессии?",
+      "topic": "Web",
+      "difficulty": "Базовый",
+      "summary": "Прикладная сессия строится над HTTP отдельным механизмом.",
+      "takeaway": "Прикладная сессия строится над HTTP отдельным механизмом.",
       "moduleId": "browser",
       "order": 2,
       "popular": false,
+      "answerFile": "answers/browser/http-stateless.md",
       "editorial": {
-        "learningGoal": "Объяснить и применить правило с учётом его границ: Статус сообщает тип исхода, тело уточняет причину.",
-        "keywords": ["Браузер и HTTP", "HTTP и кеширование"],
-        "kind": "explanation",
-        "reviewStatus": "imported",
-        "goalIds": ["core", "http-status-codes"],
-        "relatedQuestionIds": [],
+        "learningGoal": "Объяснить и применить: Прикладная сессия строится над HTTP отдельным механизмом.",
+        "keywords": ["Браузер и HTTP", "http", "stateless"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "goalIds": ["core", "http-stateless"],
+        "relatedQuestionIds": ["auth-session-flow"],
         "priority": "core",
-        "sourceRefs": []
-      },
-      "answerFile": "answers/browser/http-status-codes.md"
+        "sourceRefs": ["ref-360a828b02b7f2a4"]
+      }
+    },
+    {
+      "id": "http-method-choice",
+      "title": "Когда применять GET, POST, PUT, PATCH и DELETE?",
+      "topic": "Web",
+      "difficulty": "Базовый",
+      "summary": "Выбирайте метод по намерению и гарантиям операции.",
+      "takeaway": "Выбирайте метод по намерению и гарантиям операции.",
+      "moduleId": "browser",
+      "order": 3,
+      "popular": false,
+      "answerFile": "answers/browser/http-method-choice.md",
+      "editorial": {
+        "learningGoal": "Объяснить и применить: Выбирайте метод по намерению и гарантиям операции.",
+        "keywords": ["Браузер и HTTP", "http", "method", "choice"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "goalIds": ["core", "http-method-choice"],
+        "relatedQuestionIds": ["http-idempotency"],
+        "priority": "core",
+        "sourceRefs": ["ref-255ba99007296976"]
+      }
+    },
+    {
+      "id": "http-head-options",
+      "title": "Для чего нужны HEAD и OPTIONS?",
+      "topic": "Web",
+      "difficulty": "Базовый",
+      "summary": "Описывайте назначение метода отдельно от конкретного сценария его использования.",
+      "takeaway": "Описывайте назначение метода отдельно от конкретного сценария его использования.",
+      "moduleId": "browser",
+      "order": 4,
+      "popular": false,
+      "answerFile": "answers/browser/http-head-options.md",
+      "editorial": {
+        "learningGoal": "Объяснить и применить: Описывайте назначение метода отдельно от конкретного сценария его использования.",
+        "keywords": ["Браузер и HTTP", "http", "head", "options"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "goalIds": ["core", "http-head-options"],
+        "relatedQuestionIds": ["browser-cors-preflight"],
+        "priority": "core",
+        "sourceRefs": ["ref-255ba99007296976"]
+      }
+    },
+    {
+      "id": "http-get-input",
+      "title": "Как query и тело запроса участвуют в контракте API?",
+      "topic": "Web",
+      "difficulty": "Базовый",
+      "summary": "Согласуйте способ передачи входа с методом и адресуемостью результата.",
+      "takeaway": "Согласуйте способ передачи входа с методом и адресуемостью результата.",
+      "moduleId": "browser",
+      "order": 5,
+      "popular": false,
+      "answerFile": "answers/browser/http-get-input.md",
+      "editorial": {
+        "learningGoal": "Объяснить и применить: Согласуйте способ передачи входа с методом и адресуемостью результата.",
+        "keywords": ["Браузер и HTTP", "http", "get", "input"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "goalIds": ["core", "http-get-input"],
+        "relatedQuestionIds": ["async-fetch"],
+        "priority": "core",
+        "sourceRefs": ["ref-2cb5855a8b539c9f"]
+      }
+    },
+    {
+      "id": "http-put-patch",
+      "title": "Чем полная замена PUT отличается от частичного изменения PATCH?",
+      "topic": "Web",
+      "difficulty": "Средний",
+      "summary": "Различайте целевое состояние и операцию преобразования.",
+      "takeaway": "Различайте целевое состояние и операцию преобразования.",
+      "moduleId": "browser",
+      "order": 6,
+      "popular": false,
+      "answerFile": "answers/browser/http-put-patch.md",
+      "editorial": {
+        "learningGoal": "Объяснить и применить: Различайте целевое состояние и операцию преобразования.",
+        "keywords": ["Браузер и HTTP", "http", "put", "patch"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "goalIds": ["core", "http-put-patch"],
+        "relatedQuestionIds": ["http-idempotency"],
+        "priority": "core",
+        "sourceRefs": ["ref-2cb5855a8b539c9f"]
+      }
+    },
+    {
+      "id": "http-retry-key",
+      "title": "Как ключ идемпотентности помогает безопасно повторить создание операции?",
+      "topic": "Web",
+      "difficulty": "Средний",
+      "summary": "Идентичность бизнес-операции должна переживать повтор транспорта.",
+      "takeaway": "Идентичность бизнес-операции должна переживать повтор транспорта.",
+      "moduleId": "browser",
+      "order": 7,
+      "popular": false,
+      "answerFile": "answers/browser/http-retry-key.md",
+      "editorial": {
+        "learningGoal": "Объяснить и применить: Идентичность бизнес-операции должна переживать повтор транспорта.",
+        "keywords": ["Браузер и HTTP", "http", "retry", "key"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "goalIds": ["core", "http-retry-key"],
+        "relatedQuestionIds": ["http-idempotency"],
+        "priority": "core",
+        "sourceRefs": ["ref-2cb5855a8b539c9f"]
+      }
+    },
+    {
+      "id": "http-retry-policy",
+      "title": "Какие запросы можно повторять после тайм-аута и почему нужен backoff?",
+      "topic": "Web",
+      "difficulty": "Средний",
+      "summary": "Повтор должен сохранять корректность операции и не усугублять сбой.",
+      "takeaway": "Повтор должен сохранять корректность операции и не усугублять сбой.",
+      "moduleId": "browser",
+      "order": 8,
+      "popular": false,
+      "answerFile": "answers/browser/http-retry-policy.md",
+      "editorial": {
+        "learningGoal": "Объяснить и применить: Повтор должен сохранять корректность операции и не усугублять сбой.",
+        "keywords": ["Браузер и HTTP", "http", "retry", "policy"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "goalIds": ["core", "http-retry-policy"],
+        "relatedQuestionIds": ["http-idempotency"],
+        "priority": "core",
+        "sourceRefs": ["ref-2cb5855a8b539c9f"]
+      }
+    },
+    {
+      "id": "http-if-match-conflict",
+      "title": "Как If-Match помогает не потерять конкурентное изменение ресурса?",
+      "topic": "Web",
+      "difficulty": "Продвинутый",
+      "summary": "Защита от lost update требует серверного атомарного условия версии.",
+      "takeaway": "Защита от lost update требует серверного атомарного условия версии.",
+      "moduleId": "browser",
+      "order": 9,
+      "popular": false,
+      "answerFile": "answers/browser/http-if-match-conflict.md",
+      "editorial": {
+        "learningGoal": "Объяснить и применить: Защита от lost update требует серверного атомарного условия версии.",
+        "keywords": ["Браузер и HTTP", "http", "if", "match", "conflict"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "goalIds": ["core", "http-if-match-conflict"],
+        "relatedQuestionIds": ["http-cache"],
+        "priority": "extended",
+        "sourceRefs": ["ref-eb87d81c9f4660bb"]
+      }
     }
   ]
 }

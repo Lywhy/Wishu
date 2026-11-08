@@ -113,3 +113,7 @@ ORM, аккаунты и выполнение пользовательского
 ## Исходники каталога
 
 `database/seeds/questions.json` формируется из `../content/questions`. Перед db:init/db:seed автоматически проверяется согласованность исходников и артефактов. После редактирования выполните из корня `pnpm content:report`, затем `pnpm content:build`, `pnpm content:check` и `pnpm db:seed`. Процесс не требует новых миграций. Подробнее: [подготовка контента](../docs/question-content-workflow.md).
+
+## Баги и предложения
+
+POST /api/questions/platform-feedback сохраняет обращения в platform_feedback. Примените новую миграцию командой pnpm db:migrate из корня. Повторная отправка одного ID идемпотентна, общедоступного списка обращений нет. pnpm feedback:export выгружает последние 1000 локальных обращений в exports/feedback. Команда запускает сборку сервера и читает PostgreSQL. Подробности: [формы и ручная проверка](../docs/platform-feedback.md).

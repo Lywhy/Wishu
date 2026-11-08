@@ -1,38 +1,31 @@
-# React + TypeScript + Vite
+# Wishu
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+Локальная платформа для подготовки к собеседованиям: обучение с практикой, вопросы с ответами, задачи с проверкой решений и трекер собеседований. Общая база вопросов хранится в репозитории и загружается в PostgreSQL при инициализации.
 
-Currently, two official plugins are available:
+Стек: React, TypeScript, Vite, shadcn, Tailwind, Zustand, NestJS и PostgreSQL.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Быстрый старт в VS Code
 
-## React Compiler
+Нужны Node.js 24, pnpm 12.11.2 и работающий Docker Desktop. Откройте корень проекта в VS Code и выполните в терминале PowerShell:
 
-The React Compiler is enabled on this template. See [this documentation](https://react.dev/learn/react-compiler) for more information.
-
-Note: This will impact Vite dev & build performances.
-You can also try [the experimental native React Compiler support in plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md#rust-react-compiler) by using `compiler: true` in the plugin options instead of using the Babel plugin.
-
-## Expanding the Oxlint configuration
-
-If you are developing a production application, we recommend enabling type-aware lint rules by installing `oxlint-tsgolint` and editing `.oxlintrc.json`:
-
-```json
-{
-  "$schema": "./node_modules/oxlint/configuration_schema.json",
-  "plugins": ["react", "typescript", "oxc"],
-  "options": {
-    "typeAware": true
-  },
-  "rules": {
-    "react/rules-of-hooks": "error",
-    "react/only-export-components": ["warn", { "allowConstantExport": true }]
-  }
-}
+```powershell
+pnpm install
+Copy-Item .env.example .env
+Copy-Item server/.env.example server/.env
+docker compose up -d postgres
+pnpm db:init
+pnpm dev:all
 ```
 
-See the [Oxlint rules documentation](https://oxc.rs/docs/guide/usage/linter/rules) for the full list of rules and categories.
+Откройте http://localhost:5173. Копируйте примеры окружения только при первой установке, не перезаписывая рабочие файлы. Для повторного запуска достаточно поднять PostgreSQL и выполнить pnpm dev:all.
+
+[Полная инструкция локального запуска и варианта с API в Docker](docs/local-setup.md). Текущий Docker-профиль запускает API и PostgreSQL; UI работает через Vite.
+
+## Баги, предложения и общая база
+
+Кнопка в шапке открывает формы багов и предложений. Можно предложить темы сразу для нескольких разделов, включая новые подразделы. Обращения сохраняются на сервере установки и экспортируются в JSON. Для передачи автору через подготовленный GitHub issue задайте публичную переменную VITE_FEEDBACK_GITHUB_REPOSITORY=owner/repository в корневом .env. Токен не нужен; публикацию пользователь подтверждает на GitHub.
+
+Материалы включаются в общую базу после редакторской проверки. Получив обновления репозитория, выполните pnpm db:migrate и pnpm db:seed. [Как работают обращения](docs/platform-feedback.md).
 
 ## Линтинг и форматирование
 
@@ -59,7 +52,7 @@ pnpm format
 `src/index.css`, включая вызовы `cn`, `clsx` и `cva`.
 Сборки, зависимости и coverage исключены; lock-файл не форматируется.
 
-Приложение, линтер и форматтер запускает пользователь самостоятельно.
+Приложение, линтеры, сборки и проверки UI/сервера запускает пользователь. Агент может форматировать изменённые файлы и выполнять разрешённые контентные инструменты.
 
 ## shadcn MCP
 

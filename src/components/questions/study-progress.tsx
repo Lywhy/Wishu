@@ -39,15 +39,13 @@ export function StudyProgress({
               { count: learned, color: "bg-emerald-500" },
               { count: skipped, color: "bg-violet-500" },
               { count: total ? total - marked : 1, color: "bg-muted" },
-            ].map(({ count, color }) =>
-              count > 0 ? (
-                <span
-                  key={color}
-                  className={`h-full ${color}`}
-                  style={{ width: `${(count / (total || 1)) * 100}%` }}
-                />
-              ) : null,
-            )}
+            ].map(({ count, color }) => (
+              <span
+                key={color}
+                className={`h-full transition-[width] duration-500 ease-[cubic-bezier(0.22,0.61,0.36,1)] motion-reduce:transition-none ${color}`}
+                style={{ width: `${(count / (total || 1)) * 100}%` }}
+              />
+            ))}
           </div>
         </ProgressTrack>
       </ProgressPrimitive.Root>

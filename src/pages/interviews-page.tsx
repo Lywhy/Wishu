@@ -1,10 +1,4 @@
-import {
-  Empty,
-  EmptyHeader,
-  EmptyTitle,
-  EmptyDescription,
-  EmptyContent,
-} from "@/components/ui/empty"
+import { PageState } from "@/components/catalog/page-state"
 import { PersonalNote } from "@/components/experience/study-tools"
 import { InterviewDebrief } from "@/components/interviews/interview-debrief"
 import { InterviewPreparation } from "@/components/interviews/interview-preparation"
@@ -192,7 +186,7 @@ export function InterviewsPage() {
           </>
         }
       />
-      <div className="mb-6 rounded-lg border bg-muted/20 px-4 py-3 text-xs leading-6 text-muted-foreground">
+      <div className="mb-6 rounded-lg bg-muted/30 px-4 py-3 text-xs leading-6 text-muted-foreground">
         Записи хранятся только в этом браузере. Для переноса или сохранения вне браузера скачайте
         резервную копию. Напоминания и синхронизация с календарём пока не подключены.
       </div>
@@ -235,14 +229,14 @@ export function InterviewsPage() {
       </div>
       <div className="grid items-start gap-6 lg:grid-cols-[minmax(0,1fr)_280px]">
         <section className="min-w-0 space-y-4" aria-label="Список собеседований">
-          <div className="space-y-3 rounded-xl border bg-card p-4">
+          <div className="space-y-3 rounded-xl bg-card p-4 ring-1 ring-border/60">
             <SearchField
               value={query}
               onValueChange={(value) => update("q", value)}
               label="Поиск собеседований"
               placeholder="Компания, вакансия или рекрутер…"
             />
-            <div className="grid gap-3 sm:grid-cols-3">
+            <div className="grid min-w-0 gap-3 sm:grid-cols-2 xl:grid-cols-3">
               <Select
                 value={stage}
                 items={[
@@ -337,7 +331,7 @@ export function InterviewsPage() {
                     (item) => !item.done && new Date(item.at).getTime() < now,
                   ).length
                 return (
-                  <Card key={record.id} className="gap-4 rounded-xl p-5 shadow-none">
+                  <Card key={record.id} className="min-w-0 gap-4 rounded-xl p-5 shadow-none">
                     <div className="flex flex-wrap items-center justify-between gap-2">
                       <StageBadge record={record} />
                       {record.archived && <Badge variant="secondary">В архиве</Badge>}
@@ -386,31 +380,25 @@ export function InterviewsPage() {
               })}
             </div>
           ) : (
-            <Empty className="border bg-card py-12">
-              <EmptyHeader>
-                <EmptyTitle>
-                  <h2 className="text-base font-semibold">
-                    {records.length
-                      ? "Ничего не найдено"
-                      : "Первое собеседование начинается с записи"}
-                  </h2>
-                </EmptyTitle>
-                <EmptyDescription>
-                  {records.length
-                    ? "Измените поиск, этап или откройте архив."
-                    : "Добавьте компанию и вакансию. Затем назначьте встречи и фиксируйте результаты."}
-                </EmptyDescription>
-              </EmptyHeader>
-              <EmptyContent>
-                {records.length ? (
-                  <Button variant="outline" onClick={reset}>
-                    Сбросить фильтры
-                  </Button>
-                ) : (
-                  <Button onClick={() => setEditor({})}>Добавить собеседование</Button>
-                )}
-              </EmptyContent>
-            </Empty>
+            <PageState
+              heading="h2"
+              title={
+                records.length ? "Ничего не найдено" : "Первое собеседование начинается с записи"
+              }
+              description={
+                records.length
+                  ? "Измените поиск, этап или откройте архив."
+                  : "Добавьте компанию и вакансию. Затем назначьте встречи и фиксируйте результаты."
+              }
+            >
+              {records.length ? (
+                <Button variant="outline" onClick={reset}>
+                  Сбросить фильтры
+                </Button>
+              ) : (
+                <Button onClick={() => setEditor({})}>Добавить собеседование</Button>
+              )}
+            </PageState>
           )}
         </section>
         <aside className="space-y-4 lg:sticky lg:top-24">
@@ -426,7 +414,7 @@ export function InterviewsPage() {
                     <Button
                       variant="ghost"
                       type="button"
-                      className="block h-auto w-full justify-start rounded-lg border p-0 p-3 text-left whitespace-normal outline-none hover:bg-muted hover:bg-transparent focus-visible:ring-2 focus-visible:ring-ring"
+                      className="block h-auto w-full min-w-0 justify-start rounded-lg border border-border/70 p-3 text-left whitespace-normal outline-none hover:bg-muted focus-visible:ring-2 focus-visible:ring-ring"
                       onClick={() => select(record.id)}
                     >
                       <span className="block text-xs font-medium text-primary">

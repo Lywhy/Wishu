@@ -17,7 +17,15 @@
         "react-state-location",
         "react-external-store",
         "react-url-state",
-        "react-ssr-state-isolation"
+        "react-ssr-state-isolation",
+        "react-context-required-provider",
+        "react-reducer-context-split",
+        "react-context-nearest-provider",
+        "react-context-sibling-boundary",
+        "react-context-value-is-not-store",
+        "react-context-provider-state-lifetime",
+        "react-context-module-identity",
+        "react-context-external-store-tearing"
       ]
     },
     {
@@ -72,6 +80,78 @@
       "requiredDifficulties": ["Продвинутый"],
       "reviewed": false,
       "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "react-context-required-provider",
+      "title": "Как обнаружить использование хука Context вне обязательного провайдера?",
+      "description": "Отличать отсутствие провайдера от допустимого пустого значения и давать диагностическую ошибку.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "react-reducer-context-split",
+      "title": "Как объединить useReducer и Context и зачем разделять state и dispatch?",
+      "description": "Разделять логику переходов состояния и распространение данных по дереву.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "react-context-nearest-provider",
+      "title": "Какой провайдер получит вложенный потребитель одного Context?",
+      "description": "Объяснить и применить: Context разрешается по ближайшему предку React-дерева.",
+      "requiredDifficulties": ["Базовый"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "react-context-sibling-boundary",
+      "title": "Почему провайдер не передаёт значение соседнему компоненту?",
+      "description": "Объяснить и применить: Для получения Context потребитель должен быть потомком провайдера.",
+      "requiredDifficulties": ["Базовый"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "react-context-value-is-not-store",
+      "title": "Почему Context сам не предоставляет setter и не хранит историю изменений?",
+      "description": "Объяснить и применить: Context распространяет данные, а механизм их изменения выбирается отдельно.",
+      "requiredDifficulties": ["Базовый"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "react-context-provider-state-lifetime",
+      "title": "Как положение провайдера в маршрутах влияет на сохранение общего состояния?",
+      "description": "Объяснить и применить: Область доступа и время жизни общего состояния проектируются вместе.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "react-context-module-identity",
+      "title": "Почему одинаково названный Context из двух копий модуля не является одним Context?",
+      "description": "Объяснить и применить: Context связывается по идентичности объекта, не по имени.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "react-context-external-store-tearing",
+      "title": "Почему самодельная подписка на store через useEffect может дать несогласованный снимок?",
+      "description": "Объяснить и применить: Доставка экземпляра и согласованная подписка - разные слои.",
+      "requiredDifficulties": ["Продвинутый"],
+      "reviewed": true,
+      "priority": "extended",
       "relatedSkillIds": []
     }
   ],
@@ -212,6 +292,182 @@
         "sourceRefs": ["ref-7d08dbaf713df20f"]
       },
       "answerFile": "answers/react/react-ssr-state-isolation.md"
+    },
+    {
+      "id": "react-context-required-provider",
+      "title": "Как обнаружить использование хука Context вне обязательного провайдера?",
+      "topic": "React",
+      "difficulty": "Средний",
+      "summary": "Отличать отсутствие провайдера от допустимого пустого значения и давать диагностическую ошибку.",
+      "moduleId": "react",
+      "order": 6,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Отличать отсутствие провайдера от допустимого пустого значения и давать диагностическую ошибку.",
+        "keywords": ["React", "context", "required", "provider"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "goalIds": ["core", "react-context-required-provider"],
+        "relatedQuestionIds": ["react-context"],
+        "priority": "core",
+        "sourceRefs": ["ref-a87b55b89b2a0e21"]
+      },
+      "takeaway": "Отсутствующий провайдер должен отличаться от нормального пустого результата.",
+      "answerFile": "answers/react/react-context-required-provider.md"
+    },
+    {
+      "id": "react-reducer-context-split",
+      "title": "Как объединить useReducer и Context и зачем разделять state и dispatch?",
+      "topic": "React",
+      "difficulty": "Средний",
+      "summary": "Разделять логику переходов состояния и распространение данных по дереву.",
+      "moduleId": "react",
+      "order": 7,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Разделять логику переходов состояния и распространение данных по дереву.",
+        "keywords": ["React", "reducer", "context", "split"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "goalIds": ["core", "react-reducer-context-split"],
+        "relatedQuestionIds": ["react-use-reducer"],
+        "priority": "core",
+        "sourceRefs": ["ref-0e8f1bba62b9b309"]
+      },
+      "takeaway": "Логика переходов и распространение состояния решают разные задачи.",
+      "answerFile": "answers/react/react-reducer-context-split.md"
+    },
+    {
+      "id": "react-context-nearest-provider",
+      "title": "Какой провайдер получит вложенный потребитель одного Context?",
+      "topic": "React",
+      "difficulty": "Базовый",
+      "summary": "Context разрешается по ближайшему предку React-дерева.",
+      "answerFile": "answers/react/react-context-nearest-provider.md",
+      "takeaway": "Context разрешается по ближайшему предку React-дерева.",
+      "moduleId": "react",
+      "order": 8,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить: Context разрешается по ближайшему предку React-дерева.",
+        "keywords": ["React", "context", "nearest", "provider"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "goalIds": ["core", "react-context-nearest-provider"],
+        "relatedQuestionIds": ["react-context"],
+        "priority": "core",
+        "sourceRefs": ["ref-a87b55b89b2a0e21"]
+      }
+    },
+    {
+      "id": "react-context-sibling-boundary",
+      "title": "Почему провайдер не передаёт значение соседнему компоненту?",
+      "topic": "React",
+      "difficulty": "Базовый",
+      "summary": "Для получения Context потребитель должен быть потомком провайдера.",
+      "answerFile": "answers/react/react-context-sibling-boundary.md",
+      "takeaway": "Для получения Context потребитель должен быть потомком провайдера.",
+      "moduleId": "react",
+      "order": 9,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить: Для получения Context потребитель должен быть потомком провайдера.",
+        "keywords": ["React", "context", "sibling", "boundary"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "goalIds": ["core", "react-context-sibling-boundary"],
+        "relatedQuestionIds": ["react-context"],
+        "priority": "core",
+        "sourceRefs": ["ref-a87b55b89b2a0e21"]
+      }
+    },
+    {
+      "id": "react-context-value-is-not-store",
+      "title": "Почему Context сам не предоставляет setter и не хранит историю изменений?",
+      "topic": "React",
+      "difficulty": "Базовый",
+      "summary": "Context распространяет данные, а механизм их изменения выбирается отдельно.",
+      "answerFile": "answers/react/react-context-value-is-not-store.md",
+      "takeaway": "Context распространяет данные, а механизм их изменения выбирается отдельно.",
+      "moduleId": "react",
+      "order": 10,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить: Context распространяет данные, а механизм их изменения выбирается отдельно.",
+        "keywords": ["React", "context", "value", "is", "not", "store"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "goalIds": ["core", "react-context-value-is-not-store"],
+        "relatedQuestionIds": ["react-context"],
+        "priority": "core",
+        "sourceRefs": ["ref-6321204222af3d33"]
+      }
+    },
+    {
+      "id": "react-context-provider-state-lifetime",
+      "title": "Как положение провайдера в маршрутах влияет на сохранение общего состояния?",
+      "topic": "React",
+      "difficulty": "Средний",
+      "summary": "Область доступа и время жизни общего состояния проектируются вместе.",
+      "answerFile": "answers/react/react-context-provider-state-lifetime.md",
+      "takeaway": "Область доступа и время жизни общего состояния проектируются вместе.",
+      "moduleId": "react",
+      "order": 11,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить: Область доступа и время жизни общего состояния проектируются вместе.",
+        "keywords": ["React", "context", "provider", "state", "lifetime"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "goalIds": ["core", "react-context-provider-state-lifetime"],
+        "relatedQuestionIds": ["react-context"],
+        "priority": "core",
+        "sourceRefs": ["ref-f16e9dc5d993c88a"]
+      }
+    },
+    {
+      "id": "react-context-module-identity",
+      "title": "Почему одинаково названный Context из двух копий модуля не является одним Context?",
+      "topic": "React",
+      "difficulty": "Средний",
+      "summary": "Context связывается по идентичности объекта, не по имени.",
+      "answerFile": "answers/react/react-context-module-identity.md",
+      "takeaway": "Context связывается по идентичности объекта, не по имени.",
+      "moduleId": "react",
+      "order": 12,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить: Context связывается по идентичности объекта, не по имени.",
+        "keywords": ["React", "context", "module", "identity"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "goalIds": ["core", "react-context-module-identity"],
+        "relatedQuestionIds": ["react-context", "react-context-required-provider"],
+        "priority": "core",
+        "sourceRefs": ["ref-a87b55b89b2a0e21"]
+      }
+    },
+    {
+      "id": "react-context-external-store-tearing",
+      "title": "Почему самодельная подписка на store через useEffect может дать несогласованный снимок?",
+      "topic": "React",
+      "difficulty": "Продвинутый",
+      "summary": "Доставка экземпляра и согласованная подписка - разные слои.",
+      "answerFile": "answers/react/react-context-external-store-tearing.md",
+      "takeaway": "Доставка экземпляра и согласованная подписка - разные слои.",
+      "moduleId": "react",
+      "order": 13,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить: Доставка экземпляра и согласованная подписка - разные слои.",
+        "keywords": ["React", "context", "external", "store", "tearing"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "goalIds": ["core", "react-context-external-store-tearing"],
+        "relatedQuestionIds": ["react-context", "react-external-store"],
+        "priority": "extended",
+        "sourceRefs": ["ref-7d08dbaf713df20f"]
+      }
     }
   ]
 }

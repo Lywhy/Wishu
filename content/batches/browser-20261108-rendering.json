@@ -1,0 +1,43 @@
+{
+  "schemaVersion": 1,
+  "id": "browser-20261108-rendering",
+  "title": "Браузер и HTTP: rendering",
+  "sectionId": "browser",
+  "subsectionId": "rendering",
+  "currentPass": "complete",
+  "goalIds": [
+    "core",
+    "browser-render-pipeline",
+    "browser-resource-ready",
+    "browser-critical-resources",
+    "browser-resource-layout-shift",
+    "browser-parser-preload",
+    "browser-style-script-order",
+    "browser-compositing-animation",
+    "browser-page-lifecycle-save"
+  ],
+  "questionIds": [
+    "browser-render-pipeline",
+    "browser-resource-ready",
+    "browser-critical-resources",
+    "browser-resource-layout-shift",
+    "browser-parser-preload",
+    "browser-style-script-order",
+    "browser-compositing-animation",
+    "browser-page-lifecycle-save"
+  ],
+  "scopePass": {
+    "status": "complete",
+    "remaining": []
+  },
+  "answerPass": {
+    "status": "complete",
+    "remaining": []
+  },
+  "baseline": [],
+  "notes": [
+    "Согласована карта из 14 подразделов. 12 прежних ID сохраняются. API JavaScript/HTML остаются каноническими в своих категориях; здесь рассматриваются сетевые и браузерные сценарии.",
+    "Cache-Control/ETag, идемпотентность, статусы, cookie-флаги, CORS, CSRF, DNS, HTTPS, HTTP/2/3, compression, CDN и waterfall расширяются под прежними ID.",
+    "Завершено: 131 новый вопрос (56 базовых, 64 средних, 11 продвинутых) и 12 расширенных канонических ответов в 14 подразделах. Все исходные ID сохранены, 7 вопросов перераспределены без изменения ID. Oxfmt, content:report, content:build и полный content:check прошли для 1266 вопросов. Приложение, код примеров и seed не запускались."
+  ]
+}

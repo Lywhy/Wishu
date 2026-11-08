@@ -1,0 +1,36 @@
+**Поддерживаемая React Action интегрирована с обработкой ошибок React, но ожидаемую ошибку формы часто лучше вернуть как структурированные данные.**
+
+<!-- wishu:answer-block -->
+
+### Механизм и границы
+
+- Для `useActionState` результат может описывать ошибки полей, сохраняя возможность исправить ввод. Неожиданный сбой, брошенный поддерживаемым action-потоком, может перейти к ближайшей Error Boundary.
+
+- Это не делает произвольный Promise из timer или обычного onClick автоматически перехватываемым. Укажите, какой именно Action-контракт используется.
+
+- Проверяйте вход и права на сервере независимо от клиентской границы; не раскрывайте технические сообщения как пользовательскую валидацию.
+
+### Пример
+
+```jsx
+async function saveAction(previous, formData) {
+  const title = String(formData.get("title") ?? "").trim()
+  if (!title) return { fieldErrors: { title: "Укажите название" } }
+  await saveOnServer(title)
+  return { fieldErrors: {} }
+}
+```
+
+### Типичная ошибка
+
+Бросать исключение на каждое пустое поле и заменять всю форму аварийным fallback.
+
+### Для закрепления
+
+- [Чем управляемое поле отличается от неуправляемого?](/questions/react-controlled-input)
+
+- [Как useActionState помогает обрабатывать форму в React 19?](/questions/react-action-state)
+
+### Источник
+
+[React: useActionState](https://react.dev/reference/react/useActionState)

@@ -1,0 +1,276 @@
+{
+  "$schema": "../question-bundle.schema.json",
+  "sectionId": "browser",
+  "subsectionId": "rendering",
+  "scope": "Путь к пикселям, критические ресурсы, макет и жизненный цикл.",
+  "coverageGoals": [
+    {
+      "id": "core",
+      "title": "Рендеринг и жизненный цикл страницы",
+      "description": "Путь к пикселям, критические ресурсы, макет и жизненный цикл.",
+      "requiredDifficulties": [],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": [
+        "browser-render-pipeline",
+        "browser-resource-ready",
+        "browser-critical-resources",
+        "browser-resource-layout-shift",
+        "browser-parser-preload",
+        "browser-style-script-order",
+        "browser-compositing-animation",
+        "browser-page-lifecycle-save"
+      ]
+    },
+    {
+      "id": "browser-render-pipeline",
+      "title": "Как HTML и CSS превращаются в пиксели страницы?",
+      "description": "Объяснить и применить: Определяйте этап, затронутый конкретным изменением.",
+      "requiredDifficulties": ["Базовый"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "browser-resource-ready",
+      "title": "Почему загрузка файла ещё не означает готовность интерфейса?",
+      "description": "Объяснить и применить: Готовность транспорта и готовность пользовательского действия измеряются отдельно.",
+      "requiredDifficulties": ["Базовый"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "browser-critical-resources",
+      "title": "Как отличить критический ресурс от ресурса, который можно отложить?",
+      "description": "Объяснить и применить: Сначала определите критический путь к нужному результату.",
+      "requiredDifficulties": ["Базовый"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "browser-resource-layout-shift",
+      "title": "Как размер изображений и метрики шрифтов связаны со сдвигами макета?",
+      "description": "Объяснить и применить: Управляйте ожидаемой геометрией до прихода ресурса.",
+      "requiredDifficulties": ["Базовый"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "browser-parser-preload",
+      "title": "Как HTML-парсер и предварительное обнаружение ресурсов влияют на начало загрузки?",
+      "description": "Объяснить и применить: Момент обнаружения зависимости влияет на критический путь.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "browser-style-script-order",
+      "title": "Почему синхронный script может ждать stylesheet?",
+      "description": "Объяснить и применить: Учитывайте межресурсные зависимости, а не только время каждого файла.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "browser-compositing-animation",
+      "title": "Почему transform и opacity часто удобнее для анимации, но не гарантируют бесплатный GPU-кадр?",
+      "description": "Объяснить и применить: Выбирайте свойства с учётом измеренной стоимости всей сцены.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "browser-page-lifecycle-save",
+      "title": "Как сохранять состояние страницы с учётом visibilitychange и pagehide?",
+      "description": "Объяснить и применить: Надёжность данных строится до ухода пользователя со страницы.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    }
+  ],
+  "questions": [
+    {
+      "id": "browser-render-pipeline",
+      "title": "Как HTML и CSS превращаются в пиксели страницы?",
+      "topic": "Web",
+      "difficulty": "Базовый",
+      "summary": "Определяйте этап, затронутый конкретным изменением.",
+      "takeaway": "Определяйте этап, затронутый конкретным изменением.",
+      "moduleId": "browser",
+      "order": 0,
+      "popular": false,
+      "answerFile": "answers/browser/browser-render-pipeline.md",
+      "editorial": {
+        "learningGoal": "Объяснить и применить: Определяйте этап, затронутый конкретным изменением.",
+        "keywords": ["Браузер и HTTP", "rendering", "browser", "render", "pipeline"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "goalIds": ["core", "browser-render-pipeline"],
+        "relatedQuestionIds": ["layout-paint-batching"],
+        "priority": "core",
+        "sourceRefs": ["ref-cff8ff79463bfd4b"]
+      }
+    },
+    {
+      "id": "browser-resource-ready",
+      "title": "Почему загрузка файла ещё не означает готовность интерфейса?",
+      "topic": "Web",
+      "difficulty": "Базовый",
+      "summary": "Готовность транспорта и готовность пользовательского действия измеряются отдельно.",
+      "takeaway": "Готовность транспорта и готовность пользовательского действия измеряются отдельно.",
+      "moduleId": "browser",
+      "order": 1,
+      "popular": false,
+      "answerFile": "answers/browser/browser-resource-ready.md",
+      "editorial": {
+        "learningGoal": "Объяснить и применить: Готовность транспорта и готовность пользовательского действия измеряются отдельно.",
+        "keywords": ["Браузер и HTTP", "rendering", "browser", "resource", "ready"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "goalIds": ["core", "browser-resource-ready"],
+        "relatedQuestionIds": ["document-ready-events"],
+        "priority": "core",
+        "sourceRefs": ["ref-cff8ff79463bfd4b"]
+      }
+    },
+    {
+      "id": "browser-critical-resources",
+      "title": "Как отличить критический ресурс от ресурса, который можно отложить?",
+      "topic": "Web",
+      "difficulty": "Базовый",
+      "summary": "Сначала определите критический путь к нужному результату.",
+      "takeaway": "Сначала определите критический путь к нужному результату.",
+      "moduleId": "browser",
+      "order": 2,
+      "popular": false,
+      "answerFile": "answers/browser/browser-critical-resources.md",
+      "editorial": {
+        "learningGoal": "Объяснить и применить: Сначала определите критический путь к нужному результату.",
+        "keywords": ["Браузер и HTTP", "rendering", "browser", "critical", "resources"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "goalIds": ["core", "browser-critical-resources"],
+        "relatedQuestionIds": ["html-resource-hints"],
+        "priority": "core",
+        "sourceRefs": ["ref-cff8ff79463bfd4b"]
+      }
+    },
+    {
+      "id": "browser-resource-layout-shift",
+      "title": "Как размер изображений и метрики шрифтов связаны со сдвигами макета?",
+      "topic": "Web",
+      "difficulty": "Базовый",
+      "summary": "Управляйте ожидаемой геометрией до прихода ресурса.",
+      "takeaway": "Управляйте ожидаемой геометрией до прихода ресурса.",
+      "moduleId": "browser",
+      "order": 3,
+      "popular": false,
+      "answerFile": "answers/browser/browser-resource-layout-shift.md",
+      "editorial": {
+        "learningGoal": "Объяснить и применить: Управляйте ожидаемой геометрией до прихода ресурса.",
+        "keywords": ["Браузер и HTTP", "rendering", "browser", "resource", "layout", "shift"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "goalIds": ["core", "browser-resource-layout-shift"],
+        "relatedQuestionIds": ["css-font-loading"],
+        "priority": "core",
+        "sourceRefs": ["ref-1f2734e7294c86f2"]
+      }
+    },
+    {
+      "id": "browser-parser-preload",
+      "title": "Как HTML-парсер и предварительное обнаружение ресурсов влияют на начало загрузки?",
+      "topic": "Web",
+      "difficulty": "Средний",
+      "summary": "Момент обнаружения зависимости влияет на критический путь.",
+      "takeaway": "Момент обнаружения зависимости влияет на критический путь.",
+      "moduleId": "browser",
+      "order": 4,
+      "popular": false,
+      "answerFile": "answers/browser/browser-parser-preload.md",
+      "editorial": {
+        "learningGoal": "Объяснить и применить: Момент обнаружения зависимости влияет на критический путь.",
+        "keywords": ["Браузер и HTTP", "rendering", "browser", "parser", "preload"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "goalIds": ["core", "browser-parser-preload"],
+        "relatedQuestionIds": ["html-resource-hints"],
+        "priority": "core",
+        "sourceRefs": ["ref-cff8ff79463bfd4b"]
+      }
+    },
+    {
+      "id": "browser-style-script-order",
+      "title": "Почему синхронный script может ждать stylesheet?",
+      "topic": "Web",
+      "difficulty": "Средний",
+      "summary": "Учитывайте межресурсные зависимости, а не только время каждого файла.",
+      "takeaway": "Учитывайте межресурсные зависимости, а не только время каждого файла.",
+      "moduleId": "browser",
+      "order": 5,
+      "popular": false,
+      "answerFile": "answers/browser/browser-style-script-order.md",
+      "editorial": {
+        "learningGoal": "Объяснить и применить: Учитывайте межресурсные зависимости, а не только время каждого файла.",
+        "keywords": ["Браузер и HTTP", "rendering", "browser", "style", "script", "order"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "goalIds": ["core", "browser-style-script-order"],
+        "relatedQuestionIds": ["script-loading"],
+        "priority": "core",
+        "sourceRefs": ["ref-cff8ff79463bfd4b"]
+      }
+    },
+    {
+      "id": "browser-compositing-animation",
+      "title": "Почему transform и opacity часто удобнее для анимации, но не гарантируют бесплатный GPU-кадр?",
+      "topic": "Web",
+      "difficulty": "Средний",
+      "summary": "Выбирайте свойства с учётом измеренной стоимости всей сцены.",
+      "takeaway": "Выбирайте свойства с учётом измеренной стоимости всей сцены.",
+      "moduleId": "browser",
+      "order": 6,
+      "popular": false,
+      "answerFile": "answers/browser/browser-compositing-animation.md",
+      "editorial": {
+        "learningGoal": "Объяснить и применить: Выбирайте свойства с учётом измеренной стоимости всей сцены.",
+        "keywords": ["Браузер и HTTP", "rendering", "browser", "compositing", "animation"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "goalIds": ["core", "browser-compositing-animation"],
+        "relatedQuestionIds": ["layout-paint-batching"],
+        "priority": "core",
+        "sourceRefs": ["ref-b17a9d9b93436fe8"]
+      }
+    },
+    {
+      "id": "browser-page-lifecycle-save",
+      "title": "Как сохранять состояние страницы с учётом visibilitychange и pagehide?",
+      "topic": "Web",
+      "difficulty": "Средний",
+      "summary": "Надёжность данных строится до ухода пользователя со страницы.",
+      "takeaway": "Надёжность данных строится до ухода пользователя со страницы.",
+      "moduleId": "browser",
+      "order": 7,
+      "popular": false,
+      "answerFile": "answers/browser/browser-page-lifecycle-save.md",
+      "editorial": {
+        "learningGoal": "Объяснить и применить: Надёжность данных строится до ухода пользователя со страницы.",
+        "keywords": ["Браузер и HTTP", "rendering", "browser", "page", "lifecycle", "save"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "goalIds": ["core", "browser-page-lifecycle-save"],
+        "relatedQuestionIds": ["page-exit-events"],
+        "priority": "core",
+        "sourceRefs": ["ref-4c23f175a7721cd4"]
+      }
+    }
+  ]
+}

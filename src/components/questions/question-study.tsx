@@ -1,35 +1,34 @@
-import { QuestionSaveNotice } from "@/components/experience/question-save-notice"
-import { LectureOutline } from "@/components/experience/lecture-outline"
-import { Collapsible, CollapsibleTrigger, CollapsibleContent } from "@/components/ui/collapsible"
-import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group"
-import { Tooltip, TooltipTrigger, TooltipContent } from "@/components/ui/tooltip"
 import { Disclosure } from "@/components/experience/disclosure"
-import { JavaScriptQuestionBadge } from "@/components/questions/javascript-preparation"
-import { javascriptAnswerMarkdown } from "@/lib/javascript-answer-markdown"
-import { changeQuestionMark } from "@/lib/question-mark-actions"
+import { LectureOutline } from "@/components/experience/lecture-outline"
+import { QuestionSaveNotice } from "@/components/experience/question-save-notice"
 import { LearningMarkdown } from "@/components/learning/learning-markdown"
-import { useEffect, useId, useState } from "react"
-import { Check, RotateCcw, SkipForward } from "lucide-react"
-import { Link } from "react-router-dom"
+import { CodeBlock, DifficultyBadge } from "@/components/practice/practice-elements"
+import { JavaScriptQuestionBadge } from "@/components/questions/javascript-preparation"
+import {
+  QuestionFavoriteBadge,
+  QuestionFavoriteButton,
+} from "@/components/questions/question-favorite"
+import { QuestionPopularBadge } from "@/components/questions/question-popular"
+import { QuestionPracticeActions } from "@/components/questions/question-practice-actions"
+import { StudyProgress } from "@/components/questions/study-progress"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
-import { Separator } from "@/components/ui/separator"
+import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible"
 import { Switch } from "@/components/ui/switch"
-import { CodeBlock, DifficultyBadge } from "@/components/practice/practice-elements"
-import { QuestionPopularBadge } from "@/components/questions/question-popular"
-import {
-  QuestionFavoriteButton,
-  QuestionFavoriteBadge,
-} from "@/components/questions/question-favorite"
-import { QuestionPracticeActions } from "@/components/questions/question-practice-actions"
-import { StudyProgress } from "@/components/questions/study-progress"
+import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group"
+import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/ui/tooltip"
 import type { Question } from "@/data/interview-content"
 import type { QuestionStatus } from "@/data/question-catalog"
 import type { QuestionSession } from "@/data/question-session"
+import { javascriptAnswerMarkdown } from "@/lib/javascript-answer-markdown"
+import { changeQuestionMark } from "@/lib/question-mark-actions"
 import { codeLanguageFor } from "@/lib/syntax-highlighter"
 import { cn } from "@/lib/utils"
 import { usePracticeProgress } from "@/stores/practice-progress"
+import { Check, RotateCcw, SkipForward } from "lucide-react"
+import { useEffect, useId, useState } from "react"
+import { Link } from "react-router-dom"
 
 const statuses = [
   {
@@ -97,12 +96,11 @@ export function QuestionReviewControls({
       )}
       <div
         className={cn(
-          "flex items-center gap-1 overflow-hidden rounded-xl border bg-muted/40 p-1",
+          "grid grid-cols-4 items-center gap-1 overflow-hidden rounded-xl border border-border/70 bg-muted/40 p-1",
           compact && "h-10",
         )}
       >
         <QuestionStatusControls questionId={questionId} compact={compact} />
-        <Separator orientation="vertical" className="mx-1 my-2" />
         <QuestionFavoriteButton questionId={questionId} compact={compact} />
       </div>
       <QuestionSaveNotice />
@@ -123,7 +121,7 @@ export function QuestionStatusControls({
     <ToggleGroup
       aria-label="Отметка изучения вопроса"
       spacing={1}
-      className="min-w-0 flex-1"
+      className="col-span-3 grid w-full min-w-0 grid-cols-subgrid gap-1"
       value={current ? [current] : []}
       disabled={saving}
       onValueChange={(values) =>
@@ -141,7 +139,7 @@ export function QuestionStatusControls({
               <ToggleGroupItem
                 value={value}
                 className={cn(
-                  "h-10 min-w-0 flex-1 rounded-lg p-0 text-muted-foreground hover:bg-background hover:text-foreground focus-visible:ring-inset",
+                  "h-10 w-full min-w-0 rounded-lg p-0 text-muted-foreground hover:bg-background hover:text-foreground focus-visible:ring-inset",
                   compact && "h-7 rounded-md",
                   current === value && selected,
                   {
@@ -214,11 +212,13 @@ function AnswerDisclosure({
         </CollapsibleTrigger>
         {allowPreference && <AnswerPreference />}
       </div>
-      <CollapsibleContent keepMounted className="w-full min-w-0 space-y-6 border-t pt-5">
+      <CollapsibleContent
+        keepMounted
+        className="w-full min-w-0 space-y-6 border-t border-border/60 pt-5 transition-opacity duration-350 ease-[cubic-bezier(0.22,0.61,0.36,1)] data-ending-style:opacity-0 data-starting-style:opacity-0 motion-reduce:transition-none"
+      >
         <LectureOutline content={content} prefix={prefix} compact />
         <div className="w-full min-w-0">
           <LearningMarkdown
-            key={String(open)}
             content={content}
             variant="answer"
             anchorPrefix={prefix}
@@ -234,7 +234,7 @@ function AnswerDisclosure({
         {question.topic !== "JavaScript" && question.pitfall && (
           <section
             aria-labelledby={`${id}-pitfall`}
-            className="rounded-xl border border-amber-200 bg-amber-50/50 p-4 dark:border-amber-800/50 dark:bg-amber-500/5"
+            className="rounded-r-lg border-l-2 border-amber-400/40 bg-amber-500/5 p-4"
           >
             <h3 id={`${id}-pitfall`} className="text-sm font-semibold">
               Частая ошибка
@@ -245,7 +245,7 @@ function AnswerDisclosure({
           </section>
         )}
         {question.topic !== "JavaScript" && (
-          <section aria-labelledby={`${id}-takeaway`} className="rounded-xl border bg-muted/40 p-4">
+          <section aria-labelledby={`${id}-takeaway`} className="rounded-lg bg-muted/30 p-4">
             <h3 id={`${id}-takeaway`} className="text-sm font-semibold">
               Главная мысль
             </h3>
@@ -277,7 +277,7 @@ export function QuestionCard({
       state={{ questionSession: session }}
       className="group block rounded-xl outline-none focus-visible:ring-2 focus-visible:ring-ring"
     >
-      <Card className="gap-2 rounded-xl p-4 shadow-none transition-colors group-hover:bg-muted/40">
+      <Card className="gap-3 rounded-xl p-5 shadow-none transition-[background-color,border-color,box-shadow] duration-200 group-hover:border-primary/25 group-hover:bg-muted/30 motion-reduce:transition-none">
         {context && <p className="text-xs text-muted-foreground">{context}</p>}
         <h2 className="text-[15px] leading-6 font-semibold group-hover:text-primary">
           {question.title}
@@ -317,7 +317,7 @@ export function QuestionStudyAside({
       <StudyProgress questionIds={questionIds} />
       {actions && <QuestionPracticeActions questionIds={questionIds} title={title} />}
       <Disclosure
-        className="border-0 bg-transparent text-xs text-muted-foreground"
+        className="mt-2 border-0 bg-transparent text-xs text-muted-foreground"
         title={<> Как работают отметки </>}
       >
         <p className="mt-2 leading-6">

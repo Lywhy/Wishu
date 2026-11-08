@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "id": "browser-20261108-http",
+  "title": "Браузер и HTTP: http",
+  "sectionId": "browser",
+  "subsectionId": "http",
+  "currentPass": "complete",
+  "goalIds": [
+    "core",
+    "http-idempotency",
+    "http-message-model",
+    "http-stateless",
+    "http-method-choice",
+    "http-head-options",
+    "http-get-input",
+    "http-put-patch",
+    "http-retry-key",
+    "http-retry-policy",
+    "http-if-match-conflict"
+  ],
+  "questionIds": [
+    "http-idempotency",
+    "http-message-model",
+    "http-stateless",
+    "http-method-choice",
+    "http-head-options",
+    "http-get-input",
+    "http-put-patch",
+    "http-retry-key",
+    "http-retry-policy",
+    "http-if-match-conflict"
+  ],
+  "scopePass": {
+    "status": "complete",
+    "remaining": []
+  },
+  "answerPass": {
+    "status": "complete",
+    "remaining": []
+  },
+  "baseline": [
+    {
+      "id": "http-cache",
+      "title": "Чем Cache-Control отличается от ETag?",
+      "contentHash": "eeb3756cbdee9831cf70f0e8ffc194d3f6219346a3afdc733564df9e91c4167e"
+    },
+    {
+      "id": "http-idempotency",
+      "title": "Что означает идемпотентность HTTP-метода?",
+      "contentHash": "e0f82ddb6bc115a4ba53c2b1110805c9d59fe8d43e81038a44459a1ff2e8b362"
+    },
+    {
+      "id": "http-status-codes",
+      "title": "Как различать 401, 403, 404 и 409 в API?",
+      "contentHash": "5bc91e9527c7ebc4f7185f6127f0159648d6529f926341670b12fc516373da14"
+    }
+  ],
+  "notes": [
+    "Согласована карта из 14 подразделов. 12 прежних ID сохраняются. API JavaScript/HTML остаются каноническими в своих категориях; здесь рассматриваются сетевые и браузерные сценарии.",
+    "Cache-Control/ETag, идемпотентность, статусы, cookie-флаги, CORS, CSRF, DNS, HTTPS, HTTP/2/3, compression, CDN и waterfall расширяются под прежними ID.",
+    "Завершено: 131 новый вопрос (56 базовых, 64 средних, 11 продвинутых) и 12 расширенных канонических ответов в 14 подразделах. Все исходные ID сохранены, 7 вопросов перераспределены без изменения ID. Oxfmt, content:report, content:build и полный content:check прошли для 1266 вопросов. Приложение, код примеров и seed не запускались."
+  ]
+}

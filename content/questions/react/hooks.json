@@ -20,24 +20,39 @@
         "react-strict-mode",
         "react-layout-effect",
         "react-custom-hooks",
-        "react-effect-events"
+        "react-effect-events",
+        "react-effect-object-dependencies",
+        "react-effect-async-return",
+        "react-effect-independent-processes",
+        "react-hook-api-contract",
+        "react-listener-function-identity",
+        "react-timeout-cleanup",
+        "react-hook-lint-purpose",
+        "react-hook-interval-functional-update",
+        "react-hook-debounce-value",
+        "react-hook-document-subscription",
+        "react-hook-effect-error-handling",
+        "react-hook-effect-loop-diagnosis",
+        "react-hook-memo-initializer-purity",
+        "react-external-store-snapshot-stability",
+        "react-external-store-subscribe-identity"
       ]
     },
     {
       "id": "react-hooks-rules",
       "title": "Какие правила вызова хуков нужно соблюдать?",
-      "description": "Объяснить и применить правило с учётом его границ: Сохраняйте порядок обычных хуков между рендерами.",
+      "description": "Условным бывает поведение, а не порядок обычных хуков.",
       "requiredDifficulties": ["Базовый"],
-      "reviewed": false,
+      "reviewed": true,
       "priority": "core",
       "relatedSkillIds": []
     },
     {
       "id": "effects",
       "title": "Для чего нужен useEffect и его cleanup?",
-      "description": "Объяснить и применить правило с учётом его границ: Каждому созданному ресурсу должно соответствовать освобождение.",
+      "description": "Эффект описывает начало и остановку внешней синхронизации.",
       "requiredDifficulties": ["Средний"],
-      "reviewed": false,
+      "reviewed": true,
       "priority": "core",
       "relatedSkillIds": []
     },
@@ -103,6 +118,141 @@
       "reviewed": false,
       "priority": "core",
       "relatedSkillIds": []
+    },
+    {
+      "id": "react-effect-object-dependencies",
+      "title": "Почему объект в зависимостях эффекта вызывает лишние переподключения?",
+      "description": "Устранять нестабильные зависимости через изменение структуры эффекта, не скрывая реактивные значения.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "react-effect-async-return",
+      "title": "Почему callback useEffect нельзя объявлять async?",
+      "description": "Различать cleanup и Promise, обрабатывать асинхронную операцию внутри синхронного setup.",
+      "requiredDifficulties": ["Базовый"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "react-effect-independent-processes",
+      "title": "Когда один эффект стоит разделить на несколько?",
+      "description": "Разделять независимые процессы по собственным зависимостям и очистке.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "react-hook-api-contract",
+      "title": "Как выбрать возвращаемое значение своего хука: объект или кортеж?",
+      "description": "Объяснить и применить: Проектируйте возвращаемый контракт по нужным действиям потребителя.",
+      "requiredDifficulties": ["Базовый"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "react-listener-function-identity",
+      "title": "Почему removeEventListener не удаляет обработчик, созданный новой стрелочной функцией?",
+      "description": "Объяснить и применить: Очистка должна ссылаться на реально созданный ресурс.",
+      "requiredDifficulties": ["Базовый"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "react-timeout-cleanup",
+      "title": "Как не выполнить отложенное действие после ухода со страницы?",
+      "description": "Объяснить и применить: Время жизни таймера должно соответствовать актуальному запуску эффекта.",
+      "requiredDifficulties": ["Базовый"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "react-hook-lint-purpose",
+      "title": "Что проверяет eslint-plugin-react-hooks и почему это не только стилистика?",
+      "description": "Объяснить и применить: Lint хуков проверяет важную часть модели выполнения React.",
+      "requiredDifficulties": ["Базовый"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "react-hook-interval-functional-update",
+      "title": "Как интервал может обновлять счётчик без захвата устаревшего значения?",
+      "description": "Объяснить и применить: Updater может убрать зависимость от снимка, но не от всех внешних параметров.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "react-hook-debounce-value",
+      "title": "Как реализовать debounce значения с очисткой предыдущего таймера?",
+      "description": "Объяснить и применить: Различайте быстрый ввод, временную задержку и актуальность сетевого результата.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "react-hook-document-subscription",
+      "title": "Как вынести подписку на видимость документа в пользовательский хук?",
+      "description": "Объяснить и применить: Хук должен описывать и снимок, и изменение внешнего источника.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "react-hook-effect-error-handling",
+      "title": "Почему исключение async-подписки нужно обрабатывать в её собственном потоке?",
+      "description": "Объяснить и применить: Граница обработки ошибки должна охватывать реальную асинхронную работу.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "react-hook-effect-loop-diagnosis",
+      "title": "Как разобрать бесконечный цикл эффекта, который обновляет state?",
+      "description": "Объяснить и применить: Найдите цепочку state -> dependency -> effect, затем выберите владельца данных.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "react-hook-memo-initializer-purity",
+      "title": "Почему запрос в useMemo или инициализаторе state остаётся побочным эффектом?",
+      "description": "Объяснить и применить: Мемоизация меняет стоимость вычисления, но не разрешает побочные эффекты render.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "react-external-store-snapshot-stability",
+      "title": "Почему getSnapshot в useSyncExternalStore должен возвращать стабильный снимок?",
+      "description": "Объяснить и применить: Стабильность и версионность снимка являются частью API внешнего источника.",
+      "requiredDifficulties": ["Продвинутый"],
+      "reviewed": true,
+      "priority": "extended",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "react-external-store-subscribe-identity",
+      "title": "Как нестабильная функция subscribe влияет на useSyncExternalStore?",
+      "description": "Объяснить и применить: Идентичность подписки должна следовать идентичности источника.",
+      "requiredDifficulties": ["Продвинутый"],
+      "reviewed": true,
+      "priority": "extended",
+      "relatedSkillIds": []
     }
   ],
   "questions": [
@@ -112,19 +262,19 @@
       "topic": "React",
       "difficulty": "Базовый",
       "summary": "Стабильный порядок вызовов и допустимые функции.",
-      "takeaway": "Сохраняйте порядок обычных хуков между рендерами.",
+      "takeaway": "Условным бывает поведение, а не порядок обычных хуков.",
       "moduleId": "react",
       "order": 0,
       "popular": false,
       "editorial": {
-        "learningGoal": "Объяснить и применить правило с учётом его границ: Сохраняйте порядок обычных хуков между рендерами.",
-        "keywords": ["React", "Хуки и эффекты"],
+        "learningGoal": "Условным бывает поведение, а не порядок обычных хуков.",
+        "keywords": ["React", "hooks", "rules", "Хуки и эффекты"],
         "kind": "explanation",
-        "reviewStatus": "imported",
+        "reviewStatus": "ready",
         "goalIds": ["core", "react-hooks-rules"],
-        "relatedQuestionIds": [],
+        "relatedQuestionIds": ["react-component-call", "react-use-resource"],
         "priority": "core",
-        "sourceRefs": []
+        "sourceRefs": ["ref-dd214ffd14861896"]
       },
       "answerFile": "answers/react/react-hooks-rules.md"
     },
@@ -134,20 +284,23 @@
       "topic": "React",
       "difficulty": "Средний",
       "summary": "Синхронизация с внешними системами и освобождение ресурсов.",
-      "code": "useEffect(() => {\n  const onResize = () => updateWidth(window.innerWidth)\n  window.addEventListener(\"resize\", onResize)\n  return () => window.removeEventListener(\"resize\", onResize)\n}, [])",
-      "takeaway": "Каждому созданному ресурсу должно соответствовать освобождение.",
+      "takeaway": "Эффект описывает начало и остановку внешней синхронизации.",
       "moduleId": "react",
       "order": 1,
       "popular": false,
       "editorial": {
-        "learningGoal": "Объяснить и применить правило с учётом его границ: Каждому созданному ресурсу должно соответствовать освобождение.",
-        "keywords": ["React", "Хуки и эффекты"],
+        "learningGoal": "Эффект описывает начало и остановку внешней синхронизации.",
+        "keywords": ["React", "effects", "Хуки и эффекты"],
         "kind": "explanation",
-        "reviewStatus": "imported",
+        "reviewStatus": "ready",
         "goalIds": ["core", "effects"],
-        "relatedQuestionIds": [],
+        "relatedQuestionIds": [
+          "react-effect-dependencies",
+          "react-effect-not-needed",
+          "react-effect-async-return"
+        ],
         "priority": "core",
-        "sourceRefs": []
+        "sourceRefs": ["ref-a781b5db8e78be67"]
       },
       "answerFile": "answers/react/effects.md"
     },
@@ -308,6 +461,336 @@
         "sourceRefs": ["ref-59681255a6b236ea"]
       },
       "answerFile": "answers/react/react-effect-events.md"
+    },
+    {
+      "id": "react-effect-object-dependencies",
+      "title": "Почему объект в зависимостях эффекта вызывает лишние переподключения?",
+      "topic": "React",
+      "difficulty": "Средний",
+      "summary": "Устранять нестабильные зависимости через изменение структуры эффекта, не скрывая реактивные значения.",
+      "moduleId": "react",
+      "order": 9,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Устранять нестабильные зависимости через изменение структуры эффекта, не скрывая реактивные значения.",
+        "keywords": ["React", "effect", "object", "dependencies"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "goalIds": ["core", "react-effect-object-dependencies"],
+        "relatedQuestionIds": ["react-effect-dependencies"],
+        "priority": "core",
+        "sourceRefs": ["ref-d20eff868823b735"]
+      },
+      "takeaway": "Исправляйте происхождение зависимости, а не маскируйте её изменение.",
+      "answerFile": "answers/react/react-effect-object-dependencies.md"
+    },
+    {
+      "id": "react-effect-async-return",
+      "title": "Почему callback useEffect нельзя объявлять async?",
+      "topic": "React",
+      "difficulty": "Базовый",
+      "summary": "Различать cleanup и Promise, обрабатывать асинхронную операцию внутри синхронного setup.",
+      "moduleId": "react",
+      "order": 10,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Различать cleanup и Promise, обрабатывать асинхронную операцию внутри синхронного setup.",
+        "keywords": ["React", "effect", "async", "return"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "goalIds": ["core", "react-effect-async-return"],
+        "relatedQuestionIds": ["react-fetch-races"],
+        "priority": "core",
+        "sourceRefs": ["ref-4d23b49b0284f9ac"]
+      },
+      "takeaway": "Асинхронная операция находится внутри синхронного контракта эффекта.",
+      "answerFile": "answers/react/react-effect-async-return.md"
+    },
+    {
+      "id": "react-effect-independent-processes",
+      "title": "Когда один эффект стоит разделить на несколько?",
+      "topic": "React",
+      "difficulty": "Средний",
+      "summary": "Разделять независимые процессы по собственным зависимостям и очистке.",
+      "moduleId": "react",
+      "order": 11,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Разделять независимые процессы по собственным зависимостям и очистке.",
+        "keywords": ["React", "effect", "independent", "processes"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "goalIds": ["core", "react-effect-independent-processes"],
+        "relatedQuestionIds": ["effects"],
+        "priority": "core",
+        "sourceRefs": ["ref-41c5633b4f8c1b7d"]
+      },
+      "takeaway": "Один эффект описывает один независимый процесс синхронизации.",
+      "answerFile": "answers/react/react-effect-independent-processes.md"
+    },
+    {
+      "id": "react-hook-api-contract",
+      "title": "Как выбрать возвращаемое значение своего хука: объект или кортеж?",
+      "topic": "React",
+      "difficulty": "Базовый",
+      "summary": "Проектируйте возвращаемый контракт по нужным действиям потребителя.",
+      "answerFile": "answers/react/react-hook-api-contract.md",
+      "takeaway": "Проектируйте возвращаемый контракт по нужным действиям потребителя.",
+      "moduleId": "react",
+      "order": 12,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить: Проектируйте возвращаемый контракт по нужным действиям потребителя.",
+        "keywords": ["React", "hook", "api", "contract"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "goalIds": ["core", "react-hook-api-contract"],
+        "relatedQuestionIds": ["effects", "react-custom-hooks"],
+        "priority": "core",
+        "sourceRefs": ["ref-843b8436ddc64978"]
+      }
+    },
+    {
+      "id": "react-listener-function-identity",
+      "title": "Почему removeEventListener не удаляет обработчик, созданный новой стрелочной функцией?",
+      "topic": "React",
+      "difficulty": "Базовый",
+      "summary": "Очистка должна ссылаться на реально созданный ресурс.",
+      "answerFile": "answers/react/react-listener-function-identity.md",
+      "takeaway": "Очистка должна ссылаться на реально созданный ресурс.",
+      "moduleId": "react",
+      "order": 13,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить: Очистка должна ссылаться на реально созданный ресурс.",
+        "keywords": ["React", "listener", "function", "identity"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "goalIds": ["core", "react-listener-function-identity"],
+        "relatedQuestionIds": ["effects"],
+        "priority": "core",
+        "sourceRefs": ["ref-4d23b49b0284f9ac"]
+      }
+    },
+    {
+      "id": "react-timeout-cleanup",
+      "title": "Как не выполнить отложенное действие после ухода со страницы?",
+      "topic": "React",
+      "difficulty": "Базовый",
+      "summary": "Время жизни таймера должно соответствовать актуальному запуску эффекта.",
+      "answerFile": "answers/react/react-timeout-cleanup.md",
+      "takeaway": "Время жизни таймера должно соответствовать актуальному запуску эффекта.",
+      "moduleId": "react",
+      "order": 14,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить: Время жизни таймера должно соответствовать актуальному запуску эффекта.",
+        "keywords": ["React", "timeout", "cleanup"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "goalIds": ["core", "react-timeout-cleanup"],
+        "relatedQuestionIds": ["effects"],
+        "priority": "core",
+        "sourceRefs": ["ref-4d23b49b0284f9ac"]
+      }
+    },
+    {
+      "id": "react-hook-lint-purpose",
+      "title": "Что проверяет eslint-plugin-react-hooks и почему это не только стилистика?",
+      "topic": "React",
+      "difficulty": "Базовый",
+      "summary": "Lint хуков проверяет важную часть модели выполнения React.",
+      "answerFile": "answers/react/react-hook-lint-purpose.md",
+      "takeaway": "Lint хуков проверяет важную часть модели выполнения React.",
+      "moduleId": "react",
+      "order": 15,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить: Lint хуков проверяет важную часть модели выполнения React.",
+        "keywords": ["React", "hook", "lint", "purpose"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "goalIds": ["core", "react-hook-lint-purpose"],
+        "relatedQuestionIds": ["effects"],
+        "priority": "core",
+        "sourceRefs": ["ref-739210645a43a7ea"]
+      }
+    },
+    {
+      "id": "react-hook-interval-functional-update",
+      "title": "Как интервал может обновлять счётчик без захвата устаревшего значения?",
+      "topic": "React",
+      "difficulty": "Средний",
+      "summary": "Updater может убрать зависимость от снимка, но не от всех внешних параметров.",
+      "answerFile": "answers/react/react-hook-interval-functional-update.md",
+      "takeaway": "Updater может убрать зависимость от снимка, но не от всех внешних параметров.",
+      "moduleId": "react",
+      "order": 16,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить: Updater может убрать зависимость от снимка, но не от всех внешних параметров.",
+        "keywords": ["React", "hook", "interval", "functional", "update"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "goalIds": ["core", "react-hook-interval-functional-update"],
+        "relatedQuestionIds": ["effects", "react-stale-closures"],
+        "priority": "core",
+        "sourceRefs": ["ref-4d23b49b0284f9ac"]
+      }
+    },
+    {
+      "id": "react-hook-debounce-value",
+      "title": "Как реализовать debounce значения с очисткой предыдущего таймера?",
+      "topic": "React",
+      "difficulty": "Средний",
+      "summary": "Различайте быстрый ввод, временную задержку и актуальность сетевого результата.",
+      "answerFile": "answers/react/react-hook-debounce-value.md",
+      "takeaway": "Различайте быстрый ввод, временную задержку и актуальность сетевого результата.",
+      "moduleId": "react",
+      "order": 17,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить: Различайте быстрый ввод, временную задержку и актуальность сетевого результата.",
+        "keywords": ["React", "hook", "debounce", "value"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "goalIds": ["core", "react-hook-debounce-value"],
+        "relatedQuestionIds": ["effects", "react-transition-deferred"],
+        "priority": "core",
+        "sourceRefs": ["ref-1c462c80f4daa775"]
+      }
+    },
+    {
+      "id": "react-hook-document-subscription",
+      "title": "Как вынести подписку на видимость документа в пользовательский хук?",
+      "topic": "React",
+      "difficulty": "Средний",
+      "summary": "Хук должен описывать и снимок, и изменение внешнего источника.",
+      "answerFile": "answers/react/react-hook-document-subscription.md",
+      "takeaway": "Хук должен описывать и снимок, и изменение внешнего источника.",
+      "moduleId": "react",
+      "order": 18,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить: Хук должен описывать и снимок, и изменение внешнего источника.",
+        "keywords": ["React", "hook", "document", "subscription"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "goalIds": ["core", "react-hook-document-subscription"],
+        "relatedQuestionIds": ["effects"],
+        "priority": "core",
+        "sourceRefs": ["ref-7d08dbaf713df20f"]
+      }
+    },
+    {
+      "id": "react-hook-effect-error-handling",
+      "title": "Почему исключение async-подписки нужно обрабатывать в её собственном потоке?",
+      "topic": "React",
+      "difficulty": "Средний",
+      "summary": "Граница обработки ошибки должна охватывать реальную асинхронную работу.",
+      "answerFile": "answers/react/react-hook-effect-error-handling.md",
+      "takeaway": "Граница обработки ошибки должна охватывать реальную асинхронную работу.",
+      "moduleId": "react",
+      "order": 19,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить: Граница обработки ошибки должна охватывать реальную асинхронную работу.",
+        "keywords": ["React", "hook", "effect", "error", "handling"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "goalIds": ["core", "react-hook-effect-error-handling"],
+        "relatedQuestionIds": ["effects"],
+        "priority": "core",
+        "sourceRefs": ["ref-85b61ca05a0610ef"]
+      }
+    },
+    {
+      "id": "react-hook-effect-loop-diagnosis",
+      "title": "Как разобрать бесконечный цикл эффекта, который обновляет state?",
+      "topic": "React",
+      "difficulty": "Средний",
+      "summary": "Найдите цепочку state -> dependency -> effect, затем выберите владельца данных.",
+      "answerFile": "answers/react/react-hook-effect-loop-diagnosis.md",
+      "takeaway": "Найдите цепочку state -> dependency -> effect, затем выберите владельца данных.",
+      "moduleId": "react",
+      "order": 20,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить: Найдите цепочку state -> dependency -> effect, затем выберите владельца данных.",
+        "keywords": ["React", "hook", "effect", "loop", "diagnosis"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "goalIds": ["core", "react-hook-effect-loop-diagnosis"],
+        "relatedQuestionIds": ["effects", "react-effect-not-needed"],
+        "priority": "core",
+        "sourceRefs": ["ref-4d23b49b0284f9ac"]
+      }
+    },
+    {
+      "id": "react-hook-memo-initializer-purity",
+      "title": "Почему запрос в useMemo или инициализаторе state остаётся побочным эффектом?",
+      "topic": "React",
+      "difficulty": "Средний",
+      "summary": "Мемоизация меняет стоимость вычисления, но не разрешает побочные эффекты render.",
+      "answerFile": "answers/react/react-hook-memo-initializer-purity.md",
+      "takeaway": "Мемоизация меняет стоимость вычисления, но не разрешает побочные эффекты render.",
+      "moduleId": "react",
+      "order": 21,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить: Мемоизация меняет стоимость вычисления, но не разрешает побочные эффекты render.",
+        "keywords": ["React", "hook", "memo", "initializer", "purity"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "goalIds": ["core", "react-hook-memo-initializer-purity"],
+        "relatedQuestionIds": ["effects", "react-render-purity"],
+        "priority": "core",
+        "sourceRefs": ["ref-210c042adf85ebf9"]
+      }
+    },
+    {
+      "id": "react-external-store-snapshot-stability",
+      "title": "Почему getSnapshot в useSyncExternalStore должен возвращать стабильный снимок?",
+      "topic": "React",
+      "difficulty": "Продвинутый",
+      "summary": "Стабильность и версионность снимка являются частью API внешнего источника.",
+      "answerFile": "answers/react/react-external-store-snapshot-stability.md",
+      "takeaway": "Стабильность и версионность снимка являются частью API внешнего источника.",
+      "moduleId": "react",
+      "order": 22,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить: Стабильность и версионность снимка являются частью API внешнего источника.",
+        "keywords": ["React", "external", "store", "snapshot", "stability"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "goalIds": ["core", "react-external-store-snapshot-stability"],
+        "relatedQuestionIds": ["effects", "react-external-store"],
+        "priority": "extended",
+        "sourceRefs": ["ref-7d08dbaf713df20f"]
+      }
+    },
+    {
+      "id": "react-external-store-subscribe-identity",
+      "title": "Как нестабильная функция subscribe влияет на useSyncExternalStore?",
+      "topic": "React",
+      "difficulty": "Продвинутый",
+      "summary": "Идентичность подписки должна следовать идентичности источника.",
+      "answerFile": "answers/react/react-external-store-subscribe-identity.md",
+      "takeaway": "Идентичность подписки должна следовать идентичности источника.",
+      "moduleId": "react",
+      "order": 23,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить: Идентичность подписки должна следовать идентичности источника.",
+        "keywords": ["React", "external", "store", "subscribe", "identity"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "goalIds": ["core", "react-external-store-subscribe-identity"],
+        "relatedQuestionIds": ["effects", "react-external-store"],
+        "priority": "extended",
+        "sourceRefs": ["ref-7d08dbaf713df20f"]
+      }
     }
   ]
 }

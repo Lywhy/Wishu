@@ -1,0 +1,120 @@
+{
+  "schemaVersion": 1,
+  "id": "react-core-20261108-components",
+  "title": "React: components",
+  "sectionId": "react",
+  "subsectionId": "components",
+  "currentPass": "complete",
+  "goalIds": [
+    "core",
+    "react-render-purity",
+    "react-component-call",
+    "react-element-node-component",
+    "react-jsx-html-safety",
+    "react-prop-forwarding-contract",
+    "react-clone-element-contract",
+    "react-class-lifecycle-migration",
+    "react-keys",
+    "react-state-identity",
+    "react-events"
+  ],
+  "questionIds": [
+    "react-render-purity",
+    "react-component-call",
+    "react-element-node-component",
+    "react-jsx-html-safety",
+    "react-prop-forwarding-contract",
+    "react-clone-element-contract",
+    "react-class-lifecycle-migration",
+    "react-keys",
+    "react-state-identity",
+    "react-events"
+  ],
+  "scopePass": {
+    "status": "complete",
+    "remaining": []
+  },
+  "answerPass": {
+    "status": "complete",
+    "remaining": []
+  },
+  "baseline": [
+    {
+      "id": "react-purpose",
+      "title": "Что такое React и что означает декларативный интерфейс?",
+      "contentHash": "555a8a057b4990ed670b2397e84798f6c7d4e9785dfae551fbefabea1919d451"
+    },
+    {
+      "id": "react-jsx",
+      "title": "Что такое JSX и чем он отличается от HTML?",
+      "contentHash": "555c9c3392339067b4f47acb2db5b1efa386330da05a5e303118c38bf4c91d6d"
+    },
+    {
+      "id": "react-props-children",
+      "title": "Как работают props и children?",
+      "contentHash": "c1def0e4820593963cbfb68a07666a65de41c70bf29d21df508073d306fd3981"
+    },
+    {
+      "id": "react-render-commit",
+      "title": "Чем рендер отличается от изменения DOM?",
+      "contentHash": "b6c957aef4fa92b45ae66937db8220bf48a143f0ad34962242f77e5af842da9c"
+    },
+    {
+      "id": "react-conditional-rendering",
+      "title": "Какие ошибки возможны при условном рендеринге?",
+      "contentHash": "25b589c3bea10bcc29dbe4805938d1ed92dd026bd25dada88b5134b49ae186e1"
+    },
+    {
+      "id": "react-keys",
+      "title": "Зачем React нужен key в списках?",
+      "contentHash": "61b43f4cad0794001d0a690902f2ec50da60fada0e1b771155ebb144408f5ab4"
+    },
+    {
+      "id": "react-fragments",
+      "title": "Зачем нужны Fragment и явный ключ у фрагмента?",
+      "contentHash": "9be0c77fe02761499b4f881a9c29007814bb350872d144303a0cbfb6bc077709"
+    },
+    {
+      "id": "react-state-identity",
+      "title": "Когда React сохраняет состояние, а когда сбрасывает его?",
+      "contentHash": "ec2fa7d00954237c592556216c198ab37798bec479cfbca3b12ac9adc250b269"
+    },
+    {
+      "id": "react-events",
+      "title": "Почему onClick={handleClick()} отличается от onClick={handleClick}?",
+      "contentHash": "1c2e2535081850d4b9c005e4bf3120da5f06b7bf722b1289ef41ddf7642c3f89"
+    },
+    {
+      "id": "react-composition-patterns",
+      "title": "Как выбрать между children, render prop, HOC и пользовательским хуком?",
+      "contentHash": "ee06d4de49b245607d5c4d2ab1d9ea34bd7c12684777ba566d6bccc12f638fc9"
+    },
+    {
+      "id": "react-children-opaque",
+      "title": "Почему children нельзя считать обычным массивом готовых DOM-узлов?",
+      "contentHash": "4c0a67ba8797b7e4b0d9dc017049d6a3f590c4ea8143dd7c3aa6b65c360f1f87"
+    },
+    {
+      "id": "react-event-boundaries",
+      "title": "Как распространение React-событий связано с DOM и обработчиками capture?",
+      "contentHash": "02e9f5d6239d5e73ca1387eb184ea68ceaf8744a3c8bb7ff464c349f1fb9c3d4"
+    },
+    {
+      "id": "react-activity-lifetime",
+      "title": "Как Activity скрывает интерфейс с сохранением состояния и что происходит с эффектами?",
+      "contentHash": "468c8be4642389fd6032499ee7b655a9c50d919af8f554710b09ec779903f94a"
+    }
+  ],
+  "notes": [
+    "Сначала сопоставлены все 94 действующие React-карточки. Redux и Zustand сохраняются без повторного пересмотра.",
+    "react-render-purity: Отделять вычисление JSX от побочных эффектов и отличать локальную мутацию от внешней. Закрепление: react-render-commit",
+    "react-component-call: Различать обычный вызов функции и создание React-компонента с собственной идентичностью. Закрепление: react-hooks-rules",
+    "react-element-node-component: Отличать тип компонента, описание элемента и допустимое содержимое дерева. Закрепление: react-children-opaque",
+    "react-jsx-html-safety: Разделять вывод текста и вставку доверенного HTML без ложного обещания полной защиты от XSS. Закрепление: react-jsx",
+    "react-prop-forwarding-contract: Сохранять контракт DOM-атрибутов, порядок переопределения и поведение обработчиков. Закрепление: react-props-children",
+    "react-clone-element-contract: Понимать поверхностное переопределение props и выбирать явную альтернативу клонированию. Закрепление: react-composition-patterns",
+    "react-class-lifecycle-migration: Сопоставить lifecycle-методы с процессом синхронизации без механической замены каждого метода эффектом. Закрепление: effects",
+    "Ключи, идентичность state, обработчики, очередь, эффекты, memo, controlled input, Error Boundary и правила хуков расширяются под прежними ID; useId и сравнение transition/deferred не дублируются.",
+    "Контент отформатирован. content:report: +34 новых, 11 расширенных ответов и 4 изменения общих источников; удалений и лексических кандидатов нет. content:build и полный content:check прошли для 963 вопросов. Примеры и приложение не запускались."
+  ]
+}

@@ -110,7 +110,8 @@ export function GlobalSearch() {
     { title: "Вопросы", to: "/questions" },
     { title: "Задачи", to: "/tasks" },
     { title: "Собеседования", to: "/interviews" },
-    { title: "Короткая подготовка", to: "/session" },
+    { title: "Баги и предложения", to: "/feedback" },
+    { title: "Короткая подготовка", to: "/questions/preparation" },
     { title: "Пробное собеседование", to: "/mock-interview" },
     { title: "Повторить сегодня", to: "/questions?status=due" },
   ].filter((item) => !text || item.title.toLocaleLowerCase("ru").includes(text))

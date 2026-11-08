@@ -1,3 +1,4 @@
+import { PageHeading } from "@/components/catalog/page-heading"
 import {
   JavaScriptQuestionBadge,
   JavaScriptSelfCheck,
@@ -104,26 +105,25 @@ export function QuestionDetailPage() {
       <div
         className={`grid items-start gap-6 ${focus ? "lg:grid-cols-1" : "lg:grid-cols-[minmax(0,1fr)_280px]"}`}
       >
-        <article className="min-w-0 space-y-5">
-          <header>
-            <div className="mb-3 flex flex-wrap items-center gap-2">
-              <Badge variant="secondary">{question.topic}</Badge>
-              <DifficultyBadge level={question.difficulty} />
-              <JavaScriptQuestionBadge question={question} />
-              {question.popular && <QuestionPopularBadge />}
-              <span className="ml-auto text-xs text-muted-foreground">
-                Вопрос {index + 1} из {siblings.length}
-              </span>
-            </div>
-            <h1
-              data-question-heading
-              tabIndex={-1}
-              className="text-2xl leading-tight font-semibold tracking-tight outline-none sm:text-3xl"
-            >
-              {question.title}
-            </h1>
-            <p className="mt-3 text-sm leading-7 text-muted-foreground">{question.summary}</p>
-          </header>
+        <article className="min-w-0 space-y-6">
+          <PageHeading
+            title={question.title}
+            description={question.summary}
+            meta={
+              <>
+                <Badge variant="secondary">{question.topic}</Badge>
+                <DifficultyBadge level={question.difficulty} />
+                <JavaScriptQuestionBadge question={question} />
+                {question.popular && <QuestionPopularBadge />}
+                <span className="ml-auto text-xs text-muted-foreground">
+                  Вопрос {index + 1} из {siblings.length}
+                </span>
+              </>
+            }
+            questionHeading
+            headingProps={{ tabIndex: -1 }}
+            className="mb-0 sm:mb-0"
+          />
           {isJavascriptCodeReading(question) && question.code && (
             <section aria-label="Код для самостоятельного разбора" className="space-y-3">
               <CodeBlock

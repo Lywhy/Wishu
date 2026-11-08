@@ -1,0 +1,30 @@
+**Во время IME-композиции Enter может подтверждать ввод символа, а не намерение отправить форму.**
+
+<!-- wishu:answer-block -->
+
+### Механизм и границы
+
+- Пользовательский onKeyDown должен учитывать isComposing нативного KeyboardEvent и правила выбранной платформы.
+
+- Нативный submit предпочтительнее ручного перехвата каждого Enter. Для сложного редактора отдельно тестируйте реальное поведение нужных браузеров и способов ввода.
+
+### Пример
+
+```jsx
+function handleKeyDown(event) {
+  if (event.nativeEvent.isComposing) return
+  if (event.key === "Enter" && event.ctrlKey) submitDraft()
+}
+```
+
+### Типичная ошибка
+
+Перехватить любой Enter и прервать ввод иероглифа отправкой незавершённого текста.
+
+### Для закрепления
+
+- [Чем управляемое поле отличается от неуправляемого?](/questions/react-controlled-input)
+
+### Источник
+
+[React: common](https://react.dev/reference/react-dom/components/common)

@@ -1,0 +1,107 @@
+{
+  "schemaVersion": 1,
+  "id": "react-expanded-20261108-testing",
+  "title": "React: расширение testing",
+  "sectionId": "react",
+  "subsectionId": "testing",
+  "currentPass": "complete",
+  "goalIds": [
+    "core",
+    "react-test-empty-query",
+    "react-test-cleanup-isolation",
+    "react-test-snapshot-limits",
+    "react-test-provider-wrapper",
+    "react-test-network-contract",
+    "react-test-keyboard-flow",
+    "react-test-error-boundary-recovery",
+    "react-concurrent-test-observable-contract"
+  ],
+  "questionIds": [
+    "react-test-empty-query",
+    "react-test-cleanup-isolation",
+    "react-test-snapshot-limits",
+    "react-test-provider-wrapper",
+    "react-test-network-contract",
+    "react-test-keyboard-flow",
+    "react-test-error-boundary-recovery",
+    "react-concurrent-test-observable-contract"
+  ],
+  "scopePass": {
+    "status": "complete",
+    "remaining": []
+  },
+  "answerPass": {
+    "status": "complete",
+    "remaining": []
+  },
+  "baseline": [
+    {
+      "id": "react-error-boundary",
+      "title": "Какие ошибки ловит Error Boundary и какие остаются снаружи?",
+      "contentHash": "97bbc88d2466ad190f4110730a35c0a8b8726eff702df476868c7115f8ec090b"
+    },
+    {
+      "id": "react-test-behavior",
+      "title": "Что стоит проверять в тесте React-компонента?",
+      "contentHash": "952d27cc0266c8bdff3fcb2f9dd805cc34063fafa87a42c4b17eaddbb562f9e8"
+    },
+    {
+      "id": "react-async-tests",
+      "title": "Чем getBy, queryBy и findBy отличаются в асинхронном тесте?",
+      "contentHash": "190922997c06a609baf6088136d408ea92b4df34565af52aae378c345f0304a8"
+    },
+    {
+      "id": "react-effect-test",
+      "title": "Как проверить корректность подписки и cleanup компонента?",
+      "contentHash": "5cfac5319559bb43a013af3250c62c8a531d8d3890607a7c66c9b6f5dbf6565f"
+    },
+    {
+      "id": "react-test-browser-boundary",
+      "title": "Почему компонентный тест в jsdom не доказывает корректность layout и реального фокуса?",
+      "contentHash": "b9a3e5a5deff7a5df6803619853d29484b782333991ae631fd18f9ed2db016de"
+    },
+    {
+      "id": "react-test-role-queries",
+      "title": "Почему в тестах предпочитают getByRole с доступным именем, а не CSS-селектор?",
+      "contentHash": "1f9e66181fbd7433865049743548338a501d91498116a03197a79172715e197d"
+    },
+    {
+      "id": "react-test-user-event",
+      "title": "Чем userEvent отличается от fireEvent в компонентном тесте?",
+      "contentHash": "c0bd43da0b29b654c718ad5eedfa2366e65b1ad0ba008550675c84a3dfeb48d6"
+    },
+    {
+      "id": "react-test-act-boundary",
+      "title": "Для чего нужен act и почему предупреждение нельзя просто подавить?",
+      "contentHash": "10dd84afa72efe568031afe4dc58d94f96713651c8e208655d0ff11db029f115"
+    },
+    {
+      "id": "react-test-waitfor-purity",
+      "title": "Почему нельзя нажимать кнопку внутри waitFor?",
+      "contentHash": "0b91a3c81940e0130bbc150f361a9c86c136a6beee99e02a9b9b9ac6f6193c2d"
+    },
+    {
+      "id": "react-test-fake-timers",
+      "title": "Как использовать fake timers вместе с userEvent и не зависнуть?",
+      "contentHash": "b911683d9e7314d8010a1d95265db1983463ea74f7b59adb3f7a76388e5085ea"
+    },
+    {
+      "id": "react-test-rerender-remount",
+      "title": "Чем rerender отличается от unmount и нового render при проверке состояния?",
+      "contentHash": "fe6b60e23e610fddced17bead3fffc1ded88a9972cb81b69d31092f279a7d584"
+    }
+  ],
+  "notes": [
+    "120 новых вопросов React: 60 базовых / 40 средних / 20 продвинутых; Redux и Zustand дополнительно внутри React. Прежние 128 ID сохраняются.",
+    "Общие определения остаются в канонических ответах; прикладные вопросы различаются проверяемым сценарием. Routing включает библиотеку React Router 7 и не приписывает её API ядру React.",
+    "B: react-test-empty-query | Как проверить, что элемент отсутствует, не получив ошибку от getBy?",
+    "B: react-test-cleanup-isolation | Зачем размонтировать дерево и очищать подписки между тестами?",
+    "B: react-test-snapshot-limits | Почему snapshot-тест не заменяет проверку поведения формы?",
+    "M: react-test-provider-wrapper | Как тестировать компонент с Context без мокирования useContext?",
+    "M: react-test-network-contract | Почему сетевой mock часто полезнее мока внутреннего fetch-хука?",
+    "M: react-test-keyboard-flow | Как проверить путь по форме клавиатурой, а не только кликом мыши?",
+    "M: react-test-error-boundary-recovery | Как проверить fallback Error Boundary и восстановление после ошибки?",
+    "A: react-concurrent-test-observable-contract | Почему тест конкурентного UI не должен требовать конкретного количества рендеров?",
+    "Завершено: 172 новых вопроса, в том числе React 60/40/20, Redux 28, Zustand 24. Все 128 прежних ID сохранены. Oxfmt, отчёт пересечений, content:build и полный content:check прошли для 1135 вопросов. Примеры, приложение и PostgreSQL seed не запускались."
+  ]
+}

@@ -1,0 +1,404 @@
+{
+  "$schema": "../question-bundle.schema.json",
+  "sectionId": "browser",
+  "subsectionId": "representations",
+  "scope": "Статусы, форматы, согласование содержимого, кодирование и передача файлов.",
+  "coverageGoals": [
+    {
+      "id": "core",
+      "title": "Статусы, заголовки и представления",
+      "description": "Статусы, форматы, согласование содержимого, кодирование и передача файлов.",
+      "requiredDifficulties": [],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": [
+        "http-compression",
+        "http-status-codes",
+        "http-status-families",
+        "http-success-statuses",
+        "http-content-negotiation",
+        "http-json-text-binary",
+        "http-multipart-boundary",
+        "http-redirect-method",
+        "http-client-validation-errors",
+        "http-rate-limit",
+        "http-representation-length",
+        "http-range-download"
+      ]
+    },
+    {
+      "id": "http-compression",
+      "title": "Как работают Content-Encoding и Accept-Encoding?",
+      "description": "Объяснить и применить: Формат данных и кодирование их передачи - разные уровни.",
+      "requiredDifficulties": ["Базовый"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "http-status-codes",
+      "title": "Как различать 401, 403, 404 и 409 в API?",
+      "description": "Объяснить и применить: Выбирайте реакцию по точному типу отказа и контракту тела.",
+      "requiredDifficulties": ["Базовый"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "http-status-families",
+      "title": "Что означают группы HTTP-статусов 1xx, 2xx, 3xx, 4xx и 5xx?",
+      "description": "Объяснить и применить: Читайте точный статус и контракт содержимого вместе.",
+      "requiredDifficulties": ["Базовый"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "http-success-statuses",
+      "title": "Когда возвращать 200, 201, 202 и 204?",
+      "description": "Объяснить и применить: Различайте успешную обработку, создание, принятие и отсутствие тела.",
+      "requiredDifficulties": ["Базовый"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "http-content-negotiation",
+      "title": "Чем Content-Type отличается от Accept?",
+      "description": "Объяснить и применить: Формат входа и желаемый формат выхода задаются отдельно.",
+      "requiredDifficulties": ["Базовый"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "http-json-text-binary",
+      "title": "Чем JSON, текстовый и бинарный ответ отличаются для клиента?",
+      "description": "Объяснить и применить: Проверяйте статус, заявленный формат и фактический контракт данных.",
+      "requiredDifficulties": ["Базовый"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "http-multipart-boundary",
+      "title": "Как multipart/form-data передаёт поля и файлы?",
+      "description": "Объяснить и применить: Структура multipart должна совпадать с объявленным разделителем.",
+      "requiredDifficulties": ["Базовый"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "http-redirect-method",
+      "title": "Как 301, 302, 303, 307 и 308 влияют на переход и метод запроса?",
+      "description": "Объяснить и применить: Редирект меняет не только URL, но иногда и семантику следующего запроса.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "http-client-validation-errors",
+      "title": "Как различать 400, 415 и 422 при обработке входных данных?",
+      "description": "Объяснить и применить: Статус задаёт класс проблемы, а контракт тела позволяет исправить ввод.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "http-rate-limit",
+      "title": "Как клиенту реагировать на 429 и Retry-After?",
+      "description": "Объяснить и применить: Ограничение частоты требует согласованной политики ожидания и повторов.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "http-representation-length",
+      "title": "Почему Content-Length, размер ресурса и переданные байты могут различаться?",
+      "description": "Объяснить и применить: Уточняйте, какой слой и какое представление измеряются.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "http-range-download",
+      "title": "Как Range, 206 и 416 используются при частичной загрузке файла?",
+      "description": "Объяснить и применить: Частичную загрузку нужно согласовать по диапазону и версии ресурса.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    }
+  ],
+  "questions": [
+    {
+      "id": "http-compression",
+      "title": "Как работают Content-Encoding и Accept-Encoding?",
+      "topic": "Web",
+      "difficulty": "Базовый",
+      "summary": "Формат данных и кодирование их передачи - разные уровни.",
+      "takeaway": "Формат данных и кодирование их передачи - разные уровни.",
+      "moduleId": "browser",
+      "order": 0,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить: Формат данных и кодирование их передачи - разные уровни.",
+        "keywords": ["Браузер и HTTP", "representations", "http", "compression"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "goalIds": ["core", "http-compression"],
+        "relatedQuestionIds": [],
+        "priority": "core",
+        "sourceRefs": ["ref-8a82e01901c80b94"]
+      },
+      "answerFile": "answers/browser/http-compression.md"
+    },
+    {
+      "id": "http-status-codes",
+      "title": "Как различать 401, 403, 404 и 409 в API?",
+      "topic": "Web",
+      "difficulty": "Базовый",
+      "summary": "Выбирайте реакцию по точному типу отказа и контракту тела.",
+      "takeaway": "Выбирайте реакцию по точному типу отказа и контракту тела.",
+      "moduleId": "browser",
+      "order": 1,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить: Выбирайте реакцию по точному типу отказа и контракту тела.",
+        "keywords": ["Браузер и HTTP", "representations", "http", "status", "codes"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "goalIds": ["core", "http-status-codes"],
+        "relatedQuestionIds": [],
+        "priority": "core",
+        "sourceRefs": ["ref-fa4eaaea98a47bde"]
+      },
+      "answerFile": "answers/browser/http-status-codes.md"
+    },
+    {
+      "id": "http-status-families",
+      "title": "Что означают группы HTTP-статусов 1xx, 2xx, 3xx, 4xx и 5xx?",
+      "topic": "Web",
+      "difficulty": "Базовый",
+      "summary": "Читайте точный статус и контракт содержимого вместе.",
+      "takeaway": "Читайте точный статус и контракт содержимого вместе.",
+      "moduleId": "browser",
+      "order": 2,
+      "popular": false,
+      "answerFile": "answers/browser/http-status-families.md",
+      "editorial": {
+        "learningGoal": "Объяснить и применить: Читайте точный статус и контракт содержимого вместе.",
+        "keywords": ["Браузер и HTTP", "representations", "http", "status", "families"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "goalIds": ["core", "http-status-families"],
+        "relatedQuestionIds": ["http-status-codes"],
+        "priority": "core",
+        "sourceRefs": ["ref-fa4eaaea98a47bde"]
+      }
+    },
+    {
+      "id": "http-success-statuses",
+      "title": "Когда возвращать 200, 201, 202 и 204?",
+      "topic": "Web",
+      "difficulty": "Базовый",
+      "summary": "Различайте успешную обработку, создание, принятие и отсутствие тела.",
+      "takeaway": "Различайте успешную обработку, создание, принятие и отсутствие тела.",
+      "moduleId": "browser",
+      "order": 3,
+      "popular": false,
+      "answerFile": "answers/browser/http-success-statuses.md",
+      "editorial": {
+        "learningGoal": "Объяснить и применить: Различайте успешную обработку, создание, принятие и отсутствие тела.",
+        "keywords": ["Браузер и HTTP", "representations", "http", "success", "statuses"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "goalIds": ["core", "http-success-statuses"],
+        "relatedQuestionIds": [],
+        "priority": "core",
+        "sourceRefs": ["ref-fa4eaaea98a47bde"]
+      }
+    },
+    {
+      "id": "http-content-negotiation",
+      "title": "Чем Content-Type отличается от Accept?",
+      "topic": "Web",
+      "difficulty": "Базовый",
+      "summary": "Формат входа и желаемый формат выхода задаются отдельно.",
+      "takeaway": "Формат входа и желаемый формат выхода задаются отдельно.",
+      "moduleId": "browser",
+      "order": 4,
+      "popular": false,
+      "answerFile": "answers/browser/http-content-negotiation.md",
+      "editorial": {
+        "learningGoal": "Объяснить и применить: Формат входа и желаемый формат выхода задаются отдельно.",
+        "keywords": ["Браузер и HTTP", "representations", "http", "content", "negotiation"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "goalIds": ["core", "http-content-negotiation"],
+        "relatedQuestionIds": ["http-cache-vary"],
+        "priority": "core",
+        "sourceRefs": ["ref-8a82e01901c80b94"]
+      }
+    },
+    {
+      "id": "http-json-text-binary",
+      "title": "Чем JSON, текстовый и бинарный ответ отличаются для клиента?",
+      "topic": "Web",
+      "difficulty": "Базовый",
+      "summary": "Проверяйте статус, заявленный формат и фактический контракт данных.",
+      "takeaway": "Проверяйте статус, заявленный формат и фактический контракт данных.",
+      "moduleId": "browser",
+      "order": 5,
+      "popular": false,
+      "answerFile": "answers/browser/http-json-text-binary.md",
+      "editorial": {
+        "learningGoal": "Объяснить и применить: Проверяйте статус, заявленный формат и фактический контракт данных.",
+        "keywords": ["Браузер и HTTP", "representations", "http", "json", "text", "binary"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "goalIds": ["core", "http-json-text-binary"],
+        "relatedQuestionIds": ["async-fetch"],
+        "priority": "core",
+        "sourceRefs": ["ref-eb7d6910590a5409"]
+      }
+    },
+    {
+      "id": "http-multipart-boundary",
+      "title": "Как multipart/form-data передаёт поля и файлы?",
+      "topic": "Web",
+      "difficulty": "Базовый",
+      "summary": "Структура multipart должна совпадать с объявленным разделителем.",
+      "takeaway": "Структура multipart должна совпадать с объявленным разделителем.",
+      "moduleId": "browser",
+      "order": 6,
+      "popular": false,
+      "answerFile": "answers/browser/http-multipart-boundary.md",
+      "editorial": {
+        "learningGoal": "Объяснить и применить: Структура multipart должна совпадать с объявленным разделителем.",
+        "keywords": ["Браузер и HTTP", "representations", "http", "multipart", "boundary"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "goalIds": ["core", "http-multipart-boundary"],
+        "relatedQuestionIds": ["http-content-negotiation"],
+        "priority": "core",
+        "sourceRefs": ["ref-f10cc26ad8cc531b"]
+      }
+    },
+    {
+      "id": "http-redirect-method",
+      "title": "Как 301, 302, 303, 307 и 308 влияют на переход и метод запроса?",
+      "topic": "Web",
+      "difficulty": "Средний",
+      "summary": "Редирект меняет не только URL, но иногда и семантику следующего запроса.",
+      "takeaway": "Редирект меняет не только URL, но иногда и семантику следующего запроса.",
+      "moduleId": "browser",
+      "order": 7,
+      "popular": false,
+      "answerFile": "answers/browser/http-redirect-method.md",
+      "editorial": {
+        "learningGoal": "Объяснить и применить: Редирект меняет не только URL, но иногда и семантику следующего запроса.",
+        "keywords": ["Браузер и HTTP", "representations", "http", "redirect", "method"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "goalIds": ["core", "http-redirect-method"],
+        "relatedQuestionIds": [],
+        "priority": "core",
+        "sourceRefs": ["ref-f144ae545e08f489"]
+      }
+    },
+    {
+      "id": "http-client-validation-errors",
+      "title": "Как различать 400, 415 и 422 при обработке входных данных?",
+      "topic": "Web",
+      "difficulty": "Средний",
+      "summary": "Статус задаёт класс проблемы, а контракт тела позволяет исправить ввод.",
+      "takeaway": "Статус задаёт класс проблемы, а контракт тела позволяет исправить ввод.",
+      "moduleId": "browser",
+      "order": 8,
+      "popular": false,
+      "answerFile": "answers/browser/http-client-validation-errors.md",
+      "editorial": {
+        "learningGoal": "Объяснить и применить: Статус задаёт класс проблемы, а контракт тела позволяет исправить ввод.",
+        "keywords": ["Браузер и HTTP", "representations", "http", "client", "validation", "errors"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "goalIds": ["core", "http-client-validation-errors"],
+        "relatedQuestionIds": ["http-status-codes"],
+        "priority": "core",
+        "sourceRefs": ["ref-fa4eaaea98a47bde"]
+      }
+    },
+    {
+      "id": "http-rate-limit",
+      "title": "Как клиенту реагировать на 429 и Retry-After?",
+      "topic": "Web",
+      "difficulty": "Средний",
+      "summary": "Ограничение частоты требует согласованной политики ожидания и повторов.",
+      "takeaway": "Ограничение частоты требует согласованной политики ожидания и повторов.",
+      "moduleId": "browser",
+      "order": 9,
+      "popular": false,
+      "answerFile": "answers/browser/http-rate-limit.md",
+      "editorial": {
+        "learningGoal": "Объяснить и применить: Ограничение частоты требует согласованной политики ожидания и повторов.",
+        "keywords": ["Браузер и HTTP", "representations", "http", "rate", "limit"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "goalIds": ["core", "http-rate-limit"],
+        "relatedQuestionIds": ["http-retry-policy"],
+        "priority": "core",
+        "sourceRefs": ["ref-fa4eaaea98a47bde"]
+      }
+    },
+    {
+      "id": "http-representation-length",
+      "title": "Почему Content-Length, размер ресурса и переданные байты могут различаться?",
+      "topic": "Web",
+      "difficulty": "Средний",
+      "summary": "Уточняйте, какой слой и какое представление измеряются.",
+      "takeaway": "Уточняйте, какой слой и какое представление измеряются.",
+      "moduleId": "browser",
+      "order": 10,
+      "popular": false,
+      "answerFile": "answers/browser/http-representation-length.md",
+      "editorial": {
+        "learningGoal": "Объяснить и применить: Уточняйте, какой слой и какое представление измеряются.",
+        "keywords": ["Браузер и HTTP", "representations", "http", "representation", "length"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "goalIds": ["core", "http-representation-length"],
+        "relatedQuestionIds": ["http-compression"],
+        "priority": "core",
+        "sourceRefs": ["ref-2cb5855a8b539c9f"]
+      }
+    },
+    {
+      "id": "http-range-download",
+      "title": "Как Range, 206 и 416 используются при частичной загрузке файла?",
+      "topic": "Web",
+      "difficulty": "Средний",
+      "summary": "Частичную загрузку нужно согласовать по диапазону и версии ресурса.",
+      "takeaway": "Частичную загрузку нужно согласовать по диапазону и версии ресурса.",
+      "moduleId": "browser",
+      "order": 11,
+      "popular": false,
+      "answerFile": "answers/browser/http-range-download.md",
+      "editorial": {
+        "learningGoal": "Объяснить и применить: Частичную загрузку нужно согласовать по диапазону и версии ресурса.",
+        "keywords": ["Браузер и HTTP", "representations", "http", "range", "download"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "goalIds": ["core", "http-range-download"],
+        "relatedQuestionIds": [],
+        "priority": "core",
+        "sourceRefs": ["ref-a63f048ec229e763"]
+      }
+    }
+  ]
+}

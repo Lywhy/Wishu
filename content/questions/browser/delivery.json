@@ -2,87 +2,139 @@
   "$schema": "../question-bundle.schema.json",
   "sectionId": "browser",
   "subsectionId": "delivery",
-  "scope": "CDN, сжатие и анализ сетевой загрузки.",
+  "scope": "CDN, DevTools, размеры, waterfall и пользовательские метрики.",
   "coverageGoals": [
     {
       "id": "core",
       "title": "Доставка и диагностика",
-      "description": "Обзор и взаимосвязи навыков: CDN, сжатие и анализ сетевой загрузки.",
+      "description": "CDN, DevTools, размеры, waterfall и пользовательские метрики.",
       "requiredDifficulties": [],
       "reviewed": false,
       "priority": "core",
-      "relatedSkillIds": ["http-compression", "http-cdn", "network-waterfall"]
-    },
-    {
-      "id": "http-compression",
-      "title": "Как работают Content-Encoding и Accept-Encoding?",
-      "description": "Объяснить и применить правило с учётом его границ: Тип данных и кодирование передачи решают разные задачи.",
-      "requiredDifficulties": ["Базовый"],
-      "reviewed": false,
-      "priority": "core",
-      "relatedSkillIds": []
+      "relatedSkillIds": [
+        "http-cdn",
+        "network-waterfall",
+        "browser-cdn-proxy",
+        "browser-devtools-panels",
+        "browser-transfer-resource-size",
+        "browser-network-offline",
+        "browser-waterfall-dependency",
+        "browser-cold-warm-cache",
+        "browser-resource-priority",
+        "browser-vitals-network"
+      ]
     },
     {
       "id": "http-cdn",
       "title": "Что даёт CDN и чем опасно кешировать персональный ответ?",
-      "description": "Объяснить и применить правило с учётом его границ: Для общего кеша важнее корректная граница данных, чем число попаданий.",
+      "description": "Объяснить и применить: Ключ, область данных и время жизни общего кеша должны быть согласованы.",
       "requiredDifficulties": ["Средний"],
-      "reviewed": false,
+      "reviewed": true,
       "priority": "core",
       "relatedSkillIds": []
     },
     {
       "id": "network-waterfall",
       "title": "Как по Network waterfall понять причину медленной загрузки?",
-      "description": "Объяснить и применить правило с учётом его границ: Отделяйте ожидание сети от вычислений и отрисовки.",
+      "description": "Объяснить и применить: Читайте зависимость и перекрытие этапов, а не только длину отдельных полос.",
       "requiredDifficulties": ["Средний"],
-      "reviewed": false,
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "browser-cdn-proxy",
+      "title": "Чем CDN, reverse proxy и origin отличаются в пути запроса?",
+      "description": "Объяснить и применить: Рассматривайте всю цепочку формирования ответа.",
+      "requiredDifficulties": ["Базовый"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "browser-devtools-panels",
+      "title": "Какие задачи решают Network, Console, Performance и Application в DevTools?",
+      "description": "Объяснить и применить: Выбирайте инструмент по проверяемой подсистеме.",
+      "requiredDifficulties": ["Базовый"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "browser-transfer-resource-size",
+      "title": "Почему маленький переданный размер не доказывает дешёвый ресурс?",
+      "description": "Объяснить и применить: Оптимизируйте сеть и обработку ресурса как разные этапы.",
+      "requiredDifficulties": ["Базовый"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "browser-network-offline",
+      "title": "Как проверить интерфейс при медленной сети и отсутствии соединения?",
+      "description": "Объяснить и применить: Диагностируйте переходы состояния сети, не только её конечный флаг.",
+      "requiredDifficulties": ["Базовый"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "browser-waterfall-dependency",
+      "title": "Как найти последовательную цепочку запросов и её инициатора?",
+      "description": "Объяснить и применить: Оптимизируйте критические зависимости до локальных микрозатрат.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "browser-cold-warm-cache",
+      "title": "Как сравнивать холодную и повторную загрузку без ложных выводов?",
+      "description": "Объяснить и применить: Сопоставимые измерения требуют сопоставимого состояния среды.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "browser-resource-priority",
+      "title": "Как приоритеты и resource hints помогают и чем могут навредить?",
+      "description": "Объяснить и применить: Приоритизация имеет смысл только при реальном различии важности.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "browser-vitals-network",
+      "title": "Как связать сетевую загрузку с LCP, INP и CLS?",
+      "description": "Объяснить и применить: Связывайте сетевой этап с наблюдаемым пользовательским результатом.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": true,
       "priority": "core",
       "relatedSkillIds": []
     }
   ],
   "questions": [
     {
-      "id": "http-compression",
-      "title": "Как работают Content-Encoding и Accept-Encoding?",
-      "topic": "Web",
-      "difficulty": "Базовый",
-      "summary": "Согласование сжатия передаваемого представления.",
-      "takeaway": "Тип данных и кодирование передачи решают разные задачи.",
-      "moduleId": "browser",
-      "order": 0,
-      "popular": false,
-      "editorial": {
-        "learningGoal": "Объяснить и применить правило с учётом его границ: Тип данных и кодирование передачи решают разные задачи.",
-        "keywords": ["Браузер и HTTP", "Доставка и диагностика"],
-        "kind": "explanation",
-        "reviewStatus": "imported",
-        "goalIds": ["core", "http-compression"],
-        "relatedQuestionIds": [],
-        "priority": "core",
-        "sourceRefs": []
-      },
-      "answerFile": "answers/browser/http-compression.md"
-    },
-    {
       "id": "http-cdn",
       "title": "Что даёт CDN и чем опасно кешировать персональный ответ?",
       "topic": "Web",
       "difficulty": "Средний",
-      "summary": "Распределённая доставка и граница общего кеша.",
-      "takeaway": "Для общего кеша важнее корректная граница данных, чем число попаданий.",
+      "summary": "Ключ, область данных и время жизни общего кеша должны быть согласованы.",
+      "takeaway": "Ключ, область данных и время жизни общего кеша должны быть согласованы.",
       "moduleId": "browser",
-      "order": 1,
+      "order": 0,
       "popular": false,
       "editorial": {
-        "learningGoal": "Объяснить и применить правило с учётом его границ: Для общего кеша важнее корректная граница данных, чем число попаданий.",
-        "keywords": ["Браузер и HTTP", "Доставка и диагностика"],
-        "kind": "explanation",
-        "reviewStatus": "imported",
+        "learningGoal": "Объяснить и применить: Ключ, область данных и время жизни общего кеша должны быть согласованы.",
+        "keywords": ["Браузер и HTTP", "delivery", "http", "cdn"],
+        "kind": "application",
+        "reviewStatus": "ready",
         "goalIds": ["core", "http-cdn"],
-        "relatedQuestionIds": [],
+        "relatedQuestionIds": ["http-cache-personalization"],
         "priority": "core",
-        "sourceRefs": []
+        "sourceRefs": ["ref-4a1b57bfe9b2ba79"]
       },
       "answerFile": "answers/browser/http-cdn.md"
     },
@@ -91,22 +143,198 @@
       "title": "Как по Network waterfall понять причину медленной загрузки?",
       "topic": "Web",
       "difficulty": "Средний",
-      "summary": "Соединение, ожидание ответа и передача данных.",
-      "takeaway": "Отделяйте ожидание сети от вычислений и отрисовки.",
+      "summary": "Читайте зависимость и перекрытие этапов, а не только длину отдельных полос.",
+      "takeaway": "Читайте зависимость и перекрытие этапов, а не только длину отдельных полос.",
       "moduleId": "browser",
-      "order": 2,
+      "order": 1,
       "popular": false,
       "editorial": {
-        "learningGoal": "Объяснить и применить правило с учётом его границ: Отделяйте ожидание сети от вычислений и отрисовки.",
-        "keywords": ["Браузер и HTTP", "Доставка и диагностика"],
-        "kind": "explanation",
-        "reviewStatus": "imported",
+        "learningGoal": "Объяснить и применить: Читайте зависимость и перекрытие этапов, а не только длину отдельных полос.",
+        "keywords": ["Браузер и HTTP", "delivery", "network", "waterfall"],
+        "kind": "application",
+        "reviewStatus": "ready",
         "goalIds": ["core", "network-waterfall"],
         "relatedQuestionIds": [],
         "priority": "core",
-        "sourceRefs": []
+        "sourceRefs": ["ref-7ec61e9448f94623"]
       },
       "answerFile": "answers/browser/network-waterfall.md"
+    },
+    {
+      "id": "browser-cdn-proxy",
+      "title": "Чем CDN, reverse proxy и origin отличаются в пути запроса?",
+      "topic": "Web",
+      "difficulty": "Базовый",
+      "summary": "Рассматривайте всю цепочку формирования ответа.",
+      "takeaway": "Рассматривайте всю цепочку формирования ответа.",
+      "moduleId": "browser",
+      "order": 2,
+      "popular": false,
+      "answerFile": "answers/browser/browser-cdn-proxy.md",
+      "editorial": {
+        "learningGoal": "Объяснить и применить: Рассматривайте всю цепочку формирования ответа.",
+        "keywords": ["Браузер и HTTP", "delivery", "browser", "cdn", "proxy"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "goalIds": ["core", "browser-cdn-proxy"],
+        "relatedQuestionIds": ["http-cdn"],
+        "priority": "core",
+        "sourceRefs": ["ref-360a828b02b7f2a4"]
+      }
+    },
+    {
+      "id": "browser-devtools-panels",
+      "title": "Какие задачи решают Network, Console, Performance и Application в DevTools?",
+      "topic": "Web",
+      "difficulty": "Базовый",
+      "summary": "Выбирайте инструмент по проверяемой подсистеме.",
+      "takeaway": "Выбирайте инструмент по проверяемой подсистеме.",
+      "moduleId": "browser",
+      "order": 3,
+      "popular": false,
+      "answerFile": "answers/browser/browser-devtools-panels.md",
+      "editorial": {
+        "learningGoal": "Объяснить и применить: Выбирайте инструмент по проверяемой подсистеме.",
+        "keywords": ["Браузер и HTTP", "delivery", "browser", "devtools", "panels"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "goalIds": ["core", "browser-devtools-panels"],
+        "relatedQuestionIds": [],
+        "priority": "core",
+        "sourceRefs": ["ref-7ec61e9448f94623"]
+      }
+    },
+    {
+      "id": "browser-transfer-resource-size",
+      "title": "Почему маленький переданный размер не доказывает дешёвый ресурс?",
+      "topic": "Web",
+      "difficulty": "Базовый",
+      "summary": "Оптимизируйте сеть и обработку ресурса как разные этапы.",
+      "takeaway": "Оптимизируйте сеть и обработку ресурса как разные этапы.",
+      "moduleId": "browser",
+      "order": 4,
+      "popular": false,
+      "answerFile": "answers/browser/browser-transfer-resource-size.md",
+      "editorial": {
+        "learningGoal": "Объяснить и применить: Оптимизируйте сеть и обработку ресурса как разные этапы.",
+        "keywords": ["Браузер и HTTP", "delivery", "browser", "transfer", "resource", "size"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "goalIds": ["core", "browser-transfer-resource-size"],
+        "relatedQuestionIds": ["http-compression"],
+        "priority": "core",
+        "sourceRefs": ["ref-7ec61e9448f94623"]
+      }
+    },
+    {
+      "id": "browser-network-offline",
+      "title": "Как проверить интерфейс при медленной сети и отсутствии соединения?",
+      "topic": "Web",
+      "difficulty": "Базовый",
+      "summary": "Диагностируйте переходы состояния сети, не только её конечный флаг.",
+      "takeaway": "Диагностируйте переходы состояния сети, не только её конечный флаг.",
+      "moduleId": "browser",
+      "order": 5,
+      "popular": false,
+      "answerFile": "answers/browser/browser-network-offline.md",
+      "editorial": {
+        "learningGoal": "Объяснить и применить: Диагностируйте переходы состояния сети, не только её конечный флаг.",
+        "keywords": ["Браузер и HTTP", "delivery", "browser", "network", "offline"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "goalIds": ["core", "browser-network-offline"],
+        "relatedQuestionIds": ["browser-offline-model"],
+        "priority": "core",
+        "sourceRefs": ["ref-7ec61e9448f94623"]
+      }
+    },
+    {
+      "id": "browser-waterfall-dependency",
+      "title": "Как найти последовательную цепочку запросов и её инициатора?",
+      "topic": "Web",
+      "difficulty": "Средний",
+      "summary": "Оптимизируйте критические зависимости до локальных микрозатрат.",
+      "takeaway": "Оптимизируйте критические зависимости до локальных микрозатрат.",
+      "moduleId": "browser",
+      "order": 6,
+      "popular": false,
+      "answerFile": "answers/browser/browser-waterfall-dependency.md",
+      "editorial": {
+        "learningGoal": "Объяснить и применить: Оптимизируйте критические зависимости до локальных микрозатрат.",
+        "keywords": ["Браузер и HTTP", "delivery", "browser", "waterfall", "dependency"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "goalIds": ["core", "browser-waterfall-dependency"],
+        "relatedQuestionIds": ["network-waterfall"],
+        "priority": "core",
+        "sourceRefs": ["ref-7ec61e9448f94623"]
+      }
+    },
+    {
+      "id": "browser-cold-warm-cache",
+      "title": "Как сравнивать холодную и повторную загрузку без ложных выводов?",
+      "topic": "Web",
+      "difficulty": "Средний",
+      "summary": "Сопоставимые измерения требуют сопоставимого состояния среды.",
+      "takeaway": "Сопоставимые измерения требуют сопоставимого состояния среды.",
+      "moduleId": "browser",
+      "order": 7,
+      "popular": false,
+      "answerFile": "answers/browser/browser-cold-warm-cache.md",
+      "editorial": {
+        "learningGoal": "Объяснить и применить: Сопоставимые измерения требуют сопоставимого состояния среды.",
+        "keywords": ["Браузер и HTTP", "delivery", "browser", "cold", "warm", "cache"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "goalIds": ["core", "browser-cold-warm-cache"],
+        "relatedQuestionIds": ["http-cache-layers"],
+        "priority": "core",
+        "sourceRefs": ["ref-7ec61e9448f94623"]
+      }
+    },
+    {
+      "id": "browser-resource-priority",
+      "title": "Как приоритеты и resource hints помогают и чем могут навредить?",
+      "topic": "Web",
+      "difficulty": "Средний",
+      "summary": "Приоритизация имеет смысл только при реальном различии важности.",
+      "takeaway": "Приоритизация имеет смысл только при реальном различии важности.",
+      "moduleId": "browser",
+      "order": 8,
+      "popular": false,
+      "answerFile": "answers/browser/browser-resource-priority.md",
+      "editorial": {
+        "learningGoal": "Объяснить и применить: Приоритизация имеет смысл только при реальном различии важности.",
+        "keywords": ["Браузер и HTTP", "delivery", "browser", "resource", "priority"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "goalIds": ["core", "browser-resource-priority"],
+        "relatedQuestionIds": ["html-resource-hints"],
+        "priority": "core",
+        "sourceRefs": ["ref-cff8ff79463bfd4b"]
+      }
+    },
+    {
+      "id": "browser-vitals-network",
+      "title": "Как связать сетевую загрузку с LCP, INP и CLS?",
+      "topic": "Web",
+      "difficulty": "Средний",
+      "summary": "Связывайте сетевой этап с наблюдаемым пользовательским результатом.",
+      "takeaway": "Связывайте сетевой этап с наблюдаемым пользовательским результатом.",
+      "moduleId": "browser",
+      "order": 9,
+      "popular": false,
+      "answerFile": "answers/browser/browser-vitals-network.md",
+      "editorial": {
+        "learningGoal": "Объяснить и применить: Связывайте сетевой этап с наблюдаемым пользовательским результатом.",
+        "keywords": ["Браузер и HTTP", "delivery", "browser", "vitals", "network"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "goalIds": ["core", "browser-vitals-network"],
+        "relatedQuestionIds": ["performance-metrics"],
+        "priority": "core",
+        "sourceRefs": ["ref-1f2734e7294c86f2"]
+      }
     }
   ]
 }

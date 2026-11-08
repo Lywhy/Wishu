@@ -1,0 +1,340 @@
+{
+  "$schema": "../question-bundle.schema.json",
+  "sectionId": "browser",
+  "subsectionId": "architecture",
+  "scope": "Компоненты браузера, потоки, навигация, процессы и восстановление страницы.",
+  "coverageGoals": [
+    {
+      "id": "core",
+      "title": "Устройство браузера и навигация",
+      "description": "Компоненты браузера, потоки, навигация, процессы и восстановление страницы.",
+      "requiredDifficulties": [],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": [
+        "browser-components",
+        "browser-engine-renderer",
+        "browser-address-navigation",
+        "browser-main-thread",
+        "browser-navigation-reload",
+        "browser-processes",
+        "browser-navigation-kinds",
+        "browser-navigation-failure",
+        "browser-site-isolation",
+        "browser-bfcache-private"
+      ]
+    },
+    {
+      "id": "browser-components",
+      "title": "Из каких основных частей состоит браузер?",
+      "description": "Объяснить и применить: Сначала определите подсистему, которая отвечает за наблюдаемое поведение.",
+      "requiredDifficulties": ["Базовый"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "browser-engine-renderer",
+      "title": "Чем JavaScript-движок отличается от движка рендеринга?",
+      "description": "Объяснить и применить: Разделяйте исполнение программы и вычисление представления документа.",
+      "requiredDifficulties": ["Базовый"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "browser-address-navigation",
+      "title": "Что происходит после ввода адреса и нажатия Enter?",
+      "description": "Объяснить и применить: Путь навигации зависит от имеющихся ресурсов и перекрывающейся работы подсистем.",
+      "requiredDifficulties": ["Базовый"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "browser-main-thread",
+      "title": "Какие задачи выполняет главный поток страницы?",
+      "description": "Объяснить и применить: Различайте готовность внешней операции и возможность главного потока обработать её.",
+      "requiredDifficulties": ["Базовый"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "browser-navigation-reload",
+      "title": "Чем переход, перезагрузка и переход по fragment отличаются для документа?",
+      "description": "Объяснить и применить: Сопоставляйте переход с идентичностью документа, а не только со строкой URL.",
+      "requiredDifficulties": ["Базовый"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "browser-processes",
+      "title": "Почему вкладка, сайт и процесс браузера не являются одним и тем же?",
+      "description": "Объяснить и применить: Архитектурные границы UI, безопасности и исполнения различаются.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "browser-navigation-kinds",
+      "title": "Как различаются same-document и cross-document navigation?",
+      "description": "Объяснить и применить: Тип навигации определяет, что сохраняется и что нужно синхронизировать повторно.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "browser-navigation-failure",
+      "title": "Почему HTTP-ошибка страницы и ошибка DNS приводят к разным результатам навигации?",
+      "description": "Объяснить и применить: Различайте отсутствие HTTP-обмена и отрицательный результат HTTP-обмена.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "browser-site-isolation",
+      "title": "Как process/site isolation дополняет границы origin?",
+      "description": "Объяснить и применить: Логическая политика доступа и архитектурная изоляция усиливают друг друга на разных уровнях.",
+      "requiredDifficulties": ["Продвинутый"],
+      "reviewed": true,
+      "priority": "extended",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "browser-bfcache-private",
+      "title": "Как восстанавливать страницу из bfcache после изменения сессии или данных?",
+      "description": "Объяснить и применить: Восстановленный документ не является доказательством текущих прав и актуальности.",
+      "requiredDifficulties": ["Продвинутый"],
+      "reviewed": true,
+      "priority": "extended",
+      "relatedSkillIds": []
+    }
+  ],
+  "questions": [
+    {
+      "id": "browser-components",
+      "title": "Из каких основных частей состоит браузер?",
+      "topic": "Web",
+      "difficulty": "Базовый",
+      "summary": "Сначала определите подсистему, которая отвечает за наблюдаемое поведение.",
+      "takeaway": "Сначала определите подсистему, которая отвечает за наблюдаемое поведение.",
+      "moduleId": "browser",
+      "order": 0,
+      "popular": false,
+      "answerFile": "answers/browser/browser-components.md",
+      "editorial": {
+        "learningGoal": "Объяснить и применить: Сначала определите подсистему, которая отвечает за наблюдаемое поведение.",
+        "keywords": ["Браузер и HTTP", "architecture", "browser", "components"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "goalIds": ["core", "browser-components"],
+        "relatedQuestionIds": [],
+        "priority": "core",
+        "sourceRefs": ["ref-cff8ff79463bfd4b"]
+      }
+    },
+    {
+      "id": "browser-engine-renderer",
+      "title": "Чем JavaScript-движок отличается от движка рендеринга?",
+      "topic": "Web",
+      "difficulty": "Базовый",
+      "summary": "Разделяйте исполнение программы и вычисление представления документа.",
+      "takeaway": "Разделяйте исполнение программы и вычисление представления документа.",
+      "moduleId": "browser",
+      "order": 1,
+      "popular": false,
+      "answerFile": "answers/browser/browser-engine-renderer.md",
+      "editorial": {
+        "learningGoal": "Объяснить и применить: Разделяйте исполнение программы и вычисление представления документа.",
+        "keywords": ["Браузер и HTTP", "architecture", "browser", "engine", "renderer"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "goalIds": ["core", "browser-engine-renderer"],
+        "relatedQuestionIds": ["single-thread-blocking"],
+        "priority": "core",
+        "sourceRefs": ["ref-cff8ff79463bfd4b"]
+      }
+    },
+    {
+      "id": "browser-address-navigation",
+      "title": "Что происходит после ввода адреса и нажатия Enter?",
+      "topic": "Web",
+      "difficulty": "Базовый",
+      "summary": "Путь навигации зависит от имеющихся ресурсов и перекрывающейся работы подсистем.",
+      "takeaway": "Путь навигации зависит от имеющихся ресурсов и перекрывающейся работы подсистем.",
+      "moduleId": "browser",
+      "order": 2,
+      "popular": false,
+      "answerFile": "answers/browser/browser-address-navigation.md",
+      "editorial": {
+        "learningGoal": "Объяснить и применить: Путь навигации зависит от имеющихся ресурсов и перекрывающейся работы подсистем.",
+        "keywords": ["Браузер и HTTP", "architecture", "browser", "address", "navigation"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "goalIds": ["core", "browser-address-navigation"],
+        "relatedQuestionIds": [],
+        "priority": "core",
+        "sourceRefs": ["ref-cff8ff79463bfd4b"]
+      }
+    },
+    {
+      "id": "browser-main-thread",
+      "title": "Какие задачи выполняет главный поток страницы?",
+      "topic": "Web",
+      "difficulty": "Базовый",
+      "summary": "Различайте готовность внешней операции и возможность главного потока обработать её.",
+      "takeaway": "Различайте готовность внешней операции и возможность главного потока обработать её.",
+      "moduleId": "browser",
+      "order": 3,
+      "popular": false,
+      "answerFile": "answers/browser/browser-main-thread.md",
+      "editorial": {
+        "learningGoal": "Объяснить и применить: Различайте готовность внешней операции и возможность главного потока обработать её.",
+        "keywords": ["Браузер и HTTP", "architecture", "browser", "main", "thread"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "goalIds": ["core", "browser-main-thread"],
+        "relatedQuestionIds": ["event-loop"],
+        "priority": "core",
+        "sourceRefs": ["ref-cff8ff79463bfd4b"]
+      }
+    },
+    {
+      "id": "browser-navigation-reload",
+      "title": "Чем переход, перезагрузка и переход по fragment отличаются для документа?",
+      "topic": "Web",
+      "difficulty": "Базовый",
+      "summary": "Сопоставляйте переход с идентичностью документа, а не только со строкой URL.",
+      "takeaway": "Сопоставляйте переход с идентичностью документа, а не только со строкой URL.",
+      "moduleId": "browser",
+      "order": 4,
+      "popular": false,
+      "answerFile": "answers/browser/browser-navigation-reload.md",
+      "editorial": {
+        "learningGoal": "Объяснить и применить: Сопоставляйте переход с идентичностью документа, а не только со строкой URL.",
+        "keywords": ["Браузер и HTTP", "architecture", "browser", "navigation", "reload"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "goalIds": ["core", "browser-navigation-reload"],
+        "relatedQuestionIds": ["history-location"],
+        "priority": "core",
+        "sourceRefs": ["ref-f67597cbb815e44c"]
+      }
+    },
+    {
+      "id": "browser-processes",
+      "title": "Почему вкладка, сайт и процесс браузера не являются одним и тем же?",
+      "topic": "Web",
+      "difficulty": "Средний",
+      "summary": "Архитектурные границы UI, безопасности и исполнения различаются.",
+      "takeaway": "Архитектурные границы UI, безопасности и исполнения различаются.",
+      "moduleId": "browser",
+      "order": 5,
+      "popular": false,
+      "answerFile": "answers/browser/browser-processes.md",
+      "editorial": {
+        "learningGoal": "Объяснить и применить: Архитектурные границы UI, безопасности и исполнения различаются.",
+        "keywords": ["Браузер и HTTP", "architecture", "browser", "processes"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "goalIds": ["core", "browser-processes"],
+        "relatedQuestionIds": [],
+        "priority": "core",
+        "sourceRefs": ["ref-1960b31656723f2f"]
+      }
+    },
+    {
+      "id": "browser-navigation-kinds",
+      "title": "Как различаются same-document и cross-document navigation?",
+      "topic": "Web",
+      "difficulty": "Средний",
+      "summary": "Тип навигации определяет, что сохраняется и что нужно синхронизировать повторно.",
+      "takeaway": "Тип навигации определяет, что сохраняется и что нужно синхронизировать повторно.",
+      "moduleId": "browser",
+      "order": 6,
+      "popular": false,
+      "answerFile": "answers/browser/browser-navigation-kinds.md",
+      "editorial": {
+        "learningGoal": "Объяснить и применить: Тип навигации определяет, что сохраняется и что нужно синхронизировать повторно.",
+        "keywords": ["Браузер и HTTP", "architecture", "browser", "navigation", "kinds"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "goalIds": ["core", "browser-navigation-kinds"],
+        "relatedQuestionIds": ["history-location"],
+        "priority": "core",
+        "sourceRefs": ["ref-f67597cbb815e44c"]
+      }
+    },
+    {
+      "id": "browser-navigation-failure",
+      "title": "Почему HTTP-ошибка страницы и ошибка DNS приводят к разным результатам навигации?",
+      "topic": "Web",
+      "difficulty": "Средний",
+      "summary": "Различайте отсутствие HTTP-обмена и отрицательный результат HTTP-обмена.",
+      "takeaway": "Различайте отсутствие HTTP-обмена и отрицательный результат HTTP-обмена.",
+      "moduleId": "browser",
+      "order": 7,
+      "popular": false,
+      "answerFile": "answers/browser/browser-navigation-failure.md",
+      "editorial": {
+        "learningGoal": "Объяснить и применить: Различайте отсутствие HTTP-обмена и отрицательный результат HTTP-обмена.",
+        "keywords": ["Браузер и HTTP", "architecture", "browser", "navigation", "failure"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "goalIds": ["core", "browser-navigation-failure"],
+        "relatedQuestionIds": ["async-fetch"],
+        "priority": "core",
+        "sourceRefs": ["ref-360a828b02b7f2a4"]
+      }
+    },
+    {
+      "id": "browser-site-isolation",
+      "title": "Как process/site isolation дополняет границы origin?",
+      "topic": "Web",
+      "difficulty": "Продвинутый",
+      "summary": "Логическая политика доступа и архитектурная изоляция усиливают друг друга на разных уровнях.",
+      "takeaway": "Логическая политика доступа и архитектурная изоляция усиливают друг друга на разных уровнях.",
+      "moduleId": "browser",
+      "order": 8,
+      "popular": false,
+      "answerFile": "answers/browser/browser-site-isolation.md",
+      "editorial": {
+        "learningGoal": "Объяснить и применить: Логическая политика доступа и архитектурная изоляция усиливают друг друга на разных уровнях.",
+        "keywords": ["Браузер и HTTP", "architecture", "browser", "site", "isolation"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "goalIds": ["core", "browser-site-isolation"],
+        "relatedQuestionIds": ["browser-processes"],
+        "priority": "extended",
+        "sourceRefs": ["ref-1960b31656723f2f"]
+      }
+    },
+    {
+      "id": "browser-bfcache-private",
+      "title": "Как восстанавливать страницу из bfcache после изменения сессии или данных?",
+      "topic": "Web",
+      "difficulty": "Продвинутый",
+      "summary": "Восстановленный документ не является доказательством текущих прав и актуальности.",
+      "takeaway": "Восстановленный документ не является доказательством текущих прав и актуальности.",
+      "moduleId": "browser",
+      "order": 9,
+      "popular": false,
+      "answerFile": "answers/browser/browser-bfcache-private.md",
+      "editorial": {
+        "learningGoal": "Объяснить и применить: Восстановленный документ не является доказательством текущих прав и актуальности.",
+        "keywords": ["Браузер и HTTP", "architecture", "browser", "bfcache", "private"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "goalIds": ["core", "browser-bfcache-private"],
+        "relatedQuestionIds": ["auth-logout"],
+        "priority": "extended",
+        "sourceRefs": ["ref-f1556f26775f7950"]
+      }
+    }
+  ]
+}

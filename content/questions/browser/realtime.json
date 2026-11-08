@@ -1,0 +1,308 @@
+{
+  "$schema": "../question-bundle.schema.json",
+  "sectionId": "browser",
+  "subsectionId": "realtime",
+  "scope": "Транспорты сообщений, восстановление соединения и Service Worker.",
+  "coverageGoals": [
+    {
+      "id": "core",
+      "title": "Realtime, Workers и offline",
+      "description": "Транспорты сообщений, восстановление соединения и Service Worker.",
+      "requiredDifficulties": [],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": [
+        "browser-realtime-choice",
+        "browser-sse",
+        "browser-offline-model",
+        "browser-realtime-reconnect",
+        "browser-realtime-heartbeat",
+        "browser-sw-lifecycle",
+        "browser-offline-strategies",
+        "browser-worker-boundary",
+        "browser-sw-version-race"
+      ]
+    },
+    {
+      "id": "browser-realtime-choice",
+      "title": "Когда выбрать polling, long polling, SSE или WebSocket?",
+      "description": "Объяснить и применить: Выбирайте транспорт по контракту сообщений и эксплуатации.",
+      "requiredDifficulties": ["Базовый"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "browser-sse",
+      "title": "Как EventSource получает события и чем отличается от обычного JSON-запроса?",
+      "description": "Объяснить и применить: У потокового протокола есть формат событий и отдельный жизненный цикл соединения.",
+      "requiredDifficulties": ["Базовый"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "browser-offline-model",
+      "title": "Что должно быть доступно offline и почему одного кешированного HTML недостаточно?",
+      "description": "Объяснить и применить: Offline - договорённость о функциях и подтверждениях, а не один переключатель сети.",
+      "requiredDifficulties": ["Базовый"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "browser-realtime-reconnect",
+      "title": "Как восстанавливать соединение без повторной обработки сообщений?",
+      "description": "Объяснить и применить: Восстанавливайте состояние обмена, а не только транспорт.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "browser-realtime-heartbeat",
+      "title": "Как определить потерю realtime-соединения и зачем heartbeat?",
+      "description": "Объяснить и применить: Проверяйте здоровье нужного канала, учитывая жизненный цикл устройства.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "browser-sw-lifecycle",
+      "title": "Как install, waiting, activate и control влияют на обновление Service Worker?",
+      "description": "Объяснить и применить: Обновление worker согласуют с жизнью управляемых страниц.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "browser-offline-strategies",
+      "title": "Когда выбирать cache-first, network-first и stale-while-revalidate в Service Worker?",
+      "description": "Объяснить и применить: Стратегия выбирается для типа ресурса и пользовательской гарантии.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "browser-worker-boundary",
+      "title": "Как выбрать Worker, SharedWorker или Service Worker по сроку жизни и задаче?",
+      "description": "Объяснить и применить: Согласуйте роль, доступные API и жизнь worker-контекста.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "browser-sw-version-race",
+      "title": "Как избежать конфликта старой страницы и новой версии Service Worker?",
+      "description": "Объяснить и применить: Деплой PWA - переход совместимых версий, а не простая замена одного файла.",
+      "requiredDifficulties": ["Продвинутый"],
+      "reviewed": true,
+      "priority": "extended",
+      "relatedSkillIds": []
+    }
+  ],
+  "questions": [
+    {
+      "id": "browser-realtime-choice",
+      "title": "Когда выбрать polling, long polling, SSE или WebSocket?",
+      "topic": "Web",
+      "difficulty": "Базовый",
+      "summary": "Выбирайте транспорт по контракту сообщений и эксплуатации.",
+      "takeaway": "Выбирайте транспорт по контракту сообщений и эксплуатации.",
+      "moduleId": "browser",
+      "order": 0,
+      "popular": false,
+      "answerFile": "answers/browser/browser-realtime-choice.md",
+      "editorial": {
+        "learningGoal": "Объяснить и применить: Выбирайте транспорт по контракту сообщений и эксплуатации.",
+        "keywords": ["Браузер и HTTP", "realtime", "browser", "choice"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "goalIds": ["core", "browser-realtime-choice"],
+        "relatedQuestionIds": ["websocket"],
+        "priority": "core",
+        "sourceRefs": ["ref-cc66a82750c7f1d3"]
+      }
+    },
+    {
+      "id": "browser-sse",
+      "title": "Как EventSource получает события и чем отличается от обычного JSON-запроса?",
+      "topic": "Web",
+      "difficulty": "Базовый",
+      "summary": "У потокового протокола есть формат событий и отдельный жизненный цикл соединения.",
+      "takeaway": "У потокового протокола есть формат событий и отдельный жизненный цикл соединения.",
+      "moduleId": "browser",
+      "order": 1,
+      "popular": false,
+      "answerFile": "answers/browser/browser-sse.md",
+      "editorial": {
+        "learningGoal": "Объяснить и применить: У потокового протокола есть формат событий и отдельный жизненный цикл соединения.",
+        "keywords": ["Браузер и HTTP", "realtime", "browser", "sse"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "goalIds": ["core", "browser-sse"],
+        "relatedQuestionIds": [],
+        "priority": "core",
+        "sourceRefs": ["ref-cc66a82750c7f1d3"]
+      }
+    },
+    {
+      "id": "browser-offline-model",
+      "title": "Что должно быть доступно offline и почему одного кешированного HTML недостаточно?",
+      "topic": "Web",
+      "difficulty": "Базовый",
+      "summary": "Offline - договорённость о функциях и подтверждениях, а не один переключатель сети.",
+      "takeaway": "Offline - договорённость о функциях и подтверждениях, а не один переключатель сети.",
+      "moduleId": "browser",
+      "order": 2,
+      "popular": false,
+      "answerFile": "answers/browser/browser-offline-model.md",
+      "editorial": {
+        "learningGoal": "Объяснить и применить: Offline - договорённость о функциях и подтверждениях, а не один переключатель сети.",
+        "keywords": ["Браузер и HTTP", "realtime", "browser", "offline", "model"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "goalIds": ["core", "browser-offline-model"],
+        "relatedQuestionIds": ["browser-storage-choice"],
+        "priority": "core",
+        "sourceRefs": ["ref-c2d0deaa8de02652"]
+      }
+    },
+    {
+      "id": "browser-realtime-reconnect",
+      "title": "Как восстанавливать соединение без повторной обработки сообщений?",
+      "topic": "Web",
+      "difficulty": "Средний",
+      "summary": "Восстанавливайте состояние обмена, а не только транспорт.",
+      "takeaway": "Восстанавливайте состояние обмена, а не только транспорт.",
+      "moduleId": "browser",
+      "order": 3,
+      "popular": false,
+      "answerFile": "answers/browser/browser-realtime-reconnect.md",
+      "editorial": {
+        "learningGoal": "Объяснить и применить: Восстанавливайте состояние обмена, а не только транспорт.",
+        "keywords": ["Браузер и HTTP", "realtime", "browser", "reconnect"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "goalIds": ["core", "browser-realtime-reconnect"],
+        "relatedQuestionIds": ["websocket"],
+        "priority": "core",
+        "sourceRefs": ["ref-cc66a82750c7f1d3"]
+      }
+    },
+    {
+      "id": "browser-realtime-heartbeat",
+      "title": "Как определить потерю realtime-соединения и зачем heartbeat?",
+      "topic": "Web",
+      "difficulty": "Средний",
+      "summary": "Проверяйте здоровье нужного канала, учитывая жизненный цикл устройства.",
+      "takeaway": "Проверяйте здоровье нужного канала, учитывая жизненный цикл устройства.",
+      "moduleId": "browser",
+      "order": 4,
+      "popular": false,
+      "answerFile": "answers/browser/browser-realtime-heartbeat.md",
+      "editorial": {
+        "learningGoal": "Объяснить и применить: Проверяйте здоровье нужного канала, учитывая жизненный цикл устройства.",
+        "keywords": ["Браузер и HTTP", "realtime", "browser", "heartbeat"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "goalIds": ["core", "browser-realtime-heartbeat"],
+        "relatedQuestionIds": ["browser-realtime-reconnect"],
+        "priority": "core",
+        "sourceRefs": ["ref-22fa457cb76d9afe"]
+      }
+    },
+    {
+      "id": "browser-sw-lifecycle",
+      "title": "Как install, waiting, activate и control влияют на обновление Service Worker?",
+      "topic": "Web",
+      "difficulty": "Средний",
+      "summary": "Обновление worker согласуют с жизнью управляемых страниц.",
+      "takeaway": "Обновление worker согласуют с жизнью управляемых страниц.",
+      "moduleId": "browser",
+      "order": 5,
+      "popular": false,
+      "answerFile": "answers/browser/browser-sw-lifecycle.md",
+      "editorial": {
+        "learningGoal": "Объяснить и применить: Обновление worker согласуют с жизнью управляемых страниц.",
+        "keywords": ["Браузер и HTTP", "realtime", "browser", "sw", "lifecycle"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "goalIds": ["core", "browser-sw-lifecycle"],
+        "relatedQuestionIds": ["service-worker"],
+        "priority": "core",
+        "sourceRefs": ["ref-c2d0deaa8de02652"]
+      }
+    },
+    {
+      "id": "browser-offline-strategies",
+      "title": "Когда выбирать cache-first, network-first и stale-while-revalidate в Service Worker?",
+      "topic": "Web",
+      "difficulty": "Средний",
+      "summary": "Стратегия выбирается для типа ресурса и пользовательской гарантии.",
+      "takeaway": "Стратегия выбирается для типа ресурса и пользовательской гарантии.",
+      "moduleId": "browser",
+      "order": 6,
+      "popular": false,
+      "answerFile": "answers/browser/browser-offline-strategies.md",
+      "editorial": {
+        "learningGoal": "Объяснить и применить: Стратегия выбирается для типа ресурса и пользовательской гарантии.",
+        "keywords": ["Браузер и HTTP", "realtime", "browser", "offline", "strategies"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "goalIds": ["core", "browser-offline-strategies"],
+        "relatedQuestionIds": ["browser-cache-api"],
+        "priority": "core",
+        "sourceRefs": ["ref-c2d0deaa8de02652"]
+      }
+    },
+    {
+      "id": "browser-worker-boundary",
+      "title": "Как выбрать Worker, SharedWorker или Service Worker по сроку жизни и задаче?",
+      "topic": "Web",
+      "difficulty": "Средний",
+      "summary": "Согласуйте роль, доступные API и жизнь worker-контекста.",
+      "takeaway": "Согласуйте роль, доступные API и жизнь worker-контекста.",
+      "moduleId": "browser",
+      "order": 7,
+      "popular": false,
+      "answerFile": "answers/browser/browser-worker-boundary.md",
+      "editorial": {
+        "learningGoal": "Объяснить и применить: Согласуйте роль, доступные API и жизнь worker-контекста.",
+        "keywords": ["Браузер и HTTP", "realtime", "browser", "worker", "boundary"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "goalIds": ["core", "browser-worker-boundary"],
+        "relatedQuestionIds": ["web-workers"],
+        "priority": "core",
+        "sourceRefs": ["ref-c2d0deaa8de02652"]
+      }
+    },
+    {
+      "id": "browser-sw-version-race",
+      "title": "Как избежать конфликта старой страницы и новой версии Service Worker?",
+      "topic": "Web",
+      "difficulty": "Продвинутый",
+      "summary": "Деплой PWA - переход совместимых версий, а не простая замена одного файла.",
+      "takeaway": "Деплой PWA - переход совместимых версий, а не простая замена одного файла.",
+      "moduleId": "browser",
+      "order": 8,
+      "popular": false,
+      "answerFile": "answers/browser/browser-sw-version-race.md",
+      "editorial": {
+        "learningGoal": "Объяснить и применить: Деплой PWA - переход совместимых версий, а не простая замена одного файла.",
+        "keywords": ["Браузер и HTTP", "realtime", "browser", "sw", "version", "race"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "goalIds": ["core", "browser-sw-version-race"],
+        "relatedQuestionIds": ["http-cache-invalidation"],
+        "priority": "extended",
+        "sourceRefs": ["ref-c2d0deaa8de02652"]
+      }
+    }
+  ]
+}

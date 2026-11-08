@@ -78,7 +78,7 @@ export function InterviewPreparation({ record }: { record: InterviewRecord }) {
   ]
   return (
     <section
-      className="space-y-4 rounded-xl border bg-muted/20 p-4"
+      className="space-y-4 rounded-xl bg-muted/30 p-4"
       aria-label="План подготовки к собеседованию"
     >
       <div>

@@ -17,15 +17,23 @@
         "react-imperative-handle",
         "react-portals",
         "react-callback-ref-cleanup",
-        "react-widget-dom-ownership"
+        "react-widget-dom-ownership",
+        "react-focus-after-mount",
+        "react-resize-observer",
+        "react-ref-current-in-handler",
+        "react-ref-dom-focus-scroll",
+        "react-ref-timer-vs-global",
+        "react-ref-imperative-narrow-api",
+        "react-ref-conditional-node-subscription",
+        "react-layout-measure-feedback-loop"
       ]
     },
     {
       "id": "react-ref-state",
       "title": "Чем useRef отличается от useState?",
-      "description": "Объяснить и применить правило с учётом его границ: Ref хранит служебное значение, state управляет представлением.",
+      "description": "Ref хранит служебное значение; state сообщает React об изменении интерфейса.",
       "requiredDifficulties": ["Базовый"],
-      "reviewed": false,
+      "reviewed": true,
       "priority": "core",
       "relatedSkillIds": []
     },
@@ -73,6 +81,78 @@
       "reviewed": false,
       "priority": "core",
       "relatedSkillIds": []
+    },
+    {
+      "id": "react-focus-after-mount",
+      "title": "Почему ref после setOpen(true) ещё может быть null и когда переводить фокус?",
+      "description": "Дождаться commit и управлять фокусом без случайного setTimeout.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "react-resize-observer",
+      "title": "Почему измерение DOM один раз не отслеживает изменение размера элемента?",
+      "description": "Различать первоначальный замер и подписку ResizeObserver с освобождением ресурса.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "react-ref-current-in-handler",
+      "title": "Почему DOM-ref читают в обработчике, а не сохраняют его current при рендере?",
+      "description": "Объяснить и применить: Чтение current должно соответствовать моменту работы с DOM.",
+      "requiredDifficulties": ["Базовый"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "react-ref-dom-focus-scroll",
+      "title": "Когда DOM-ref нужен для focus и scrollIntoView вместо state?",
+      "description": "Объяснить и применить: Декларативный вывод и команда DOM имеют разные инструменты.",
+      "requiredDifficulties": ["Базовый"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "react-ref-timer-vs-global",
+      "title": "Почему таймер компонента лучше хранить в ref, а не в глобальной переменной?",
+      "description": "Объяснить и применить: Изолируйте идентификатор ресурса и отдельно освобождайте сам ресурс.",
+      "requiredDifficulties": ["Базовый"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "react-ref-imperative-narrow-api",
+      "title": "Почему императивный API компонента лучше ограничить командами, а не отдавать весь DOM?",
+      "description": "Объяснить и применить: Императивное исключение тоже нуждается в минимальном публичном контракте.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "react-ref-conditional-node-subscription",
+      "title": "Как переподключать наблюдатель, когда условный DOM-узел заменяется другим?",
+      "description": "Объяснить и применить: Время жизни наблюдателя привязано к узлу, а не только к компоненту.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "react-layout-measure-feedback-loop",
+      "title": "Как избежать цикла измерение DOM - setState - изменение размера?",
+      "description": "Объяснить и применить: Измеряющая обратная связь должна иметь устойчивое конечное состояние.",
+      "requiredDifficulties": ["Продвинутый"],
+      "reviewed": true,
+      "priority": "extended",
+      "relatedSkillIds": []
     }
   ],
   "questions": [
@@ -82,20 +162,19 @@
       "topic": "React",
       "difficulty": "Базовый",
       "summary": "Сохраняемое значение и участие в рендеринге.",
-      "code": "function FocusField() {\n  const inputRef = useRef(null)\n  return <><input ref={inputRef} /><button onClick={() => inputRef.current?.focus()}>Фокус</button></>\n}",
-      "takeaway": "Ref хранит служебное значение, state управляет представлением.",
+      "takeaway": "Ref хранит служебное значение; state сообщает React об изменении интерфейса.",
       "moduleId": "react",
       "order": 0,
       "popular": false,
       "editorial": {
-        "learningGoal": "Объяснить и применить правило с учётом его границ: Ref хранит служебное значение, state управляет представлением.",
-        "keywords": ["React", "Refs и работа с DOM"],
+        "learningGoal": "Ref хранит служебное значение; state сообщает React об изменении интерфейса.",
+        "keywords": ["React", "ref", "state", "Refs и работа с DOM"],
         "kind": "explanation",
-        "reviewStatus": "imported",
+        "reviewStatus": "ready",
         "goalIds": ["core", "react-ref-state"],
-        "relatedQuestionIds": [],
+        "relatedQuestionIds": ["react-focus-after-mount", "react-callback-ref-cleanup"],
         "priority": "core",
-        "sourceRefs": []
+        "sourceRefs": ["ref-1b61fba5c5c8d219"]
       },
       "answerFile": "answers/react/react-ref-state.md"
     },
@@ -215,6 +294,182 @@
         "sourceRefs": ["ref-4d23b49b0284f9ac"]
       },
       "answerFile": "answers/react/react-widget-dom-ownership.md"
+    },
+    {
+      "id": "react-focus-after-mount",
+      "title": "Почему ref после setOpen(true) ещё может быть null и когда переводить фокус?",
+      "topic": "React",
+      "difficulty": "Средний",
+      "summary": "Дождаться commit и управлять фокусом без случайного setTimeout.",
+      "moduleId": "react",
+      "order": 6,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Дождаться commit и управлять фокусом без случайного setTimeout.",
+        "keywords": ["React", "focus", "after", "mount"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "goalIds": ["core", "react-focus-after-mount"],
+        "relatedQuestionIds": ["react-layout-effect"],
+        "priority": "core",
+        "sourceRefs": ["ref-2472a2b152e1751a"]
+      },
+      "takeaway": "Работайте с узлом после commit и только при нужном переходе интерфейса.",
+      "answerFile": "answers/react/react-focus-after-mount.md"
+    },
+    {
+      "id": "react-resize-observer",
+      "title": "Почему измерение DOM один раз не отслеживает изменение размера элемента?",
+      "topic": "React",
+      "difficulty": "Средний",
+      "summary": "Различать первоначальный замер и подписку ResizeObserver с освобождением ресурса.",
+      "moduleId": "react",
+      "order": 7,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Различать первоначальный замер и подписку ResizeObserver с освобождением ресурса.",
+        "keywords": ["React", "resize", "observer"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "goalIds": ["core", "react-resize-observer"],
+        "relatedQuestionIds": ["react-callback-ref-cleanup"],
+        "priority": "core",
+        "sourceRefs": ["ref-8574102411462ff6"]
+      },
+      "takeaway": "Отделяйте разовый замер от наблюдения за конкретным живым узлом.",
+      "answerFile": "answers/react/react-resize-observer.md"
+    },
+    {
+      "id": "react-ref-current-in-handler",
+      "title": "Почему DOM-ref читают в обработчике, а не сохраняют его current при рендере?",
+      "topic": "React",
+      "difficulty": "Базовый",
+      "summary": "Чтение current должно соответствовать моменту работы с DOM.",
+      "answerFile": "answers/react/react-ref-current-in-handler.md",
+      "takeaway": "Чтение current должно соответствовать моменту работы с DOM.",
+      "moduleId": "react",
+      "order": 8,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить: Чтение current должно соответствовать моменту работы с DOM.",
+        "keywords": ["React", "ref", "current", "in", "handler"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "goalIds": ["core", "react-ref-current-in-handler"],
+        "relatedQuestionIds": ["react-ref-state"],
+        "priority": "core",
+        "sourceRefs": ["ref-2472a2b152e1751a"]
+      }
+    },
+    {
+      "id": "react-ref-dom-focus-scroll",
+      "title": "Когда DOM-ref нужен для focus и scrollIntoView вместо state?",
+      "topic": "React",
+      "difficulty": "Базовый",
+      "summary": "Декларативный вывод и команда DOM имеют разные инструменты.",
+      "answerFile": "answers/react/react-ref-dom-focus-scroll.md",
+      "takeaway": "Декларативный вывод и команда DOM имеют разные инструменты.",
+      "moduleId": "react",
+      "order": 9,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить: Декларативный вывод и команда DOM имеют разные инструменты.",
+        "keywords": ["React", "ref", "dom", "focus", "scroll"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "goalIds": ["core", "react-ref-dom-focus-scroll"],
+        "relatedQuestionIds": ["react-ref-state"],
+        "priority": "core",
+        "sourceRefs": ["ref-2472a2b152e1751a"]
+      }
+    },
+    {
+      "id": "react-ref-timer-vs-global",
+      "title": "Почему таймер компонента лучше хранить в ref, а не в глобальной переменной?",
+      "topic": "React",
+      "difficulty": "Базовый",
+      "summary": "Изолируйте идентификатор ресурса и отдельно освобождайте сам ресурс.",
+      "answerFile": "answers/react/react-ref-timer-vs-global.md",
+      "takeaway": "Изолируйте идентификатор ресурса и отдельно освобождайте сам ресурс.",
+      "moduleId": "react",
+      "order": 10,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить: Изолируйте идентификатор ресурса и отдельно освобождайте сам ресурс.",
+        "keywords": ["React", "ref", "timer", "vs", "global"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "goalIds": ["core", "react-ref-timer-vs-global"],
+        "relatedQuestionIds": ["react-ref-state"],
+        "priority": "core",
+        "sourceRefs": ["ref-1b61fba5c5c8d219"]
+      }
+    },
+    {
+      "id": "react-ref-imperative-narrow-api",
+      "title": "Почему императивный API компонента лучше ограничить командами, а не отдавать весь DOM?",
+      "topic": "React",
+      "difficulty": "Средний",
+      "summary": "Императивное исключение тоже нуждается в минимальном публичном контракте.",
+      "answerFile": "answers/react/react-ref-imperative-narrow-api.md",
+      "takeaway": "Императивное исключение тоже нуждается в минимальном публичном контракте.",
+      "moduleId": "react",
+      "order": 11,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить: Императивное исключение тоже нуждается в минимальном публичном контракте.",
+        "keywords": ["React", "ref", "imperative", "narrow", "api"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "goalIds": ["core", "react-ref-imperative-narrow-api"],
+        "relatedQuestionIds": ["react-ref-state", "react-imperative-handle"],
+        "priority": "core",
+        "sourceRefs": ["ref-e3a44becc279d256"]
+      }
+    },
+    {
+      "id": "react-ref-conditional-node-subscription",
+      "title": "Как переподключать наблюдатель, когда условный DOM-узел заменяется другим?",
+      "topic": "React",
+      "difficulty": "Средний",
+      "summary": "Время жизни наблюдателя привязано к узлу, а не только к компоненту.",
+      "answerFile": "answers/react/react-ref-conditional-node-subscription.md",
+      "takeaway": "Время жизни наблюдателя привязано к узлу, а не только к компоненту.",
+      "moduleId": "react",
+      "order": 12,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить: Время жизни наблюдателя привязано к узлу, а не только к компоненту.",
+        "keywords": ["React", "ref", "conditional", "node", "subscription"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "goalIds": ["core", "react-ref-conditional-node-subscription"],
+        "relatedQuestionIds": ["react-ref-state", "react-callback-ref-cleanup"],
+        "priority": "core",
+        "sourceRefs": ["ref-fa183dea181b018b"]
+      }
+    },
+    {
+      "id": "react-layout-measure-feedback-loop",
+      "title": "Как избежать цикла измерение DOM - setState - изменение размера?",
+      "topic": "React",
+      "difficulty": "Продвинутый",
+      "summary": "Измеряющая обратная связь должна иметь устойчивое конечное состояние.",
+      "answerFile": "answers/react/react-layout-measure-feedback-loop.md",
+      "takeaway": "Измеряющая обратная связь должна иметь устойчивое конечное состояние.",
+      "moduleId": "react",
+      "order": 13,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить: Измеряющая обратная связь должна иметь устойчивое конечное состояние.",
+        "keywords": ["React", "layout", "measure", "feedback", "loop"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "goalIds": ["core", "react-layout-measure-feedback-loop"],
+        "relatedQuestionIds": ["react-ref-state", "react-layout-effect"],
+        "priority": "extended",
+        "sourceRefs": ["ref-41d47fa5469db173"]
+      }
     }
   ]
 }

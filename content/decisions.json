@@ -671,6 +671,909 @@
       "subsectionId": "context",
       "questionIds": ["react-state-location"],
       "reason": "Кандидат отдельного сравнения Redux/Zustand/Context включён в действующий вопрос выбора владельца и места состояния. Канонические useSyncExternalStore, SSR isolation и normalized state не дублируются."
+    },
+    {
+      "id": "react-core-20261108-async-ui",
+      "date": "2026-11-08",
+      "type": "separate",
+      "sectionId": "react",
+      "subsectionId": "async-ui",
+      "questionIds": [
+        "react-suspense-first-mount-state",
+        "react-transition-request-order",
+        "react-lazy-suspense"
+      ],
+      "reason": "Добавлены отдельные учебные навыки из первого прохода; пересекающиеся механизмы связываются с каноническими вопросами. Существующие ID сохранены. Ответы этого пакета содержат краткий вывод, механизм, пример, типичную ошибку и первичные источники. Код размещён внутри Markdown без повторного отдельного блока."
+    },
+    {
+      "id": "react-core-20261108-components",
+      "date": "2026-11-08",
+      "type": "separate",
+      "sectionId": "react",
+      "subsectionId": "components",
+      "questionIds": [
+        "react-render-purity",
+        "react-component-call",
+        "react-element-node-component",
+        "react-jsx-html-safety",
+        "react-prop-forwarding-contract",
+        "react-clone-element-contract",
+        "react-class-lifecycle-migration",
+        "react-keys",
+        "react-state-identity",
+        "react-events"
+      ],
+      "reason": "Добавлены отдельные учебные навыки из первого прохода; пересекающиеся механизмы связываются с каноническими вопросами. Существующие ID сохранены. Ответы этого пакета содержат краткий вывод, механизм, пример, типичную ошибку и первичные источники. Код размещён внутри Markdown без повторного отдельного блока."
+    },
+    {
+      "id": "react-core-20261108-context",
+      "date": "2026-11-08",
+      "type": "separate",
+      "sectionId": "react",
+      "subsectionId": "context",
+      "questionIds": ["react-context-required-provider", "react-reducer-context-split"],
+      "reason": "Добавлены отдельные учебные навыки из первого прохода; пересекающиеся механизмы связываются с каноническими вопросами. Существующие ID сохранены. Ответы этого пакета содержат краткий вывод, механизм, пример, типичную ошибку и первичные источники. Код размещён внутри Markdown без повторного отдельного блока."
+    },
+    {
+      "id": "react-core-20261108-forms",
+      "date": "2026-11-08",
+      "type": "separate",
+      "sectionId": "react",
+      "subsectionId": "forms",
+      "questionIds": [
+        "react-select-textarea-values",
+        "react-file-input-contract",
+        "react-number-input-draft",
+        "react-form-reset-contract",
+        "react-controlled-input"
+      ],
+      "reason": "Добавлены отдельные учебные навыки из первого прохода; пересекающиеся механизмы связываются с каноническими вопросами. Существующие ID сохранены. Ответы этого пакета содержат краткий вывод, механизм, пример, типичную ошибку и первичные источники. Код размещён внутри Markdown без повторного отдельного блока."
+    },
+    {
+      "id": "react-core-20261108-hooks",
+      "date": "2026-11-08",
+      "type": "separate",
+      "sectionId": "react",
+      "subsectionId": "hooks",
+      "questionIds": [
+        "react-effect-object-dependencies",
+        "react-effect-async-return",
+        "react-effect-independent-processes",
+        "effects",
+        "react-hooks-rules"
+      ],
+      "reason": "Добавлены отдельные учебные навыки из первого прохода; пересекающиеся механизмы связываются с каноническими вопросами. Существующие ID сохранены. Ответы этого пакета содержат краткий вывод, механизм, пример, типичную ошибку и первичные источники. Код размещён внутри Markdown без повторного отдельного блока."
+    },
+    {
+      "id": "react-core-20261108-performance",
+      "date": "2026-11-08",
+      "type": "separate",
+      "sectionId": "react",
+      "subsectionId": "performance",
+      "questionIds": [
+        "react-composition-render-locality",
+        "react-profiler-durations",
+        "react-memo"
+      ],
+      "reason": "Добавлены отдельные учебные навыки из первого прохода; пересекающиеся механизмы связываются с каноническими вопросами. Существующие ID сохранены. Ответы этого пакета содержат краткий вывод, механизм, пример, типичную ошибку и первичные источники. Код размещён внутри Markdown без повторного отдельного блока."
+    },
+    {
+      "id": "react-core-20261108-refs",
+      "date": "2026-11-08",
+      "type": "separate",
+      "sectionId": "react",
+      "subsectionId": "refs",
+      "questionIds": ["react-focus-after-mount", "react-resize-observer", "react-ref-state"],
+      "reason": "Добавлены отдельные учебные навыки из первого прохода; пересекающиеся механизмы связываются с каноническими вопросами. Существующие ID сохранены. Ответы этого пакета содержат краткий вывод, механизм, пример, типичную ошибку и первичные источники. Код размещён внутри Markdown без повторного отдельного блока."
+    },
+    {
+      "id": "react-core-20261108-server-rendering",
+      "date": "2026-11-08",
+      "type": "separate",
+      "sectionId": "react",
+      "subsectionId": "server-rendering",
+      "questionIds": [
+        "react-streaming-shell",
+        "react-server-function-trust",
+        "react-root-lifecycle"
+      ],
+      "reason": "Добавлены отдельные учебные навыки из первого прохода; пересекающиеся механизмы связываются с каноническими вопросами. Существующие ID сохранены. Ответы этого пакета содержат краткий вывод, механизм, пример, типичную ошибку и первичные источники. Код размещён внутри Markdown без повторного отдельного блока."
+    },
+    {
+      "id": "react-core-20261108-state",
+      "date": "2026-11-08",
+      "type": "separate",
+      "sectionId": "react",
+      "subsectionId": "state",
+      "questionIds": [
+        "react-state-replacement",
+        "react-state-function-value",
+        "react-state-status-model",
+        "react-state-queue"
+      ],
+      "reason": "Добавлены отдельные учебные навыки из первого прохода; пересекающиеся механизмы связываются с каноническими вопросами. Существующие ID сохранены. Ответы этого пакета содержат краткий вывод, механизм, пример, типичную ошибку и первичные источники. Код размещён внутри Markdown без повторного отдельного блока."
+    },
+    {
+      "id": "react-core-20261108-testing",
+      "date": "2026-11-08",
+      "type": "separate",
+      "sectionId": "react",
+      "subsectionId": "testing",
+      "questionIds": [
+        "react-test-role-queries",
+        "react-test-user-event",
+        "react-test-act-boundary",
+        "react-test-waitfor-purity",
+        "react-test-fake-timers",
+        "react-test-rerender-remount",
+        "react-error-boundary"
+      ],
+      "reason": "Добавлены отдельные учебные навыки из первого прохода; пересекающиеся механизмы связываются с каноническими вопросами. Существующие ID сохранены. Ответы этого пакета содержат краткий вывод, механизм, пример, типичную ошибку и первичные источники. Код размещён внутри Markdown без повторного отдельного блока."
+    },
+    {
+      "id": "react-core-20261108-canonical-expansion",
+      "date": "2026-11-08",
+      "type": "expand",
+      "sectionId": "react",
+      "subsectionId": null,
+      "questionIds": [
+        "react-keys",
+        "react-state-identity",
+        "react-events",
+        "react-state-queue",
+        "effects",
+        "react-hooks-rules",
+        "react-ref-state",
+        "react-controlled-input",
+        "react-memo",
+        "react-lazy-suspense",
+        "react-error-boundary"
+      ],
+      "reason": "11 коротких канонических ответов расширены с сохранением ID. Не создавались дополнительные карточки для правил key, снимка и очереди state, controlled input, основ effects и memo. useId и transition/deferred уже раскрыты и не размножаются."
+    },
+    {
+      "id": "react-expanded-20261108-async-ui",
+      "date": "2026-11-08",
+      "type": "separate",
+      "sectionId": "react",
+      "subsectionId": "async-ui",
+      "questionIds": [
+        "react-async-ui-statuses",
+        "react-async-http-status",
+        "react-async-abort-controller-lifetime",
+        "react-async-data-error-retry",
+        "react-async-dedup-cache-key",
+        "react-transition-cpu-boundary",
+        "react-suspense-layout-effect-reconnect",
+        "react-optimistic-overlap-rebase"
+      ],
+      "reason": "Сохранены исходные вопросы. Новые карточки отделены по конкретному прикладному сценарию: общие определения закрепляются ссылкой на канонический ответ, а не повторяются полностью. Числовые требования пользователя выполнены отдельно от Redux/Zustand; обе библиотеки остаются внутри React."
+    },
+    {
+      "id": "react-expanded-20261108-components",
+      "date": "2026-11-08",
+      "type": "separate",
+      "sectionId": "react",
+      "subsectionId": "components",
+      "questionIds": [
+        "react-renderer-boundary",
+        "react-jsx-capitalization",
+        "react-jsx-expression-boundary",
+        "react-jsx-boolean-attribute",
+        "react-jsx-style-contract",
+        "react-jsx-class-condition",
+        "react-jsx-aria-data",
+        "react-prop-default-null",
+        "react-jsx-whitespace",
+        "react-jsx-object-child",
+        "react-jsx-map-return",
+        "react-component-module-export",
+        "react-component-local-variable",
+        "react-component-slot-contract",
+        "react-ts-component-props",
+        "react-ts-children-node",
+        "react-ts-event-types",
+        "react-ts-state-null-union",
+        "react-event-current-target-async",
+        "react-focus-subtree-boundary",
+        "react-compound-component-contract",
+        "react-ts-discriminated-props",
+        "react-render-restart-external-mutation"
+      ],
+      "reason": "Сохранены исходные вопросы. Новые карточки отделены по конкретному прикладному сценарию: общие определения закрепляются ссылкой на канонический ответ, а не повторяются полностью. Числовые требования пользователя выполнены отдельно от Redux/Zustand; обе библиотеки остаются внутри React."
+    },
+    {
+      "id": "react-expanded-20261108-context",
+      "date": "2026-11-08",
+      "type": "separate",
+      "sectionId": "react",
+      "subsectionId": "context",
+      "questionIds": [
+        "react-context-nearest-provider",
+        "react-context-sibling-boundary",
+        "react-context-value-is-not-store",
+        "react-context-provider-state-lifetime",
+        "react-context-module-identity",
+        "react-context-external-store-tearing"
+      ],
+      "reason": "Сохранены исходные вопросы. Новые карточки отделены по конкретному прикладному сценарию: общие определения закрепляются ссылкой на канонический ответ, а не повторяются полностью. Числовые требования пользователя выполнены отдельно от Redux/Zustand; обе библиотеки остаются внутри React."
+    },
+    {
+      "id": "react-expanded-20261108-forms",
+      "date": "2026-11-08",
+      "type": "separate",
+      "sectionId": "react",
+      "subsectionId": "forms",
+      "questionIds": [
+        "react-form-checkbox-group",
+        "react-form-radio-group",
+        "react-form-submit-button-type",
+        "react-form-repeated-names",
+        "react-form-native-validity",
+        "react-form-readonly-disabled",
+        "react-form-submitter-intent",
+        "react-form-server-field-errors",
+        "react-form-keyboard-ime-submit",
+        "react-form-action-error-boundary"
+      ],
+      "reason": "Сохранены исходные вопросы. Новые карточки отделены по конкретному прикладному сценарию: общие определения закрепляются ссылкой на канонический ответ, а не повторяются полностью. Числовые требования пользователя выполнены отдельно от Redux/Zustand; обе библиотеки остаются внутри React."
+    },
+    {
+      "id": "react-expanded-20261108-hooks",
+      "date": "2026-11-08",
+      "type": "separate",
+      "sectionId": "react",
+      "subsectionId": "hooks",
+      "questionIds": [
+        "react-hook-api-contract",
+        "react-listener-function-identity",
+        "react-timeout-cleanup",
+        "react-hook-lint-purpose",
+        "react-hook-interval-functional-update",
+        "react-hook-debounce-value",
+        "react-hook-document-subscription",
+        "react-hook-effect-error-handling",
+        "react-hook-effect-loop-diagnosis",
+        "react-hook-memo-initializer-purity",
+        "react-external-store-snapshot-stability",
+        "react-external-store-subscribe-identity"
+      ],
+      "reason": "Сохранены исходные вопросы. Новые карточки отделены по конкретному прикладному сценарию: общие определения закрепляются ссылкой на канонический ответ, а не повторяются полностью. Числовые требования пользователя выполнены отдельно от Redux/Zustand; обе библиотеки остаются внутри React."
+    },
+    {
+      "id": "react-expanded-20261108-performance",
+      "date": "2026-11-08",
+      "type": "separate",
+      "sectionId": "react",
+      "subsectionId": "performance",
+      "questionIds": [
+        "react-perf-render-is-not-paint",
+        "react-perf-local-search-input",
+        "react-perf-memo-selector-cost",
+        "react-perf-windowing-identity",
+        "react-perf-browser-vs-react-profile",
+        "react-compiler-memo-boundary",
+        "react-memo-comparator-closure-bug",
+        "react-interaction-latency-budget"
+      ],
+      "reason": "Сохранены исходные вопросы. Новые карточки отделены по конкретному прикладному сценарию: общие определения закрепляются ссылкой на канонический ответ, а не повторяются полностью. Числовые требования пользователя выполнены отдельно от Redux/Zustand; обе библиотеки остаются внутри React."
+    },
+    {
+      "id": "react-expanded-20261108-redux",
+      "date": "2026-11-08",
+      "type": "separate",
+      "sectionId": "react",
+      "subsectionId": "redux",
+      "questionIds": [
+        "redux-action-creator-payload",
+        "redux-initial-unknown-action",
+        "redux-reducer-key-shape",
+        "redux-shared-action",
+        "redux-prepare-callback",
+        "redux-immer-return-rule",
+        "redux-dispatch-result",
+        "redux-sync-read-after-dispatch",
+        "redux-selector-root-state",
+        "redux-local-state-choice",
+        "redux-devtools-action-trace",
+        "redux-preloaded-state",
+        "redux-thunk-cancel-condition",
+        "redux-extra-reducers-builder",
+        "redux-query-skip-lazy",
+        "redux-query-loading-fetching",
+        "redux-mutation-result-reset",
+        "redux-query-tags-specificity",
+        "redux-query-store-wiring",
+        "redux-thunk-reject-value",
+        "redux-query-cache-lifetime",
+        "redux-query-select-result",
+        "redux-listener-cancellation",
+        "redux-optimistic-rollback-race",
+        "redux-api-inject-endpoints",
+        "redux-combine-slices-injection",
+        "redux-query-stream-lifetime",
+        "redux-query-normalization-boundary"
+      ],
+      "reason": "Сохранены исходные вопросы. Новые карточки отделены по конкретному прикладному сценарию: общие определения закрепляются ссылкой на канонический ответ, а не повторяются полностью. Числовые требования пользователя выполнены отдельно от Redux/Zustand; обе библиотеки остаются внутри React."
+    },
+    {
+      "id": "react-expanded-20261108-refs",
+      "date": "2026-11-08",
+      "type": "separate",
+      "sectionId": "react",
+      "subsectionId": "refs",
+      "questionIds": [
+        "react-ref-current-in-handler",
+        "react-ref-dom-focus-scroll",
+        "react-ref-timer-vs-global",
+        "react-ref-imperative-narrow-api",
+        "react-ref-conditional-node-subscription",
+        "react-layout-measure-feedback-loop"
+      ],
+      "reason": "Сохранены исходные вопросы. Новые карточки отделены по конкретному прикладному сценарию: общие определения закрепляются ссылкой на канонический ответ, а не повторяются полностью. Числовые требования пользователя выполнены отдельно от Redux/Zustand; обе библиотеки остаются внутри React."
+    },
+    {
+      "id": "react-expanded-20261108-routing",
+      "date": "2026-11-08",
+      "type": "separate",
+      "sectionId": "react",
+      "subsectionId": "routing",
+      "questionIds": [
+        "react-router-browser-history",
+        "react-router-outlet-layout",
+        "react-router-index-route",
+        "react-router-params-string",
+        "react-router-link-navlink",
+        "react-router-search-params",
+        "react-router-replace-push",
+        "react-router-not-found",
+        "react-router-relative-links",
+        "react-router-loader-vs-effect",
+        "react-router-action-revalidation",
+        "react-router-location-state-limits",
+        "react-router-memory-tests",
+        "react-router-spa-host-fallback",
+        "react-router-request-cancellation",
+        "react-router-auth-server-boundary"
+      ],
+      "reason": "Сохранены исходные вопросы. Новые карточки отделены по конкретному прикладному сценарию: общие определения закрепляются ссылкой на канонический ответ, а не повторяются полностью. Числовые требования пользователя выполнены отдельно от Redux/Zustand; обе библиотеки остаются внутри React."
+    },
+    {
+      "id": "react-expanded-20261108-server-rendering",
+      "date": "2026-11-08",
+      "type": "separate",
+      "sectionId": "react",
+      "subsectionId": "server-rendering",
+      "questionIds": [
+        "react-ssr-browser-globals",
+        "react-ssr-effect-placeholder",
+        "react-ssr-hydrated-interaction",
+        "react-ssr-deterministic-locale",
+        "react-ssr-invalid-html-nesting",
+        "react-ssr-id-prefix-roots",
+        "react-hydration-external-dom-mutation",
+        "react-rsc-client-import-boundary",
+        "react-streaming-abort-deadline"
+      ],
+      "reason": "Сохранены исходные вопросы. Новые карточки отделены по конкретному прикладному сценарию: общие определения закрепляются ссылкой на канонический ответ, а не повторяются полностью. Числовые требования пользователя выполнены отдельно от Redux/Zustand; обе библиотеки остаются внутри React."
+    },
+    {
+      "id": "react-expanded-20261108-state",
+      "date": "2026-11-08",
+      "type": "separate",
+      "sectionId": "react",
+      "subsectionId": "state",
+      "questionIds": [
+        "react-state-object-is",
+        "react-state-remove-row",
+        "react-state-edit-row",
+        "react-state-sort-view",
+        "react-state-set-collection",
+        "react-state-selection-id",
+        "react-state-instance-isolation",
+        "react-state-event-next-value",
+        "react-state-previous-committed",
+        "react-state-edit-session-key",
+        "react-state-reducer-init",
+        "react-state-undo-model",
+        "react-state-transaction-boundary",
+        "react-state-versioned-server-merge"
+      ],
+      "reason": "Сохранены исходные вопросы. Новые карточки отделены по конкретному прикладному сценарию: общие определения закрепляются ссылкой на канонический ответ, а не повторяются полностью. Числовые требования пользователя выполнены отдельно от Redux/Zustand; обе библиотеки остаются внутри React."
+    },
+    {
+      "id": "react-expanded-20261108-testing",
+      "date": "2026-11-08",
+      "type": "separate",
+      "sectionId": "react",
+      "subsectionId": "testing",
+      "questionIds": [
+        "react-test-empty-query",
+        "react-test-cleanup-isolation",
+        "react-test-snapshot-limits",
+        "react-test-provider-wrapper",
+        "react-test-network-contract",
+        "react-test-keyboard-flow",
+        "react-test-error-boundary-recovery",
+        "react-concurrent-test-observable-contract"
+      ],
+      "reason": "Сохранены исходные вопросы. Новые карточки отделены по конкретному прикладному сценарию: общие определения закрепляются ссылкой на канонический ответ, а не повторяются полностью. Числовые требования пользователя выполнены отдельно от Redux/Zustand; обе библиотеки остаются внутри React."
+    },
+    {
+      "id": "react-expanded-20261108-zustand",
+      "date": "2026-11-08",
+      "type": "separate",
+      "sectionId": "react",
+      "subsectionId": "zustand",
+      "questionIds": [
+        "zustand-state-creator-arguments",
+        "zustand-functional-set",
+        "zustand-read-after-set",
+        "zustand-replace-actions",
+        "zustand-select-by-id",
+        "zustand-select-action",
+        "zustand-vanilla-react-bridge",
+        "zustand-initial-snapshot",
+        "zustand-array-update",
+        "zustand-primitive-store",
+        "zustand-module-instance",
+        "zustand-local-vs-shared",
+        "zustand-persist-partialize",
+        "zustand-persist-storage",
+        "zustand-persist-nested-merge",
+        "zustand-hydration-observation",
+        "zustand-devtools-labels",
+        "zustand-slices-composition",
+        "zustand-map-set-update",
+        "zustand-transient-dom-updates",
+        "zustand-ssr-manual-hydration",
+        "zustand-typescript-middleware-order",
+        "zustand-test-isolated-factory",
+        "zustand-v5-selector-fallback"
+      ],
+      "reason": "Сохранены исходные вопросы. Новые карточки отделены по конкретному прикладному сценарию: общие определения закрепляются ссылкой на канонический ответ, а не повторяются полностью. Числовые требования пользователя выполнены отдельно от Redux/Zustand; обе библиотеки остаются внутри React."
+    },
+    {
+      "id": "browser-expanded-20261108-architecture",
+      "date": "2026-11-08",
+      "type": "separate",
+      "sectionId": "browser",
+      "subsectionId": "architecture",
+      "questionIds": [
+        "browser-components",
+        "browser-engine-renderer",
+        "browser-address-navigation",
+        "browser-main-thread",
+        "browser-navigation-reload",
+        "browser-processes",
+        "browser-navigation-kinds",
+        "browser-navigation-failure",
+        "browser-site-isolation",
+        "browser-bfcache-private"
+      ],
+      "reason": "Согласованная карта из 14 подразделов. Новые вопросы разделены по навыку и практическому сценарию. Канонические API JavaScript и HTML/CSS закрепляются ссылками; определения не копируются в отдельные дубли."
+    },
+    {
+      "id": "browser-expanded-20261108-caching",
+      "date": "2026-11-08",
+      "type": "separate",
+      "sectionId": "browser",
+      "subsectionId": "caching",
+      "questionIds": [
+        "http-cache-layers",
+        "http-cache-directives",
+        "http-cache-private-public",
+        "http-cache-versioned-assets",
+        "http-cache-validation",
+        "http-cache-vary",
+        "http-cache-smaxage",
+        "http-cache-stale",
+        "http-cache-invalidation",
+        "http-cache-personalization",
+        "http-cache-attacks"
+      ],
+      "reason": "Согласованная карта из 14 подразделов. Новые вопросы разделены по навыку и практическому сценарию. Канонические API JavaScript и HTML/CSS закрепляются ссылками; определения не копируются в отдельные дубли."
+    },
+    {
+      "id": "browser-expanded-20261108-delivery",
+      "date": "2026-11-08",
+      "type": "separate",
+      "sectionId": "browser",
+      "subsectionId": "delivery",
+      "questionIds": [
+        "browser-cdn-proxy",
+        "browser-devtools-panels",
+        "browser-transfer-resource-size",
+        "browser-network-offline",
+        "browser-waterfall-dependency",
+        "browser-cold-warm-cache",
+        "browser-resource-priority",
+        "browser-vitals-network"
+      ],
+      "reason": "Согласованная карта из 14 подразделов. Новые вопросы разделены по навыку и практическому сценарию. Канонические API JavaScript и HTML/CSS закрепляются ссылками; определения не копируются в отдельные дубли."
+    },
+    {
+      "id": "browser-expanded-20261108-http",
+      "date": "2026-11-08",
+      "type": "separate",
+      "sectionId": "browser",
+      "subsectionId": "http",
+      "questionIds": [
+        "http-message-model",
+        "http-stateless",
+        "http-method-choice",
+        "http-head-options",
+        "http-get-input",
+        "http-put-patch",
+        "http-retry-key",
+        "http-retry-policy",
+        "http-if-match-conflict"
+      ],
+      "reason": "Согласованная карта из 14 подразделов. Новые вопросы разделены по навыку и практическому сценарию. Канонические API JavaScript и HTML/CSS закрепляются ссылками; определения не копируются в отдельные дубли."
+    },
+    {
+      "id": "browser-expanded-20261108-https",
+      "date": "2026-11-08",
+      "type": "separate",
+      "sectionId": "browser",
+      "subsectionId": "https",
+      "questionIds": [
+        "tls-certificate",
+        "http-one-keepalive",
+        "https-mixed-content",
+        "https-hsts",
+        "http-multiplexing-bottleneck",
+        "https-trust-proxy",
+        "http-three-loss"
+      ],
+      "reason": "Согласованная карта из 14 подразделов. Новые вопросы разделены по навыку и практическому сценарию. Канонические API JavaScript и HTML/CSS закрепляются ссылками; определения не копируются в отдельные дубли."
+    },
+    {
+      "id": "browser-expanded-20261108-origin",
+      "date": "2026-11-08",
+      "type": "separate",
+      "sectionId": "browser",
+      "subsectionId": "origin",
+      "questionIds": [
+        "browser-origin-site",
+        "browser-cross-origin-write",
+        "browser-cors-server",
+        "browser-cors-preflight",
+        "browser-cors-credentials",
+        "browser-cors-expose",
+        "browser-cors-cache",
+        "browser-cors-diagnosis",
+        "browser-redirect-cookie-cors-chain"
+      ],
+      "reason": "Согласованная карта из 14 подразделов. Новые вопросы разделены по навыку и практическому сценарию. Канонические API JavaScript и HTML/CSS закрепляются ссылками; определения не копируются в отдельные дубли."
+    },
+    {
+      "id": "browser-expanded-20261108-realtime",
+      "date": "2026-11-08",
+      "type": "separate",
+      "sectionId": "browser",
+      "subsectionId": "realtime",
+      "questionIds": [
+        "browser-realtime-choice",
+        "browser-sse",
+        "browser-offline-model",
+        "browser-realtime-reconnect",
+        "browser-realtime-heartbeat",
+        "browser-sw-lifecycle",
+        "browser-offline-strategies",
+        "browser-worker-boundary",
+        "browser-sw-version-race"
+      ],
+      "reason": "Согласованная карта из 14 подразделов. Новые вопросы разделены по навыку и практическому сценарию. Канонические API JavaScript и HTML/CSS закрепляются ссылками; определения не копируются в отдельные дубли."
+    },
+    {
+      "id": "browser-expanded-20261108-rendering",
+      "date": "2026-11-08",
+      "type": "separate",
+      "sectionId": "browser",
+      "subsectionId": "rendering",
+      "questionIds": [
+        "browser-render-pipeline",
+        "browser-resource-ready",
+        "browser-critical-resources",
+        "browser-resource-layout-shift",
+        "browser-parser-preload",
+        "browser-style-script-order",
+        "browser-compositing-animation",
+        "browser-page-lifecycle-save"
+      ],
+      "reason": "Согласованная карта из 14 подразделов. Новые вопросы разделены по навыку и практическому сценарию. Канонические API JavaScript и HTML/CSS закрепляются ссылками; определения не копируются в отдельные дубли."
+    },
+    {
+      "id": "browser-expanded-20261108-representations",
+      "date": "2026-11-08",
+      "type": "separate",
+      "sectionId": "browser",
+      "subsectionId": "representations",
+      "questionIds": [
+        "http-status-families",
+        "http-success-statuses",
+        "http-content-negotiation",
+        "http-json-text-binary",
+        "http-multipart-boundary",
+        "http-redirect-method",
+        "http-client-validation-errors",
+        "http-rate-limit",
+        "http-representation-length",
+        "http-range-download"
+      ],
+      "reason": "Согласованная карта из 14 подразделов. Новые вопросы разделены по навыку и практическому сценарию. Канонические API JavaScript и HTML/CSS закрепляются ссылками; определения не копируются в отдельные дубли."
+    },
+    {
+      "id": "browser-expanded-20261108-requests",
+      "date": "2026-11-08",
+      "type": "separate",
+      "sectionId": "browser",
+      "subsectionId": "requests",
+      "questionIds": [
+        "fetch-outcome-levels",
+        "fetch-request-body",
+        "fetch-timeout-abort",
+        "fetch-api-choice",
+        "fetch-credentials",
+        "fetch-no-cors",
+        "fetch-body-reuse",
+        "fetch-stream-boundary",
+        "fetch-redirects",
+        "fetch-upload-progress",
+        "browser-stream-backpressure"
+      ],
+      "reason": "Согласованная карта из 14 подразделов. Новые вопросы разделены по навыку и практическому сценарию. Канонические API JavaScript и HTML/CSS закрепляются ссылками; определения не копируются в отдельные дубли."
+    },
+    {
+      "id": "browser-expanded-20261108-security",
+      "date": "2026-11-08",
+      "type": "separate",
+      "sectionId": "browser",
+      "subsectionId": "security",
+      "questionIds": [
+        "browser-xss-context",
+        "browser-sanitize-escape",
+        "browser-api-authorization",
+        "browser-secure-permissions",
+        "browser-xss-kinds",
+        "browser-csp",
+        "browser-clickjacking",
+        "browser-iframe-sandbox",
+        "browser-postmessage-validation",
+        "browser-integrity-referrer",
+        "browser-cross-origin-isolation"
+      ],
+      "reason": "Согласованная карта из 14 подразделов. Новые вопросы разделены по навыку и практическому сценарию. Канонические API JavaScript и HTML/CSS закрепляются ссылками; определения не копируются в отдельные дубли."
+    },
+    {
+      "id": "browser-expanded-20261108-sessions",
+      "date": "2026-11-08",
+      "type": "separate",
+      "sectionId": "browser",
+      "subsectionId": "sessions",
+      "questionIds": [
+        "cookie-http-flow",
+        "cookie-scope",
+        "cookie-lifetime",
+        "auth-session-flow",
+        "auth-authorization-header",
+        "cookie-delete-scope",
+        "auth-session-token",
+        "auth-refresh-lifecycle",
+        "auth-logout",
+        "cookie-third-party"
+      ],
+      "reason": "Согласованная карта из 14 подразделов. Новые вопросы разделены по навыку и практическому сценарию. Канонические API JavaScript и HTML/CSS закрепляются ссылками; определения не копируются в отдельные дубли."
+    },
+    {
+      "id": "browser-expanded-20261108-storage",
+      "date": "2026-11-08",
+      "type": "separate",
+      "sectionId": "browser",
+      "subsectionId": "storage",
+      "questionIds": [
+        "browser-storage-choice",
+        "browser-cache-api",
+        "browser-storage-scope",
+        "browser-storage-quota",
+        "browser-idb-transaction",
+        "browser-idb-upgrade-tabs",
+        "browser-cross-tab-sync",
+        "browser-storage-fallback",
+        "browser-partitioned-storage",
+        "browser-idb-concurrent-migration"
+      ],
+      "reason": "Согласованная карта из 14 подразделов. Новые вопросы разделены по навыку и практическому сценарию. Канонические API JavaScript и HTML/CSS закрепляются ссылками; определения не копируются в отдельные дубли."
+    },
+    {
+      "id": "browser-expanded-20261108-transport",
+      "date": "2026-11-08",
+      "type": "separate",
+      "sectionId": "browser",
+      "subsectionId": "transport",
+      "questionIds": [
+        "url-parts",
+        "url-relative-resolution",
+        "network-host-port",
+        "network-tcp-udp",
+        "network-dns-records",
+        "network-dns-caches",
+        "network-reuse",
+        "network-latency-throughput"
+      ],
+      "reason": "Согласованная карта из 14 подразделов. Новые вопросы разделены по навыку и практическому сценарию. Канонические API JavaScript и HTML/CSS закрепляются ссылками; определения не копируются в отдельные дубли."
+    },
+    {
+      "id": "browser-expand-20261108-http-compression",
+      "date": "2026-11-08",
+      "type": "expand",
+      "sectionId": "browser",
+      "subsectionId": "representations",
+      "questionIds": ["http-compression"],
+      "reason": "Прежний ID сохранён. Ответ расширен механизмом, границами, сценарием, типичной ошибкой и источником; повторные отдельные поля убраны в Markdown."
+    },
+    {
+      "id": "browser-expand-20261108-http-cdn",
+      "date": "2026-11-08",
+      "type": "expand",
+      "sectionId": "browser",
+      "subsectionId": "delivery",
+      "questionIds": ["http-cdn"],
+      "reason": "Прежний ID сохранён. Ответ расширен механизмом, границами, сценарием, типичной ошибкой и источником; повторные отдельные поля убраны в Markdown."
+    },
+    {
+      "id": "browser-expand-20261108-network-waterfall",
+      "date": "2026-11-08",
+      "type": "expand",
+      "sectionId": "browser",
+      "subsectionId": "delivery",
+      "questionIds": ["network-waterfall"],
+      "reason": "Прежний ID сохранён. Ответ расширен механизмом, границами, сценарием, типичной ошибкой и источником; повторные отдельные поля убраны в Markdown."
+    },
+    {
+      "id": "browser-expand-20261108-http-cache",
+      "date": "2026-11-08",
+      "type": "expand",
+      "sectionId": "browser",
+      "subsectionId": "caching",
+      "questionIds": ["http-cache"],
+      "reason": "Прежний ID сохранён. Ответ расширен механизмом, границами, сценарием, типичной ошибкой и источником; повторные отдельные поля убраны в Markdown."
+    },
+    {
+      "id": "browser-expand-20261108-http-idempotency",
+      "date": "2026-11-08",
+      "type": "expand",
+      "sectionId": "browser",
+      "subsectionId": "http",
+      "questionIds": ["http-idempotency"],
+      "reason": "Прежний ID сохранён. Ответ расширен механизмом, границами, сценарием, типичной ошибкой и источником; повторные отдельные поля убраны в Markdown."
+    },
+    {
+      "id": "browser-expand-20261108-http-status-codes",
+      "date": "2026-11-08",
+      "type": "expand",
+      "sectionId": "browser",
+      "subsectionId": "representations",
+      "questionIds": ["http-status-codes"],
+      "reason": "Прежний ID сохранён. Ответ расширен механизмом, границами, сценарием, типичной ошибкой и источником; повторные отдельные поля убраны в Markdown."
+    },
+    {
+      "id": "browser-expand-20261108-browser-cors",
+      "date": "2026-11-08",
+      "type": "expand",
+      "sectionId": "browser",
+      "subsectionId": "origin",
+      "questionIds": ["browser-cors"],
+      "reason": "Прежний ID сохранён. Ответ расширен механизмом, границами, сценарием, типичной ошибкой и источником; повторные отдельные поля убраны в Markdown."
+    },
+    {
+      "id": "browser-expand-20261108-browser-cookie-flags",
+      "date": "2026-11-08",
+      "type": "expand",
+      "sectionId": "browser",
+      "subsectionId": "sessions",
+      "questionIds": ["browser-cookie-flags"],
+      "reason": "Прежний ID сохранён. Ответ расширен механизмом, границами, сценарием, типичной ошибкой и источником; повторные отдельные поля убраны в Markdown."
+    },
+    {
+      "id": "browser-expand-20261108-browser-csrf",
+      "date": "2026-11-08",
+      "type": "expand",
+      "sectionId": "browser",
+      "subsectionId": "security",
+      "questionIds": ["browser-csrf"],
+      "reason": "Прежний ID сохранён. Ответ расширен механизмом, границами, сценарием, типичной ошибкой и источником; повторные отдельные поля убраны в Markdown."
+    },
+    {
+      "id": "browser-expand-20261108-network-dns",
+      "date": "2026-11-08",
+      "type": "expand",
+      "sectionId": "browser",
+      "subsectionId": "transport",
+      "questionIds": ["network-dns"],
+      "reason": "Прежний ID сохранён. Ответ расширен механизмом, границами, сценарием, типичной ошибкой и источником; повторные отдельные поля убраны в Markdown."
+    },
+    {
+      "id": "browser-expand-20261108-network-https",
+      "date": "2026-11-08",
+      "type": "expand",
+      "sectionId": "browser",
+      "subsectionId": "https",
+      "questionIds": ["network-https"],
+      "reason": "Прежний ID сохранён. Ответ расширен механизмом, границами, сценарием, типичной ошибкой и источником; повторные отдельные поля убраны в Markdown."
+    },
+    {
+      "id": "browser-expand-20261108-http-multiplexing",
+      "date": "2026-11-08",
+      "type": "expand",
+      "sectionId": "browser",
+      "subsectionId": "https",
+      "questionIds": ["http-multiplexing"],
+      "reason": "Прежний ID сохранён. Ответ расширен механизмом, границами, сценарием, типичной ошибкой и источником; повторные отдельные поля убраны в Markdown."
+    },
+    {
+      "id": "browser-relocate-20261108-http-compression",
+      "date": "2026-11-08",
+      "type": "relocate",
+      "sectionId": "browser",
+      "subsectionId": "representations",
+      "questionIds": ["http-compression"],
+      "reason": "Перенос из delivery в representations по согласованной карте. ID вопроса и файл ответа сохранены; перенесена учебная цель, актуализированы источники."
+    },
+    {
+      "id": "browser-relocate-20261108-http-cache",
+      "date": "2026-11-08",
+      "type": "relocate",
+      "sectionId": "browser",
+      "subsectionId": "caching",
+      "questionIds": ["http-cache"],
+      "reason": "Перенос из http в caching по согласованной карте. ID вопроса и файл ответа сохранены; перенесена учебная цель, актуализированы источники."
+    },
+    {
+      "id": "browser-relocate-20261108-http-status-codes",
+      "date": "2026-11-08",
+      "type": "relocate",
+      "sectionId": "browser",
+      "subsectionId": "representations",
+      "questionIds": ["http-status-codes"],
+      "reason": "Перенос из http в representations по согласованной карте. ID вопроса и файл ответа сохранены; перенесена учебная цель, актуализированы источники."
+    },
+    {
+      "id": "browser-relocate-20261108-browser-cors",
+      "date": "2026-11-08",
+      "type": "relocate",
+      "sectionId": "browser",
+      "subsectionId": "origin",
+      "questionIds": ["browser-cors"],
+      "reason": "Перенос из security в origin по согласованной карте. ID вопроса и файл ответа сохранены; перенесена учебная цель, актуализированы источники."
+    },
+    {
+      "id": "browser-relocate-20261108-browser-cookie-flags",
+      "date": "2026-11-08",
+      "type": "relocate",
+      "sectionId": "browser",
+      "subsectionId": "sessions",
+      "questionIds": ["browser-cookie-flags"],
+      "reason": "Перенос из security в sessions по согласованной карте. ID вопроса и файл ответа сохранены; перенесена учебная цель, актуализированы источники."
+    },
+    {
+      "id": "browser-relocate-20261108-network-https",
+      "date": "2026-11-08",
+      "type": "relocate",
+      "sectionId": "browser",
+      "subsectionId": "https",
+      "questionIds": ["network-https"],
+      "reason": "Перенос из transport в https по согласованной карте. ID вопроса и файл ответа сохранены; перенесена учебная цель, актуализированы источники."
+    },
+    {
+      "id": "browser-relocate-20261108-http-multiplexing",
+      "date": "2026-11-08",
+      "type": "relocate",
+      "sectionId": "browser",
+      "subsectionId": "https",
+      "questionIds": ["http-multiplexing"],
+      "reason": "Перенос из transport в https по согласованной карте. ID вопроса и файл ответа сохранены; перенесена учебная цель, актуализированы источники."
     }
   ]
 }

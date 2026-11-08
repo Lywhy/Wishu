@@ -1,12 +1,6 @@
 import { Toggle } from "@/components/ui/toggle"
 import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group"
-import {
-  Empty,
-  EmptyHeader,
-  EmptyTitle,
-  EmptyDescription,
-  EmptyContent,
-} from "@/components/ui/empty"
+import { PageState } from "@/components/catalog/page-state"
 import { SearchField } from "@/components/experience/search-field"
 import { Button } from "@/components/ui/button"
 import {
@@ -49,17 +43,17 @@ export function CatalogControls({
       : []),
   ]
   return (
-    <div className="space-y-4 rounded-xl border bg-card p-4">
+    <div className="space-y-4 rounded-xl bg-card p-4 ring-1 ring-border/60">
       <div
         className={cn(
-          "grid gap-3 sm:grid-cols-2",
+          "grid min-w-0 gap-3 sm:grid-cols-2",
           showPopular
-            ? "lg:grid-cols-[minmax(9rem,1fr)_9rem_8.5rem_auto]"
-            : "lg:grid-cols-[minmax(0,1fr)_10rem_9rem]",
+            ? "xl:grid-cols-[minmax(9rem,1fr)_9rem_8.5rem_auto]"
+            : "xl:grid-cols-[minmax(0,1fr)_10rem_9rem]",
         )}
       >
         <SearchField
-          className="sm:col-span-2 lg:col-span-1"
+          className="sm:col-span-2 xl:col-span-1"
           value={filter.query}
           onValueChange={(value) => filter.update("q", value)}
           label={placeholder}
@@ -113,7 +107,7 @@ export function CatalogControls({
         {showPopular && (
           <Toggle
             variant="outline"
-            className="h-10 sm:col-span-2 lg:col-span-1"
+            className="h-10 sm:col-span-2 xl:col-span-1"
             pressed={filter.popular}
             onPressedChange={(pressed) => filter.update("popular", pressed ? "1" : "")}
           >
@@ -139,7 +133,7 @@ export function CatalogControls({
               key={item.key}
               size="sm"
               variant="ghost"
-              className="max-w-full rounded-full border border-dashed text-xs"
+              className="max-w-full rounded-md bg-muted/60 text-xs"
               aria-label={"Снять фильтр: " + item.label}
               onClick={() => filter.update(item.key, "")}
             >
@@ -182,18 +176,10 @@ export function EmptyResults({
   description?: string
 }) {
   return (
-    <Empty className="border bg-card py-12">
-      <EmptyHeader>
-        <EmptyTitle>
-          <h2 className="font-semibold">{title}</h2>
-        </EmptyTitle>
-        <EmptyDescription>{description}</EmptyDescription>
-      </EmptyHeader>
-      <EmptyContent>
-        <Button variant="outline" className="mt-5" onClick={onReset}>
-          Сбросить фильтры
-        </Button>
-      </EmptyContent>
-    </Empty>
+    <PageState heading="h2" title={title} description={description}>
+      <Button variant="outline" onClick={onReset}>
+        Сбросить фильтры
+      </Button>
+    </PageState>
   )
 }

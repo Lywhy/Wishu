@@ -1782,9 +1782,9 @@
       "scope": "JSX, props, композиция, события, списки и идентичность компонентов.",
       "sources": [
         {
-          "title": "Документация",
+          "title": "React: learn / passing-props-to-a-component",
           "url": "https://react.dev/learn/passing-props-to-a-component",
-          "checkedAt": null,
+          "checkedAt": "2026-11-08",
           "id": "ref-43f69f505491d316"
         },
         {
@@ -1794,9 +1794,9 @@
           "id": "ref-7ff72cc317007615"
         },
         {
-          "title": "Документация",
+          "title": "React: components / common",
           "url": "https://react.dev/reference/react-dom/components/common",
-          "checkedAt": null,
+          "checkedAt": "2026-11-08",
           "id": "ref-fa183dea181b018b"
         },
         {
@@ -1811,10 +1811,114 @@
           "checkedAt": null,
           "notes": "Начальная точка поиска, не замена источнику конкретного технического утверждения.",
           "id": "ref-8234962172f4a6ef"
+        },
+        {
+          "id": "ref-61e4a1522e4a87a1",
+          "title": "React: learn / keeping-components-pure",
+          "url": "https://react.dev/learn/keeping-components-pure",
+          "checkedAt": "2026-11-08"
+        },
+        {
+          "id": "ref-18d03af39405e5a8",
+          "title": "React: rules / react-calls-components-and-hooks",
+          "url": "https://react.dev/reference/rules/react-calls-components-and-hooks",
+          "checkedAt": "2026-11-08"
+        },
+        {
+          "id": "ref-1fa95186f5671635",
+          "title": "React: react / isValidElement",
+          "url": "https://react.dev/reference/react/isValidElement",
+          "checkedAt": "2026-11-08"
+        },
+        {
+          "id": "ref-7502e95252b55c0a",
+          "title": "React: react / cloneElement",
+          "url": "https://react.dev/reference/react/cloneElement",
+          "checkedAt": "2026-11-08"
+        },
+        {
+          "id": "ref-85b61ca05a0610ef",
+          "title": "React: react / Component",
+          "url": "https://react.dev/reference/react/Component",
+          "checkedAt": "2026-11-08"
+        },
+        {
+          "id": "ref-2b723d76f44f1bf3",
+          "title": "React: learn / rendering-lists",
+          "url": "https://react.dev/learn/rendering-lists",
+          "checkedAt": "2026-11-08"
+        },
+        {
+          "id": "ref-f16e9dc5d993c88a",
+          "title": "React: learn / preserving-and-resetting-state",
+          "url": "https://react.dev/learn/preserving-and-resetting-state",
+          "checkedAt": "2026-11-08"
+        },
+        {
+          "id": "ref-db4d75a06c6d0533",
+          "title": "React: learn / responding-to-events",
+          "url": "https://react.dev/learn/responding-to-events",
+          "checkedAt": "2026-11-08"
+        },
+        {
+          "id": "ref-aba48f1aaa75fc6f",
+          "title": "React: react-dom",
+          "url": "https://react.dev/reference/react-dom",
+          "checkedAt": null
+        },
+        {
+          "id": "ref-203ca76d12b25376",
+          "title": "React: your-first-component",
+          "url": "https://react.dev/learn/your-first-component",
+          "checkedAt": null
+        },
+        {
+          "id": "ref-c4107c443abe57e8",
+          "title": "React: javascript-in-jsx-with-curly-braces",
+          "url": "https://react.dev/learn/javascript-in-jsx-with-curly-braces",
+          "checkedAt": null
+        },
+        {
+          "id": "ref-cb6ff504ac3e9fe0",
+          "title": "React: writing-markup-with-jsx",
+          "url": "https://react.dev/learn/writing-markup-with-jsx",
+          "checkedAt": null
+        },
+        {
+          "id": "ref-b357b48d164afb97",
+          "title": "React: importing-and-exporting-components",
+          "url": "https://react.dev/learn/importing-and-exporting-components",
+          "checkedAt": null
+        },
+        {
+          "id": "ref-009386030813e936",
+          "title": "React: state-a-components-memory",
+          "url": "https://react.dev/learn/state-a-components-memory",
+          "checkedAt": null
+        },
+        {
+          "id": "ref-7fc8481ca5e3e990",
+          "title": "React: typescript",
+          "url": "https://react.dev/learn/typescript",
+          "checkedAt": "2026-11-08"
+        },
+        {
+          "id": "ref-6321204222af3d33",
+          "title": "React: passing-data-deeply-with-context",
+          "url": "https://react.dev/learn/passing-data-deeply-with-context",
+          "checkedAt": null
+        },
+        {
+          "id": "ref-a8777530064b157e",
+          "title": "React: components-and-hooks-must-be-pure",
+          "url": "https://react.dev/reference/rules/components-and-hooks-must-be-pure",
+          "checkedAt": null
         }
       ],
       "caveats": [
-        "Перенесено из существующего ответа; актуальность страницы и совместимость нужно перепроверить при подготовке пакета."
+        "Перенесено из существующего ответа; актуальность страницы и совместимость нужно перепроверить при подготовке пакета.",
+        "Пакет React от 2026-11-08: примеры - учебные фрагменты для React 19, необходимые импорты предполагаются, интеграционные функции обозначены отдельно. Примеры не исполнялись; проверены источники, указанные в изменённых вопросах. Остальные imported-ответы не объявляются пересмотренными.",
+        "Пакет 2026-11-08: учебные фрагменты предполагают импорты и явно названные API приложения; примеры не исполнялись. React 19, React Router 7 с указанным режимом, Redux Toolkit 2/React-Redux 9 и Zustand 5. checkedAt отражает свежую проверку конкретного URL; null не заменяется формальной датой."
       ]
     },
     {
@@ -1823,9 +1927,9 @@
       "scope": "Снимки состояния, очередь обновлений, иммутабельность и владение данными.",
       "sources": [
         {
-          "title": "Документация",
+          "title": "React: learn / choosing-the-state-structure",
           "url": "https://react.dev/learn/choosing-the-state-structure",
-          "checkedAt": null,
+          "checkedAt": "2026-11-08",
           "id": "ref-753634473fba230c"
         },
         {
@@ -1840,10 +1944,60 @@
           "checkedAt": null,
           "notes": "Начальная точка поиска, не замена источнику конкретного технического утверждения.",
           "id": "ref-8234962172f4a6ef"
+        },
+        {
+          "id": "ref-d02f06bac391e604",
+          "title": "React: react / useState",
+          "url": "https://react.dev/reference/react/useState",
+          "checkedAt": "2026-11-08"
+        },
+        {
+          "id": "ref-0cb6df4c90364f44",
+          "title": "React: learn / queueing-a-series-of-state-updates",
+          "url": "https://react.dev/learn/queueing-a-series-of-state-updates",
+          "checkedAt": "2026-11-08"
+        },
+        {
+          "id": "ref-780ad74e1370bb9e",
+          "title": "React: updating-arrays-in-state",
+          "url": "https://react.dev/learn/updating-arrays-in-state",
+          "checkedAt": null
+        },
+        {
+          "id": "ref-009386030813e936",
+          "title": "React: state-a-components-memory",
+          "url": "https://react.dev/learn/state-a-components-memory",
+          "checkedAt": null
+        },
+        {
+          "id": "ref-1b61fba5c5c8d219",
+          "title": "React: useRef",
+          "url": "https://react.dev/reference/react/useRef",
+          "checkedAt": null
+        },
+        {
+          "id": "ref-f16e9dc5d993c88a",
+          "title": "React: preserving-and-resetting-state",
+          "url": "https://react.dev/learn/preserving-and-resetting-state",
+          "checkedAt": null
+        },
+        {
+          "id": "ref-be89a5515af7c19d",
+          "title": "React: useReducer",
+          "url": "https://react.dev/reference/react/useReducer",
+          "checkedAt": null
+        },
+        {
+          "id": "ref-0e83d2105268d73c",
+          "title": "React: extracting-state-logic-into-a-reducer",
+          "url": "https://react.dev/learn/extracting-state-logic-into-a-reducer",
+          "checkedAt": null
         }
       ],
       "caveats": [
-        "Перенесено из существующего ответа; актуальность страницы и совместимость нужно перепроверить при подготовке пакета."
+        "Перенесено из существующего ответа; актуальность страницы и совместимость нужно перепроверить при подготовке пакета.",
+        "Пакет React от 2026-11-08: примеры - учебные фрагменты для React 19, необходимые импорты предполагаются, интеграционные функции обозначены отдельно. Примеры не исполнялись; проверены источники, указанные в изменённых вопросах. Остальные imported-ответы не объявляются пересмотренными.",
+        "Пакет 2026-11-08: учебные фрагменты предполагают импорты и явно названные API приложения; примеры не исполнялись. React 19, React Router 7 с указанным режимом, Redux Toolkit 2/React-Redux 9 и Zustand 5. checkedAt отражает свежую проверку конкретного URL; null не заменяется формальной датой."
       ]
     },
     {
@@ -1864,9 +2018,78 @@
           "checkedAt": null,
           "notes": "Начальная точка поиска, не замена источнику конкретного технического утверждения.",
           "id": "ref-8234962172f4a6ef"
+        },
+        {
+          "id": "ref-d20eff868823b735",
+          "title": "React: learn / removing-effect-dependencies",
+          "url": "https://react.dev/learn/removing-effect-dependencies",
+          "checkedAt": "2026-11-08"
+        },
+        {
+          "id": "ref-4d23b49b0284f9ac",
+          "title": "React: react / useEffect",
+          "url": "https://react.dev/reference/react/useEffect",
+          "checkedAt": "2026-11-08"
+        },
+        {
+          "id": "ref-41c5633b4f8c1b7d",
+          "title": "React: learn / lifecycle-of-reactive-effects",
+          "url": "https://react.dev/learn/lifecycle-of-reactive-effects",
+          "checkedAt": "2026-11-08"
+        },
+        {
+          "id": "ref-a781b5db8e78be67",
+          "title": "React: learn / synchronizing-with-effects",
+          "url": "https://react.dev/learn/synchronizing-with-effects",
+          "checkedAt": "2026-11-08"
+        },
+        {
+          "id": "ref-dd214ffd14861896",
+          "title": "React: rules / rules-of-hooks",
+          "url": "https://react.dev/reference/rules/rules-of-hooks",
+          "checkedAt": "2026-11-08"
+        },
+        {
+          "id": "ref-843b8436ddc64978",
+          "title": "React: reusing-logic-with-custom-hooks",
+          "url": "https://react.dev/learn/reusing-logic-with-custom-hooks",
+          "checkedAt": null
+        },
+        {
+          "id": "ref-739210645a43a7ea",
+          "title": "React: eslint-plugin-react-hooks",
+          "url": "https://react.dev/reference/eslint-plugin-react-hooks",
+          "checkedAt": null
+        },
+        {
+          "id": "ref-1c462c80f4daa775",
+          "title": "React: useDeferredValue",
+          "url": "https://react.dev/reference/react/useDeferredValue",
+          "checkedAt": null
+        },
+        {
+          "id": "ref-7d08dbaf713df20f",
+          "title": "React: useSyncExternalStore",
+          "url": "https://react.dev/reference/react/useSyncExternalStore",
+          "checkedAt": "2026-11-08"
+        },
+        {
+          "id": "ref-85b61ca05a0610ef",
+          "title": "React: Component",
+          "url": "https://react.dev/reference/react/Component",
+          "checkedAt": null
+        },
+        {
+          "id": "ref-210c042adf85ebf9",
+          "title": "React: useMemo",
+          "url": "https://react.dev/reference/react/useMemo",
+          "checkedAt": null
         }
       ],
-      "caveats": []
+      "caveats": [
+        "Пакет React от 2026-11-08: примеры - учебные фрагменты для React 19, необходимые импорты предполагаются, интеграционные функции обозначены отдельно. Примеры не исполнялись; проверены источники, указанные в изменённых вопросах. Остальные imported-ответы не объявляются пересмотренными.",
+        "Пакет 2026-11-08: учебные фрагменты предполагают импорты и явно названные API приложения; примеры не исполнялись. React 19, React Router 7 с указанным режимом, Redux Toolkit 2/React-Redux 9 и Zustand 5. checkedAt отражает свежую проверку конкретного URL; null не заменяется формальной датой."
+      ]
     },
     {
       "sectionId": "react",
@@ -1876,7 +2099,7 @@
         {
           "title": "Документация",
           "url": "https://react.dev/reference/react-dom/components/common",
-          "checkedAt": null,
+          "checkedAt": "2026-11-08",
           "id": "ref-fa183dea181b018b"
         },
         {
@@ -1891,10 +2114,42 @@
           "checkedAt": null,
           "notes": "Начальная точка поиска, не замена источнику конкретного технического утверждения.",
           "id": "ref-8234962172f4a6ef"
+        },
+        {
+          "id": "ref-2472a2b152e1751a",
+          "title": "React: learn / manipulating-the-dom-with-refs",
+          "url": "https://react.dev/learn/manipulating-the-dom-with-refs",
+          "checkedAt": "2026-11-08"
+        },
+        {
+          "id": "ref-8574102411462ff6",
+          "title": "MDN: API / ResizeObserver",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/API/ResizeObserver",
+          "checkedAt": "2026-11-08"
+        },
+        {
+          "id": "ref-1b61fba5c5c8d219",
+          "title": "React: react / useRef",
+          "url": "https://react.dev/reference/react/useRef",
+          "checkedAt": "2026-11-08"
+        },
+        {
+          "id": "ref-e3a44becc279d256",
+          "title": "React: useImperativeHandle",
+          "url": "https://react.dev/reference/react/useImperativeHandle",
+          "checkedAt": null
+        },
+        {
+          "id": "ref-41d47fa5469db173",
+          "title": "React: useLayoutEffect",
+          "url": "https://react.dev/reference/react/useLayoutEffect",
+          "checkedAt": null
         }
       ],
       "caveats": [
-        "Перенесено из существующего ответа; актуальность страницы и совместимость нужно перепроверить при подготовке пакета."
+        "Перенесено из существующего ответа; актуальность страницы и совместимость нужно перепроверить при подготовке пакета.",
+        "Пакет React от 2026-11-08: примеры - учебные фрагменты для React 19, необходимые импорты предполагаются, интеграционные функции обозначены отдельно. Примеры не исполнялись; проверены источники, указанные в изменённых вопросах. Остальные imported-ответы не объявляются пересмотренными.",
+        "Пакет 2026-11-08: учебные фрагменты предполагают импорты и явно названные API приложения; примеры не исполнялись. React 19, React Router 7 с указанным режимом, Redux Toolkit 2/React-Redux 9 и Zustand 5. checkedAt отражает свежую проверку конкретного URL; null не заменяется формальной датой."
       ]
     },
     {
@@ -1917,7 +2172,7 @@
         {
           "title": "Документация",
           "url": "https://react.dev/reference/react/useSyncExternalStore",
-          "checkedAt": null,
+          "checkedAt": "2026-11-08",
           "id": "ref-7d08dbaf713df20f"
         },
         {
@@ -1938,10 +2193,36 @@
           "title": "Zustand: introduction",
           "url": "https://zustand.docs.pmnd.rs/getting-started/introduction",
           "checkedAt": null
+        },
+        {
+          "id": "ref-a87b55b89b2a0e21",
+          "title": "React: react / useContext",
+          "url": "https://react.dev/reference/react/useContext",
+          "checkedAt": "2026-11-08"
+        },
+        {
+          "id": "ref-0e8f1bba62b9b309",
+          "title": "React: learn / scaling-up-with-reducer-and-context",
+          "url": "https://react.dev/learn/scaling-up-with-reducer-and-context",
+          "checkedAt": "2026-11-08"
+        },
+        {
+          "id": "ref-6321204222af3d33",
+          "title": "React: passing-data-deeply-with-context",
+          "url": "https://react.dev/learn/passing-data-deeply-with-context",
+          "checkedAt": null
+        },
+        {
+          "id": "ref-f16e9dc5d993c88a",
+          "title": "React: preserving-and-resetting-state",
+          "url": "https://react.dev/learn/preserving-and-resetting-state",
+          "checkedAt": null
         }
       ],
       "caveats": [
-        "Перенесено из существующего ответа; актуальность страницы и совместимость нужно перепроверить при подготовке пакета."
+        "Перенесено из существующего ответа; актуальность страницы и совместимость нужно перепроверить при подготовке пакета.",
+        "Пакет React от 2026-11-08: примеры - учебные фрагменты для React 19, необходимые импорты предполагаются, интеграционные функции обозначены отдельно. Примеры не исполнялись; проверены источники, указанные в изменённых вопросах. Остальные imported-ответы не объявляются пересмотренными.",
+        "Пакет 2026-11-08: учебные фрагменты предполагают импорты и явно названные API приложения; примеры не исполнялись. React 19, React Router 7 с указанным режимом, Redux Toolkit 2/React-Redux 9 и Zustand 5. checkedAt отражает свежую проверку конкретного URL; null не заменяется формальной датой."
       ]
     },
     {
@@ -1950,9 +2231,9 @@
       "scope": "Управляемые поля, доступность, отправка и Actions в React 19.",
       "sources": [
         {
-          "title": "Документация",
+          "title": "React: components / input",
           "url": "https://react.dev/reference/react-dom/components/input",
-          "checkedAt": null,
+          "checkedAt": "2026-11-08",
           "notes": "Перенесено из существующего ответа; актуальность страницы и совместимость нужно перепроверить при подготовке пакета.",
           "id": "ref-123e26bb70073d17"
         },
@@ -1962,9 +2243,48 @@
           "checkedAt": null,
           "notes": "Начальная точка поиска, не замена источнику конкретного технического утверждения.",
           "id": "ref-8234962172f4a6ef"
+        },
+        {
+          "id": "ref-7f76ab5dff7dfb83",
+          "title": "React: components / select",
+          "url": "https://react.dev/reference/react-dom/components/select",
+          "checkedAt": "2026-11-08"
+        },
+        {
+          "id": "ref-c25285663f429201",
+          "title": "React: components / textarea",
+          "url": "https://react.dev/reference/react-dom/components/textarea",
+          "checkedAt": "2026-11-08"
+        },
+        {
+          "id": "ref-35348c25dcfd40c8",
+          "title": "MDN: input / file",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/input/file",
+          "checkedAt": "2026-11-08"
+        },
+        {
+          "id": "ref-8dc2f80871436bd1",
+          "title": "React: components / form",
+          "url": "https://react.dev/reference/react-dom/components/form",
+          "checkedAt": "2026-11-08"
+        },
+        {
+          "id": "ref-fa183dea181b018b",
+          "title": "React: common",
+          "url": "https://react.dev/reference/react-dom/components/common",
+          "checkedAt": "2026-11-08"
+        },
+        {
+          "id": "ref-f773318257650341",
+          "title": "React: useActionState",
+          "url": "https://react.dev/reference/react/useActionState",
+          "checkedAt": null
         }
       ],
-      "caveats": []
+      "caveats": [
+        "Пакет React от 2026-11-08: примеры - учебные фрагменты для React 19, необходимые импорты предполагаются, интеграционные функции обозначены отдельно. Примеры не исполнялись; проверены источники, указанные в изменённых вопросах. Остальные imported-ответы не объявляются пересмотренными.",
+        "Пакет 2026-11-08: учебные фрагменты предполагают импорты и явно названные API приложения; примеры не исполнялись. React 19, React Router 7 с указанным режимом, Redux Toolkit 2/React-Redux 9 и Zustand 5. checkedAt отражает свежую проверку конкретного URL; null не заменяется формальной датой."
+      ]
     },
     {
       "sectionId": "react",
@@ -1984,9 +2304,54 @@
           "checkedAt": null,
           "notes": "Начальная точка поиска, не замена источнику конкретного технического утверждения.",
           "id": "ref-8234962172f4a6ef"
+        },
+        {
+          "id": "ref-8cc130c143b35c6f",
+          "title": "React: react / memo",
+          "url": "https://react.dev/reference/react/memo",
+          "checkedAt": "2026-11-08"
+        },
+        {
+          "id": "ref-04cf3f3b426bd2e0",
+          "title": "React: react / Profiler",
+          "url": "https://react.dev/reference/react/Profiler",
+          "checkedAt": "2026-11-08"
+        },
+        {
+          "id": "ref-4da7647e12f36796",
+          "title": "React: render-and-commit",
+          "url": "https://react.dev/learn/render-and-commit",
+          "checkedAt": null
+        },
+        {
+          "id": "ref-123e26bb70073d17",
+          "title": "React: input",
+          "url": "https://react.dev/reference/react-dom/components/input",
+          "checkedAt": null
+        },
+        {
+          "id": "ref-210c042adf85ebf9",
+          "title": "React: useMemo",
+          "url": "https://react.dev/reference/react/useMemo",
+          "checkedAt": null
+        },
+        {
+          "id": "ref-f16e9dc5d993c88a",
+          "title": "React: preserving-and-resetting-state",
+          "url": "https://react.dev/learn/preserving-and-resetting-state",
+          "checkedAt": null
+        },
+        {
+          "id": "ref-0cc5c69a239b263f",
+          "title": "React: introduction",
+          "url": "https://react.dev/learn/react-compiler/introduction",
+          "checkedAt": null
         }
       ],
-      "caveats": []
+      "caveats": [
+        "Пакет React от 2026-11-08: примеры - учебные фрагменты для React 19, необходимые импорты предполагаются, интеграционные функции обозначены отдельно. Примеры не исполнялись; проверены источники, указанные в изменённых вопросах. Остальные imported-ответы не объявляются пересмотренными.",
+        "Пакет 2026-11-08: учебные фрагменты предполагают импорты и явно названные API приложения; примеры не исполнялись. React 19, React Router 7 с указанным режимом, Redux Toolkit 2/React-Redux 9 и Zustand 5. checkedAt отражает свежую проверку конкретного URL; null не заменяется формальной датой."
+      ]
     },
     {
       "sectionId": "react",
@@ -1996,7 +2361,7 @@
         {
           "title": "React: Suspense",
           "url": "https://react.dev/reference/react/Suspense",
-          "checkedAt": null,
+          "checkedAt": "2026-11-08",
           "id": "ref-f8f3016ad77e9e80"
         },
         {
@@ -2011,10 +2376,54 @@
           "checkedAt": null,
           "notes": "Начальная точка поиска, не замена источнику конкретного технического утверждения.",
           "id": "ref-8234962172f4a6ef"
+        },
+        {
+          "id": "ref-a045255777f9e8c7",
+          "title": "React: react / useTransition",
+          "url": "https://react.dev/reference/react/useTransition",
+          "checkedAt": "2026-11-08"
+        },
+        {
+          "id": "ref-8bb473e33d201808",
+          "title": "React: react / lazy",
+          "url": "https://react.dev/reference/react/lazy",
+          "checkedAt": "2026-11-08"
+        },
+        {
+          "id": "ref-b04d97d915a308a9",
+          "title": "React: reacting-to-input-with-state",
+          "url": "https://react.dev/learn/reacting-to-input-with-state",
+          "checkedAt": null
+        },
+        {
+          "id": "ref-f10cc26ad8cc531b",
+          "title": "MDN: Using_Fetch",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch",
+          "checkedAt": null
+        },
+        {
+          "id": "ref-5bc2943c6bc558bf",
+          "title": "MDN: AbortController",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/API/AbortController",
+          "checkedAt": null
+        },
+        {
+          "id": "ref-8b892800e16f2524",
+          "title": "React: you-might-not-need-an-effect",
+          "url": "https://react.dev/learn/you-might-not-need-an-effect",
+          "checkedAt": null
+        },
+        {
+          "id": "ref-8c5502e33932183e",
+          "title": "React: useOptimistic",
+          "url": "https://react.dev/reference/react/useOptimistic",
+          "checkedAt": "2026-11-08"
         }
       ],
       "caveats": [
-        "Перенесено из существующего ответа; актуальность страницы и совместимость нужно перепроверить при подготовке пакета."
+        "Перенесено из существующего ответа; актуальность страницы и совместимость нужно перепроверить при подготовке пакета.",
+        "Пакет React от 2026-11-08: примеры - учебные фрагменты для React 19, необходимые импорты предполагаются, интеграционные функции обозначены отдельно. Примеры не исполнялись; проверены источники, указанные в изменённых вопросах. Остальные imported-ответы не объявляются пересмотренными.",
+        "Пакет 2026-11-08: учебные фрагменты предполагают импорты и явно названные API приложения; примеры не исполнялись. React 19, React Router 7 с указанным режимом, Redux Toolkit 2/React-Redux 9 и Zustand 5. checkedAt отражает свежую проверку конкретного URL; null не заменяется формальной датой."
       ]
     },
     {
@@ -2025,7 +2434,7 @@
         {
           "title": "React: streaming API",
           "url": "https://react.dev/reference/react-dom/server/renderToPipeableStream",
-          "checkedAt": null,
+          "checkedAt": "2026-11-08",
           "id": "ref-87026ec90e170e0b"
         },
         {
@@ -2040,10 +2449,48 @@
           "checkedAt": null,
           "notes": "Начальная точка поиска, не замена источнику конкретного технического утверждения.",
           "id": "ref-8234962172f4a6ef"
+        },
+        {
+          "id": "ref-7d3fefc28f7d231f",
+          "title": "React: rsc / server-functions",
+          "url": "https://react.dev/reference/rsc/server-functions",
+          "checkedAt": "2026-11-08"
+        },
+        {
+          "id": "ref-749d90531137fbfc",
+          "title": "React: client / createRoot",
+          "url": "https://react.dev/reference/react-dom/client/createRoot",
+          "checkedAt": "2026-11-08"
+        },
+        {
+          "id": "ref-f814c0e28d2b8796",
+          "title": "React: client / hydrateRoot",
+          "url": "https://react.dev/reference/react-dom/client/hydrateRoot",
+          "checkedAt": "2026-11-08"
+        },
+        {
+          "id": "ref-4d23b49b0284f9ac",
+          "title": "React: useEffect",
+          "url": "https://react.dev/reference/react/useEffect",
+          "checkedAt": null
+        },
+        {
+          "id": "ref-8cba5ec939af78c5",
+          "title": "React: useId",
+          "url": "https://react.dev/reference/react/useId",
+          "checkedAt": null
+        },
+        {
+          "id": "ref-710e8089a449fb7b",
+          "title": "React: use-client",
+          "url": "https://react.dev/reference/rsc/use-client",
+          "checkedAt": null
         }
       ],
       "caveats": [
-        "Перенесено из существующего ответа; актуальность страницы и совместимость нужно перепроверить при подготовке пакета."
+        "Перенесено из существующего ответа; актуальность страницы и совместимость нужно перепроверить при подготовке пакета.",
+        "Пакет React от 2026-11-08: примеры - учебные фрагменты для React 19, необходимые импорты предполагаются, интеграционные функции обозначены отдельно. Примеры не исполнялись; проверены источники, указанные в изменённых вопросах. Остальные imported-ответы не объявляются пересмотренными.",
+        "Пакет 2026-11-08: учебные фрагменты предполагают импорты и явно названные API приложения; примеры не исполнялись. React 19, React Router 7 с указанным режимом, Redux Toolkit 2/React-Redux 9 и Zustand 5. checkedAt отражает свежую проверку конкретного URL; null не заменяется формальной датой."
       ]
     },
     {
@@ -2064,9 +2511,90 @@
           "checkedAt": null,
           "notes": "Начальная точка поиска, не замена источнику конкретного технического утверждения.",
           "id": "ref-8234962172f4a6ef"
+        },
+        {
+          "id": "ref-9bdd72a222f1aef9",
+          "title": "Testing Library: queries / about",
+          "url": "https://testing-library.com/docs/queries/about/",
+          "checkedAt": "2026-11-08"
+        },
+        {
+          "id": "ref-a2c8203f15c5846b",
+          "title": "Testing Library: user-event / intro",
+          "url": "https://testing-library.com/docs/user-event/intro/",
+          "checkedAt": "2026-11-08"
+        },
+        {
+          "id": "ref-824659561a2dcf01",
+          "title": "React: react / act",
+          "url": "https://react.dev/reference/react/act",
+          "checkedAt": "2026-11-08"
+        },
+        {
+          "id": "ref-eff04d7fee35bd18",
+          "title": "Testing Library: dom-testing-library / api-async",
+          "url": "https://testing-library.com/docs/dom-testing-library/api-async/",
+          "checkedAt": "2026-11-08"
+        },
+        {
+          "id": "ref-344a358e874eaa00",
+          "title": "Testing Library: docs / using-fake-timers",
+          "url": "https://testing-library.com/docs/using-fake-timers/",
+          "checkedAt": "2026-11-08"
+        },
+        {
+          "id": "ref-f16e9dc5d993c88a",
+          "title": "React: learn / preserving-and-resetting-state",
+          "url": "https://react.dev/learn/preserving-and-resetting-state",
+          "checkedAt": "2026-11-08"
+        },
+        {
+          "id": "ref-9b26fc7028b388ed",
+          "title": "Testing Library: react-testing-library / api",
+          "url": "https://testing-library.com/docs/react-testing-library/api/#rerender",
+          "checkedAt": "2026-11-08"
+        },
+        {
+          "id": "ref-85b61ca05a0610ef",
+          "title": "React: react / Component",
+          "url": "https://react.dev/reference/react/Component",
+          "checkedAt": "2026-11-08"
+        },
+        {
+          "id": "ref-7e3de8955ad3e613",
+          "title": "Testing Library: api",
+          "url": "https://testing-library.com/docs/react-testing-library/api/#cleanup",
+          "checkedAt": null
+        },
+        {
+          "id": "ref-2f1f977514a088c3",
+          "title": "Testing Library: guiding-principles",
+          "url": "https://testing-library.com/docs/guiding-principles/",
+          "checkedAt": null
+        },
+        {
+          "id": "ref-25bc223dbef8b1a9",
+          "title": "Testing Library: api",
+          "url": "https://testing-library.com/docs/react-testing-library/api/#wrapper",
+          "checkedAt": null
+        },
+        {
+          "id": "ref-ce2d68d70142c413",
+          "title": "Redux: writing-tests",
+          "url": "https://redux.js.org/usage/writing-tests",
+          "checkedAt": null
+        },
+        {
+          "id": "ref-4a6247f566871a6d",
+          "title": "Testing Library: convenience",
+          "url": "https://testing-library.com/docs/user-event/convenience/#tab",
+          "checkedAt": null
         }
       ],
-      "caveats": []
+      "caveats": [
+        "Пакет React от 2026-11-08: примеры - учебные фрагменты для React 19, необходимые импорты предполагаются, интеграционные функции обозначены отдельно. Примеры не исполнялись; проверены источники, указанные в изменённых вопросах. Остальные imported-ответы не объявляются пересмотренными.",
+        "Пакет 2026-11-08: учебные фрагменты предполагают импорты и явно названные API приложения; примеры не исполнялись. React 19, React Router 7 с указанным режимом, Redux Toolkit 2/React-Redux 9 и Zustand 5. checkedAt отражает свежую проверку конкретного URL; null не заменяется формальной датой."
+      ]
     },
     {
       "sectionId": "html-css",
@@ -2982,7 +3510,7 @@
     {
       "sectionId": "browser",
       "subsectionId": "http",
-      "scope": "Методы, статусы, свежесть и проверки актуальности.",
+      "scope": "Запросы и ответы, методы, безопасность, идемпотентность и повтор операций.",
       "sources": [
         {
           "title": "Официальная документация раздела",
@@ -2990,14 +3518,40 @@
           "checkedAt": null,
           "notes": "Начальная точка поиска, не замена источнику конкретного технического утверждения.",
           "id": "ref-316115636f085f86"
+        },
+        {
+          "id": "ref-2cb5855a8b539c9f",
+          "title": "RFC 9110: HTTP Semantics",
+          "url": "https://httpwg.org/specs/rfc9110.html",
+          "checkedAt": "2026-11-08"
+        },
+        {
+          "id": "ref-360a828b02b7f2a4",
+          "title": "Обзор HTTP",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/Overview",
+          "checkedAt": "2026-11-08"
+        },
+        {
+          "id": "ref-255ba99007296976",
+          "title": "Методы HTTP",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Methods",
+          "checkedAt": "2026-11-08"
+        },
+        {
+          "id": "ref-eb87d81c9f4660bb",
+          "title": "If-Match",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/If-Match",
+          "checkedAt": "2026-11-08"
         }
       ],
-      "caveats": []
+      "caveats": [
+        "Пакет 2026-11-08: браузерные возможности и политики приватности зависят от реализации, версии, secure context и настроек пользователя. Примеры и сценарии разобраны редактором, но не запускались. checkedAt установлен только для открытых источников; null не означает проверенную доступность. Статус ready подтверждает редакторскую готовность, а не полноту всех собеседований."
+      ]
     },
     {
       "sectionId": "browser",
       "subsectionId": "transport",
-      "scope": "DNS, TLS и версии HTTP.",
+      "scope": "Адресация, разрешение имён, транспорт и повторное использование соединений.",
       "sources": [
         {
           "title": "Официальная документация раздела",
@@ -3005,14 +3559,40 @@
           "checkedAt": null,
           "notes": "Начальная точка поиска, не замена источнику конкретного технического утверждения.",
           "id": "ref-316115636f085f86"
+        },
+        {
+          "id": "ref-a5fc532914bb1455",
+          "title": "DNS",
+          "url": "https://developer.mozilla.org/en-US/docs/Glossary/DNS",
+          "checkedAt": "2026-11-08"
+        },
+        {
+          "id": "ref-ebace5e7b9811820",
+          "title": "URL API",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/API/URL",
+          "checkedAt": "2026-11-08"
+        },
+        {
+          "id": "ref-eec262789a418d64",
+          "title": "Развитие HTTP",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/Evolution_of_HTTP",
+          "checkedAt": "2026-11-08"
+        },
+        {
+          "id": "ref-cff8ff79463bfd4b",
+          "title": "Как работает браузер",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/Performance/Guides/How_browsers_work",
+          "checkedAt": "2026-11-08"
         }
       ],
-      "caveats": []
+      "caveats": [
+        "Пакет 2026-11-08: браузерные возможности и политики приватности зависят от реализации, версии, secure context и настроек пользователя. Примеры и сценарии разобраны редактором, но не запускались. checkedAt установлен только для открытых источников; null не означает проверенную доступность. Статус ready подтверждает редакторскую готовность, а не полноту всех собеседований."
+      ]
     },
     {
       "sectionId": "browser",
       "subsectionId": "security",
-      "scope": "Origin, cookies и межсайтовые запросы.",
+      "scope": "XSS, CSRF, политики контента, iframe, доверие и разрешения.",
       "sources": [
         {
           "title": "Официальная документация раздела",
@@ -3020,14 +3600,94 @@
           "checkedAt": null,
           "notes": "Начальная точка поиска, не замена источнику конкретного технического утверждения.",
           "id": "ref-316115636f085f86"
+        },
+        {
+          "id": "ref-2ab16189ad222535",
+          "title": "Cross-site request forgery",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/Security/Attacks/CSRF",
+          "checkedAt": "2026-11-08"
+        },
+        {
+          "id": "ref-40a0540ddb38af3d",
+          "title": "Cross-site scripting",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/Security/Attacks/XSS",
+          "checkedAt": "2026-11-08"
+        },
+        {
+          "id": "ref-10c2347db109ea1e",
+          "title": "OWASP: Authorization",
+          "url": "https://cheatsheetseries.owasp.org/cheatsheets/Authorization_Cheat_Sheet.html",
+          "checkedAt": "2026-11-08"
+        },
+        {
+          "id": "ref-c5965f19925aaa8f",
+          "title": "Secure contexts",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/Security/Defenses/Secure_Contexts",
+          "checkedAt": "2026-11-08"
+        },
+        {
+          "id": "ref-667cae19ad9c93fe",
+          "title": "Content Security Policy",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/CSP",
+          "checkedAt": "2026-11-08"
+        },
+        {
+          "id": "ref-bedac408ee421ece",
+          "title": "CSP: frame-ancestors",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Content-Security-Policy/frame-ancestors",
+          "checkedAt": "2026-11-08"
+        },
+        {
+          "id": "ref-34161b13a7d0c678",
+          "title": "iframe",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/iframe",
+          "checkedAt": "2026-11-08"
+        },
+        {
+          "id": "ref-31ad551cc7f2aa88",
+          "title": "window.postMessage",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/API/Window/postMessage",
+          "checkedAt": "2026-11-08"
+        },
+        {
+          "id": "ref-23cebc8cdf156ff6",
+          "title": "Subresource Integrity",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/Security/Defenses/Subresource_Integrity",
+          "checkedAt": "2026-11-08"
+        },
+        {
+          "id": "ref-f0fc70d8e163dfb7",
+          "title": "Referrer-Policy",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Referrer-Policy",
+          "checkedAt": "2026-11-08"
+        },
+        {
+          "id": "ref-fec6f5945e323817",
+          "title": "crossOriginIsolated",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/API/Window/crossOriginIsolated",
+          "checkedAt": "2026-11-08"
+        },
+        {
+          "id": "ref-439cb37378c6bc5d",
+          "title": "COOP",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Cross-Origin-Opener-Policy",
+          "checkedAt": "2026-11-08"
+        },
+        {
+          "id": "ref-922798770ec7a5fe",
+          "title": "COEP",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Cross-Origin-Embedder-Policy",
+          "checkedAt": "2026-11-08"
         }
       ],
-      "caveats": []
+      "caveats": [
+        "Пакет 2026-11-08: браузерные возможности и политики приватности зависят от реализации, версии, secure context и настроек пользователя. Примеры и сценарии разобраны редактором, но не запускались. checkedAt установлен только для открытых источников; null не означает проверенную доступность. Статус ready подтверждает редакторскую готовность, а не полноту всех собеседований."
+      ]
     },
     {
       "sectionId": "browser",
       "subsectionId": "delivery",
-      "scope": "CDN, сжатие и анализ сетевой загрузки.",
+      "scope": "CDN, DevTools, размеры, waterfall и пользовательские метрики.",
       "sources": [
         {
           "title": "Официальная документация раздела",
@@ -3035,9 +3695,41 @@
           "checkedAt": null,
           "notes": "Начальная точка поиска, не замена источнику конкретного технического утверждения.",
           "id": "ref-316115636f085f86"
+        },
+        {
+          "id": "ref-4a1b57bfe9b2ba79",
+          "title": "HTTP-кеширование",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/Caching",
+          "checkedAt": "2026-11-08"
+        },
+        {
+          "id": "ref-7ec61e9448f94623",
+          "title": "Chrome DevTools: Network",
+          "url": "https://developer.chrome.com/docs/devtools/network/reference",
+          "checkedAt": "2026-11-08"
+        },
+        {
+          "id": "ref-360a828b02b7f2a4",
+          "title": "Обзор HTTP",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/Overview",
+          "checkedAt": "2026-11-08"
+        },
+        {
+          "id": "ref-cff8ff79463bfd4b",
+          "title": "Как работает браузер",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/Performance/Guides/How_browsers_work",
+          "checkedAt": "2026-11-08"
+        },
+        {
+          "id": "ref-1f2734e7294c86f2",
+          "title": "Web Vitals",
+          "url": "https://web.dev/articles/vitals",
+          "checkedAt": "2026-11-08"
         }
       ],
-      "caveats": []
+      "caveats": [
+        "Пакет 2026-11-08: браузерные возможности и политики приватности зависят от реализации, версии, secure context и настроек пользователя. Примеры и сценарии разобраны редактором, но не запускались. checkedAt установлен только для открытых источников; null не означает проверенную доступность. Статус ready подтверждает редакторскую готовность, а не полноту всех собеседований."
+      ]
     },
     {
       "sectionId": "vue",
@@ -4104,7 +4796,8 @@
       "subsectionId": "redux",
       "scope": "Поток действий, reducers, selectors, асинхронность и RTK Query.",
       "caveats": [
-        "Примеры описывают современный Redux Toolkit/React-Redux и Zustand 5. У старых версий API может отличаться. Типы не заменяют runtime-проверки; фрагменты не исполнялись."
+        "Примеры описывают современный Redux Toolkit/React-Redux и Zustand 5. У старых версий API может отличаться. Типы не заменяют runtime-проверки; фрагменты не исполнялись.",
+        "Пакет 2026-11-08: учебные фрагменты предполагают импорты и явно названные API приложения; примеры не исполнялись. React 19, React Router 7 с указанным режимом, Redux Toolkit 2/React-Redux 9 и Zustand 5. checkedAt отражает свежую проверку конкретного URL; null не заменяется формальной датой."
       ],
       "sources": [
         {
@@ -4178,6 +4871,132 @@
           "title": "Redux: usage with typescript",
           "url": "https://react-redux.js.org/using-react-redux/usage-with-typescript",
           "checkedAt": null
+        },
+        {
+          "id": "ref-b35651937f8a890e",
+          "title": "Redux: part-2-app-structure",
+          "url": "https://redux.js.org/tutorials/essentials/part-2-app-structure",
+          "checkedAt": null
+        },
+        {
+          "id": "ref-ea298e8ea7dab293",
+          "title": "Redux: combinereducers",
+          "url": "https://redux.js.org/api/combinereducers",
+          "checkedAt": null
+        },
+        {
+          "id": "ref-95526235849f8871",
+          "title": "Redux: configureStore",
+          "url": "https://redux.js.org/toolkit/api/configureStore",
+          "checkedAt": null
+        },
+        {
+          "id": "ref-b18942b3a7ca1252",
+          "title": "Redux: createSlice",
+          "url": "https://redux.js.org/toolkit/api/createSlice",
+          "checkedAt": "2026-11-08"
+        },
+        {
+          "id": "ref-b9a2963e617d9db3",
+          "title": "Redux: immer-reducers",
+          "url": "https://redux.js.org/toolkit/usage/immer-reducers",
+          "checkedAt": null
+        },
+        {
+          "id": "ref-209c944550f4be60",
+          "title": "Redux: store",
+          "url": "https://redux.js.org/api/store#dispatchaction",
+          "checkedAt": null
+        },
+        {
+          "id": "ref-15c657fd52053e96",
+          "title": "Redux: store",
+          "url": "https://redux.js.org/api/store",
+          "checkedAt": "2026-11-08"
+        },
+        {
+          "id": "ref-75fd2e3349127080",
+          "title": "Redux: hooks",
+          "url": "https://redux.js.org/react-redux/api/hooks",
+          "checkedAt": "2026-11-08"
+        },
+        {
+          "id": "ref-1f17b2e8acfcc4c4",
+          "title": "Redux: organizing-state",
+          "url": "https://redux.js.org/faq/organizing-state",
+          "checkedAt": null
+        },
+        {
+          "id": "ref-20340ab42a9a9423",
+          "title": "Redux: createAsyncThunk",
+          "url": "https://redux.js.org/toolkit/api/createAsyncThunk",
+          "checkedAt": "2026-11-08"
+        },
+        {
+          "id": "ref-83aed0f574ae3dd6",
+          "title": "Redux: conditional-fetching",
+          "url": "https://redux.js.org/toolkit/rtk-query/usage/conditional-fetching",
+          "checkedAt": "2026-11-08"
+        },
+        {
+          "id": "ref-891cb6edb8badeb6",
+          "title": "Redux: queries",
+          "url": "https://redux.js.org/toolkit/rtk-query/usage/queries",
+          "checkedAt": "2026-11-08"
+        },
+        {
+          "id": "ref-2bd1525307302568",
+          "title": "Redux: mutations",
+          "url": "https://redux.js.org/toolkit/rtk-query/usage/mutations",
+          "checkedAt": "2026-11-08"
+        },
+        {
+          "id": "ref-da93b1c11ea0d3d2",
+          "title": "Redux: automated-refetching",
+          "url": "https://redux.js.org/toolkit/rtk-query/usage/automated-refetching",
+          "checkedAt": "2026-11-08"
+        },
+        {
+          "id": "ref-ac7697f78159f1fb",
+          "title": "Redux: overview",
+          "url": "https://redux.js.org/toolkit/rtk-query/overview",
+          "checkedAt": null
+        },
+        {
+          "id": "ref-0a27980322bd1eec",
+          "title": "Redux: cache-behavior",
+          "url": "https://redux.js.org/toolkit/rtk-query/usage/cache-behavior",
+          "checkedAt": "2026-11-08"
+        },
+        {
+          "id": "ref-08e0be642419b401",
+          "title": "Redux: createListenerMiddleware",
+          "url": "https://redux.js.org/toolkit/api/createListenerMiddleware",
+          "checkedAt": "2026-11-08"
+        },
+        {
+          "id": "ref-aaedb5bbe0f6fb0a",
+          "title": "Redux: manual-cache-updates",
+          "url": "https://redux.js.org/toolkit/rtk-query/usage/manual-cache-updates",
+          "checkedAt": "2026-11-08"
+        },
+        {
+          "id": "ref-5ac16ece69364c7a",
+          "title": "Redux: code-splitting",
+          "url": "https://redux.js.org/toolkit/rtk-query/usage/code-splitting",
+          "checkedAt": "2026-11-08"
+        },
+        {
+          "id": "ref-979847085e79ef0b",
+          "title": "Redux: combineSlices",
+          "url": "https://redux.js.org/toolkit/api/combineSlices",
+          "checkedAt": "2026-11-08"
+        },
+        {
+          "id": "ref-8a1b0f987964b048",
+          "title": "Redux: streaming-updates",
+          "url": "https://redux.js.org/toolkit/rtk-query/usage/streaming-updates",
+          "checkedAt": "2026-11-08"
         }
       ]
     },
@@ -4186,7 +5005,8 @@
       "subsectionId": "zustand",
       "scope": "Создание store, подписки, обновления, persist и жизненный цикл.",
       "caveats": [
-        "Примеры описывают современный Redux Toolkit/React-Redux и Zustand 5. У старых версий API может отличаться. Типы не заменяют runtime-проверки; фрагменты не исполнялись."
+        "Примеры описывают современный Redux Toolkit/React-Redux и Zustand 5. У старых версий API может отличаться. Типы не заменяют runtime-проверки; фрагменты не исполнялись.",
+        "Пакет 2026-11-08: учебные фрагменты предполагают импорты и явно названные API приложения; примеры не исполнялись. React 19, React Router 7 с указанным режимом, Redux Toolkit 2/React-Redux 9 и Zustand 5. checkedAt отражает свежую проверку конкретного URL; null не заменяется формальной датой."
       ],
       "sources": [
         {
@@ -4229,7 +5049,7 @@
           "id": "ref-daf06766c96ce904",
           "title": "Zustand: persist",
           "url": "https://zustand.docs.pmnd.rs/reference/middlewares/persist",
-          "checkedAt": null
+          "checkedAt": "2026-11-08"
         },
         {
           "id": "ref-fda0efb76db2a3c5",
@@ -4260,7 +5080,520 @@
           "title": "Zustand: how to reset state",
           "url": "https://zustand.docs.pmnd.rs/learn/guides/how-to-reset-state",
           "checkedAt": null
+        },
+        {
+          "id": "ref-818d2a68c96c2d9f",
+          "title": "Zustand: create",
+          "url": "https://zustand.docs.pmnd.rs/reference/apis/create",
+          "checkedAt": "2026-11-08"
+        },
+        {
+          "id": "ref-b56f5105f78bd737",
+          "title": "Zustand: create-store",
+          "url": "https://zustand.docs.pmnd.rs/reference/apis/create-store",
+          "checkedAt": "2026-11-08"
+        },
+        {
+          "id": "ref-7a40dfd2373a3315",
+          "title": "Zustand: use-store",
+          "url": "https://zustand.docs.pmnd.rs/reference/hooks/use-store",
+          "checkedAt": "2026-11-08"
+        },
+        {
+          "id": "ref-a3e84fcfc70d2a39",
+          "title": "Zustand: comparison",
+          "url": "https://zustand.docs.pmnd.rs/learn/getting-started/comparison",
+          "checkedAt": "2026-11-08"
+        },
+        {
+          "id": "ref-3675871c993f0ba9",
+          "title": "Zustand: devtools",
+          "url": "https://zustand.docs.pmnd.rs/reference/middlewares/devtools",
+          "checkedAt": "2026-11-08"
+        },
+        {
+          "id": "ref-8d10b0c08cde77aa",
+          "title": "Zustand: slices-pattern",
+          "url": "https://zustand.docs.pmnd.rs/learn/guides/slices-pattern",
+          "checkedAt": "2026-11-08"
+        },
+        {
+          "id": "ref-540bea20df39ed7c",
+          "title": "Zustand: maps-and-sets-usage",
+          "url": "https://zustand.docs.pmnd.rs/learn/guides/maps-and-sets-usage",
+          "checkedAt": "2026-11-08"
+        },
+        {
+          "id": "ref-df7cc2aa3ba62cf1",
+          "title": "Zustand: advanced-typescript",
+          "url": "https://zustand.docs.pmnd.rs/learn/guides/advanced-typescript",
+          "checkedAt": "2026-11-08"
+        },
+        {
+          "id": "ref-85bc7c8001bfe76e",
+          "title": "Zustand: testing",
+          "url": "https://zustand.docs.pmnd.rs/learn/guides/testing",
+          "checkedAt": "2026-11-08"
+        },
+        {
+          "id": "ref-d89a630e4c404cf0",
+          "title": "Zustand: migrating-to-v5",
+          "url": "https://zustand.docs.pmnd.rs/reference/migrations/migrating-to-v5",
+          "checkedAt": "2026-11-08"
         }
+      ]
+    },
+    {
+      "sectionId": "react",
+      "subsectionId": "routing",
+      "scope": "React Router 7: Declarative и Data mode; API режима явно обозначены.",
+      "sources": [
+        {
+          "id": "ref-bc667d13640435ef",
+          "title": "React Router: routing",
+          "url": "https://reactrouter.com/7.18.5/start/declarative/routing",
+          "checkedAt": "2026-11-08"
+        },
+        {
+          "id": "ref-b8eb00ca0f393492",
+          "title": "React Router: useParams",
+          "url": "https://reactrouter.com/7.18.5/api/hooks/useParams",
+          "checkedAt": "2026-11-08"
+        },
+        {
+          "id": "ref-b8c4665fe13f8e5b",
+          "title": "React Router: navigating",
+          "url": "https://reactrouter.com/7.18.5/start/declarative/navigating",
+          "checkedAt": null
+        },
+        {
+          "id": "ref-e1169371ff06e00d",
+          "title": "React Router: useSearchParams",
+          "url": "https://reactrouter.com/7.18.5/api/hooks/useSearchParams",
+          "checkedAt": "2026-11-08"
+        },
+        {
+          "id": "ref-4597ee0ae69a73d3",
+          "title": "React Router: Link",
+          "url": "https://reactrouter.com/7.18.5/api/components/Link",
+          "checkedAt": "2026-11-08"
+        },
+        {
+          "id": "ref-5cb34c0282a05a06",
+          "title": "React Router: data-loading",
+          "url": "https://reactrouter.com/7.18.5/start/data/data-loading",
+          "checkedAt": "2026-11-08"
+        },
+        {
+          "id": "ref-10761fd937121ee9",
+          "title": "React Router: route-object",
+          "url": "https://reactrouter.com/7.18.5/start/data/route-object",
+          "checkedAt": "2026-11-08"
+        },
+        {
+          "id": "ref-f4c62df8fe7e6e99",
+          "title": "React Router: state-management",
+          "url": "https://reactrouter.com/7.18.5/explanation/state-management",
+          "checkedAt": null
+        },
+        {
+          "id": "ref-83802e033c58cfc0",
+          "title": "React Router: MemoryRouter",
+          "url": "https://reactrouter.com/7.18.5/api/declarative-routers/MemoryRouter",
+          "checkedAt": "2026-11-08"
+        },
+        {
+          "id": "ref-42e0b206fe0f1f59",
+          "title": "React Router: spa",
+          "url": "https://reactrouter.com/how-to/spa",
+          "checkedAt": "2026-11-08"
+        },
+        {
+          "id": "ref-dc37f79924e3dbf1",
+          "title": "React Router: race-conditions",
+          "url": "https://reactrouter.com/explanation/race-conditions",
+          "checkedAt": "2026-11-08"
+        },
+        {
+          "id": "ref-ac99182319c886f0",
+          "title": "React Router: sessions-and-cookies",
+          "url": "https://reactrouter.com/explanation/sessions-and-cookies",
+          "checkedAt": "2026-11-08"
+        }
+      ],
+      "caveats": [
+        "Вопросы маршрутизации описывают React Router 7; Data API не возникают автоматически у декларативного BrowserRouter.",
+        "Пакет 2026-11-08: учебные фрагменты предполагают импорты и явно названные API приложения; примеры не исполнялись. React 19, React Router 7 с указанным режимом, Redux Toolkit 2/React-Redux 9 и Zustand 5. checkedAt отражает свежую проверку конкретного URL; null не заменяется формальной датой."
+      ]
+    },
+    {
+      "sectionId": "browser",
+      "subsectionId": "architecture",
+      "scope": "Компоненты браузера, потоки, навигация, процессы и восстановление страницы.",
+      "sources": [
+        {
+          "id": "ref-cff8ff79463bfd4b",
+          "title": "Как работает браузер",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/Performance/Guides/How_browsers_work",
+          "checkedAt": "2026-11-08"
+        },
+        {
+          "id": "ref-f67597cbb815e44c",
+          "title": "Навигация документа",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/API/Navigation_API",
+          "checkedAt": "2026-11-08"
+        },
+        {
+          "id": "ref-1960b31656723f2f",
+          "title": "Chromium: Site Isolation",
+          "url": "https://www.chromium.org/Home/chromium-security/site-isolation/",
+          "checkedAt": "2026-11-08"
+        },
+        {
+          "id": "ref-360a828b02b7f2a4",
+          "title": "Обзор HTTP",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/Overview",
+          "checkedAt": "2026-11-08"
+        },
+        {
+          "id": "ref-f1556f26775f7950",
+          "title": "Back/forward cache",
+          "url": "https://web.dev/articles/bfcache",
+          "checkedAt": "2026-11-08"
+        }
+      ],
+      "caveats": [
+        "Пакет 2026-11-08: браузерные возможности и политики приватности зависят от реализации, версии, secure context и настроек пользователя. Примеры и сценарии разобраны редактором, но не запускались. checkedAt установлен только для открытых источников; null не означает проверенную доступность. Статус ready подтверждает редакторскую готовность, а не полноту всех собеседований."
+      ]
+    },
+    {
+      "sectionId": "browser",
+      "subsectionId": "representations",
+      "scope": "Статусы, форматы, согласование содержимого, кодирование и передача файлов.",
+      "sources": [
+        {
+          "id": "ref-8a82e01901c80b94",
+          "title": "Согласование содержимого",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/Content_negotiation",
+          "checkedAt": "2026-11-08"
+        },
+        {
+          "id": "ref-fa4eaaea98a47bde",
+          "title": "Статусы HTTP",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Status",
+          "checkedAt": "2026-11-08"
+        },
+        {
+          "id": "ref-eb7d6910590a5409",
+          "title": "MIME types",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/MIME_types",
+          "checkedAt": "2026-11-08"
+        },
+        {
+          "id": "ref-f10cc26ad8cc531b",
+          "title": "Использование Fetch",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch",
+          "checkedAt": "2026-11-08"
+        },
+        {
+          "id": "ref-f144ae545e08f489",
+          "title": "Перенаправления HTTP",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/Redirections",
+          "checkedAt": "2026-11-08"
+        },
+        {
+          "id": "ref-2cb5855a8b539c9f",
+          "title": "RFC 9110: HTTP Semantics",
+          "url": "https://httpwg.org/specs/rfc9110.html",
+          "checkedAt": "2026-11-08"
+        },
+        {
+          "id": "ref-a63f048ec229e763",
+          "title": "Range requests",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/Range_requests",
+          "checkedAt": "2026-11-08"
+        }
+      ],
+      "caveats": [
+        "Пакет 2026-11-08: браузерные возможности и политики приватности зависят от реализации, версии, secure context и настроек пользователя. Примеры и сценарии разобраны редактором, но не запускались. checkedAt установлен только для открытых источников; null не означает проверенную доступность. Статус ready подтверждает редакторскую готовность, а не полноту всех собеседований."
+      ]
+    },
+    {
+      "sectionId": "browser",
+      "subsectionId": "https",
+      "scope": "TLS, сертификаты, постоянные соединения, HTTP/2 и HTTP/3.",
+      "sources": [
+        {
+          "id": "ref-01b3018cd767935c",
+          "title": "Transport Layer Security",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/Security/Defenses/Transport_Layer_Security",
+          "checkedAt": "2026-11-08"
+        },
+        {
+          "id": "ref-eec262789a418d64",
+          "title": "Развитие HTTP",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/Evolution_of_HTTP",
+          "checkedAt": "2026-11-08"
+        },
+        {
+          "id": "ref-1c12e46a221ee898",
+          "title": "Mixed content",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/Security/Defenses/Mixed_content",
+          "checkedAt": "2026-11-08"
+        },
+        {
+          "id": "ref-196f3a8769ea36a7",
+          "title": "Strict-Transport-Security",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Strict-Transport-Security",
+          "checkedAt": "2026-11-08"
+        },
+        {
+          "id": "ref-619f8fc7ff502856",
+          "title": "RFC 9114: HTTP/3",
+          "url": "https://httpwg.org/specs/rfc9114.html",
+          "checkedAt": "2026-11-08"
+        }
+      ],
+      "caveats": [
+        "Пакет 2026-11-08: браузерные возможности и политики приватности зависят от реализации, версии, secure context и настроек пользователя. Примеры и сценарии разобраны редактором, но не запускались. checkedAt установлен только для открытых источников; null не означает проверенную доступность. Статус ready подтверждает редакторскую готовность, а не полноту всех собеседований."
+      ]
+    },
+    {
+      "sectionId": "browser",
+      "subsectionId": "caching",
+      "scope": "Свежесть, валидация, общие кеши, версии ресурсов и инвалидирование.",
+      "sources": [
+        {
+          "id": "ref-4a1b57bfe9b2ba79",
+          "title": "HTTP-кеширование",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/Caching",
+          "checkedAt": "2026-11-08"
+        },
+        {
+          "id": "ref-e1fa04c54b112027",
+          "title": "RFC 9111: HTTP Caching",
+          "url": "https://httpwg.org/specs/rfc9111.html",
+          "checkedAt": "2026-11-08"
+        },
+        {
+          "id": "ref-9166d803cf3a38b0",
+          "title": "Cache-Control",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Cache-Control",
+          "checkedAt": "2026-11-08"
+        },
+        {
+          "id": "ref-8d62fd428dc188d9",
+          "title": "Web cache poisoning",
+          "url": "https://portswigger.net/research/practical-web-cache-poisoning",
+          "checkedAt": "2026-11-08"
+        },
+        {
+          "id": "ref-0f4cba78270861d8",
+          "title": "Web cache deception",
+          "url": "https://portswigger.net/web-security/web-cache-deception",
+          "checkedAt": "2026-11-08"
+        }
+      ],
+      "caveats": [
+        "Пакет 2026-11-08: браузерные возможности и политики приватности зависят от реализации, версии, secure context и настроек пользователя. Примеры и сценарии разобраны редактором, но не запускались. checkedAt установлен только для открытых источников; null не означает проверенную доступность. Статус ready подтверждает редакторскую готовность, а не полноту всех собеседований."
+      ]
+    },
+    {
+      "sectionId": "browser",
+      "subsectionId": "requests",
+      "scope": "Сетевые границы Fetch, credentials, отмена, тела и потоковая передача.",
+      "sources": [
+        {
+          "id": "ref-f10cc26ad8cc531b",
+          "title": "Использование Fetch",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch",
+          "checkedAt": "2026-11-08"
+        },
+        {
+          "id": "ref-5bc2943c6bc558bf",
+          "title": "AbortController",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/API/AbortController",
+          "checkedAt": "2026-11-08"
+        },
+        {
+          "id": "ref-4d6c5707bdc20c56",
+          "title": "XMLHttpRequest",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest",
+          "checkedAt": "2026-11-08"
+        },
+        {
+          "id": "ref-dbefe5849ecdce4d",
+          "title": "Streams API: Concepts",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/API/Streams_API/Concepts",
+          "checkedAt": "2026-11-08"
+        }
+      ],
+      "caveats": [
+        "Пакет 2026-11-08: браузерные возможности и политики приватности зависят от реализации, версии, secure context и настроек пользователя. Примеры и сценарии разобраны редактором, но не запускались. checkedAt установлен только для открытых источников; null не означает проверенную доступность. Статус ready подтверждает редакторскую готовность, а не полноту всех собеседований."
+      ]
+    },
+    {
+      "sectionId": "browser",
+      "subsectionId": "origin",
+      "scope": "Границы чтения браузера, preflight, credentials и диагностика.",
+      "sources": [
+        {
+          "id": "ref-6265cf02838595fc",
+          "title": "CORS",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/CORS",
+          "checkedAt": "2026-11-08"
+        },
+        {
+          "id": "ref-d906e946d93a53c5",
+          "title": "Same-origin policy",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/Security/Defenses/Same-origin_policy",
+          "checkedAt": "2026-11-08"
+        }
+      ],
+      "caveats": [
+        "Пакет 2026-11-08: браузерные возможности и политики приватности зависят от реализации, версии, secure context и настроек пользователя. Примеры и сценарии разобраны редактором, но не запускались. checkedAt установлен только для открытых источников; null не означает проверенную доступность. Статус ready подтверждает редакторскую готовность, а не полноту всех собеседований."
+      ]
+    },
+    {
+      "sectionId": "browser",
+      "subsectionId": "sessions",
+      "scope": "Область и срок cookie, аутентификация, обновление credentials и logout.",
+      "sources": [
+        {
+          "id": "ref-59e2ed660294603a",
+          "title": "HTTP cookies",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/Cookies",
+          "checkedAt": "2026-11-08"
+        },
+        {
+          "id": "ref-7fa0f5ed50b53921",
+          "title": "OWASP: Session Management",
+          "url": "https://cheatsheetseries.owasp.org/cheatsheets/Session_Management_Cheat_Sheet.html",
+          "checkedAt": "2026-11-08"
+        },
+        {
+          "id": "ref-10c2347db109ea1e",
+          "title": "OWASP: Authorization",
+          "url": "https://cheatsheetseries.owasp.org/cheatsheets/Authorization_Cheat_Sheet.html",
+          "checkedAt": "2026-11-08"
+        }
+      ],
+      "caveats": [
+        "Пакет 2026-11-08: браузерные возможности и политики приватности зависят от реализации, версии, secure context и настроек пользователя. Примеры и сценарии разобраны редактором, но не запускались. checkedAt установлен только для открытых источников; null не означает проверенную доступность. Статус ready подтверждает редакторскую готовность, а не полноту всех собеседований."
+      ]
+    },
+    {
+      "sectionId": "browser",
+      "subsectionId": "storage",
+      "scope": "Выбор хранилища, квоты, IndexedDB и согласование вкладок.",
+      "sources": [
+        {
+          "id": "ref-5a3b3e6af5674b12",
+          "title": "Storage API",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/API/Storage_API",
+          "checkedAt": "2026-11-08"
+        },
+        {
+          "id": "ref-3975a745d1ae69a0",
+          "title": "Cache API",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/API/Cache",
+          "checkedAt": "2026-11-08"
+        },
+        {
+          "id": "ref-c3fde32989fa5e12",
+          "title": "Квоты и удаление данных",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/API/Storage_API/Storage_quotas_and_eviction_criteria",
+          "checkedAt": "2026-11-08"
+        },
+        {
+          "id": "ref-270dfb7aeda2dbca",
+          "title": "Использование IndexedDB",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API/Using_IndexedDB",
+          "checkedAt": "2026-11-08"
+        },
+        {
+          "id": "ref-2c4f48756f5f01e5",
+          "title": "Broadcast Channel API",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/API/Broadcast_Channel_API",
+          "checkedAt": "2026-11-08"
+        },
+        {
+          "id": "ref-5e2cbd6738f4a9fd",
+          "title": "State Partitioning",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/Privacy/Guides/State_Partitioning",
+          "checkedAt": "2026-11-08"
+        },
+        {
+          "id": "ref-407645b5d9854f76",
+          "title": "Partitioned cookies (CHIPS)",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/Privacy/Guides/Third-party_cookies/Partitioned_cookies",
+          "checkedAt": "2026-11-08"
+        }
+      ],
+      "caveats": [
+        "Пакет 2026-11-08: браузерные возможности и политики приватности зависят от реализации, версии, secure context и настроек пользователя. Примеры и сценарии разобраны редактором, но не запускались. checkedAt установлен только для открытых источников; null не означает проверенную доступность. Статус ready подтверждает редакторскую готовность, а не полноту всех собеседований."
+      ]
+    },
+    {
+      "sectionId": "browser",
+      "subsectionId": "rendering",
+      "scope": "Путь к пикселям, критические ресурсы, макет и жизненный цикл.",
+      "sources": [
+        {
+          "id": "ref-cff8ff79463bfd4b",
+          "title": "Как работает браузер",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/Performance/Guides/How_browsers_work",
+          "checkedAt": "2026-11-08"
+        },
+        {
+          "id": "ref-1f2734e7294c86f2",
+          "title": "Web Vitals",
+          "url": "https://web.dev/articles/vitals",
+          "checkedAt": "2026-11-08"
+        },
+        {
+          "id": "ref-b17a9d9b93436fe8",
+          "title": "Производительные анимации",
+          "url": "https://web.dev/articles/animations-guide",
+          "checkedAt": "2026-11-08"
+        },
+        {
+          "id": "ref-4c23f175a7721cd4",
+          "title": "Page Lifecycle API",
+          "url": "https://developer.chrome.com/docs/web-platform/page-lifecycle-api",
+          "checkedAt": "2026-11-08"
+        }
+      ],
+      "caveats": [
+        "Пакет 2026-11-08: браузерные возможности и политики приватности зависят от реализации, версии, secure context и настроек пользователя. Примеры и сценарии разобраны редактором, но не запускались. checkedAt установлен только для открытых источников; null не означает проверенную доступность. Статус ready подтверждает редакторскую готовность, а не полноту всех собеседований."
+      ]
+    },
+    {
+      "sectionId": "browser",
+      "subsectionId": "realtime",
+      "scope": "Транспорты сообщений, восстановление соединения и Service Worker.",
+      "sources": [
+        {
+          "id": "ref-cc66a82750c7f1d3",
+          "title": "Server-sent events",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/API/Server-sent_events/Using_server-sent_events",
+          "checkedAt": "2026-11-08"
+        },
+        {
+          "id": "ref-c2d0deaa8de02652",
+          "title": "Использование Service Workers",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API/Using_Service_Workers",
+          "checkedAt": "2026-11-08"
+        },
+        {
+          "id": "ref-22fa457cb76d9afe",
+          "title": "WebSocket API",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/API/WebSockets_API",
+          "checkedAt": "2026-11-08"
+        }
+      ],
+      "caveats": [
+        "Пакет 2026-11-08: браузерные возможности и политики приватности зависят от реализации, версии, secure context и настроек пользователя. Примеры и сценарии разобраны редактором, но не запускались. checkedAt установлен только для открытых источников; null не означает проверенную доступность. Статус ready подтверждает редакторскую готовность, а не полноту всех собеседований."
       ]
     }
   ]

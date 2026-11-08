@@ -36,7 +36,8 @@
     "content:context": "node scripts/questions/context.mjs",
     "content:summary": "node scripts/questions/summary.mjs",
     "content:batch": "node scripts/questions/batch.mjs",
-    "content:show": "node scripts/questions/show.mjs"
+    "content:show": "node scripts/questions/show.mjs",
+    "feedback:export": "pnpm --filter @wishu/server feedback:export"
   },
   "dependencies": {
     "@base-ui/react": "^1.9.0",

@@ -1,3 +1,4 @@
+import { PageHeading } from "@/components/catalog/page-heading"
 import { Link } from "react-router-dom"
 import { Button } from "@/components/ui/button"
 import { useLocation, useParams } from "react-router-dom"
@@ -48,34 +49,31 @@ export function QuestionSubsectionPage() {
           { label: subsection.title },
         ]}
       />
-      <header className="mb-6">
-        <p className="mb-2 text-xs font-medium text-primary">{section.title}</p>
-        <h1
-          data-question-heading
-          tabIndex={-1}
-          className="text-3xl font-semibold tracking-tight outline-none sm:text-4xl"
-        >
-          {subsection.title}
-        </h1>
-        <p className="mt-2 text-sm leading-6 text-muted-foreground">{subsection.description}</p>
-        <Button
-          className="mt-4"
-          nativeButton={false}
-          variant="outline"
-          render={
-            <Link
-              to={
-                "/questions/new?section=" +
-                encodeURIComponent(section.id) +
-                "&subsection=" +
-                encodeURIComponent(subsection.id)
-              }
-            />
-          }
-        >
-          Добавить вопрос
-        </Button>
-      </header>
+      <PageHeading
+        title={subsection.title}
+        description={subsection.description}
+        meta={<p className="text-xs font-medium text-primary">{section.title}</p>}
+        questionHeading
+        headingProps={{ tabIndex: -1 }}
+        actions={
+          <Button
+            nativeButton={false}
+            variant="outline"
+            render={
+              <Link
+                to={
+                  "/questions/new?section=" +
+                  encodeURIComponent(section.id) +
+                  "&subsection=" +
+                  encodeURIComponent(subsection.id)
+                }
+              />
+            }
+          >
+            Добавить вопрос
+          </Button>
+        }
+      />
       <div className="grid items-start gap-6 lg:grid-cols-[minmax(0,1fr)_280px]">
         <div className="min-w-0 space-y-3">
           {!!questions.length &&

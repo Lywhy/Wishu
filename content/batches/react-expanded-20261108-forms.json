@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 1,
+  "id": "react-expanded-20261108-forms",
+  "title": "React: расширение forms",
+  "sectionId": "react",
+  "subsectionId": "forms",
+  "currentPass": "complete",
+  "goalIds": [
+    "core",
+    "react-form-checkbox-group",
+    "react-form-radio-group",
+    "react-form-submit-button-type",
+    "react-form-repeated-names",
+    "react-form-native-validity",
+    "react-form-readonly-disabled",
+    "react-form-submitter-intent",
+    "react-form-server-field-errors",
+    "react-form-keyboard-ime-submit",
+    "react-form-action-error-boundary"
+  ],
+  "questionIds": [
+    "react-form-checkbox-group",
+    "react-form-radio-group",
+    "react-form-submit-button-type",
+    "react-form-repeated-names",
+    "react-form-native-validity",
+    "react-form-readonly-disabled",
+    "react-form-submitter-intent",
+    "react-form-server-field-errors",
+    "react-form-keyboard-ime-submit",
+    "react-form-action-error-boundary"
+  ],
+  "scopePass": {
+    "status": "complete",
+    "remaining": []
+  },
+  "answerPass": {
+    "status": "complete",
+    "remaining": []
+  },
+  "baseline": [
+    {
+      "id": "react-controlled-input",
+      "title": "Чем управляемое поле отличается от неуправляемого?",
+      "contentHash": "ace71d6319ee7e3716a09fc46d24afaa8e24fa61c83d89aba276cf0a60880b41"
+    },
+    {
+      "id": "react-form-submit",
+      "title": "Как обработать отправку формы и получить её данные?",
+      "contentHash": "8e04881d600a9147068b62e5ce6ce4f77bdd869e3792186f6c8fb92df0b1bcb9"
+    },
+    {
+      "id": "react-accessible-fields",
+      "title": "Как связать label и сообщение об ошибке с полем?",
+      "contentHash": "77086c2884960a2f00d85c915557f7bc15162ec38eb2be5bc70993c13fc2fed4"
+    },
+    {
+      "id": "react-action-state",
+      "title": "Как useActionState помогает обрабатывать форму в React 19?",
+      "contentHash": "20686c8dfa8266818f315dfcf8a8ccecc546e835cdfd7f60c091deb0d2ccb51d"
+    },
+    {
+      "id": "react-form-status",
+      "title": "Почему useFormStatus не видит форму из того же компонента?",
+      "contentHash": "1982fe9463d65433ccaf82d780cb2ae7b0e8eeb8d986205a66047b5c4a1818e8"
+    },
+    {
+      "id": "react-input-composition",
+      "title": "Почему форматирование управляемого поля может ломать каретку и IME-ввод?",
+      "contentHash": "afe111aef3951bb96e966b9d06177711411c1f9f4e8d94c30a89ab27aa322757"
+    },
+    {
+      "id": "react-select-textarea-values",
+      "title": "Как управлять select и textarea в React, включая multiple?",
+      "contentHash": "cab437595ee69eb675963767ca531f0e5c6d9812171ef2e19bec97e905d31e7a"
+    },
+    {
+      "id": "react-file-input-contract",
+      "title": "Как читать выбранные файлы в React и почему нельзя задавать путь через value?",
+      "contentHash": "e695f93c57d2ba00efab3b45c68cd1a4c30a8e58a83cf324ac0c755a61d5591e"
+    },
+    {
+      "id": "react-number-input-draft",
+      "title": "Почему число в input полезно хранить как строковый черновик?",
+      "contentHash": "accdc8846d4815448a62f0fd18f18b23c944bc0c28d03fe6661d2d5f33dccea5"
+    },
+    {
+      "id": "react-form-reset-contract",
+      "title": "Что сбрасывает form.reset() и как сбросить управляемые поля?",
+      "contentHash": "d89da3f836fcba298b21bd0c92c0f1113224b5cc42456a633ab63a9828a7ff7e"
+    }
+  ],
+  "notes": [
+    "120 новых вопросов React: 60 базовых / 40 средних / 20 продвинутых; Redux и Zustand дополнительно внутри React. Прежние 128 ID сохраняются.",
+    "Общие определения остаются в канонических ответах; прикладные вопросы различаются проверяемым сценарием. Routing включает библиотеку React Router 7 и не приписывает её API ядру React.",
+    "B: react-form-checkbox-group | Как управлять несколькими checkbox с независимыми значениями?",
+    "B: react-form-radio-group | Как связать группу radio с одним React-state?",
+    "B: react-form-submit-button-type | Почему вспомогательная кнопка внутри формы неожиданно отправляет данные?",
+    "B: react-form-repeated-names | Как прочитать несколько значений одного name через FormData?",
+    "B: react-form-native-validity | Как использовать required и onInvalid вместе с React-состоянием ошибки?",
+    "B: react-form-readonly-disabled | Чем readOnly отличается от disabled при редактировании и отправке формы?",
+    "M: react-form-submitter-intent | Как различить несколько submit-кнопок одной формы?",
+    "M: react-form-server-field-errors | Как связать ошибки полей от сервера с текущей попыткой отправки?",
+    "M: react-form-keyboard-ime-submit | Почему Enter во время IME-композиции не должен преждевременно отправлять форму?",
+    "A: react-form-action-error-boundary | Какие ошибки React Action могут попасть в Error Boundary, а какие лучше вернуть как данные?",
+    "Завершено: 172 новых вопроса, в том числе React 60/40/20, Redux 28, Zustand 24. Все 128 прежних ID сохранены. Oxfmt, отчёт пересечений, content:build и полный content:check прошли для 1135 вопросов. Примеры, приложение и PostgreSQL seed не запускались."
+  ]
+}

@@ -1,0 +1,57 @@
+{
+  "schemaVersion": 1,
+  "id": "react-core-20261108-refs",
+  "title": "React: refs",
+  "sectionId": "react",
+  "subsectionId": "refs",
+  "currentPass": "complete",
+  "goalIds": ["core", "react-focus-after-mount", "react-resize-observer", "react-ref-state"],
+  "questionIds": ["react-focus-after-mount", "react-resize-observer", "react-ref-state"],
+  "scopePass": {
+    "status": "complete",
+    "remaining": []
+  },
+  "answerPass": {
+    "status": "complete",
+    "remaining": []
+  },
+  "baseline": [
+    {
+      "id": "react-ref-state",
+      "title": "Чем useRef отличается от useState?",
+      "contentHash": "583273f96479cb3c803195f00588dbb5ad6868fe1533732ba0ff4046dc8fcc52"
+    },
+    {
+      "id": "react-ref-prop",
+      "title": "Как передать ref через свой компонент в React 19?",
+      "contentHash": "534c2ace98d1c737260b69ca30e9d74ee48d2157bd95cb8ee5ba7960975b741e"
+    },
+    {
+      "id": "react-imperative-handle",
+      "title": "Зачем нужен useImperativeHandle?",
+      "contentHash": "d6bcb715d277fbab50861e16ca9b94a2983d9159496ef8a86c552c759ab4af84"
+    },
+    {
+      "id": "react-portals",
+      "title": "Как Portal влияет на DOM, события и Context?",
+      "contentHash": "972b5457cbb8719ec6178a79b3b8eda4883045e020efa9353480a2bf3e7cd76e"
+    },
+    {
+      "id": "react-callback-ref-cleanup",
+      "title": "Как callback ref помогает учитывать динамические DOM-узлы и очищать связанные ресурсы?",
+      "contentHash": "ad9f76c68f128903ff8c3663eeafa59520afbdd3c6ab665037da6bd62ee5393a"
+    },
+    {
+      "id": "react-widget-dom-ownership",
+      "title": "Как встроить сторонний редактор или карту, не конфликтуя с управлением DOM у React?",
+      "contentHash": "d1e1cdd2b883caddd480827adca45679221114e71e2b1fad97c41d6d53d2aca4"
+    }
+  ],
+  "notes": [
+    "Сначала сопоставлены все 94 действующие React-карточки. Redux и Zustand сохраняются без повторного пересмотра.",
+    "react-focus-after-mount: Дождаться commit и управлять фокусом без случайного setTimeout. Закрепление: react-layout-effect",
+    "react-resize-observer: Различать первоначальный замер и подписку ResizeObserver с освобождением ресурса. Закрепление: react-callback-ref-cleanup",
+    "Ключи, идентичность state, обработчики, очередь, эффекты, memo, controlled input, Error Boundary и правила хуков расширяются под прежними ID; useId и сравнение transition/deferred не дублируются.",
+    "Контент отформатирован. content:report: +34 новых, 11 расширенных ответов и 4 изменения общих источников; удалений и лексических кандидатов нет. content:build и полный content:check прошли для 963 вопросов. Примеры и приложение не запускались."
+  ]
+}

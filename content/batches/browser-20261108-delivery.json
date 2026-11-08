@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "id": "browser-20261108-delivery",
+  "title": "Браузер и HTTP: delivery",
+  "sectionId": "browser",
+  "subsectionId": "delivery",
+  "currentPass": "complete",
+  "goalIds": [
+    "core",
+    "http-cdn",
+    "network-waterfall",
+    "browser-cdn-proxy",
+    "browser-devtools-panels",
+    "browser-transfer-resource-size",
+    "browser-network-offline",
+    "browser-waterfall-dependency",
+    "browser-cold-warm-cache",
+    "browser-resource-priority",
+    "browser-vitals-network"
+  ],
+  "questionIds": [
+    "http-cdn",
+    "network-waterfall",
+    "browser-cdn-proxy",
+    "browser-devtools-panels",
+    "browser-transfer-resource-size",
+    "browser-network-offline",
+    "browser-waterfall-dependency",
+    "browser-cold-warm-cache",
+    "browser-resource-priority",
+    "browser-vitals-network"
+  ],
+  "scopePass": {
+    "status": "complete",
+    "remaining": []
+  },
+  "answerPass": {
+    "status": "complete",
+    "remaining": []
+  },
+  "baseline": [
+    {
+      "id": "http-compression",
+      "title": "Как работают Content-Encoding и Accept-Encoding?",
+      "contentHash": "7a04dcae9911b89ff1f83de59eab6aee56987ae1d3052e6a88c7664623e7b32f"
+    },
+    {
+      "id": "http-cdn",
+      "title": "Что даёт CDN и чем опасно кешировать персональный ответ?",
+      "contentHash": "1c6bbfac97da839e67bf4e72144d2bbe90b3550e2b31aa9f2098800ded1a68b5"
+    },
+    {
+      "id": "network-waterfall",
+      "title": "Как по Network waterfall понять причину медленной загрузки?",
+      "contentHash": "128e0a1a0bdf3bb579ecf814fba5895156bce80320abf1b1845c41c71f35012b"
+    }
+  ],
+  "notes": [
+    "Согласована карта из 14 подразделов. 12 прежних ID сохраняются. API JavaScript/HTML остаются каноническими в своих категориях; здесь рассматриваются сетевые и браузерные сценарии.",
+    "Cache-Control/ETag, идемпотентность, статусы, cookie-флаги, CORS, CSRF, DNS, HTTPS, HTTP/2/3, compression, CDN и waterfall расширяются под прежними ID.",
+    "Завершено: 131 новый вопрос (56 базовых, 64 средних, 11 продвинутых) и 12 расширенных канонических ответов в 14 подразделах. Все исходные ID сохранены, 7 вопросов перераспределены без изменения ID. Oxfmt, content:report, content:build и полный content:check прошли для 1266 вопросов. Приложение, код примеров и seed не запускались."
+  ]
+}

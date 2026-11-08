@@ -1,4 +1,4 @@
-import { Badge } from "@/components/ui/badge"
+import { SemanticBadge } from "@/components/catalog/semantic-badge"
 import { Star } from "lucide-react"
 import { Toggle } from "@/components/ui/toggle"
 import { Tooltip, TooltipTrigger, TooltipContent } from "@/components/ui/tooltip"
@@ -27,8 +27,8 @@ export function QuestionFavoriteButton({
             disabled={saving}
             onPressedChange={() => toggleSaved(questionId)}
             className={cn(
-              "size-10 shrink-0 rounded-lg p-0 text-muted-foreground hover:bg-background hover:text-foreground focus-visible:ring-inset",
-              compact && "size-7 min-w-7 rounded-md",
+              "h-10 w-full min-w-0 rounded-lg p-0 text-muted-foreground hover:bg-background hover:text-foreground focus-visible:ring-inset",
+              compact && "h-7 rounded-md",
               saved &&
                 "border-blue-200 text-blue-800 aria-pressed:bg-blue-50 dark:border-blue-900 dark:text-blue-300 dark:aria-pressed:bg-blue-500/10",
             )}
@@ -43,12 +43,5 @@ export function QuestionFavoriteButton({
 }
 
 export function QuestionFavoriteBadge() {
-  return (
-    <Badge
-      variant="outline"
-      className="border-blue-200 bg-blue-50 text-[11px] font-normal text-blue-800 dark:border-blue-900 dark:bg-blue-500/10 dark:text-blue-300"
-    >
-      В избранном
-    </Badge>
-  )
+  return <SemanticBadge tone="info">В избранном</SemanticBadge>
 }

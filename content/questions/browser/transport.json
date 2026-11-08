@@ -2,41 +2,105 @@
   "$schema": "../question-bundle.schema.json",
   "sectionId": "browser",
   "subsectionId": "transport",
-  "scope": "DNS, TLS и версии HTTP.",
+  "scope": "Адресация, разрешение имён, транспорт и повторное использование соединений.",
   "coverageGoals": [
     {
       "id": "core",
-      "title": "Сеть и соединения",
-      "description": "Обзор и взаимосвязи навыков: DNS, TLS и версии HTTP.",
+      "title": "URL, DNS и соединения",
+      "description": "Адресация, разрешение имён, транспорт и повторное использование соединений.",
       "requiredDifficulties": [],
       "reviewed": false,
       "priority": "core",
-      "relatedSkillIds": ["network-dns", "network-https", "http-multiplexing"]
+      "relatedSkillIds": [
+        "network-dns",
+        "url-parts",
+        "url-relative-resolution",
+        "network-host-port",
+        "network-tcp-udp",
+        "network-dns-records",
+        "network-dns-caches",
+        "network-reuse",
+        "network-latency-throughput"
+      ]
     },
     {
       "id": "network-dns",
       "title": "Зачем браузеру DNS перед HTTPS-запросом?",
-      "description": "Объяснить и применить правило с учётом его границ: DNS находит адрес, TLS проверяет защищённое соединение.",
+      "description": "Объяснить и применить: Имя, адрес, доверие к серверу и повторное использование соединения - разные механизмы.",
       "requiredDifficulties": ["Базовый"],
-      "reviewed": false,
+      "reviewed": true,
       "priority": "core",
       "relatedSkillIds": []
     },
     {
-      "id": "network-https",
-      "title": "Что защищает HTTPS и чего он не гарантирует?",
-      "description": "Объяснить и применить правило с учётом его границ: Защита канала не заменяет защиту приложения.",
+      "id": "url-parts",
+      "title": "Из каких частей состоит URL и какие из них отправляются серверу?",
+      "description": "Объяснить и применить: Отдельно определяйте адрес запроса и клиентскую часть навигации.",
       "requiredDifficulties": ["Базовый"],
-      "reviewed": false,
+      "reviewed": true,
       "priority": "core",
       "relatedSkillIds": []
     },
     {
-      "id": "http-multiplexing",
-      "title": "Чем HTTP/2 и HTTP/3 отличаются в работе с соединениями?",
-      "description": "Объяснить и применить правило с учётом его границ: Мультиплексирование и свойства транспорта влияют на взаимные задержки потоков.",
+      "id": "url-relative-resolution",
+      "title": "Как браузер разрешает относительный URL и как влияет base URL?",
+      "description": "Объяснить и применить: Относительность адреса определяется URL-базой, а не файловой структурой проекта.",
+      "requiredDifficulties": ["Базовый"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "network-host-port",
+      "title": "Чем домен, хост, IP-адрес и порт отличаются друг от друга?",
+      "description": "Объяснить и применить: Адрес сети, имя сервиса и origin не являются одной сущностью.",
+      "requiredDifficulties": ["Базовый"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "network-tcp-udp",
+      "title": "Чем TCP отличается от UDP в контексте веб-соединений?",
+      "description": "Объяснить и применить: Различайте возможности нижнего транспорта и протокола поверх него.",
+      "requiredDifficulties": ["Базовый"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "network-dns-records",
+      "title": "Для чего нужны A, AAAA и CNAME и чем DNS-ответ отличается от URL?",
+      "description": "Объяснить и применить: DNS разрешает имена; HTTP-редирект меняет адрес на другом уровне.",
       "requiredDifficulties": ["Средний"],
-      "reviewed": false,
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "network-dns-caches",
+      "title": "Почему после смены DNS разные пользователи ещё видят разные серверы?",
+      "description": "Объяснить и применить: Планируйте смену адресов с учётом кешей и живых соединений.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "network-reuse",
+      "title": "Почему запрос может не иметь отдельных этапов DNS и TLS в waterfall?",
+      "description": "Объяснить и применить: Этапы запроса нужно читать с учётом общего соединения.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "network-latency-throughput",
+      "title": "Чем задержка отличается от пропускной способности при загрузке страницы?",
+      "description": "Объяснить и применить: Отдельно оценивайте количество ожиданий и стоимость передачи объёма.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": true,
       "priority": "core",
       "relatedSkillIds": []
     }
@@ -47,66 +111,198 @@
       "title": "Зачем браузеру DNS перед HTTPS-запросом?",
       "topic": "Web",
       "difficulty": "Базовый",
-      "summary": "Имя хоста, адрес и повторное использование соединения.",
-      "takeaway": "DNS находит адрес, TLS проверяет защищённое соединение.",
+      "summary": "Имя, адрес, доверие к серверу и повторное использование соединения - разные механизмы.",
+      "takeaway": "Имя, адрес, доверие к серверу и повторное использование соединения - разные механизмы.",
       "moduleId": "browser",
       "order": 0,
       "popular": false,
       "editorial": {
-        "learningGoal": "Объяснить и применить правило с учётом его границ: DNS находит адрес, TLS проверяет защищённое соединение.",
-        "keywords": ["Браузер и HTTP", "Сеть и соединения"],
-        "kind": "explanation",
-        "reviewStatus": "imported",
+        "learningGoal": "Объяснить и применить: Имя, адрес, доверие к серверу и повторное использование соединения - разные механизмы.",
+        "keywords": ["Браузер и HTTP", "transport", "network", "dns"],
+        "kind": "application",
+        "reviewStatus": "ready",
         "goalIds": ["core", "network-dns"],
         "relatedQuestionIds": [],
         "priority": "core",
-        "sourceRefs": []
+        "sourceRefs": ["ref-a5fc532914bb1455"]
       },
       "answerFile": "answers/browser/network-dns.md"
     },
     {
-      "id": "network-https",
-      "title": "Что защищает HTTPS и чего он не гарантирует?",
+      "id": "url-parts",
+      "title": "Из каких частей состоит URL и какие из них отправляются серверу?",
       "topic": "Web",
       "difficulty": "Базовый",
-      "summary": "Шифрование, целостность и аутентификация сервера.",
-      "takeaway": "Защита канала не заменяет защиту приложения.",
+      "summary": "Отдельно определяйте адрес запроса и клиентскую часть навигации.",
+      "takeaway": "Отдельно определяйте адрес запроса и клиентскую часть навигации.",
       "moduleId": "browser",
       "order": 1,
       "popular": false,
+      "answerFile": "answers/browser/url-parts.md",
       "editorial": {
-        "learningGoal": "Объяснить и применить правило с учётом его границ: Защита канала не заменяет защиту приложения.",
-        "keywords": ["Браузер и HTTP", "Сеть и соединения"],
-        "kind": "explanation",
-        "reviewStatus": "imported",
-        "goalIds": ["core", "network-https"],
+        "learningGoal": "Объяснить и применить: Отдельно определяйте адрес запроса и клиентскую часть навигации.",
+        "keywords": ["Браузер и HTTP", "transport", "url", "parts"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "goalIds": ["core", "url-parts"],
         "relatedQuestionIds": [],
         "priority": "core",
-        "sourceRefs": []
-      },
-      "answerFile": "answers/browser/network-https.md"
+        "sourceRefs": ["ref-ebace5e7b9811820"]
+      }
     },
     {
-      "id": "http-multiplexing",
-      "title": "Чем HTTP/2 и HTTP/3 отличаются в работе с соединениями?",
+      "id": "url-relative-resolution",
+      "title": "Как браузер разрешает относительный URL и как влияет base URL?",
       "topic": "Web",
-      "difficulty": "Средний",
-      "summary": "Параллельные потоки и транспорт.",
-      "takeaway": "Мультиплексирование и свойства транспорта влияют на взаимные задержки потоков.",
+      "difficulty": "Базовый",
+      "summary": "Относительность адреса определяется URL-базой, а не файловой структурой проекта.",
+      "takeaway": "Относительность адреса определяется URL-базой, а не файловой структурой проекта.",
       "moduleId": "browser",
       "order": 2,
       "popular": false,
+      "answerFile": "answers/browser/url-relative-resolution.md",
       "editorial": {
-        "learningGoal": "Объяснить и применить правило с учётом его границ: Мультиплексирование и свойства транспорта влияют на взаимные задержки потоков.",
-        "keywords": ["Браузер и HTTP", "Сеть и соединения"],
-        "kind": "explanation",
-        "reviewStatus": "imported",
-        "goalIds": ["core", "http-multiplexing"],
-        "relatedQuestionIds": [],
+        "learningGoal": "Объяснить и применить: Относительность адреса определяется URL-базой, а не файловой структурой проекта.",
+        "keywords": ["Браузер и HTTP", "transport", "url", "relative", "resolution"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "goalIds": ["core", "url-relative-resolution"],
+        "relatedQuestionIds": ["history-location"],
         "priority": "core",
-        "sourceRefs": []
-      },
-      "answerFile": "answers/browser/http-multiplexing.md"
+        "sourceRefs": ["ref-ebace5e7b9811820"]
+      }
+    },
+    {
+      "id": "network-host-port",
+      "title": "Чем домен, хост, IP-адрес и порт отличаются друг от друга?",
+      "topic": "Web",
+      "difficulty": "Базовый",
+      "summary": "Адрес сети, имя сервиса и origin не являются одной сущностью.",
+      "takeaway": "Адрес сети, имя сервиса и origin не являются одной сущностью.",
+      "moduleId": "browser",
+      "order": 3,
+      "popular": false,
+      "answerFile": "answers/browser/network-host-port.md",
+      "editorial": {
+        "learningGoal": "Объяснить и применить: Адрес сети, имя сервиса и origin не являются одной сущностью.",
+        "keywords": ["Браузер и HTTP", "transport", "network", "host", "port"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "goalIds": ["core", "network-host-port"],
+        "relatedQuestionIds": ["browser-origin-site"],
+        "priority": "core",
+        "sourceRefs": ["ref-ebace5e7b9811820"]
+      }
+    },
+    {
+      "id": "network-tcp-udp",
+      "title": "Чем TCP отличается от UDP в контексте веб-соединений?",
+      "topic": "Web",
+      "difficulty": "Базовый",
+      "summary": "Различайте возможности нижнего транспорта и протокола поверх него.",
+      "takeaway": "Различайте возможности нижнего транспорта и протокола поверх него.",
+      "moduleId": "browser",
+      "order": 4,
+      "popular": false,
+      "answerFile": "answers/browser/network-tcp-udp.md",
+      "editorial": {
+        "learningGoal": "Объяснить и применить: Различайте возможности нижнего транспорта и протокола поверх него.",
+        "keywords": ["Браузер и HTTP", "transport", "network", "tcp", "udp"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "goalIds": ["core", "network-tcp-udp"],
+        "relatedQuestionIds": ["http-multiplexing"],
+        "priority": "core",
+        "sourceRefs": ["ref-eec262789a418d64"]
+      }
+    },
+    {
+      "id": "network-dns-records",
+      "title": "Для чего нужны A, AAAA и CNAME и чем DNS-ответ отличается от URL?",
+      "topic": "Web",
+      "difficulty": "Средний",
+      "summary": "DNS разрешает имена; HTTP-редирект меняет адрес на другом уровне.",
+      "takeaway": "DNS разрешает имена; HTTP-редирект меняет адрес на другом уровне.",
+      "moduleId": "browser",
+      "order": 5,
+      "popular": false,
+      "answerFile": "answers/browser/network-dns-records.md",
+      "editorial": {
+        "learningGoal": "Объяснить и применить: DNS разрешает имена; HTTP-редирект меняет адрес на другом уровне.",
+        "keywords": ["Браузер и HTTP", "transport", "network", "dns", "records"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "goalIds": ["core", "network-dns-records"],
+        "relatedQuestionIds": ["network-dns"],
+        "priority": "core",
+        "sourceRefs": ["ref-a5fc532914bb1455"]
+      }
+    },
+    {
+      "id": "network-dns-caches",
+      "title": "Почему после смены DNS разные пользователи ещё видят разные серверы?",
+      "topic": "Web",
+      "difficulty": "Средний",
+      "summary": "Планируйте смену адресов с учётом кешей и живых соединений.",
+      "takeaway": "Планируйте смену адресов с учётом кешей и живых соединений.",
+      "moduleId": "browser",
+      "order": 6,
+      "popular": false,
+      "answerFile": "answers/browser/network-dns-caches.md",
+      "editorial": {
+        "learningGoal": "Объяснить и применить: Планируйте смену адресов с учётом кешей и живых соединений.",
+        "keywords": ["Браузер и HTTP", "transport", "network", "dns", "caches"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "goalIds": ["core", "network-dns-caches"],
+        "relatedQuestionIds": ["network-dns"],
+        "priority": "core",
+        "sourceRefs": ["ref-a5fc532914bb1455"]
+      }
+    },
+    {
+      "id": "network-reuse",
+      "title": "Почему запрос может не иметь отдельных этапов DNS и TLS в waterfall?",
+      "topic": "Web",
+      "difficulty": "Средний",
+      "summary": "Этапы запроса нужно читать с учётом общего соединения.",
+      "takeaway": "Этапы запроса нужно читать с учётом общего соединения.",
+      "moduleId": "browser",
+      "order": 7,
+      "popular": false,
+      "answerFile": "answers/browser/network-reuse.md",
+      "editorial": {
+        "learningGoal": "Объяснить и применить: Этапы запроса нужно читать с учётом общего соединения.",
+        "keywords": ["Браузер и HTTP", "transport", "network", "reuse"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "goalIds": ["core", "network-reuse"],
+        "relatedQuestionIds": ["network-waterfall"],
+        "priority": "core",
+        "sourceRefs": ["ref-eec262789a418d64"]
+      }
+    },
+    {
+      "id": "network-latency-throughput",
+      "title": "Чем задержка отличается от пропускной способности при загрузке страницы?",
+      "topic": "Web",
+      "difficulty": "Средний",
+      "summary": "Отдельно оценивайте количество ожиданий и стоимость передачи объёма.",
+      "takeaway": "Отдельно оценивайте количество ожиданий и стоимость передачи объёма.",
+      "moduleId": "browser",
+      "order": 8,
+      "popular": false,
+      "answerFile": "answers/browser/network-latency-throughput.md",
+      "editorial": {
+        "learningGoal": "Объяснить и применить: Отдельно оценивайте количество ожиданий и стоимость передачи объёма.",
+        "keywords": ["Браузер и HTTP", "transport", "network", "latency", "throughput"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "goalIds": ["core", "network-latency-throughput"],
+        "relatedQuestionIds": ["network-waterfall"],
+        "priority": "core",
+        "sourceRefs": ["ref-cff8ff79463bfd4b"]
+      }
     }
   ]
 }

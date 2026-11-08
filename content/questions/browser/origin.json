@@ -1,0 +1,340 @@
+{
+  "$schema": "../question-bundle.schema.json",
+  "sectionId": "browser",
+  "subsectionId": "origin",
+  "scope": "Границы чтения браузера, preflight, credentials и диагностика.",
+  "coverageGoals": [
+    {
+      "id": "core",
+      "title": "Origin, SOP и CORS",
+      "description": "Границы чтения браузера, preflight, credentials и диагностика.",
+      "requiredDifficulties": [],
+      "reviewed": false,
+      "priority": "core",
+      "relatedSkillIds": [
+        "browser-cors",
+        "browser-origin-site",
+        "browser-cross-origin-write",
+        "browser-cors-server",
+        "browser-cors-preflight",
+        "browser-cors-credentials",
+        "browser-cors-expose",
+        "browser-cors-cache",
+        "browser-cors-diagnosis",
+        "browser-redirect-cookie-cors-chain"
+      ]
+    },
+    {
+      "id": "browser-cors",
+      "title": "Что ограничивает same-origin policy и как CORS разрешает чтение ответа?",
+      "description": "Объяснить и применить: CORS управляет раскрытием ответа скрипту внутри браузерной модели.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "browser-origin-site",
+      "title": "Чем origin отличается от site?",
+      "description": "Объяснить и применить: Выбирайте понятие origin или site по конкретному механизму браузера.",
+      "requiredDifficulties": ["Базовый"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "browser-cross-origin-write",
+      "title": "Почему браузер иногда отправляет запрос, но не даёт скрипту прочитать ответ?",
+      "description": "Объяснить и применить: Разделяйте возможность отправки и право чтения результата.",
+      "requiredDifficulties": ["Базовый"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "browser-cors-server",
+      "title": "Почему настройка CORS относится к серверному ответу, а не к React-компоненту?",
+      "description": "Объяснить и применить: Право раскрытия ответа приходит от стороны, управляющей этим ответом.",
+      "requiredDifficulties": ["Базовый"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "browser-cors-preflight",
+      "title": "Когда браузер отправляет preflight OPTIONS и что он проверяет?",
+      "description": "Объяснить и применить: Preflight согласует форму обмена, а не права на прикладное действие.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "browser-cors-credentials",
+      "title": "Как разрешить CORS-запрос с credentials без wildcard origin?",
+      "description": "Объяснить и применить: Credentialed CORS требует явной доверенной области чтения.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "browser-cors-expose",
+      "title": "Почему скрипт не видит часть заголовков разрешённого ответа?",
+      "description": "Объяснить и применить: Сетевое наличие заголовка и его доступность JavaScript различаются.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "browser-cors-cache",
+      "title": "Чем кеш preflight отличается от HTTP-кеша ответа?",
+      "description": "Объяснить и применить: Кеш проверки формы обмена не равен кешу данных или прав.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "browser-cors-diagnosis",
+      "title": "Почему запрос работает в curl или Postman, но не читается в браузере?",
+      "description": "Объяснить и применить: Диагностируйте конкретный этап и реальный ответ браузерного обмена.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "browser-redirect-cookie-cors-chain",
+      "title": "Как диагностировать цепочку редиректов, CORS и cookies без смешивания причин?",
+      "description": "Объяснить и применить: Разделите причины по этапам и только затем меняйте контракт интеграции.",
+      "requiredDifficulties": ["Продвинутый"],
+      "reviewed": true,
+      "priority": "extended",
+      "relatedSkillIds": []
+    }
+  ],
+  "questions": [
+    {
+      "id": "browser-cors",
+      "title": "Что ограничивает same-origin policy и как CORS разрешает чтение ответа?",
+      "topic": "Web",
+      "difficulty": "Средний",
+      "summary": "CORS управляет раскрытием ответа скрипту внутри браузерной модели.",
+      "takeaway": "CORS управляет раскрытием ответа скрипту внутри браузерной модели.",
+      "moduleId": "browser",
+      "order": 0,
+      "popular": false,
+      "editorial": {
+        "learningGoal": "Объяснить и применить: CORS управляет раскрытием ответа скрипту внутри браузерной модели.",
+        "keywords": ["Браузер и HTTP", "origin", "browser", "cors"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "goalIds": ["core", "browser-cors"],
+        "relatedQuestionIds": [],
+        "priority": "core",
+        "sourceRefs": ["ref-6265cf02838595fc"]
+      },
+      "answerFile": "answers/browser/browser-cors.md"
+    },
+    {
+      "id": "browser-origin-site",
+      "title": "Чем origin отличается от site?",
+      "topic": "Web",
+      "difficulty": "Базовый",
+      "summary": "Выбирайте понятие origin или site по конкретному механизму браузера.",
+      "takeaway": "Выбирайте понятие origin или site по конкретному механизму браузера.",
+      "moduleId": "browser",
+      "order": 1,
+      "popular": false,
+      "answerFile": "answers/browser/browser-origin-site.md",
+      "editorial": {
+        "learningGoal": "Объяснить и применить: Выбирайте понятие origin или site по конкретному механизму браузера.",
+        "keywords": ["Браузер и HTTP", "origin", "browser", "site"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "goalIds": ["core", "browser-origin-site"],
+        "relatedQuestionIds": ["browser-cookie-flags"],
+        "priority": "core",
+        "sourceRefs": ["ref-d906e946d93a53c5"]
+      }
+    },
+    {
+      "id": "browser-cross-origin-write",
+      "title": "Почему браузер иногда отправляет запрос, но не даёт скрипту прочитать ответ?",
+      "topic": "Web",
+      "difficulty": "Базовый",
+      "summary": "Разделяйте возможность отправки и право чтения результата.",
+      "takeaway": "Разделяйте возможность отправки и право чтения результата.",
+      "moduleId": "browser",
+      "order": 2,
+      "popular": false,
+      "answerFile": "answers/browser/browser-cross-origin-write.md",
+      "editorial": {
+        "learningGoal": "Объяснить и применить: Разделяйте возможность отправки и право чтения результата.",
+        "keywords": ["Браузер и HTTP", "origin", "browser", "cross", "write"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "goalIds": ["core", "browser-cross-origin-write"],
+        "relatedQuestionIds": ["browser-csrf"],
+        "priority": "core",
+        "sourceRefs": ["ref-6265cf02838595fc"]
+      }
+    },
+    {
+      "id": "browser-cors-server",
+      "title": "Почему настройка CORS относится к серверному ответу, а не к React-компоненту?",
+      "topic": "Web",
+      "difficulty": "Базовый",
+      "summary": "Право раскрытия ответа приходит от стороны, управляющей этим ответом.",
+      "takeaway": "Право раскрытия ответа приходит от стороны, управляющей этим ответом.",
+      "moduleId": "browser",
+      "order": 3,
+      "popular": false,
+      "answerFile": "answers/browser/browser-cors-server.md",
+      "editorial": {
+        "learningGoal": "Объяснить и применить: Право раскрытия ответа приходит от стороны, управляющей этим ответом.",
+        "keywords": ["Браузер и HTTP", "origin", "browser", "cors", "server"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "goalIds": ["core", "browser-cors-server"],
+        "relatedQuestionIds": ["browser-cors"],
+        "priority": "core",
+        "sourceRefs": ["ref-6265cf02838595fc"]
+      }
+    },
+    {
+      "id": "browser-cors-preflight",
+      "title": "Когда браузер отправляет preflight OPTIONS и что он проверяет?",
+      "topic": "Web",
+      "difficulty": "Средний",
+      "summary": "Preflight согласует форму обмена, а не права на прикладное действие.",
+      "takeaway": "Preflight согласует форму обмена, а не права на прикладное действие.",
+      "moduleId": "browser",
+      "order": 4,
+      "popular": false,
+      "answerFile": "answers/browser/browser-cors-preflight.md",
+      "editorial": {
+        "learningGoal": "Объяснить и применить: Preflight согласует форму обмена, а не права на прикладное действие.",
+        "keywords": ["Браузер и HTTP", "origin", "browser", "cors", "preflight"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "goalIds": ["core", "browser-cors-preflight"],
+        "relatedQuestionIds": [],
+        "priority": "core",
+        "sourceRefs": ["ref-6265cf02838595fc"]
+      }
+    },
+    {
+      "id": "browser-cors-credentials",
+      "title": "Как разрешить CORS-запрос с credentials без wildcard origin?",
+      "topic": "Web",
+      "difficulty": "Средний",
+      "summary": "Credentialed CORS требует явной доверенной области чтения.",
+      "takeaway": "Credentialed CORS требует явной доверенной области чтения.",
+      "moduleId": "browser",
+      "order": 5,
+      "popular": false,
+      "answerFile": "answers/browser/browser-cors-credentials.md",
+      "editorial": {
+        "learningGoal": "Объяснить и применить: Credentialed CORS требует явной доверенной области чтения.",
+        "keywords": ["Браузер и HTTP", "origin", "browser", "cors", "credentials"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "goalIds": ["core", "browser-cors-credentials"],
+        "relatedQuestionIds": ["fetch-credentials"],
+        "priority": "core",
+        "sourceRefs": ["ref-6265cf02838595fc"]
+      }
+    },
+    {
+      "id": "browser-cors-expose",
+      "title": "Почему скрипт не видит часть заголовков разрешённого ответа?",
+      "topic": "Web",
+      "difficulty": "Средний",
+      "summary": "Сетевое наличие заголовка и его доступность JavaScript различаются.",
+      "takeaway": "Сетевое наличие заголовка и его доступность JavaScript различаются.",
+      "moduleId": "browser",
+      "order": 6,
+      "popular": false,
+      "answerFile": "answers/browser/browser-cors-expose.md",
+      "editorial": {
+        "learningGoal": "Объяснить и применить: Сетевое наличие заголовка и его доступность JavaScript различаются.",
+        "keywords": ["Браузер и HTTP", "origin", "browser", "cors", "expose"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "goalIds": ["core", "browser-cors-expose"],
+        "relatedQuestionIds": [],
+        "priority": "core",
+        "sourceRefs": ["ref-6265cf02838595fc"]
+      }
+    },
+    {
+      "id": "browser-cors-cache",
+      "title": "Чем кеш preflight отличается от HTTP-кеша ответа?",
+      "topic": "Web",
+      "difficulty": "Средний",
+      "summary": "Кеш проверки формы обмена не равен кешу данных или прав.",
+      "takeaway": "Кеш проверки формы обмена не равен кешу данных или прав.",
+      "moduleId": "browser",
+      "order": 7,
+      "popular": false,
+      "answerFile": "answers/browser/browser-cors-cache.md",
+      "editorial": {
+        "learningGoal": "Объяснить и применить: Кеш проверки формы обмена не равен кешу данных или прав.",
+        "keywords": ["Браузер и HTTP", "origin", "browser", "cors", "cache"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "goalIds": ["core", "browser-cors-cache"],
+        "relatedQuestionIds": [],
+        "priority": "core",
+        "sourceRefs": ["ref-6265cf02838595fc"]
+      }
+    },
+    {
+      "id": "browser-cors-diagnosis",
+      "title": "Почему запрос работает в curl или Postman, но не читается в браузере?",
+      "topic": "Web",
+      "difficulty": "Средний",
+      "summary": "Диагностируйте конкретный этап и реальный ответ браузерного обмена.",
+      "takeaway": "Диагностируйте конкретный этап и реальный ответ браузерного обмена.",
+      "moduleId": "browser",
+      "order": 8,
+      "popular": false,
+      "answerFile": "answers/browser/browser-cors-diagnosis.md",
+      "editorial": {
+        "learningGoal": "Объяснить и применить: Диагностируйте конкретный этап и реальный ответ браузерного обмена.",
+        "keywords": ["Браузер и HTTP", "origin", "browser", "cors", "diagnosis"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "goalIds": ["core", "browser-cors-diagnosis"],
+        "relatedQuestionIds": ["network-waterfall"],
+        "priority": "core",
+        "sourceRefs": ["ref-6265cf02838595fc"]
+      }
+    },
+    {
+      "id": "browser-redirect-cookie-cors-chain",
+      "title": "Как диагностировать цепочку редиректов, CORS и cookies без смешивания причин?",
+      "topic": "Web",
+      "difficulty": "Продвинутый",
+      "summary": "Разделите причины по этапам и только затем меняйте контракт интеграции.",
+      "takeaway": "Разделите причины по этапам и только затем меняйте контракт интеграции.",
+      "moduleId": "browser",
+      "order": 9,
+      "popular": false,
+      "answerFile": "answers/browser/browser-redirect-cookie-cors-chain.md",
+      "editorial": {
+        "learningGoal": "Объяснить и применить: Разделите причины по этапам и только затем меняйте контракт интеграции.",
+        "keywords": ["Браузер и HTTP", "origin", "browser", "redirect", "cookie", "cors", "chain"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "goalIds": ["core", "browser-redirect-cookie-cors-chain"],
+        "relatedQuestionIds": ["fetch-redirects"],
+        "priority": "extended",
+        "sourceRefs": ["ref-6265cf02838595fc"]
+      }
+    }
+  ]
+}
