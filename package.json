@@ -37,7 +37,8 @@
     "content:summary": "node scripts/questions/summary.mjs",
     "content:batch": "node scripts/questions/batch.mjs",
     "content:show": "node scripts/questions/show.mjs",
-    "feedback:export": "pnpm --filter @wishu/server feedback:export"
+    "feedback:export": "pnpm --filter @wishu/server feedback:export",
+    "lint:styles": "oxlint src"
   },
   "dependencies": {
     "@base-ui/react": "^1.9.0",
@@ -67,6 +68,7 @@
   "devDependencies": {
     "@babel/core": "^7.29.7",
     "@rolldown/plugin-babel": "^0.2.4",
+    "@shadcn/lint": "^0.2.5",
     "@types/babel__core": "^7.20.5",
     "@types/node": "^24.19.2",
     "@types/react": "^19.3.0",

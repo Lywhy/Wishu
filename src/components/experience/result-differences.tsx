@@ -1,5 +1,7 @@
 import { valueDifferences } from "@/lib/value-differences"
+
 export function ResultDifferences({ expected, actual }: { expected?: string; actual?: string }) {
+
   const items = valueDifferences(expected, actual)
   return items.length ? (
     <div className="space-y-2 rounded-lg border border-destructive/30 bg-destructive/5 p-3">

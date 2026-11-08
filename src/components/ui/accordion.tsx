@@ -51,7 +51,7 @@ function AccordionContent({ className, children, ...props }: AccordionPrimitive.
   return (
     <AccordionPrimitive.Panel
       data-slot="accordion-content"
-      className="overflow-hidden text-sm [animation-duration:350ms] [animation-timing-function:cubic-bezier(0.22,0.61,0.36,1)] motion-reduce:animate-none! data-open:animate-accordion-down data-closed:animate-accordion-up"
+      className="overflow-hidden text-sm animation-duration-[350ms] [animation-timing-function:cubic-bezier(0.22,0.61,0.36,1)] motion-reduce:animate-none! data-open:animate-accordion-down data-closed:animate-accordion-up"
       {...props}
     >
       <div

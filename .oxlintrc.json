@@ -46,6 +46,13 @@
         "browser": false,
         "node": true
       }
+    },
+    {
+      "files": ["src/**/*.ts", "src/**/*.tsx"],
+      "rules": {
+        "shadcn/no-unknown-classes": "warn"
+      }
     }
-  ]
+  ],
+  "jsPlugins": ["@shadcn/lint"]
 }

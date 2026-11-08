@@ -142,7 +142,7 @@ export function TaskTestResults({
                 className={
                   expanded
                     ? "max-h-[65dvh] overflow-y-auto overscroll-contain p-4"
-                    : "max-h-[32rem] overflow-y-auto overscroll-contain p-4"
+                    : "max-h-128 overflow-y-auto overscroll-contain p-4"
                 }
               >
                 {failuresOnly && !failures && (
@@ -238,7 +238,7 @@ export function TaskTestResults({
           className={
             expanded
               ? "m-0 max-h-[65dvh] overflow-y-auto overscroll-contain p-4"
-              : "m-0 max-h-[32rem] overflow-y-auto overscroll-contain p-4"
+              : "m-0 max-h-128 overflow-y-auto overscroll-contain p-4"
           }
         >
           <pre className="min-h-28 font-mono text-xs leading-6 wrap-anywhere whitespace-pre-wrap">

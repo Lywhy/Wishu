@@ -42,7 +42,7 @@ export function CourseContents({
               <SheetDescription>
                 Выберите этап обучения. Прогресс сохраняется в этом браузере.
               </SheetDescription>
-              <div className="min-w-0 [&>[data-slot=card]]:border-0 [&>[data-slot=card]]:bg-transparent [&>[data-slot=card]]:p-0">
+              <div className="min-w-0 *:data-[slot=card]:border-0 *:data-[slot=card]:bg-transparent *:data-[slot=card]:p-0">
                 {children}
               </div>
             </SheetContent>

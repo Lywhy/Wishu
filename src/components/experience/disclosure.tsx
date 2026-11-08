@@ -24,7 +24,7 @@ export function Disclosure({
       </CollapsibleTrigger>
       <CollapsibleContent
         keepMounted
-        className="h-[var(--collapsible-panel-height,auto)] overflow-hidden transition-[height,opacity] duration-350 ease-[cubic-bezier(0.22,0.61,0.36,1)] data-ending-style:h-0 data-ending-style:opacity-0 data-starting-style:h-0 data-starting-style:opacity-0 motion-reduce:transition-none"
+        className="h-(--collapsible-panel-height,auto) overflow-hidden transition-[height,opacity] duration-350 ease-[cubic-bezier(0.22,0.61,0.36,1)] data-ending-style:h-0 data-ending-style:opacity-0 data-starting-style:h-0 data-starting-style:opacity-0 motion-reduce:transition-none"
       >
         <div className="px-4 pb-4">{children}</div>
       </CollapsibleContent>

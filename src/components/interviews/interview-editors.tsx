@@ -303,7 +303,7 @@ export function MeetingEditor({
               required
               value={at}
               onChange={(e) => setAt(e.target.value)}
-              className="mt-2 dark:[color-scheme:dark]"
+              className="mt-2 dark:scheme-dark"
             />
           </div>
           <div>

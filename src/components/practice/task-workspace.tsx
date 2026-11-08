@@ -36,7 +36,7 @@ export function TaskWorkspace({
       className={cn(
         "h-auto! items-stretch overflow-visible!",
         !horizontal &&
-          "flex-col! gap-5 [&>[data-slot=resizable-panel]]:h-auto! [&>[data-slot=resizable-panel]]:max-h-none! [&>[data-slot=resizable-panel]]:flex-none!",
+          "flex-col! gap-5 *:data-[slot=resizable-panel]:h-auto! *:data-[slot=resizable-panel]:max-h-none! *:data-[slot=resizable-panel]:flex-none!",
       )}
       onLayoutChanged={(layout, meta) => {
         if (horizontal && meta.isUserInteraction) {

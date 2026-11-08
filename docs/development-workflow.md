@@ -44,6 +44,7 @@ pnpm content:check -- --section javascript --subsection functions
 
 | Команда              | Что выполняет                                                                         |
 | -------------------- | ------------------------------------------------------------------------------------- |
+| `pnpm lint:styles`   | Oxlint frontend с проверкой неизвестных Tailwind-классов через @shadcn/lint           |
 | `pnpm lint:ui`       | Oxlint для src и Vite-конфига                                                         |
 | `pnpm typecheck:ui`  | TypeScript-проекты UI и Vite без генерации JS и Vite bundle; может обновить кеш типов |
 | `pnpm check:ui`      | Линтер и проверка типов UI                                                            |

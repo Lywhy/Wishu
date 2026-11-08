@@ -82,6 +82,10 @@ content/questions/catalog.json + <section>/<subsection>.json
 
 Прогресс вопросов синхронизируется через `src/stores/practice-progress.ts` и API. Учебный прогресс и записи собеседований имеют браузерное хранилище. Конкретную область хранения проверять в соответствующем store перед изменением логики.
 
+## Проверка стилей
+
+@shadcn/lint подключён к Oxlint через jsPlugins в .oxlintrc.json. Правило no-unknown-classes проверяет src, включая shadcn-компоненты. Команда pnpm lint:styles; обычные lint:ui/check:ui тоже включают проверку. [Правила и ограничения](style-lint.md).
+
 ## Настройки и инструкции
 
 | Что меняем                | Где смотреть                                               |
