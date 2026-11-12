@@ -1,0 +1,55 @@
+{
+  "schemaVersion": 1,
+  "id": "ts-answer-review-20261110-ts-declarations",
+  "title": "ts-answer-review-20261110-ts-declarations",
+  "sectionId": "typescript",
+  "subsectionId": "ts-declarations",
+  "currentPass": "answers",
+  "goalIds": [
+    "core",
+    "ts-library-consumer-check",
+    "ts-function-namespace-merging",
+    "ts-shorthand-ambient-any",
+    "ts-merging-overload-contract"
+  ],
+  "questionIds": [
+    "ts-library-consumer-check",
+    "ts-function-namespace-merging",
+    "ts-shorthand-ambient-any",
+    "ts-merging-overload-contract"
+  ],
+  "scopePass": {
+    "status": "complete",
+    "remaining": []
+  },
+  "answerPass": {
+    "status": "complete",
+    "remaining": []
+  },
+  "baseline": [
+    {
+      "id": "ts-library-consumer-check",
+      "title": "Как проверить библиотеку как отдельный потребитель?",
+      "contentHash": "c7e3f53e451de8bcd41e19d81f4720d2bfa58534e35b5142f4381a3e7abdaf98"
+    },
+    {
+      "id": "ts-function-namespace-merging",
+      "title": "Как declaration merging связывает функцию и namespace с дополнительными членами?",
+      "contentHash": "b64cad3a0e40c0d662444b2abab1dd6a877ea7e6ce9f358a7eb589b99b1eda48"
+    },
+    {
+      "id": "ts-shorthand-ambient-any",
+      "title": "Почему короткое declare module может убрать ошибку импорта, но открыть путь any?",
+      "contentHash": "5363365f851497e4e2b48530984f11c4901168bbfe10f1f84141ea1b02e51f9c"
+    },
+    {
+      "id": "ts-merging-overload-contract",
+      "title": "Как объединение деклараций влияет на набор перегрузок публичного API?",
+      "contentHash": "a2011a7278ae80fd740a1f30274a0a503a7601fb39a40379639507202b956c78"
+    }
+  ],
+  "notes": [
+    "Сохраняются все существующие ID. Раздел охватывает разные навыки проверки типов: похожая терминология не служит основанием для слияния. Текущая задача - редактура ответов, без добавления повторных определений.",
+    "Завершено: 161 индивидуальный разбор, прежние ID сохранены. Oxfmt, content:build (1266 вопросов), полный content:check успешны. Примеры, приложение, UI/server проверки и seed не выполнялись."
+  ]
+}

@@ -9,7 +9,7 @@
       "title": "Компоненты и рендеринг",
       "description": "Обзор и взаимосвязи навыков: JSX, props, композиция, события, списки и идентичность компонентов.",
       "requiredDifficulties": [],
-      "reviewed": false,
+      "reviewed": true,
       "priority": "core",
       "relatedSkillIds": [
         "react-purpose",
@@ -62,7 +62,7 @@
       "title": "Что такое React и что означает декларативный интерфейс?",
       "description": "Объяснить и применить правило с учётом его границ: Описывайте интерфейс через данные и компоненты.",
       "requiredDifficulties": ["Базовый"],
-      "reviewed": false,
+      "reviewed": true,
       "priority": "core",
       "relatedSkillIds": []
     },
@@ -71,7 +71,7 @@
       "title": "Что такое JSX и чем он отличается от HTML?",
       "description": "Объяснить и применить правило с учётом его границ: JSX описывает элементы внутри JavaScript, а не строку HTML.",
       "requiredDifficulties": ["Базовый"],
-      "reviewed": false,
+      "reviewed": true,
       "priority": "core",
       "relatedSkillIds": []
     },
@@ -80,7 +80,7 @@
       "title": "Как работают props и children?",
       "description": "Объяснить и применить правило с учётом его границ: Props задают вход компонента, children помогает собирать композицию.",
       "requiredDifficulties": ["Базовый"],
-      "reviewed": false,
+      "reviewed": true,
       "priority": "core",
       "relatedSkillIds": []
     },
@@ -89,7 +89,7 @@
       "title": "Чем рендер отличается от изменения DOM?",
       "description": "Объяснить и применить правило с учётом его границ: Render вычисляет представление, commit применяет изменения.",
       "requiredDifficulties": ["Средний"],
-      "reviewed": false,
+      "reviewed": true,
       "priority": "core",
       "relatedSkillIds": []
     },
@@ -98,7 +98,7 @@
       "title": "Какие ошибки возможны при условном рендеринге?",
       "description": "Объяснить и применить правило с учётом его границ: В условии перед && используйте boolean, если число не должно отображаться.",
       "requiredDifficulties": ["Базовый"],
-      "reviewed": false,
+      "reviewed": true,
       "priority": "core",
       "relatedSkillIds": []
     },
@@ -116,7 +116,7 @@
       "title": "Зачем нужны Fragment и явный ключ у фрагмента?",
       "description": "Объяснить и применить правило с учётом его границ: Fragment группирует элементы, не добавляя контейнер в DOM.",
       "requiredDifficulties": ["Базовый"],
-      "reviewed": false,
+      "reviewed": true,
       "priority": "core",
       "relatedSkillIds": []
     },
@@ -143,7 +143,7 @@
       "title": "Как выбрать между children, render prop, HOC и пользовательским хуком?",
       "description": "Объяснить и применить правило с учётом его границ: Переиспользуйте именно нужную часть: представление, логику или контракт компонента.",
       "requiredDifficulties": ["Средний"],
-      "reviewed": false,
+      "reviewed": true,
       "priority": "core",
       "relatedSkillIds": []
     },
@@ -152,7 +152,7 @@
       "title": "Почему children нельзя считать обычным массивом готовых DOM-узлов?",
       "description": "Объяснить и применить правило с учётом его границ: Children описывает переданные React-узлы, а не раскрытый результат рендера всех потомков.",
       "requiredDifficulties": ["Средний"],
-      "reviewed": false,
+      "reviewed": true,
       "priority": "core",
       "relatedSkillIds": []
     },
@@ -161,7 +161,7 @@
       "title": "Как распространение React-событий связано с DOM и обработчиками capture?",
       "description": "Объяснить и применить правило с учётом его границ: Различайте фазу события, его цель и обычный программный вызов функции.",
       "requiredDifficulties": ["Средний"],
-      "reviewed": false,
+      "reviewed": true,
       "priority": "core",
       "relatedSkillIds": []
     },
@@ -170,7 +170,7 @@
       "title": "Как Activity скрывает интерфейс с сохранением состояния и что происходит с эффектами?",
       "description": "Объяснить и применить правило с учётом его границ: Activity сохраняет UI-состояние, но специально управляет жизненным циклом эффектов скрытого поддерева.",
       "requiredDifficulties": ["Средний"],
-      "reviewed": false,
+      "reviewed": true,
       "priority": "core",
       "relatedSkillIds": []
     },
@@ -452,7 +452,6 @@
       "topic": "React",
       "difficulty": "Базовый",
       "summary": "Компонентная модель и связь данных с представлением.",
-      "code": "function Greeting({ name }) {\n  return <h1>Привет, {name}!</h1>\n}",
       "takeaway": "Описывайте интерфейс через данные и компоненты.",
       "moduleId": "react",
       "order": 0,
@@ -461,11 +460,11 @@
         "learningGoal": "Объяснить и применить правило с учётом его границ: Описывайте интерфейс через данные и компоненты.",
         "keywords": ["React", "Компоненты и рендеринг"],
         "kind": "explanation",
-        "reviewStatus": "imported",
+        "reviewStatus": "ready",
         "goalIds": ["core", "react-purpose"],
         "relatedQuestionIds": [],
         "priority": "core",
-        "sourceRefs": []
+        "sourceRefs": ["ref-7122f1233197b6a1"]
       },
       "answerFile": "answers/react/react-purpose.md"
     },
@@ -475,7 +474,6 @@
       "topic": "React",
       "difficulty": "Базовый",
       "summary": "Выражения, атрибуты и преобразование разметки.",
-      "code": "function Welcome({ name, onHello }) {\n  return <button className=\"rounded-lg px-4 py-2\" onClick={onHello}>{name}</button>\n}",
       "takeaway": "JSX описывает элементы внутри JavaScript, а не строку HTML.",
       "moduleId": "react",
       "order": 1,
@@ -484,11 +482,11 @@
         "learningGoal": "Объяснить и применить правило с учётом его границ: JSX описывает элементы внутри JavaScript, а не строку HTML.",
         "keywords": ["React", "Компоненты и рендеринг"],
         "kind": "explanation",
-        "reviewStatus": "imported",
+        "reviewStatus": "ready",
         "goalIds": ["core", "react-jsx"],
         "relatedQuestionIds": [],
         "priority": "core",
-        "sourceRefs": []
+        "sourceRefs": ["ref-cb6ff504ac3e9fe0"]
       },
       "answerFile": "answers/react/react-jsx.md"
     },
@@ -498,7 +496,6 @@
       "topic": "React",
       "difficulty": "Базовый",
       "summary": "Входные данные компонента и композиция вложенного содержимого.",
-      "code": "function Panel({ title = \"Раздел\", children }) {\n  return <section><h2>{title}</h2>{children}</section>\n}",
       "takeaway": "Props задают вход компонента, children помогает собирать композицию.",
       "moduleId": "react",
       "order": 2,
@@ -507,11 +504,11 @@
         "learningGoal": "Объяснить и применить правило с учётом его границ: Props задают вход компонента, children помогает собирать композицию.",
         "keywords": ["React", "Компоненты и рендеринг"],
         "kind": "explanation",
-        "reviewStatus": "imported",
+        "reviewStatus": "ready",
         "goalIds": ["core", "react-props-children"],
         "relatedQuestionIds": [],
         "priority": "core",
-        "sourceRefs": []
+        "sourceRefs": ["ref-7122f1233197b6a1"]
       },
       "answerFile": "answers/react/react-props-children.md"
     },
@@ -529,11 +526,11 @@
         "learningGoal": "Объяснить и применить правило с учётом его границ: Render вычисляет представление, commit применяет изменения.",
         "keywords": ["React", "Компоненты и рендеринг"],
         "kind": "explanation",
-        "reviewStatus": "imported",
+        "reviewStatus": "ready",
         "goalIds": ["core", "react-render-commit"],
         "relatedQuestionIds": [],
         "priority": "core",
-        "sourceRefs": []
+        "sourceRefs": ["ref-4da7647e12f36796"]
       },
       "answerFile": "answers/react/react-render-commit.md"
     },
@@ -543,7 +540,6 @@
       "topic": "React",
       "difficulty": "Базовый",
       "summary": "Тернарное выражение, логическое И и отсутствующее содержимое.",
-      "code": "function Results({ count }) {\n  return count > 0 ? <p>Найдено: {count}</p> : <p>Ничего не найдено</p>\n}",
       "takeaway": "В условии перед && используйте boolean, если число не должно отображаться.",
       "moduleId": "react",
       "order": 4,
@@ -552,11 +548,11 @@
         "learningGoal": "Объяснить и применить правило с учётом его границ: В условии перед && используйте boolean, если число не должно отображаться.",
         "keywords": ["React", "Компоненты и рендеринг"],
         "kind": "explanation",
-        "reviewStatus": "imported",
+        "reviewStatus": "ready",
         "goalIds": ["core", "react-conditional-rendering"],
         "relatedQuestionIds": [],
         "priority": "core",
-        "sourceRefs": []
+        "sourceRefs": ["ref-a3183b318cda0f90"]
       },
       "answerFile": "answers/react/react-conditional-rendering.md"
     },
@@ -588,7 +584,6 @@
       "topic": "React",
       "difficulty": "Базовый",
       "summary": "Группировка соседних элементов без DOM-контейнера.",
-      "code": "import { Fragment } from \"react\"\n\nfunction Glossary({ terms }) {\n  return <dl>{terms.map(term => (\n    <Fragment key={term.id}><dt>{term.name}</dt><dd>{term.description}</dd></Fragment>\n  ))}</dl>\n}",
       "takeaway": "Fragment группирует элементы, не добавляя контейнер в DOM.",
       "moduleId": "react",
       "order": 6,
@@ -597,11 +592,11 @@
         "learningGoal": "Объяснить и применить правило с учётом его границ: Fragment группирует элементы, не добавляя контейнер в DOM.",
         "keywords": ["React", "Компоненты и рендеринг"],
         "kind": "explanation",
-        "reviewStatus": "imported",
+        "reviewStatus": "ready",
         "goalIds": ["core", "react-fragments"],
         "relatedQuestionIds": [],
         "priority": "core",
-        "sourceRefs": []
+        "sourceRefs": ["ref-b462fbbac6a02800"]
       },
       "answerFile": "answers/react/react-fragments.md"
     },
@@ -653,9 +648,7 @@
       "id": "react-composition-patterns",
       "title": "Как выбрать между children, render prop, HOC и пользовательским хуком?",
       "summary": "Разделение повторного использования представления, логики и внешнего API компонента.",
-      "code": "function EmptyState({ title, children }) {\n  return <section><h2>{title}</h2>{children}</section>\n}\n// Контейнер отвечает за рамку представления, вызывающий код - за действия.\n<EmptyState title=\"Ничего не найдено\"><button>Сбросить фильтры</button></EmptyState>",
       "takeaway": "Переиспользуйте именно нужную часть: представление, логику или контракт компонента.",
-      "pitfall": "Заменять любую композицию HOC либо ожидать общего состояния от двух независимых вызовов хука.",
       "difficulty": "Средний",
       "topic": "React",
       "moduleId": "react",
@@ -665,7 +658,7 @@
         "learningGoal": "Объяснить и применить правило с учётом его границ: Переиспользуйте именно нужную часть: представление, логику или контракт компонента.",
         "keywords": ["React", "Компоненты и рендеринг"],
         "kind": "explanation",
-        "reviewStatus": "imported",
+        "reviewStatus": "ready",
         "goalIds": ["core", "react-composition-patterns"],
         "relatedQuestionIds": [],
         "priority": "core",
@@ -677,9 +670,7 @@
       "id": "react-children-opaque",
       "title": "Почему children нельзя считать обычным массивом готовых DOM-узлов?",
       "summary": "Непрозрачная структура React-узлов и границы Children/cloneElement.",
-      "code": "function Rows({ items, renderItem }) {\n  return <ul>{items.map(item => <li key={item.id}>{renderItem(item)}</li>)}</ul>\n}\n// Явные данные и способ отображения вместо угадывания внутренностей children.",
       "takeaway": "Children описывает переданные React-узлы, а не раскрытый результат рендера всех потомков.",
-      "pitfall": "Ожидать, что Children.count посчитает все DOM-узлы внутри пользовательского компонента.",
       "difficulty": "Средний",
       "topic": "React",
       "moduleId": "react",
@@ -689,7 +680,7 @@
         "learningGoal": "Объяснить и применить правило с учётом его границ: Children описывает переданные React-узлы, а не раскрытый результат рендера всех потомков.",
         "keywords": ["React", "Компоненты и рендеринг"],
         "kind": "explanation",
-        "reviewStatus": "imported",
+        "reviewStatus": "ready",
         "goalIds": ["core", "react-children-opaque"],
         "relatedQuestionIds": [],
         "priority": "core",
@@ -701,9 +692,7 @@
       "id": "react-event-boundaries",
       "title": "Как распространение React-событий связано с DOM и обработчиками capture?",
       "summary": "Target, currentTarget и отличие распространения события от явного вызова callback-prop.",
-      "code": "function Panel() {\n  return <div onClickCapture={() => console.log(\"capture\")} onClick={() => console.log(\"panel\")}>\n    <button onClick={event => { event.stopPropagation(); console.log(\"button\") }}>Нажать</button>\n  </div>\n}\n// Capture обработается до обработчика кнопки; всплытие до panel остановлено.",
       "takeaway": "Различайте фазу события, его цель и обычный программный вызов функции.",
-      "pitfall": "Ожидать, что stopPropagation отменит уже выполненный capture или вручную вызванный callback.",
       "difficulty": "Средний",
       "topic": "React",
       "moduleId": "react",
@@ -713,7 +702,7 @@
         "learningGoal": "Объяснить и применить правило с учётом его границ: Различайте фазу события, его цель и обычный программный вызов функции.",
         "keywords": ["React", "Компоненты и рендеринг"],
         "kind": "explanation",
-        "reviewStatus": "imported",
+        "reviewStatus": "ready",
         "goalIds": ["core", "react-event-boundaries"],
         "relatedQuestionIds": [],
         "priority": "core",
@@ -725,9 +714,7 @@
       "id": "react-activity-lifetime",
       "title": "Как Activity скрывает интерфейс с сохранением состояния и что происходит с эффектами?",
       "summary": "Отдельный контракт видимости, памяти и фонового обновления в React 19.2+.",
-      "code": "import { Activity } from \"react\"\nfunction Details({ visible, children }) {\n  return <Activity mode={visible ? \"visible\" : \"hidden\"}>{children}</Activity>\n}",
       "takeaway": "Activity сохраняет UI-состояние, но специально управляет жизненным циклом эффектов скрытого поддерева.",
-      "pitfall": "Считать hidden-вкладку полностью работающим фоном или эквивалентом размонтирования.",
       "difficulty": "Средний",
       "topic": "React",
       "moduleId": "react",
@@ -737,7 +724,7 @@
         "learningGoal": "Объяснить и применить правило с учётом его границ: Activity сохраняет UI-состояние, но специально управляет жизненным циклом эффектов скрытого поддерева.",
         "keywords": ["React", "Компоненты и рендеринг"],
         "kind": "explanation",
-        "reviewStatus": "imported",
+        "reviewStatus": "ready",
         "goalIds": ["core", "react-activity-lifetime"],
         "relatedQuestionIds": [],
         "priority": "core",

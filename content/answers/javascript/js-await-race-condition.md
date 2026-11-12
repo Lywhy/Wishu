@@ -2,20 +2,37 @@
 
 <!-- wishu:answer-block -->
 
-### Механизм и границы
+### Как это работает
 
 Это отличается от гонки сетевых ответов интерфейса: конфликт находится в совместном изменяемом состоянии. В зависимости от задачи нужны сериализация, mutex, версия данных или атомарная серверная операция.
 
 Проверка в клиенте не создаёт транзакцию для нескольких клиентов базы данных.
 
-<!-- wishu:answer-block -->
+### Пример и его разбор
+
+```javascript
+async function demo() {
+  let count = 0
+  async function add() {
+    const before = count
+    await Promise.resolve()
+    count = before + 1
+  }
+  await Promise.all([add(), add()])
+  return count // 1: оба прочитали 0.
+}
+```
+
+Оба add сначала читают ноль и сохраняют его в собственных before. На `await` они уступают продолжение, после чего каждый записывает 0 + 1, а не читает уже обновлённый count. Поэтому получается 1 вместо 2 без одновременного выполнения двух инструкций. Атомарность нужна целой операции над состоянием, а не только отдельному присваиванию.
+
+### Типичная ошибка
+
+> Считать любое обновление безопасным только потому, что JavaScript однопоточный.
 
 ### Для закрепления
 
 - [Как избежать устаревшего результата при гонке поисковых запросов?](/questions/request-races)
 
-<!-- wishu:answer-block -->
+### Источники
 
-### Источник
-
-[MDN: Statements/async_function](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/async_function).
+[MDN: Как перехватывать ошибки async-функций и почему важен await внутри try?](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/async_function)

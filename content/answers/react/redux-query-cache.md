@@ -1,8 +1,8 @@
-**RTK Query управляет server state: запросами, кешем и подписками.** CreateAsyncThunk организует асинхронный переход, но не даёт весь этот кеш-контракт автоматически.
+**RTK Query управляет server state: запросами, кешем и подписками.** `createAsyncThunk` организует асинхронный переход, но не даёт весь этот кеш-контракт автоматически.
 
 <!-- wishu:answer-block -->
 
-#### Механизм и границы
+#### Как это работает
 
 - Кеш запросов связан с endpoint и сериализованными аргументами. Подписчики одного ключа могут переиспользовать запись.
 - Query обычно читает данные, mutation изменяет их. Tags связывают данные с инвалидированием после мутаций.
@@ -16,11 +16,19 @@ const { data, isLoading, isFetching, error } = useGetUserQuery(userId)
 // isLoading и isFetching выражают разные состояния первого и последующих запросов.
 ```
 
+#### Разбор примера
+
+Generated hook связывает компонент с записью кеша, определяемой endpoint и сериализованными аргументами. Потребители одного ключа разделяют результат и управление подпиской. isLoading помогает показать первый экран ожидания, а isFetching также отражает повторный запрос при уже имеющихся данных. Это отличается от одноразового thunk: RTK Query управляет жизненным циклом серверных данных, а не только запуском функции.
+
+#### Типичная ошибка
+
+> Дублировать ответ RTK Query в отдельном slice без независимой причины и политики синхронизации.
+
 #### Для закрепления
 
 - [Как выбрать между props, Context и внешним store?](/questions/react-state-location)
 - [Что делает createAsyncThunk и зачем нужен unwrap?](/questions/redux-async-thunk)
 
-#### Источник
+#### Источники
 
-[Redux: automated refetching](https://redux-toolkit.js.org/rtk-query/usage/automated-refetching).
+[Redux: automated refetching](https://redux.js.org/toolkit/rtk-query/usage/automated-refetching)

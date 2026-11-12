@@ -2,13 +2,11 @@
 
 <!-- wishu:answer-block -->
 
-### Механизм и границы
+#### Как это работает
 
-- Вызов action creator сам по себе не меняет store: результат нужно dispatch.
+Вызов action creator сам по себе не меняет store: результат нужно dispatch. Toolkit генерирует creators из reducers slice. Тип action должен описывать событие, а не делать сам запрос или изменять DOM.
 
-- Toolkit генерирует creators из reducers slice. Тип action должен описывать событие, а не делать сам запрос или изменять DOM.
-
-### Пример
+#### Пример
 
 ```jsx
 const action = counterSlice.actions.added(3)
@@ -16,14 +14,18 @@ const action = counterSlice.actions.added(3)
 store.dispatch(action)
 ```
 
-### Типичная ошибка
+#### Разбор примера
+
+Вызов added(3) только создаёт обычный объект события с type и payload. До передачи в dispatch store не получает этот action. Это удобно для проверки и композиции: событие можно подготовить отдельно, но изменение состояния происходит через один явный вход. Имя action обычно выражает случившееся событие или намерение, а payload содержит необходимые данные.
+
+#### Типичная ошибка
 
 Вызвать added(3) без dispatch и ожидать изменения счётчика.
 
-### Для закрепления
+#### Для закрепления
 
 - [Как устроен поток данных Redux: store, action, dispatch и reducer?](/questions/redux-data-flow)
 
-### Источник
+#### Источники
 
 [Redux: part-2-app-structure](https://redux.js.org/tutorials/essentials/part-2-app-structure)

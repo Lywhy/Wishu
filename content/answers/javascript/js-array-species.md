@@ -2,14 +2,31 @@
 
 <!-- wishu:answer-block -->
 
-### Механизм и границы
+### Как это работает
 
-Нельзя переносить правило на все методы: новые копирующие операции вроде toSorted имеют собственные правила и не обязаны использовать species. У каждого метода проверяйте контракт.
+Нельзя переносить правило на все методы: новые копирующие операции вроде `toSorted` имеют собственные правила и не обязаны использовать species. У каждого метода проверяйте контракт.
 
 Наследование встроенных контейнеров добавляет сложность. Если нужен только набор вспомогательных операций, композиция с обычным массивом часто даёт более ясные инварианты.
 
-<!-- wishu:answer-block -->
+### Пример и его разбор
 
-### Источник
+```javascript
+class Items extends Array {
+  static get [Symbol.species]() {
+    return Array
+  }
+}
+const items = new Items(1, 2)
+const mapped = items.map((value) => value * 2)
+console.log(mapped instanceof Items) // false
+```
 
-[MDN: Global_Objects/Symbol/species](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Symbol/species).
+`Map` создаёт результат через species, который Items переопределил на Array. Поэтому результат содержит преобразованные элементы, но не является Items. Вывод нельзя переносить на любой копирующий метод: каждый из них задаёт собственные правила создания коллекции.
+
+### Типичная ошибка
+
+> Считать все array-методы одинаковыми по species и типу результата.
+
+### Источники
+
+[MDN: Global_Objects/Symbol/species](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Symbol/species)

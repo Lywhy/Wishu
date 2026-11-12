@@ -2,20 +2,30 @@
 
 <!-- wishu:answer-block -->
 
-### Механизм и границы
+### Как это работает
 
 Match с g не предоставляет тот же набор групп, что единичный match. MatchAll даёт iterable результатов и требует соответствующего global-контракта для переданного RegExp. При прямом exec/test с g или y отдельно учитывайте lastIndex.
 
 Для простого наличия подстроки регулярное выражение может быть лишним. Не вызывайте повторно stateful test как будто это чистый предикат.
 
-<!-- wishu:answer-block -->
+### Пример и его разбор
+
+```javascript
+const matches = [..."a1 b2".matchAll(/([a-z])(\d)/g)]
+console.log(matches.map((match) => match[1])) // ["a", "b"]
+console.log(matches.map((match) => match[2])) // ["1", "2"]
+```
+
+MatchAll возвращает отдельный результат для каждого совпадения вместе с захватами. Поэтому можно независимо собрать буквы из группы 1 и цифры из группы 2. Если нужен только факт наличия, построение такого массива результатов будет лишним.
+
+### Типичная ошибка
+
+> Ожидать захватывающие группы от обычного match с g в той же форме, что без g.
 
 ### Для закрепления
 
 - [Почему test с регулярным выражением /g может чередовать true и false?](/questions/regexp-last-index)
 
-<!-- wishu:answer-block -->
+### Источники
 
-### Источник
-
-[MDN: Global_Objects/String/matchAll](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/matchAll).
+[MDN: Global_Objects/String/matchAll](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/matchAll)

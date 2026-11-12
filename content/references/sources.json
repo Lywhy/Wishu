@@ -7,7 +7,7 @@
       "scope": "Типы данных, переменные, операторы, объекты и управление выполнением.",
       "sources": [
         {
-          "title": ", иногда продолжает предыдущее выражение.**\n### Механизм и границы\n\n### Как рассуждать\nСначала определите, может ли текущая конструкция грамматически продолжаться. Для return, throw и некоторых других форм действуют ограничения переноса. Нельзя исправить смысл программы надеждой на форматирование.\n\nИспользуйте согласованный стиль и защитную точку с запятой перед неоднозначным началом выражения. Форматтер упорядочивает синтаксис, но не узнаёт намерение автора.\n### Источник\n\n[MDN: Lexical_grammar",
+          "title": "MDN: Reference / Lexical grammar",
           "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Lexical_grammar#automatic_semicolon_insertion",
           "checkedAt": null,
           "id": "ref-68e4e92de9d5e4af"
@@ -54,6 +54,90 @@
           "checkedAt": null,
           "notes": "Начальная точка поиска, не замена источнику конкретного технического утверждения.",
           "id": "ref-1f297cad465f26f9"
+        },
+        {
+          "id": "ref-4e255e14bd38e89f",
+          "title": "MDN: Какие типы данных есть в JavaScript?",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Data_structures",
+          "checkedAt": "2026-11-08"
+        },
+        {
+          "id": "ref-9b3947e7db03d9af",
+          "title": "MDN: Чем отличаются == и ===?",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Equality_comparisons_and_sameness",
+          "checkedAt": "2026-11-08"
+        },
+        {
+          "id": "ref-29192a6e5679a260",
+          "title": "MDN: Чем отличаются var, let и const?",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Grammar_and_types",
+          "checkedAt": "2026-11-08"
+        },
+        {
+          "id": "ref-c3c7a8e97bce247c",
+          "title": "MDN: Что такое hoisting и что произойдёт при обращении к переменной до объявления?",
+          "url": "https://developer.mozilla.org/en-US/docs/Glossary/Hoisting",
+          "checkedAt": "2026-11-08"
+        },
+        {
+          "id": "ref-2b9d04e7e02e70f4",
+          "title": "MDN: Как выбрасывать и обрабатывать ошибки в JavaScript?",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/try...catch",
+          "checkedAt": "2026-11-08"
+        },
+        {
+          "id": "ref-82448831799a053c",
+          "title": "MDN: Global Objects / undefined",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/undefined",
+          "checkedAt": null
+        },
+        {
+          "id": "ref-9c3744bdde463f3f",
+          "title": "MDN: Guide / Grammar and types",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Grammar_and_types#variable_scope",
+          "checkedAt": null
+        },
+        {
+          "id": "ref-15537932e2b290b3",
+          "title": "MDN: Operators / typeof",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/typeof",
+          "checkedAt": null
+        },
+        {
+          "id": "ref-dafe67af09a41cd4",
+          "title": "MDN: Global Objects / NaN",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/NaN",
+          "checkedAt": null
+        },
+        {
+          "id": "ref-b7ef5baf3338b922",
+          "title": "MDN: Guide / Expressions and operators",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Expressions_and_operators",
+          "checkedAt": null
+        },
+        {
+          "id": "ref-141b935012152fea",
+          "title": "MDN: Object / hasOwn",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/hasOwn",
+          "checkedAt": null
+        },
+        {
+          "id": "ref-31a6feb5ec967b55",
+          "title": "MDN: Global Objects / JSON",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON",
+          "checkedAt": null
+        },
+        {
+          "id": "ref-507175799857eeec",
+          "title": "MDN: Global Objects / Symbol",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Symbol",
+          "checkedAt": null
+        },
+        {
+          "id": "ref-504f2e393ac67401",
+          "title": "MDN: Global Objects / BigInt",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/BigInt",
+          "checkedAt": null
         }
       ],
       "caveats": [
@@ -107,6 +191,48 @@
           "checkedAt": null,
           "notes": "Начальная точка поиска, не замена источнику конкретного технического утверждения.",
           "id": "ref-1f297cad465f26f9"
+        },
+        {
+          "id": "ref-ff4f0797c5a73c27",
+          "title": "MDN: Что такое замыкание и когда оно полезно?",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Closures",
+          "checkedAt": "2026-11-08"
+        },
+        {
+          "id": "ref-8277423ab03f3779",
+          "title": "MDN: Что возвращает toString у функции?",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/toString",
+          "checkedAt": "2026-11-08"
+        },
+        {
+          "id": "ref-0de6860cdf90df78",
+          "title": "MDN: Как работают function*, yield и return в генераторе?",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function*",
+          "checkedAt": "2026-11-08"
+        },
+        {
+          "id": "ref-b3acdddd9b2a4647",
+          "title": "MDN: Guide / Functions",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Functions",
+          "checkedAt": null
+        },
+        {
+          "id": "ref-50e0ffa81cc7a55d",
+          "title": "MDN: Global Objects / Function",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function",
+          "checkedAt": null
+        },
+        {
+          "id": "ref-e54a1a0eecced7af",
+          "title": "MDN: Function / call",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/call",
+          "checkedAt": null
+        },
+        {
+          "id": "ref-ea584f3f6b3e3b2b",
+          "title": "MDN: Function / bind",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/bind",
+          "checkedAt": null
         }
       ],
       "caveats": [
@@ -166,6 +292,60 @@
           "checkedAt": null,
           "notes": "Начальная точка поиска, не замена источнику конкретного технического утверждения.",
           "id": "ref-1f297cad465f26f9"
+        },
+        {
+          "id": "ref-c83e90a75acc3719",
+          "title": "MDN: Guide / Working with objects",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Working_with_objects",
+          "checkedAt": null
+        },
+        {
+          "id": "ref-6f94c8e26988dfbc",
+          "title": "MDN: Window / structuredClone",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/API/Window/structuredClone",
+          "checkedAt": null
+        },
+        {
+          "id": "ref-23e292da2276c505",
+          "title": "MDN: Object / assign",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/assign",
+          "checkedAt": null
+        },
+        {
+          "id": "ref-15a131ef0bf376e9",
+          "title": "MDN: Functions / get",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/get",
+          "checkedAt": null
+        },
+        {
+          "id": "ref-4781d33199931106",
+          "title": "MDN: Object / defineProperty",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/defineProperty",
+          "checkedAt": null
+        },
+        {
+          "id": "ref-f41a45096ae37ce7",
+          "title": "MDN: Object / freeze",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/freeze",
+          "checkedAt": null
+        },
+        {
+          "id": "ref-bc576674ad1714f2",
+          "title": "MDN: Guide / Inheritance and the prototype chain",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Inheritance_and_the_prototype_chain",
+          "checkedAt": null
+        },
+        {
+          "id": "ref-43d376871882bb5e",
+          "title": "MDN: Object / toString",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/toString",
+          "checkedAt": null
+        },
+        {
+          "id": "ref-31e7e81d9f8acac7",
+          "title": "MDN: JSON / stringify",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify",
+          "checkedAt": null
         }
       ],
       "caveats": [
@@ -219,6 +399,12 @@
           "checkedAt": null,
           "notes": "Начальная точка поиска, не замена источнику конкретного технического утверждения.",
           "id": "ref-1f297cad465f26f9"
+        },
+        {
+          "id": "ref-ae9ab6fd54024685",
+          "title": "MDN: Что делает copyWithin и меняет ли он длину массива?",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/copyWithin",
+          "checkedAt": "2026-11-08"
         }
       ],
       "caveats": [
@@ -261,9 +447,9 @@
           "id": "ref-2299ce0a0990f829"
         },
         {
-          "title": "MDN: Statements/async_function",
+          "title": "MDN: Как перехватывать ошибки async-функций и почему важен await внутри try?",
           "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/async_function",
-          "checkedAt": null,
+          "checkedAt": "2026-11-08",
           "id": "ref-eea8ad460168cd5e"
         },
         {
@@ -290,6 +476,18 @@
           "checkedAt": null,
           "notes": "Начальная точка поиска, не замена источнику конкретного технического утверждения.",
           "id": "ref-1f297cad465f26f9"
+        },
+        {
+          "id": "ref-5ab95aa7e1b37650",
+          "title": "MDN: Guide / Using promises",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Using_promises",
+          "checkedAt": null
+        },
+        {
+          "id": "ref-b24253835df5bc0d",
+          "title": "MDN: Promise / any",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/any",
+          "checkedAt": null
         }
       ],
       "caveats": [
@@ -385,6 +583,12 @@
           "checkedAt": null,
           "notes": "Начальная точка поиска, не замена источнику конкретного технического утверждения.",
           "id": "ref-1f297cad465f26f9"
+        },
+        {
+          "id": "ref-9f78f036ed3018f7",
+          "title": "MDN: API / Document Object Model",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model",
+          "checkedAt": null
         }
       ],
       "caveats": [
@@ -420,6 +624,12 @@
           "checkedAt": null,
           "notes": "Начальная точка поиска, не замена источнику конкретного технического утверждения.",
           "id": "ref-1f297cad465f26f9"
+        },
+        {
+          "id": "ref-4691a850f28cf413",
+          "title": "MDN: Что такое class и как классы связаны с функциями-конструкторами и прототипами?",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes",
+          "checkedAt": "2026-11-08"
         }
       ],
       "caveats": [
@@ -449,6 +659,12 @@
           "checkedAt": null,
           "notes": "Начальная точка поиска, не замена источнику конкретного технического утверждения.",
           "id": "ref-1f297cad465f26f9"
+        },
+        {
+          "id": "ref-95b7fb84a6fa3d26",
+          "title": "MDN: Guide / Control flow and error handling",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Control_flow_and_error_handling",
+          "checkedAt": null
         }
       ],
       "caveats": [
@@ -475,19 +691,19 @@
         {
           "title": "MDN: Statements/import/with",
           "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/import/with",
-          "checkedAt": null,
+          "checkedAt": "2026-11-08",
           "id": "ref-78c8a187a8bb979d"
         },
         {
           "title": "MDN: Statements/using",
           "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/using",
-          "checkedAt": null,
+          "checkedAt": "2026-11-08",
           "id": "ref-1d2c4a603f2d62f7"
         },
         {
           "title": "MDN: Statements/await_using",
           "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/await_using",
-          "checkedAt": null,
+          "checkedAt": "2026-11-08",
           "id": "ref-e0caaeddfe5ae228"
         },
         {
@@ -508,6 +724,12 @@
           "checkedAt": null,
           "notes": "Начальная точка поиска, не замена источнику конкретного технического утверждения.",
           "id": "ref-1f297cad465f26f9"
+        },
+        {
+          "id": "ref-15b9f65e52e6e51c",
+          "title": "MDN: Guide / Modules",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules",
+          "checkedAt": null
         }
       ],
       "caveats": [
@@ -543,6 +765,24 @@
           "checkedAt": null,
           "notes": "Начальная точка поиска, не замена источнику конкретного технического утверждения.",
           "id": "ref-1f297cad465f26f9"
+        },
+        {
+          "id": "ref-c68580ee4bbd5599",
+          "title": "MDN: Что такое tree shaking и чем оно отличается от минификации?",
+          "url": "https://developer.mozilla.org/en-US/docs/Glossary/Tree_shaking",
+          "checkedAt": "2026-11-08"
+        },
+        {
+          "id": "ref-1f2734e7294c86f2",
+          "title": "web.dev: Web Vitals",
+          "url": "https://web.dev/articles/vitals",
+          "checkedAt": "2026-11-08"
+        },
+        {
+          "id": "ref-6fc0f05540767a01",
+          "title": "MDN: Web / Performance",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/Performance",
+          "checkedAt": null
         }
       ],
       "caveats": [
@@ -567,6 +807,12 @@
           "checkedAt": null,
           "notes": "Начальная точка поиска, не замена источнику конкретного технического утверждения.",
           "id": "ref-1f297cad465f26f9"
+        },
+        {
+          "id": "ref-ee0df0d343bd0310",
+          "title": "MDN: Guide / Memory management",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Memory_management",
+          "checkedAt": null
         }
       ],
       "caveats": []
@@ -726,7 +972,7 @@
         {
           "title": "MDN: Global_Objects/RegExp/escape",
           "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp/escape",
-          "checkedAt": null,
+          "checkedAt": "2026-11-08",
           "id": "ref-bf19ed0551520d2b"
         },
         {
@@ -892,7 +1138,7 @@
         {
           "title": "MDN: Global_Objects/Atomics/waitAsync",
           "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Atomics/waitAsync",
-          "checkedAt": null,
+          "checkedAt": "2026-11-08",
           "id": "ref-87d824cadf6d3f24"
         },
         {
@@ -933,13 +1179,13 @@
         {
           "title": "MDN: Global_Objects/Iterator",
           "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Iterator",
-          "checkedAt": null,
+          "checkedAt": "2026-11-08",
           "id": "ref-4d780395a7e862d3"
         },
         {
           "title": "MDN: Global_Objects/Array/fromAsync",
           "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/fromAsync",
-          "checkedAt": null,
+          "checkedAt": "2026-11-08",
           "id": "ref-f9e3681a24b5a718"
         },
         {
@@ -951,7 +1197,7 @@
         {
           "title": "MDN: Statements/for-await...of",
           "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for-await...of",
-          "checkedAt": null,
+          "checkedAt": "2026-11-08",
           "id": "ref-a956740156132837"
         },
         {
@@ -1113,6 +1359,18 @@
           "title": "Документация TypeScript",
           "url": "https://www.typescriptlang.org/tsconfig/",
           "checkedAt": null
+        },
+        {
+          "id": "ref-208a14bdbde38b8c",
+          "title": "TypeScript: basic-types",
+          "url": "https://www.typescriptlang.org/docs/handbook/2/basic-types.html",
+          "checkedAt": null
+        },
+        {
+          "id": "ref-b1f557c0324024a7",
+          "title": "TypeScript: type-compatibility",
+          "url": "https://www.typescriptlang.org/docs/handbook/type-compatibility.html",
+          "checkedAt": null
         }
       ],
       "caveats": []
@@ -1140,7 +1398,7 @@
           "id": "ref-27e2f7bd757441f5",
           "title": "Документация TypeScript",
           "url": "https://www.typescriptlang.org/docs/handbook/2/conditional-types.html",
-          "checkedAt": null
+          "checkedAt": "2026-11-10"
         },
         {
           "id": "ref-ee054e6800f12156",
@@ -1152,6 +1410,30 @@
           "id": "ref-5a02d79665f1eb02",
           "title": "Документация TypeScript",
           "url": "https://www.typescriptlang.org/docs/handbook/2/keyof-types.html",
+          "checkedAt": null
+        },
+        {
+          "id": "ref-db1c5af3b94742b6",
+          "title": "TypeScript: functions",
+          "url": "https://www.typescriptlang.org/docs/handbook/2/functions.html",
+          "checkedAt": "2026-11-10"
+        },
+        {
+          "id": "ref-fd5548b690b8f98f",
+          "title": "TypeScript: functions",
+          "url": "https://www.typescriptlang.org/docs/handbook/2/functions.html#return-type-void",
+          "checkedAt": "2026-11-10"
+        },
+        {
+          "id": "ref-05deeebb84e30961",
+          "title": "TypeScript: narrowing",
+          "url": "https://www.typescriptlang.org/docs/handbook/2/narrowing.html#the-never-type",
+          "checkedAt": "2026-11-10"
+        },
+        {
+          "id": "ref-8d45d887e2225b66",
+          "title": "TypeScript: enums",
+          "url": "https://www.typescriptlang.org/docs/handbook/enums.html",
           "checkedAt": null
         }
       ],
@@ -1187,6 +1469,18 @@
           "title": "Документация TypeScript",
           "url": "https://www.typescriptlang.org/docs/handbook/2/objects.html",
           "checkedAt": null
+        },
+        {
+          "id": "ref-d194e7b7f7d513dc",
+          "title": "TypeScript: objects",
+          "url": "https://www.typescriptlang.org/docs/handbook/2/objects.html#index-signatures",
+          "checkedAt": null
+        },
+        {
+          "id": "ref-4d18f3bf7d37dcc4",
+          "title": "TypeScript: declaration-merging",
+          "url": "https://www.typescriptlang.org/docs/handbook/declaration-merging.html",
+          "checkedAt": "2026-11-10"
         }
       ],
       "caveats": []
@@ -1237,13 +1531,13 @@
           "id": "ref-8e025fcda37288b0",
           "title": "Документация TypeScript",
           "url": "https://www.typescriptlang.org/docs/handbook/release-notes/typescript-5-6.html#strict-builtin-iterator-checks-and---strictbuiltiniteratorreturn",
-          "checkedAt": null
+          "checkedAt": "2026-11-10"
         },
         {
           "id": "ref-3f97ed4aa0a31ba2",
           "title": "Документация TypeScript",
           "url": "https://www.typescriptlang.org/docs/handbook/utility-types.html",
-          "checkedAt": null
+          "checkedAt": "2026-11-10"
         }
       ],
       "caveats": [
@@ -1264,7 +1558,7 @@
         {
           "title": "Документация TypeScript",
           "url": "https://www.typescriptlang.org/docs/handbook/2/functions.html",
-          "checkedAt": null,
+          "checkedAt": "2026-11-10",
           "id": "ref-db1c5af3b94742b6"
         },
         {
@@ -1284,7 +1578,7 @@
           "id": "ref-b8c0426b8b77a2f0",
           "title": "Документация TypeScript",
           "url": "https://www.typescriptlang.org/docs/handbook/2/generics.html",
-          "checkedAt": null
+          "checkedAt": "2026-11-10"
         },
         {
           "id": "ref-a56cb05e2fc85a16",
@@ -1308,7 +1602,7 @@
           "id": "ref-3f97ed4aa0a31ba2",
           "title": "Документация TypeScript",
           "url": "https://www.typescriptlang.org/docs/handbook/utility-types.html",
-          "checkedAt": null
+          "checkedAt": "2026-11-10"
         }
       ],
       "caveats": [
@@ -1331,6 +1625,12 @@
           "id": "ref-db1c5af3b94742b6",
           "title": "Документация TypeScript",
           "url": "https://www.typescriptlang.org/docs/handbook/2/functions.html",
+          "checkedAt": "2026-11-10"
+        },
+        {
+          "id": "ref-1ec6ef05cd7c0c00",
+          "title": "TypeScript: everyday-types",
+          "url": "https://www.typescriptlang.org/docs/handbook/2/everyday-types.html",
           "checkedAt": null
         }
       ],
@@ -1344,8 +1644,7 @@
         {
           "title": "Документация TypeScript",
           "url": "https://www.typescriptlang.org/docs/handbook/release-notes/typescript-5-4.html",
-          "checkedAt": null,
-          "notes": "Перенесено из существующего ответа; актуальность страницы и совместимость нужно перепроверить при подготовке пакета.",
+          "checkedAt": "2026-11-10",
           "id": "ref-36c5f0cd57b1b768"
         },
         {
@@ -1359,7 +1658,7 @@
           "id": "ref-93859c354bdf1f3b",
           "title": "Документация TypeScript",
           "url": "https://www.typescriptlang.org/docs/handbook/release-notes/typescript-5-5.html",
-          "checkedAt": null
+          "checkedAt": "2026-11-10"
         },
         {
           "id": "ref-d4b7250ff12d57ad",
@@ -1377,7 +1676,7 @@
           "id": "ref-b2adaad06a21a777",
           "title": "Документация TypeScript",
           "url": "https://www.typescriptlang.org/docs/handbook/2/narrowing.html",
-          "checkedAt": null
+          "checkedAt": "2026-11-10"
         }
       ],
       "caveats": []
@@ -1390,19 +1689,19 @@
         {
           "title": "Документация TypeScript",
           "url": "https://www.typescriptlang.org/docs/handbook/release-notes/typescript-5-0.html",
-          "checkedAt": null,
+          "checkedAt": "2026-11-10",
           "id": "ref-f3bc0c0e7bc0b54f"
         },
         {
           "title": "Документация TypeScript",
           "url": "https://www.typescriptlang.org/docs/handbook/2/functions.html",
-          "checkedAt": null,
+          "checkedAt": "2026-11-10",
           "id": "ref-db1c5af3b94742b6"
         },
         {
           "title": "Документация TypeScript",
           "url": "https://www.typescriptlang.org/docs/handbook/2/generics.html",
-          "checkedAt": null,
+          "checkedAt": "2026-11-10",
           "id": "ref-b8c0426b8b77a2f0"
         },
         {
@@ -1443,7 +1742,7 @@
         {
           "title": "Документация TypeScript",
           "url": "https://www.typescriptlang.org/docs/handbook/2/mapped-types.html",
-          "checkedAt": null,
+          "checkedAt": "2026-11-10",
           "id": "ref-bad15debd501fec2"
         },
         {
@@ -1463,7 +1762,7 @@
           "id": "ref-27e2f7bd757441f5",
           "title": "Документация TypeScript",
           "url": "https://www.typescriptlang.org/docs/handbook/2/conditional-types.html",
-          "checkedAt": null
+          "checkedAt": "2026-11-10"
         },
         {
           "id": "ref-b4916c12ab02f207",
@@ -1482,6 +1781,24 @@
           "title": "Документация TypeScript",
           "url": "https://www.typescriptlang.org/docs/handbook/release-notes/typescript-4-5.html#tail-recursion-elimination-on-conditional-types",
           "checkedAt": null
+        },
+        {
+          "id": "ref-75c2147e0f5ee08f",
+          "title": "TypeScript: indexed-access-types",
+          "url": "https://www.typescriptlang.org/docs/handbook/2/indexed-access-types.html",
+          "checkedAt": null
+        },
+        {
+          "id": "ref-33618cf7575d87f6",
+          "title": "TypeScript: typeof-types",
+          "url": "https://www.typescriptlang.org/docs/handbook/2/typeof-types.html",
+          "checkedAt": null
+        },
+        {
+          "id": "ref-65df44d62b284a03",
+          "title": "TypeScript: conditional-types",
+          "url": "https://www.typescriptlang.org/docs/handbook/2/conditional-types.html#distributive-conditional-types",
+          "checkedAt": "2026-11-10"
         }
       ],
       "caveats": [
@@ -1496,8 +1813,7 @@
         {
           "title": "Документация TypeScript",
           "url": "https://www.typescriptlang.org/docs/handbook/release-notes/typescript-5-4.html",
-          "checkedAt": null,
-          "notes": "Перенесено из существующего ответа; актуальность страницы и совместимость нужно перепроверить при подготовке пакета.",
+          "checkedAt": "2026-11-10",
           "id": "ref-36c5f0cd57b1b768"
         },
         {
@@ -1511,7 +1827,7 @@
           "id": "ref-3f97ed4aa0a31ba2",
           "title": "Документация TypeScript",
           "url": "https://www.typescriptlang.org/docs/handbook/utility-types.html",
-          "checkedAt": null
+          "checkedAt": "2026-11-10"
         }
       ],
       "caveats": []
@@ -1524,13 +1840,13 @@
         {
           "title": "Документация TypeScript",
           "url": "https://www.typescriptlang.org/docs/handbook/2/classes.html",
-          "checkedAt": null,
+          "checkedAt": "2026-11-10",
           "id": "ref-56877450f8207778"
         },
         {
           "title": "Документация TypeScript",
           "url": "https://www.typescriptlang.org/docs/handbook/release-notes/typescript-5-0.html",
-          "checkedAt": null,
+          "checkedAt": "2026-11-10",
           "id": "ref-f3bc0c0e7bc0b54f"
         },
         {
@@ -1545,6 +1861,12 @@
           "title": "Документация TypeScript",
           "url": "https://www.typescriptlang.org/docs/handbook/type-compatibility.html",
           "checkedAt": null
+        },
+        {
+          "id": "ref-78cdd3b7f3de427b",
+          "title": "TypeScript: typescript-5-0",
+          "url": "https://www.typescriptlang.org/docs/handbook/release-notes/typescript-5-0.html#decorators",
+          "checkedAt": "2026-11-10"
         }
       ],
       "caveats": [
@@ -1559,7 +1881,7 @@
         {
           "title": "Документация TypeScript",
           "url": "https://www.typescriptlang.org/docs/handbook/release-notes/typescript-4-9.html",
-          "checkedAt": null,
+          "checkedAt": "2026-11-10",
           "id": "ref-0787a3c8c4833124"
         },
         {
@@ -1609,6 +1931,30 @@
           "id": "ref-4d18f3bf7d37dcc4",
           "title": "Документация TypeScript",
           "url": "https://www.typescriptlang.org/docs/handbook/declaration-merging.html",
+          "checkedAt": "2026-11-10"
+        },
+        {
+          "id": "ref-cc32c6b5e74f8adb",
+          "title": "TypeScript: strict",
+          "url": "https://www.typescriptlang.org/tsconfig/strict.html",
+          "checkedAt": null
+        },
+        {
+          "id": "ref-9e99ba5d1e57b34a",
+          "title": "TypeScript: everyday-types",
+          "url": "https://www.typescriptlang.org/docs/handbook/2/everyday-types.html#type-assertions",
+          "checkedAt": null
+        },
+        {
+          "id": "ref-62518c2e428a5db3",
+          "title": "TypeScript: typescript-3-9",
+          "url": "https://www.typescriptlang.org/docs/handbook/release-notes/typescript-3-9.html#ts-expect-error-comments",
+          "checkedAt": null
+        },
+        {
+          "id": "ref-cab0197eb8116eaf",
+          "title": "TypeScript: tsconfig",
+          "url": "https://www.typescriptlang.org/tsconfig/",
           "checkedAt": null
         }
       ],
@@ -1624,13 +1970,13 @@
         {
           "title": "Документация TypeScript",
           "url": "https://www.typescriptlang.org/docs/handbook/release-notes/typescript-5-0.html",
-          "checkedAt": null,
+          "checkedAt": "2026-11-10",
           "id": "ref-f3bc0c0e7bc0b54f"
         },
         {
           "title": "Документация TypeScript",
           "url": "https://www.typescriptlang.org/docs/handbook/modules/reference.html",
-          "checkedAt": null,
+          "checkedAt": "2026-11-10",
           "id": "ref-5d5a35066078b134"
         },
         {
@@ -1654,7 +2000,7 @@
         {
           "title": "Документация TypeScript",
           "url": "https://www.typescriptlang.org/docs/handbook/release-notes/typescript-5-5.html",
-          "checkedAt": null,
+          "checkedAt": "2026-11-10",
           "id": "ref-93859c354bdf1f3b"
         },
         {
@@ -1710,7 +2056,7 @@
           "id": "ref-180eb8024d5128d7",
           "title": "Документация TypeScript",
           "url": "https://www.typescriptlang.org/docs/handbook/release-notes/typescript-6-0.html",
-          "checkedAt": null
+          "checkedAt": "2026-11-10"
         }
       ],
       "caveats": [
@@ -1737,7 +2083,7 @@
         {
           "title": "Документация TypeScript",
           "url": "https://www.typescriptlang.org/docs/handbook/2/narrowing.html",
-          "checkedAt": null,
+          "checkedAt": "2026-11-10",
           "id": "ref-b2adaad06a21a777"
         },
         {
@@ -1755,7 +2101,7 @@
         {
           "title": "Документация TypeScript",
           "url": "https://www.typescriptlang.org/docs/handbook/2/functions.html",
-          "checkedAt": null,
+          "checkedAt": "2026-11-10",
           "id": "ref-db1c5af3b94742b6"
         },
         {
@@ -1769,7 +2115,7 @@
           "id": "ref-b8c0426b8b77a2f0",
           "title": "Документация TypeScript",
           "url": "https://www.typescriptlang.org/docs/handbook/2/generics.html",
-          "checkedAt": null
+          "checkedAt": "2026-11-10"
         }
       ],
       "caveats": [
@@ -1796,13 +2142,13 @@
         {
           "title": "React: components / common",
           "url": "https://react.dev/reference/react-dom/components/common",
-          "checkedAt": "2026-11-08",
+          "checkedAt": "2026-11-10",
           "id": "ref-fa183dea181b018b"
         },
         {
           "title": "Документация",
           "url": "https://react.dev/reference/react/Activity",
-          "checkedAt": null,
+          "checkedAt": "2026-11-10",
           "id": "ref-a6d6a99f438f8aad"
         },
         {
@@ -1913,6 +2259,30 @@
           "title": "React: components-and-hooks-must-be-pure",
           "url": "https://react.dev/reference/rules/components-and-hooks-must-be-pure",
           "checkedAt": null
+        },
+        {
+          "id": "ref-7122f1233197b6a1",
+          "title": "react.dev: describing-the-ui",
+          "url": "https://react.dev/learn/describing-the-ui",
+          "checkedAt": null
+        },
+        {
+          "id": "ref-4da7647e12f36796",
+          "title": "react.dev: render-and-commit",
+          "url": "https://react.dev/learn/render-and-commit",
+          "checkedAt": null
+        },
+        {
+          "id": "ref-a3183b318cda0f90",
+          "title": "react.dev: conditional-rendering",
+          "url": "https://react.dev/learn/conditional-rendering",
+          "checkedAt": null
+        },
+        {
+          "id": "ref-b462fbbac6a02800",
+          "title": "react.dev: Fragment",
+          "url": "https://react.dev/reference/react/Fragment",
+          "checkedAt": null
         }
       ],
       "caveats": [
@@ -1992,6 +2362,24 @@
           "title": "React: extracting-state-logic-into-a-reducer",
           "url": "https://react.dev/learn/extracting-state-logic-into-a-reducer",
           "checkedAt": null
+        },
+        {
+          "id": "ref-9b3a5fb41ab11fb6",
+          "title": "react.dev: state-as-a-snapshot",
+          "url": "https://react.dev/learn/state-as-a-snapshot",
+          "checkedAt": null
+        },
+        {
+          "id": "ref-6733305b7a3797e1",
+          "title": "react.dev: updating-objects-in-state",
+          "url": "https://react.dev/learn/updating-objects-in-state",
+          "checkedAt": null
+        },
+        {
+          "id": "ref-b2474c67ae60c588",
+          "title": "react.dev: sharing-state-between-components",
+          "url": "https://react.dev/learn/sharing-state-between-components",
+          "checkedAt": null
         }
       ],
       "caveats": [
@@ -2008,7 +2396,7 @@
         {
           "title": "Документация",
           "url": "https://react.dev/reference/react/useEffectEvent",
-          "checkedAt": null,
+          "checkedAt": "2026-11-10",
           "notes": "Перенесено из существующего ответа; актуальность страницы и совместимость нужно перепроверить при подготовке пакета.",
           "id": "ref-59681255a6b236ea"
         },
@@ -2071,7 +2459,7 @@
           "id": "ref-7d08dbaf713df20f",
           "title": "React: useSyncExternalStore",
           "url": "https://react.dev/reference/react/useSyncExternalStore",
-          "checkedAt": "2026-11-08"
+          "checkedAt": "2026-11-10"
         },
         {
           "id": "ref-85b61ca05a0610ef",
@@ -2083,6 +2471,30 @@
           "id": "ref-210c042adf85ebf9",
           "title": "React: useMemo",
           "url": "https://react.dev/reference/react/useMemo",
+          "checkedAt": null
+        },
+        {
+          "id": "ref-8b892800e16f2524",
+          "title": "react.dev: you-might-not-need-an-effect",
+          "url": "https://react.dev/learn/you-might-not-need-an-effect",
+          "checkedAt": null
+        },
+        {
+          "id": "ref-9b3a5fb41ab11fb6",
+          "title": "react.dev: state-as-a-snapshot",
+          "url": "https://react.dev/learn/state-as-a-snapshot",
+          "checkedAt": null
+        },
+        {
+          "id": "ref-0728709814762e98",
+          "title": "react.dev: StrictMode",
+          "url": "https://react.dev/reference/react/StrictMode",
+          "checkedAt": null
+        },
+        {
+          "id": "ref-41d47fa5469db173",
+          "title": "react.dev: useLayoutEffect",
+          "url": "https://react.dev/reference/react/useLayoutEffect",
           "checkedAt": null
         }
       ],
@@ -2099,7 +2511,7 @@
         {
           "title": "Документация",
           "url": "https://react.dev/reference/react-dom/components/common",
-          "checkedAt": "2026-11-08",
+          "checkedAt": "2026-11-10",
           "id": "ref-fa183dea181b018b"
         },
         {
@@ -2144,6 +2556,12 @@
           "title": "React: useLayoutEffect",
           "url": "https://react.dev/reference/react/useLayoutEffect",
           "checkedAt": null
+        },
+        {
+          "id": "ref-9c84819a88d5277a",
+          "title": "react.dev: createPortal",
+          "url": "https://react.dev/reference/react-dom/createPortal",
+          "checkedAt": null
         }
       ],
       "caveats": [
@@ -2172,7 +2590,7 @@
         {
           "title": "Документация",
           "url": "https://react.dev/reference/react/useSyncExternalStore",
-          "checkedAt": "2026-11-08",
+          "checkedAt": "2026-11-10",
           "id": "ref-7d08dbaf713df20f"
         },
         {
@@ -2272,12 +2690,18 @@
           "id": "ref-fa183dea181b018b",
           "title": "React: common",
           "url": "https://react.dev/reference/react-dom/components/common",
-          "checkedAt": "2026-11-08"
+          "checkedAt": "2026-11-10"
         },
         {
           "id": "ref-f773318257650341",
           "title": "React: useActionState",
           "url": "https://react.dev/reference/react/useActionState",
+          "checkedAt": "2026-11-12"
+        },
+        {
+          "id": "ref-cc0300a1e37a01a1",
+          "title": "react.dev: useFormStatus",
+          "url": "https://react.dev/reference/react-dom/hooks/useFormStatus",
           "checkedAt": null
         }
       ],
@@ -2345,6 +2769,12 @@
           "id": "ref-0cc5c69a239b263f",
           "title": "React: introduction",
           "url": "https://react.dev/learn/react-compiler/introduction",
+          "checkedAt": "2026-11-12"
+        },
+        {
+          "id": "ref-993ebcbd413f90ff",
+          "title": "react.dev: useCallback",
+          "url": "https://react.dev/reference/react/useCallback",
           "checkedAt": null
         }
       ],
@@ -2361,7 +2791,7 @@
         {
           "title": "React: Suspense",
           "url": "https://react.dev/reference/react/Suspense",
-          "checkedAt": "2026-11-08",
+          "checkedAt": "2026-11-12",
           "id": "ref-f8f3016ad77e9e80"
         },
         {
@@ -2381,7 +2811,7 @@
           "id": "ref-a045255777f9e8c7",
           "title": "React: react / useTransition",
           "url": "https://react.dev/reference/react/useTransition",
-          "checkedAt": "2026-11-08"
+          "checkedAt": "2026-11-12"
         },
         {
           "id": "ref-8bb473e33d201808",
@@ -2417,7 +2847,13 @@
           "id": "ref-8c5502e33932183e",
           "title": "React: useOptimistic",
           "url": "https://react.dev/reference/react/useOptimistic",
-          "checkedAt": "2026-11-08"
+          "checkedAt": "2026-11-12"
+        },
+        {
+          "id": "ref-1c462c80f4daa775",
+          "title": "react.dev: useDeferredValue",
+          "url": "https://react.dev/reference/react/useDeferredValue",
+          "checkedAt": null
         }
       ],
       "caveats": [
@@ -2434,7 +2870,7 @@
         {
           "title": "React: streaming API",
           "url": "https://react.dev/reference/react-dom/server/renderToPipeableStream",
-          "checkedAt": "2026-11-08",
+          "checkedAt": "2026-11-12",
           "id": "ref-87026ec90e170e0b"
         },
         {
@@ -2485,6 +2921,18 @@
           "title": "React: use-client",
           "url": "https://react.dev/reference/rsc/use-client",
           "checkedAt": null
+        },
+        {
+          "id": "ref-4598115c47128228",
+          "title": "react.dev: server-components",
+          "url": "https://react.dev/reference/rsc/server-components",
+          "checkedAt": "2026-11-12"
+        },
+        {
+          "id": "ref-d54b61378bef2469",
+          "title": "react.dev: use",
+          "url": "https://react.dev/reference/react/use",
+          "checkedAt": null
         }
       ],
       "caveats": [
@@ -2534,7 +2982,7 @@
           "id": "ref-eff04d7fee35bd18",
           "title": "Testing Library: dom-testing-library / api-async",
           "url": "https://testing-library.com/docs/dom-testing-library/api-async/",
-          "checkedAt": "2026-11-08"
+          "checkedAt": "2026-11-12"
         },
         {
           "id": "ref-344a358e874eaa00",
@@ -2588,6 +3036,12 @@
           "id": "ref-4a6247f566871a6d",
           "title": "Testing Library: convenience",
           "url": "https://testing-library.com/docs/user-event/convenience/#tab",
+          "checkedAt": null
+        },
+        {
+          "id": "ref-0728709814762e98",
+          "title": "react.dev: StrictMode",
+          "url": "https://react.dev/reference/react/StrictMode",
           "checkedAt": null
         }
       ],
@@ -4480,13 +4934,13 @@
           "id": "ref-180eb8024d5128d7",
           "title": "Документация TypeScript",
           "url": "https://www.typescriptlang.org/docs/handbook/release-notes/typescript-6-0.html",
-          "checkedAt": null
+          "checkedAt": "2026-11-10"
         },
         {
           "id": "ref-6be230e080a5b990",
           "title": "Документация TypeScript",
           "url": "https://www.typescriptlang.org/tsconfig/erasableSyntaxOnly.html",
-          "checkedAt": null
+          "checkedAt": "2026-11-10"
         },
         {
           "id": "ref-fe785d6b935950a4",
@@ -4514,7 +4968,7 @@
           "id": "ref-4d18f3bf7d37dcc4",
           "title": "Документация TypeScript",
           "url": "https://www.typescriptlang.org/docs/handbook/declaration-merging.html",
-          "checkedAt": null
+          "checkedAt": "2026-11-10"
         },
         {
           "id": "ref-ae872ce8e10666f1",
@@ -4815,20 +5269,20 @@
         {
           "id": "ref-5adbbd889079d489",
           "title": "Redux: configureStore",
-          "url": "https://redux-toolkit.js.org/api/configureStore",
+          "url": "https://redux.js.org/toolkit/api/configureStore",
           "checkedAt": null
         },
         {
           "id": "ref-59e98fe62d963ce8",
           "title": "Redux: immer reducers",
-          "url": "https://redux-toolkit.js.org/usage/immer-reducers",
+          "url": "https://redux.js.org/toolkit/usage/immer-reducers",
           "checkedAt": null
         },
         {
           "id": "ref-ded64674f87b16ea",
           "title": "Redux: hooks",
-          "url": "https://react-redux.js.org/api/hooks#equality-comparisons-and-updates",
-          "checkedAt": null
+          "url": "https://redux.js.org/react-redux/api/hooks#equality-comparisons-and-updates",
+          "checkedAt": "2026-11-12"
         },
         {
           "id": "ref-3d41c9408a4167e2",
@@ -4839,19 +5293,19 @@
         {
           "id": "ref-8ccecba811290e65",
           "title": "Redux: createAsyncThunk",
-          "url": "https://redux-toolkit.js.org/api/createAsyncThunk",
-          "checkedAt": null
+          "url": "https://redux.js.org/toolkit/api/createAsyncThunk",
+          "checkedAt": "2026-11-12"
         },
         {
           "id": "ref-2e52b3c140eb681a",
           "title": "Redux: automated refetching",
-          "url": "https://redux-toolkit.js.org/rtk-query/usage/automated-refetching",
+          "url": "https://redux.js.org/toolkit/rtk-query/usage/automated-refetching",
           "checkedAt": null
         },
         {
           "id": "ref-689b62baf905fb20",
           "title": "Redux: createEntityAdapter",
-          "url": "https://redux-toolkit.js.org/api/createEntityAdapter",
+          "url": "https://redux.js.org/toolkit/api/createEntityAdapter",
           "checkedAt": null
         },
         {
@@ -4863,13 +5317,13 @@
         {
           "id": "ref-7936fe40e4ffa5f8",
           "title": "Redux: createListenerMiddleware",
-          "url": "https://redux-toolkit.js.org/api/createListenerMiddleware",
+          "url": "https://redux.js.org/toolkit/api/createListenerMiddleware",
           "checkedAt": null
         },
         {
           "id": "ref-e21b65d503bf1c5e",
           "title": "Redux: usage with typescript",
-          "url": "https://react-redux.js.org/using-react-redux/usage-with-typescript",
+          "url": "https://redux.js.org/react-redux/using-react-redux/usage-with-typescript",
           "checkedAt": null
         },
         {
@@ -4918,7 +5372,7 @@
           "id": "ref-75fd2e3349127080",
           "title": "Redux: hooks",
           "url": "https://redux.js.org/react-redux/api/hooks",
-          "checkedAt": "2026-11-08"
+          "checkedAt": "2026-11-12"
         },
         {
           "id": "ref-1f17b2e8acfcc4c4",
@@ -4930,7 +5384,7 @@
           "id": "ref-20340ab42a9a9423",
           "title": "Redux: createAsyncThunk",
           "url": "https://redux.js.org/toolkit/api/createAsyncThunk",
-          "checkedAt": "2026-11-08"
+          "checkedAt": "2026-11-12"
         },
         {
           "id": "ref-83aed0f574ae3dd6",
@@ -4966,7 +5420,7 @@
           "id": "ref-0a27980322bd1eec",
           "title": "Redux: cache-behavior",
           "url": "https://redux.js.org/toolkit/rtk-query/usage/cache-behavior",
-          "checkedAt": "2026-11-08"
+          "checkedAt": "2026-11-12"
         },
         {
           "id": "ref-08e0be642419b401",
@@ -4990,7 +5444,7 @@
           "id": "ref-979847085e79ef0b",
           "title": "Redux: combineSlices",
           "url": "https://redux.js.org/toolkit/api/combineSlices",
-          "checkedAt": "2026-11-08"
+          "checkedAt": "2026-11-12"
         },
         {
           "id": "ref-8a1b0f987964b048",
@@ -5049,7 +5503,7 @@
           "id": "ref-daf06766c96ce904",
           "title": "Zustand: persist",
           "url": "https://zustand.docs.pmnd.rs/reference/middlewares/persist",
-          "checkedAt": "2026-11-08"
+          "checkedAt": "2026-11-12"
         },
         {
           "id": "ref-fda0efb76db2a3c5",
@@ -5127,7 +5581,7 @@
           "id": "ref-df7cc2aa3ba62cf1",
           "title": "Zustand: advanced-typescript",
           "url": "https://zustand.docs.pmnd.rs/learn/guides/advanced-typescript",
-          "checkedAt": "2026-11-08"
+          "checkedAt": "2026-11-12"
         },
         {
           "id": "ref-85bc7c8001bfe76e",
@@ -5139,7 +5593,7 @@
           "id": "ref-d89a630e4c404cf0",
           "title": "Zustand: migrating-to-v5",
           "url": "https://zustand.docs.pmnd.rs/reference/migrations/migrating-to-v5",
-          "checkedAt": "2026-11-08"
+          "checkedAt": "2026-11-12"
         }
       ]
     },
@@ -5212,7 +5666,7 @@
           "id": "ref-dc37f79924e3dbf1",
           "title": "React Router: race-conditions",
           "url": "https://reactrouter.com/explanation/race-conditions",
-          "checkedAt": "2026-11-08"
+          "checkedAt": "2026-11-12"
         },
         {
           "id": "ref-ac99182319c886f0",

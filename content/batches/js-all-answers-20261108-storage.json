@@ -1,0 +1,45 @@
+{
+  "schemaVersion": 1,
+  "id": "js-all-answers-20261108-storage",
+  "title": "js-all-answers-20261108-storage",
+  "sectionId": "javascript",
+  "subsectionId": "storage",
+  "currentPass": "answers",
+  "goalIds": [
+    "core",
+    "js-idb-transaction-lifetime",
+    "js-storage-persistence",
+    "js-broadcast-channel"
+  ],
+  "questionIds": ["js-idb-transaction-lifetime", "js-storage-persistence", "js-broadcast-channel"],
+  "scopePass": {
+    "status": "complete",
+    "remaining": []
+  },
+  "answerPass": {
+    "status": "complete",
+    "remaining": []
+  },
+  "baseline": [
+    {
+      "id": "js-idb-transaction-lifetime",
+      "title": "Почему IndexedDB-транзакция может завершиться раньше следующего await?",
+      "contentHash": "2df906dfb883abe2170cd7518728ca2a048756b97b3f1af99e8529e2011a8e54"
+    },
+    {
+      "id": "js-storage-persistence",
+      "title": "Почему браузерное хранилище нельзя считать бессрочной гарантированной базой данных?",
+      "contentHash": "a7584aefdd03a6c623278303f265d314620c04b834f2f7a1326ecbf6c17cbd4b"
+    },
+    {
+      "id": "js-broadcast-channel",
+      "title": "Для чего нужен BroadcastChannel и почему он не является общей изменяемой памятью?",
+      "contentHash": "2f8f7fad5817a4744e705584670ba2b69579d5e6513eb2672fa6361f7a680953"
+    }
+  ],
+  "notes": [
+    "Полный редакторский проход JavaScript: 346 ID сохраняются, добавлений/слияний нет. 12 ответов предыдущего пакета сохраняют готовый связный разбор. Остальным нужны индивидуальные пояснения к механизму и примеру, а не однотипная вводная фраза. Ответы ITBooster не используются.",
+    "Для оставшихся ответов подготовлены индивидуальные пояснения примеров; код перенесён в общий Markdown. В упражнениях на чтение кода условие сохранено отдельно. Примеры не запускались.",
+    "Завершено: Oxfmt, content:build, полный content:check. В платформе 1266 вопросов; в JavaScript сохранены 346 ID, обновлены оставшиеся 334 ответа, новых/удалённых ID нет. Код примеров и seed не выполнялись."
+  ]
+}

@@ -9,7 +9,7 @@
       "title": "Context и управление состоянием",
       "description": "Обзор и взаимосвязи навыков: Передача общих данных, подписки и выбор места хранения.",
       "requiredDifficulties": [],
-      "reviewed": false,
+      "reviewed": true,
       "priority": "core",
       "relatedSkillIds": [
         "react-context",
@@ -33,7 +33,7 @@
       "title": "Как Context передаёт данные и откуда берётся значение по умолчанию?",
       "description": "Объяснить и применить правило с учётом его границ: Потребитель читает ближайший провайдер выше себя.",
       "requiredDifficulties": ["Средний"],
-      "reviewed": false,
+      "reviewed": true,
       "priority": "core",
       "relatedSkillIds": []
     },
@@ -42,7 +42,7 @@
       "title": "Почему потребители Context рендерятся при изменении value?",
       "description": "Объяснить и применить правило с учётом его границ: У Context важна идентичность value и размер области подписки.",
       "requiredDifficulties": ["Средний"],
-      "reviewed": false,
+      "reviewed": true,
       "priority": "core",
       "relatedSkillIds": []
     },
@@ -51,7 +51,7 @@
       "title": "Как выбрать между props, Context и внешним store?",
       "description": "Объяснить и применить правило с учётом его границ: Способ хранения должен соответствовать владельцу и потребителям данных.",
       "requiredDifficulties": ["Средний"],
-      "reviewed": false,
+      "reviewed": true,
       "priority": "core",
       "relatedSkillIds": []
     },
@@ -60,7 +60,7 @@
       "title": "Для чего предназначен useSyncExternalStore?",
       "description": "Объяснить и применить правило с учётом его границ: Внешний store должен давать стабильный снимок и корректную отписку.",
       "requiredDifficulties": ["Продвинутый"],
-      "reviewed": false,
+      "reviewed": true,
       "priority": "core",
       "relatedSkillIds": []
     },
@@ -69,7 +69,7 @@
       "title": "Какие состояния интерфейса стоит хранить в URL и как избежать второго источника истины?",
       "description": "Объяснить и применить правило с учётом его границ: URL должен хранить намеренно восстанавливаемое состояние с понятной историей переходов.",
       "requiredDifficulties": ["Средний"],
-      "reviewed": false,
+      "reviewed": true,
       "priority": "core",
       "relatedSkillIds": []
     },
@@ -78,7 +78,7 @@
       "title": "Почему пользовательское состояние SSR нельзя бездумно хранить в singleton-store модуля?",
       "description": "Объяснить и применить правило с учётом его границ: Состояние пользователя должно быть изолировано по запросу и согласовано с начальным клиентским деревом.",
       "requiredDifficulties": ["Продвинутый"],
-      "reviewed": false,
+      "reviewed": true,
       "priority": "core",
       "relatedSkillIds": []
     },
@@ -162,7 +162,6 @@
       "topic": "React",
       "difficulty": "Средний",
       "summary": "Провайдеры, ближайшее значение и fallback.",
-      "code": "const ThemeContext = createContext(\"light\")\n\nfunction ThemeName() {\n  return <span>{useContext(ThemeContext)}</span>\n}",
       "takeaway": "Потребитель читает ближайший провайдер выше себя.",
       "moduleId": "react",
       "order": 0,
@@ -171,11 +170,11 @@
         "learningGoal": "Объяснить и применить правило с учётом его границ: Потребитель читает ближайший провайдер выше себя.",
         "keywords": ["React", "Context и управление состоянием"],
         "kind": "explanation",
-        "reviewStatus": "imported",
+        "reviewStatus": "ready",
         "goalIds": ["core", "react-context"],
         "relatedQuestionIds": [],
         "priority": "core",
-        "sourceRefs": []
+        "sourceRefs": ["ref-a87b55b89b2a0e21"]
       },
       "answerFile": "answers/react/react-context.md"
     },
@@ -193,11 +192,11 @@
         "learningGoal": "Объяснить и применить правило с учётом его границ: У Context важна идентичность value и размер области подписки.",
         "keywords": ["React", "Context и управление состоянием"],
         "kind": "explanation",
-        "reviewStatus": "imported",
+        "reviewStatus": "ready",
         "goalIds": ["core", "react-context-renders"],
         "relatedQuestionIds": [],
         "priority": "core",
-        "sourceRefs": []
+        "sourceRefs": ["ref-a87b55b89b2a0e21"]
       },
       "answerFile": "answers/react/react-context-renders.md"
     },
@@ -215,7 +214,7 @@
         "learningGoal": "Объяснить и применить правило с учётом его границ: Способ хранения должен соответствовать владельцу и потребителям данных.",
         "keywords": ["React", "Context и управление состоянием"],
         "kind": "explanation",
-        "reviewStatus": "imported",
+        "reviewStatus": "ready",
         "goalIds": ["core", "react-state-location"],
         "relatedQuestionIds": ["redux-toolkit-role", "zustand-store-basics", "redux-query-cache"],
         "priority": "core",
@@ -237,11 +236,11 @@
         "learningGoal": "Объяснить и применить правило с учётом его границ: Внешний store должен давать стабильный снимок и корректную отписку.",
         "keywords": ["React", "Context и управление состоянием"],
         "kind": "explanation",
-        "reviewStatus": "imported",
+        "reviewStatus": "ready",
         "goalIds": ["core", "react-external-store"],
         "relatedQuestionIds": [],
         "priority": "core",
-        "sourceRefs": []
+        "sourceRefs": ["ref-7d08dbaf713df20f"]
       },
       "answerFile": "answers/react/react-external-store.md"
     },
@@ -249,9 +248,7 @@
       "id": "react-url-state",
       "title": "Какие состояния интерфейса стоит хранить в URL и как избежать второго источника истины?",
       "summary": "Восстановимые фильтры, браузерная история и локальные несохранённые данные.",
-      "code": "import { useSearchParams } from \"react-router-dom\"\nfunction Search() {\n  const [params, setParams] = useSearchParams()\n  const query = params.get(\"q\") ?? \"\"\n  return <label>Поиск<input value={query} onChange={event => {\n    const next = new URLSearchParams(params)\n    next.set(\"q\", event.target.value); next.delete(\"page\")\n    setParams(next, { replace: true })\n  }} /></label>\n}",
       "takeaway": "URL должен хранить намеренно восстанавливаемое состояние с понятной историей переходов.",
-      "pitfall": "Синхронизировать один фильтр в URL и локальном state двумя взаимными эффектами.",
       "difficulty": "Средний",
       "topic": "React",
       "moduleId": "react",
@@ -261,7 +258,7 @@
         "learningGoal": "Объяснить и применить правило с учётом его границ: URL должен хранить намеренно восстанавливаемое состояние с понятной историей переходов.",
         "keywords": ["React", "Context и управление состоянием"],
         "kind": "explanation",
-        "reviewStatus": "imported",
+        "reviewStatus": "ready",
         "goalIds": ["core", "react-url-state"],
         "relatedQuestionIds": [],
         "priority": "core",
@@ -273,9 +270,7 @@
       "id": "react-ssr-state-isolation",
       "title": "Почему пользовательское состояние SSR нельзя бездумно хранить в singleton-store модуля?",
       "summary": "Изоляция запросов и совпадение начального снимка при гидратации.",
-      "code": "function createRequestSnapshot(session) {\n  return { user: { id: session.user.id, name: session.user.name } }\n}\n// Создаётся для текущего запроса и передаётся его дереву.\n// Модульный let currentUser для всех запросов не подходит.",
       "takeaway": "Состояние пользователя должно быть изолировано по запросу и согласовано с начальным клиентским деревом.",
-      "pitfall": "Хранить текущую серверную сессию в изменяемом глобальном store и надеяться на разделение React-компонентами.",
       "difficulty": "Продвинутый",
       "topic": "React",
       "moduleId": "react",
@@ -285,7 +280,7 @@
         "learningGoal": "Объяснить и применить правило с учётом его границ: Состояние пользователя должно быть изолировано по запросу и согласовано с начальным клиентским деревом.",
         "keywords": ["React", "Context и управление состоянием"],
         "kind": "explanation",
-        "reviewStatus": "imported",
+        "reviewStatus": "ready",
         "goalIds": ["core", "react-ssr-state-isolation"],
         "relatedQuestionIds": [],
         "priority": "core",

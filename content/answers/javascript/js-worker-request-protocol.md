@@ -2,14 +2,27 @@
 
 <!-- wishu:answer-block -->
 
-### Механизм и границы
+### Как это работает
 
 Храните ожидания по ID и удаляйте их при любом завершении. Обработайте ошибку Worker, termination, тайм-аут и поздний ответ на отменённый запрос. Transfer-list и structured clone определяют передачу данных, но не вводят такой протокол автоматически.
 
 Сообщение cancel полезно только если Worker умеет прервать/проверить соответствующую работу; синхронный долгий цикл может не обработать новое сообщение до завершения.
 
-<!-- wishu:answer-block -->
+### Пример и его разбор
 
-### Источник
+```javascript
+const message = { type: "calculate", requestId: "job-42", payload: [1, 2, 3] }
+// worker.postMessage(message)
+// Ответ: { type: "result", requestId: "job-42", value: 6 }
+// Ошибка: { type: "error", requestId: "job-42", message: "..." }
+```
 
-[MDN: Web_Workers_API/Using_web_workers](https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API/Using_web_workers).
+RequestId связывает сообщение calculate с его будущим result или error. Это позволяет хранить несколько ожиданий независимо и удалить нужную запись после ответа. Один общий resolver потерял бы связь при следующем запросе. Протокол должен отдельно определить поведение при остановке Worker, позднем ответе и запросе отмены, который ещё требуется реально обработать.
+
+### Типичная ошибка
+
+> Сохранять единственный resolve для всех параллельных сообщений.
+
+### Источники
+
+[MDN: Web_Workers_API/Using_web_workers](https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API/Using_web_workers)

@@ -2,10 +2,34 @@
 
 <!-- wishu:answer-block -->
 
+#### Как это работает
+
 Если функция обещает вернуть T, она должна сохранить все требования конкретного T. Создание только минимального объекта нарушает это обещание. Приведение as T обычно скрывает дефект, а не решает его.
 
 Возможные решения: вернуть исходный объект, ослабить результат до Constraint либо принять фабрику, которая умеет создать конкретный T. Выбор зависит от намерения API.
 
-<!-- wishu:answer-block -->
+#### Пример
 
-[Документация TypeScript](https://www.typescriptlang.org/docs/handbook/2/functions.html).
+```typescript
+type Sized = { length: number }
+function keep<T extends Sized>(value: T): T {
+  return value
+}
+function fallback(value: Sized): Sized {
+  return { length: value.length }
+}
+// В generic-версии return { length: 0 } не доказывает результат T.
+// T мог быть { length: number; name: string }.
+```
+
+#### Разбор примера
+
+Keep возвращает исходный value и потому сохраняет все дополнительные требования выбранного T. Fallback честно возвращает лишь Sized, потому что создаёт новый минимальный объект. Если обещать для него T с обязательным name, у результата фактически не будет заявленного поля.
+
+#### Типичная ошибка
+
+> Конструировать минимальный Constraint, приводить к T и терять обязательные поля подтипа.
+
+#### Источники
+
+[Документация TypeScript](https://www.typescriptlang.org/docs/handbook/2/functions.html)

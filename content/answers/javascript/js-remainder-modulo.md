@@ -2,14 +2,26 @@
 
 <!-- wishu:answer-block -->
 
-### Механизм и границы
+### Как это работает
 
 Формула ((index % size) + size) % size работает для нужного контракта с положительным конечным size. Отдельно обработайте нулевой размер, недопустимые числа и точность диапазона.
 
 Остаток не равен математическому modulo во всех договорённостях. Не прячьте проблему отсутствующего элемента через произвольную нормализацию индекса.
 
-<!-- wishu:answer-block -->
+### Пример и его разбор
 
-### Источник
+```javascript
+console.log(-1 % 5) // -1
+const wrap = (index, size) => ((index % size) + size) % size
+console.log(wrap(-1, 5)) // 4
+```
 
-[MDN: Operators/Remainder](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Remainder).
+Остаток -1 нельзя прямо использовать как последний индекс обычного массива. Wrap переводит его в диапазон от 0 до size - 1 и получает 4 для длины 5. Для пустой коллекции такая формула не создаёт допустимого элемента: этот случай обрабатывают отдельно.
+
+### Типичная ошибка
+
+> Индексировать массив через negative % `length`, ожидая автоматический переход к концу.
+
+### Источники
+
+[MDN: Operators/Remainder](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Remainder)

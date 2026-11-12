@@ -1,15 +1,31 @@
-**Object.groupBy формирует группы по ключам свойств, а Map.groupBy сохраняет произвольные Map-ключи, в том числе объектную идентичность. Это разные контракты результата.**
+**Object.groupBy формирует группы по ключам свойств, а Map.groupBy сохраняет произвольные `Map`-ключи, в том числе объектную идентичность. Это разные контракты результата.**
 
 <!-- wishu:answer-block -->
 
-### Механизм и границы
+### Как это работает
 
 Object.groupBy возвращает объект без обычного прототипа; обращение к его hasOwnProperty как к унаследованному методу ненадёжно. Группы содержат исходные элементы, а не глубокие копии.
 
-Выбирайте Map, если ключ должен оставаться объектом, а не его строковым представлением. Проверяйте поддержку метода в целевой среде.
+Выбирайте `Map`, если ключ должен оставаться объектом, а не его строковым представлением. Проверяйте поддержку метода в целевой среде.
 
-<!-- wishu:answer-block -->
+### Пример и его разбор
 
-### Источник
+```javascript
+const items = [
+  { team: "a", id: 1 },
+  { team: "a", id: 2 },
+]
+const groups = Object.groupBy(items, (item) => item.team)
+console.log(Object.getPrototypeOf(groups)) // null
+console.log(groups.a[0] === items[0]) // true
+```
 
-[MDN: Global_Objects/Object/groupBy](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/groupBy).
+Обе записи items попадают в группу a, но сами объекты не копируются: первая запись группы идентична исходному элементу. У результата Object.groupBy отсутствует обычный прототип, что делает его удобным словарём групп. Если группирующее значение должно остаться объектным ключом с собственной идентичностью, вместо такого словаря выбирают Map.groupBy.
+
+### Типичная ошибка
+
+> Ожидать глубоких копий или сохранения объектного ключа в Object.groupBy.
+
+### Источники
+
+[MDN: Global_Objects/Object/groupBy](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/groupBy)

@@ -2,14 +2,32 @@
 
 <!-- wishu:answer-block -->
 
-### Механизм и границы
+### Как это работает
 
 Запятая как разделитель аргументов, элементов массива или объявлений не является этим оператором. В выражении (0, obj.method) получается значение функции, поэтому следующий вызов отличается от obj.method().
 
 Такую форму встречают в скомпилированном коде. В прикладном коде обычные отдельные инструкции чаще читаются лучше.
 
-<!-- wishu:answer-block -->
+### Пример и его разбор
 
-### Источник
+```javascript
+"use strict"
+const object = {
+  read() {
+    return this
+  },
+}
+console.log(object.read() === object) // true
+console.log((0, object.read)() === undefined) // true
+const result = (1, 2, 3) // 3
+```
 
-[MDN: Operators/Comma_operator](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Comma_operator).
+Вызов object.read() сохраняет объект-получатель и возвращает его как this. Выражение с запятой сначала получает только значение функции, после чего обычный вызов в strict mode не имеет такого получателя. Последнее выражение возвращает 3, но все его операнды вычисляются. Запятые, разделяющие аргументы функции, под это правило не подпадают.
+
+### Типичная ошибка
+
+> Считать все запятые в JavaScript одним и тем же оператором.
+
+### Источники
+
+[MDN: Operators/Comma_operator](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Comma_operator)

@@ -1,0 +1,165 @@
+{
+  "schemaVersion": 1,
+  "id": "js-connected-20261108-arrays",
+  "title": "JavaScript: связные ответы после сравнения тем",
+  "sectionId": "javascript",
+  "subsectionId": "arrays",
+  "currentPass": "complete",
+  "goalIds": ["core", "array-copy-within"],
+  "questionIds": ["array-copy-within"],
+  "scopePass": {
+    "status": "complete",
+    "remaining": []
+  },
+  "answerPass": {
+    "status": "complete",
+    "remaining": []
+  },
+  "baseline": [
+    {
+      "id": "array-indexing",
+      "title": "Как читать элементы массива по индексу и получить последний элемент?",
+      "contentHash": "1b5efc3f8abf7c3f2a07b45b6a80fd736f31ccc7cac56595f2ddc77623a6766f"
+    },
+    {
+      "id": "array-length-holes",
+      "title": "Как length связан с плотным и разрежённым массивом?",
+      "contentHash": "cae1738d38f05aff4be4c44e2144dc63376d80b82c1a4bee1f1ed52a42af1b3e"
+    },
+    {
+      "id": "array-end-methods",
+      "title": "Как push, pop, shift и unshift меняют массив и чем push отличается от concat?",
+      "contentHash": "733930e398840634385163d5dfcffce1c61dd1c6afba057514d588995523b5fc"
+    },
+    {
+      "id": "array-slice-splice",
+      "title": "Чем отличаются slice, splice и toSpliced?",
+      "contentHash": "4f0f21443ba02fb5c2f40adc1cdb19368c5622c5a0eb59640685eedb21fca64c"
+    },
+    {
+      "id": "array-reverse",
+      "title": "Чем reverse отличается от toReversed?",
+      "contentHash": "9f5bc193a4221db14a06bd1d9e8de6cffebd1bd0c00eeb49ead82f481562b5f1"
+    },
+    {
+      "id": "array-sort",
+      "title": "Как сортировать числа и чем sort отличается от toSorted?",
+      "contentHash": "6f332d541138db9cd3449e3103ec1c87ca70f1830125059d42cd1e03daa64fa6"
+    },
+    {
+      "id": "array-join-split",
+      "title": "Как join и split преобразуют массив и строку?",
+      "contentHash": "a5187a9809821aa58495d591f3205c7439282fe2d128c6f399df7d5bba95f302"
+    },
+    {
+      "id": "array-map",
+      "title": "Как работает map и что возвращает его callback?",
+      "contentHash": "b6e89990f1e9801dcaf24244e2a1cf1bffa1ef6ce30e6b2166b4c60426d06946"
+    },
+    {
+      "id": "array-filter-find",
+      "title": "Чем filter отличается от find?",
+      "contentHash": "8978243ba5e5abe05799cb639573776c8c2530e3d5959ecf12c1589f4c241a5d"
+    },
+    {
+      "id": "array-for-each",
+      "title": "Когда использовать forEach и какие у него ограничения?",
+      "contentHash": "d507fa30549a21a968ac9fffb195975a93677c9f078ebe08f628252433a2bc0a"
+    },
+    {
+      "id": "array-reduce",
+      "title": "Как работает reduce и зачем задавать начальное значение?",
+      "contentHash": "93c666f5207873d095e94aa03f934e8cbf84b6ef3e640900440b0a891384c6aa"
+    },
+    {
+      "id": "array-some-every",
+      "title": "Чем some отличается от every и что они возвращают для пустого массива?",
+      "contentHash": "78475415bbaf5721557902eca4e1e26438e8ac0057cb1bd662885a1a83e83bc1"
+    },
+    {
+      "id": "array-flat-map",
+      "title": "Чем flatMap отличается от map?",
+      "contentHash": "bf5d36cbb8e2685c10384e26dd4e77d8fd8d9b9faccae8a31582d490637bfde8"
+    },
+    {
+      "id": "array-flat",
+      "title": "Как получить плоский массив из вложенного через flat?",
+      "contentHash": "bc9603fa997a634928abe824ec2c928eba3303fee95989c1104d8970875c36b2"
+    },
+    {
+      "id": "array-from",
+      "title": "Что такое псевдомассив и как Array.from превращает его в массив?",
+      "contentHash": "60ca097b2c1246743a22d77222c3a01241ecf34d195eb5b003d8de1bacd77213"
+    },
+    {
+      "id": "array-of",
+      "title": "Чем Array.of отличается от Array при создании массива?",
+      "contentHash": "214c4ea3f32e6fb5a39cf8032ac91ef99a60c2f14ba5412b7b9ec4a4774ac534"
+    },
+    {
+      "id": "array-copy-within",
+      "title": "Что делает copyWithin и меняет ли он длину массива?",
+      "contentHash": "c01d4fa89095aebe275e7340be07aac93fbe9d08a51b40c005534aa82f8f47e6"
+    },
+    {
+      "id": "array-destructuring",
+      "title": "Как пропускать элементы при деструктуризации массива?",
+      "contentHash": "c03b3e471d040b67105fb1051f4b8202a9c2a65d8ff0e7d374fbf4b596b55aa4"
+    },
+    {
+      "id": "array-matrices",
+      "title": "Как создать и обойти двумерный массив без общих строк?",
+      "contentHash": "6ef4fadc90c3efd04c2e2ebc1d1449d12a5c72781d1e1b80187c7477f9f7eaef"
+    },
+    {
+      "id": "set-collection",
+      "title": "Что такое Set и как он определяет уникальность значений?",
+      "contentHash": "2114ef5b2b0f4ec212778f6546a97bedab754c18ecf996e050c53f7491cfb193"
+    },
+    {
+      "id": "map-vs-object",
+      "title": "Что такое Map и когда он удобнее обычного объекта?",
+      "contentHash": "dd943873f6d3b38863e82dfb2e51b5e471b63c34cccfa52a3fe0af9672de1b8f"
+    },
+    {
+      "id": "weak-collections",
+      "title": "Чем WeakMap и WeakSet отличаются от Map и Set?",
+      "contentHash": "79e84214694477d1889f8ea50c7445f88cd05eb93c2ff1ea5729aef1f642c0b6"
+    },
+    {
+      "id": "typed-arrays",
+      "title": "Как связаны ArrayBuffer, TypedArray и DataView?",
+      "contentHash": "f1a6dbf95f132d2f38b98f0fad90e729ba10ec175fe59e7f3a04558f92a6ed81"
+    },
+    {
+      "id": "js-array-callback-mutation",
+      "title": "Что происходит, если менять массив во время map, forEach или filter?",
+      "contentHash": "75fe61a6347c1b269fe640118885630e39b2fba861200c4fd9f760be1f36e867"
+    },
+    {
+      "id": "js-array-search-contracts",
+      "title": "Как выбрать includes, indexOf, findIndex и findLast для поиска в массиве?",
+      "contentHash": "2b9471acf5869de5c1af270586cfe2f7d2e7ead7b27744331e762feed9e52400"
+    },
+    {
+      "id": "js-standard-grouping",
+      "title": "Чем Object.groupBy отличается от Map.groupBy?",
+      "contentHash": "1b6f170fc186723b0bf3e388ae5f14c6acafe3c2579688ed4f775f0c57526a97"
+    },
+    {
+      "id": "js-map-set-live-iteration",
+      "title": "Как изменение Map или Set во время обхода влияет на итератор?",
+      "contentHash": "a8e46485814b83ca1c876fc2e9b57483b7356f0702e382a8a9a0511a7f1608f8"
+    },
+    {
+      "id": "js-set-algebra",
+      "title": "Как выполнять объединение и пересечение Set без изменения исходных множеств?",
+      "contentHash": "1d6eddfa69afd3e5afff243e9c09cf50d6d93c9dbb687b2c252fffc0927e131a"
+    }
+  ],
+  "notes": [
+    "В Zen Browser пользователя прочитаны 447 названий из 11 раскрытых разделов ITBooster. Ответы источника не открывались и не использовались. Сопоставлены метаданные всех 346 наших вопросов JavaScript. Самостоятельных отсутствующих тем по этому списку не выявлено; повторные определения не добавляются.",
+    "Полностью переработаны только указанные рабочие ID. Остальные ответы пока не проходили полный редакторский пересмотр.",
+    "Oxfmt, content:build и полный content:check прошли для 1266 вопросов. Примеры, приложение и seed не запускались. Все 346 исходных ID JavaScript сохранены."
+  ]
+}

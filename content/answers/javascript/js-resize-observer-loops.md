@@ -2,14 +2,28 @@
 
 <!-- wishu:answer-block -->
 
-### Механизм и границы
+### Как это работает
 
 Определите нужную box-модель. Если callback меняет размер того же наблюдаемого элемента, может возникнуть обратная связь и предупреждение о недоставленных resize-уведомлениях.
 
 Сравнивайте желаемое значение перед записью, отделяйте измерение от изменения и выбирайте CSS/container query, если JavaScript не нужен. При завершении владельца снимайте наблюдение.
 
-<!-- wishu:answer-block -->
+### Пример и его разбор
 
-### Источник
+```javascript
+const observer = new ResizeObserver((entries) => {
+  for (const entry of entries) console.log(entry.contentRect.width)
+})
+// observer.observe(element)
+// При завершении: observer.disconnect()
+```
 
-[MDN: ResizeObserver](https://developer.mozilla.org/en-US/docs/Web/API/ResizeObserver).
+Callback читает размер каждого элемента из доставленного набора entries. Если на основании ширины он назначает новую ширину той же цели, получается обратная связь. Перед записью нужно проверить необходимость изменения и исключить бесконечное чередование размеров.
+
+### Типичная ошибка
+
+> Считать любое изменение DOM изменением размера или менять width на каждом уведомлении без проверки.
+
+### Источники
+
+[MDN: ResizeObserver](https://developer.mozilla.org/en-US/docs/Web/API/ResizeObserver)

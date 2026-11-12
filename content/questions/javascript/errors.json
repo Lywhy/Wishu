@@ -9,7 +9,7 @@
       "title": "Ошибки и отладка",
       "description": "Обзор и взаимосвязи навыков: Виды ошибок, диагностика, собственные типы и работа с отладчиком.",
       "requiredDifficulties": [],
-      "reviewed": false,
+      "reviewed": true,
       "priority": "core",
       "relatedSkillIds": [
         "error-exception-model",
@@ -26,7 +26,7 @@
       "title": "Чем объект Error, исключение и синтаксическая ошибка отличаются друг от друга?",
       "description": "Объяснить и применить правило с учётом его границ: Создать Error и выбросить исключение - разные действия; момент разбора определяет возможность перехвата.",
       "requiredDifficulties": ["Базовый"],
-      "reviewed": false,
+      "reviewed": true,
       "priority": "core",
       "relatedSkillIds": []
     },
@@ -35,7 +35,7 @@
       "title": "Какие встроенные типы ошибок важно различать?",
       "description": "Объяснить и применить правило с учётом его границ: Тип ошибки описывает класс проблемы, а текст сообщения предназначен прежде всего для диагностики.",
       "requiredDifficulties": ["Базовый"],
-      "reviewed": false,
+      "reviewed": true,
       "priority": "core",
       "relatedSkillIds": ["js-using-disposal"]
     },
@@ -44,7 +44,7 @@
       "title": "Как создать собственную ошибку и сохранить её причину?",
       "description": "Объяснить и применить правило с учётом его границ: Собственный Error сохраняет тип проблемы, полезные поля и исходную причину.",
       "requiredDifficulties": ["Базовый"],
-      "reviewed": false,
+      "reviewed": true,
       "priority": "core",
       "relatedSkillIds": []
     },
@@ -53,7 +53,7 @@
       "title": "Что показывает stack trace и какие у него ограничения?",
       "description": "Объяснить и применить правило с учётом его границ: Стек - диагностическая подсказка о вызовах, а не стабильная сериализация истории программы.",
       "requiredDifficulties": ["Базовый"],
-      "reviewed": false,
+      "reviewed": true,
       "priority": "core",
       "relatedSkillIds": []
     },
@@ -62,7 +62,7 @@
       "title": "Как отлаживать JavaScript в браузере и что делает debugger?",
       "description": "Объяснить и применить правило с учётом его границ: Отладчик позволяет проверить состояние в конкретной точке воспроизводимого сценария.",
       "requiredDifficulties": ["Базовый"],
-      "reviewed": false,
+      "reviewed": true,
       "priority": "core",
       "relatedSkillIds": []
     },
@@ -71,7 +71,7 @@
       "title": "Почему успешный JSON.parse ещё не означает корректные данные?",
       "description": "Объяснить и применить правило с учётом его границ: Синтаксическая корректность и соответствие контракту проверяются отдельно.",
       "requiredDifficulties": ["Средний"],
-      "reviewed": false,
+      "reviewed": true,
       "priority": "core",
       "relatedSkillIds": []
     },
@@ -80,7 +80,7 @@
       "title": "Чем window error отличается от unhandledrejection?",
       "description": "Объяснить и применить правило с учётом его границ: Глобальная диагностика видит отдельные классы необработанных сбоев, а не исправляет бизнес-сценарий.",
       "requiredDifficulties": ["Средний"],
-      "reviewed": false,
+      "reviewed": true,
       "priority": "core",
       "relatedSkillIds": []
     }
@@ -92,7 +92,6 @@
       "topic": "JavaScript",
       "difficulty": "Базовый",
       "summary": "Создание ошибки, выброс значения и граница разбора программы.",
-      "code": "const issue = new Error(\"описание\"); // пока не выброшена\ntry {\n  JSON.parse(\"не JSON\");\n} catch (error) {\n  console.log(error instanceof SyntaxError); // true в этом контексте\n}",
       "takeaway": "Создать Error и выбросить исключение - разные действия; момент разбора определяет возможность перехвата.",
       "moduleId": "javascript",
       "order": 0,
@@ -101,11 +100,11 @@
         "learningGoal": "Объяснить и применить правило с учётом его границ: Создать Error и выбросить исключение - разные действия; момент разбора определяет возможность перехвата.",
         "keywords": ["JavaScript", "Ошибки и отладка"],
         "kind": "explanation",
-        "reviewStatus": "imported",
+        "reviewStatus": "ready",
         "goalIds": ["core", "error-exception-model"],
         "relatedQuestionIds": [],
         "priority": "core",
-        "sourceRefs": []
+        "sourceRefs": ["ref-95b7fb84a6fa3d26"]
       },
       "answerFile": "answers/javascript/error-exception-model.md"
     },
@@ -115,7 +114,6 @@
       "topic": "JavaScript",
       "difficulty": "Базовый",
       "summary": "ReferenceError, TypeError, RangeError, SyntaxError и другие причины.",
-      "code": "const errors = [\n  new TypeError(\"Нужна строка\"),\n  new RangeError(\"Значение вне диапазона\"),\n  new AggregateError([new Error(\"сбой\")], \"Несколько причин\"),\n];\nerrors.map((error) => error.name);\n// [\"TypeError\", \"RangeError\", \"AggregateError\"]",
       "takeaway": "Тип ошибки описывает класс проблемы, а текст сообщения предназначен прежде всего для диагностики.",
       "moduleId": "javascript",
       "order": 1,
@@ -124,7 +122,7 @@
         "learningGoal": "Объяснить и применить правило с учётом его границ: Тип ошибки описывает класс проблемы, а текст сообщения предназначен прежде всего для диагностики.",
         "keywords": ["JavaScript", "Ошибки и отладка"],
         "kind": "explanation",
-        "reviewStatus": "imported",
+        "reviewStatus": "ready",
         "goalIds": ["core", "error-types"],
         "relatedQuestionIds": ["js-using-disposal"],
         "priority": "core",
@@ -138,7 +136,6 @@
       "topic": "JavaScript",
       "difficulty": "Базовый",
       "summary": "Расширение Error, дополнительные поля и cause.",
-      "code": "class ValidationError extends Error {\n  constructor(message, field, options) {\n    super(message, options);\n    this.name = \"ValidationError\";\n    this.field = field;\n  }\n}\nconst issue = new ValidationError(\"Обязательное поле\", \"email\");\nissue instanceof Error; // true",
       "takeaway": "Собственный Error сохраняет тип проблемы, полезные поля и исходную причину.",
       "moduleId": "javascript",
       "order": 2,
@@ -147,11 +144,11 @@
         "learningGoal": "Объяснить и применить правило с учётом его границ: Собственный Error сохраняет тип проблемы, полезные поля и исходную причину.",
         "keywords": ["JavaScript", "Ошибки и отладка"],
         "kind": "explanation",
-        "reviewStatus": "imported",
+        "reviewStatus": "ready",
         "goalIds": ["core", "custom-errors"],
         "relatedQuestionIds": [],
         "priority": "core",
-        "sourceRefs": []
+        "sourceRefs": ["ref-95b7fb84a6fa3d26"]
       },
       "answerFile": "answers/javascript/custom-errors.md"
     },
@@ -161,7 +158,6 @@
       "topic": "JavaScript",
       "difficulty": "Базовый",
       "summary": "Цепочка вызовов, точка создания Error и исходные файлы.",
-      "code": "function createIssue() { return new Error(\"сбой\"); }\nconst error = createIssue();\nconsole.log(error.stack);\n// Имена и формат строк зависят от движка; не сравнивайте весь stack как контракт.",
       "takeaway": "Стек - диагностическая подсказка о вызовах, а не стабильная сериализация истории программы.",
       "moduleId": "javascript",
       "order": 3,
@@ -170,11 +166,11 @@
         "learningGoal": "Объяснить и применить правило с учётом его границ: Стек - диагностическая подсказка о вызовах, а не стабильная сериализация истории программы.",
         "keywords": ["JavaScript", "Ошибки и отладка"],
         "kind": "explanation",
-        "reviewStatus": "imported",
+        "reviewStatus": "ready",
         "goalIds": ["core", "error-stack-trace"],
         "relatedQuestionIds": [],
         "priority": "core",
-        "sourceRefs": []
+        "sourceRefs": ["ref-95b7fb84a6fa3d26"]
       },
       "answerFile": "answers/javascript/error-stack-trace.md"
     },
@@ -184,7 +180,6 @@
       "topic": "JavaScript",
       "difficulty": "Базовый",
       "summary": "Точки остановки, шаги, переменные и пауза на исключении.",
-      "code": "function inspectTotal(values) {\n  const total = values.reduce((sum, value) => sum + value, 0);\n  debugger; // учебная точка остановки для подключённого отладчика\n  return total;\n}\n// В рабочем коде такую инструкцию убирают после расследования.",
       "takeaway": "Отладчик позволяет проверить состояние в конкретной точке воспроизводимого сценария.",
       "moduleId": "javascript",
       "order": 4,
@@ -193,11 +188,11 @@
         "learningGoal": "Объяснить и применить правило с учётом его границ: Отладчик позволяет проверить состояние в конкретной точке воспроизводимого сценария.",
         "keywords": ["JavaScript", "Ошибки и отладка"],
         "kind": "explanation",
-        "reviewStatus": "imported",
+        "reviewStatus": "ready",
         "goalIds": ["core", "browser-debugging"],
         "relatedQuestionIds": [],
         "priority": "core",
-        "sourceRefs": []
+        "sourceRefs": ["ref-95b7fb84a6fa3d26"]
       },
       "answerFile": "answers/javascript/browser-debugging.md"
     },
@@ -205,9 +200,7 @@
       "id": "js-json-validation",
       "title": "Почему успешный JSON.parse ещё не означает корректные данные?",
       "summary": "Разделите синтаксический разбор JSON, проверку структуры и обработку ошибки на границе приложения.",
-      "code": "function parseUser(text) {\n  const value = JSON.parse(text)\n  if (!value || typeof value !== 'object' || Array.isArray(value) ||\n      !Object.hasOwn(value, 'name') || typeof value.name !== 'string' ||\n      !value.name.trim()) {\n    throw new TypeError('Ожидался пользователь с непустым именем')\n  }\n  return { name: value.name.trim() }\n}",
       "takeaway": "Синтаксическая корректность и соответствие контракту проверяются отдельно.",
-      "pitfall": "Считать JSON.parse или приведение типа заменой runtime-валидации.",
       "topic": "JavaScript",
       "difficulty": "Средний",
       "moduleId": "javascript",
@@ -217,11 +210,11 @@
         "learningGoal": "Объяснить и применить правило с учётом его границ: Синтаксическая корректность и соответствие контракту проверяются отдельно.",
         "keywords": ["JavaScript", "Ошибки и отладка"],
         "kind": "explanation",
-        "reviewStatus": "imported",
+        "reviewStatus": "ready",
         "goalIds": ["core", "js-json-validation"],
         "relatedQuestionIds": [],
         "priority": "core",
-        "sourceRefs": []
+        "sourceRefs": ["ref-95b7fb84a6fa3d26"]
       },
       "answerFile": "answers/javascript/js-json-validation.md"
     },
@@ -230,9 +223,7 @@
       "difficulty": "Средний",
       "title": "Чем window error отличается от unhandledrejection?",
       "summary": "Разные пути необработанных ошибок и роль глобальной диагностики.",
-      "code": "window.addEventListener(\"unhandledrejection\", event => {\n  const reason = event.reason\n  // Сформировать безопасную диагностику; не считать reason всегда Error.\n})\n// Владелец конкретной операции всё равно должен обработать её отказ.",
       "takeaway": "Глобальная диагностика видит отдельные классы необработанных сбоев, а не исправляет бизнес-сценарий.",
-      "pitfall": "Ожидать, что window.onerror перехватит и обработает любые отклонения Promise.",
       "topic": "JavaScript",
       "moduleId": "javascript",
       "popular": false,
@@ -241,7 +232,7 @@
         "learningGoal": "Объяснить и применить правило с учётом его границ: Глобальная диагностика видит отдельные классы необработанных сбоев, а не исправляет бизнес-сценарий.",
         "keywords": ["JavaScript", "Ошибки и отладка"],
         "kind": "explanation",
-        "reviewStatus": "imported",
+        "reviewStatus": "ready",
         "goalIds": ["core", "js-global-error-reporting"],
         "relatedQuestionIds": [],
         "priority": "core",

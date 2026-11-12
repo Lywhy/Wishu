@@ -9,7 +9,7 @@
       "title": "Асинхронный интерфейс",
       "description": "Обзор и взаимосвязи навыков: Гонки запросов, Suspense, отложенные обновления и оптимистичный UI.",
       "requiredDifficulties": [],
-      "reviewed": false,
+      "reviewed": true,
       "priority": "core",
       "relatedSkillIds": [
         "react-fetch-races",
@@ -34,7 +34,7 @@
       "title": "Как предотвратить гонку ответов при загрузке данных в эффекте?",
       "description": "Объяснить и применить правило с учётом его границ: Результат запроса должен принадлежать текущему параметру загрузки.",
       "requiredDifficulties": ["Средний"],
-      "reviewed": false,
+      "reviewed": true,
       "priority": "core",
       "relatedSkillIds": []
     },
@@ -52,7 +52,7 @@
       "title": "Чем useTransition отличается от useDeferredValue?",
       "description": "Объяснить и применить правило с учётом его границ: Отложите дорогое представление, сохранив быстрый отклик ввода.",
       "requiredDifficulties": ["Продвинутый"],
-      "reviewed": false,
+      "reviewed": true,
       "priority": "core",
       "relatedSkillIds": []
     },
@@ -61,7 +61,7 @@
       "title": "Как организовать оптимистичное обновление через useOptimistic?",
       "description": "Объяснить и применить правило с учётом его границ: Оптимистичное представление не заменяет подтверждение сервера.",
       "requiredDifficulties": ["Продвинутый"],
-      "reviewed": false,
+      "reviewed": true,
       "priority": "core",
       "relatedSkillIds": []
     },
@@ -70,7 +70,7 @@
       "title": "Почему загрузка данных в дочерних эффектах может создавать waterfall?",
       "description": "Объяснить и применить правило с учётом его границ: Порядок запуска запросов должен отражать зависимость данных, а не случайный порядок появления компонентов.",
       "requiredDifficulties": ["Средний"],
-      "reviewed": false,
+      "reviewed": true,
       "priority": "core",
       "relatedSkillIds": []
     },
@@ -172,7 +172,6 @@
       "topic": "React",
       "difficulty": "Средний",
       "summary": "Устаревший запрос, cleanup и обработка ошибок.",
-      "code": "useEffect(() => {\n  let active = true\n  const controller = new AbortController()\n  async function load() {\n    try {\n      const response = await fetch(\"/api/users/\" + encodeURIComponent(userId), { signal: controller.signal })\n      if (!response.ok) throw new Error(\"Не удалось загрузить пользователя\")\n      const data = await response.json()\n      if (active) setUser(data)\n    } catch (error) {\n      if (active) setError(error)\n    }\n  }\n  void load()\n  return () => { active = false; controller.abort() }\n}, [userId])",
       "takeaway": "Результат запроса должен принадлежать текущему параметру загрузки.",
       "moduleId": "react",
       "order": 0,
@@ -181,11 +180,11 @@
         "learningGoal": "Объяснить и применить правило с учётом его границ: Результат запроса должен принадлежать текущему параметру загрузки.",
         "keywords": ["React", "Асинхронный интерфейс"],
         "kind": "explanation",
-        "reviewStatus": "imported",
+        "reviewStatus": "ready",
         "goalIds": ["core", "react-fetch-races"],
         "relatedQuestionIds": [],
         "priority": "core",
-        "sourceRefs": []
+        "sourceRefs": ["ref-f8f3016ad77e9e80"]
       },
       "answerFile": "answers/react/react-fetch-races.md"
     },
@@ -229,11 +228,11 @@
         "learningGoal": "Объяснить и применить правило с учётом его границ: Отложите дорогое представление, сохранив быстрый отклик ввода.",
         "keywords": ["React", "Асинхронный интерфейс"],
         "kind": "explanation",
-        "reviewStatus": "imported",
+        "reviewStatus": "ready",
         "goalIds": ["core", "react-transition-deferred"],
         "relatedQuestionIds": [],
         "priority": "core",
-        "sourceRefs": []
+        "sourceRefs": ["ref-1c462c80f4daa775"]
       },
       "answerFile": "answers/react/react-transition-deferred.md"
     },
@@ -251,11 +250,11 @@
         "learningGoal": "Объяснить и применить правило с учётом его границ: Оптимистичное представление не заменяет подтверждение сервера.",
         "keywords": ["React", "Асинхронный интерфейс"],
         "kind": "explanation",
-        "reviewStatus": "imported",
+        "reviewStatus": "ready",
         "goalIds": ["core", "react-optimistic-ui"],
         "relatedQuestionIds": [],
         "priority": "core",
-        "sourceRefs": []
+        "sourceRefs": ["ref-8c5502e33932183e"]
       },
       "answerFile": "answers/react/react-optimistic-ui.md"
     },
@@ -263,9 +262,7 @@
       "id": "react-data-waterfalls",
       "title": "Почему загрузка данных в дочерних эффектах может создавать waterfall?",
       "summary": "Порядок монтирования, параллельный старт независимых запросов и общая стратегия данных.",
-      "code": "async function loadDashboard(loadProfile, loadStats) {\n  const profilePromise = loadProfile()\n  const statsPromise = loadStats()\n  const [profile, stats] = await Promise.all([profilePromise, statsPromise])\n  return { profile, stats }\n}\n// Предполагается независимость операций и выбранная общая политика ошибки.",
       "takeaway": "Порядок запуска запросов должен отражать зависимость данных, а не случайный порядок появления компонентов.",
-      "pitfall": "Добавлять useMemo вокруг fetch и считать решёнными дедупликацию и срок жизни серверных данных.",
       "difficulty": "Средний",
       "topic": "React",
       "moduleId": "react",
@@ -275,7 +272,7 @@
         "learningGoal": "Объяснить и применить правило с учётом его границ: Порядок запуска запросов должен отражать зависимость данных, а не случайный порядок появления компонентов.",
         "keywords": ["React", "Асинхронный интерфейс"],
         "kind": "explanation",
-        "reviewStatus": "imported",
+        "reviewStatus": "ready",
         "goalIds": ["core", "react-data-waterfalls"],
         "relatedQuestionIds": [],
         "priority": "core",

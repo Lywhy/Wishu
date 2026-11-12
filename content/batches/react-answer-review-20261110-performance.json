@@ -1,0 +1,139 @@
+{
+  "schemaVersion": 1,
+  "id": "react-answer-review-20261110-performance",
+  "title": "react-answer-review-20261110-performance",
+  "sectionId": "react",
+  "subsectionId": "performance",
+  "currentPass": "answers",
+  "goalIds": [
+    "core",
+    "react-memo",
+    "react-memo-callback",
+    "react-profiler",
+    "react-list-windowing",
+    "react-compiler",
+    "react-flush-sync",
+    "react-composition-render-locality",
+    "react-profiler-durations",
+    "react-perf-render-is-not-paint",
+    "react-perf-local-search-input",
+    "react-perf-memo-selector-cost",
+    "react-perf-windowing-identity",
+    "react-perf-browser-vs-react-profile",
+    "react-compiler-memo-boundary",
+    "react-memo-comparator-closure-bug",
+    "react-interaction-latency-budget"
+  ],
+  "questionIds": [
+    "react-memo",
+    "react-memo-callback",
+    "react-profiler",
+    "react-list-windowing",
+    "react-compiler",
+    "react-flush-sync",
+    "react-composition-render-locality",
+    "react-profiler-durations",
+    "react-perf-render-is-not-paint",
+    "react-perf-local-search-input",
+    "react-perf-memo-selector-cost",
+    "react-perf-windowing-identity",
+    "react-perf-browser-vs-react-profile",
+    "react-compiler-memo-boundary",
+    "react-memo-comparator-closure-bug",
+    "react-interaction-latency-budget"
+  ],
+  "scopePass": {
+    "status": "complete",
+    "remaining": []
+  },
+  "answerPass": {
+    "status": "complete",
+    "remaining": []
+  },
+  "baseline": [
+    {
+      "id": "react-memo",
+      "title": "Какие рендеры может пропустить React.memo?",
+      "contentHash": "fd67611db36d2ef6555c9952af216c576c02cfe12a9a6f533b71a4b27cb387f0"
+    },
+    {
+      "id": "react-memo-callback",
+      "title": "Чем useMemo отличается от useCallback?",
+      "contentHash": "cd3677d4de2061baa319a4184197a56b8e455ec37b699b858f5f7fccd8b76dcf"
+    },
+    {
+      "id": "react-profiler",
+      "title": "Как найти причину медленного взаимодействия в React?",
+      "contentHash": "f113ea5e59fd4aa639de190db0282ef6c9d22634f52da0b3514c69e90eaf5351"
+    },
+    {
+      "id": "react-list-windowing",
+      "title": "Когда нужна виртуализация длинного списка?",
+      "contentHash": "cedbf08b8fe7a54a6c4edd011c73f9cb33daf2fb1822802f874b77b1f4148f8a"
+    },
+    {
+      "id": "react-compiler",
+      "title": "Что оптимизирует React Compiler и заменяет ли он правила React?",
+      "contentHash": "66b4f43837860c1fcbe6a8d9d2cef9c4a8e3895835f261d439f3b6793f5ce596"
+    },
+    {
+      "id": "react-flush-sync",
+      "title": "Когда flushSync оправдан при интеграции с браузерным или сторонним API?",
+      "contentHash": "cfe9aa4d99e98ef4dcb098448f9556d78d86e5a1cfb01d603d50e2864a75229c"
+    },
+    {
+      "id": "react-composition-render-locality",
+      "title": "Как композиция через children помогает ограничить рендеры без memo?",
+      "contentHash": "40d890824b20200ab9131e1ef9922fa1d3945045ee9766d3dbfd98fc8ece0e70"
+    },
+    {
+      "id": "react-profiler-durations",
+      "title": "Что означают actualDuration и baseDuration в React Profiler?",
+      "contentHash": "3d4b02024519627b59ee685dc08778491da236b6ebeb79399161dc3fa7b29845"
+    },
+    {
+      "id": "react-perf-render-is-not-paint",
+      "title": "Почему console.log рендера не доказывает изменение DOM или отрисовку браузера?",
+      "contentHash": "21c84b7cf7b0f0b46e068aac428cebf98bc91cc2c20d09717ad0ceb72be2adfd"
+    },
+    {
+      "id": "react-perf-local-search-input",
+      "title": "Как вынести state поля, чтобы ввод не обновлял всё дерево страницы?",
+      "contentHash": "8e803e9e7756f349ca696bd7f359036a6fdc55393221c5839fc5622d90eb4364"
+    },
+    {
+      "id": "react-perf-memo-selector-cost",
+      "title": "Когда мемоизация вычисления дороже самого вычисления?",
+      "contentHash": "354986ab139a0a51a4e02578bd9ab55c139afa7853827e31cbc6f8fa79238734"
+    },
+    {
+      "id": "react-perf-windowing-identity",
+      "title": "Как сохранить выбор, фокус и состояние строк в виртуализированном списке?",
+      "contentHash": "7d46f42f6e28bfde75348a52f44e73c9b40484c38e8b74482117ec77c864974a"
+    },
+    {
+      "id": "react-perf-browser-vs-react-profile",
+      "title": "Как отличить медленный render React от долгого layout, paint или сети?",
+      "contentHash": "9431e97242f504bdcde3f8bdf0a37c3a1c0a684f3aca986f7e866de8beadc247"
+    },
+    {
+      "id": "react-compiler-memo-boundary",
+      "title": "Как оценить необходимость ручной мемоизации при включённом React Compiler?",
+      "contentHash": "ab77384a03eebd23af33557ed2fa3905bb1cf6a700d6dc3f98e3514380733640"
+    },
+    {
+      "id": "react-memo-comparator-closure-bug",
+      "title": "Как пользовательский comparator memo может сохранить обработчик со старым замыканием?",
+      "contentHash": "96c482aaea3e584a5bac797f46d3cf63a27b424dd7c36d957d9e76b60dd28bd5"
+    },
+    {
+      "id": "react-interaction-latency-budget",
+      "title": "Как построить измерение медленного взаимодействия без смешивания render и полной задержки?",
+      "contentHash": "9b483f862d99a34bb013d8a23ed3614ef5fbc3042b7f8ec7b6d9cb550107f874"
+    }
+  ],
+  "notes": [
+    "Сохраняются все 300 ID, включая Redux и Zustand внутри React. Дорабатываются ответы, а не количество вопросов. Схожие формулировки сохраняются при разных учебных целях; связи указываются через канонические вопросы.",
+    "Завершено 2026-11-12: все 300 ответов прочитаны и расширены индивидуальными разборами; ID сохранены. Oxfmt, content:build и полный content:check успешны (1266 вопросов). Примеры, приложение, UI/server проверки, миграции и seed не запускались."
+  ]
+}

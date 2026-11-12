@@ -1,0 +1,77 @@
+{
+  "schemaVersion": 1,
+  "id": "js-all-answers-20261108-iteration",
+  "title": "js-all-answers-20261108-iteration",
+  "sectionId": "javascript",
+  "subsectionId": "iteration",
+  "currentPass": "answers",
+  "goalIds": [
+    "core",
+    "js-iterator-close",
+    "js-yield-delegation",
+    "js-generator-return-finally",
+    "js-iterator-helpers",
+    "js-array-from-async",
+    "js-async-generator-queue",
+    "js-for-await-sync-rejection"
+  ],
+  "questionIds": [
+    "js-iterator-close",
+    "js-yield-delegation",
+    "js-generator-return-finally",
+    "js-iterator-helpers",
+    "js-array-from-async",
+    "js-async-generator-queue",
+    "js-for-await-sync-rejection"
+  ],
+  "scopePass": {
+    "status": "complete",
+    "remaining": []
+  },
+  "answerPass": {
+    "status": "complete",
+    "remaining": []
+  },
+  "baseline": [
+    {
+      "id": "js-iterator-close",
+      "title": "Как for...of освобождает ресурс при досрочном выходе из итерации?",
+      "contentHash": "7dc778d16e34dbbf29ce19d18c8f354fae71fdda1b715145c6177007e3f439f9"
+    },
+    {
+      "id": "js-yield-delegation",
+      "title": "Что передаёт yield* вложенному итератору кроме выдаваемых значений?",
+      "contentHash": "d47f38583d88a29660ac24649bf4f5e9f7c014e8f3f8dc42df75d1687d7b4aa2"
+    },
+    {
+      "id": "js-generator-return-finally",
+      "title": "Может ли generator.return() вернуть done: false?",
+      "contentHash": "751c628e8158728420ad470be0563b8ef3bb9497fff0a92d6828c4265e8e0573"
+    },
+    {
+      "id": "js-iterator-helpers",
+      "title": "Чем Iterator helpers отличаются от цепочки методов Array?",
+      "contentHash": "5fa8f12662d0af515af5bbfd413b072c9fbc92588ba2a9a8ebc932c529dae203"
+    },
+    {
+      "id": "js-array-from-async",
+      "title": "Чем Array.fromAsync отличается от Promise.all?",
+      "contentHash": "6b4479e3280b37c68ce519464354b44c79e09cc1385786379913b2bbee23efe6"
+    },
+    {
+      "id": "js-async-generator-queue",
+      "title": "Почему много next() не превращают async-генератор в параллельный загрузчик?",
+      "contentHash": "a51100b65b826eb8096d3ba32dd6d52cac2162c3547edf4602f621659986be6d"
+    },
+    {
+      "id": "js-for-await-sync-rejection",
+      "title": "Как for await...of закрывает sync-генератор при отклонении выданного Promise?",
+      "contentHash": "97a9e55958496a16f5bbb06c05216ab624e47e7c6395a36834082343ffa0e433"
+    }
+  ],
+  "notes": [
+    "Полный редакторский проход JavaScript: 346 ID сохраняются, добавлений/слияний нет. 12 ответов предыдущего пакета сохраняют готовый связный разбор. Остальным нужны индивидуальные пояснения к механизму и примеру, а не однотипная вводная фраза. Ответы ITBooster не используются.",
+    "Для оставшихся ответов подготовлены индивидуальные пояснения примеров; код перенесён в общий Markdown. В упражнениях на чтение кода условие сохранено отдельно. Примеры не запускались.",
+    "Завершено: Oxfmt, content:build, полный content:check. В платформе 1266 вопросов; в JavaScript сохранены 346 ID, обновлены оставшиеся 334 ответа, новых/удалённых ID нет. Код примеров и seed не выполнялись."
+  ]
+}

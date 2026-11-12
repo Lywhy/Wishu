@@ -2,14 +2,27 @@
 
 <!-- wishu:answer-block -->
 
-### Механизм и границы
+### Как это работает
 
 Порядковые номера легко смещаются при добавлении новых групп, поэтому для структурного результата имена часто яснее. Группа внутри повторения не является массивом всех промежуточных захватов: итог зависит от правил повторения.
 
 Не путайте обратную ссылку с повторным выполнением того же подшаблона: она относится к захваченному значению.
 
-<!-- wishu:answer-block -->
+### Пример и его разбор
 
-### Источник
+```javascript
+const match = /^(?<name>[a-z]+):(?<count>\d+)$/.exec("item:12")
+console.log(match.groups.name) // item
+console.log(/^(a|b)\1$/.test("aa")) // true
+console.log(/^(a|b)\1$/.test("ab")) // false
+```
 
-[MDN: Regular_expressions/Capturing_group](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Regular_expressions/Capturing_group).
+Именованная группа name делает извлечённое поле явным. Обратная ссылка в другом шаблоне требует тот же текст, который выбрала первая группа, поэтому aa подходит, а ab нет. Это отличается от двух независимых выборов между a и b.
+
+### Типичная ошибка
+
+> Добавлять лишние захваты и затем полагаться на хрупкие числовые индексы.
+
+### Источники
+
+[MDN: Regular_expressions/Capturing_group](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Regular_expressions/Capturing_group)

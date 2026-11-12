@@ -2,14 +2,27 @@
 
 <!-- wishu:answer-block -->
 
-### Механизм и границы
+### Как это работает
 
 NFC и NFD работают с канонической эквивалентностью; NFKC/NFKD дополнительно применяют compatibility-преобразования и могут менять различия, важные для задачи.
 
 Нормализация не является транслитерацией, исправлением регистра или универсальной защитой от похожих символов разных алфавитов. Зафиксируйте политику хранения и сравнения идентификаторов.
 
-<!-- wishu:answer-block -->
+### Пример и его разбор
 
-### Источник
+```javascript
+const composed = "\u00e9"
+const decomposed = "e\u0301"
+console.log(composed === decomposed) // false
+console.log(composed.normalize("NFC") === decomposed.normalize("NFC")) // true
+```
 
-[MDN: Global_Objects/String/normalize](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/normalize).
+Composed и decomposed содержат разные последовательности, хотя отображают одну букву. NFC приводит их к канонически сопоставимой форме, после чего строгое сравнение даёт true. Оно не объединяет любые похожие буквы из разных алфавитов и не заменяет политику безопасности идентификаторов.
+
+### Типичная ошибка
+
+> Считать `normalize` защитой от всех визуально похожих доменных имён или идентификаторов.
+
+### Источники
+
+[MDN: Global_Objects/String/normalize](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/normalize)

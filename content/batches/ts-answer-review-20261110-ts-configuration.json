@@ -1,0 +1,83 @@
+{
+  "schemaVersion": 1,
+  "id": "ts-answer-review-20261110-ts-configuration",
+  "title": "ts-answer-review-20261110-ts-configuration",
+  "sectionId": "typescript",
+  "subsectionId": "ts-configuration",
+  "currentPass": "answers",
+  "goalIds": [
+    "core",
+    "ts-project-file-graph",
+    "ts-config-inheritance-paths",
+    "ts-check-emit-boundary",
+    "ts-cli-project-selection",
+    "ts-erasable-syntax-boundary",
+    "ts-config-diagnostic-tools",
+    "ts-source-declaration-maps",
+    "ts-checker-performance-diagnosis"
+  ],
+  "questionIds": [
+    "ts-project-file-graph",
+    "ts-config-inheritance-paths",
+    "ts-check-emit-boundary",
+    "ts-cli-project-selection",
+    "ts-erasable-syntax-boundary",
+    "ts-config-diagnostic-tools",
+    "ts-source-declaration-maps",
+    "ts-checker-performance-diagnosis"
+  ],
+  "scopePass": {
+    "status": "complete",
+    "remaining": []
+  },
+  "answerPass": {
+    "status": "complete",
+    "remaining": []
+  },
+  "baseline": [
+    {
+      "id": "ts-project-file-graph",
+      "title": "Чем files, include и exclude отличаются от rootDir и outDir?",
+      "contentHash": "3a65b5b7736003facceb871c85b43b935aa923c905e8dabd2e84b5baf8502c77"
+    },
+    {
+      "id": "ts-config-inheritance-paths",
+      "title": "Как наследование tsconfig влияет на относительные пути и массивы настроек?",
+      "contentHash": "c0da2307b896edea8d5fe07ff71727aeed69b0ddeb5a67b5157cd6d6080744b5"
+    },
+    {
+      "id": "ts-check-emit-boundary",
+      "title": "Чем noEmit отличается от noEmitOnError и успешной сборки бандлера?",
+      "contentHash": "2fd33da5e555248bde311d622574905dac554e9c37af52749e35e990d7153f62"
+    },
+    {
+      "id": "ts-cli-project-selection",
+      "title": "Почему tsc file.ts не равен проверке проекта через tsc -p?",
+      "contentHash": "5526c0e88b8239dd0a715060ad652fed88c3e24ac3d1125c1a85f3102e83c2c8"
+    },
+    {
+      "id": "ts-erasable-syntax-boundary",
+      "title": "Что проверяет erasableSyntaxOnly и чего не делает простое удаление типов?",
+      "contentHash": "7db37157f5e9fa2d65961771e04a3ecb013435a05b30181c9cfe58a15493fee5"
+    },
+    {
+      "id": "ts-config-diagnostic-tools",
+      "title": "Как найти причину неожиданного импорта, глобального типа или состава проекта?",
+      "contentHash": "728b7ed69a79e69141fa4031491f7d86fcfcfd0e54d5ef0763dd5324ef572a82"
+    },
+    {
+      "id": "ts-source-declaration-maps",
+      "title": "Чем sourceMap отличается от declarationMap?",
+      "contentHash": "8519a85337aeb494bbd87d7be3dba18c08700cf2d92094d2b81d342662caa901"
+    },
+    {
+      "id": "ts-checker-performance-diagnosis",
+      "title": "Как отличить медленную проверку типов от медленной сборки или работы программы?",
+      "contentHash": "d73bd63fe4a881a28ea8ccd63a3acae5261e96ba3079db7ca734a46132b34337"
+    }
+  ],
+  "notes": [
+    "Сохраняются все существующие ID. Раздел охватывает разные навыки проверки типов: похожая терминология не служит основанием для слияния. Текущая задача - редактура ответов, без добавления повторных определений.",
+    "Завершено: 161 индивидуальный разбор, прежние ID сохранены. Oxfmt, content:build (1266 вопросов), полный content:check успешны. Примеры, приложение, UI/server проверки и seed не выполнялись."
+  ]
+}

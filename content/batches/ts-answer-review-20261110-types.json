@@ -1,0 +1,104 @@
+{
+  "schemaVersion": 1,
+  "id": "ts-answer-review-20261110-types",
+  "title": "ts-answer-review-20261110-types",
+  "sectionId": "typescript",
+  "subsectionId": "types",
+  "currentPass": "answers",
+  "goalIds": [
+    "core",
+    "ts-primitive-types",
+    "ts-nullability",
+    "ts-literal-types",
+    "unknown-any",
+    "ts-void",
+    "ts-never",
+    "ts-enums",
+    "ts-empty-object-types",
+    "ts-special-type-algebra",
+    "ts-unique-symbol-identity",
+    "ts-property-key-domains"
+  ],
+  "questionIds": [
+    "ts-primitive-types",
+    "ts-nullability",
+    "ts-literal-types",
+    "unknown-any",
+    "ts-void",
+    "ts-never",
+    "ts-enums",
+    "ts-empty-object-types",
+    "ts-special-type-algebra",
+    "ts-unique-symbol-identity",
+    "ts-property-key-domains"
+  ],
+  "scopePass": {
+    "status": "complete",
+    "remaining": []
+  },
+  "answerPass": {
+    "status": "complete",
+    "remaining": []
+  },
+  "baseline": [
+    {
+      "id": "ts-primitive-types",
+      "title": "Какие примитивные типы описывает TypeScript и почему используют string вместо String?",
+      "contentHash": "08af538767d2027afcac31804c6c662a571cdaf5c8cdf24634f866e4342205ef"
+    },
+    {
+      "id": "ts-nullability",
+      "title": "Как strictNullChecks меняет работу с null и undefined?",
+      "contentHash": "0a0cb36ea965a5b551f1b38e073d19071b93eb4c5327af267a550f873295887d"
+    },
+    {
+      "id": "ts-literal-types",
+      "title": "Что такое литеральный тип и как сохранить точное значение через as const?",
+      "contentHash": "d78eec9a97211ad48cc6789355f85fe643fea59779290741d7187bb28626a327"
+    },
+    {
+      "id": "unknown-any",
+      "title": "Когда использовать unknown вместо any и чем опасно необоснованное any?",
+      "contentHash": "6e958229acca7642b294d939f9ee8e98a79eb74719d3d575f68b0a34605811a5"
+    },
+    {
+      "id": "ts-void",
+      "title": "Что означает void в результате функции и почему callback может вернуть значение?",
+      "contentHash": "765e74f2c4af92ff3b87ad256ce55e27a565d5ce9b69326a4e858bbf9b022066"
+    },
+    {
+      "id": "ts-never",
+      "title": "Что означает never и чем он отличается от void?",
+      "contentHash": "044a608c056129f5736591174ee24d67581391a19ed1f254d339333e14f1154e"
+    },
+    {
+      "id": "ts-enums",
+      "title": "Для чего нужен enum и какие есть альтернативы?",
+      "contentHash": "0a8c11cc4f1f6558066186aa1f39f847158205039f550a65050cd98324d6e40f"
+    },
+    {
+      "id": "ts-empty-object-types",
+      "title": "Чем различаются object, Object и {}?",
+      "contentHash": "d4b3e8c3e5fd01c68f41ae38aaf3c0d0ac04fea69ecf4edb6ca714e3fd2cd04d"
+    },
+    {
+      "id": "ts-special-type-algebra",
+      "title": "Как any, unknown и never ведут себя в union и intersection?",
+      "contentHash": "1f8f9851d05972b2f7b9e1dd8fbab9b67f9ec1da582e9ae6800f98c91e592555"
+    },
+    {
+      "id": "ts-unique-symbol-identity",
+      "title": "Как unique symbol создаёт различимые ключи и бренды?",
+      "contentHash": "8a85d8450cf8eea3656384d9fc08eeb4c90d95ee8f0693bf398c4ade48319907"
+    },
+    {
+      "id": "ts-property-key-domains",
+      "title": "Когда использовать PropertyKey и почему ключ объекта не всегда string?",
+      "contentHash": "62898decb83f9171b910cd7f030080fe35d23daa17a9c6535a3e7185aa1dbdf0"
+    }
+  ],
+  "notes": [
+    "Сохраняются все существующие ID. Раздел охватывает разные навыки проверки типов: похожая терминология не служит основанием для слияния. Текущая задача - редактура ответов, без добавления повторных определений.",
+    "Завершено: 161 индивидуальный разбор, прежние ID сохранены. Oxfmt, content:build (1266 вопросов), полный content:check успешны. Примеры, приложение, UI/server проверки и seed не выполнялись."
+  ]
+}

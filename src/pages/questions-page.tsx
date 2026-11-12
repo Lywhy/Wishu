@@ -131,9 +131,6 @@ export function QuestionsPage() {
             >
               Короткая подготовка
             </Button>
-            <Button nativeButton={false} render={<Link to="/questions/new" />}>
-              Добавить вопрос
-            </Button>
           </>
         }
       />

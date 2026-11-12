@@ -2,20 +2,34 @@
 
 <!-- wishu:answer-block -->
 
-### Механизм и границы
+### Как это работает
 
-Не любой await автоматически запрещён: важны конкретная активность, события и используемая библиотека. Но нельзя держать native-транзакцию открытой просто потому, что async-функция ещё не завершилась.
+Не любой `await` автоматически запрещён: важны конкретная активность, события и используемая библиотека. Но нельзя держать native-транзакцию открытой просто потому, что `async`-функция ещё не завершилась.
 
 Успех отдельного put не равен успешному завершению всей транзакции. Обрабатывайте complete/abort и ошибки; нужные внешние данные часто стоит получить до открытия транзакции.
 
-<!-- wishu:answer-block -->
+### Пример и его разбор
+
+```javascript
+function store(db, record) {
+  const tx = db.transaction("items", "readwrite")
+  tx.objectStore("items").put(record)
+  tx.oncomplete = () => console.log("транзакция завершена")
+  tx.onabort = () => console.log("транзакция отменена")
+}
+// Не вставляйте произвольный fetch между созданием tx и её запросами.
+```
+
+В store запрос ставится сразу после создания транзакции. Сообщение об успехе появляется лишь в oncomplete. Если перед put произвольно ждать сеть, транзакция может уже закончиться; длительность `async`-функции не продлевает время жизни ресурса IndexedDB.
+
+### Типичная ошибка
+
+> Считать завершение put гарантией commit или ждать сеть внутри транзакции без понимания активности.
 
 ### Для закрепления
 
 - [Когда использовать IndexedDB вместо Web Storage?](/questions/indexed-db)
 
-<!-- wishu:answer-block -->
+### Источники
 
-### Источник
-
-[MDN: IndexedDB_API/Using_IndexedDB](https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API/Using_IndexedDB).
+[MDN: IndexedDB_API/Using_IndexedDB](https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API/Using_IndexedDB)

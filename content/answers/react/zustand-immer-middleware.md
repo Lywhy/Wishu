@@ -2,7 +2,7 @@
 
 <!-- wishu:answer-block -->
 
-#### Механизм и границы
+#### Как это работает
 
 - Подключение `middleware` должно быть явным. Логика, переписанная с `createSlice`, без него может изменить прежний объект или не уведомить ожидаемых подписчиков.
 - Не изменяйте опубликованные объекты через `getState`. Draft-подход не отменяет владение состоянием и правила стабильных ссылок.
@@ -23,11 +23,19 @@ const useCounter = create<Counter>()(
 )
 ```
 
+#### Разбор примера
+
+Внутри показанного updater draft предоставляет Immer-middleware, поэтому запись count += 1 превращается в новый неизменяемый снимок. В обычном set такой гарантии нет. Подключение Immer не разрешает произвольно менять объект из `getState` и не отменяет правила владения данными. При переносе reducer из Redux Toolkit нужно перенести и соответствующий draft-контракт, а не только похожий синтаксис.
+
+#### Типичная ошибка
+
+> Скопировать draft-обновление в store без immer middleware.
+
 #### Для закрепления
 
 - [Как set объединяет состояние и почему вложенный объект нужно копировать?](/questions/zustand-set-merge)
 - [Что создаёт createSlice и почему в его reducer разрешена запись state.value++?](/questions/redux-slice-immer)
 
-#### Источник
+#### Источники
 
-[Zustand: immer](https://zustand.docs.pmnd.rs/reference/middlewares/immer).
+[Zustand: immer](https://zustand.docs.pmnd.rs/reference/middlewares/immer)

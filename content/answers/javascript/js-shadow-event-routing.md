@@ -2,21 +2,35 @@
 
 <!-- wishu:answer-block -->
 
-### Механизм и границы
+### Как это работает
 
 Event.target вне компонента не обязан быть внутренней кнопкой. Для closed shadow root путь не раскрывает произвольно все внутренности. Bubbles и composed отвечают за разные аспекты распространения.
 
 Публичный компонент лучше предоставляет согласованное событие с нужными данными, чем заставляет внешнюю делегацию зависеть от приватной разметки.
 
-<!-- wishu:answer-block -->
+### Пример и его разбор
+
+```javascript
+const event = new CustomEvent("item-selected", {
+  detail: { id: "a" },
+  bubbles: true,
+  composed: true,
+})
+// Внутренний элемент: node.dispatchEvent(event)
+// Снаружи слушают публичный контракт item-selected.
+```
+
+Событие item-selected задаёт публичный контракт через detail. Bubbles позволяет ему всплывать, composed разрешает пересечение shadow-границы. Внешнему обработчику достаточно идентификатора, поэтому ему не требуется зависеть от конкретного внутреннего элемента и его разметки.
+
+### Типичная ошибка
+
+> Ожидать, что target всегда укажет на самый внутренний исходный элемент.
 
 ### Для закрепления
 
 - [Как Shadow DOM изолирует компонент и чем отличается от обычного DOM?](/questions/shadow-dom)
 - [Как событие проходит фазы погружения, цели и всплытия?](/questions/dom-event-phases)
 
-<!-- wishu:answer-block -->
+### Источники
 
-### Источник
-
-[MDN: Event/composed](https://developer.mozilla.org/en-US/docs/Web/API/Event/composed).
+[MDN: Event/composed](https://developer.mozilla.org/en-US/docs/Web/API/Event/composed)

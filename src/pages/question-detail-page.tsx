@@ -6,7 +6,7 @@ import {
 import { isJavascriptCodeReading } from "@/data/javascript-preparation"
 import { WorkspaceControls, PersonalNote, RelatedStudy } from "@/components/experience/study-tools"
 import { UndoQuestionMark, QuestionShortcuts } from "@/components/experience/question-actions"
-import { ContentFeedback } from "@/components/experience/content-feedback"
+import { QuestionReportDialog } from "@/components/feedback/question-report-dialog"
 import { useWorkspace } from "@/stores/workspace"
 import { QuestionReviewControls } from "@/components/questions/question-study"
 import { useEffect, useMemo } from "react"
@@ -109,6 +109,16 @@ export function QuestionDetailPage() {
           <PageHeading
             title={question.title}
             description={question.summary}
+            actions={
+              <QuestionReportDialog
+                key={question.id}
+                questionId={question.id}
+                title={question.title}
+                section={section.title}
+                subsection={subsection.title}
+                path={route.pathname}
+              />
+            }
             meta={
               <>
                 <Badge variant="secondary">{question.topic}</Badge>
@@ -145,7 +155,10 @@ export function QuestionDetailPage() {
             currentTitle={question.title}
             questionId={question.id}
           />
-          <Card className="gap-4 rounded-xl p-4 shadow-none sm:p-6">
+          <Card
+            data-question-answer={question.id}
+            className="gap-4 rounded-xl p-4 shadow-none sm:p-6"
+          >
             <div>
               <h2 className="text-base font-semibold">Ответ и разбор</h2>
               <p className="mt-1.5 text-sm leading-6 text-muted-foreground">
@@ -166,10 +179,6 @@ export function QuestionDetailPage() {
             <JavaScriptSelfCheck question={question} />
             <PersonalNote contentKey={"question:" + question.id} />
             <RelatedStudy moduleId={section.id} from={"/questions/" + question.id} />
-            <ContentFeedback
-              key={`feedback:${question.id}`}
-              contentKey={"question:" + question.id}
-            />
           </div>
         </article>
         <aside className={focus ? "hidden" : "hidden space-y-4 lg:sticky lg:top-24 lg:block"}>

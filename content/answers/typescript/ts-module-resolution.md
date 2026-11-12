@@ -2,11 +2,11 @@
 
 <!-- wishu:answer-block -->
 
-Для сборщика обычно рассматривают bundler с подходящим module, для Node ESM/CJS - согласованные node16/nodenext или другую поддерживаемую конкретной версией пару. Важны package.json, exports, расширения и формат каждого файла.
+#### Как это работает
+
+Для сборщика обычно рассматривают bundler с подходящим `module`, для Node ESM/CJS - согласованные node16/nodenext или другую поддерживаемую конкретной версией пару. Важны package.json, exports, расширения и формат каждого файла.
 
 `paths` помогает TypeScript находить декларации или исходники, но сам по себе не переписывает пути в emitted JavaScript. Alias должен понимать и сборщик или runtime. Для опубликованной библиотеки учитывайте, сможет ли потребитель разрешить оставшиеся спецификаторы.
-
-<!-- wishu:answer-block -->
 
 Пример для приложения со сборщиком:
 
@@ -16,15 +16,21 @@
     "module": "esnext",
     "moduleResolution": "bundler",
     "paths": {
-      "@/*": [
-        "./src/*"
-      ]
+      "@/*": ["./src/*"]
     },
     "noEmit": true
   }
 }
 ```
 
-<!-- wishu:answer-block -->
+#### Разбор примера
 
-[Документация TypeScript](https://www.typescriptlang.org/docs/handbook/modules/reference.html).
+Пример описывает проект со сборщиком: TypeScript понимает alias @ при проверке, а bundler должен разрешить тот же путь при создании приложения. `noEmit` подчёркивает разделение ролей. Для прямого запуска Node этот конфиг нельзя считать готовой настройкой загрузчика.
+
+#### Типичная ошибка
+
+> Настроить только paths и ожидать, что Node сам узнает alias из tsconfig.
+
+#### Источники
+
+[Документация TypeScript](https://www.typescriptlang.org/docs/handbook/modules/reference.html)

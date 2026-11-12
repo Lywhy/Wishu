@@ -1,0 +1,328 @@
+{
+  "schemaVersion": 1,
+  "id": "react-answer-review-20261110-components",
+  "title": "react-answer-review-20261110-components",
+  "sectionId": "react",
+  "subsectionId": "components",
+  "currentPass": "answers",
+  "goalIds": [
+    "core",
+    "react-purpose",
+    "react-jsx",
+    "react-props-children",
+    "react-render-commit",
+    "react-conditional-rendering",
+    "react-keys",
+    "react-fragments",
+    "react-state-identity",
+    "react-events",
+    "react-composition-patterns",
+    "react-children-opaque",
+    "react-event-boundaries",
+    "react-activity-lifetime",
+    "react-render-purity",
+    "react-component-call",
+    "react-element-node-component",
+    "react-jsx-html-safety",
+    "react-prop-forwarding-contract",
+    "react-clone-element-contract",
+    "react-class-lifecycle-migration",
+    "react-renderer-boundary",
+    "react-jsx-capitalization",
+    "react-jsx-expression-boundary",
+    "react-jsx-boolean-attribute",
+    "react-jsx-style-contract",
+    "react-jsx-class-condition",
+    "react-jsx-aria-data",
+    "react-prop-default-null",
+    "react-jsx-whitespace",
+    "react-jsx-object-child",
+    "react-jsx-map-return",
+    "react-component-module-export",
+    "react-component-local-variable",
+    "react-component-slot-contract",
+    "react-ts-component-props",
+    "react-ts-children-node",
+    "react-ts-event-types",
+    "react-ts-state-null-union",
+    "react-event-current-target-async",
+    "react-focus-subtree-boundary",
+    "react-compound-component-contract",
+    "react-ts-discriminated-props",
+    "react-render-restart-external-mutation"
+  ],
+  "questionIds": [
+    "react-purpose",
+    "react-jsx",
+    "react-props-children",
+    "react-render-commit",
+    "react-conditional-rendering",
+    "react-keys",
+    "react-fragments",
+    "react-state-identity",
+    "react-events",
+    "react-composition-patterns",
+    "react-children-opaque",
+    "react-event-boundaries",
+    "react-activity-lifetime",
+    "react-render-purity",
+    "react-component-call",
+    "react-element-node-component",
+    "react-jsx-html-safety",
+    "react-prop-forwarding-contract",
+    "react-clone-element-contract",
+    "react-class-lifecycle-migration",
+    "react-renderer-boundary",
+    "react-jsx-capitalization",
+    "react-jsx-expression-boundary",
+    "react-jsx-boolean-attribute",
+    "react-jsx-style-contract",
+    "react-jsx-class-condition",
+    "react-jsx-aria-data",
+    "react-prop-default-null",
+    "react-jsx-whitespace",
+    "react-jsx-object-child",
+    "react-jsx-map-return",
+    "react-component-module-export",
+    "react-component-local-variable",
+    "react-component-slot-contract",
+    "react-ts-component-props",
+    "react-ts-children-node",
+    "react-ts-event-types",
+    "react-ts-state-null-union",
+    "react-event-current-target-async",
+    "react-focus-subtree-boundary",
+    "react-compound-component-contract",
+    "react-ts-discriminated-props",
+    "react-render-restart-external-mutation"
+  ],
+  "scopePass": {
+    "status": "complete",
+    "remaining": []
+  },
+  "answerPass": {
+    "status": "complete",
+    "remaining": []
+  },
+  "baseline": [
+    {
+      "id": "react-purpose",
+      "title": "Что такое React и что означает декларативный интерфейс?",
+      "contentHash": "555a8a057b4990ed670b2397e84798f6c7d4e9785dfae551fbefabea1919d451"
+    },
+    {
+      "id": "react-jsx",
+      "title": "Что такое JSX и чем он отличается от HTML?",
+      "contentHash": "555c9c3392339067b4f47acb2db5b1efa386330da05a5e303118c38bf4c91d6d"
+    },
+    {
+      "id": "react-props-children",
+      "title": "Как работают props и children?",
+      "contentHash": "c1def0e4820593963cbfb68a07666a65de41c70bf29d21df508073d306fd3981"
+    },
+    {
+      "id": "react-render-commit",
+      "title": "Чем рендер отличается от изменения DOM?",
+      "contentHash": "b6c957aef4fa92b45ae66937db8220bf48a143f0ad34962242f77e5af842da9c"
+    },
+    {
+      "id": "react-conditional-rendering",
+      "title": "Какие ошибки возможны при условном рендеринге?",
+      "contentHash": "25b589c3bea10bcc29dbe4805938d1ed92dd026bd25dada88b5134b49ae186e1"
+    },
+    {
+      "id": "react-keys",
+      "title": "Зачем React нужен key в списках?",
+      "contentHash": "d4bab24d9ad61146bf39ab2873fdba04188b363e6dbaf4bc0006d7cf9f4d19cc"
+    },
+    {
+      "id": "react-fragments",
+      "title": "Зачем нужны Fragment и явный ключ у фрагмента?",
+      "contentHash": "9be0c77fe02761499b4f881a9c29007814bb350872d144303a0cbfb6bc077709"
+    },
+    {
+      "id": "react-state-identity",
+      "title": "Когда React сохраняет состояние, а когда сбрасывает его?",
+      "contentHash": "fc7756a6ce7a0e1616954d948dd58f8a6bd8bd5ef59fc5ff5efdfd25894eab23"
+    },
+    {
+      "id": "react-events",
+      "title": "Почему onClick={handleClick()} отличается от onClick={handleClick}?",
+      "contentHash": "f8ca64d1e12950bab5f17709042ac785957184dbe9775100a54837ca78378d73"
+    },
+    {
+      "id": "react-composition-patterns",
+      "title": "Как выбрать между children, render prop, HOC и пользовательским хуком?",
+      "contentHash": "88553fd0a328ec84daa765a050b2a337095284ba3b8afe7c9a76814440ca548f"
+    },
+    {
+      "id": "react-children-opaque",
+      "title": "Почему children нельзя считать обычным массивом готовых DOM-узлов?",
+      "contentHash": "4c0a67ba8797b7e4b0d9dc017049d6a3f590c4ea8143dd7c3aa6b65c360f1f87"
+    },
+    {
+      "id": "react-event-boundaries",
+      "title": "Как распространение React-событий связано с DOM и обработчиками capture?",
+      "contentHash": "57ffced7a99e08505658878b544dc41cbdaefd218d8fc8238d3d0f19bebbb64a"
+    },
+    {
+      "id": "react-activity-lifetime",
+      "title": "Как Activity скрывает интерфейс с сохранением состояния и что происходит с эффектами?",
+      "contentHash": "468c8be4642389fd6032499ee7b655a9c50d919af8f554710b09ec779903f94a"
+    },
+    {
+      "id": "react-render-purity",
+      "title": "Почему рендер компонента должен быть чистым?",
+      "contentHash": "fdfd85b7a120d678711e8b716a59a9fc2fb2646d7df400abce85c3c249d4b9c4"
+    },
+    {
+      "id": "react-component-call",
+      "title": "Почему компонент нужно использовать как <Panel />, а не вызывать Panel()?",
+      "contentHash": "6f56ad544a7a264518f37d68e575f6ebb225787ba7041d1125096de7b8631116"
+    },
+    {
+      "id": "react-element-node-component",
+      "title": "Чем отличаются компонент, React element и React node?",
+      "contentHash": "05387913b919eac0b53fbe3e7d71aa57cb5c0bad1ab52ad0a16386acdf4f7338"
+    },
+    {
+      "id": "react-jsx-html-safety",
+      "title": "Как JSX отображает пользовательский текст и чем опасен dangerouslySetInnerHTML?",
+      "contentHash": "ec9c5e925250e69f8be577b50c6733bd6d0bf852284dda462a2e4941f1de7e09"
+    },
+    {
+      "id": "react-prop-forwarding-contract",
+      "title": "Как правильно передавать props через компонент-обёртку?",
+      "contentHash": "4e7d7c26adabbad92efcd83c0d333042b6fd51053140ac98f1e95bacdb6ce497"
+    },
+    {
+      "id": "react-clone-element-contract",
+      "title": "Что делает cloneElement и какие ограничения есть у этого подхода?",
+      "contentHash": "6f6068ee45de89aa4aaf4480646b9b04962fb50fd5d85e8a4d2128522eef781c"
+    },
+    {
+      "id": "react-class-lifecycle-migration",
+      "title": "Как читать жизненный цикл классового компонента и переносить подписку в хук?",
+      "contentHash": "a554ef631dfb6b24317dcbfa79ca946054e46baaa96ffbfece9bcd0ed635c06d"
+    },
+    {
+      "id": "react-renderer-boundary",
+      "title": "Зачем отдельно нужны react и react-dom?",
+      "contentHash": "aef04884ceffd432beab37764e4eb2274f9f3535e60f4ad4669eb22bfc20708b"
+    },
+    {
+      "id": "react-jsx-capitalization",
+      "title": "Как React различает <button /> и <Button />?",
+      "contentHash": "30260ca38ad3dfb57b58468edb157b9f920631784e348100adc4e25ea17e17e1"
+    },
+    {
+      "id": "react-jsx-expression-boundary",
+      "title": "Почему внутри фигурных скобок JSX нельзя написать if или for?",
+      "contentHash": "648db8c47b8143dece30c44992574d25372651545748a70a22347b6f1b6492cd"
+    },
+    {
+      "id": "react-jsx-boolean-attribute",
+      "title": "Чем disabled={false} отличается от disabled=\"false\"?",
+      "contentHash": "f7f1375338ba96d4f7ce61bd40e6c52bfd7019551b4a037bc79a5e282a9dec10"
+    },
+    {
+      "id": "react-jsx-style-contract",
+      "title": "Как передавать числовые значения и CSS-переменные в style?",
+      "contentHash": "7e9a1405c18b2ee0394e62d324302fdd169332c97c03ca45e12ca65c97cf4288"
+    },
+    {
+      "id": "react-jsx-class-condition",
+      "title": "Как собрать className, чтобы не получить строку false или undefined?",
+      "contentHash": "6ece84eb3117a21d57aa037c73584dfdb5ea769c63cc249ec8820aa4202f66ca"
+    },
+    {
+      "id": "react-jsx-aria-data",
+      "title": "Как записывать aria-* и data-* атрибуты в JSX?",
+      "contentHash": "4488254cd9134f8936b010d7d42479564d2006f0c7a95017eb89a3dfe0a22e8b"
+    },
+    {
+      "id": "react-prop-default-null",
+      "title": "Когда значение по умолчанию prop не применяется к null?",
+      "contentHash": "56aa298b4669c521eef0038cd329ef2aeda83f61418f1b2de5ec4a1d5b7f9ece"
+    },
+    {
+      "id": "react-jsx-whitespace",
+      "title": "Почему перенос строки в JSX не всегда создаёт пробел между словами?",
+      "contentHash": "df99f393aaca45084eb3d326ce1d28fdf2856f108229e8fe1be1671dbc6fd6ad"
+    },
+    {
+      "id": "react-jsx-object-child",
+      "title": "Почему объект нельзя вывести напрямую, но можно вывести его поля?",
+      "contentHash": "b364ffce4a32e1387a33c5b652b9e522b9b253a71b74cfd32a3aa309617b8122"
+    },
+    {
+      "id": "react-jsx-map-return",
+      "title": "Почему map с фигурными скобками может не показать ни одного элемента?",
+      "contentHash": "99e01638107ca9ddb6a40151e14426d7366063f5c691525dfa483dda786d2950"
+    },
+    {
+      "id": "react-component-module-export",
+      "title": "Как отличить ошибку импорта компонента от ошибки его props?",
+      "contentHash": "cc62b46519255759c27d5d84e686d4da559be72b5958d31e50f23710b5884467"
+    },
+    {
+      "id": "react-component-local-variable",
+      "title": "Почему обычная переменная в компоненте не заменяет state?",
+      "contentHash": "8a40e5d7591ddafcb2b8dc492a98068d171bcf5b918e47a5b89f6cb1604584fd"
+    },
+    {
+      "id": "react-component-slot-contract",
+      "title": "Когда слоту передавать готовый element, а когда тип компонента?",
+      "contentHash": "b1fb3f0b1189c64b557272049d43c59cd9fa3a1c676cb95c6533e87e6a1a694d"
+    },
+    {
+      "id": "react-ts-component-props",
+      "title": "Как типизировать обязательные и необязательные props функции-компонента?",
+      "contentHash": "8be870acc340337d62a6cfba2432cf5eecfab1acf6414b931823ccc30b45a331"
+    },
+    {
+      "id": "react-ts-children-node",
+      "title": "Как выбрать тип children: ReactNode, ReactElement или строка?",
+      "contentHash": "b067108c2b9cf5896cfce46d612821548f38ab48ccfca970d9689d172631b5ec"
+    },
+    {
+      "id": "react-ts-event-types",
+      "title": "Чем тип события input отличается от типа события button в TypeScript?",
+      "contentHash": "f8c814b46003ab501dafe4df782a85f0949f084bd06b00a894d9d7499d4ed960"
+    },
+    {
+      "id": "react-ts-state-null-union",
+      "title": "Почему useState(null) иногда требует явного типа?",
+      "contentHash": "eb6cd169c14965870d6f163c0a4709e381f5ddcfe135b51b9dc91848fecc046d"
+    },
+    {
+      "id": "react-event-current-target-async",
+      "title": "Как безопасно использовать currentTarget в асинхронном обработчике React?",
+      "contentHash": "de4aac43bf1669c7ce3d8a1fc7e46f53fb0e7bc75b43886795fa5096fb1eee8a"
+    },
+    {
+      "id": "react-focus-subtree-boundary",
+      "title": "Как определить, что фокус покинул всё составное поле, а не перешёл к его кнопке?",
+      "contentHash": "c1f5d0a1a8f511a0333f84c5cc7f4f4ff4ec4ba91e242e3637c40485c2c6ecc2"
+    },
+    {
+      "id": "react-compound-component-contract",
+      "title": "Как Context помогает построить составной компонент с согласованными частями?",
+      "contentHash": "4285a188b9d07accad573d13b4e97e0b7c2e3458910698aa97d3a1fe0759e766"
+    },
+    {
+      "id": "react-ts-discriminated-props",
+      "title": "Как типами запретить несовместимые комбинации props компонента?",
+      "contentHash": "1d8148633cf30bcedd62fc97dd51fc24a837fe310d3b6d4b10e2310956f5e906"
+    },
+    {
+      "id": "react-render-restart-external-mutation",
+      "title": "Почему запись во внешний кеш во время render опасна при прерывании вычисления?",
+      "contentHash": "29fa64efb0576ae4edff79b21bfb07c79191cfbf7afdc0b73482ddcabfc8a1f9"
+    }
+  ],
+  "notes": [
+    "Сохраняются все 300 ID, включая Redux и Zustand внутри React. Дорабатываются ответы, а не количество вопросов. Схожие формулировки сохраняются при разных учебных целях; связи указываются через канонические вопросы.",
+    "Завершено 2026-11-12: все 300 ответов прочитаны и расширены индивидуальными разборами; ID сохранены. Oxfmt, content:build и полный content:check успешны (1266 вопросов). Примеры, приложение, UI/server проверки, миграции и seed не запускались."
+  ]
+}

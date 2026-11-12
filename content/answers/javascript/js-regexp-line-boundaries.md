@@ -2,14 +2,26 @@
 
 <!-- wishu:answer-block -->
 
-### Механизм и границы
+### Как это работает
 
 Проверка всей пользовательской строки и поиск отдельных строк документа требуют разных границ. Учитывайте конечный перевод строки и то, что regex может найти только фрагмент без явного полного ограничения.
 
 Для независимых записей иногда проще сначала корректно выделить строки, а затем проверять каждую, сохраняя политику пустых строк.
 
-<!-- wishu:answer-block -->
+### Пример и его разбор
 
-### Источник
+```javascript
+console.log(/^b$/m.test("a\nb\nc")) // true
+console.log(/^a.b$/s.test("a\nb")) // true
+console.log(/^a.b$/.test("a\nb")) // false
+```
 
-[MDN: Global_Objects/RegExp/multiline](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp/multiline).
+Флаг m позволяет якорям выделить отдельную строку b внутри документа. Флаг s решает другую задачу: точка проходит через перевод строки между a и b. Без s второй шаблон не совпадает, даже если ему добавить только m.
+
+### Типичная ошибка
+
+> Добавить m и ожидать, что . начнёт захватывать переводы строк.
+
+### Источники
+
+[MDN: Global_Objects/RegExp/multiline](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp/multiline)

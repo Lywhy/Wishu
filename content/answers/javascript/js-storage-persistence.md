@@ -2,14 +2,32 @@
 
 <!-- wishu:answer-block -->
 
-### Механизм и границы
+### Как это работает
 
-Storage estimate и запрос persistence дают информацию или возможность запросить политику, но не обещают бесконечную память и отсутствие пользовательского удаления. LocalStorage синхронен; IndexedDB имеет другую модель, но тоже не равен удалённой резервной копии.
+Storage estimate и запрос persistence дают информацию или возможность запросить политику, но не обещают бесконечную память и отсутствие пользовательского удаления. `localStorage` синхронен; IndexedDB имеет другую модель, но тоже не равен удалённой резервной копии.
 
 Согласуйте fallback, экспорт/синхронизацию и сообщение об ошибке. Не показывайте «сохранено», если запись реально не завершилась.
 
-<!-- wishu:answer-block -->
+### Пример и его разбор
 
-### Источник
+```javascript
+function saveDraft(key, draft) {
+  try {
+    localStorage.setItem(key, JSON.stringify(draft))
+    return true
+  } catch {
+    return false
+  }
+}
+// Вызывающий код должен различать успешное сохранение и fallback в памяти.
+```
 
-[MDN: Storage_API/Storage_quotas_and_eviction_criteria](https://developer.mozilla.org/en-US/docs/Web/API/Storage_API/Storage_quotas_and_eviction_criteria).
+SaveDraft различает успешную запись и отказ, возвращая boolean. Это позволяет оставить черновик в памяти или предложить экспорт, но нельзя выдавать fallback за устойчивое сохранение. Пользовательское удаление данных остаётся возможным даже при предоставленной persistent-политике.
+
+### Типичная ошибка
+
+> Молчаливо проглатывать ошибку записи и обещать пользователю сохранённый черновик.
+
+### Источники
+
+[MDN: Storage_API/Storage_quotas_and_eviction_criteria](https://developer.mozilla.org/en-US/docs/Web/API/Storage_API/Storage_quotas_and_eviction_criteria)

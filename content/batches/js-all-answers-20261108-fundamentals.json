@@ -1,0 +1,343 @@
+{
+  "schemaVersion": 1,
+  "id": "js-all-answers-20261108-fundamentals",
+  "title": "js-all-answers-20261108-fundamentals",
+  "sectionId": "javascript",
+  "subsectionId": "fundamentals",
+  "currentPass": "answers",
+  "goalIds": [
+    "core",
+    "data-types",
+    "equality",
+    "variables",
+    "null-undefined",
+    "scope",
+    "hoisting",
+    "dynamic-typing",
+    "typeof",
+    "nan",
+    "type-coercion",
+    "string-concatenation-templates",
+    "increment-decrement",
+    "truthy-falsy",
+    "property-presence",
+    "delete-operator",
+    "instanceof-operator",
+    "object-creation-new",
+    "void-operator",
+    "conditional-statements",
+    "logical-and",
+    "nullish-coalescing",
+    "json-format",
+    "array-detection",
+    "value-and-reference",
+    "mutability",
+    "symbol",
+    "bigint-number",
+    "spread",
+    "error-handling",
+    "optional-chaining",
+    "loops",
+    "break-continue",
+    "for-in-for-of",
+    "labels",
+    "global-variables",
+    "eval-risks",
+    "number-precision",
+    "same-value-comparisons",
+    "js-asi-boundaries",
+    "js-operator-evaluation",
+    "js-logical-assignment",
+    "js-comma-expression",
+    "js-switch-lexical-scope",
+    "js-destructuring-assignment",
+    "js-primitive-boxing"
+  ],
+  "questionIds": [
+    "data-types",
+    "equality",
+    "variables",
+    "null-undefined",
+    "scope",
+    "hoisting",
+    "dynamic-typing",
+    "typeof",
+    "nan",
+    "type-coercion",
+    "string-concatenation-templates",
+    "increment-decrement",
+    "truthy-falsy",
+    "property-presence",
+    "delete-operator",
+    "instanceof-operator",
+    "object-creation-new",
+    "void-operator",
+    "conditional-statements",
+    "logical-and",
+    "nullish-coalescing",
+    "json-format",
+    "array-detection",
+    "value-and-reference",
+    "mutability",
+    "symbol",
+    "bigint-number",
+    "spread",
+    "error-handling",
+    "optional-chaining",
+    "loops",
+    "break-continue",
+    "for-in-for-of",
+    "labels",
+    "global-variables",
+    "eval-risks",
+    "number-precision",
+    "same-value-comparisons",
+    "js-asi-boundaries",
+    "js-operator-evaluation",
+    "js-logical-assignment",
+    "js-comma-expression",
+    "js-switch-lexical-scope",
+    "js-destructuring-assignment",
+    "js-primitive-boxing"
+  ],
+  "scopePass": {
+    "status": "complete",
+    "remaining": []
+  },
+  "answerPass": {
+    "status": "complete",
+    "remaining": []
+  },
+  "baseline": [
+    {
+      "id": "data-types",
+      "title": "Какие типы данных есть в JavaScript?",
+      "contentHash": "0b70f804ddda35e482376a5520d9d35f7747313908f975ad3906759506f5ba54"
+    },
+    {
+      "id": "equality",
+      "title": "Чем отличаются == и ===?",
+      "contentHash": "3dd4fe02caec40208e3fb20962101ca0d4bda04a21e52887a044c30a785daa50"
+    },
+    {
+      "id": "variables",
+      "title": "Чем отличаются var, let и const?",
+      "contentHash": "28876e554306b764583643d1854bfd1020ca8e4d5a4e8b83a235a9de7fcbc7f0"
+    },
+    {
+      "id": "null-undefined",
+      "title": "В чём разница между null и undefined?",
+      "contentHash": "12b83502edb0659f9680c762040bf1a048e49749bc3cee4ba08c2bfd8aa65bed"
+    },
+    {
+      "id": "scope",
+      "title": "Что такое область видимости переменной?",
+      "contentHash": "567725f5ac234c0cada529dc25dabdf023260ed4c63a56acc2a29a3abc71427c"
+    },
+    {
+      "id": "hoisting",
+      "title": "Что такое hoisting и что произойдёт при обращении к переменной до объявления?",
+      "contentHash": "b489f2187a1b66c55455fb15a369950bb91a4fede751fe9d70b919e045017621"
+    },
+    {
+      "id": "dynamic-typing",
+      "title": "Что означает динамическая типизация JavaScript?",
+      "contentHash": "6f5873b7357e0e90420ce5cfe34bee96a1b7065c8f9493daf280e94df417840e"
+    },
+    {
+      "id": "typeof",
+      "title": "Как работает typeof и почему typeof null возвращает \"object\"?",
+      "contentHash": "b4b429facef46572bba14c0c717d57ed7abf31352a242fe259cb2d9d49aceb60"
+    },
+    {
+      "id": "nan",
+      "title": "Что такое NaN и как его правильно проверить?",
+      "contentHash": "47c66e54fe2f35a37b7ecab46ce9103fe8b18c36752dd6e531777798d594d331"
+    },
+    {
+      "id": "type-coercion",
+      "title": "Как работают преобразования типов и почему [] == false даёт true?",
+      "contentHash": "0799db11d9e95c19eebdbb6e174907cb6b18c3d2bf0bdecebbbd44188afb9399"
+    },
+    {
+      "id": "string-concatenation-templates",
+      "title": "Как объединять строки и использовать шаблонные литералы?",
+      "contentHash": "67dd4c26d2e8dde08173e59dd8a57f6990a9cbecca87eecc61535accaacd2ef9"
+    },
+    {
+      "id": "increment-decrement",
+      "title": "Чем отличаются префиксные и постфиксные ++ и --?",
+      "contentHash": "bbb2c147def0c2b406af9799e813897a4a843e3669a74171177543f812b7fc8f"
+    },
+    {
+      "id": "truthy-falsy",
+      "title": "Какие значения являются falsy и как работают ! и !!?",
+      "contentHash": "a4feb9572adbd097db8dcc44c0e3296bd6af4f8c1a8d46d5bf631d7820f2f145"
+    },
+    {
+      "id": "property-presence",
+      "title": "Как проверить наличие свойства и что возвращает отсутствующее свойство?",
+      "contentHash": "4ea13b08c8e99192616153f5185c62b70748ea669266f687714dc349b519058b"
+    },
+    {
+      "id": "delete-operator",
+      "title": "Что делает оператор delete?",
+      "contentHash": "08e1c7d489dae6a90bf25c0a5eededea32a2522432682654ca826cef23d522a0"
+    },
+    {
+      "id": "instanceof-operator",
+      "title": "Как работает instanceof и какие у него ограничения?",
+      "contentHash": "fb83b06ab2fabd353f37aaf4a697f80e564fd29535b580cbe440830ae727cd67"
+    },
+    {
+      "id": "object-creation-new",
+      "title": "Как создать объект и что делает оператор new?",
+      "contentHash": "8c7c674fefb01d8a292cdb2ad8db360b5ae23c6e552fc24a435dd0112242c157"
+    },
+    {
+      "id": "void-operator",
+      "title": "Для чего нужен оператор void?",
+      "contentHash": "e6f877cb12d0b656b8a5e4da75fa8060d1cdd9664cfab1fafa199a5d4e45dd54"
+    },
+    {
+      "id": "conditional-statements",
+      "title": "Когда использовать if, switch и тернарный оператор?",
+      "contentHash": "6ced268d086fb5218205f15e95965601e49f0b64f6a20a6a66327980f3da62af"
+    },
+    {
+      "id": "logical-and",
+      "title": "Как работает && и какое значение он возвращает?",
+      "contentHash": "0823c2f6a321ef24cb9861a5745e35374abecef9d8776b914277039ed98de5f4"
+    },
+    {
+      "id": "nullish-coalescing",
+      "title": "Чем оператор ?? отличается от ||?",
+      "contentHash": "b076be0830db41351776c6e08f12bb62fc97855b0ef48b9712077f56ca4583ef"
+    },
+    {
+      "id": "json-format",
+      "title": "Что такое JSON и как работают JSON.parse и JSON.stringify?",
+      "contentHash": "eb6cd3fe396176e45e1bf34f4309396fb7bb3f1265b96145e760f78863b230f4"
+    },
+    {
+      "id": "array-detection",
+      "title": "Как надёжно проверить, что значение является массивом?",
+      "contentHash": "ef3c5cff76202c27157f4809a3fa52d961d8311a77310c5b60ff8d24d351d77e"
+    },
+    {
+      "id": "value-and-reference",
+      "title": "Как передаются примитивы и объекты: по значению или по ссылке?",
+      "contentHash": "02bb2324fba0bcaf4399ed59f9632d939b6d6edc2cd6399bc12133f0cbb17d1d"
+    },
+    {
+      "id": "mutability",
+      "title": "Что такое изменяемые и неизменяемые данные?",
+      "contentHash": "acfb3ed38f934278a30ed388ebad9a60d82cfae02595a7a6dcd41a6a80655d54"
+    },
+    {
+      "id": "symbol",
+      "title": "Что такое Symbol и где его используют?",
+      "contentHash": "e11541bb8c6b6b4f2fc977bbb729248d33ffbe1164a9c3256c1bd0c7a016cad9"
+    },
+    {
+      "id": "bigint-number",
+      "title": "Чем BigInt отличается от Number?",
+      "contentHash": "6d09317fbb203e2326b2cf72d55bed341ad683db5bc4c9744203e22d5d891715"
+    },
+    {
+      "id": "spread",
+      "title": "Как работает spread и насколько глубоко он копирует данные?",
+      "contentHash": "9ccadb74a8b4fb7e42998d1e60b2ecf5613251ae405186029d67100289877fa6"
+    },
+    {
+      "id": "error-handling",
+      "title": "Как выбрасывать и обрабатывать ошибки в JavaScript?",
+      "contentHash": "be429a5d27821775d38b351d73032c2801b018d1a6a485d72086a4e97c9a2236"
+    },
+    {
+      "id": "optional-chaining",
+      "title": "Как работает optional chaining (?.)?",
+      "contentHash": "1f29ce45a1ada227156fa6e9e46e30428e00c569228ee32a3ff1be38de763235"
+    },
+    {
+      "id": "loops",
+      "title": "Какие циклы есть в JavaScript и когда их использовать?",
+      "contentHash": "f53a3a2f905983646917e2d43cc279eee8f1ee0e919fa3cfb2fe88e3b21d8ad6"
+    },
+    {
+      "id": "break-continue",
+      "title": "Чем отличаются break и continue и зачем break в switch?",
+      "contentHash": "26bc42ca51cb4959f04b97d0779c5bafe1603c3d5be679a369a9366b4ccf6748"
+    },
+    {
+      "id": "for-in-for-of",
+      "title": "Чем отличаются for...in и for...of?",
+      "contentHash": "b5c4748f7ce52d77c7df121f025e49d76a9f91a861618bc32784a9c04837459c"
+    },
+    {
+      "id": "labels",
+      "title": "Что такое метки и как они работают с break и continue?",
+      "contentHash": "d6d31d6e95495d6f01c413265c77b66f379cc95228754d615f33e1fca098243e"
+    },
+    {
+      "id": "global-variables",
+      "title": "Как устроены глобальные переменные и чем они отличаются от свойств globalThis?",
+      "contentHash": "11d468429ab1c07909d6bbffa2b6d1eb7f022f33983df30afc81855ae6ee27e9"
+    },
+    {
+      "id": "eval-risks",
+      "title": "Почему eval опасен и чем его заменить?",
+      "contentHash": "917f9bafb9806e418e2bbdf498c1f83fe3aedfe3202629e7e5c17db73a976c2d"
+    },
+    {
+      "id": "number-precision",
+      "title": "Почему 0.1 + 0.2 не равно 0.3 и как сравнивать дробные числа?",
+      "contentHash": "c3979f0ecbcf02a6c3cd6f55b97ddb576d7b26981476a1e9e794d0a94d6bed5d"
+    },
+    {
+      "id": "same-value-comparisons",
+      "title": "Чем Object.is и SameValueZero отличаются от строгого равенства?",
+      "contentHash": "76c977783bf176ddcdeecbe7fe3e84f9c29278eb4be521ef38a8798d8540a39e"
+    },
+    {
+      "id": "js-asi-boundaries",
+      "title": "Как автоматическая вставка точек с запятой влияет на return и начало следующей строки?",
+      "contentHash": "60460e8821410e78a0b014b6da01f585f22055ee3a106b322ac92d8207ff4138"
+    },
+    {
+      "id": "js-operator-evaluation",
+      "title": "Чем приоритет и ассоциативность отличаются от порядка вычисления операндов?",
+      "contentHash": "2c44895f286c38076a269f1b0b6eaa259de86e19004cf279bfc20b46c4d5b86a"
+    },
+    {
+      "id": "js-logical-assignment",
+      "title": "Как ||=, &&= и ??= отличаются от обычного присваивания с логическим оператором?",
+      "contentHash": "1c5d791984354bd48d66b40e09dd97b28e3679b4ad8133e2be803d5993811f3d"
+    },
+    {
+      "id": "js-comma-expression",
+      "title": "Что возвращает оператор запятая и почему он может менять this при вызове?",
+      "contentHash": "ddfed9e88c6e6575dde6a3d7dbd3dd4722c6e5d05db4b6010e2cb03c1a4462e4"
+    },
+    {
+      "id": "js-switch-lexical-scope",
+      "title": "Почему let и const в разных case могут конфликтовать?",
+      "contentHash": "3a3c6bd69e77b9bf74987260912a427bc900e19c77aa123d9db6dff917e63d86"
+    },
+    {
+      "id": "js-destructuring-assignment",
+      "title": "Чем деструктурирующее присваивание отличается от объявления переменных?",
+      "contentHash": "cf169807f04083f42387dc110596ff78cc4195e8cd9fb0b99944cfdb139f3c25"
+    },
+    {
+      "id": "js-primitive-boxing",
+      "title": "Как у примитива появляются методы и почему запись свойства не сохраняется?",
+      "contentHash": "ffe2d01e3f704d62a820679024e788ca78096e0909cbbb0994eb24062323af6c"
+    }
+  ],
+  "notes": [
+    "Полный редакторский проход JavaScript: 346 ID сохраняются, добавлений/слияний нет. 12 ответов предыдущего пакета сохраняют готовый связный разбор. Остальным нужны индивидуальные пояснения к механизму и примеру, а не однотипная вводная фраза. Ответы ITBooster не используются.",
+    "Для оставшихся ответов подготовлены индивидуальные пояснения примеров; код перенесён в общий Markdown. В упражнениях на чтение кода условие сохранено отдельно. Примеры не запускались.",
+    "Завершено: Oxfmt, content:build, полный content:check. В платформе 1266 вопросов; в JavaScript сохранены 346 ID, обновлены оставшиеся 334 ответа, новых/удалённых ID нет. Код примеров и seed не выполнялись."
+  ]
+}

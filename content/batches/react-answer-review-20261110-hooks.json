@@ -1,0 +1,195 @@
+{
+  "schemaVersion": 1,
+  "id": "react-answer-review-20261110-hooks",
+  "title": "react-answer-review-20261110-hooks",
+  "sectionId": "react",
+  "subsectionId": "hooks",
+  "currentPass": "answers",
+  "goalIds": [
+    "core",
+    "react-hooks-rules",
+    "effects",
+    "react-effect-dependencies",
+    "react-effect-not-needed",
+    "react-stale-closures",
+    "react-strict-mode",
+    "react-layout-effect",
+    "react-custom-hooks",
+    "react-effect-events",
+    "react-effect-object-dependencies",
+    "react-effect-async-return",
+    "react-effect-independent-processes",
+    "react-hook-api-contract",
+    "react-listener-function-identity",
+    "react-timeout-cleanup",
+    "react-hook-lint-purpose",
+    "react-hook-interval-functional-update",
+    "react-hook-debounce-value",
+    "react-hook-document-subscription",
+    "react-hook-effect-error-handling",
+    "react-hook-effect-loop-diagnosis",
+    "react-hook-memo-initializer-purity",
+    "react-external-store-snapshot-stability",
+    "react-external-store-subscribe-identity"
+  ],
+  "questionIds": [
+    "react-hooks-rules",
+    "effects",
+    "react-effect-dependencies",
+    "react-effect-not-needed",
+    "react-stale-closures",
+    "react-strict-mode",
+    "react-layout-effect",
+    "react-custom-hooks",
+    "react-effect-events",
+    "react-effect-object-dependencies",
+    "react-effect-async-return",
+    "react-effect-independent-processes",
+    "react-hook-api-contract",
+    "react-listener-function-identity",
+    "react-timeout-cleanup",
+    "react-hook-lint-purpose",
+    "react-hook-interval-functional-update",
+    "react-hook-debounce-value",
+    "react-hook-document-subscription",
+    "react-hook-effect-error-handling",
+    "react-hook-effect-loop-diagnosis",
+    "react-hook-memo-initializer-purity",
+    "react-external-store-snapshot-stability",
+    "react-external-store-subscribe-identity"
+  ],
+  "scopePass": {
+    "status": "complete",
+    "remaining": []
+  },
+  "answerPass": {
+    "status": "complete",
+    "remaining": []
+  },
+  "baseline": [
+    {
+      "id": "react-hooks-rules",
+      "title": "Какие правила вызова хуков нужно соблюдать?",
+      "contentHash": "c1fdaf2d5c59220ed37cd5aa94c4051e11b7c3740e80f916ae1470c743e21baa"
+    },
+    {
+      "id": "effects",
+      "title": "Для чего нужен useEffect и его cleanup?",
+      "contentHash": "24220db3246502d67d09cfdeac5eaa795411b68b3863be8a1b93a07fb5286c7d"
+    },
+    {
+      "id": "react-effect-dependencies",
+      "title": "Чем отличаются useEffect без массива, с [] и с зависимостями?",
+      "contentHash": "ec27d72294d30c2af99c17add90d1c87b0c19b5711984c45bbd4e6e574eceedb"
+    },
+    {
+      "id": "react-effect-not-needed",
+      "title": "Когда useEffect не нужен и чем его заменить?",
+      "contentHash": "1b49e556bb60c7b5ee9f02c0cab8772b6944a512ba2bfbcfaed4bf78a8eda4da"
+    },
+    {
+      "id": "react-stale-closures",
+      "title": "Что такое устаревшее замыкание в React?",
+      "contentHash": "7482c73b35bd5ba9178aea89a53fe75fd3eaa5480475bd539dc5c98a0273f985"
+    },
+    {
+      "id": "react-strict-mode",
+      "title": "Почему StrictMode повторно вызывает рендер и эффекты?",
+      "contentHash": "1266acf2d9876621f74dc3f18c67783a60f27fec0e02cae388895a822e1fc4e3"
+    },
+    {
+      "id": "react-layout-effect",
+      "title": "Когда нужен useLayoutEffect вместо useEffect?",
+      "contentHash": "afe02aa8bf48c5637301dd1ce8e27506069bca892444a0687ca9b89e57d5f5ee"
+    },
+    {
+      "id": "react-custom-hooks",
+      "title": "Что переиспользует пользовательский хук: состояние или логику?",
+      "contentHash": "2a85892ee2863b3b2d2c5c5e8303372729e064c1fe36f2148ec99ba441d47999"
+    },
+    {
+      "id": "react-effect-events",
+      "title": "Когда useEffectEvent позволяет прочитать актуальное значение без пересоздания подписки?",
+      "contentHash": "0ae800a2937ebcd47db9ca68ef153ba974b6c35c7f40a62a25d67aac351b1fdc"
+    },
+    {
+      "id": "react-effect-object-dependencies",
+      "title": "Почему объект в зависимостях эффекта вызывает лишние переподключения?",
+      "contentHash": "2bbfce3ebfe3160ea8a11e7c19204a492fb106899151cd7bc8007bb21a1c5345"
+    },
+    {
+      "id": "react-effect-async-return",
+      "title": "Почему callback useEffect нельзя объявлять async?",
+      "contentHash": "f597c5124fb9feeb3bff48a0757d0378901d48f7891810a5d0ff2b956145cbba"
+    },
+    {
+      "id": "react-effect-independent-processes",
+      "title": "Когда один эффект стоит разделить на несколько?",
+      "contentHash": "e620a559ac22db06d1d74be436aff04324dd0758683761f7b8b715ad65d260c1"
+    },
+    {
+      "id": "react-hook-api-contract",
+      "title": "Как выбрать возвращаемое значение своего хука: объект или кортеж?",
+      "contentHash": "3793f7baa41c97fb2c88fbedc6a1a4ca5227d271ade27cdd793da9acd1833115"
+    },
+    {
+      "id": "react-listener-function-identity",
+      "title": "Почему removeEventListener не удаляет обработчик, созданный новой стрелочной функцией?",
+      "contentHash": "a422f412bf4628c3fe5e6dda353a4354329dafbfe1c717daef765acc3efd6d29"
+    },
+    {
+      "id": "react-timeout-cleanup",
+      "title": "Как не выполнить отложенное действие после ухода со страницы?",
+      "contentHash": "63121823e9c2b84902899b49ef3352a8249fa732ebaa064564768ae47807f9d7"
+    },
+    {
+      "id": "react-hook-lint-purpose",
+      "title": "Что проверяет eslint-plugin-react-hooks и почему это не только стилистика?",
+      "contentHash": "a40919a027af8f681957f806554f1a5ce6bd93a5c0d0ae6811a3c3daa99d0baf"
+    },
+    {
+      "id": "react-hook-interval-functional-update",
+      "title": "Как интервал может обновлять счётчик без захвата устаревшего значения?",
+      "contentHash": "4cb24a70a92e7303307f772bb41f761491c00eba90b02ae2f9d01b4890efb0e8"
+    },
+    {
+      "id": "react-hook-debounce-value",
+      "title": "Как реализовать debounce значения с очисткой предыдущего таймера?",
+      "contentHash": "a97d0587984238ab06e49279579c9ba99e5e382b67c17ec14bc35301d1971211"
+    },
+    {
+      "id": "react-hook-document-subscription",
+      "title": "Как вынести подписку на видимость документа в пользовательский хук?",
+      "contentHash": "b961df7fabfa1c69a41915da18cb8c0941a29443c936815e03c38b2f18ffc387"
+    },
+    {
+      "id": "react-hook-effect-error-handling",
+      "title": "Почему исключение async-подписки нужно обрабатывать в её собственном потоке?",
+      "contentHash": "a038896acdb3d94b4d447913923380365240270e695c36288a78f8788b121e50"
+    },
+    {
+      "id": "react-hook-effect-loop-diagnosis",
+      "title": "Как разобрать бесконечный цикл эффекта, который обновляет state?",
+      "contentHash": "8c82d98feb67e1271c8fa18e94ee792720dec3c22d579dfb35a8e383706bbd24"
+    },
+    {
+      "id": "react-hook-memo-initializer-purity",
+      "title": "Почему запрос в useMemo или инициализаторе state остаётся побочным эффектом?",
+      "contentHash": "d3da15fe13c390783b4c11252a685c4c99c215cd8b263f27ccd85fdcdd6d94e7"
+    },
+    {
+      "id": "react-external-store-snapshot-stability",
+      "title": "Почему getSnapshot в useSyncExternalStore должен возвращать стабильный снимок?",
+      "contentHash": "96628610fa834e751c1d1c72c5134c01aad91e186df4c6c2bb4878e47005a7d5"
+    },
+    {
+      "id": "react-external-store-subscribe-identity",
+      "title": "Как нестабильная функция subscribe влияет на useSyncExternalStore?",
+      "contentHash": "09afaa4880b1426972cb9346661f3869b2e85593f3b8c845983671656e749199"
+    }
+  ],
+  "notes": [
+    "Сохраняются все 300 ID, включая Redux и Zustand внутри React. Дорабатываются ответы, а не количество вопросов. Схожие формулировки сохраняются при разных учебных целях; связи указываются через канонические вопросы.",
+    "Завершено 2026-11-12: все 300 ответов прочитаны и расширены индивидуальными разборами; ID сохранены. Oxfmt, content:build и полный content:check успешны (1266 вопросов). Примеры, приложение, UI/server проверки, миграции и seed не запускались."
+  ]
+}

@@ -2,14 +2,27 @@
 
 <!-- wishu:answer-block -->
 
-### Механизм и границы
+### Как это работает
 
-Для parseInt задавайте подходящее основание. Пустая строка и пробелы имеют важное поведение при Number; допустимость такого ввода определяет приложение. Number.isFinite и Number.isNaN не выполняют такое же неявное преобразование, как некоторые глобальные проверки.
+Для parseInt задавайте подходящее основание. Пустая строка и пробелы имеют важное поведение при Number; допустимость такого ввода определяет приложение. `Number.isFinite` и `Number.isNaN` не выполняют такое же неявное преобразование, как некоторые глобальные проверки.
 
 Не используйте parseInt как универсальную валидацию или округление уже готового Number.
 
-<!-- wishu:answer-block -->
+### Пример и его разбор
 
-### Источник
+```javascript
+console.log(Number("12px")) // NaN
+console.log(parseInt("12px", 10)) // 12
+console.log(parseFloat("1.5kg")) // 1.5
+console.log(Number("")) // 0
+```
 
-[MDN: Global_Objects/parseInt](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/parseInt).
+Number отвергает строку с суффиксом px целиком, тогда как parseInt сохраняет распознанный начальный фрагмент. Такое поведение полезно для разбора формата, но опасно как проверка пользовательского числа. Отдельная проверка пустого ввода нужна, потому что Number превращает его в ноль.
+
+### Типичная ошибка
+
+> Принимать 12wrong как валидное число только потому, что parseInt вернул 12.
+
+### Источники
+
+[MDN: Global_Objects/parseInt](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/parseInt)

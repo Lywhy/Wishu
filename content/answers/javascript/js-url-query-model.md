@@ -2,14 +2,27 @@
 
 <!-- wishu:answer-block -->
 
-### Механизм и границы
+### Как это работает
 
-Set заменяет значения ключа, append добавляет очередное, getAll нужен для повторяющихся параметров. URLSearchParams использует собственные правила query-кодирования; не дополняйте их слепым повторным encodeURIComponent.
+`Set` заменяет значения ключа, `append` добавляет очередное, `getAll` нужен для повторяющихся параметров. `URLSearchParams` использует собственные правила query-кодирования; не дополняйте их слепым повторным encodeURIComponent.
 
 Корректный синтаксис URL не означает допустимый адрес: приложение может ограничивать схему и origin, особенно для редиректа или ссылки из недоверенного ввода.
 
-<!-- wishu:answer-block -->
+### Пример и его разбор
 
-### Источник
+```javascript
+const url = new URL("/search", "https://example.org")
+url.searchParams.append("tag", "a&b")
+url.searchParams.append("tag", "react")
+console.log(url.searchParams.getAll("tag")) // ["a&b", "react"]
+```
 
-[MDN: URLSearchParams](https://developer.mozilla.org/en-US/docs/Web/API/URLSearchParams).
+`append` сохраняет оба значения tag, а `getAll` возвращает их без потери повторяющегося ключа. Амперсанд остаётся частью первого значения благодаря структурной сборке URL. Если нужен единственный tag, `Set` задаёт другой контракт и заменяет прежние значения.
+
+### Типичная ошибка
+
+> Использовать `new` URL как автоматическое разрешение любой схемы перехода.
+
+### Источники
+
+[MDN: URLSearchParams](https://developer.mozilla.org/en-US/docs/Web/API/URLSearchParams)

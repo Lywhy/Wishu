@@ -1,15 +1,31 @@
-**DisposableStack объединяет ресурсы и cleanup-callback в один управляемый стек. Он освобождает их в обратном порядке, что удобно для последовательного получения взаимозависимых ресурсов.**
+**`DisposableStack` объединяет ресурсы и cleanup-callback в один управляемый стек. Он освобождает их в обратном порядке, что удобно для последовательного получения взаимозависимых ресурсов.**
 
 <!-- wishu:answer-block -->
 
-### Механизм и границы
+### Как это работает
 
 Use принимает совместимый ресурс, adopt связывает значение с освобождающей функцией, defer добавляет действие. Move передаёт ответственность новому стеку по своему контракту. Для асинхронного варианта предназначен отдельный API.
 
 Если ошибки возникают и в основном завершении, и при очистке, explicit resource management может представлять их через SuppressedError. Нельзя просто потерять исходную причину последним catch.
 
-<!-- wishu:answer-block -->
+### Пример и его разбор
 
-### Источник
+```javascript
+// Требует поддержки DisposableStack и using.
+function work() {
+  using stack = new DisposableStack()
+  stack.defer(() => console.log("вторым"))
+  stack.defer(() => console.log("первым"))
+  // При выходе очистка идёт в обратном порядке.
+}
+```
 
-[MDN: Global_Objects/DisposableStack](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DisposableStack).
+Defer сначала регистрирует «вторым», затем «первым», а очистка выполняет их в обратном порядке. Так последний полученный ресурс освобождается раньше своих зависимостей. Стек полезен, когда число ресурсов выбирается во время выполнения и вложенных try/`finally` становится слишком много.
+
+### Типичная ошибка
+
+> Освобождать зависимые ресурсы в порядке открытия или игнорировать ошибки cleanup.
+
+### Источники
+
+[MDN: Global_Objects/DisposableStack](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DisposableStack)

@@ -1,0 +1,84 @@
+{
+  "schemaVersion": 1,
+  "id": "js-all-answers-20261108-advanced",
+  "title": "js-all-answers-20261108-advanced",
+  "sectionId": "javascript",
+  "subsectionId": "advanced",
+  "currentPass": "answers",
+  "goalIds": [
+    "core",
+    "execution-context",
+    "weak-ref",
+    "shared-array-buffer",
+    "temporal-api",
+    "dates-timezones",
+    "regexp-last-index",
+    "finalization-registry",
+    "js-realms-intrinsics"
+  ],
+  "questionIds": [
+    "execution-context",
+    "weak-ref",
+    "shared-array-buffer",
+    "temporal-api",
+    "dates-timezones",
+    "regexp-last-index",
+    "finalization-registry",
+    "js-realms-intrinsics"
+  ],
+  "scopePass": {
+    "status": "complete",
+    "remaining": []
+  },
+  "answerPass": {
+    "status": "complete",
+    "remaining": []
+  },
+  "baseline": [
+    {
+      "id": "execution-context",
+      "title": "Что такое execution context и какие данные нужны для выполнения кода?",
+      "contentHash": "d616315ef91a253a0ba14df18c609f329056b10c5d0abd6f19096e6afdc0a8f3"
+    },
+    {
+      "id": "weak-ref",
+      "title": "Что делает WeakRef и почему на него нельзя опирать обязательную логику?",
+      "contentHash": "d66b6993d607004121e608cbbf951910e3f02b6b633e8c2ba503d2c247ada538"
+    },
+    {
+      "id": "shared-array-buffer",
+      "title": "Как SharedArrayBuffer позволяет разделять память между агентами?",
+      "contentHash": "43a556e393af3911518e8687b070989a8c263b4ee214a559367e4ba6fc108d16"
+    },
+    {
+      "id": "temporal-api",
+      "title": "Какие задачи решает Temporal API и чем его типы отличаются от Date?",
+      "contentHash": "a8046692f358a7947788c0aef1e8b389e05a018727e5b6d39d813ed147724147"
+    },
+    {
+      "id": "dates-timezones",
+      "title": "Что хранит Date и как не перепутать UTC, локальное время и календарную дату?",
+      "contentHash": "5415312b7f71028738ef56c9293448074995a97931090c9b8dbbe72708244aa9"
+    },
+    {
+      "id": "regexp-last-index",
+      "title": "Почему test с регулярным выражением /g может чередовать true и false?",
+      "contentHash": "d70e1fd8ab8f556d14049b3adcf30ab98563f45e639725ac1ac22e9dbb262340"
+    },
+    {
+      "id": "finalization-registry",
+      "title": "Для чего нужен FinalizationRegistry и почему он не заменяет явную очистку?",
+      "contentHash": "67938a25d91ffecf3c890cacdcf9649a6a207398b7cd12e45d66a047fa923e15"
+    },
+    {
+      "id": "js-realms-intrinsics",
+      "title": "Что такое realm и почему instanceof может не работать между окнами?",
+      "contentHash": "98168deed987c8eac17c627e547e2d518aa64a6cb87c4acce7a8970aeebbdb01"
+    }
+  ],
+  "notes": [
+    "Полный редакторский проход JavaScript: 346 ID сохраняются, добавлений/слияний нет. 12 ответов предыдущего пакета сохраняют готовый связный разбор. Остальным нужны индивидуальные пояснения к механизму и примеру, а не однотипная вводная фраза. Ответы ITBooster не используются.",
+    "Для оставшихся ответов подготовлены индивидуальные пояснения примеров; код перенесён в общий Markdown. В упражнениях на чтение кода условие сохранено отдельно. Примеры не запускались.",
+    "Завершено: Oxfmt, content:build, полный content:check. В платформе 1266 вопросов; в JavaScript сохранены 346 ID, обновлены оставшиеся 334 ответа, новых/удалённых ID нет. Код примеров и seed не выполнялись."
+  ]
+}

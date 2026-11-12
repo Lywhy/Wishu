@@ -9,7 +9,7 @@
       "title": "Производительность",
       "description": "Обзор и взаимосвязи навыков: Измерения, память, рендеринг, загрузка и распределение работы.",
       "requiredDifficulties": [],
-      "reviewed": false,
+      "reviewed": true,
       "priority": "core",
       "relatedSkillIds": [
         "performance-metrics",
@@ -38,7 +38,7 @@
       "title": "Какие метрики описывают производительность страницы и что измеряют Core Web Vitals?",
       "description": "Объяснить и применить правило с учётом его границ: Измеряйте пользовательский результат и подтверждайте его полевыми данными.",
       "requiredDifficulties": ["Базовый"],
-      "reviewed": false,
+      "reviewed": true,
       "priority": "core",
       "relatedSkillIds": []
     },
@@ -47,7 +47,7 @@
       "title": "Как найти узкое место и учесть размер входных данных?",
       "description": "Объяснить и применить правило с учётом его границ: Ускоряйте измеренное ограничение сценария с учётом роста реальных данных.",
       "requiredDifficulties": ["Базовый"],
-      "reviewed": false,
+      "reviewed": true,
       "priority": "core",
       "relatedSkillIds": []
     },
@@ -56,7 +56,7 @@
       "title": "Чем CPU-bound задача отличается от I/O-bound?",
       "description": "Объяснить и применить правило с учётом его границ: Способ ускорения выбирают по ресурсу, который ограничивает задачу.",
       "requiredDifficulties": ["Базовый"],
-      "reviewed": false,
+      "reviewed": true,
       "priority": "core",
       "relatedSkillIds": []
     },
@@ -65,7 +65,7 @@
       "title": "Для чего requestAnimationFrame и почему он не равен таймеру на 16 мс?",
       "description": "Объяснить и применить правило с учётом его границ: RequestAnimationFrame согласует визуальную работу с кадром, а не гарантирует фиксированный интервал.",
       "requiredDifficulties": ["Базовый"],
-      "reviewed": false,
+      "reviewed": true,
       "priority": "core",
       "relatedSkillIds": []
     },
@@ -74,7 +74,7 @@
       "title": "Когда применять requestIdleCallback и какие у него ограничения?",
       "description": "Объяснить и применить правило с учётом его границ: IdleCallback подходит необязательной короткой работе с явно ограниченным бюджетом.",
       "requiredDifficulties": ["Средний"],
-      "reviewed": false,
+      "reviewed": true,
       "priority": "core",
       "relatedSkillIds": []
     },
@@ -83,7 +83,7 @@
       "title": "Почему возникают утечки памяти в SPA и как очищать таймеры и подписки?",
       "description": "Объяснить и применить правило с учётом его границ: Очистка должна разрывать ненужные связи и завершать ресурсы на границе их жизненного цикла.",
       "requiredDifficulties": ["Базовый"],
-      "reviewed": false,
+      "reviewed": true,
       "priority": "core",
       "relatedSkillIds": []
     },
@@ -92,7 +92,7 @@
       "title": "Как сборщик мусора определяет ненужные объекты и почему циклы не всегда утечка?",
       "description": "Объяснить и применить правило с учётом его границ: GC освобождает недостижимое, а не всё, что программист больше не планирует использовать.",
       "requiredDifficulties": ["Средний"],
-      "reviewed": false,
+      "reviewed": true,
       "priority": "core",
       "relatedSkillIds": []
     },
@@ -101,7 +101,7 @@
       "title": "Как искать утечки через профилирование памяти?",
       "description": "Объяснить и применить правило с учётом его границ: Ищите не просто большой объём памяти, а ненужные объекты и конкретные удерживающие связи.",
       "requiredDifficulties": ["Базовый"],
-      "reviewed": false,
+      "reviewed": true,
       "priority": "core",
       "relatedSkillIds": []
     },
@@ -110,7 +110,7 @@
       "title": "Чем layout отличается от paint и зачем группировать чтения и изменения DOM?",
       "description": "Объяснить и применить правило с учётом его границ: Пакетируйте измерения и изменения, чтобы не заставлять браузер повторять расчёт геометрии.",
       "requiredDifficulties": ["Базовый"],
-      "reviewed": false,
+      "reviewed": true,
       "priority": "core",
       "relatedSkillIds": []
     },
@@ -119,7 +119,7 @@
       "title": "Зачем используют virtual DOM и гарантирует ли он лучшую производительность?",
       "description": "Объяснить и применить правило с учётом его границ: Virtual DOM помогает организовать обновления, но производительность подтверждается измерениями.",
       "requiredDifficulties": ["Базовый"],
-      "reviewed": false,
+      "reviewed": true,
       "priority": "core",
       "relatedSkillIds": []
     },
@@ -128,7 +128,7 @@
       "title": "Всегда ли цикл быстрее методов массива?",
       "description": "Объяснить и применить правило с учётом его границ: Цикл и метод массива сравнивают по одинаковой задаче, корректности и реальным измерениям.",
       "requiredDifficulties": ["Базовый"],
-      "reviewed": false,
+      "reviewed": true,
       "priority": "core",
       "relatedSkillIds": []
     },
@@ -137,7 +137,7 @@
       "title": "Как разбить тяжёлую задачу и дать браузеру обработать ввод?",
       "description": "Объяснить и применить правило с учётом его границ: Чтобы уступить поток другим задачам, одной цепочки микрозадач недостаточно.",
       "requiredDifficulties": ["Базовый"],
-      "reviewed": false,
+      "reviewed": true,
       "priority": "core",
       "relatedSkillIds": []
     },
@@ -146,7 +146,7 @@
       "title": "Как уменьшать стоимость HTTP-загрузок, не ориентируясь только на число запросов?",
       "description": "Объяснить и применить правило с учётом его границ: Оптимизируйте критический путь и объём, а не только счётчик HTTP-запросов.",
       "requiredDifficulties": ["Базовый"],
-      "reviewed": false,
+      "reviewed": true,
       "priority": "core",
       "relatedSkillIds": []
     },
@@ -155,7 +155,7 @@
       "title": "Чем lazy loading отличается от code splitting?",
       "description": "Объяснить и применить правило с учётом его границ: Code splitting отвечает «на какие части», lazy loading - «когда они нужны».",
       "requiredDifficulties": ["Базовый"],
-      "reviewed": false,
+      "reviewed": true,
       "priority": "core",
       "relatedSkillIds": []
     },
@@ -164,7 +164,7 @@
       "title": "Что такое tree shaking и чем оно отличается от минификации?",
       "description": "Объяснить и применить правило с учётом его границ: Tree shaking удаляет ненужное, минификация компактнее записывает оставшееся.",
       "requiredDifficulties": ["Базовый"],
-      "reviewed": false,
+      "reviewed": true,
       "priority": "core",
       "relatedSkillIds": []
     },
@@ -173,7 +173,7 @@
       "title": "Как измерять время JavaScript-кода и не получить случайный результат?",
       "description": "Объяснить и применить правило с учётом его границ: Измерение полезно только с явно заданной границей и репрезентативным сценарием.",
       "requiredDifficulties": ["Базовый"],
-      "reviewed": false,
+      "reviewed": true,
       "priority": "core",
       "relatedSkillIds": []
     },
@@ -182,7 +182,7 @@
       "title": "Почему один и тот же JavaScript-код может иметь разную стоимость после прогрева?",
       "description": "Объяснить и применить правило с учётом его границ: Наблюдаемая семантика стабильна по языку, а стоимость реализации может адаптироваться.",
       "requiredDifficulties": ["Продвинутый"],
-      "reviewed": false,
+      "reviewed": true,
       "priority": "core",
       "relatedSkillIds": ["measure-js-performance"]
     },
@@ -191,7 +191,7 @@
       "title": "Как shapes объектов и elements kinds массивов влияют на оптимизации движка?",
       "description": "Объяснить и применить правило с учётом его границ: Детали движка объясняют наблюдение, но не заменяют переносимую семантику и измерение.",
       "requiredDifficulties": ["Продвинутый"],
-      "reviewed": false,
+      "reviewed": true,
       "priority": "core",
       "relatedSkillIds": ["array-length-holes"]
     },
@@ -200,7 +200,7 @@
       "title": "Как Performance marks и measures помогают измерить целую асинхронную операцию?",
       "description": "Объяснить и применить правило с учётом его границ: Метрика должна иметь определённые границы и правильно интерпретироваться.",
       "requiredDifficulties": ["Средний"],
-      "reviewed": false,
+      "reviewed": true,
       "priority": "core",
       "relatedSkillIds": []
     }
@@ -212,7 +212,6 @@
       "topic": "JavaScript",
       "difficulty": "Базовый",
       "summary": "Загрузка, отзывчивость, визуальная стабильность и полевые данные.",
-      "code": "// Ориентиры Core Web Vitals, а не результат измерения этой страницы:\nconst targets = { LCP_ms: 2500, INP_ms: 200, CLS: 0.1 };\n// Для итоговой оценки нужны полевые данные и 75-й процентиль.",
       "takeaway": "Измеряйте пользовательский результат и подтверждайте его полевыми данными.",
       "moduleId": "javascript",
       "order": 0,
@@ -221,11 +220,11 @@
         "learningGoal": "Объяснить и применить правило с учётом его границ: Измеряйте пользовательский результат и подтверждайте его полевыми данными.",
         "keywords": ["JavaScript", "Производительность"],
         "kind": "explanation",
-        "reviewStatus": "imported",
+        "reviewStatus": "ready",
         "goalIds": ["core", "performance-metrics"],
         "relatedQuestionIds": [],
         "priority": "core",
-        "sourceRefs": []
+        "sourceRefs": ["ref-1f2734e7294c86f2"]
       },
       "answerFile": "answers/javascript/performance-metrics.md"
     },
@@ -235,7 +234,6 @@
       "topic": "JavaScript",
       "difficulty": "Базовый",
       "summary": "Профилирование сценария, масштабирование и выбор оптимизации.",
-      "code": "function countPairs(items) {\n  let count = 0;\n  for (const first of items) {\n    for (const second of items) count += 1;\n  }\n  return count;\n}\n// Число шагов растёт как n²; это пример анализа, а не замер времени.",
       "takeaway": "Ускоряйте измеренное ограничение сценария с учётом роста реальных данных.",
       "moduleId": "javascript",
       "order": 1,
@@ -244,11 +242,11 @@
         "learningGoal": "Объяснить и применить правило с учётом его границ: Ускоряйте измеренное ограничение сценария с учётом роста реальных данных.",
         "keywords": ["JavaScript", "Производительность"],
         "kind": "explanation",
-        "reviewStatus": "imported",
+        "reviewStatus": "ready",
         "goalIds": ["core", "performance-bottleneck"],
         "relatedQuestionIds": [],
         "priority": "core",
-        "sourceRefs": []
+        "sourceRefs": ["ref-6fc0f05540767a01"]
       },
       "answerFile": "answers/javascript/performance-bottleneck.md"
     },
@@ -258,7 +256,6 @@
       "topic": "JavaScript",
       "difficulty": "Базовый",
       "summary": "Вычислительная работа, ожидание внешнего ресурса и подходящий способ ускорения.",
-      "code": "async function loadIndependent(loadUsers, loadSettings) {\n  return await Promise.all([loadUsers(), loadSettings()]);\n}\n// Это перекрывает независимое ожидание, но не выносит CPU-расчёт в Worker.",
       "takeaway": "Способ ускорения выбирают по ресурсу, который ограничивает задачу.",
       "moduleId": "javascript",
       "order": 2,
@@ -267,11 +264,11 @@
         "learningGoal": "Объяснить и применить правило с учётом его границ: Способ ускорения выбирают по ресурсу, который ограничивает задачу.",
         "keywords": ["JavaScript", "Производительность"],
         "kind": "explanation",
-        "reviewStatus": "imported",
+        "reviewStatus": "ready",
         "goalIds": ["core", "cpu-io-bound"],
         "relatedQuestionIds": [],
         "priority": "core",
-        "sourceRefs": []
+        "sourceRefs": ["ref-6fc0f05540767a01"]
       },
       "answerFile": "answers/javascript/cpu-io-bound.md"
     },
@@ -281,7 +278,6 @@
       "topic": "JavaScript",
       "difficulty": "Базовый",
       "summary": "Планирование визуального обновления и зависимость от частоты экрана.",
-      "code": "function scheduleVisualUpdate(update) {\n  const id = requestAnimationFrame((timestamp) => update(timestamp));\n  return () => cancelAnimationFrame(id);\n}\n// Для непрерывной анимации следующий кадр запрашивают явно.",
       "takeaway": "RequestAnimationFrame согласует визуальную работу с кадром, а не гарантирует фиксированный интервал.",
       "moduleId": "javascript",
       "order": 3,
@@ -290,11 +286,11 @@
         "learningGoal": "Объяснить и применить правило с учётом его границ: RequestAnimationFrame согласует визуальную работу с кадром, а не гарантирует фиксированный интервал.",
         "keywords": ["JavaScript", "Производительность"],
         "kind": "explanation",
-        "reviewStatus": "imported",
+        "reviewStatus": "ready",
         "goalIds": ["core", "animation-frame"],
         "relatedQuestionIds": [],
         "priority": "core",
-        "sourceRefs": []
+        "sourceRefs": ["ref-6fc0f05540767a01"]
       },
       "answerFile": "answers/javascript/animation-frame.md"
     },
@@ -304,7 +300,6 @@
       "topic": "JavaScript",
       "difficulty": "Средний",
       "summary": "Низкоприоритетная работа, бюджет времени и отсутствие гарантии скорого запуска.",
-      "code": "function deferOptional(work) {\n  if (\"requestIdleCallback\" in window) {\n    const id = window.requestIdleCallback(work, { timeout: 1000 });\n    return () => window.cancelIdleCallback(id);\n  }\n  const id = setTimeout(() => work(null), 0);\n  return () => clearTimeout(id);\n}\n// work учитывает бюджет; fallback не предоставляет IdleDeadline.",
       "takeaway": "IdleCallback подходит необязательной короткой работе с явно ограниченным бюджетом.",
       "moduleId": "javascript",
       "order": 4,
@@ -313,11 +308,11 @@
         "learningGoal": "Объяснить и применить правило с учётом его границ: IdleCallback подходит необязательной короткой работе с явно ограниченным бюджетом.",
         "keywords": ["JavaScript", "Производительность"],
         "kind": "explanation",
-        "reviewStatus": "imported",
+        "reviewStatus": "ready",
         "goalIds": ["core", "idle-callback"],
         "relatedQuestionIds": [],
         "priority": "core",
-        "sourceRefs": []
+        "sourceRefs": ["ref-6fc0f05540767a01"]
       },
       "answerFile": "answers/javascript/idle-callback.md"
     },
@@ -327,7 +322,6 @@
       "topic": "JavaScript",
       "difficulty": "Базовый",
       "summary": "Достижимость ненужных объектов, жизненный цикл и освобождение ресурсов.",
-      "code": "function startTracking(onResize, tick) {\n  const controller = new AbortController();\n  window.addEventListener(\"resize\", onResize, { signal: controller.signal });\n  const timer = setInterval(tick, 1000);\n  return () => {\n    controller.abort();\n    clearInterval(timer);\n  };\n}",
       "takeaway": "Очистка должна разрывать ненужные связи и завершать ресурсы на границе их жизненного цикла.",
       "moduleId": "javascript",
       "order": 5,
@@ -336,11 +330,11 @@
         "learningGoal": "Объяснить и применить правило с учётом его границ: Очистка должна разрывать ненужные связи и завершать ресурсы на границе их жизненного цикла.",
         "keywords": ["JavaScript", "Производительность"],
         "kind": "explanation",
-        "reviewStatus": "imported",
+        "reviewStatus": "ready",
         "goalIds": ["core", "memory-leaks"],
         "relatedQuestionIds": [],
         "priority": "core",
-        "sourceRefs": []
+        "sourceRefs": ["ref-6fc0f05540767a01"]
       },
       "answerFile": "answers/javascript/memory-leaks.md"
     },
@@ -350,7 +344,6 @@
       "topic": "JavaScript",
       "difficulty": "Средний",
       "summary": "Достижимость, обход графа и реализации сборки.",
-      "code": "function temporaryGraph() {\n  const first = {};\n  const second = { first };\n  first.second = second;\n  // Граф не возвращается и не сохраняется снаружи.\n}\n// После вызова граф может стать недостижимым; точный момент GC не задан.",
       "takeaway": "GC освобождает недостижимое, а не всё, что программист больше не планирует использовать.",
       "moduleId": "javascript",
       "order": 6,
@@ -359,11 +352,11 @@
         "learningGoal": "Объяснить и применить правило с учётом его границ: GC освобождает недостижимое, а не всё, что программист больше не планирует использовать.",
         "keywords": ["JavaScript", "Производительность", "сборщик мусора", "garbage collection"],
         "kind": "explanation",
-        "reviewStatus": "imported",
+        "reviewStatus": "ready",
         "goalIds": ["core", "garbage-collection"],
         "relatedQuestionIds": [],
         "priority": "core",
-        "sourceRefs": []
+        "sourceRefs": ["ref-6fc0f05540767a01"]
       },
       "answerFile": "answers/javascript/garbage-collection.md"
     },
@@ -373,7 +366,6 @@
       "topic": "JavaScript",
       "difficulty": "Базовый",
       "summary": "Повторяемый сценарий, heap snapshots и удерживающие связи.",
-      "code": "// Сценарий ручного исследования в DevTools:\n// 1. Снимок исходного состояния.\n// 2. Несколько открытий и закрытий одного экрана.\n// 3. Сравнение снимков и поиск retaining path у оставшихся объектов.\n// Это инструкция для анализа, а не запущенный замер проекта.",
       "takeaway": "Ищите не просто большой объём памяти, а ненужные объекты и конкретные удерживающие связи.",
       "moduleId": "javascript",
       "order": 7,
@@ -382,11 +374,11 @@
         "learningGoal": "Объяснить и применить правило с учётом его границ: Ищите не просто большой объём памяти, а ненужные объекты и конкретные удерживающие связи.",
         "keywords": ["JavaScript", "Производительность"],
         "kind": "explanation",
-        "reviewStatus": "imported",
+        "reviewStatus": "ready",
         "goalIds": ["core", "memory-profiling"],
         "relatedQuestionIds": [],
         "priority": "core",
-        "sourceRefs": []
+        "sourceRefs": ["ref-6fc0f05540767a01"]
       },
       "answerFile": "answers/javascript/memory-profiling.md"
     },
@@ -396,7 +388,6 @@
       "topic": "JavaScript",
       "difficulty": "Базовый",
       "summary": "Геометрия, рисование и принудительные пересчёты.",
-      "code": "function resizeItems(container, items) {\n  const width = container.getBoundingClientRect().width; // чтение один раз\n  for (const item of items) {\n    item.style.width = `${width}px`; // затем записи\n  }\n}",
       "takeaway": "Пакетируйте измерения и изменения, чтобы не заставлять браузер повторять расчёт геометрии.",
       "moduleId": "javascript",
       "order": 8,
@@ -405,11 +396,11 @@
         "learningGoal": "Объяснить и применить правило с учётом его границ: Пакетируйте измерения и изменения, чтобы не заставлять браузер повторять расчёт геометрии.",
         "keywords": ["JavaScript", "Производительность"],
         "kind": "explanation",
-        "reviewStatus": "imported",
+        "reviewStatus": "ready",
         "goalIds": ["core", "layout-paint-batching"],
         "relatedQuestionIds": [],
         "priority": "core",
-        "sourceRefs": []
+        "sourceRefs": ["ref-6fc0f05540767a01"]
       },
       "answerFile": "answers/javascript/layout-paint-batching.md"
     },
@@ -419,7 +410,6 @@
       "topic": "JavaScript",
       "difficulty": "Базовый",
       "summary": "Описание интерфейса, сравнение результата и применение изменений.",
-      "code": "// Декларативное описание вместо ручной последовательности DOM-операций:\nconst view = { type: \"p\", props: { children: \"Привет\" } };\n// Это учебная модель данных, а не внутренний формат React и не реализация reconciler.",
       "takeaway": "Virtual DOM помогает организовать обновления, но производительность подтверждается измерениями.",
       "moduleId": "javascript",
       "order": 9,
@@ -428,11 +418,11 @@
         "learningGoal": "Объяснить и применить правило с учётом его границ: Virtual DOM помогает организовать обновления, но производительность подтверждается измерениями.",
         "keywords": ["JavaScript", "Производительность"],
         "kind": "explanation",
-        "reviewStatus": "imported",
+        "reviewStatus": "ready",
         "goalIds": ["core", "virtual-dom"],
         "relatedQuestionIds": [],
         "priority": "core",
-        "sourceRefs": []
+        "sourceRefs": ["ref-6fc0f05540767a01"]
       },
       "answerFile": "answers/javascript/virtual-dom.md"
     },
@@ -442,7 +432,6 @@
       "topic": "JavaScript",
       "difficulty": "Базовый",
       "summary": "Контракт метода, промежуточные массивы и измерение сценария.",
-      "code": "function selectedNames(users) {\n  const result = [];\n  for (const user of users) {\n    if (user.active) result.push(user.name);\n  }\n  return result;\n}\n// Это один проход; его выигрыш относительно filter(...).map(...) нужно измерять.",
       "takeaway": "Цикл и метод массива сравнивают по одинаковой задаче, корректности и реальным измерениям.",
       "moduleId": "javascript",
       "order": 10,
@@ -451,11 +440,11 @@
         "learningGoal": "Объяснить и применить правило с учётом его границ: Цикл и метод массива сравнивают по одинаковой задаче, корректности и реальным измерениям.",
         "keywords": ["JavaScript", "Производительность"],
         "kind": "explanation",
-        "reviewStatus": "imported",
+        "reviewStatus": "ready",
         "goalIds": ["core", "array-methods-performance"],
         "relatedQuestionIds": [],
         "priority": "core",
-        "sourceRefs": []
+        "sourceRefs": ["ref-6fc0f05540767a01"]
       },
       "answerFile": "answers/javascript/array-methods-performance.md"
     },
@@ -465,7 +454,6 @@
       "topic": "JavaScript",
       "difficulty": "Базовый",
       "summary": "Ограниченные порции работы и переход к следующим задачам.",
-      "code": "async function processChunks(items, handle) {\n  for (let start = 0; start < items.length; start += 100) {\n    const end = Math.min(start + 100, items.length);\n    for (let index = start; index < end; index += 1) handle(items[index]);\n    if (end < items.length) await new Promise((resolve) => setTimeout(resolve, 0));\n  }\n}\n// Размер 100 условный: дорогой handle требует другой порции.",
       "takeaway": "Чтобы уступить поток другим задачам, одной цепочки микрозадач недостаточно.",
       "moduleId": "javascript",
       "order": 11,
@@ -474,11 +462,11 @@
         "learningGoal": "Объяснить и применить правило с учётом его границ: Чтобы уступить поток другим задачам, одной цепочки микрозадач недостаточно.",
         "keywords": ["JavaScript", "Производительность"],
         "kind": "explanation",
-        "reviewStatus": "imported",
+        "reviewStatus": "ready",
         "goalIds": ["core", "split-long-tasks"],
         "relatedQuestionIds": [],
         "priority": "core",
-        "sourceRefs": []
+        "sourceRefs": ["ref-6fc0f05540767a01"]
       },
       "answerFile": "answers/javascript/split-long-tasks.md"
     },
@@ -488,7 +476,6 @@
       "topic": "JavaScript",
       "difficulty": "Базовый",
       "summary": "Критический путь, объём, кеширование и зависимые водопады.",
-      "code": "// Вопросы к сетевой трассе:\n// Какие ресурсы нужны до первого полезного экрана?\n// Можно ли убрать повторную загрузку или лишний объём?\n// Какие запросы ждут друг друга без необходимости?",
       "takeaway": "Оптимизируйте критический путь и объём, а не только счётчик HTTP-запросов.",
       "moduleId": "javascript",
       "order": 12,
@@ -497,11 +484,11 @@
         "learningGoal": "Объяснить и применить правило с учётом его границ: Оптимизируйте критический путь и объём, а не только счётчик HTTP-запросов.",
         "keywords": ["JavaScript", "Производительность"],
         "kind": "explanation",
-        "reviewStatus": "imported",
+        "reviewStatus": "ready",
         "goalIds": ["core", "network-cost"],
         "relatedQuestionIds": [],
         "priority": "core",
-        "sourceRefs": []
+        "sourceRefs": ["ref-6fc0f05540767a01"]
       },
       "answerFile": "answers/javascript/network-cost.md"
     },
@@ -511,7 +498,6 @@
       "topic": "JavaScript",
       "difficulty": "Базовый",
       "summary": "Момент загрузки и разделение кода на отдельные части.",
-      "code": "async function openEditor(renderEditor) {\n  const { createEditor } = await import(\"./editor.js\");\n  renderEditor(createEditor());\n}\n// Нужны реальный editor.js, состояние загрузки и обработка ошибки.",
       "takeaway": "Code splitting отвечает «на какие части», lazy loading - «когда они нужны».",
       "moduleId": "javascript",
       "order": 13,
@@ -520,11 +506,11 @@
         "learningGoal": "Объяснить и применить правило с учётом его границ: Code splitting отвечает «на какие части», lazy loading - «когда они нужны».",
         "keywords": ["JavaScript", "Производительность"],
         "kind": "explanation",
-        "reviewStatus": "imported",
+        "reviewStatus": "ready",
         "goalIds": ["core", "lazy-code-splitting"],
         "relatedQuestionIds": [],
         "priority": "core",
-        "sourceRefs": []
+        "sourceRefs": ["ref-6fc0f05540767a01"]
       },
       "answerFile": "answers/javascript/lazy-code-splitting.md"
     },
@@ -534,7 +520,6 @@
       "topic": "JavaScript",
       "difficulty": "Базовый",
       "summary": "Анализ неиспользуемых экспортов, побочные эффекты и размер результата.",
-      "code": "// helpers.js\nexport const double = (value) => value * 2;\nexport const triple = (value) => value * 3;\n// Потребитель импортирует только double.\n// Сборщик может исключить triple, если анализ доказывает безопасность.",
       "takeaway": "Tree shaking удаляет ненужное, минификация компактнее записывает оставшееся.",
       "moduleId": "javascript",
       "order": 14,
@@ -543,11 +528,11 @@
         "learningGoal": "Объяснить и применить правило с учётом его границ: Tree shaking удаляет ненужное, минификация компактнее записывает оставшееся.",
         "keywords": ["JavaScript", "Производительность"],
         "kind": "explanation",
-        "reviewStatus": "imported",
+        "reviewStatus": "ready",
         "goalIds": ["core", "tree-shaking"],
         "relatedQuestionIds": [],
         "priority": "core",
-        "sourceRefs": []
+        "sourceRefs": ["ref-c68580ee4bbd5599"]
       },
       "answerFile": "answers/javascript/tree-shaking.md"
     },
@@ -557,7 +542,6 @@
       "topic": "JavaScript",
       "difficulty": "Базовый",
       "summary": "Монотонные часы, область измерения и репрезентативность.",
-      "code": "async function measure(operation) {\n  const start = performance.now();\n  const value = await operation();\n  return { value, elapsedMs: performance.now() - start };\n}\n// Пример измеряет полное ожидание operation, а не чистое CPU-время.",
       "takeaway": "Измерение полезно только с явно заданной границей и репрезентативным сценарием.",
       "moduleId": "javascript",
       "order": 15,
@@ -566,11 +550,11 @@
         "learningGoal": "Объяснить и применить правило с учётом его границ: Измерение полезно только с явно заданной границей и репрезентативным сценарием.",
         "keywords": ["JavaScript", "Производительность"],
         "kind": "explanation",
-        "reviewStatus": "imported",
+        "reviewStatus": "ready",
         "goalIds": ["core", "measure-js-performance"],
         "relatedQuestionIds": [],
         "priority": "core",
-        "sourceRefs": []
+        "sourceRefs": ["ref-6fc0f05540767a01"]
       },
       "answerFile": "answers/javascript/measure-js-performance.md"
     },
@@ -579,9 +563,7 @@
       "difficulty": "Продвинутый",
       "title": "Почему один и тот же JavaScript-код может иметь разную стоимость после прогрева?",
       "summary": "Спецификация поведения и адаптивная реализация движка.",
-      "code": "function sum(values) {\n  let total = 0\n  for (const value of values) total += value\n  return total\n}\n// Измерение должно учитывать реальные типы и объём входных данных.",
       "takeaway": "Наблюдаемая семантика стабильна по языку, а стоимость реализации может адаптироваться.",
-      "pitfall": "Объявлять конструкцию быстрее во всех средах по единственному холодному запуску.",
       "topic": "JavaScript",
       "moduleId": "javascript",
       "popular": false,
@@ -590,7 +572,7 @@
         "learningGoal": "Объяснить и применить правило с учётом его границ: Наблюдаемая семантика стабильна по языку, а стоимость реализации может адаптироваться.",
         "keywords": ["JavaScript", "Производительность"],
         "kind": "explanation",
-        "reviewStatus": "imported",
+        "reviewStatus": "ready",
         "goalIds": ["core", "js-jit-and-deoptimization"],
         "relatedQuestionIds": ["measure-js-performance"],
         "priority": "core",
@@ -603,9 +585,7 @@
       "difficulty": "Продвинутый",
       "title": "Как shapes объектов и elements kinds массивов влияют на оптимизации движка?",
       "summary": "Специализация представления и отличие эвристик V8 от языкового контракта.",
-      "code": "const a = { x: 1, y: 2 }\nconst b = { x: 3, y: 4 }\n// Похожая структура может быть полезна оптимизатору.\n// Это не гарантия одинакового внутреннего представления любого движка.",
       "takeaway": "Детали движка объясняют наблюдение, но не заменяют переносимую семантику и измерение.",
-      "pitfall": "Выдавать hidden class или конкретный elements kind за требование ECMAScript.",
       "topic": "JavaScript",
       "moduleId": "javascript",
       "popular": false,
@@ -614,7 +594,7 @@
         "learningGoal": "Объяснить и применить правило с учётом его границ: Детали движка объясняют наблюдение, но не заменяют переносимую семантику и измерение.",
         "keywords": ["JavaScript", "Производительность"],
         "kind": "explanation",
-        "reviewStatus": "imported",
+        "reviewStatus": "ready",
         "goalIds": ["core", "js-engine-object-shapes"],
         "relatedQuestionIds": ["array-length-holes"],
         "priority": "core",
@@ -627,9 +607,7 @@
       "difficulty": "Средний",
       "title": "Как Performance marks и measures помогают измерить целую асинхронную операцию?",
       "summary": "Именованные точки, интервалы и отличие CPU-времени от пользовательской задержки.",
-      "code": "async function measured(load, report) {\n  const id = crypto.randomUUID()\n  const start = id + \":start\", end = id + \":end\"\n  performance.mark(start)\n  try { return await load() }\n  finally {\n    performance.mark(end)\n    const entry = performance.measure(id, start, end)\n    performance.clearMarks(start); performance.clearMarks(end)\n    performance.clearMeasures(id)\n    report(entry) // Контракт: синхронный reporter не выбрасывает ошибку.\n  }\n}",
       "takeaway": "Метрика должна иметь определённые границы и правильно интерпретироваться.",
-      "pitfall": "Приравнивать время сетевого async-процесса к чистой стоимости CPU.",
       "topic": "JavaScript",
       "moduleId": "javascript",
       "popular": false,
@@ -638,7 +616,7 @@
         "learningGoal": "Объяснить и применить правило с учётом его границ: Метрика должна иметь определённые границы и правильно интерпретироваться.",
         "keywords": ["JavaScript", "Производительность"],
         "kind": "explanation",
-        "reviewStatus": "imported",
+        "reviewStatus": "ready",
         "goalIds": ["core", "js-user-timing"],
         "relatedQuestionIds": [],
         "priority": "core",

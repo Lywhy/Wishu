@@ -2,14 +2,27 @@
 
 <!-- wishu:answer-block -->
 
-### Механизм и границы
+### Как это работает
 
 Задавайте допустимый набор и границы как можно точнее. Шаблон для простого ограниченного текста не превращается в корректный parser HTML с вложенностью.
 
 Backtracking может пробовать много альтернатив; оценивать нужно всю структуру шаблона, а не только наличие символа ?.
 
-<!-- wishu:answer-block -->
+### Пример и его разбор
 
-### Источник
+```javascript
+const text = "<a>one</a><b>two</b>"
+console.log(text.match(/<.*>/)[0]) // <a>one</a><b>two</b>
+console.log(text.match(/<.*?>/)[0]) // <a>
+// Это иллюстрация квантификатора, не parser HTML.
+```
 
-[MDN: Regular_expressions/Quantifier](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Regular_expressions/Quantifier).
+Жадный повтор сначала захватывает текст до последней подходящей закрывающей скобки. Ленивый останавливается на первой, если остальной шаблон уже совпал. Это объясняет разные фрагменты, но не превращает regex в полноценный parser вложенной HTML-структуры.
+
+### Типичная ошибка
+
+> Считать .*? универсальной заменой корректного разбора структурированного документа.
+
+### Источники
+
+[MDN: Regular_expressions/Quantifier](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Regular_expressions/Quantifier)

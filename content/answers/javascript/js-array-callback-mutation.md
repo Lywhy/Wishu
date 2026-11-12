@@ -2,14 +2,33 @@
 
 <!-- wishu:answer-block -->
 
-### Механизм и границы
+### Как это работает
 
 Поэтому «метод делает снимок всего массива» и «видит любые новые элементы» одинаково неточны. Изменение уже посещённого значения также не отменяет выполненный callback.
 
 Такие побочные эффекты делают результат трудным для чтения; при возможности строите новый массив из неизменяемого входа.
 
-<!-- wishu:answer-block -->
+### Пример и его разбор
 
-### Источник
+```javascript
+const values = [1, 2, 3]
+const seen = []
+values.forEach((value, index) => {
+  seen.push(value)
+  if (index === 0) {
+    values[1] = 20
+    values.push(4)
+  }
+})
+console.log(seen) // [1, 20, 3]
+```
 
-[MDN: Global_Objects/Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array#iterative_methods).
+До посещения второго индекса callback меняет его значение на 20, и обход замечает эту замену. Добавленная четвёрка остаётся за исходной границей длины и не включается в seen. Следовательно, метод не сохраняет все начальные значения заранее, но и не растягивает обход вслед за каждым добавлением. Такую зависимость от момента изменения лучше избегать без необходимости.
+
+### Типичная ошибка
+
+> Мутировать вход внутри callback, рассчитывая на интуитивно универсальный снимок.
+
+### Источники
+
+[MDN: Global_Objects/Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array#iterative_methods)

@@ -1,0 +1,104 @@
+{
+  "schemaVersion": 1,
+  "id": "ts-answer-review-20261110-ts-functions",
+  "title": "ts-answer-review-20261110-ts-functions",
+  "sectionId": "typescript",
+  "subsectionId": "ts-functions",
+  "currentPass": "answers",
+  "goalIds": [
+    "core",
+    "ts-function-signatures",
+    "ts-function-parameters",
+    "ts-async-functions",
+    "ts-function-overloads",
+    "ts-function-variance",
+    "ts-this-parameter",
+    "ts-generator-contract",
+    "ts-polymorphic-callback-contract",
+    "ts-destructured-parameter-annotation",
+    "ts-generic-arrow-tsx",
+    "ts-strict-bind-call-apply"
+  ],
+  "questionIds": [
+    "ts-function-signatures",
+    "ts-function-parameters",
+    "ts-async-functions",
+    "ts-function-overloads",
+    "ts-function-variance",
+    "ts-this-parameter",
+    "ts-generator-contract",
+    "ts-polymorphic-callback-contract",
+    "ts-destructured-parameter-annotation",
+    "ts-generic-arrow-tsx",
+    "ts-strict-bind-call-apply"
+  ],
+  "scopePass": {
+    "status": "complete",
+    "remaining": []
+  },
+  "answerPass": {
+    "status": "complete",
+    "remaining": []
+  },
+  "baseline": [
+    {
+      "id": "ts-function-signatures",
+      "title": "Как описать тип функции через сигнатуру, type или interface?",
+      "contentHash": "89a2059f0fc59f6cc8642f23102636386dbe4d62b63524e5715c283433ab5d3f"
+    },
+    {
+      "id": "ts-function-parameters",
+      "title": "Как типизировать optional, default и rest-параметры?",
+      "contentHash": "a0fb891a8c6d7f9714781dcfab850df7afeaf973c78c8f55a219b9df0aaad8b2"
+    },
+    {
+      "id": "ts-async-functions",
+      "title": "Как типизировать async-функцию и результат её ожидания?",
+      "contentHash": "a9205657d7d80b9b2d99d6a1e845c1aac85549671e570898e53bb13f307abeaa"
+    },
+    {
+      "id": "ts-function-overloads",
+      "title": "Как объявлять перегрузки функции и какую роль играет реализация?",
+      "contentHash": "e7017fb605cfc99a2bebff4297231a112b7dc626f4fcec7c15df299babce2b4d"
+    },
+    {
+      "id": "ts-function-variance",
+      "title": "Почему callback с более узким параметром может быть небезопасен?",
+      "contentHash": "2c61da290f8f1622b0aedd9c233c6eeb59e39990e10d717bbfc448db1489655a"
+    },
+    {
+      "id": "ts-this-parameter",
+      "title": "Как явно описать this функции и контекст методов объектного литерала?",
+      "contentHash": "7b1c9e4f31be77a821bc2bf9a9fbd64530b876e3fa94d22e03bc13c25e0ab566"
+    },
+    {
+      "id": "ts-generator-contract",
+      "title": "Что означают три параметра Generator<Yield, Return, Next>?",
+      "contentHash": "9b787a90d6dc3d233b7e9749a6073d9e78aa8e0bc26428511ae900034a83ff33"
+    },
+    {
+      "id": "ts-polymorphic-callback-contract",
+      "title": "Чем generic-callback отличается от callback с заранее выбранным типом?",
+      "contentHash": "5f68a41af82e3899f7c33d900d5c8f01b71f61efd182516ab88198bd256498fc"
+    },
+    {
+      "id": "ts-destructured-parameter-annotation",
+      "title": "Где записывать тип деструктурируемого параметра функции?",
+      "contentHash": "d8cd7c508a65ef60490f094429bbb3200044806b92ae5d2bc4bd491e10b5d44e"
+    },
+    {
+      "id": "ts-generic-arrow-tsx",
+      "title": "Почему generic-стрелка в .tsx может быть разобрана как JSX?",
+      "contentHash": "9fe67b3e9733d78dcfd488072f173ed21a9999b04a3fe4667e2b39d914cbddae"
+    },
+    {
+      "id": "ts-strict-bind-call-apply",
+      "title": "Что проверяет strictBindCallApply при вызове call, apply и bind?",
+      "contentHash": "bc4f9c27e5968354e1c947cae0b3e8238927a9c6e8c2645da132f18315118dc0"
+    }
+  ],
+  "notes": [
+    "Сохраняются все существующие ID. Раздел охватывает разные навыки проверки типов: похожая терминология не служит основанием для слияния. Текущая задача - редактура ответов, без добавления повторных определений.",
+    "Завершено: 161 индивидуальный разбор, прежние ID сохранены. Oxfmt, content:build (1266 вопросов), полный content:check успешны. Примеры, приложение, UI/server проверки и seed не выполнялись."
+  ]
+}

@@ -2,15 +2,13 @@
 
 <!-- wishu:answer-block -->
 
-### Как это работает
+#### Как это работает
 
-- Используйте rerender для проверки реакции на новые props и сохранения пользовательского черновика.
+Используйте rerender для проверки реакции на новые props и сохранения пользовательского черновика. Чтобы проверить сброс, явно измените key или размонтируйте дерево. Не считайте эти действия эквивалентом обычного обновления props.
 
-- Чтобы проверить сброс, явно измените key или размонтируйте дерево. Не считайте эти действия эквивалентом обычного обновления props.
+Оценивайте поведение: введённый текст и видимый результат. Число вызовов компонента не является надёжной заменой проверки состояния.
 
-- Оценивайте поведение: введённый текст и видимый результат. Число вызовов компонента не является надёжной заменой проверки состояния.
-
-### Пример
+#### Пример
 
 ```jsx
 const { rerender } = render(<Editor id="a" />)
@@ -21,12 +19,16 @@ rerender(<Editor key="b" id="b" />)
 // Новый key создаёт новую идентичность.
 ```
 
-### Типичная ошибка
+#### Разбор примера
+
+Первый rerender меняет id без автоматической смены идентичности Editor. Второй добавляет новый key и проверяет уже пересоздание. Сохранение и сброс черновика нужно оценивать по этим разным переходам, а не по числу вызовов render.
+
+#### Типичная ошибка
 
 Доказывать сброс при смене props тестом, который на самом деле каждый раз вызывает unmount и render.
 
-### Источники
+#### Источники
 
-- [React: learn / preserving-and-resetting-state](https://react.dev/learn/preserving-and-resetting-state)
+[React: learn / preserving-and-resetting-state](https://react.dev/learn/preserving-and-resetting-state)
 
-- [Testing Library: react-testing-library / api](https://testing-library.com/docs/react-testing-library/api/#rerender)
+[Testing Library: react-testing-library / api](https://testing-library.com/docs/react-testing-library/api/#rerender)

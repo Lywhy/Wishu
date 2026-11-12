@@ -1,0 +1,77 @@
+{
+  "schemaVersion": 1,
+  "id": "js-all-answers-20261108-errors",
+  "title": "js-all-answers-20261108-errors",
+  "sectionId": "javascript",
+  "subsectionId": "errors",
+  "currentPass": "answers",
+  "goalIds": [
+    "core",
+    "error-exception-model",
+    "error-types",
+    "custom-errors",
+    "error-stack-trace",
+    "browser-debugging",
+    "js-json-validation",
+    "js-global-error-reporting"
+  ],
+  "questionIds": [
+    "error-exception-model",
+    "error-types",
+    "custom-errors",
+    "error-stack-trace",
+    "browser-debugging",
+    "js-json-validation",
+    "js-global-error-reporting"
+  ],
+  "scopePass": {
+    "status": "complete",
+    "remaining": []
+  },
+  "answerPass": {
+    "status": "complete",
+    "remaining": []
+  },
+  "baseline": [
+    {
+      "id": "error-exception-model",
+      "title": "Чем объект Error, исключение и синтаксическая ошибка отличаются друг от друга?",
+      "contentHash": "be1fabdacb7035bf2b0474197d05fded733b424d25543416308d7d30c70fc1bb"
+    },
+    {
+      "id": "error-types",
+      "title": "Какие встроенные типы ошибок важно различать?",
+      "contentHash": "2d3a732ab0033da9e50234f35e84ea3ab366bd58765d222227c3ab7070f0550a"
+    },
+    {
+      "id": "custom-errors",
+      "title": "Как создать собственную ошибку и сохранить её причину?",
+      "contentHash": "e4bf18d320b57054f472540b907b38957d0de6f8d9e6a0bf99b82bd3606a84e9"
+    },
+    {
+      "id": "error-stack-trace",
+      "title": "Что показывает stack trace и какие у него ограничения?",
+      "contentHash": "55e65dc18b1059f1ef431bf5c3330aeca084f1cf8ba47193f220bb7379d3c69d"
+    },
+    {
+      "id": "browser-debugging",
+      "title": "Как отлаживать JavaScript в браузере и что делает debugger?",
+      "contentHash": "864f69191f3ab47f7163735e2f687c701eec80aacdf994e707fd69e907e3fc91"
+    },
+    {
+      "id": "js-json-validation",
+      "title": "Почему успешный JSON.parse ещё не означает корректные данные?",
+      "contentHash": "6a39dea1e70745bbc4dd4d2ab9e0fab72049bbaa91c01f4ff32982817a599d7e"
+    },
+    {
+      "id": "js-global-error-reporting",
+      "title": "Чем window error отличается от unhandledrejection?",
+      "contentHash": "ab1ad1966fd427d9c890034dea2fe5424b1dd41a2285a7de0e0238ced3b85387"
+    }
+  ],
+  "notes": [
+    "Полный редакторский проход JavaScript: 346 ID сохраняются, добавлений/слияний нет. 12 ответов предыдущего пакета сохраняют готовый связный разбор. Остальным нужны индивидуальные пояснения к механизму и примеру, а не однотипная вводная фраза. Ответы ITBooster не используются.",
+    "Для оставшихся ответов подготовлены индивидуальные пояснения примеров; код перенесён в общий Markdown. В упражнениях на чтение кода условие сохранено отдельно. Примеры не запускались.",
+    "Завершено: Oxfmt, content:build, полный content:check. В платформе 1266 вопросов; в JavaScript сохранены 346 ID, обновлены оставшиеся 334 ответа, новых/удалённых ID нет. Код примеров и seed не выполнялись."
+  ]
+}

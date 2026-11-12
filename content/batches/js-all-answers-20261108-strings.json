@@ -1,0 +1,84 @@
+{
+  "schemaVersion": 1,
+  "id": "js-all-answers-20261108-strings",
+  "title": "js-all-answers-20261108-strings",
+  "sectionId": "javascript",
+  "subsectionId": "strings",
+  "currentPass": "answers",
+  "goalIds": [
+    "core",
+    "js-unicode-length",
+    "js-string-normalization",
+    "js-string-slicing",
+    "js-string-search",
+    "js-string-escaping-raw",
+    "js-whitespace-policy",
+    "js-uri-encoding",
+    "js-string-ordering"
+  ],
+  "questionIds": [
+    "js-unicode-length",
+    "js-string-normalization",
+    "js-string-slicing",
+    "js-string-search",
+    "js-string-escaping-raw",
+    "js-whitespace-policy",
+    "js-uri-encoding",
+    "js-string-ordering"
+  ],
+  "scopePass": {
+    "status": "complete",
+    "remaining": []
+  },
+  "answerPass": {
+    "status": "complete",
+    "remaining": []
+  },
+  "baseline": [
+    {
+      "id": "js-unicode-length",
+      "title": "Почему length, число code points и видимых символов строки могут различаться?",
+      "contentHash": "cfb7bf9972d2b843b39ae90230697ddfd0a6f4d3b3302adb79329a81230d64c0"
+    },
+    {
+      "id": "js-string-normalization",
+      "title": "Почему визуально одинаковые строки могут быть не равны и что делает normalize?",
+      "contentHash": "0f4802f0dd464be7da29239661759ec516accba588b274d6cd06869c02b805f0"
+    },
+    {
+      "id": "js-string-slicing",
+      "title": "Чем slice отличается от substring при извлечении части строки?",
+      "contentHash": "c71135d0b5158d70011226713977d688cc2213d233ad3266a73bf5f85c02e051"
+    },
+    {
+      "id": "js-string-search",
+      "title": "Как проверить наличие, начало и конец подстроки без ошибки с индексом ноль?",
+      "contentHash": "f3d4edad878b6a62fb51ebea6080e0a03fe0671d56dbb42e8d043946e3af80a3"
+    },
+    {
+      "id": "js-string-escaping-raw",
+      "title": "Чем исходная запись строки отличается от её runtime-содержимого?",
+      "contentHash": "7ccd0c25a65a0e127d215e9d537b915130cc70713eac07b7dcaadbb2dde1d113"
+    },
+    {
+      "id": "js-whitespace-policy",
+      "title": "Что удаляет trim и почему очистка строки зависит от назначения данных?",
+      "contentHash": "0f41a9a04bf386e4059b6746d8a30f83f93d018d7606f95d4e5c9d3433dfb4ae"
+    },
+    {
+      "id": "js-uri-encoding",
+      "title": "Чем encodeURI отличается от encodeURIComponent и почему кодирование зависит от контекста?",
+      "contentHash": "df591e44372b720d176a9dba17e772e6bc68dd853057920243ac4374d8bb5b70"
+    },
+    {
+      "id": "js-string-ordering",
+      "title": "Почему обычное сравнение строк не является алфавитной сортировкой для пользователя?",
+      "contentHash": "e57079b9018338a948e53631269d1aa900b853bce814dcf9b0bb7301b2aef260"
+    }
+  ],
+  "notes": [
+    "Полный редакторский проход JavaScript: 346 ID сохраняются, добавлений/слияний нет. 12 ответов предыдущего пакета сохраняют готовый связный разбор. Остальным нужны индивидуальные пояснения к механизму и примеру, а не однотипная вводная фраза. Ответы ITBooster не используются.",
+    "Для оставшихся ответов подготовлены индивидуальные пояснения примеров; код перенесён в общий Markdown. В упражнениях на чтение кода условие сохранено отдельно. Примеры не запускались.",
+    "Завершено: Oxfmt, content:build, полный content:check. В платформе 1266 вопросов; в JavaScript сохранены 346 ID, обновлены оставшиеся 334 ответа, новых/удалённых ID нет. Код примеров и seed не выполнялись."
+  ]
+}

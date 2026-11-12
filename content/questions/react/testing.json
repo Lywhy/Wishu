@@ -9,7 +9,7 @@
       "title": "Ошибки и тестирование",
       "description": "Обзор и взаимосвязи навыков: Error Boundary, проверка поведения, асинхронные тесты и cleanup.",
       "requiredDifficulties": [],
-      "reviewed": false,
+      "reviewed": true,
       "priority": "core",
       "relatedSkillIds": [
         "react-error-boundary",
@@ -47,7 +47,7 @@
       "title": "Что стоит проверять в тесте React-компонента?",
       "description": "Объяснить и применить правило с учётом его границ: Проверяйте контракт компонента, который наблюдает пользователь.",
       "requiredDifficulties": ["Средний"],
-      "reviewed": false,
+      "reviewed": true,
       "priority": "core",
       "relatedSkillIds": []
     },
@@ -56,7 +56,7 @@
       "title": "Чем getBy, queryBy и findBy отличаются в асинхронном тесте?",
       "description": "Объяснить и применить правило с учётом его границ: Выбирайте запрос по тому, ожидается элемент сейчас, позже или не ожидается вовсе.",
       "requiredDifficulties": ["Средний"],
-      "reviewed": false,
+      "reviewed": true,
       "priority": "core",
       "relatedSkillIds": []
     },
@@ -65,7 +65,7 @@
       "title": "Как проверить корректность подписки и cleanup компонента?",
       "description": "Объяснить и применить правило с учётом его границ: Проверяйте владение ресурсом при смене параметров и размонтировании.",
       "requiredDifficulties": ["Средний"],
-      "reviewed": false,
+      "reviewed": true,
       "priority": "core",
       "relatedSkillIds": []
     },
@@ -74,7 +74,7 @@
       "title": "Почему компонентный тест в jsdom не доказывает корректность layout и реального фокуса?",
       "description": "Объяснить и применить правило с учётом его границ: Тест должен работать в среде, которая действительно реализует проверяемую часть платформы.",
       "requiredDifficulties": ["Средний"],
-      "reviewed": false,
+      "reviewed": true,
       "priority": "core",
       "relatedSkillIds": []
     },
@@ -242,11 +242,11 @@
         "learningGoal": "Объяснить и применить правило с учётом его границ: Проверяйте контракт компонента, который наблюдает пользователь.",
         "keywords": ["React", "Ошибки и тестирование"],
         "kind": "explanation",
-        "reviewStatus": "imported",
+        "reviewStatus": "ready",
         "goalIds": ["core", "react-test-behavior"],
         "relatedQuestionIds": [],
         "priority": "core",
-        "sourceRefs": []
+        "sourceRefs": ["ref-2f1f977514a088c3"]
       },
       "answerFile": "answers/react/react-test-behavior.md"
     },
@@ -264,11 +264,11 @@
         "learningGoal": "Объяснить и применить правило с учётом его границ: Выбирайте запрос по тому, ожидается элемент сейчас, позже или не ожидается вовсе.",
         "keywords": ["React", "Ошибки и тестирование"],
         "kind": "explanation",
-        "reviewStatus": "imported",
+        "reviewStatus": "ready",
         "goalIds": ["core", "react-async-tests"],
         "relatedQuestionIds": [],
         "priority": "core",
-        "sourceRefs": []
+        "sourceRefs": ["ref-eff04d7fee35bd18"]
       },
       "answerFile": "answers/react/react-async-tests.md"
     },
@@ -286,11 +286,11 @@
         "learningGoal": "Объяснить и применить правило с учётом его границ: Проверяйте владение ресурсом при смене параметров и размонтировании.",
         "keywords": ["React", "Ошибки и тестирование"],
         "kind": "explanation",
-        "reviewStatus": "imported",
+        "reviewStatus": "ready",
         "goalIds": ["core", "react-effect-test"],
         "relatedQuestionIds": [],
         "priority": "core",
-        "sourceRefs": []
+        "sourceRefs": ["ref-0728709814762e98"]
       },
       "answerFile": "answers/react/react-effect-test.md"
     },
@@ -299,7 +299,6 @@
       "title": "Почему компонентный тест в jsdom не доказывает корректность layout и реального фокуса?",
       "summary": "Выбор тестовой среды по проверяемому поведению, а не одному названию инструмента.",
       "takeaway": "Тест должен работать в среде, которая действительно реализует проверяемую часть платформы.",
-      "pitfall": "Считать замоканный getBoundingClientRect доказательством правильного CSS-макета.",
       "difficulty": "Средний",
       "topic": "React",
       "moduleId": "react",
@@ -309,7 +308,7 @@
         "learningGoal": "Объяснить и применить правило с учётом его границ: Тест должен работать в среде, которая действительно реализует проверяемую часть платформы.",
         "keywords": ["React", "Ошибки и тестирование"],
         "kind": "explanation",
-        "reviewStatus": "imported",
+        "reviewStatus": "ready",
         "goalIds": ["core", "react-test-browser-boundary"],
         "relatedQuestionIds": [],
         "priority": "core",

@@ -2,14 +2,31 @@
 
 <!-- wishu:answer-block -->
 
-### Механизм и границы
+### Как это работает
 
 Значение по умолчанию вычисляется заново при каждом подходящем вызове, а не один раз при объявлении функции. Наличие non-simple параметров также меняет некоторые правила arguments и use strict.
 
 Параметры не следует использовать как скрытый конвейер большого числа побочных эффектов: это усложняет порядок вычисления и тестирование.
 
-<!-- wishu:answer-block -->
+### Пример и его разбор
 
-### Источник
+```javascript
+function pair(a = 1, b = a + 1) {
+  return [a, b]
+}
+console.log(pair()) // [1, 2]
+function broken(a = b, b = 2) {
+  return a
+}
+// broken() // ReferenceError: b ещё не инициализирован.
+```
 
-[MDN: Functions/Default_parameters](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Default_parameters).
+В pair значение b можно вычислить через a, поскольку инициализация идёт слева направо. В broken попытка получить b происходит раньше его инициализации, поэтому default сам создаёт ReferenceError. Проверять область параметров нужно отдельно от тела функции: объявленная в теле вспомогательная функция не становится внешним окружением для default-выражения.
+
+### Типичная ошибка
+
+> Обращаться к более позднему параметру или функции из тела как к уже готовому default-окружению.
+
+### Источники
+
+[MDN: Functions/Default_parameters](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Default_parameters)

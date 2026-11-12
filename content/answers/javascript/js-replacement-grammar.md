@@ -2,14 +2,27 @@
 
 <!-- wishu:answer-block -->
 
-### Механизм и границы
+### Как это работает
 
-Поэтому пользовательский текст, содержащий $, не стоит бездумно передавать как готовую replacement-программу. ReplaceAll также имеет требования к RegExp с global-флагом; строковый шаблон и regex - разные варианты.
+Поэтому пользовательский текст, содержащий $, не стоит бездумно передавать как готовую replacement-программу. ReplaceAll также имеет требования к `RegExp` с global-флагом; строковый шаблон и regex - разные варианты.
 
 Callback может получить захваты и контекст по контракту API. Для HTML-безопасности результата всё ещё нужна отдельная подходящая граница.
 
-<!-- wishu:answer-block -->
+### Пример и его разбор
 
-### Источник
+```javascript
+console.log("abc".replace("b", "$&$&")) // abbc
+console.log("abc".replace("b", () => "$&")) // a$&c
+const value = "$1"
+const literal = "x".replace("x", () => value) // $1
+```
 
-[MDN: Global_Objects/String/replace](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/replace).
+В строковой замене $& означает найденный фрагмент, поэтому b повторяется дважды. Возвращённый callback текст $& уже не интерпретируется повторно и остаётся буквальным. Для вставки пользовательского replacement это различие не менее важно, чем экранирование самого шаблона.
+
+### Типичная ошибка
+
+> Экранировать regex-шаблон, но забыть о другом синтаксисе replacement-строки.
+
+### Источники
+
+[MDN: Global_Objects/String/replace](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/replace)

@@ -1,0 +1,252 @@
+{
+  "schemaVersion": 1,
+  "id": "js-all-answers-20261108-asynchronous",
+  "title": "js-all-answers-20261108-asynchronous",
+  "sectionId": "javascript",
+  "subsectionId": "asynchronous",
+  "currentPass": "answers",
+  "goalIds": [
+    "core",
+    "event-loop",
+    "async-model",
+    "single-thread-blocking",
+    "timeouts",
+    "intervals",
+    "queue-microtask",
+    "promise-states",
+    "promise-chains",
+    "promise-all-settled",
+    "promise-race-any",
+    "abort-controller",
+    "promise-with-resolvers",
+    "async-await",
+    "async-fetch",
+    "async-errors",
+    "web-workers",
+    "websocket",
+    "streams",
+    "shared-worker",
+    "service-worker",
+    "async-generators",
+    "promise-executor-order",
+    "async-concurrency-limit",
+    "request-races",
+    "js-retry-policy",
+    "js-inflight-cache",
+    "js-promisify-contract",
+    "js-await-race-condition",
+    "js-async-critical-section",
+    "js-abort-signal-composition",
+    "js-thenable-assimilation",
+    "js-worker-request-protocol"
+  ],
+  "questionIds": [
+    "event-loop",
+    "async-model",
+    "single-thread-blocking",
+    "timeouts",
+    "intervals",
+    "queue-microtask",
+    "promise-states",
+    "promise-chains",
+    "promise-all-settled",
+    "promise-race-any",
+    "abort-controller",
+    "promise-with-resolvers",
+    "async-await",
+    "async-fetch",
+    "async-errors",
+    "web-workers",
+    "websocket",
+    "streams",
+    "shared-worker",
+    "service-worker",
+    "async-generators",
+    "promise-executor-order",
+    "async-concurrency-limit",
+    "request-races",
+    "js-retry-policy",
+    "js-inflight-cache",
+    "js-promisify-contract",
+    "js-await-race-condition",
+    "js-async-critical-section",
+    "js-abort-signal-composition",
+    "js-thenable-assimilation",
+    "js-worker-request-protocol"
+  ],
+  "scopePass": {
+    "status": "complete",
+    "remaining": []
+  },
+  "answerPass": {
+    "status": "complete",
+    "remaining": []
+  },
+  "baseline": [
+    {
+      "id": "event-loop",
+      "title": "Как связаны стек вызовов, задачи и микрозадачи в event loop?",
+      "contentHash": "fbd983f3a1796c2227d29af0447cc36f19138ce9ca73cfd91e4a77a980d10189"
+    },
+    {
+      "id": "async-model",
+      "title": "Что означает асинхронность и неблокирующая модель JavaScript?",
+      "contentHash": "ae4d2ecf65fb0781f8b5059fed2393ea6b3b0eac00512c33383388491cb99e35"
+    },
+    {
+      "id": "single-thread-blocking",
+      "title": "Почему JavaScript называют однопоточным и чем опасна блокировка event loop?",
+      "contentHash": "e875b86b1b8e2a524608541b79f9ae210f48c1fea3e1d2897860631f26f1fac7"
+    },
+    {
+      "id": "timeouts",
+      "title": "Что возвращает setTimeout и почему задержка не гарантирует точное время вызова?",
+      "contentHash": "1e30d8b644082f575a5cb69123dd570898213eefc0a00c476afe85277cfab84f"
+    },
+    {
+      "id": "intervals",
+      "title": "Как работает setInterval и когда лучше повторный setTimeout?",
+      "contentHash": "6542b4dee6d61e3bbfb55fec6caec5ae766e122159797bf1755dabb91fcd4d7e"
+    },
+    {
+      "id": "queue-microtask",
+      "title": "Для чего нужен queueMicrotask и чем он отличается от Promise.then?",
+      "contentHash": "8a5c3c19dc9c343d5c6349b7a049578cb4dd6ebe53d87cbe2fce40ff04b5baec"
+    },
+    {
+      "id": "promise-states",
+      "title": "Что такое Promise и чем fulfilled, rejected, settled и resolved отличаются друг от друга?",
+      "contentHash": "9c36bfcb43a53cc374c1b172a26fec09ed8fa5be7c13f08219c9352fe76dd3ba"
+    },
+    {
+      "id": "promise-chains",
+      "title": "Как работают then, catch и finally в цепочке Promise?",
+      "contentHash": "fb2bfacff2662e05a3c7a5adce9684685ee439be454895efdf1795803b5e62a1"
+    },
+    {
+      "id": "promise-all-settled",
+      "title": "Чем Promise.all отличается от Promise.allSettled?",
+      "contentHash": "49b2ac517c1981e74b16bd185389f8ffbaaac98c128945fc7d55d48cd9aba3fd"
+    },
+    {
+      "id": "promise-race-any",
+      "title": "Чем Promise.race отличается от Promise.any?",
+      "contentHash": "00f4d59de6c8a68335d6219bc6d284159b95d87e4d57906aad0c2edc0a27bc79"
+    },
+    {
+      "id": "abort-controller",
+      "title": "Можно ли отменить Promise и как помогают AbortController и AbortSignal?",
+      "contentHash": "23c85200b755feb76a512cb89ad574854b069f88866c8c098dcad520fa0a7396"
+    },
+    {
+      "id": "promise-with-resolvers",
+      "title": "Что возвращает Promise.withResolvers и когда он полезен?",
+      "contentHash": "e3f6f7f134d80bd40c2bc5f04077d25504f19d1baf7c6844286454e27c461366"
+    },
+    {
+      "id": "async-await",
+      "title": "Что возвращает async-функция и что именно приостанавливает await?",
+      "contentHash": "4f7d52c58c4e33e7a79794853a3ddb9110dd34b9c99dc29e21c9b1257de21f42"
+    },
+    {
+      "id": "async-fetch",
+      "title": "Как выполнять запросы через fetch с async/await и проверять HTTP-ошибки?",
+      "contentHash": "aae7e077a5a248943d25e7c00e2934d550f0da87e27c80c6102765cd81f6c9a2"
+    },
+    {
+      "id": "async-errors",
+      "title": "Как перехватывать ошибки async-функций и почему важен await внутри try?",
+      "contentHash": "b255a6e73f22f749773fbad784624e74140eb338f7533f85010f16ca674e49dc"
+    },
+    {
+      "id": "web-workers",
+      "title": "Как Web Worker выполняет работу вне главного потока и обменивается данными?",
+      "contentHash": "d65e68cc411e5334f797c1bc64439fa7b0d56bedf0b89037a76ecbbdd429ec2e"
+    },
+    {
+      "id": "websocket",
+      "title": "Как WebSocket поддерживает двусторонний обмен с сервером?",
+      "contentHash": "abb550cede25084755a5414994a00ef89bde36e73063988a464364c80ca57c3e"
+    },
+    {
+      "id": "streams",
+      "title": "Как ReadableStream и WritableStream обрабатывают данные по частям?",
+      "contentHash": "f66cbc18e53f39688622fafcffc95037675b34d701a4d14fde260443bacddcbb"
+    },
+    {
+      "id": "shared-worker",
+      "title": "Чем SharedWorker отличается от отдельного Web Worker?",
+      "contentHash": "2f762d6d1ec413d4a31f168d63990215a066ffe6beaec6ee8d4d50a4cf7f2ed4"
+    },
+    {
+      "id": "service-worker",
+      "title": "Для чего нужен Service Worker и чем он отличается от обычного Worker?",
+      "contentHash": "4d2d0f40e98bc2974d0c7849b04a9cfa1702c59c0926ddd5c2622e1ffecec2dd"
+    },
+    {
+      "id": "async-generators",
+      "title": "Чем async-генератор отличается от обычного генератора?",
+      "contentHash": "57ab62aceff77f871f92c5238067f6f881f5cfd5eeb8b75a404b6b37c2ef532d"
+    },
+    {
+      "id": "promise-executor-order",
+      "title": "Когда выполняется executor Promise и почему нельзя делать его async?",
+      "contentHash": "ba95c7b0d60aa34d61e4aff76827c97f3a8f3887658ccd9463145fa1fb53185d"
+    },
+    {
+      "id": "async-concurrency-limit",
+      "title": "Как ограничить число одновременно выполняемых асинхронных операций?",
+      "contentHash": "63de1196511695b8b3c92fe40ff4881296bfe706d4f59d8fb15c98aa1b6f742a"
+    },
+    {
+      "id": "request-races",
+      "title": "Как избежать устаревшего результата при гонке поисковых запросов?",
+      "contentHash": "2312cd4051186c0c3947b2b4c8882cecb118d71cea1400c411578e191d220650"
+    },
+    {
+      "id": "js-retry-policy",
+      "title": "Когда безопасно повторять неуспешный запрос?",
+      "contentHash": "3b89f86bf636cedd95af4e342f075414621967fe5090baa42233d2ddb782aada"
+    },
+    {
+      "id": "js-inflight-cache",
+      "title": "Как объединить одинаковые запросы, выполняющиеся одновременно?",
+      "contentHash": "b2b67d50f3c854399acc6a25cc96917518f563d6c44b5e242c7948ce777da971"
+    },
+    {
+      "id": "js-promisify-contract",
+      "title": "Как адаптировать error-first callback в Promise и какие гарантии нужно сохранить?",
+      "contentHash": "89ed6af5b1272112c8430a2d3513955bdc2ec585a958459e9b529244bccf2719"
+    },
+    {
+      "id": "js-await-race-condition",
+      "title": "Как возникает race condition в однопоточном JavaScript?",
+      "contentHash": "9bd6136d049b697f898a71d2341d45126bee334d25ca6f891a96a20c03cb8294"
+    },
+    {
+      "id": "js-async-critical-section",
+      "title": "Когда нужен async mutex и чем он отличается от ограничения параллельности?",
+      "contentHash": "56c477aac26ca40d335d34f7f3d5dc66239a442385b74606eea5a73bee04a169"
+    },
+    {
+      "id": "js-abort-signal-composition",
+      "title": "Как объединить пользовательскую отмену и тайм-аут через AbortSignal?",
+      "contentHash": "6114d0baf9fa0fe5dd8b556763ca58e96a3ac20fc143a4a97a1bd387c533e337"
+    },
+    {
+      "id": "js-thenable-assimilation",
+      "title": "Как Promise обрабатывает thenable с ошибочным getter или повторными вызовами resolve?",
+      "contentHash": "4a91409ab73383a21b25ca108a3e9366ee8cc7c0db017a24bc348f4c9de7f796"
+    },
+    {
+      "id": "js-worker-request-protocol",
+      "title": "Как организовать несколько запросов к Worker без путаницы результатов?",
+      "contentHash": "faf83298343d86ac6a677d58f244ee67024fe1469df83784436a3b223f6d9aff"
+    }
+  ],
+  "notes": [
+    "Полный редакторский проход JavaScript: 346 ID сохраняются, добавлений/слияний нет. 12 ответов предыдущего пакета сохраняют готовый связный разбор. Остальным нужны индивидуальные пояснения к механизму и примеру, а не однотипная вводная фраза. Ответы ITBooster не используются.",
+    "Для оставшихся ответов подготовлены индивидуальные пояснения примеров; код перенесён в общий Markdown. В упражнениях на чтение кода условие сохранено отдельно. Примеры не запускались.",
+    "Завершено: Oxfmt, content:build, полный content:check. В платформе 1266 вопросов; в JavaScript сохранены 346 ID, обновлены оставшиеся 334 ответа, новых/удалённых ID нет. Код примеров и seed не выполнялись."
+  ]
+}

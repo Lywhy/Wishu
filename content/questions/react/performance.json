@@ -9,7 +9,7 @@
       "title": "Производительность",
       "description": "Обзор и взаимосвязи навыков: Мемоизация, профилирование, виртуализация и React Compiler.",
       "requiredDifficulties": [],
-      "reviewed": false,
+      "reviewed": true,
       "priority": "core",
       "relatedSkillIds": [
         "react-memo",
@@ -44,7 +44,7 @@
       "title": "Чем useMemo отличается от useCallback?",
       "description": "Объяснить и применить правило с учётом его границ: Мемоизируйте измеренную стоимость или необходимую идентичность, а не каждое выражение.",
       "requiredDifficulties": ["Средний"],
-      "reviewed": false,
+      "reviewed": true,
       "priority": "core",
       "relatedSkillIds": []
     },
@@ -53,7 +53,7 @@
       "title": "Как найти причину медленного взаимодействия в React?",
       "description": "Объяснить и применить правило с учётом его границ: Оптимизация начинается с воспроизводимого замера.",
       "requiredDifficulties": ["Средний"],
-      "reviewed": false,
+      "reviewed": true,
       "priority": "core",
       "relatedSkillIds": []
     },
@@ -62,7 +62,7 @@
       "title": "Когда нужна виртуализация длинного списка?",
       "description": "Объяснить и применить правило с учётом его границ: Скролл ограничивает видимость, виртуализация ограничивает количество узлов.",
       "requiredDifficulties": ["Средний"],
-      "reviewed": false,
+      "reviewed": true,
       "priority": "core",
       "relatedSkillIds": []
     },
@@ -71,7 +71,7 @@
       "title": "Что оптимизирует React Compiler и заменяет ли он правила React?",
       "description": "Объяснить и применить правило с учётом его границ: Compiler помогает с мемоизацией, но не заменяет корректную модель данных.",
       "requiredDifficulties": ["Продвинутый"],
-      "reviewed": false,
+      "reviewed": true,
       "priority": "core",
       "relatedSkillIds": []
     },
@@ -80,7 +80,7 @@
       "title": "Когда flushSync оправдан при интеграции с браузерным или сторонним API?",
       "description": "Объяснить и применить правило с учётом его границ: Принудительная синхронность нужна для конкретного внешнего контракта и имеет цену.",
       "requiredDifficulties": ["Продвинутый"],
-      "reviewed": false,
+      "reviewed": true,
       "priority": "core",
       "relatedSkillIds": []
     },
@@ -208,7 +208,6 @@
       "topic": "React",
       "difficulty": "Средний",
       "summary": "Кеширование результата и идентичности функции.",
-      "code": "const visible = useMemo(() => items.filter(item => item.active), [items])\nconst onSelect = useCallback(id => setSelectedId(id), [])",
       "takeaway": "Мемоизируйте измеренную стоимость или необходимую идентичность, а не каждое выражение.",
       "moduleId": "react",
       "order": 1,
@@ -217,11 +216,11 @@
         "learningGoal": "Объяснить и применить правило с учётом его границ: Мемоизируйте измеренную стоимость или необходимую идентичность, а не каждое выражение.",
         "keywords": ["React", "Производительность"],
         "kind": "explanation",
-        "reviewStatus": "imported",
+        "reviewStatus": "ready",
         "goalIds": ["core", "react-memo-callback"],
         "relatedQuestionIds": [],
         "priority": "core",
-        "sourceRefs": []
+        "sourceRefs": ["ref-993ebcbd413f90ff"]
       },
       "answerFile": "answers/react/react-memo-callback.md"
     },
@@ -239,11 +238,11 @@
         "learningGoal": "Объяснить и применить правило с учётом его границ: Оптимизация начинается с воспроизводимого замера.",
         "keywords": ["React", "Производительность"],
         "kind": "explanation",
-        "reviewStatus": "imported",
+        "reviewStatus": "ready",
         "goalIds": ["core", "react-profiler"],
         "relatedQuestionIds": [],
         "priority": "core",
-        "sourceRefs": []
+        "sourceRefs": ["ref-04cf3f3b426bd2e0"]
       },
       "answerFile": "answers/react/react-profiler.md"
     },
@@ -261,11 +260,11 @@
         "learningGoal": "Объяснить и применить правило с учётом его границ: Скролл ограничивает видимость, виртуализация ограничивает количество узлов.",
         "keywords": ["React", "Производительность"],
         "kind": "explanation",
-        "reviewStatus": "imported",
+        "reviewStatus": "ready",
         "goalIds": ["core", "react-list-windowing"],
         "relatedQuestionIds": [],
         "priority": "core",
-        "sourceRefs": []
+        "sourceRefs": ["ref-8cc130c143b35c6f"]
       },
       "answerFile": "answers/react/react-list-windowing.md"
     },
@@ -283,11 +282,11 @@
         "learningGoal": "Объяснить и применить правило с учётом его границ: Compiler помогает с мемоизацией, но не заменяет корректную модель данных.",
         "keywords": ["React", "Производительность", "мемоизация", "memoization"],
         "kind": "explanation",
-        "reviewStatus": "imported",
+        "reviewStatus": "ready",
         "goalIds": ["core", "react-compiler"],
         "relatedQuestionIds": [],
         "priority": "core",
-        "sourceRefs": []
+        "sourceRefs": ["ref-0cc5c69a239b263f"]
       },
       "answerFile": "answers/react/react-compiler.md"
     },
@@ -295,9 +294,7 @@
       "id": "react-flush-sync",
       "title": "Когда flushSync оправдан при интеграции с браузерным или сторонним API?",
       "summary": "Редкое требование обновить DOM до следующего императивного действия.",
-      "code": "import { flushSync } from \"react-dom\"\nfunction appendAndScroll(setItems, listRef, item) {\n  flushSync(() => setItems(items => [...items, item]))\n  listRef.current?.lastElementChild?.scrollIntoView({ block: \"nearest\" })\n}\n// Императивная интеграция; применять только при обоснованной необходимости.",
       "takeaway": "Принудительная синхронность нужна для конкретного внешнего контракта и имеет цену.",
-      "pitfall": "Оборачивать все setState во flushSync ради предсказуемого console.log.",
       "difficulty": "Продвинутый",
       "topic": "React",
       "moduleId": "react",
@@ -307,7 +304,7 @@
         "learningGoal": "Объяснить и применить правило с учётом его границ: Принудительная синхронность нужна для конкретного внешнего контракта и имеет цену.",
         "keywords": ["React", "Производительность"],
         "kind": "explanation",
-        "reviewStatus": "imported",
+        "reviewStatus": "ready",
         "goalIds": ["core", "react-flush-sync"],
         "relatedQuestionIds": [],
         "priority": "core",

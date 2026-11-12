@@ -1,0 +1,209 @@
+{
+  "schemaVersion": 1,
+  "id": "react-answer-review-20261110-state",
+  "title": "react-answer-review-20261110-state",
+  "sectionId": "react",
+  "subsectionId": "state",
+  "currentPass": "answers",
+  "goalIds": [
+    "core",
+    "react-state-snapshot",
+    "react-state-queue",
+    "react-state-immutability",
+    "react-derived-state",
+    "react-lifting-state",
+    "react-use-reducer",
+    "react-lazy-state",
+    "react-normalized-state",
+    "react-draft-conflicts",
+    "react-state-replacement",
+    "react-state-function-value",
+    "react-state-status-model",
+    "react-state-object-is",
+    "react-state-remove-row",
+    "react-state-edit-row",
+    "react-state-sort-view",
+    "react-state-set-collection",
+    "react-state-selection-id",
+    "react-state-instance-isolation",
+    "react-state-event-next-value",
+    "react-state-previous-committed",
+    "react-state-edit-session-key",
+    "react-state-reducer-init",
+    "react-state-undo-model",
+    "react-state-transaction-boundary",
+    "react-state-versioned-server-merge"
+  ],
+  "questionIds": [
+    "react-state-snapshot",
+    "react-state-queue",
+    "react-state-immutability",
+    "react-derived-state",
+    "react-lifting-state",
+    "react-use-reducer",
+    "react-lazy-state",
+    "react-normalized-state",
+    "react-draft-conflicts",
+    "react-state-replacement",
+    "react-state-function-value",
+    "react-state-status-model",
+    "react-state-object-is",
+    "react-state-remove-row",
+    "react-state-edit-row",
+    "react-state-sort-view",
+    "react-state-set-collection",
+    "react-state-selection-id",
+    "react-state-instance-isolation",
+    "react-state-event-next-value",
+    "react-state-previous-committed",
+    "react-state-edit-session-key",
+    "react-state-reducer-init",
+    "react-state-undo-model",
+    "react-state-transaction-boundary",
+    "react-state-versioned-server-merge"
+  ],
+  "scopePass": {
+    "status": "complete",
+    "remaining": []
+  },
+  "answerPass": {
+    "status": "complete",
+    "remaining": []
+  },
+  "baseline": [
+    {
+      "id": "react-state-snapshot",
+      "title": "Почему значение state не меняется сразу после setState?",
+      "contentHash": "1bcd3eeb7fc07419f3c6358c0917cfc00303994f518bb55b0d16e7e6481c9274"
+    },
+    {
+      "id": "react-state-queue",
+      "title": "Что выведут три вызова setCount и когда нужен updater?",
+      "contentHash": "01ee0a0abccc54db349a9c14f8d1b47254a6cc6202a9d6d8abea2b1fbcb06c9d"
+    },
+    {
+      "id": "react-state-immutability",
+      "title": "Почему нельзя изменять объект или массив в state напрямую?",
+      "contentHash": "cbde9f06c16bafbe4c8029ae085ccb7a170a47bbda44bf288095783eb48be148"
+    },
+    {
+      "id": "react-derived-state",
+      "title": "Почему вычисляемые значения обычно не нужно хранить в state?",
+      "contentHash": "eab54f877ace2200467e27216aa2bb4930620b8ea5deb271400d804046796605"
+    },
+    {
+      "id": "react-lifting-state",
+      "title": "Когда нужно поднимать состояние к общему родителю?",
+      "contentHash": "df18fb776f0041690cd102e5cb555e0d2f0fd529376f7b79f12617efdcbd1329"
+    },
+    {
+      "id": "react-use-reducer",
+      "title": "Когда useReducer удобнее useState?",
+      "contentHash": "de69e2362ddf9065f544eb549305719478a893edb638f3d843734e35a3020422"
+    },
+    {
+      "id": "react-lazy-state",
+      "title": "Как работает ленивое начальное состояние useState?",
+      "contentHash": "e67deb5a4212cf2afeeee7f9f1ac1de69f9d2321828008a836f625d69c67a904"
+    },
+    {
+      "id": "react-normalized-state",
+      "title": "Когда сущности в состоянии лучше хранить по ID, а не копировать в разные ветви?",
+      "contentHash": "82801265860aa615a3790408de51f0363bf2579fd79a9ac36e66dce81434a84f"
+    },
+    {
+      "id": "react-draft-conflicts",
+      "title": "Как сохранить пользовательский черновик при обновлении данных с сервера?",
+      "contentHash": "72778fcb2613e1733c1a3f5aae01760f1cb1b30fd5b4d8ca51784f755b12b9e2"
+    },
+    {
+      "id": "react-state-replacement",
+      "title": "Заменяет ли useState объект целиком или объединяет его поля?",
+      "contentHash": "0d956c9f70d383518715f27d02fbf724a5c5a0c411b0753546a11fc6c778739a"
+    },
+    {
+      "id": "react-state-function-value",
+      "title": "Как сохранить функцию в useState, чтобы React не вызвал её?",
+      "contentHash": "5a73448e20928550f1a1d696781da82dc3602e81dccc0b5a94fb824893586691"
+    },
+    {
+      "id": "react-state-status-model",
+      "title": "Почему status иногда лучше нескольких флагов isLoading, isSuccess и isError?",
+      "contentHash": "5cd7b0f3ed0017f3c3ff7fe528ffad252003122121645d613a66c6e4abc8e88a"
+    },
+    {
+      "id": "react-state-object-is",
+      "title": "Почему setter с тем же значением может не обновить интерфейс?",
+      "contentHash": "ab1fc491b4255a989555a28ffbcd6f07797b90d3e54d89912b34fd3e4646d0f4"
+    },
+    {
+      "id": "react-state-remove-row",
+      "title": "Как удалить запись из массива state, не затронув остальные записи?",
+      "contentHash": "512230d42ef5c7ed6ad2b9d395f89bffaa93cc07b4a928b3425c1cc4b1de5f4e"
+    },
+    {
+      "id": "react-state-edit-row",
+      "title": "Как обновить одну запись массива state по ID?",
+      "contentHash": "ad88d3a237c50ef068b222c069bbb1ff5fb57b3ecaec29f1a86863baf37d2f3c"
+    },
+    {
+      "id": "react-state-sort-view",
+      "title": "Почему сортировку отображаемого списка нельзя делать прямо над props?",
+      "contentHash": "cb448ce40d7e82211352c06730c81902cdf50d6f809c98ab78bfe4a432df5c9c"
+    },
+    {
+      "id": "react-state-set-collection",
+      "title": "Как хранить выбранные ID в Set, чтобы React увидел изменение?",
+      "contentHash": "36158787f335000ef17dd133b0b46121105dbdd321ae1f608af8e3bf058b9079"
+    },
+    {
+      "id": "react-state-selection-id",
+      "title": "Почему выбранную запись удобно хранить как ID, а не копию объекта?",
+      "contentHash": "dcfd13df8d860c2c6459e8341dbcea2ab405d0350a275e9b90aecadaed46051f"
+    },
+    {
+      "id": "react-state-instance-isolation",
+      "title": "Почему два одинаковых счётчика на странице не делят state?",
+      "contentHash": "e0f2934abeccdc2c3fc9fd2675452dda0a8e368dab3f94e54cad6f75b6d7490e"
+    },
+    {
+      "id": "react-state-event-next-value",
+      "title": "Как использовать следующее значение сразу в обработчике без чтения старого state?",
+      "contentHash": "0b34ae625632467c9f978d1f8cf3b409d4cb8cad1718177b9e530fbf6151598e"
+    },
+    {
+      "id": "react-state-previous-committed",
+      "title": "Как сохранить предыдущее зафиксированное значение для сравнения, не создавая новый источник истины?",
+      "contentHash": "f6402378f076a4febcf128a68a1cd960baa6cc643cffd2f2631ae4c8f64de8bf"
+    },
+    {
+      "id": "react-state-edit-session-key",
+      "title": "Как отличить смену редактируемой сущности от обновления её версии?",
+      "contentHash": "c2b7b9c35bf0eccf0c6185c0270032ffea6f93b5f59dfece744c626536b2f947"
+    },
+    {
+      "id": "react-state-reducer-init",
+      "title": "Как третий аргумент useReducer помогает инициализировать сложное состояние?",
+      "contentHash": "d9bf641f775435362b447df565ea4cbdb33bd93cb01378e9ac4ebe9bab2227d9"
+    },
+    {
+      "id": "react-state-undo-model",
+      "title": "Как организовать undo для локального редактора через историю состояний?",
+      "contentHash": "20b345d099b8fc7d278d3771dd53da843a45a6414213dbfb03f7ac79b8440492"
+    },
+    {
+      "id": "react-state-transaction-boundary",
+      "title": "Почему несколько setter разных владельцев не являются бизнес-транзакцией?",
+      "contentHash": "7522709c8038c2bc79ee00ea74ba86173090fd970ea5ad4c44d4951145adfd4e"
+    },
+    {
+      "id": "react-state-versioned-server-merge",
+      "title": "Как согласовать локальный optimistic draft с новой серверной версией без потери правок?",
+      "contentHash": "2cb3b8eadeecee2fdcb6e03ce29e78bd39217ead5b29d2986b75b3648072562e"
+    }
+  ],
+  "notes": [
+    "Сохраняются все 300 ID, включая Redux и Zustand внутри React. Дорабатываются ответы, а не количество вопросов. Схожие формулировки сохраняются при разных учебных целях; связи указываются через канонические вопросы.",
+    "Завершено 2026-11-12: все 300 ответов прочитаны и расширены индивидуальными разборами; ID сохранены. Oxfmt, content:build и полный content:check успешны (1266 вопросов). Примеры, приложение, UI/server проверки, миграции и seed не запускались."
+  ]
+}

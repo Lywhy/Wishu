@@ -1,0 +1,125 @@
+{
+  "schemaVersion": 1,
+  "id": "ts-answer-review-20261110-ts-modules",
+  "title": "ts-answer-review-20261110-ts-modules",
+  "sectionId": "typescript",
+  "subsectionId": "ts-modules",
+  "currentPass": "answers",
+  "goalIds": [
+    "core",
+    "ts-type-only-imports",
+    "ts-module-resolution",
+    "ts-declaration-files",
+    "ts-library-declaration-publishing",
+    "ts-esm-cjs-contract",
+    "ts-isolated-compilation",
+    "ts-project-references",
+    "ts-ambient-types-scope",
+    "ts-check-javascript",
+    "ts-skip-lib-check",
+    "ts-module-detection-scope",
+    "ts-side-effect-import-check",
+    "ts-json-import-boundary",
+    "ts-package-conditional-types"
+  ],
+  "questionIds": [
+    "ts-type-only-imports",
+    "ts-module-resolution",
+    "ts-declaration-files",
+    "ts-library-declaration-publishing",
+    "ts-esm-cjs-contract",
+    "ts-isolated-compilation",
+    "ts-project-references",
+    "ts-ambient-types-scope",
+    "ts-check-javascript",
+    "ts-skip-lib-check",
+    "ts-module-detection-scope",
+    "ts-side-effect-import-check",
+    "ts-json-import-boundary",
+    "ts-package-conditional-types"
+  ],
+  "scopePass": {
+    "status": "complete",
+    "remaining": []
+  },
+  "answerPass": {
+    "status": "complete",
+    "remaining": []
+  },
+  "baseline": [
+    {
+      "id": "ts-type-only-imports",
+      "title": "Как import type и verbatimModuleSyntax отделяют типы от runtime-зависимостей?",
+      "contentHash": "6d1e47ec94ece98ec415fd4df44b1a0815bab3548731befcb9601edc59fc3ae4"
+    },
+    {
+      "id": "ts-module-resolution",
+      "title": "Как согласовать module, moduleResolution и aliases с реальной средой запуска?",
+      "contentHash": "3f499dd8449839d46212907f75691f6dfb5c4e8d29ba22fafbb821ff457fa74e"
+    },
+    {
+      "id": "ts-declaration-files",
+      "title": "Что описывают .d.ts и откуда TypeScript получает типы JavaScript-библиотеки?",
+      "contentHash": "cd9087885af3df711b4ef5210af4f081a3fe5c19a351f020165ff8b6e02c960f"
+    },
+    {
+      "id": "ts-library-declaration-publishing",
+      "title": "Как публиковать библиотеку, чтобы её JavaScript и декларации описывали один API?",
+      "contentHash": "30af8684d3ef6fabcccc40fd5a2779e3b13b1a6be3b035f28000ce903e2a6115"
+    },
+    {
+      "id": "ts-esm-cjs-contract",
+      "title": "Почему импорт CommonJS-пакета может типизироваться, но не работать в выбранной ESM-среде?",
+      "contentHash": "cf32b961f62101511a31c3ca5a1ce09374b856fa7f3007b01851759db56d3403"
+    },
+    {
+      "id": "ts-isolated-compilation",
+      "title": "Чем isolatedModules отличается от isolatedDeclarations?",
+      "contentHash": "c4afe40c7cd3a4a1c58aa81272a8b14a0a4fbf99363388fd229bf76341153a3f"
+    },
+    {
+      "id": "ts-project-references",
+      "title": "Как project references помогают организовать проверку большого проекта?",
+      "contentHash": "30e69ff085079e4f23f797283084e2ade4420521ba6fcbfbe2f4fd92b8a847b9"
+    },
+    {
+      "id": "ts-ambient-types-scope",
+      "title": "Как types и typeRoots помогают контролировать глобальные типы окружения?",
+      "contentHash": "e26f5024bdeade0fd2285cd548b408241219a80232911b91c6c93d62d7c65a4f"
+    },
+    {
+      "id": "ts-check-javascript",
+      "title": "Как постепенно проверять JavaScript через allowJs, checkJs и JSDoc?",
+      "contentHash": "ee5ab37d410aaa58aff3a2cc5976325abfcea2aedc84c34fa1c5650ca3fcfb9a"
+    },
+    {
+      "id": "ts-skip-lib-check",
+      "title": "Что действительно отключает skipLibCheck и когда он скрывает проблему зависимостей?",
+      "contentHash": "8c00c596bc7e92d2bc043778a16bd8162c2c35190b1a06a44d25789b9562f7aa"
+    },
+    {
+      "id": "ts-module-detection-scope",
+      "title": "Почему два файла без импортов могут конфликтовать по глобальным именам?",
+      "contentHash": "bc037f9d0a6a583f527fbe236ecd9e59bb50a189ca42bea333d5b057f6c8211e"
+    },
+    {
+      "id": "ts-side-effect-import-check",
+      "title": "Что проверяет noUncheckedSideEffectImports и как типизировать импорт CSS?",
+      "contentHash": "49d64398cbb78fcdf92ac1ef10a4e90b46b9567efbc26b183b52f2f25e32fe8e"
+    },
+    {
+      "id": "ts-json-import-boundary",
+      "title": "Что даёт resolveJsonModule и почему этого недостаточно для любого runtime-импорта JSON?",
+      "contentHash": "a8dc3a9a95823ff52b80eb5efef1e7e0eaa7133bfee128698c4891f73f1a4c49"
+    },
+    {
+      "id": "ts-package-conditional-types",
+      "title": "Как exports и условия types влияют на выбор деклараций пакета?",
+      "contentHash": "50db4aa7224b1e67359941ceb886a227f29eeb5440fc9729fa73a53f1a2a4cf6"
+    }
+  ],
+  "notes": [
+    "Сохраняются все существующие ID. Раздел охватывает разные навыки проверки типов: похожая терминология не служит основанием для слияния. Текущая задача - редактура ответов, без добавления повторных определений.",
+    "Завершено: 161 индивидуальный разбор, прежние ID сохранены. Oxfmt, content:build (1266 вопросов), полный content:check успешны. Примеры, приложение, UI/server проверки и seed не выполнялись."
+  ]
+}

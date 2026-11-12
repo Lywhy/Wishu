@@ -2,14 +2,27 @@
 
 <!-- wishu:answer-block -->
 
-### Механизм и границы
+### Как это работает
 
-Import map связывает спецификатор с URL в поддерживаемой среде. Сборщик может решить ту же внешнюю потребность другим способом, преобразовав граф заранее.
+Import `Map` связывает спецификатор с URL в поддерживаемой среде. Сборщик может решить ту же внешнюю потребность другим способом, преобразовав граф заранее.
 
 Учитывайте базовый URL, расширения, CORS и MIME модуля. TypeScript paths или dev-server proxy не являются универсальной настройкой нативного браузерного загрузчика.
 
-<!-- wishu:answer-block -->
+### Пример и его разбор
 
-### Источник
+```javascript
+// В HTML до использующих карту модулей:
+// <script type="importmap">{"imports":{"app-utils":"/assets/utils.js"}}</script>
+// Затем module-script может использовать import ... from "app-utils".
+// Реальный файл должен существовать и иметь подходящий формат.
+```
 
-[MDN: Statements/import](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/import).
+Карта связывает имя app-utils с конкретным URL до выполнения использующего её модуля. Это даёт браузеру недостающий способ разрешить bare specifier. Настройка alias только в TypeScript такую запись в браузере не создаёт.
+
+### Типичная ошибка
+
+> Ожидать, что нативный браузер поймёт alias из tsconfig без карты или преобразования.
+
+### Источники
+
+[MDN: Statements/import](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/import)

@@ -1,0 +1,119 @@
+{
+  "schemaVersion": 1,
+  "id": "js-all-answers-20261108-modern",
+  "title": "js-all-answers-20261108-modern",
+  "sectionId": "javascript",
+  "subsectionId": "modern",
+  "currentPass": "answers",
+  "goalIds": [
+    "core",
+    "ecmascript-evolution",
+    "tagged-templates",
+    "es-modules",
+    "dynamic-import",
+    "top-level-await",
+    "esm-circular-dependencies",
+    "js-browser-module-resolution",
+    "js-module-url-identity",
+    "js-json-module-attributes",
+    "js-using-disposal",
+    "js-await-using-disposal",
+    "js-disposable-stack",
+    "js-transforms-polyfills"
+  ],
+  "questionIds": [
+    "ecmascript-evolution",
+    "tagged-templates",
+    "es-modules",
+    "dynamic-import",
+    "top-level-await",
+    "esm-circular-dependencies",
+    "js-browser-module-resolution",
+    "js-module-url-identity",
+    "js-json-module-attributes",
+    "js-using-disposal",
+    "js-await-using-disposal",
+    "js-disposable-stack",
+    "js-transforms-polyfills"
+  ],
+  "scopePass": {
+    "status": "complete",
+    "remaining": []
+  },
+  "answerPass": {
+    "status": "complete",
+    "remaining": []
+  },
+  "baseline": [
+    {
+      "id": "ecmascript-evolution",
+      "title": "Что такое ECMAScript и почему ES2015 стал крупным обновлением JavaScript?",
+      "contentHash": "3da8b1e0999b631289df0ea1f15f2dbff4b27792c6c74817f8c26e77547166ef"
+    },
+    {
+      "id": "tagged-templates",
+      "title": "Как работает tagged template literal и чем он отличается от обычной интерполяции?",
+      "contentHash": "fb4029a6eab1803a8994dbfece404732bb527ea7a17cc5dcbe556d0a8ab7bc7e"
+    },
+    {
+      "id": "es-modules",
+      "title": "Как import и export связывают ES-модули?",
+      "contentHash": "cd238840b7ff4e9ec27b5e7b8cfd5e6422ac918d6615931491356127bfa6c133"
+    },
+    {
+      "id": "dynamic-import",
+      "title": "Что возвращает import() и как он связан с загрузкой кода по требованию?",
+      "contentHash": "16308b28c1a22b200f65903cbe903cce122044138354f2ca0ff015f372d8137a"
+    },
+    {
+      "id": "top-level-await",
+      "title": "Как top-level await влияет на выполнение ES-модулей?",
+      "contentHash": "1b1960b715b2dfcc8b6081726e8ba6b558bc8c2b81d9867cfefc716ced93ec2b"
+    },
+    {
+      "id": "esm-circular-dependencies",
+      "title": "Когда циклический import работает, а когда приводит к ReferenceError?",
+      "contentHash": "f7222e4a74e45a01c8912f34554f3bd452e8d10c4f898be6c54d700b7e403484"
+    },
+    {
+      "id": "js-browser-module-resolution",
+      "title": "Как браузер разрешает URL модуля и зачем нужен import map?",
+      "contentHash": "45f078c6e085d5fd056489d6924e6f506a0eb5aebfd3289472c30e4d77dba403"
+    },
+    {
+      "id": "js-module-url-identity",
+      "title": "От чего зависит однократное выполнение ESM-модуля?",
+      "contentHash": "479fc2ae1f3e473a50dbd72af7276e3eaa376e870bdd3a0f54340d4d48abcdfd"
+    },
+    {
+      "id": "js-json-module-attributes",
+      "title": "Зачем импорту JSON атрибут with { type: \"json\" }?",
+      "contentHash": "596ef582cb44b9e8dc64249c96de0eac6bc8089ffc09a79ccf1689ed9c52c4c4"
+    },
+    {
+      "id": "js-using-disposal",
+      "title": "Как using связывает ресурс с выходом из лексической области?",
+      "contentHash": "1b3bf4650a7071f60048ac48bd2bc4780af25b74ae16a6902269ed2e42a54e60"
+    },
+    {
+      "id": "js-await-using-disposal",
+      "title": "Когда нужен await using и как он влияет на завершение async-функции?",
+      "contentHash": "2f2eecebb7ec4b49d8e01324ced89ddc65dd6d5082027a56bf5f9fb28c9e16f6"
+    },
+    {
+      "id": "js-disposable-stack",
+      "title": "Как DisposableStack помогает собирать несколько операций очистки?",
+      "contentHash": "963fe6db9fcfc2a64785df22c51e40427a0aa00275a1480ee89c2a2915de6442"
+    },
+    {
+      "id": "js-transforms-polyfills",
+      "title": "Чем преобразование синтаксиса отличается от polyfill встроенного API?",
+      "contentHash": "5c693427d074a99f8753737aba3cbf39afbae37e582c2e3b4b0efeba8d442812"
+    }
+  ],
+  "notes": [
+    "Полный редакторский проход JavaScript: 346 ID сохраняются, добавлений/слияний нет. 12 ответов предыдущего пакета сохраняют готовый связный разбор. Остальным нужны индивидуальные пояснения к механизму и примеру, а не однотипная вводная фраза. Ответы ITBooster не используются.",
+    "Для оставшихся ответов подготовлены индивидуальные пояснения примеров; код перенесён в общий Markdown. В упражнениях на чтение кода условие сохранено отдельно. Примеры не запускались.",
+    "Завершено: Oxfmt, content:build, полный content:check. В платформе 1266 вопросов; в JavaScript сохранены 346 ID, обновлены оставшиеся 334 ответа, новых/удалённых ID нет. Код примеров и seed не выполнялись."
+  ]
+}

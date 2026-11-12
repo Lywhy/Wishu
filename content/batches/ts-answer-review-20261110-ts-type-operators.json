@@ -1,0 +1,139 @@
+{
+  "schemaVersion": 1,
+  "id": "ts-answer-review-20261110-ts-type-operators",
+  "title": "ts-answer-review-20261110-ts-type-operators",
+  "sectionId": "typescript",
+  "subsectionId": "ts-type-operators",
+  "currentPass": "answers",
+  "goalIds": [
+    "core",
+    "ts-keyof-indexed-access",
+    "ts-type-query",
+    "ts-mapped-types",
+    "ts-conditional-types",
+    "ts-infer",
+    "ts-distributive-never",
+    "ts-template-literal-patterns",
+    "ts-deep-readonly-contract",
+    "ts-keyof-union-keys",
+    "ts-tuple-pattern-infer",
+    "ts-infer-multiple-candidates",
+    "ts-homomorphic-tuples",
+    "ts-record-to-correlated-union",
+    "ts-filter-properties-by-type",
+    "ts-template-number-inference",
+    "ts-recursive-type-budget"
+  ],
+  "questionIds": [
+    "ts-keyof-indexed-access",
+    "ts-type-query",
+    "ts-mapped-types",
+    "ts-conditional-types",
+    "ts-infer",
+    "ts-distributive-never",
+    "ts-template-literal-patterns",
+    "ts-deep-readonly-contract",
+    "ts-keyof-union-keys",
+    "ts-tuple-pattern-infer",
+    "ts-infer-multiple-candidates",
+    "ts-homomorphic-tuples",
+    "ts-record-to-correlated-union",
+    "ts-filter-properties-by-type",
+    "ts-template-number-inference",
+    "ts-recursive-type-budget"
+  ],
+  "scopePass": {
+    "status": "complete",
+    "remaining": []
+  },
+  "answerPass": {
+    "status": "complete",
+    "remaining": []
+  },
+  "baseline": [
+    {
+      "id": "ts-keyof-indexed-access",
+      "title": "Как keyof, T[K] и K extends keyof T типизируют доступ к свойству?",
+      "contentHash": "5663d794edd184f9d476ae74010524ad0b5dbc1b39302b8e7f2d29c34ff90f0f"
+    },
+    {
+      "id": "ts-type-query",
+      "title": "Чем typeof в позиции типа отличается от JavaScript-оператора typeof?",
+      "contentHash": "e00fb732fe98072090f40db5e098e172eb27c5310e4e9dbb7c4272e152bbd94a"
+    },
+    {
+      "id": "ts-mapped-types",
+      "title": "Как mapped types преобразуют свойства и их модификаторы?",
+      "contentHash": "62a04162bbaee22406848dbf4c723fff5e6981e685bff93de65c9864e1dfdda5"
+    },
+    {
+      "id": "ts-conditional-types",
+      "title": "Как работает conditional type T extends U ? X : Y?",
+      "contentHash": "6f04838f40ff8103790a9f9bee7c1e5b59be0efab38cbed9af44f1c232eadfb4"
+    },
+    {
+      "id": "ts-infer",
+      "title": "Как infer извлекает части типа, например параметры и результат функции?",
+      "contentHash": "3b5579865e2139e1921a30cfe19e03f1d5fe71cfe88dcbef046385bf289394c4"
+    },
+    {
+      "id": "ts-distributive-never",
+      "title": "Как отключить дистрибутивность conditional types и проверить never?",
+      "contentHash": "62a0d41718342520254c3c514288c37da1d96596e58c08e9f2e905c4c8b4cb7e"
+    },
+    {
+      "id": "ts-template-literal-patterns",
+      "title": "Как template literal types ограничивают формат строкового контракта?",
+      "contentHash": "60058bdd92c393e7025349c57a95dbf4d0842fb2a1694db6e228504e8357cbbc"
+    },
+    {
+      "id": "ts-deep-readonly-contract",
+      "title": "Как определить DeepReadonly и заранее ограничить область его применения?",
+      "contentHash": "454642b7d71b7716746b2979d2f1a4a6915bc0aa4aa935b9691ed356a9b603b6"
+    },
+    {
+      "id": "ts-keyof-union-keys",
+      "title": "Почему keyof union возвращает общие ключи, а не все ключи вариантов?",
+      "contentHash": "6b6ddde42409ac9e18af8de32985ef6c1d2dbff518574327135cae763673f795"
+    },
+    {
+      "id": "ts-tuple-pattern-infer",
+      "title": "Как извлечь голову и хвост кортежа через infer?",
+      "contentHash": "acec8919e25b3f9b1603e14db132d786100ea2722e42b9164d3621380aad4541"
+    },
+    {
+      "id": "ts-infer-multiple-candidates",
+      "title": "Как позиции нескольких infer-кандидатов влияют на union или intersection результата?",
+      "contentHash": "a2d2d3a7c72ee105643a7f74f838a70352a05792fe1116be49da3e3d8ad9cdd5"
+    },
+    {
+      "id": "ts-homomorphic-tuples",
+      "title": "Почему mapped type может сохранить кортеж, а явный remapping ключей - изменить форму результата?",
+      "contentHash": "3ea643345a0405cffed7247a32c02d5264f657d731f2875bb80750d5fa316b08"
+    },
+    {
+      "id": "ts-record-to-correlated-union",
+      "title": "Как из словаря типов получить union связанных пар ключ-значение?",
+      "contentHash": "3fe52b2c9d2f972ea82a724cc7b009366f8d1a378bbba644946f37c7707466bd"
+    },
+    {
+      "id": "ts-filter-properties-by-type",
+      "title": "Как выбрать свойства объекта по типу их значений?",
+      "contentHash": "72c6f934dac6a4efe29ee16abd8532066a038efd329756b6b2c529818da72a61"
+    },
+    {
+      "id": "ts-template-number-inference",
+      "title": "Как infer с ограничением извлекает число из строкового литерала?",
+      "contentHash": "dca0f74a610491da03b586089035f79192658b4c16587f994dab566887888aac"
+    },
+    {
+      "id": "ts-recursive-type-budget",
+      "title": "Как ограничить рекурсивный тип и избежать чрезмерной глубины вычисления?",
+      "contentHash": "5c8ddea012e3a941e4d37f5df83aa4431e6c6372c5b8eb77d294a0ca5c3fcbc7"
+    }
+  ],
+  "notes": [
+    "Сохраняются все существующие ID. Раздел охватывает разные навыки проверки типов: похожая терминология не служит основанием для слияния. Текущая задача - редактура ответов, без добавления повторных определений.",
+    "Завершено: 161 индивидуальный разбор, прежние ID сохранены. Oxfmt, content:build (1266 вопросов), полный content:check успешны. Примеры, приложение, UI/server проверки и seed не выполнялись."
+  ]
+}

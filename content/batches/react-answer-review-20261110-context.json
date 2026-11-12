@@ -1,0 +1,125 @@
+{
+  "schemaVersion": 1,
+  "id": "react-answer-review-20261110-context",
+  "title": "react-answer-review-20261110-context",
+  "sectionId": "react",
+  "subsectionId": "context",
+  "currentPass": "answers",
+  "goalIds": [
+    "core",
+    "react-context",
+    "react-context-renders",
+    "react-state-location",
+    "react-external-store",
+    "react-url-state",
+    "react-ssr-state-isolation",
+    "react-context-required-provider",
+    "react-reducer-context-split",
+    "react-context-nearest-provider",
+    "react-context-sibling-boundary",
+    "react-context-value-is-not-store",
+    "react-context-provider-state-lifetime",
+    "react-context-module-identity",
+    "react-context-external-store-tearing"
+  ],
+  "questionIds": [
+    "react-context",
+    "react-context-renders",
+    "react-state-location",
+    "react-external-store",
+    "react-url-state",
+    "react-ssr-state-isolation",
+    "react-context-required-provider",
+    "react-reducer-context-split",
+    "react-context-nearest-provider",
+    "react-context-sibling-boundary",
+    "react-context-value-is-not-store",
+    "react-context-provider-state-lifetime",
+    "react-context-module-identity",
+    "react-context-external-store-tearing"
+  ],
+  "scopePass": {
+    "status": "complete",
+    "remaining": []
+  },
+  "answerPass": {
+    "status": "complete",
+    "remaining": []
+  },
+  "baseline": [
+    {
+      "id": "react-context",
+      "title": "Как Context передаёт данные и откуда берётся значение по умолчанию?",
+      "contentHash": "c8a1243222e68114fa2799cf5f4aa99c40b16c14c39e6a9995dc3045c71bc108"
+    },
+    {
+      "id": "react-context-renders",
+      "title": "Почему потребители Context рендерятся при изменении value?",
+      "contentHash": "a80a63f87ced86610d7c5e43f8b29b2791f4b39304dad114023524136aa4549f"
+    },
+    {
+      "id": "react-state-location",
+      "title": "Как выбрать между props, Context и внешним store?",
+      "contentHash": "456dff6ffca020eef529b2d62486bc7c022a7642f3320b085c5dd44f2d3f2449"
+    },
+    {
+      "id": "react-external-store",
+      "title": "Для чего предназначен useSyncExternalStore?",
+      "contentHash": "8189349fdd0948f74b7c0fdde291e581659a531b89ddf6f160ee5755b2270e08"
+    },
+    {
+      "id": "react-url-state",
+      "title": "Какие состояния интерфейса стоит хранить в URL и как избежать второго источника истины?",
+      "contentHash": "3e09c498db3a91f799c429106f73ee70e0a2b1794a5a0b111a172c5494cbf3e1"
+    },
+    {
+      "id": "react-ssr-state-isolation",
+      "title": "Почему пользовательское состояние SSR нельзя бездумно хранить в singleton-store модуля?",
+      "contentHash": "d4639e621feb3dabc98956d6f8cc219162ebf4f9ca73422c288f37e26e95a3b2"
+    },
+    {
+      "id": "react-context-required-provider",
+      "title": "Как обнаружить использование хука Context вне обязательного провайдера?",
+      "contentHash": "7a89918d5838ad01094c039b8f2caf6d1de06bd6609b892c863636f0491362a5"
+    },
+    {
+      "id": "react-reducer-context-split",
+      "title": "Как объединить useReducer и Context и зачем разделять state и dispatch?",
+      "contentHash": "dca90ceeb9ecea1635961e8654bf5a0f02b1ee1b946913ab24b74213b9ab7bc6"
+    },
+    {
+      "id": "react-context-nearest-provider",
+      "title": "Какой провайдер получит вложенный потребитель одного Context?",
+      "contentHash": "13a87b0482a8afc460d55be3cd7981e221085e76d501195f3d9ef2b9a1032659"
+    },
+    {
+      "id": "react-context-sibling-boundary",
+      "title": "Почему провайдер не передаёт значение соседнему компоненту?",
+      "contentHash": "dc242ec707e0ffabeb19ee8ca7d85e075fde5755f6a9a9038853c12930756c52"
+    },
+    {
+      "id": "react-context-value-is-not-store",
+      "title": "Почему Context сам не предоставляет setter и не хранит историю изменений?",
+      "contentHash": "723969cc459535bb81652b780d4ae8f868e47e5dcb5538cdf00906e5a7afe76a"
+    },
+    {
+      "id": "react-context-provider-state-lifetime",
+      "title": "Как положение провайдера в маршрутах влияет на сохранение общего состояния?",
+      "contentHash": "2eed2c0b60f367977eabfa96572c0e87f4cd875bd8cae16d3be39c5d4376aa1f"
+    },
+    {
+      "id": "react-context-module-identity",
+      "title": "Почему одинаково названный Context из двух копий модуля не является одним Context?",
+      "contentHash": "0a2247023c9886c62c6aefe88c0b2d5ece6567669897a666bb2e8667c9e64178"
+    },
+    {
+      "id": "react-context-external-store-tearing",
+      "title": "Почему самодельная подписка на store через useEffect может дать несогласованный снимок?",
+      "contentHash": "a1e1e811f36aa47fab047ffc689ba2b4e66a311759502c37e0e6fe3d30184273"
+    }
+  ],
+  "notes": [
+    "Сохраняются все 300 ID, включая Redux и Zustand внутри React. Дорабатываются ответы, а не количество вопросов. Схожие формулировки сохраняются при разных учебных целях; связи указываются через канонические вопросы.",
+    "Завершено 2026-11-12: все 300 ответов прочитаны и расширены индивидуальными разборами; ID сохранены. Oxfmt, content:build и полный content:check успешны (1266 вопросов). Примеры, приложение, UI/server проверки, миграции и seed не запускались."
+  ]
+}

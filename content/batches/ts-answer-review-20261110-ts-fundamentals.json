@@ -1,0 +1,76 @@
+{
+  "schemaVersion": 1,
+  "id": "ts-answer-review-20261110-ts-fundamentals",
+  "title": "ts-answer-review-20261110-ts-fundamentals",
+  "sectionId": "typescript",
+  "subsectionId": "ts-fundamentals",
+  "currentPass": "answers",
+  "goalIds": [
+    "core",
+    "ts-language",
+    "ts-safety-limits",
+    "ts-config",
+    "ts-inference",
+    "ts-structural-typing",
+    "ts-contextual-inference",
+    "ts-type-value-spaces"
+  ],
+  "questionIds": [
+    "ts-language",
+    "ts-safety-limits",
+    "ts-config",
+    "ts-inference",
+    "ts-structural-typing",
+    "ts-contextual-inference",
+    "ts-type-value-spaces"
+  ],
+  "scopePass": {
+    "status": "complete",
+    "remaining": []
+  },
+  "answerPass": {
+    "status": "complete",
+    "remaining": []
+  },
+  "baseline": [
+    {
+      "id": "ts-language",
+      "title": "Как TypeScript проверяет JavaScript-код и что происходит с типами после преобразования?",
+      "contentHash": "29fd6d2c293248c1bd26ab9cd9feb9b453ea4d8c07ef502aae79bc8a7735e250"
+    },
+    {
+      "id": "ts-safety-limits",
+      "title": "Какие гарантии даёт TypeScript и какие ошибки остаются во время выполнения?",
+      "contentHash": "20b5621823ae9d323a663623177cc9c2ee75413ce4798b40d808dde181e2003e"
+    },
+    {
+      "id": "ts-config",
+      "title": "Что задаёт tsconfig.json и чем target отличается от lib?",
+      "contentHash": "7f87a1aa1c55c3255bddb258975465b95c45c3a0f475d0a66d22f21216917aea"
+    },
+    {
+      "id": "ts-inference",
+      "title": "Как работает вывод типов и когда полезна явная аннотация?",
+      "contentHash": "85136c2d0d1348b05c76ac674df19dcfffe74b3e4bdf31dc25ce9377bc635f24"
+    },
+    {
+      "id": "ts-structural-typing",
+      "title": "Как структурная типизация определяет совместимость и чем отличается от номинальной?",
+      "contentHash": "749541ceead4ad41307799d09dc08d599899bd6753395a9749ff36258b67af45"
+    },
+    {
+      "id": "ts-contextual-inference",
+      "title": "Как контекст вызова влияет на вывод типов callback?",
+      "contentHash": "e6c02d1e9950870e2252da048cfec500d95686c611240f3b8daea0e5bd4f5e40"
+    },
+    {
+      "id": "ts-type-value-spaces",
+      "title": "Почему одно имя может обозначать и значение, и тип?",
+      "contentHash": "ba1ee5f082de9d4bbbdf989bbfb386f4df742f78525fb9719ed9287155cc57c1"
+    }
+  ],
+  "notes": [
+    "Сохраняются все существующие ID. Раздел охватывает разные навыки проверки типов: похожая терминология не служит основанием для слияния. Текущая задача - редактура ответов, без добавления повторных определений.",
+    "Завершено: 161 индивидуальный разбор, прежние ID сохранены. Oxfmt, content:build (1266 вопросов), полный content:check успешны. Примеры, приложение, UI/server проверки и seed не выполнялись."
+  ]
+}

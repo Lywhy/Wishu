@@ -1,0 +1,98 @@
+{
+  "schemaVersion": 1,
+  "id": "js-all-answers-20261108-network",
+  "title": "js-all-answers-20261108-network",
+  "sectionId": "javascript",
+  "subsectionId": "network",
+  "currentPass": "answers",
+  "goalIds": [
+    "core",
+    "js-cors-origin-boundary",
+    "js-fetch-body-contract",
+    "js-response-body-ownership",
+    "js-stream-backpressure",
+    "js-reader-lock-cancel",
+    "js-stream-text-boundaries",
+    "js-url-query-model",
+    "js-eventsource-delivery",
+    "js-csrf-cookie-boundary",
+    "js-csp-trusted-types"
+  ],
+  "questionIds": [
+    "js-cors-origin-boundary",
+    "js-fetch-body-contract",
+    "js-response-body-ownership",
+    "js-stream-backpressure",
+    "js-reader-lock-cancel",
+    "js-stream-text-boundaries",
+    "js-url-query-model",
+    "js-eventsource-delivery",
+    "js-csrf-cookie-boundary",
+    "js-csp-trusted-types"
+  ],
+  "scopePass": {
+    "status": "complete",
+    "remaining": []
+  },
+  "answerPass": {
+    "status": "complete",
+    "remaining": []
+  },
+  "baseline": [
+    {
+      "id": "js-cors-origin-boundary",
+      "title": "Что CORS разрешает браузерному JavaScript и почему это не авторизация?",
+      "contentHash": "77a3446c22b150b0393dd08411d023dab5813f9532e90d7332f12b532e755c7b"
+    },
+    {
+      "id": "js-fetch-body-contract",
+      "title": "Как выбрать тело fetch и правильно задать Content-Type?",
+      "contentHash": "e6ae27eba2f73beef4fb3d9f0fbff029871a422de966b838535f1ea2ec89599c"
+    },
+    {
+      "id": "js-response-body-ownership",
+      "title": "Почему Response нельзя прочитать через json() дважды и что даёт clone()?",
+      "contentHash": "47b3512c62f5a71e112a5a222156a0c664e2c3ee553e101e65424c126c32e0e8"
+    },
+    {
+      "id": "js-stream-backpressure",
+      "title": "Что такое backpressure в Streams API и почему простое накопление чанков его нарушает?",
+      "contentHash": "076e0ea5b4286933c84b52f5034097ff8c19673fe9820f52ddcd85fddf591b0c"
+    },
+    {
+      "id": "js-reader-lock-cancel",
+      "title": "Чем releaseLock отличается от cancel у stream-reader?",
+      "contentHash": "3f2ebad15b13e61572576287c79854b2b60893d7c1ba611e1b8faf6ed2c27c4f"
+    },
+    {
+      "id": "js-stream-text-boundaries",
+      "title": "Почему сетевой чанк нельзя считать целой строкой или целым JSON-сообщением?",
+      "contentHash": "7f1e74e517677bfb585328011bd34f4df70e766a43ff4f9cb5fc6d739847da79"
+    },
+    {
+      "id": "js-url-query-model",
+      "title": "Как URL и URLSearchParams помогают не собирать адрес строковой конкатенацией?",
+      "contentHash": "cd9edc3d9964609f8aafeeac79d6cffff1ea08f5b9b5edba73535c5be84e67ff"
+    },
+    {
+      "id": "js-eventsource-delivery",
+      "title": "Когда EventSource подходит лучше polling или WebSocket?",
+      "contentHash": "1b52e6cf31f386404c283ec225e19b5ba5c9f39eb73790e3de3f0bb67737a4c2"
+    },
+    {
+      "id": "js-csrf-cookie-boundary",
+      "title": "Почему cookie-аутентификация требует отдельной защиты от CSRF?",
+      "contentHash": "0454f2d72a542f9ea5ee77d969e82226eea17ac5b159d6151d6b691aa9548f59"
+    },
+    {
+      "id": "js-csp-trusted-types",
+      "title": "Как CSP и Trusted Types дополняют безопасную работу с DOM?",
+      "contentHash": "6fafff3e1454688aa3f9e1b5095507d4652f9d4dc150fa8cc30e4b8d0a5a29ca"
+    }
+  ],
+  "notes": [
+    "Полный редакторский проход JavaScript: 346 ID сохраняются, добавлений/слияний нет. 12 ответов предыдущего пакета сохраняют готовый связный разбор. Остальным нужны индивидуальные пояснения к механизму и примеру, а не однотипная вводная фраза. Ответы ITBooster не используются.",
+    "Для оставшихся ответов подготовлены индивидуальные пояснения примеров; код перенесён в общий Markdown. В упражнениях на чтение кода условие сохранено отдельно. Примеры не запускались.",
+    "Завершено: Oxfmt, content:build, полный content:check. В платформе 1266 вопросов; в JavaScript сохранены 346 ID, обновлены оставшиеся 334 ответа, новых/удалённых ID нет. Код примеров и seed не выполнялись."
+  ]
+}

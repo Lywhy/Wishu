@@ -9,7 +9,7 @@
       "title": "Объекты и прототипы",
       "description": "Обзор и взаимосвязи навыков: Свойства и копирование, дескрипторы, прототипное наследование, Reflect и Proxy.",
       "requiredDifficulties": [],
-      "reviewed": false,
+      "reviewed": true,
       "priority": "core",
       "relatedSkillIds": [
         "object-properties",
@@ -47,7 +47,7 @@
       "title": "Как устроен объект JavaScript и что означает пара «ключ - значение»?",
       "description": "Объяснить и применить правило с учётом его границ: Свойство объекта имеет строковый или символьный ключ, а сам объект обладает идентичностью.",
       "requiredDifficulties": ["Базовый"],
-      "reviewed": false,
+      "reviewed": true,
       "priority": "core",
       "relatedSkillIds": []
     },
@@ -56,7 +56,7 @@
       "title": "Чем массив отличается от обычного объекта?",
       "description": "Объяснить и применить правило с учётом его границ: Массив - объект со специальными правилами индексов и length, а не просто объект с числовыми ключами.",
       "requiredDifficulties": ["Базовый"],
-      "reviewed": false,
+      "reviewed": true,
       "priority": "core",
       "relatedSkillIds": []
     },
@@ -65,7 +65,7 @@
       "title": "Как работает объектный литерал и сокращённая запись свойств?",
       "description": "Объяснить и применить правило с учётом его границ: Сокращённая запись сохраняет значение в свойстве при создании объекта, а не связывает его с переменной.",
       "requiredDifficulties": ["Базовый"],
-      "reviewed": false,
+      "reviewed": true,
       "priority": "core",
       "relatedSkillIds": []
     },
@@ -74,7 +74,7 @@
       "title": "Как читать, добавлять свойства и методы через точку и квадратные скобки?",
       "description": "Объяснить и применить правило с учётом его границ: Квадратные скобки вычисляют ключ, а точка использует написанное после неё имя.",
       "requiredDifficulties": ["Базовый"],
-      "reviewed": false,
+      "reviewed": true,
       "priority": "core",
       "relatedSkillIds": []
     },
@@ -83,7 +83,7 @@
       "title": "Чем отличаются Object.keys, Object.values и Object.entries?",
       "description": "Объяснить и применить правило с учётом его границ: Keys, values и entries различаются формой результата, но выбирают один и тот же набор свойств.",
       "requiredDifficulties": ["Базовый"],
-      "reviewed": false,
+      "reviewed": true,
       "priority": "core",
       "relatedSkillIds": []
     },
@@ -92,7 +92,7 @@
       "title": "Чем поверхностная копия объекта отличается от глубокой?",
       "description": "Объяснить и применить правило с учётом его границ: Новый внешний объект не делает вложенные данные независимыми.",
       "requiredDifficulties": ["Базовый"],
-      "reviewed": false,
+      "reviewed": true,
       "priority": "core",
       "relatedSkillIds": []
     },
@@ -101,7 +101,7 @@
       "title": "Как сделать глубокую копию через structuredClone и какие у неё ограничения?",
       "description": "Объяснить и применить правило с учётом его границ: Клонируется поддерживаемый граф данных, а не произвольное поведение объекта.",
       "requiredDifficulties": ["Средний"],
-      "reviewed": false,
+      "reviewed": true,
       "priority": "core",
       "relatedSkillIds": []
     },
@@ -110,7 +110,7 @@
       "title": "Что делает Object.assign и чем он отличается от spread?",
       "description": "Объяснить и применить правило с учётом его границ: Assign изменяет цель и использует присваивание; spread создаёт свойства нового литерала.",
       "requiredDifficulties": ["Средний"],
-      "reviewed": false,
+      "reviewed": true,
       "priority": "core",
       "relatedSkillIds": []
     },
@@ -119,7 +119,7 @@
       "title": "Как работают геттеры и сеттеры объекта?",
       "description": "Объяснить и применить правило с учётом его границ: Accessor превращает чтение и запись свойства в вызов соответствующей функции.",
       "requiredDifficulties": ["Средний"],
-      "reviewed": false,
+      "reviewed": true,
       "priority": "core",
       "relatedSkillIds": []
     },
@@ -128,7 +128,7 @@
       "title": "Что такое дескриптор свойства и как defineProperty задаёт его флаги?",
       "description": "Объяснить и применить правило с учётом его границ: Дескриптор управляет свойством во время выполнения; запрет записи не равен глубокой неизменяемости.",
       "requiredDifficulties": ["Средний"],
-      "reviewed": false,
+      "reviewed": true,
       "priority": "core",
       "relatedSkillIds": []
     },
@@ -137,7 +137,7 @@
       "title": "Как Object.create задаёт прототип и зачем создавать объект с null-прототипом?",
       "description": "Объяснить и применить правило с учётом его границ: Object.create задаёт прототип нового объекта; null убирает унаследованные свойства.",
       "requiredDifficulties": ["Средний"],
-      "reviewed": false,
+      "reviewed": true,
       "priority": "core",
       "relatedSkillIds": []
     },
@@ -146,7 +146,7 @@
       "title": "Чем отличаются Object.preventExtensions, seal и freeze?",
       "description": "Объяснить и применить правило с учётом его границ: PreventExtensions запрещает новые свойства, seal фиксирует их состав, freeze также запрещает запись data-значений.",
       "requiredDifficulties": ["Средний"],
-      "reviewed": false,
+      "reviewed": true,
       "priority": "core",
       "relatedSkillIds": []
     },
@@ -155,7 +155,7 @@
       "title": "Что такое прототип и как работает цепочка прототипов?",
       "description": "Объяснить и применить правило с учётом его границ: Чтение свойства следует по цепочке прототипов, но наследование не создаёт собственную копию свойства.",
       "requiredDifficulties": ["Средний"],
-      "reviewed": false,
+      "reviewed": true,
       "priority": "core",
       "relatedSkillIds": []
     },
@@ -164,7 +164,7 @@
       "title": "Чем отличаются [[Prototype]], __proto__ и свойство prototype конструктора?",
       "description": "Объяснить и применить правило с учётом его границ: Prototype конструктора задаёт прототип новых экземпляров, а [[Prototype]] описывает связь конкретного объекта.",
       "requiredDifficulties": ["Средний"],
-      "reviewed": false,
+      "reviewed": true,
       "priority": "core",
       "relatedSkillIds": []
     },
@@ -173,7 +173,7 @@
       "title": "Что возвращает toString у объекта и как его переопределить?",
       "description": "Объяснить и применить правило с учётом его границ: toString задаёт текстовое представление объекта, а не его полную сериализацию.",
       "requiredDifficulties": ["Средний"],
-      "reviewed": false,
+      "reviewed": true,
       "priority": "core",
       "relatedSkillIds": []
     },
@@ -182,7 +182,7 @@
       "title": "Как toJSON меняет результат JSON.stringify?",
       "description": "Объяснить и применить правило с учётом его границ: toJSON выбирает данные для JSON-представления, а stringify превращает их в текст.",
       "requiredDifficulties": ["Средний"],
-      "reviewed": false,
+      "reviewed": true,
       "priority": "core",
       "relatedSkillIds": []
     },
@@ -191,7 +191,7 @@
       "title": "Чем Reflect отличается от Object и что возвращает Reflect.defineProperty?",
       "description": "Объяснить и применить правило с учётом его границ: Reflect предлагает явные операции над объектами, но не превращает любые ошибки в false.",
       "requiredDifficulties": ["Средний"],
-      "reviewed": false,
+      "reviewed": true,
       "priority": "core",
       "relatedSkillIds": []
     },
@@ -200,7 +200,7 @@
       "title": "Как Proxy перехватывает операции и что такое ловушки?",
       "description": "Объяснить и применить правило с учётом его границ: Proxy перехватывает операции через ловушки, сохраняя обязательные инварианты целевого объекта.",
       "requiredDifficulties": ["Средний"],
-      "reviewed": false,
+      "reviewed": true,
       "priority": "core",
       "relatedSkillIds": []
     },
@@ -209,7 +209,7 @@
       "title": "Как деструктурировать объект, переименовать поле и задать значение по умолчанию?",
       "description": "Объяснить и применить правило с учётом его границ: Объектный шаблон выбирает по имени свойства, а default срабатывает только для undefined.",
       "requiredDifficulties": ["Базовый"],
-      "reviewed": false,
+      "reviewed": true,
       "priority": "core",
       "relatedSkillIds": []
     },
@@ -218,7 +218,7 @@
       "title": "Как Symbol.toPrimitive, valueOf и toString участвуют в преобразовании объекта?",
       "description": "Объяснить и применить правило с учётом его границ: Отделяйте получение примитива от последующих правил конкретного оператора.",
       "requiredDifficulties": ["Средний"],
-      "reviewed": false,
+      "reviewed": true,
       "priority": "core",
       "relatedSkillIds": []
     },
@@ -227,7 +227,7 @@
       "title": "Что такое prototype pollution и как защищать словари и слияние объектов?",
       "description": "Объяснить и применить правило с учётом его границ: Защищать нужно операции над ключами и прототипами, а не только парсинг JSON.",
       "requiredDifficulties": ["Продвинутый"],
-      "reviewed": false,
+      "reviewed": true,
       "priority": "core",
       "relatedSkillIds": []
     },
@@ -236,7 +236,7 @@
       "title": "Что происходит при присваивании свойству, найденному в прототипе?",
       "description": "Объяснить и применить правило с учётом его границ: Чтение из прототипа и запись через потомка имеют разные шаги и ограничения.",
       "requiredDifficulties": ["Средний"],
-      "reviewed": false,
+      "reviewed": true,
       "priority": "core",
       "relatedSkillIds": []
     },
@@ -245,7 +245,7 @@
       "title": "Зачем Reflect.get и Reflect.set нужен receiver?",
       "description": "Объяснить и применить правило с учётом его границ: Перенаправляйте операцию вместе с её получателем, если хотите сохранить accessor-семантику.",
       "requiredDifficulties": ["Продвинутый"],
-      "reviewed": false,
+      "reviewed": true,
       "priority": "core",
       "relatedSkillIds": ["object-accessors", "reflect-object-operations"]
     },
@@ -254,7 +254,7 @@
       "title": "Почему простой Proxy над Map или экземпляром с private-полями может ломать методы?",
       "description": "Объяснить и применить правило с учётом его границ: Перехват обычных операций не создаёт внутреннее состояние оригинального объекта у Proxy.",
       "requiredDifficulties": ["Продвинутый"],
-      "reviewed": false,
+      "reviewed": true,
       "priority": "core",
       "relatedSkillIds": ["proxy-traps", "class-private-elements"]
     },
@@ -263,7 +263,7 @@
       "title": "Что отзывает Proxy.revocable и чего отзыв не может отменить?",
       "description": "Объяснить и применить правило с учётом его границ: Отзыв относится к proxy-ссылке, а не ко всем данным, когда-либо полученным через неё.",
       "requiredDifficulties": ["Продвинутый"],
-      "reviewed": false,
+      "reviewed": true,
       "priority": "specialist",
       "relatedSkillIds": []
     },
@@ -272,7 +272,7 @@
       "title": "Какие данные теряются при преобразовании объекта через entries и fromEntries?",
       "description": "Объяснить и применить правило с учётом его границ: Преобразование записей - намеренная проекция, а не универсальное клонирование поведения.",
       "requiredDifficulties": ["Средний"],
-      "reviewed": false,
+      "reviewed": true,
       "priority": "core",
       "relatedSkillIds": []
     },
@@ -281,7 +281,7 @@
       "title": "Что нужно определить перед реализацией глубокого сравнения объектов?",
       "description": "Объяснить и применить правило с учётом его границ: Алгоритм равенства начинается с предметного контракта, а не с рекурсивного обхода всех объектов.",
       "requiredDifficulties": ["Продвинутый"],
-      "reviewed": false,
+      "reviewed": true,
       "priority": "core",
       "relatedSkillIds": []
     },
@@ -290,7 +290,7 @@
       "title": "Как replacer и reviver позволяют задать явный JSON-контракт?",
       "description": "Объяснить и применить правило с учётом его границ: Сериализация должна иметь проверяемую схему и явные потери, а не скрытую магию восстановления.",
       "requiredDifficulties": ["Средний"],
-      "reviewed": false,
+      "reviewed": true,
       "priority": "core",
       "relatedSkillIds": ["object-to-json", "json-format"]
     }
@@ -302,7 +302,6 @@
       "topic": "JavaScript",
       "difficulty": "Базовый",
       "summary": "Свойства, типы ключей, идентичность объекта и его прототип.",
-      "code": "const id = Symbol(\"id\");\nconst user = { name: \"Аня\", [id]: 7 };\nuser[1] = \"значение\";\nuser[\"1\"]; // \"значение\": ключ преобразован в строку\nuser[id]; // 7\n({ name: \"Аня\" }) === ({ name: \"Аня\" }); // false",
       "takeaway": "Свойство объекта имеет строковый или символьный ключ, а сам объект обладает идентичностью.",
       "moduleId": "javascript",
       "order": 0,
@@ -311,11 +310,11 @@
         "learningGoal": "Объяснить и применить правило с учётом его границ: Свойство объекта имеет строковый или символьный ключ, а сам объект обладает идентичностью.",
         "keywords": ["JavaScript", "Объекты и прототипы", "прототип", "prototype"],
         "kind": "explanation",
-        "reviewStatus": "imported",
+        "reviewStatus": "ready",
         "goalIds": ["core", "object-properties"],
         "relatedQuestionIds": [],
         "priority": "core",
-        "sourceRefs": []
+        "sourceRefs": ["ref-c83e90a75acc3719"]
       },
       "answerFile": "answers/javascript/object-properties.md"
     },
@@ -325,7 +324,6 @@
       "topic": "JavaScript",
       "difficulty": "Базовый",
       "summary": "Индексные свойства, length, порядок элементов и протокол итерации.",
-      "code": "const list = [\"a\"];\nlist[3] = \"d\";\nlist.length; // 4\n1 in list; // false: пропуск\nconst record = { 0: \"a\", length: 1 };\nArray.isArray(list); // true\nArray.isArray(record); // false",
       "takeaway": "Массив - объект со специальными правилами индексов и length, а не просто объект с числовыми ключами.",
       "moduleId": "javascript",
       "order": 1,
@@ -334,11 +332,11 @@
         "learningGoal": "Объяснить и применить правило с учётом его границ: Массив - объект со специальными правилами индексов и length, а не просто объект с числовыми ключами.",
         "keywords": ["JavaScript", "Объекты и прототипы"],
         "kind": "explanation",
-        "reviewStatus": "imported",
+        "reviewStatus": "ready",
         "goalIds": ["core", "object-vs-array"],
         "relatedQuestionIds": [],
         "priority": "core",
-        "sourceRefs": []
+        "sourceRefs": ["ref-c83e90a75acc3719"]
       },
       "answerFile": "answers/javascript/object-vs-array.md"
     },
@@ -348,7 +346,6 @@
       "topic": "JavaScript",
       "difficulty": "Базовый",
       "summary": "Создание свойств через литерал, shorthand, вычисляемые ключи и методы.",
-      "code": "let x = 1;\nconst y = 2;\nconst key = \"label\";\nconst point = { x, y, [key]: \"A\", sum() { return this.x + this.y; } };\nx = 10;\npoint.x; // 1\npoint.label; // \"A\"\npoint.sum(); // 3",
       "takeaway": "Сокращённая запись сохраняет значение в свойстве при создании объекта, а не связывает его с переменной.",
       "moduleId": "javascript",
       "order": 2,
@@ -357,11 +354,11 @@
         "learningGoal": "Объяснить и применить правило с учётом его границ: Сокращённая запись сохраняет значение в свойстве при создании объекта, а не связывает его с переменной.",
         "keywords": ["JavaScript", "Объекты и прототипы"],
         "kind": "explanation",
-        "reviewStatus": "imported",
+        "reviewStatus": "ready",
         "goalIds": ["core", "object-literals"],
         "relatedQuestionIds": [],
         "priority": "core",
-        "sourceRefs": []
+        "sourceRefs": ["ref-c83e90a75acc3719"]
       },
       "answerFile": "answers/javascript/object-literals.md"
     },
@@ -371,7 +368,6 @@
       "topic": "JavaScript",
       "difficulty": "Базовый",
       "summary": "Статическое имя, вычисляемый ключ и изменение объекта после создания.",
-      "code": "const user = { name: \"Аня\" };\nconst key = \"display name\";\nuser[key] = \"Анна\";\nuser.greet = function () { return `Привет, ${this.name}`; };\nuser[\"display name\"]; // \"Анна\"\nuser.greet(); // \"Привет, Аня\"\nObject.hasOwn(user, key); // true",
       "takeaway": "Квадратные скобки вычисляют ключ, а точка использует написанное после неё имя.",
       "moduleId": "javascript",
       "order": 3,
@@ -380,11 +376,11 @@
         "learningGoal": "Объяснить и применить правило с учётом его границ: Квадратные скобки вычисляют ключ, а точка использует написанное после неё имя.",
         "keywords": ["JavaScript", "Объекты и прототипы"],
         "kind": "explanation",
-        "reviewStatus": "imported",
+        "reviewStatus": "ready",
         "goalIds": ["core", "object-property-access"],
         "relatedQuestionIds": [],
         "priority": "core",
-        "sourceRefs": []
+        "sourceRefs": ["ref-c83e90a75acc3719"]
       },
       "answerFile": "answers/javascript/object-property-access.md"
     },
@@ -394,7 +390,6 @@
       "topic": "JavaScript",
       "difficulty": "Базовый",
       "summary": "Массивы собственных перечисляемых строковых ключей, значений и пар.",
-      "code": "const token = Symbol(\"token\");\nconst user = { name: \"Аня\", age: 25, [token]: 1 };\nObject.keys(user); // [\"name\", \"age\"]\nObject.values(user); // [\"Аня\", 25]\nObject.entries(user); // [[\"name\", \"Аня\"], [\"age\", 25]]\nReflect.ownKeys(user); // [\"name\", \"age\", token]",
       "takeaway": "Keys, values и entries различаются формой результата, но выбирают один и тот же набор свойств.",
       "moduleId": "javascript",
       "order": 4,
@@ -403,11 +398,11 @@
         "learningGoal": "Объяснить и применить правило с учётом его границ: Keys, values и entries различаются формой результата, но выбирают один и тот же набор свойств.",
         "keywords": ["JavaScript", "Объекты и прототипы"],
         "kind": "explanation",
-        "reviewStatus": "imported",
+        "reviewStatus": "ready",
         "goalIds": ["core", "object-enumeration"],
         "relatedQuestionIds": [],
         "priority": "core",
-        "sourceRefs": []
+        "sourceRefs": ["ref-c83e90a75acc3719"]
       },
       "answerFile": "answers/javascript/object-enumeration.md"
     },
@@ -417,7 +412,6 @@
       "topic": "JavaScript",
       "difficulty": "Базовый",
       "summary": "Новый внешний объект, общие вложенные ссылки и выбор стратегии копирования.",
-      "code": "const original = { profile: { name: \"Аня\" } };\nconst shallow = { ...original };\nshallow !== original; // true\nshallow.profile === original.profile; // true\nconst updated = { ...original, profile: { ...original.profile, name: \"Оля\" } };\noriginal.profile.name; // \"Аня\"\nupdated.profile.name; // \"Оля\"",
       "takeaway": "Новый внешний объект не делает вложенные данные независимыми.",
       "moduleId": "javascript",
       "order": 5,
@@ -426,11 +420,11 @@
         "learningGoal": "Объяснить и применить правило с учётом его границ: Новый внешний объект не делает вложенные данные независимыми.",
         "keywords": ["JavaScript", "Объекты и прототипы"],
         "kind": "explanation",
-        "reviewStatus": "imported",
+        "reviewStatus": "ready",
         "goalIds": ["core", "object-copy-depth"],
         "relatedQuestionIds": [],
         "priority": "core",
-        "sourceRefs": []
+        "sourceRefs": ["ref-c83e90a75acc3719"]
       },
       "answerFile": "answers/javascript/object-copy-depth.md"
     },
@@ -440,21 +434,19 @@
       "topic": "JavaScript",
       "difficulty": "Средний",
       "summary": "Клонирование графа данных, циклов и поддерживаемых встроенных типов.",
-      "code": "const original = { profile: { name: \"Аня\" }, createdAt: new Date(\"2024-01-01T00:00:00Z\") };\noriginal.self = original;\nconst copy = structuredClone(original);\ncopy !== original; // true\ncopy.profile !== original.profile; // true\ncopy.self === copy; // true\ncopy.createdAt instanceof Date; // true",
       "takeaway": "Клонируется поддерживаемый граф данных, а не произвольное поведение объекта.",
       "moduleId": "javascript",
       "order": 6,
       "popular": false,
-      "pitfall": "Ожидать полноценный экземпляр собственного класса с методами после копирования.",
       "editorial": {
         "learningGoal": "Объяснить и применить правило с учётом его границ: Клонируется поддерживаемый граф данных, а не произвольное поведение объекта.",
         "keywords": ["JavaScript", "Объекты и прототипы"],
         "kind": "explanation",
-        "reviewStatus": "imported",
+        "reviewStatus": "ready",
         "goalIds": ["core", "structured-clone"],
         "relatedQuestionIds": [],
         "priority": "core",
-        "sourceRefs": []
+        "sourceRefs": ["ref-6f94c8e26988dfbc"]
       },
       "answerFile": "answers/javascript/structured-clone.md"
     },
@@ -464,21 +456,19 @@
       "topic": "JavaScript",
       "difficulty": "Средний",
       "summary": "Мутация целевого объекта, поверхностное копирование и вызов accessor.",
-      "code": "const target = { theme: \"light\" };\nconst source = { nested: { enabled: true } };\nconst result = Object.assign(target, source, { theme: \"dark\" });\nresult === target; // true\ntarget.theme; // \"dark\"\ntarget.nested === source.nested; // true",
       "takeaway": "Assign изменяет цель и использует присваивание; spread создаёт свойства нового литерала.",
       "moduleId": "javascript",
       "order": 7,
       "popular": false,
-      "pitfall": "Считать Object.assign глубоким копированием или предполагать, что setter всегда ведёт себя как при spread.",
       "editorial": {
         "learningGoal": "Объяснить и применить правило с учётом его границ: Assign изменяет цель и использует присваивание; spread создаёт свойства нового литерала.",
         "keywords": ["JavaScript", "Объекты и прототипы"],
         "kind": "explanation",
-        "reviewStatus": "imported",
+        "reviewStatus": "ready",
         "goalIds": ["core", "object-assign"],
         "relatedQuestionIds": [],
         "priority": "core",
-        "sourceRefs": []
+        "sourceRefs": ["ref-23e292da2276c505"]
       },
       "answerFile": "answers/javascript/object-assign.md"
     },
@@ -488,7 +478,6 @@
       "topic": "JavaScript",
       "difficulty": "Средний",
       "summary": "Вычисляемое чтение свойства, обработка записи и отсутствие рекурсивного вызова.",
-      "code": "const user = {\n  _name: \"Аня\",\n  get name() { return this._name; },\n  set name(value) { this._name = value.trim(); },\n};\nuser.name = \"  Оля  \";\nuser.name; // \"Оля\"\n// _name - соглашение об имени, а не приватное поле.",
       "takeaway": "Accessor превращает чтение и запись свойства в вызов соответствующей функции.",
       "moduleId": "javascript",
       "order": 8,
@@ -497,11 +486,11 @@
         "learningGoal": "Объяснить и применить правило с учётом его границ: Accessor превращает чтение и запись свойства в вызов соответствующей функции.",
         "keywords": ["JavaScript", "Объекты и прототипы"],
         "kind": "explanation",
-        "reviewStatus": "imported",
+        "reviewStatus": "ready",
         "goalIds": ["core", "object-accessors"],
         "relatedQuestionIds": [],
         "priority": "core",
-        "sourceRefs": []
+        "sourceRefs": ["ref-15a131ef0bf376e9"]
       },
       "answerFile": "answers/javascript/object-accessors.md"
     },
@@ -511,7 +500,6 @@
       "topic": "JavaScript",
       "difficulty": "Средний",
       "summary": "Data- и accessor-дескрипторы, writable, enumerable, configurable и readonly.",
-      "code": "const user = {};\nObject.defineProperty(user, \"id\", {\n  value: 7,\n  writable: false,\n  enumerable: true,\n  configurable: false,\n});\nObject.keys(user); // [\"id\"]\nObject.getOwnPropertyDescriptor(user, \"id\").writable; // false",
       "takeaway": "Дескриптор управляет свойством во время выполнения; запрет записи не равен глубокой неизменяемости.",
       "moduleId": "javascript",
       "order": 9,
@@ -520,11 +508,11 @@
         "learningGoal": "Объяснить и применить правило с учётом его границ: Дескриптор управляет свойством во время выполнения; запрет записи не равен глубокой неизменяемости.",
         "keywords": ["JavaScript", "Объекты и прототипы", "дескриптор", "descriptor"],
         "kind": "explanation",
-        "reviewStatus": "imported",
+        "reviewStatus": "ready",
         "goalIds": ["core", "property-descriptors"],
         "relatedQuestionIds": [],
         "priority": "core",
-        "sourceRefs": []
+        "sourceRefs": ["ref-4781d33199931106"]
       },
       "answerFile": "answers/javascript/property-descriptors.md"
     },
@@ -534,7 +522,6 @@
       "topic": "JavaScript",
       "difficulty": "Средний",
       "summary": "Наследование без вызова конструктора и словарь без Object.prototype.",
-      "code": "const parent = { role: \"reader\" };\nconst child = Object.create(parent);\nchild.role; // \"reader\"\nObject.hasOwn(child, \"role\"); // false\nconst dictionary = Object.create(null);\ndictionary.toString; // undefined\ndictionary[\"toString\"] = \"своё значение\";\nObject.getPrototypeOf(dictionary); // null",
       "takeaway": "Object.create задаёт прототип нового объекта; null убирает унаследованные свойства.",
       "moduleId": "javascript",
       "order": 10,
@@ -543,11 +530,11 @@
         "learningGoal": "Объяснить и применить правило с учётом его границ: Object.create задаёт прототип нового объекта; null убирает унаследованные свойства.",
         "keywords": ["JavaScript", "Объекты и прототипы", "прототип", "prototype"],
         "kind": "explanation",
-        "reviewStatus": "imported",
+        "reviewStatus": "ready",
         "goalIds": ["core", "object-create-prototype"],
         "relatedQuestionIds": [],
         "priority": "core",
-        "sourceRefs": []
+        "sourceRefs": ["ref-c83e90a75acc3719"]
       },
       "answerFile": "answers/javascript/object-create-prototype.md"
     },
@@ -557,7 +544,6 @@
       "topic": "JavaScript",
       "difficulty": "Средний",
       "summary": "Запрет расширения, фиксация свойств и поверхностная заморозка.",
-      "code": "const config = { count: 1, nested: { enabled: true } };\nObject.preventExtensions(config);\nObject.isExtensible(config); // false\nconfig.count = 2; // пока разрешено\nObject.seal(config);\nObject.isSealed(config); // true\nObject.freeze(config);\nObject.isFrozen(config); // true\nconfig.nested.enabled = false; // вложенный объект не заморожен",
       "takeaway": "PreventExtensions запрещает новые свойства, seal фиксирует их состав, freeze также запрещает запись data-значений.",
       "moduleId": "javascript",
       "order": 11,
@@ -566,11 +552,11 @@
         "learningGoal": "Объяснить и применить правило с учётом его границ: PreventExtensions запрещает новые свойства, seal фиксирует их состав, freeze также запрещает запись data-значений.",
         "keywords": ["JavaScript", "Объекты и прототипы"],
         "kind": "explanation",
-        "reviewStatus": "imported",
+        "reviewStatus": "ready",
         "goalIds": ["core", "object-integrity"],
         "relatedQuestionIds": [],
         "priority": "core",
-        "sourceRefs": []
+        "sourceRefs": ["ref-f41a45096ae37ce7"]
       },
       "answerFile": "answers/javascript/object-integrity.md"
     },
@@ -580,7 +566,6 @@
       "topic": "JavaScript",
       "difficulty": "Средний",
       "summary": "Внутренний прототип, поиск свойств и затенение унаследованных значений.",
-      "code": "const parent = { role: \"reader\" };\nconst child = Object.create(parent);\nchild.role; // \"reader\"\nObject.hasOwn(child, \"role\"); // false\nchild.role = \"editor\";\nchild.role; // \"editor\": собственное свойство\ndelete child.role;\nchild.role; // \"reader\"\nObject.getPrototypeOf(child) === parent; // true",
       "takeaway": "Чтение свойства следует по цепочке прототипов, но наследование не создаёт собственную копию свойства.",
       "moduleId": "javascript",
       "order": 12,
@@ -589,11 +574,11 @@
         "learningGoal": "Объяснить и применить правило с учётом его границ: Чтение свойства следует по цепочке прототипов, но наследование не создаёт собственную копию свойства.",
         "keywords": ["JavaScript", "Объекты и прототипы", "прототип", "prototype"],
         "kind": "explanation",
-        "reviewStatus": "imported",
+        "reviewStatus": "ready",
         "goalIds": ["core", "prototype-chain"],
         "relatedQuestionIds": [],
         "priority": "core",
-        "sourceRefs": []
+        "sourceRefs": ["ref-bc576674ad1714f2"]
       },
       "answerFile": "answers/javascript/prototype-chain.md"
     },
@@ -603,7 +588,6 @@
       "topic": "JavaScript",
       "difficulty": "Средний",
       "summary": "Внутренняя связь объекта, устаревший accessor и прототип будущих экземпляров.",
-      "code": "function User() {}\nconst user = new User();\nObject.getPrototypeOf(user) === User.prototype; // true\nObject.getPrototypeOf(User) === Function.prototype; // true\nconst oldPrototype = User.prototype;\nUser.prototype = { role: \"reader\" };\nObject.getPrototypeOf(user) === oldPrototype; // true",
       "takeaway": "Prototype конструктора задаёт прототип новых экземпляров, а [[Prototype]] описывает связь конкретного объекта.",
       "moduleId": "javascript",
       "order": 13,
@@ -612,11 +596,11 @@
         "learningGoal": "Объяснить и применить правило с учётом его границ: Prototype конструктора задаёт прототип новых экземпляров, а [[Prototype]] описывает связь конкретного объекта.",
         "keywords": ["JavaScript", "Объекты и прототипы", "прототип", "prototype"],
         "kind": "explanation",
-        "reviewStatus": "imported",
+        "reviewStatus": "ready",
         "goalIds": ["core", "prototype-vs-proto"],
         "relatedQuestionIds": [],
         "priority": "core",
-        "sourceRefs": []
+        "sourceRefs": ["ref-c83e90a75acc3719"]
       },
       "answerFile": "answers/javascript/prototype-vs-proto.md"
     },
@@ -626,7 +610,6 @@
       "topic": "JavaScript",
       "difficulty": "Средний",
       "summary": "Строковое представление, встроенный метод и ограничения определения типа.",
-      "code": "const user = {\n  name: \"Аня\",\n  toString() { return `Пользователь: ${this.name}`; },\n};\nString(user); // \"Пользователь: Аня\"\nObject.prototype.toString.call(user); // \"[object Object]\"\nObject.prototype.toString.call([]); // \"[object Array]\"",
       "takeaway": "toString задаёт текстовое представление объекта, а не его полную сериализацию.",
       "moduleId": "javascript",
       "order": 14,
@@ -635,11 +618,11 @@
         "learningGoal": "Объяснить и применить правило с учётом его границ: toString задаёт текстовое представление объекта, а не его полную сериализацию.",
         "keywords": ["JavaScript", "Объекты и прототипы"],
         "kind": "explanation",
-        "reviewStatus": "imported",
+        "reviewStatus": "ready",
         "goalIds": ["core", "object-to-string"],
         "relatedQuestionIds": [],
         "priority": "core",
-        "sourceRefs": []
+        "sourceRefs": ["ref-43d376871882bb5e"]
       },
       "answerFile": "answers/javascript/object-to-string.md"
     },
@@ -649,7 +632,6 @@
       "topic": "JavaScript",
       "difficulty": "Средний",
       "summary": "Пользовательское представление для JSON и отсутствие автоматического восстановления.",
-      "code": "const account = {\n  id: 7,\n  name: \"Аня\",\n  internalNote: \"для приложения\",\n  toJSON() { return { id: this.id, name: this.name }; },\n};\nconst text = JSON.stringify(account);\nObject.keys(JSON.parse(text)); // [\"id\", \"name\"]\naccount.internalNote; // \"для приложения\"",
       "takeaway": "toJSON выбирает данные для JSON-представления, а stringify превращает их в текст.",
       "moduleId": "javascript",
       "order": 15,
@@ -658,11 +640,11 @@
         "learningGoal": "Объяснить и применить правило с учётом его границ: toJSON выбирает данные для JSON-представления, а stringify превращает их в текст.",
         "keywords": ["JavaScript", "Объекты и прототипы"],
         "kind": "explanation",
-        "reviewStatus": "imported",
+        "reviewStatus": "ready",
         "goalIds": ["core", "object-to-json"],
         "relatedQuestionIds": [],
         "priority": "core",
-        "sourceRefs": []
+        "sourceRefs": ["ref-31e7e81d9f8acac7"]
       },
       "answerFile": "answers/javascript/object-to-json.md"
     },
@@ -672,7 +654,6 @@
       "topic": "JavaScript",
       "difficulty": "Средний",
       "summary": "Операции над объектами, булев результат и взаимодействие с Proxy.",
-      "code": "const object = {};\nReflect.defineProperty(object, \"id\", { value: 7 }); // true\nobject.id; // 7\nconst locked = Object.preventExtensions({});\nReflect.defineProperty(locked, \"newKey\", { value: 1 }); // false\n// Object.defineProperty(locked, \"newKey\", { value: 1 }) вызовет TypeError.",
       "takeaway": "Reflect предлагает явные операции над объектами, но не превращает любые ошибки в false.",
       "moduleId": "javascript",
       "order": 16,
@@ -681,11 +662,11 @@
         "learningGoal": "Объяснить и применить правило с учётом его границ: Reflect предлагает явные операции над объектами, но не превращает любые ошибки в false.",
         "keywords": ["JavaScript", "Объекты и прототипы"],
         "kind": "explanation",
-        "reviewStatus": "imported",
+        "reviewStatus": "ready",
         "goalIds": ["core", "reflect-object-operations"],
         "relatedQuestionIds": [],
         "priority": "core",
-        "sourceRefs": []
+        "sourceRefs": ["ref-c83e90a75acc3719"]
       },
       "answerFile": "answers/javascript/reflect-object-operations.md"
     },
@@ -695,7 +676,6 @@
       "topic": "JavaScript",
       "difficulty": "Средний",
       "summary": "Целевой объект, handler, get/set и инварианты перехвата.",
-      "code": "const target = { name: \"Аня\" };\nconst proxy = new Proxy(target, {\n  get(object, key, receiver) {\n    return Reflect.get(object, key, receiver);\n  },\n  set(object, key, value, receiver) {\n    if (key === \"name\" && typeof value !== \"string\") return false;\n    return Reflect.set(object, key, value, receiver);\n  },\n});\nproxy.name = \"Оля\";\ntarget.name; // \"Оля\"",
       "takeaway": "Proxy перехватывает операции через ловушки, сохраняя обязательные инварианты целевого объекта.",
       "moduleId": "javascript",
       "order": 17,
@@ -704,11 +684,11 @@
         "learningGoal": "Объяснить и применить правило с учётом его границ: Proxy перехватывает операции через ловушки, сохраняя обязательные инварианты целевого объекта.",
         "keywords": ["JavaScript", "Объекты и прототипы"],
         "kind": "explanation",
-        "reviewStatus": "imported",
+        "reviewStatus": "ready",
         "goalIds": ["core", "proxy-traps"],
         "relatedQuestionIds": [],
         "priority": "core",
-        "sourceRefs": []
+        "sourceRefs": ["ref-c83e90a75acc3719"]
       },
       "answerFile": "answers/javascript/proxy-traps.md"
     },
@@ -718,7 +698,6 @@
       "topic": "JavaScript",
       "difficulty": "Базовый",
       "summary": "Извлечение свойств, alias, default и поверхностный rest.",
-      "code": "const user = { name: \"Аня\", role: undefined, profile: undefined };\nconst { name: displayName, role = \"reader\", profile: { city = \"-\" } = {} } = user;\ndisplayName; // \"Аня\"\nrole; // \"reader\"\ncity; // \"-\"\nconst { name, ...other } = user;\nObject.hasOwn(other, \"name\"); // false",
       "takeaway": "Объектный шаблон выбирает по имени свойства, а default срабатывает только для undefined.",
       "moduleId": "javascript",
       "order": 18,
@@ -727,11 +706,11 @@
         "learningGoal": "Объяснить и применить правило с учётом его границ: Объектный шаблон выбирает по имени свойства, а default срабатывает только для undefined.",
         "keywords": ["JavaScript", "Объекты и прототипы"],
         "kind": "explanation",
-        "reviewStatus": "imported",
+        "reviewStatus": "ready",
         "goalIds": ["core", "object-destructuring"],
         "relatedQuestionIds": [],
         "priority": "core",
-        "sourceRefs": []
+        "sourceRefs": ["ref-c83e90a75acc3719"]
       },
       "answerFile": "answers/javascript/object-destructuring.md"
     },
@@ -741,21 +720,19 @@
       "topic": "JavaScript",
       "difficulty": "Средний",
       "summary": "Порядок преобразования объекта к примитиву и подсказки number/string/default.",
-      "code": "const price = {\n  [Symbol.toPrimitive](hint) {\n    return hint === \"string\" ? \"100 ₽\" : 100;\n  },\n};\nString(price); // \"100 ₽\"\nNumber(price); // 100\nprice + 20; // 120",
       "takeaway": "Отделяйте получение примитива от последующих правил конкретного оператора.",
       "moduleId": "javascript",
       "order": 19,
       "popular": false,
-      "pitfall": "Возвращать объект из Symbol.toPrimitive или считать, что + всегда вызывает только toString.",
       "editorial": {
         "learningGoal": "Объяснить и применить правило с учётом его границ: Отделяйте получение примитива от последующих правил конкретного оператора.",
         "keywords": ["JavaScript", "Объекты и прототипы"],
         "kind": "explanation",
-        "reviewStatus": "imported",
+        "reviewStatus": "ready",
         "goalIds": ["core", "object-to-primitive"],
         "relatedQuestionIds": [],
         "priority": "core",
-        "sourceRefs": []
+        "sourceRefs": ["ref-c83e90a75acc3719"]
       },
       "answerFile": "answers/javascript/object-to-primitive.md"
     },
@@ -765,21 +742,19 @@
       "topic": "JavaScript",
       "difficulty": "Продвинутый",
       "summary": "Недоверенные ключи, цепочка прототипов и проверка собственных свойств.",
-      "code": "const input = JSON.parse('{\"name\":\"Анна\",\"__proto__\":{\"isAdmin\":true}}');\nconst allowed = new Set([\"name\", \"theme\"]);\nconst settings = Object.create(null);\nfor (const [key, value] of Object.entries(input)) {\n  if (allowed.has(key) && typeof value === \"string\") settings[key] = value;\n}\nObject.hasOwn(settings, \"isAdmin\"); // false\n// Это плоская схема; вложенные данные требуют отдельной проверки.",
       "takeaway": "Защищать нужно операции над ключами и прототипами, а не только парсинг JSON.",
       "moduleId": "javascript",
       "order": 20,
       "popular": false,
-      "pitfall": "Считать любую JSON-строку безопасной для последующего слияния в произвольный объект.",
       "editorial": {
         "learningGoal": "Объяснить и применить правило с учётом его границ: Защищать нужно операции над ключами и прототипами, а не только парсинг JSON.",
         "keywords": ["JavaScript", "Объекты и прототипы", "прототип", "prototype"],
         "kind": "explanation",
-        "reviewStatus": "imported",
+        "reviewStatus": "ready",
         "goalIds": ["core", "prototype-pollution"],
         "relatedQuestionIds": [],
         "priority": "core",
-        "sourceRefs": []
+        "sourceRefs": ["ref-c83e90a75acc3719"]
       },
       "answerFile": "answers/javascript/prototype-pollution.md"
     },
@@ -788,9 +763,7 @@
       "difficulty": "Средний",
       "title": "Что происходит при присваивании свойству, найденному в прототипе?",
       "summary": "Затенение data-свойства, унаследованный setter и ограничения записи.",
-      "code": "const proto = { count: 1 }\nconst child = Object.create(proto)\nchild.count = 2\nconsole.log(proto.count, child.count) // 1, 2\nconsole.log(Object.hasOwn(child, \"count\")) // true",
       "takeaway": "Чтение из прототипа и запись через потомка имеют разные шаги и ограничения.",
-      "pitfall": "Ожидать, что child.count = 2 обязательно изменит общий proto.count.",
       "topic": "JavaScript",
       "moduleId": "javascript",
       "popular": false,
@@ -799,7 +772,7 @@
         "learningGoal": "Объяснить и применить правило с учётом его границ: Чтение из прототипа и запись через потомка имеют разные шаги и ограничения.",
         "keywords": ["JavaScript", "Объекты и прототипы", "прототип", "prototype"],
         "kind": "explanation",
-        "reviewStatus": "imported",
+        "reviewStatus": "ready",
         "goalIds": ["core", "js-inherited-assignment"],
         "relatedQuestionIds": [],
         "priority": "core",
@@ -812,9 +785,7 @@
       "difficulty": "Продвинутый",
       "title": "Зачем Reflect.get и Reflect.set нужен receiver?",
       "summary": "This у accessor и сохранение семантики наследования при перенаправлении операций.",
-      "code": "const proto = { get label() { return this.name } }\nconst child = Object.create(proto)\nchild.name = \"потомок\"\nconsole.log(Reflect.get(proto, \"label\", child)) // потомок\nconsole.log(Reflect.get(proto, \"label\", { name: \"другой\" })) // другой",
       "takeaway": "Перенаправляйте операцию вместе с её получателем, если хотите сохранить accessor-семантику.",
-      "pitfall": "Использовать target[key] как универсальную прозрачную реализацию get-ловушки.",
       "topic": "JavaScript",
       "moduleId": "javascript",
       "popular": false,
@@ -823,7 +794,7 @@
         "learningGoal": "Объяснить и применить правило с учётом его границ: Перенаправляйте операцию вместе с её получателем, если хотите сохранить accessor-семантику.",
         "keywords": ["JavaScript", "Объекты и прототипы"],
         "kind": "explanation",
-        "reviewStatus": "imported",
+        "reviewStatus": "ready",
         "goalIds": ["core", "js-reflect-receiver"],
         "relatedQuestionIds": ["object-accessors", "reflect-object-operations"],
         "priority": "core",
@@ -836,9 +807,7 @@
       "difficulty": "Продвинутый",
       "title": "Почему простой Proxy над Map или экземпляром с private-полями может ломать методы?",
       "summary": "Внутренние слоты и private brand не перенаправляются как обычное свойство.",
-      "code": "const map = new Map([[\"a\", 1]])\nconst proxy = new Proxy(map, {})\n// proxy.get(\"a\") // TypeError: получатель не имеет нужного Map-слота.\nconsole.log(map.get.call(map, \"a\")) // 1",
       "takeaway": "Перехват обычных операций не создаёт внутреннее состояние оригинального объекта у Proxy.",
-      "pitfall": "Обещать полную прозрачность любого объекта после new Proxy(target, {}).",
       "topic": "JavaScript",
       "moduleId": "javascript",
       "popular": false,
@@ -847,7 +816,7 @@
         "learningGoal": "Объяснить и применить правило с учётом его границ: Перехват обычных операций не создаёт внутреннее состояние оригинального объекта у Proxy.",
         "keywords": ["JavaScript", "Объекты и прототипы"],
         "kind": "explanation",
-        "reviewStatus": "imported",
+        "reviewStatus": "ready",
         "goalIds": ["core", "js-proxy-internal-slots"],
         "relatedQuestionIds": ["proxy-traps", "class-private-elements"],
         "priority": "core",
@@ -860,9 +829,7 @@
       "difficulty": "Продвинутый",
       "title": "Что отзывает Proxy.revocable и чего отзыв не может отменить?",
       "summary": "Жизненный цикл посредника и уже выданные прямые ссылки.",
-      "code": "const target = { name: \"Анна\" }\nconst { proxy, revoke } = Proxy.revocable(target, {})\nconsole.log(proxy.name) // Анна\nrevoke()\n// proxy.name // TypeError\nconsole.log(target.name) // Оригинал существует.",
       "takeaway": "Отзыв относится к proxy-ссылке, а не ко всем данным, когда-либо полученным через неё.",
-      "pitfall": "Считать revoke удалением оригинала или отменой ранее скопированных значений.",
       "topic": "JavaScript",
       "moduleId": "javascript",
       "popular": false,
@@ -871,7 +838,7 @@
         "learningGoal": "Объяснить и применить правило с учётом его границ: Отзыв относится к proxy-ссылке, а не ко всем данным, когда-либо полученным через неё.",
         "keywords": ["JavaScript", "Объекты и прототипы"],
         "kind": "explanation",
-        "reviewStatus": "imported",
+        "reviewStatus": "ready",
         "goalIds": ["core", "js-revocable-proxy"],
         "relatedQuestionIds": [],
         "priority": "specialist",
@@ -884,9 +851,7 @@
       "difficulty": "Средний",
       "title": "Какие данные теряются при преобразовании объекта через entries и fromEntries?",
       "summary": "Набор ключей, дескрипторы и создание нового обычного объекта.",
-      "code": "const secret = Symbol(\"secret\")\nconst input = { shown: 1, [secret]: 2 }\nconst output = Object.fromEntries(Object.entries(input))\nconsole.log(output.shown) // 1\nconsole.log(Object.hasOwn(output, secret)) // false",
       "takeaway": "Преобразование записей - намеренная проекция, а не универсальное клонирование поведения.",
-      "pitfall": "Ожидать сохранения symbol-полей и дескрипторов после Object.entries.",
       "topic": "JavaScript",
       "moduleId": "javascript",
       "popular": false,
@@ -895,7 +860,7 @@
         "learningGoal": "Объяснить и применить правило с учётом его границ: Преобразование записей - намеренная проекция, а не универсальное клонирование поведения.",
         "keywords": ["JavaScript", "Объекты и прототипы", "дескриптор", "descriptor"],
         "kind": "explanation",
-        "reviewStatus": "imported",
+        "reviewStatus": "ready",
         "goalIds": ["core", "js-from-entries-contract"],
         "relatedQuestionIds": [],
         "priority": "core",
@@ -908,9 +873,7 @@
       "difficulty": "Продвинутый",
       "title": "Что нужно определить перед реализацией глубокого сравнения объектов?",
       "summary": "Область поддерживаемых данных, циклы, прототипы и смысл равенства.",
-      "code": "const a = { value: undefined }\nconst b = {}\nconsole.log(JSON.stringify(a) === JSON.stringify(b)) // true\nconsole.log(Object.hasOwn(a, \"value\"), Object.hasOwn(b, \"value\")) // true, false",
       "takeaway": "Алгоритм равенства начинается с предметного контракта, а не с рекурсивного обхода всех объектов.",
-      "pitfall": "Считать совпадение JSON-текста доказательством одинакового состояния любых объектов.",
       "topic": "JavaScript",
       "moduleId": "javascript",
       "popular": false,
@@ -919,7 +882,7 @@
         "learningGoal": "Объяснить и применить правило с учётом его границ: Алгоритм равенства начинается с предметного контракта, а не с рекурсивного обхода всех объектов.",
         "keywords": ["JavaScript", "Объекты и прототипы", "прототип", "prototype"],
         "kind": "explanation",
-        "reviewStatus": "imported",
+        "reviewStatus": "ready",
         "goalIds": ["core", "js-deep-equality-policy"],
         "relatedQuestionIds": [],
         "priority": "core",
@@ -932,9 +895,7 @@
       "difficulty": "Средний",
       "title": "Как replacer и reviver позволяют задать явный JSON-контракт?",
       "summary": "Преобразование при записи и восстановление при разборе без притворного универсального клонирования.",
-      "code": "const text = JSON.stringify({ count: 3n }, (_key, value) =>\n  typeof value === \"bigint\" ? { type: \"bigint\", value: String(value) } : value)\n// Восстановление должно проверять именно согласованную tagged-схему,\n// а не превращать произвольный объект с полем type в привилегированный тип.",
       "takeaway": "Сериализация должна иметь проверяемую схему и явные потери, а не скрытую магию восстановления.",
-      "pitfall": "Без проверки превращать любую строку нужной формы в Date или любой tagged-object в экземпляр.",
       "topic": "JavaScript",
       "moduleId": "javascript",
       "popular": false,
@@ -943,7 +904,7 @@
         "learningGoal": "Объяснить и применить правило с учётом его границ: Сериализация должна иметь проверяемую схему и явные потери, а не скрытую магию восстановления.",
         "keywords": ["JavaScript", "Объекты и прототипы"],
         "kind": "explanation",
-        "reviewStatus": "imported",
+        "reviewStatus": "ready",
         "goalIds": ["core", "js-json-transform-hooks"],
         "relatedQuestionIds": ["object-to-json", "json-format"],
         "priority": "core",

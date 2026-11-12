@@ -1,0 +1,111 @@
+{
+  "schemaVersion": 1,
+  "id": "ts-answer-review-20261110-ts-collections",
+  "title": "ts-answer-review-20261110-ts-collections",
+  "sectionId": "typescript",
+  "subsectionId": "ts-collections",
+  "currentPass": "answers",
+  "goalIds": [
+    "core",
+    "ts-array-types",
+    "ts-readonly-arrays",
+    "ts-tuples",
+    "ts-set-map",
+    "ts-variadic-tuples",
+    "ts-nonempty-array",
+    "ts-tuple-shape-operations",
+    "ts-empty-array-context",
+    "ts-array-alias-mutation",
+    "ts-array-union-shapes",
+    "ts-iterator-result-check",
+    "ts-promise-all-tuples"
+  ],
+  "questionIds": [
+    "ts-array-types",
+    "ts-readonly-arrays",
+    "ts-tuples",
+    "ts-set-map",
+    "ts-variadic-tuples",
+    "ts-nonempty-array",
+    "ts-tuple-shape-operations",
+    "ts-empty-array-context",
+    "ts-array-alias-mutation",
+    "ts-array-union-shapes",
+    "ts-iterator-result-check",
+    "ts-promise-all-tuples"
+  ],
+  "scopePass": {
+    "status": "complete",
+    "remaining": []
+  },
+  "answerPass": {
+    "status": "complete",
+    "remaining": []
+  },
+  "baseline": [
+    {
+      "id": "ts-array-types",
+      "title": "Как типизировать обычный, смешанный и двумерный массив?",
+      "contentHash": "9a2f747514f380c02d8f055df19ee8a7b05d29f99dfa1a8ec178f09393f1324b"
+    },
+    {
+      "id": "ts-readonly-arrays",
+      "title": "Чем readonly T[] и ReadonlyArray<T> отличаются от изменяемого массива?",
+      "contentHash": "3ab6722803578ea97108d80ebf3cbc58558b73484bb65fa2d87b97c401680410"
+    },
+    {
+      "id": "ts-tuples",
+      "title": "Что такое кортеж и чем он отличается от массива?",
+      "contentHash": "18d1a9a1918dd247f050b9e1e9a38c87bff80c0487a3f1820bf610aeb4e989f5"
+    },
+    {
+      "id": "ts-set-map",
+      "title": "Как типизировать Set и Map и почему важен тип ключа?",
+      "contentHash": "f5c047c574f73f2f54bec58b8dbf962e0a58f7b0272b9289bb8575bad6e0a371"
+    },
+    {
+      "id": "ts-variadic-tuples",
+      "title": "Как variadic tuple types сохраняют позиции при объединении аргументов?",
+      "contentHash": "b7339a021b4e50371289068b9378d2ffcecf7dd35aa439dcdb98d0890c20286d"
+    },
+    {
+      "id": "ts-nonempty-array",
+      "title": "Как выразить непустой массив и подтвердить это во время выполнения?",
+      "contentHash": "5723aa45d15e510507000215824a3186c8d714c1af7be2283a65f0f70d62ebef"
+    },
+    {
+      "id": "ts-tuple-shape-operations",
+      "title": "Как keyof, length и T[number] по-разному описывают кортеж?",
+      "contentHash": "d0c811bc12f9049fcc6d7bfa9ba1c29cacc500f20e458298929d0c475258144a"
+    },
+    {
+      "id": "ts-empty-array-context",
+      "title": "Почему пустой массив внутри объекта может получить тип never[]?",
+      "contentHash": "650660b92207380ac8a56834990427cb5f99d1d1ec4dd48fb71dd6698ca43875"
+    },
+    {
+      "id": "ts-array-alias-mutation",
+      "title": "Почему совместимое присваивание массивов не гарантирует безопасность последующей мутации?",
+      "contentHash": "5a364768926694baafdb6bc0e12ed1d8aaec8e42fcad7bbe8c1c085b156e728f"
+    },
+    {
+      "id": "ts-array-union-shapes",
+      "title": "Чем (A | B)[] отличается от A[] | B[]?",
+      "contentHash": "79e75f59d7a2359815e4d189aa4f8f436ec453bb53de5863b532c0c8ae21a745"
+    },
+    {
+      "id": "ts-iterator-result-check",
+      "title": "Почему перед использованием iterator.next().value важно проверить done?",
+      "contentHash": "16d1d83860cdf2c1357fcd9b1d97571b42ce145fa6f35003067bab4fbde3c0e5"
+    },
+    {
+      "id": "ts-promise-all-tuples",
+      "title": "Как сохранить разные типы результатов Promise.all по позициям?",
+      "contentHash": "bd71200878da6fab0c0861a8de1dd16ee17a12441d2c3d1e276fe1494d9393ae"
+    }
+  ],
+  "notes": [
+    "Сохраняются все существующие ID. Раздел охватывает разные навыки проверки типов: похожая терминология не служит основанием для слияния. Текущая задача - редактура ответов, без добавления повторных определений.",
+    "Завершено: 161 индивидуальный разбор, прежние ID сохранены. Oxfmt, content:build (1266 вопросов), полный content:check успешны. Примеры, приложение, UI/server проверки и seed не выполнялись."
+  ]
+}

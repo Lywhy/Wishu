@@ -2,10 +2,29 @@ Variadic tuple types позволяют раскрывать параметры-
 
 <!-- wishu:answer-block -->
 
-В примере `...A` и `...B` описывают объединённую последовательность. Ограничение `readonly unknown[]` принимает и readonly-кортежи; конкретный контракт результата отдельно задаёт его readonly-свойства.
+#### Как это работает
+
+В примере `...A` и `...B` описывают объединённую последовательность. Ограничение `readonly unknown[]` принимает и `readonly`-кортежи; конкретный контракт результата отдельно задаёт его `readonly`-свойства.
 
 Для функций такой подход полезен при типизации rest-параметров и частичного применения. Нельзя обещать точные позиции, если вход уже расширен до обычного массива неизвестной длины. Метки элементов улучшают подсказки, но сами по себе не создают номинальные различия между кортежами.
 
-<!-- wishu:answer-block -->
+#### Пример
 
-[Документация TypeScript](https://www.typescriptlang.org/docs/handbook/release-notes/typescript-4-0.html).
+```typescript
+type Concat<A extends readonly unknown[], B extends readonly unknown[]> = readonly [...A, ...B]
+
+type Args = Concat<readonly [name: string], readonly [count: number, enabled: boolean]>
+// readonly [name: string, count: number, enabled: boolean]
+```
+
+#### Разбор примера
+
+Concat раскрывает сначала A, затем B, сохраняя порядок и тип каждой позиции Args. Внешний `readonly` в результате задан явно. Если вместо кортежа с известной длиной передать обычный массив, точных сведений о числе его элементов компилятору взять неоткуда.
+
+#### Типичная ошибка
+
+> Ожидать восстановления точной длины после передачи обычного `string`[] вместо кортежа.
+
+#### Источники
+
+[Документация TypeScript](https://www.typescriptlang.org/docs/handbook/release-notes/typescript-4-0.html)

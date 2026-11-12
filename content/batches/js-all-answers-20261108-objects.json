@@ -1,0 +1,224 @@
+{
+  "schemaVersion": 1,
+  "id": "js-all-answers-20261108-objects",
+  "title": "js-all-answers-20261108-objects",
+  "sectionId": "javascript",
+  "subsectionId": "objects",
+  "currentPass": "answers",
+  "goalIds": [
+    "core",
+    "object-properties",
+    "object-vs-array",
+    "object-literals",
+    "object-property-access",
+    "object-enumeration",
+    "object-copy-depth",
+    "structured-clone",
+    "object-assign",
+    "object-accessors",
+    "property-descriptors",
+    "object-create-prototype",
+    "object-integrity",
+    "prototype-chain",
+    "prototype-vs-proto",
+    "object-to-string",
+    "object-to-json",
+    "reflect-object-operations",
+    "proxy-traps",
+    "object-destructuring",
+    "object-to-primitive",
+    "prototype-pollution",
+    "js-inherited-assignment",
+    "js-reflect-receiver",
+    "js-proxy-internal-slots",
+    "js-revocable-proxy",
+    "js-from-entries-contract",
+    "js-deep-equality-policy",
+    "js-json-transform-hooks"
+  ],
+  "questionIds": [
+    "object-properties",
+    "object-vs-array",
+    "object-literals",
+    "object-property-access",
+    "object-enumeration",
+    "object-copy-depth",
+    "structured-clone",
+    "object-assign",
+    "object-accessors",
+    "property-descriptors",
+    "object-create-prototype",
+    "object-integrity",
+    "prototype-chain",
+    "prototype-vs-proto",
+    "object-to-string",
+    "object-to-json",
+    "reflect-object-operations",
+    "proxy-traps",
+    "object-destructuring",
+    "object-to-primitive",
+    "prototype-pollution",
+    "js-inherited-assignment",
+    "js-reflect-receiver",
+    "js-proxy-internal-slots",
+    "js-revocable-proxy",
+    "js-from-entries-contract",
+    "js-deep-equality-policy",
+    "js-json-transform-hooks"
+  ],
+  "scopePass": {
+    "status": "complete",
+    "remaining": []
+  },
+  "answerPass": {
+    "status": "complete",
+    "remaining": []
+  },
+  "baseline": [
+    {
+      "id": "object-properties",
+      "title": "Как устроен объект JavaScript и что означает пара «ключ - значение»?",
+      "contentHash": "017d1d3de4c512d52168a0c39cbe01b578940903d4580edbd79c198e3011134e"
+    },
+    {
+      "id": "object-vs-array",
+      "title": "Чем массив отличается от обычного объекта?",
+      "contentHash": "d4303c764acd1dd4478949d395902cc9c8f191127cddd0efae3198394092a8f2"
+    },
+    {
+      "id": "object-literals",
+      "title": "Как работает объектный литерал и сокращённая запись свойств?",
+      "contentHash": "875064757e6f8536609a3e61f9a7f4b5685c5c845d5bb4d366d026aaa890045e"
+    },
+    {
+      "id": "object-property-access",
+      "title": "Как читать, добавлять свойства и методы через точку и квадратные скобки?",
+      "contentHash": "e89600d0b2925aa09d929ff5160cb01190815fbf2a84ce5b20652cdbbef4146c"
+    },
+    {
+      "id": "object-enumeration",
+      "title": "Чем отличаются Object.keys, Object.values и Object.entries?",
+      "contentHash": "06f273fbde909238ee293f0dc381986f0dfdd913039a8e4b8ea1ec70fd5ebd79"
+    },
+    {
+      "id": "object-copy-depth",
+      "title": "Чем поверхностная копия объекта отличается от глубокой?",
+      "contentHash": "fffc4f17ead126f26660c2eea3bba794679d880834b636d9c56c42e8ec7cd03d"
+    },
+    {
+      "id": "structured-clone",
+      "title": "Как сделать глубокую копию через structuredClone и какие у неё ограничения?",
+      "contentHash": "8f4a253e89b2b609c6e086e2e510be95929e5d9de53a5c470eee55150a0e8d33"
+    },
+    {
+      "id": "object-assign",
+      "title": "Что делает Object.assign и чем он отличается от spread?",
+      "contentHash": "ad37768d645b053465914fa946adf859c363edb72888aa4a40c7971861bb96b3"
+    },
+    {
+      "id": "object-accessors",
+      "title": "Как работают геттеры и сеттеры объекта?",
+      "contentHash": "079f80cc4e991e7f1de4b88c7721eb4aa873d5ddd300ce120540ca5103784a67"
+    },
+    {
+      "id": "property-descriptors",
+      "title": "Что такое дескриптор свойства и как defineProperty задаёт его флаги?",
+      "contentHash": "863480ddd1726a040f7245b116bed14a57448f6a18e14f68291bdb33600f7efc"
+    },
+    {
+      "id": "object-create-prototype",
+      "title": "Как Object.create задаёт прототип и зачем создавать объект с null-прототипом?",
+      "contentHash": "08d76c25797213249e260b215c28622e42f5279200a017aeb644b95d5d2bdaad"
+    },
+    {
+      "id": "object-integrity",
+      "title": "Чем отличаются Object.preventExtensions, seal и freeze?",
+      "contentHash": "c56da21359323ce55f7759b7d8df73a047d5495cb7f607c288db77852a1291c5"
+    },
+    {
+      "id": "prototype-chain",
+      "title": "Что такое прототип и как работает цепочка прототипов?",
+      "contentHash": "4dcac92f922b3c2a2c679ab36eb15487d213c698d53b5d1203646a9e066cc262"
+    },
+    {
+      "id": "prototype-vs-proto",
+      "title": "Чем отличаются [[Prototype]], __proto__ и свойство prototype конструктора?",
+      "contentHash": "f57c2a497315ec88a49d3459322b320184330553b8b975ba7fe1a24ff4524176"
+    },
+    {
+      "id": "object-to-string",
+      "title": "Что возвращает toString у объекта и как его переопределить?",
+      "contentHash": "6becedc4ca32732eda7ac44a03d02a72fd00e921e05c17551f44f04790e8f38c"
+    },
+    {
+      "id": "object-to-json",
+      "title": "Как toJSON меняет результат JSON.stringify?",
+      "contentHash": "32efc98466e15145742f5a39b502fc06d80785d193fc30f10e27369d787bf8c7"
+    },
+    {
+      "id": "reflect-object-operations",
+      "title": "Чем Reflect отличается от Object и что возвращает Reflect.defineProperty?",
+      "contentHash": "99c67df1f1c787c795419ca782269058e1afd3f0c4335bd0f8219d2b1bde8634"
+    },
+    {
+      "id": "proxy-traps",
+      "title": "Как Proxy перехватывает операции и что такое ловушки?",
+      "contentHash": "5a85176c91179212523b5747973cb234a8ed7a216ffc4920aecba07d2cfe4ac2"
+    },
+    {
+      "id": "object-destructuring",
+      "title": "Как деструктурировать объект, переименовать поле и задать значение по умолчанию?",
+      "contentHash": "35dc44ebff34787b2c724adbe210604f2f39aaba56ee0174d53befd585277c7a"
+    },
+    {
+      "id": "object-to-primitive",
+      "title": "Как Symbol.toPrimitive, valueOf и toString участвуют в преобразовании объекта?",
+      "contentHash": "8bad83ae8af55a889a6907cad8af1f10ebd21abec01a7b66a60a8723b9e27971"
+    },
+    {
+      "id": "prototype-pollution",
+      "title": "Что такое prototype pollution и как защищать словари и слияние объектов?",
+      "contentHash": "8d8d36e95ea32692e945b87aff445ee398ed2cfacfc815696c779c85b6d9e4ce"
+    },
+    {
+      "id": "js-inherited-assignment",
+      "title": "Что происходит при присваивании свойству, найденному в прототипе?",
+      "contentHash": "ed87cd8b27e29e5813a65067fc381176d73c2667af06c24dfdd2e66ef469fcf1"
+    },
+    {
+      "id": "js-reflect-receiver",
+      "title": "Зачем Reflect.get и Reflect.set нужен receiver?",
+      "contentHash": "77c09328afcab0a6c1fee9c10021ffbdae06883f60c199e95743ca250830be38"
+    },
+    {
+      "id": "js-proxy-internal-slots",
+      "title": "Почему простой Proxy над Map или экземпляром с private-полями может ломать методы?",
+      "contentHash": "ba262c570a083f2eab405bb04f626697fa94a4668e89266fc665412fae4b2d09"
+    },
+    {
+      "id": "js-revocable-proxy",
+      "title": "Что отзывает Proxy.revocable и чего отзыв не может отменить?",
+      "contentHash": "85b11e36376bbf87758d3e6feb1cdc0792dfcd035f32eedb069669eacb3f88b7"
+    },
+    {
+      "id": "js-from-entries-contract",
+      "title": "Какие данные теряются при преобразовании объекта через entries и fromEntries?",
+      "contentHash": "8fc216643115034dceef6e50aa704070090a72851ec9fb24e4f8a058fc9b090b"
+    },
+    {
+      "id": "js-deep-equality-policy",
+      "title": "Что нужно определить перед реализацией глубокого сравнения объектов?",
+      "contentHash": "2caa67e4b39d8f9a9205414f66462357e79b54f9f8593618f3014eb9554bf3fc"
+    },
+    {
+      "id": "js-json-transform-hooks",
+      "title": "Как replacer и reviver позволяют задать явный JSON-контракт?",
+      "contentHash": "da54dcfe7b52769ba9de8b2d17661804f0155bd4ecce6e81203c6cdab5f97420"
+    }
+  ],
+  "notes": [
+    "Полный редакторский проход JavaScript: 346 ID сохраняются, добавлений/слияний нет. 12 ответов предыдущего пакета сохраняют готовый связный разбор. Остальным нужны индивидуальные пояснения к механизму и примеру, а не однотипная вводная фраза. Ответы ITBooster не используются.",
+    "Для оставшихся ответов подготовлены индивидуальные пояснения примеров; код перенесён в общий Markdown. В упражнениях на чтение кода условие сохранено отдельно. Примеры не запускались.",
+    "Завершено: Oxfmt, content:build, полный content:check. В платформе 1266 вопросов; в JavaScript сохранены 346 ID, обновлены оставшиеся 334 ответа, новых/удалённых ID нет. Код примеров и seed не выполнялись."
+  ]
+}

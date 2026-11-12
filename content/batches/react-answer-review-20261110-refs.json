@@ -1,0 +1,125 @@
+{
+  "schemaVersion": 1,
+  "id": "react-answer-review-20261110-refs",
+  "title": "react-answer-review-20261110-refs",
+  "sectionId": "react",
+  "subsectionId": "refs",
+  "currentPass": "answers",
+  "goalIds": [
+    "core",
+    "react-ref-state",
+    "react-ref-prop",
+    "react-imperative-handle",
+    "react-portals",
+    "react-callback-ref-cleanup",
+    "react-widget-dom-ownership",
+    "react-focus-after-mount",
+    "react-resize-observer",
+    "react-ref-current-in-handler",
+    "react-ref-dom-focus-scroll",
+    "react-ref-timer-vs-global",
+    "react-ref-imperative-narrow-api",
+    "react-ref-conditional-node-subscription",
+    "react-layout-measure-feedback-loop"
+  ],
+  "questionIds": [
+    "react-ref-state",
+    "react-ref-prop",
+    "react-imperative-handle",
+    "react-portals",
+    "react-callback-ref-cleanup",
+    "react-widget-dom-ownership",
+    "react-focus-after-mount",
+    "react-resize-observer",
+    "react-ref-current-in-handler",
+    "react-ref-dom-focus-scroll",
+    "react-ref-timer-vs-global",
+    "react-ref-imperative-narrow-api",
+    "react-ref-conditional-node-subscription",
+    "react-layout-measure-feedback-loop"
+  ],
+  "scopePass": {
+    "status": "complete",
+    "remaining": []
+  },
+  "answerPass": {
+    "status": "complete",
+    "remaining": []
+  },
+  "baseline": [
+    {
+      "id": "react-ref-state",
+      "title": "Чем useRef отличается от useState?",
+      "contentHash": "638bbe124d3d0aee176a2d81e404947c72dfe4c2d4f9302d619f5c12f4623d0a"
+    },
+    {
+      "id": "react-ref-prop",
+      "title": "Как передать ref через свой компонент в React 19?",
+      "contentHash": "534c2ace98d1c737260b69ca30e9d74ee48d2157bd95cb8ee5ba7960975b741e"
+    },
+    {
+      "id": "react-imperative-handle",
+      "title": "Зачем нужен useImperativeHandle?",
+      "contentHash": "d6bcb715d277fbab50861e16ca9b94a2983d9159496ef8a86c552c759ab4af84"
+    },
+    {
+      "id": "react-portals",
+      "title": "Как Portal влияет на DOM, события и Context?",
+      "contentHash": "972b5457cbb8719ec6178a79b3b8eda4883045e020efa9353480a2bf3e7cd76e"
+    },
+    {
+      "id": "react-callback-ref-cleanup",
+      "title": "Как callback ref помогает учитывать динамические DOM-узлы и очищать связанные ресурсы?",
+      "contentHash": "ad9f76c68f128903ff8c3663eeafa59520afbdd3c6ab665037da6bd62ee5393a"
+    },
+    {
+      "id": "react-widget-dom-ownership",
+      "title": "Как встроить сторонний редактор или карту, не конфликтуя с управлением DOM у React?",
+      "contentHash": "d1e1cdd2b883caddd480827adca45679221114e71e2b1fad97c41d6d53d2aca4"
+    },
+    {
+      "id": "react-focus-after-mount",
+      "title": "Почему ref после setOpen(true) ещё может быть null и когда переводить фокус?",
+      "contentHash": "a2c2ed5fd9438d6cd1c2e78630f5642551648ba9332acebb4ba1956e9c7ebfa2"
+    },
+    {
+      "id": "react-resize-observer",
+      "title": "Почему измерение DOM один раз не отслеживает изменение размера элемента?",
+      "contentHash": "8e21bfaebba73c9a6b50d98408f47fb975de42cd48a6c5ef84d36743e43a9808"
+    },
+    {
+      "id": "react-ref-current-in-handler",
+      "title": "Почему DOM-ref читают в обработчике, а не сохраняют его current при рендере?",
+      "contentHash": "3093a99aca46001322291125e4dfb3a243a7db927ba51a0e984e09b39dc6d2fe"
+    },
+    {
+      "id": "react-ref-dom-focus-scroll",
+      "title": "Когда DOM-ref нужен для focus и scrollIntoView вместо state?",
+      "contentHash": "0743a2b2a5d241c899a77e6f9ce4c97a0887b947673210ea0a5c4c2fc45f20bb"
+    },
+    {
+      "id": "react-ref-timer-vs-global",
+      "title": "Почему таймер компонента лучше хранить в ref, а не в глобальной переменной?",
+      "contentHash": "0a83f26cef148b6e7ca0f25d2a5059be585faa95b607de8ac4347436202b456b"
+    },
+    {
+      "id": "react-ref-imperative-narrow-api",
+      "title": "Почему императивный API компонента лучше ограничить командами, а не отдавать весь DOM?",
+      "contentHash": "bb8c39dc31bea643931bb79af7b5e84e3b835f5a992ed0eb51e3357234d719b1"
+    },
+    {
+      "id": "react-ref-conditional-node-subscription",
+      "title": "Как переподключать наблюдатель, когда условный DOM-узел заменяется другим?",
+      "contentHash": "64656e755377d65c8e2d5d91abf66c8ef694752df73632853b5805bfc7927029"
+    },
+    {
+      "id": "react-layout-measure-feedback-loop",
+      "title": "Как избежать цикла измерение DOM - setState - изменение размера?",
+      "contentHash": "717e9c2764db38ca12f78b2cb1f5a14ffd2ebf9e629252885381aac44afbb8ef"
+    }
+  ],
+  "notes": [
+    "Сохраняются все 300 ID, включая Redux и Zustand внутри React. Дорабатываются ответы, а не количество вопросов. Схожие формулировки сохраняются при разных учебных целях; связи указываются через канонические вопросы.",
+    "Завершено 2026-11-12: все 300 ответов прочитаны и расширены индивидуальными разборами; ID сохранены. Oxfmt, content:build и полный content:check успешны (1266 вопросов). Примеры, приложение, UI/server проверки, миграции и seed не запускались."
+  ]
+}

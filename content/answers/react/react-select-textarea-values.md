@@ -2,15 +2,13 @@
 
 <!-- wishu:answer-block -->
 
-### Как это работает
+#### Как это работает
 
-- В React выбранный option задают через value родительского select, а не отдельный selected на option.
+В React выбранный option задают через value родительского select, а не отдельный selected на option. Для textarea используйте value/`defaultValue`, а не дочерний текст как способ задания начального содержимого.
 
-- Для textarea используйте value/`defaultValue`, а не дочерний текст как способ задания начального содержимого.
+`onChange` должен обновить управляемое значение. Для multiple извлеките значения `selectedOptions`, поскольку target.value представляет только одну строку, а не весь набор.
 
-- `onChange` должен обновить управляемое значение. Для multiple извлеките значения `selectedOptions`, поскольку target.value представляет только одну строку, а не весь набор.
-
-### Пример
+#### Пример
 
 ```jsx
 function TagsField() {
@@ -33,12 +31,16 @@ function TagsField() {
 }
 ```
 
-### Типичная ошибка
+#### Разбор примера
+
+Multiple получает массив tags, а обработчик собирает все selectedOptions. Одно value события не представляло бы весь набор. Новое состояние становится владельцем выбора, поэтому отдельный selected на каждом option не требуется.
+
+#### Типичная ошибка
 
 Ожидать, что изменение `defaultValue` после mount будет управлять уже отредактированным полем.
 
-### Источники
+#### Источники
 
-- [React: components / select](https://react.dev/reference/react-dom/components/select)
+[React: components / select](https://react.dev/reference/react-dom/components/select)
 
-- [React: components / textarea](https://react.dev/reference/react-dom/components/textarea)
+[React: components / textarea](https://react.dev/reference/react-dom/components/textarea)

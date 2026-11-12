@@ -47,6 +47,8 @@ GradientASCII.tsx - исходник React Bits с проектными визу
 
 ## Вопросы: два пути поступления
 
+JavaScript: [сравнение 447 тем ITBooster и первый пакет связных ответов](javascript-review-20261108.md).
+
 Браузер и HTTP: [143 вопроса, распределение и редакторские границы](browser-content-20261108.md).
 
 React: [пакет контента 2026-11-08, границы и следующие шаги](react-content-20261108.md). [Расширение: 120 React + Redux/Zustand, уровни и границы](react-expanded-20261108.md).
@@ -108,3 +110,11 @@ content/questions/catalog.json + <section>/<subsection>.json
 ## Компактный контекст
 
 По умолчанию вывод короткий, подробности включаются параметрами. Find/context используют компактный lookup; show открывает ответ по ID. Batch хранит рабочие ID и хеши, источники доступны через sourceRefs. [Текущий процесс](lean-content-workflow.md) уточняет параметры и заменяет прежние примеры подробного вывода по умолчанию.
+
+Редактура всех ответов JavaScript: [отчёт от 2026-11-08](javascript-answer-review-2026-11-08.md). Сохранены 346 ID в 20 подразделах.
+
+Редактура 161 ответа TypeScript: [отчёт от 2026-11-10](typescript-answer-review-2026-11-10.md). Существующие ID сохранены.
+
+Редактура 300 ответов React, включая Redux и Zustand: [отчёт от 2026-11-12](react-answer-review-2026-11-12.md). Существующие ID сохранены.
+
+Быстрый отчёт о вопросе: components/feedback/question-report-dialog.tsx. Общая передача: feedback-delivery.tsx; скриншоты: feedback-screenshots.tsx, lib/feedback-attachments.ts, stores/feedback-attachments.ts (только память). Полевая валидация: lib/feedback-validation.ts. Меню передачи: ui/dropdown-menu.tsx (shadcn base-nova). [Поток и ограничения изображений](platform-feedback.md).

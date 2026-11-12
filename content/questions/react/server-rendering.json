@@ -9,7 +9,7 @@
       "title": "Серверный рендеринг и React 19",
       "description": "Обзор и взаимосвязи навыков: CSR, SSR, гидратация, Server Components и чтение ресурсов.",
       "requiredDifficulties": [],
-      "reviewed": false,
+      "reviewed": true,
       "priority": "core",
       "relatedSkillIds": [
         "react-csr-ssr",
@@ -36,7 +36,7 @@
       "title": "Чем CSR отличается от SSR и статического рендеринга?",
       "description": "Объяснить и применить правило с учётом его границ: Разделяйте первоначальное HTML-представление и последующую интерактивность.",
       "requiredDifficulties": ["Средний"],
-      "reviewed": false,
+      "reviewed": true,
       "priority": "core",
       "relatedSkillIds": ["next-loading-streaming"]
     },
@@ -45,7 +45,7 @@
       "title": "Что такое гидратация и почему возникает hydration mismatch?",
       "description": "Объяснить и применить правило с учётом его границ: Гидратация требует согласованного первоначального дерева.",
       "requiredDifficulties": ["Продвинутый"],
-      "reviewed": false,
+      "reviewed": true,
       "priority": "core",
       "relatedSkillIds": []
     },
@@ -54,7 +54,7 @@
       "title": "Чем Server Components отличаются от SSR и Client Components?",
       "description": "Объяснить и применить правило с учётом его границ: Server Components определяют разделение кода, SSR - способ получения HTML.",
       "requiredDifficulties": ["Продвинутый"],
-      "reviewed": false,
+      "reviewed": true,
       "priority": "core",
       "relatedSkillIds": ["next-props-serialization"]
     },
@@ -63,7 +63,7 @@
       "title": "Как API use читает Promise и чем отличается от await?",
       "description": "Объяснить и применить правило с учётом его границ: use читает управляемый ресурс в модели рендера React.",
       "requiredDifficulties": ["Продвинутый"],
-      "reviewed": false,
+      "reviewed": true,
       "priority": "core",
       "relatedSkillIds": []
     },
@@ -72,7 +72,7 @@
       "title": "Чем cache в Server Components отличается от useMemo и постоянного серверного кеша?",
       "description": "Объяснить и применить правило с учётом его границ: У каждого кеша есть область действия; cache RSC не равен хранению данных навсегда.",
       "requiredDifficulties": ["Продвинутый"],
-      "reviewed": false,
+      "reviewed": true,
       "priority": "core",
       "relatedSkillIds": []
     },
@@ -200,7 +200,7 @@
         "learningGoal": "Объяснить и применить правило с учётом его границ: Разделяйте первоначальное HTML-представление и последующую интерактивность.",
         "keywords": ["React", "Серверный рендеринг и React 19"],
         "kind": "explanation",
-        "reviewStatus": "imported",
+        "reviewStatus": "ready",
         "goalIds": ["core", "react-csr-ssr"],
         "relatedQuestionIds": ["next-loading-streaming"],
         "priority": "core",
@@ -222,11 +222,11 @@
         "learningGoal": "Объяснить и применить правило с учётом его границ: Гидратация требует согласованного первоначального дерева.",
         "keywords": ["React", "Серверный рендеринг и React 19"],
         "kind": "explanation",
-        "reviewStatus": "imported",
+        "reviewStatus": "ready",
         "goalIds": ["core", "react-hydration"],
         "relatedQuestionIds": [],
         "priority": "core",
-        "sourceRefs": []
+        "sourceRefs": ["ref-f814c0e28d2b8796"]
       },
       "answerFile": "answers/react/react-hydration.md"
     },
@@ -244,11 +244,11 @@
         "learningGoal": "Объяснить и применить правило с учётом его границ: Server Components определяют разделение кода, SSR - способ получения HTML.",
         "keywords": ["React", "Серверный рендеринг и React 19"],
         "kind": "explanation",
-        "reviewStatus": "imported",
+        "reviewStatus": "ready",
         "goalIds": ["core", "react-server-components"],
         "relatedQuestionIds": ["next-props-serialization"],
         "priority": "core",
-        "sourceRefs": []
+        "sourceRefs": ["ref-4598115c47128228"]
       },
       "answerFile": "answers/react/react-server-components.md"
     },
@@ -266,11 +266,11 @@
         "learningGoal": "Объяснить и применить правило с учётом его границ: use читает управляемый ресурс в модели рендера React.",
         "keywords": ["React", "Серверный рендеринг и React 19", "промис", "promise"],
         "kind": "explanation",
-        "reviewStatus": "imported",
+        "reviewStatus": "ready",
         "goalIds": ["core", "react-use-resource"],
         "relatedQuestionIds": [],
         "priority": "core",
-        "sourceRefs": []
+        "sourceRefs": ["ref-d54b61378bef2469"]
       },
       "answerFile": "answers/react/react-use-resource.md"
     },
@@ -278,9 +278,7 @@
       "id": "react-server-cache",
       "title": "Чем cache в Server Components отличается от useMemo и постоянного серверного кеша?",
       "summary": "Общий результат в контексте серверного рендеринга и область действия кеширования.",
-      "code": "import { cache } from \"react\"\n// Только RSC-среда с соответствующей интеграцией:\nexport const getUser = cache(async (id) => {\n  const response = await fetch(\"https://example.org/users/\" + encodeURIComponent(id))\n  if (!response.ok) throw new Error(\"Не удалось загрузить пользователя\")\n  return response.json()\n})",
       "takeaway": "У каждого кеша есть область действия; cache RSC не равен хранению данных навсегда.",
-      "pitfall": "Ожидать от React cache глобальной авторизованной базы результатов между любыми HTTP-запросами.",
       "difficulty": "Продвинутый",
       "topic": "React",
       "moduleId": "react",
@@ -290,7 +288,7 @@
         "learningGoal": "Объяснить и применить правило с учётом его границ: У каждого кеша есть область действия; cache RSC не равен хранению данных навсегда.",
         "keywords": ["React", "Серверный рендеринг и React 19"],
         "kind": "explanation",
-        "reviewStatus": "imported",
+        "reviewStatus": "ready",
         "goalIds": ["core", "react-server-cache"],
         "relatedQuestionIds": [],
         "priority": "core",

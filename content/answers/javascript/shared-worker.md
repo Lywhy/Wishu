@@ -2,14 +2,28 @@
 
 <!-- wishu:answer-block -->
 
-### Что важно объяснить
+### Как это работает
 
-- Страницы общаются с ним через отдельные MessagePort, а внутри Worker новые подключения приходят в событии connect.
+Страницы общаются с ним через отдельные MessagePort, а внутри Worker новые подключения приходят в событии connect. Это удобно для общей координации вкладок.
 
-- Это удобно для общей координации вкладок.
+Он не получает DOM страниц и не является бессрочным сервером. Нужно учитывать время жизни подключений, закрывать порты и проверять поддержку в целевых браузерах.
 
-- Он не получает DOM страниц и не является бессрочным сервером.
+В отличие от Dedicated Worker, связь идёт через port; при addEventListener для порта нужно запустить доставку сообщений через start.
 
-- Нужно учитывать время жизни подключений, закрывать порты и проверять поддержку в целевых браузерах.
+### Пример и его разбор
 
-- В отличие от Dedicated Worker, связь идёт через port; при addEventListener для порта нужно запустить доставку сообщений через start.
+```javascript
+function connectShared() {
+  const worker = new SharedWorker("/shared-worker.js")
+  worker.port.addEventListener("message", (event) => console.log(event.data))
+  worker.port.start()
+  worker.port.postMessage("hello")
+  return () => worker.port.close()
+}
+```
+
+Каждая вкладка получает свой порт к общему Worker, поэтому listener устанавливается на worker.port, а не прямо на объект Worker. После start начинается доставка сообщений обработчику addEventListener. Закрытие порта завершает участие этой страницы. Общность Worker не означает вечный процесс и зависит от origin, параметров создания и правил разделения среды.
+
+### Источники
+
+[MDN: Guide / Using promises](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Using_promises)

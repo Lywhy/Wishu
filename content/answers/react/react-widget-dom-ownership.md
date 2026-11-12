@@ -2,10 +2,35 @@ React может владеть контейнером, а сторонний в
 
 <!-- wishu:answer-block -->
 
+#### Как это работает
+
 Создайте экземпляр после commit, сохраните handle и предусмотрите destroy/unsubscribe в cleanup. Настройки, которые можно обновлять через API виджета, синхронизируйте без обязательного пересоздания экземпляра.
 
 Экземпляр не создают как побочный эффект render или мемоизированного вычисления. Setup и cleanup должны выдерживать повторное монтирование. Измерения, необходимые до показа кадра, могут потребовать layout effect, но обычную синхронизацию не стоит без причины переносить в него.
 
-<!-- wishu:answer-block -->
+#### Пример
 
-[Документация](https://react.dev/reference/react/useEffect).
+```tsx
+import { useEffect, useRef } from "react"
+function WidgetHost({ createWidget }) {
+  const host = useRef(null)
+  useEffect(() => {
+    const widget = createWidget(host.current)
+    return () => widget.destroy()
+  }, [createWidget])
+  return <div ref={host} />
+}
+// createWidget стабилен по контракту; внутренностями host управляет виджет.
+```
+
+#### Разбор примера
+
+React создаёт пустой контейнер, а createWidget наполняет его своими узлами. Destroy освобождает экземпляр при завершении setup. Если React начнёт одновременно описывать тех же детей JSX, граница владения нарушится и оба механизма смогут удалять результаты друг друга.
+
+#### Типичная ошибка
+
+> Менять innerHTML узла, чьи дети одновременно описаны React JSX.
+
+#### Источники
+
+[Документация](https://react.dev/reference/react/useEffect)

@@ -1,15 +1,30 @@
-**Iterator helpers позволяют строить ленивые последовательности: map/filter/take не обязаны сразу создавать полный массив. Работа выполняется по мере потребления результата.**
+**`Iterator` helpers позволяют строить ленивые последовательности: `Map`/`filter`/take не обязаны сразу создавать полный массив. Работа выполняется по мере потребления результата.**
 
 <!-- wishu:answer-block -->
 
-### Механизм и границы
+### Как это работает
 
 Источник обычно расходуется, а не становится повторно доступным массивом. Callback с побочным эффектом выполнится в другое время, чем у немедленного Array.map. Завершающая операция вроде toArray материализует результат.
 
 Проверяйте поддержку helpers в нужной среде. Ленивая обработка не делает синхронный тяжёлый callback асинхронным и не переносит его в другой поток.
 
-<!-- wishu:answer-block -->
+### Пример и его разбор
 
-### Источник
+```javascript
+const values = Iterator.from([1, 2, 3, 4])
+const pipeline = values
+  .filter((value) => value % 2 === 0)
+  .map((value) => value * 10)
+  .take(1)
+console.log(pipeline.toArray()) // [20]
+```
 
-[MDN: Global_Objects/Iterator](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Iterator).
+`filter` пропускает 1, `Map` преобразует 2 в 20, а take ограничивает результат первым подходящим элементом. Вычисления запускаются при toArray, а не при объявлении pipeline. Это снижает объём ненужного обхода, но источник при этом расходуется.
+
+### Типичная ошибка
+
+> Повторно потреблять тот же `Iterator`, ожидая новый полный обход.
+
+### Источники
+
+[MDN: Global_Objects/Iterator](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Iterator)

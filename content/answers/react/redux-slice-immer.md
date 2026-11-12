@@ -2,7 +2,7 @@
 
 <!-- wishu:answer-block -->
 
-#### Механизм и границы
+#### Как это работает
 
 - Draft существует в поддерживаемом контексте Toolkit. Такая запись не разрешает менять объект, полученный через `getState`, в произвольном обработчике.
 - В одном case `reducer` либо изменяют draft, либо возвращают замену состояния. Не совмещайте обе стратегии.
@@ -23,11 +23,19 @@ const counterSlice = createSlice({
 export const { incremented } = counterSlice.actions
 ```
 
+#### Разбор примера
+
+Запись state.value += 1 выглядит как мутация, однако reducer, созданный `createSlice`, работает с Immer-draft. Immer строит следующий неизменяемый снимок и сохраняет ссылки неизменённых ветвей. Это разрешение относится к draft внутри reducer: объект, полученный из store.getState(), так изменять нельзя. Slice также создаёт action creators, но сам не подключается к store без конфигурации reducer.
+
+#### Типичная ошибка
+
+> Распространять разрешение draft-мутаций на все объекты приложения.
+
 #### Для закрепления
 
 - [Почему нельзя изменять объект или массив в state напрямую?](/questions/react-state-immutability)
 - [Как устроен поток данных Redux: store, action, dispatch и reducer?](/questions/redux-data-flow)
 
-#### Источник
+#### Источники
 
-[Redux: immer reducers](https://redux-toolkit.js.org/usage/immer-reducers).
+[Redux: immer reducers](https://redux.js.org/toolkit/usage/immer-reducers)

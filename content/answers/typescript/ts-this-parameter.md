@@ -2,10 +2,31 @@
 
 <!-- wishu:answer-block -->
 
-Для callback без зависимости от получателя можно указать `this: void`. Вызов через call, apply или bind проверяется точнее при strictBindCallApply. Стрелка получает this лексически и не объявляет такой параметр.
+#### Как это работает
 
-`ThisType<T>` решает близкую, но контекстную задачу: выступает маркером типа this в методах объектного литерала, когда есть подходящий контекст и включён noImplicitThis. Это не обычное поле интерфейса и не runtime-привязка. Для готовых сигнатур есть ThisParameterType и OmitThisParameter.
+Для callback без зависимости от получателя можно указать `this: void`. Вызов через call, apply или bind проверяется точнее при strictBindCallApply. Стрелка получает `this` лексически и не объявляет такой параметр.
 
-<!-- wishu:answer-block -->
+`ThisType<T>` решает близкую, но контекстную задачу: выступает маркером типа `this` в методах объектного литерала, когда есть подходящий контекст и включён noImplicitThis. Это не обычное поле интерфейса и не runtime-привязка. Для готовых сигнатур есть `ThisParameterType` и OmitThisParameter.
 
-[Документация TypeScript](https://www.typescriptlang.org/docs/handbook/2/functions.html).
+#### Пример
+
+```typescript
+function read(this: { name: string }, prefix: string) {
+  return prefix + this.name
+}
+const result = read.call({ name: "Анна" }, "Привет, ")
+// read('Привет, ') // Нет подходящего this для обычного вызова
+type WithoutThis = OmitThisParameter<typeof read>
+```
+
+#### Разбор примера
+
+Read.call получает контекст отдельно от строки prefix. Специальный `this` исчезает из сгенерированных параметров и не привязывает функцию автоматически. `OmitThisParameter` описывает сигнатуру без такого требования, но для безопасного реального использования исходную функцию всё равно нужно вызвать с подходящим получателем.
+
+#### Типичная ошибка
+
+> Думать, что `this`: Context автоматически выполняет bind или передаётся первым аргументом.
+
+#### Источники
+
+[Документация TypeScript](https://www.typescriptlang.org/docs/handbook/2/functions.html)

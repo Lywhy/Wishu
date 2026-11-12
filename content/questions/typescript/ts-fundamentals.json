@@ -9,7 +9,7 @@
       "title": "Основы TypeScript",
       "description": "Обзор и взаимосвязи навыков: Статическая проверка, границы гарантий, вывод типов и настройки проекта.",
       "requiredDifficulties": [],
-      "reviewed": false,
+      "reviewed": true,
       "priority": "core",
       "relatedSkillIds": [
         "ts-language",
@@ -26,7 +26,7 @@
       "title": "Как TypeScript проверяет JavaScript-код и что происходит с типами после преобразования?",
       "description": "Объяснить и применить правило с учётом его границ: TypeScript проверяет модель программы заранее, а выполняется JavaScript.",
       "requiredDifficulties": ["Базовый"],
-      "reviewed": false,
+      "reviewed": true,
       "priority": "core",
       "relatedSkillIds": []
     },
@@ -35,7 +35,7 @@
       "title": "Какие гарантии даёт TypeScript и какие ошибки остаются во время выполнения?",
       "description": "Объяснить и применить правило с учётом его границ: Проверки TypeScript сильнее при честных контрактах, но не заменяют проверку внешнего мира.",
       "requiredDifficulties": ["Базовый"],
-      "reviewed": false,
+      "reviewed": true,
       "priority": "core",
       "relatedSkillIds": []
     },
@@ -44,7 +44,7 @@
       "title": "Что задаёт tsconfig.json и чем target отличается от lib?",
       "description": "Объяснить и применить правило с учётом его границ: Tsconfig описывает правила проекта, а lib описывает возможности без установки их реализации.",
       "requiredDifficulties": ["Базовый"],
-      "reviewed": false,
+      "reviewed": true,
       "priority": "core",
       "relatedSkillIds": []
     },
@@ -53,7 +53,7 @@
       "title": "Как работает вывод типов и когда полезна явная аннотация?",
       "description": "Объяснить и применить правило с учётом его границ: Вывод использует контекст и изменяемость; аннотация нужна для намеренного контракта.",
       "requiredDifficulties": ["Базовый"],
-      "reviewed": false,
+      "reviewed": true,
       "priority": "core",
       "relatedSkillIds": []
     },
@@ -62,7 +62,7 @@
       "title": "Как структурная типизация определяет совместимость и чем отличается от номинальной?",
       "description": "Объяснить и применить правило с учётом его границ: Совместимость в основном определяется структурой с отдельными правилами проверки и происхождения.",
       "requiredDifficulties": ["Базовый"],
-      "reviewed": false,
+      "reviewed": true,
       "priority": "core",
       "relatedSkillIds": []
     },
@@ -92,7 +92,6 @@
       "topic": "TypeScript",
       "difficulty": "Базовый",
       "summary": "Статическая проверка, динамическое выполнение и удаление аннотаций.",
-      "code": "function double(value: number): number {\n  return value * 2;\n}\n// После удаления аннотаций остаётся обычная JS-функция.\n// Вызов с неверными данными из внешнего JS сам по себе не получает runtime-проверку.",
       "takeaway": "TypeScript проверяет модель программы заранее, а выполняется JavaScript.",
       "moduleId": "typescript",
       "order": 0,
@@ -101,11 +100,11 @@
         "learningGoal": "Объяснить и применить правило с учётом его границ: TypeScript проверяет модель программы заранее, а выполняется JavaScript.",
         "keywords": ["TypeScript", "Основы TypeScript"],
         "kind": "explanation",
-        "reviewStatus": "imported",
+        "reviewStatus": "ready",
         "goalIds": ["core", "ts-language"],
         "relatedQuestionIds": [],
         "priority": "core",
-        "sourceRefs": []
+        "sourceRefs": ["ref-208a14bdbde38b8c"]
       },
       "answerFile": "answers/typescript/ts-language.md"
     },
@@ -115,7 +114,6 @@
       "topic": "TypeScript",
       "difficulty": "Базовый",
       "summary": "Проверка контрактов, границы системы типов и валидация данных.",
-      "code": "function readLabel(value: unknown): string {\n  if (typeof value !== \"string\") throw new TypeError(\"Нужна строка\");\n  return value.trim();\n}\n// Проверка unknown создаёт реальную защиту входной границы.",
       "takeaway": "Проверки TypeScript сильнее при честных контрактах, но не заменяют проверку внешнего мира.",
       "moduleId": "typescript",
       "order": 1,
@@ -124,11 +122,11 @@
         "learningGoal": "Объяснить и применить правило с учётом его границ: Проверки TypeScript сильнее при честных контрактах, но не заменяют проверку внешнего мира.",
         "keywords": ["TypeScript", "Основы TypeScript"],
         "kind": "explanation",
-        "reviewStatus": "imported",
+        "reviewStatus": "ready",
         "goalIds": ["core", "ts-safety-limits"],
         "relatedQuestionIds": [],
         "priority": "core",
-        "sourceRefs": []
+        "sourceRefs": ["ref-b1f557c0324024a7"]
       },
       "answerFile": "answers/typescript/ts-safety-limits.md"
     },
@@ -138,7 +136,6 @@
       "topic": "TypeScript",
       "difficulty": "Базовый",
       "summary": "Границы проекта, проверка типов, преобразование и декларации API.",
-      "code": "// Пример содержимого tsconfig, а не изменение настроек проекта:\n// { \"compilerOptions\": { \"target\": \"ES2022\", \"lib\": [\"ES2022\", \"DOM\"],\n//   \"strict\": true, \"noEmit\": true }, \"include\": [\"src\"] }\n// Декларация DOM описывает API, но не создаёт document вне браузера.",
       "takeaway": "Tsconfig описывает правила проекта, а lib описывает возможности без установки их реализации.",
       "moduleId": "typescript",
       "order": 2,
@@ -147,7 +144,7 @@
         "learningGoal": "Объяснить и применить правило с учётом его границ: Tsconfig описывает правила проекта, а lib описывает возможности без установки их реализации.",
         "keywords": ["TypeScript", "Основы TypeScript"],
         "kind": "explanation",
-        "reviewStatus": "imported",
+        "reviewStatus": "ready",
         "goalIds": ["core", "ts-config"],
         "relatedQuestionIds": [
           "ts-project-file-graph",
@@ -165,7 +162,6 @@
       "topic": "TypeScript",
       "difficulty": "Базовый",
       "summary": "Инициализаторы, контекст и расширение литеральных типов.",
-      "code": "let count = 1; // number\nconst fixed = 1; // 1\nconst names = [\"Аня\", \"Оля\"];\nconst lengths = names.map((name) => name.length); // number[]\nconst settings = { mode: \"dark\" } as const;\n// settings.mode имеет тип \"dark\".",
       "takeaway": "Вывод использует контекст и изменяемость; аннотация нужна для намеренного контракта.",
       "moduleId": "typescript",
       "order": 3,
@@ -174,11 +170,11 @@
         "learningGoal": "Объяснить и применить правило с учётом его границ: Вывод использует контекст и изменяемость; аннотация нужна для намеренного контракта.",
         "keywords": ["TypeScript", "Основы TypeScript"],
         "kind": "explanation",
-        "reviewStatus": "imported",
+        "reviewStatus": "ready",
         "goalIds": ["core", "ts-inference"],
         "relatedQuestionIds": [],
         "priority": "core",
-        "sourceRefs": []
+        "sourceRefs": ["ref-3c84c1244a973220"]
       },
       "answerFile": "answers/typescript/ts-inference.md"
     },
@@ -188,7 +184,6 @@
       "topic": "TypeScript",
       "difficulty": "Базовый",
       "summary": "Форма значения, дополнительные поля и происхождение приватных членов.",
-      "code": "type Named = { name: string };\nconst user = { name: \"Аня\", age: 25 };\nconst named: Named = user; // дополнительные данные не мешают\nfunction greet(value: Named) { return value.name; }\ngreet(user); // \"Аня\"",
       "takeaway": "Совместимость в основном определяется структурой с отдельными правилами проверки и происхождения.",
       "moduleId": "typescript",
       "order": 4,
@@ -197,11 +192,11 @@
         "learningGoal": "Объяснить и применить правило с учётом его границ: Совместимость в основном определяется структурой с отдельными правилами проверки и происхождения.",
         "keywords": ["TypeScript", "Основы TypeScript"],
         "kind": "explanation",
-        "reviewStatus": "imported",
+        "reviewStatus": "ready",
         "goalIds": ["core", "ts-structural-typing"],
         "relatedQuestionIds": ["ts-unused-generic-parameter"],
         "priority": "core",
-        "sourceRefs": ["ref-e93a21d416404bfe"]
+        "sourceRefs": ["ref-b1f557c0324024a7", "ref-e93a21d416404bfe"]
       },
       "answerFile": "answers/typescript/ts-structural-typing.md"
     },
@@ -213,7 +208,6 @@
       "summary": "Контекстная типизация и потеря контекста при отдельном объявлении.",
       "answerFile": "answers/typescript/ts-contextual-inference.md",
       "takeaway": "Вывод типов использует доступный контекст, а не только правую часть выражения.",
-      "pitfall": "Ожидать, что будущий вызов всегда типизирует ранее объявленный callback.",
       "moduleId": "typescript",
       "order": 5,
       "popular": false,
@@ -236,7 +230,6 @@
       "summary": "Разные пространства имён и двойная роль класса.",
       "answerFile": "answers/typescript/ts-type-value-spaces.md",
       "takeaway": "При чтении имени сначала определите, требуется тип или runtime-значение.",
-      "pitfall": "Писать instanceof Interface и ожидать runtime-проверку.",
       "moduleId": "typescript",
       "order": 6,
       "popular": false,

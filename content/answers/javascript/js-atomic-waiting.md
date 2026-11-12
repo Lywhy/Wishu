@@ -2,14 +2,27 @@
 
 <!-- wishu:answer-block -->
 
-### Механизм и границы
+### Как это работает
 
-Ожидание сначала проверяет значение по заданному индексу; при несовпадении или подходящем тайм-ауте исход может быть немедленным. Результат waitAsync содержит признак async, поэтому не всегда нужно ожидать Promise.
+Ожидание сначала проверяет значение по заданному индексу; при несовпадении или подходящем тайм-ауте исход может быть немедленным. Результат waitAsync содержит признак `async`, поэтому не всегда нужно ожидать Promise.
 
 Notify сообщает ожидающим, но не заменяет само изменение состояния. Протокол должен снова проверять условие и учитывать завершение, а не использовать уведомление как перенос произвольного payload.
 
-<!-- wishu:answer-block -->
+### Пример и его разбор
 
-### Источник
+```javascript
+const values = new Int32Array(new SharedArrayBuffer(4))
+const waiting = Atomics.waitAsync(values, 0, 0, 1000)
+// waiting.async определяет, является ли waiting.value Promise.
+// Пример требует поддержки API и допустимой browser isolation.
+```
 
-[MDN: Global_Objects/Atomics/waitAsync](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Atomics/waitAsync).
+WaitAsync сначала сравнивает ячейку с ожидаемым нулём. Если ждать не требуется, результат может быть немедленным; иначе value является Promise. Уведомляющий агент должен сначала корректно изменить состояние, а ожидающий после пробуждения снова проверить нужное условие.
+
+### Типичная ошибка
+
+> Крутить бесконечный while на UI-потоке или всегда считать value у waitAsync промисом.
+
+### Источники
+
+[MDN: Global_Objects/Atomics/waitAsync](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Atomics/waitAsync)

@@ -2,14 +2,27 @@
 
 <!-- wishu:answer-block -->
 
-### Механизм и границы
+### Как это работает
 
 Options задают формат, а не корректность арифметики исходной суммы. У разных валют могут быть разные стандартные дробные разряды. Проверяйте взаимосвязанные минимумы и максимумы дробных знаков, а новые rounding-опции - по поддержке среды.
 
-Для отдельного оформления частей используйте formatToParts; не ищите валюту по последнему пробелу, который может быть неразрывным.
+Для отдельного оформления частей используйте `formatToParts`; не ищите валюту по последнему пробелу, который может быть неразрывным.
 
-<!-- wishu:answer-block -->
+### Пример и его разбор
 
-### Источник
+```javascript
+const formatter = new Intl.NumberFormat("ru-RU", { style: "currency", currency: "RUB" })
+const text = formatter.format(1234.5)
+const parts = formatter.formatToParts(1234.5)
+// Отображение локализовано; арифметический контракт суммы задаётся отдельно.
+```
 
-[MDN: Global_Objects/Intl/NumberFormat](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/NumberFormat).
+Formatter одновременно применяет локаль и правила валютного представления. Parts позволяет отдельно оформить число и знак валюты без поиска последнего пробела. Само значение 1234.5 при этом не становится точной денежной моделью: форматирование следует после вычисления.
+
+### Типичная ошибка
+
+> Разбирать строку цены через обычный `split` или считать все валюты двухзначными после запятой.
+
+### Источники
+
+[MDN: Global_Objects/Intl/NumberFormat](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/NumberFormat)

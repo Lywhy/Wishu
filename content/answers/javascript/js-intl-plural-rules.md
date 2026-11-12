@@ -2,14 +2,28 @@
 
 <!-- wishu:answer-block -->
 
-### Механизм и границы
+### Как это работает
 
 Правила не ограничиваются n === 1, особенно для русского и других языков. Учитывайте дроби, отрицательные значения и cardinal/ordinal-назначение.
 
 Не обрезайте данные до последней цифры без понимания языка: 1, 11 и 21 показывают, почему простая ветка часто неверна.
 
-<!-- wishu:answer-block -->
+### Пример и его разбор
 
-### Источник
+```javascript
+const plural = new Intl.PluralRules("ru")
+const forms = { one: "вопрос", few: "вопроса", many: "вопросов", other: "вопроса" }
+const count = 22
+const label = `${count} ${forms[plural.select(count)]}`
+// Для других существительных нужны соответствующие формы.
+```
 
-[MDN: Global_Objects/Intl/PluralRules](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/PluralRules).
+Для 22 выбирается категория few, и таблица подставляет «вопроса». API определяет категорию, но сами словоформы предоставляет приложение. Проверка только последней цифры сломалась бы на 11 и других исключениях, уже учтённых языковыми правилами.
+
+### Типичная ошибка
+
+> Писать одну проверку count === 1 для всех языков и дробных количеств.
+
+### Источники
+
+[MDN: Global_Objects/Intl/PluralRules](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/PluralRules)

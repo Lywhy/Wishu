@@ -1,0 +1,97 @@
+{
+  "schemaVersion": 1,
+  "id": "ts-answer-review-20261110-ts-narrowing",
+  "title": "ts-answer-review-20261110-ts-narrowing",
+  "sectionId": "typescript",
+  "subsectionId": "ts-narrowing",
+  "currentPass": "answers",
+  "goalIds": [
+    "core",
+    "ts-control-flow-narrowing",
+    "ts-type-predicates",
+    "ts-assertion-functions",
+    "ts-discriminated-unions",
+    "ts-narrowing-closures",
+    "ts-inferred-predicates",
+    "ts-guard-false-branch",
+    "ts-destructured-discriminant",
+    "ts-mutation-after-narrowing",
+    "ts-unknown-array-elements"
+  ],
+  "questionIds": [
+    "ts-control-flow-narrowing",
+    "ts-type-predicates",
+    "ts-assertion-functions",
+    "ts-discriminated-unions",
+    "ts-narrowing-closures",
+    "ts-inferred-predicates",
+    "ts-guard-false-branch",
+    "ts-destructured-discriminant",
+    "ts-mutation-after-narrowing",
+    "ts-unknown-array-elements"
+  ],
+  "scopePass": {
+    "status": "complete",
+    "remaining": []
+  },
+  "answerPass": {
+    "status": "complete",
+    "remaining": []
+  },
+  "baseline": [
+    {
+      "id": "ts-control-flow-narrowing",
+      "title": "Как TypeScript сужает тип через проверки и поток управления?",
+      "contentHash": "bd5e33646f69206fd9f00a388172316fc6d80fa4bea74accf7d1aed52c8f7a9e"
+    },
+    {
+      "id": "ts-type-predicates",
+      "title": "Как написать type guard с предикатом value is T?",
+      "contentHash": "0787353635dac9e94b61893bece8fa2394b3cf45293615a3f6f2a743a15ca603"
+    },
+    {
+      "id": "ts-assertion-functions",
+      "title": "Что означает asserts value is T в assertion function?",
+      "contentHash": "13dbb8d79d20afce0de09f8b91f45e8b57219a6d85935a8198d152e1ecc6dc97"
+    },
+    {
+      "id": "ts-discriminated-unions",
+      "title": "Как discriminated union помогает проверить полноту обработки вариантов?",
+      "contentHash": "4cee5bb2673f8ff171fdb51a75187e94b5cea0285e30894410bbaffdb73a3d7f"
+    },
+    {
+      "id": "ts-narrowing-closures",
+      "title": "Когда сужение типа сохраняется внутри callback, а когда теряется?",
+      "contentHash": "8cee4b29ef1499907edd0f061f9c33664c3d4e3c4401c881f7731001d8d0fd5b"
+    },
+    {
+      "id": "ts-inferred-predicates",
+      "title": "Когда filter выводит type predicate без явного value is T?",
+      "contentHash": "af358b19e79763a15cb2bf1ec7f79237b4170f5d65c20ea3d3e6441f5958c97d"
+    },
+    {
+      "id": "ts-guard-false-branch",
+      "title": "Почему предикат «это маленькое число» нельзя объявлять как value is number?",
+      "contentHash": "8bf7c87e7d91746f292f02511233dcd0cd1e347e4e068a364ba6952de6eaef00"
+    },
+    {
+      "id": "ts-destructured-discriminant",
+      "title": "Когда деструктуризация discriminated union сохраняет связь между полями?",
+      "contentHash": "3f853c29ce52d49f3929db5c1e69723c314733ccf0c99fd270c362ce0913293a"
+    },
+    {
+      "id": "ts-mutation-after-narrowing",
+      "title": "Может ли вызов другой функции сделать ранее суженное свойство небезопасным?",
+      "contentHash": "b0ae99973267fe492c840ba4e40fcb03ac7c4f25d061bec2edbce22158d2cd99"
+    },
+    {
+      "id": "ts-unknown-array-elements",
+      "title": "Почему Array.isArray недостаточно для проверки массива строк из unknown?",
+      "contentHash": "3fdfddba251a6c88edfbe31e3435e1d62e0aaae4f5d177b1b53336cd0dd01d89"
+    }
+  ],
+  "notes": [
+    "Сохраняются все существующие ID. Раздел охватывает разные навыки проверки типов: похожая терминология не служит основанием для слияния. Текущая задача - редактура ответов, без добавления повторных определений.",
+    "Завершено: 161 индивидуальный разбор, прежние ID сохранены. Oxfmt, content:build (1266 вопросов), полный content:check успешны. Примеры, приложение, UI/server проверки и seed не выполнялись."
+  ]
+}

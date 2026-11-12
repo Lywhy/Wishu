@@ -1,0 +1,132 @@
+{
+  "schemaVersion": 1,
+  "id": "react-answer-review-20261110-async-ui",
+  "title": "react-answer-review-20261110-async-ui",
+  "sectionId": "react",
+  "subsectionId": "async-ui",
+  "currentPass": "answers",
+  "goalIds": [
+    "core",
+    "react-fetch-races",
+    "react-lazy-suspense",
+    "react-transition-deferred",
+    "react-optimistic-ui",
+    "react-data-waterfalls",
+    "react-suspense-first-mount-state",
+    "react-transition-request-order",
+    "react-async-ui-statuses",
+    "react-async-http-status",
+    "react-async-abort-controller-lifetime",
+    "react-async-data-error-retry",
+    "react-async-dedup-cache-key",
+    "react-transition-cpu-boundary",
+    "react-suspense-layout-effect-reconnect",
+    "react-optimistic-overlap-rebase"
+  ],
+  "questionIds": [
+    "react-fetch-races",
+    "react-lazy-suspense",
+    "react-transition-deferred",
+    "react-optimistic-ui",
+    "react-data-waterfalls",
+    "react-suspense-first-mount-state",
+    "react-transition-request-order",
+    "react-async-ui-statuses",
+    "react-async-http-status",
+    "react-async-abort-controller-lifetime",
+    "react-async-data-error-retry",
+    "react-async-dedup-cache-key",
+    "react-transition-cpu-boundary",
+    "react-suspense-layout-effect-reconnect",
+    "react-optimistic-overlap-rebase"
+  ],
+  "scopePass": {
+    "status": "complete",
+    "remaining": []
+  },
+  "answerPass": {
+    "status": "complete",
+    "remaining": []
+  },
+  "baseline": [
+    {
+      "id": "react-fetch-races",
+      "title": "Как предотвратить гонку ответов при загрузке данных в эффекте?",
+      "contentHash": "3c2b8baf426338f3bdee028655af2fc1b9986ed07ae06ffcdaba74d028859246"
+    },
+    {
+      "id": "react-lazy-suspense",
+      "title": "Как работают lazy и Suspense и что они не отслеживают?",
+      "contentHash": "0c3a61f5f73e5311fe93a113313ad5b3e61eff5f87fb73bf66af9c2c3875ea7c"
+    },
+    {
+      "id": "react-transition-deferred",
+      "title": "Чем useTransition отличается от useDeferredValue?",
+      "contentHash": "b2bc7a5bc2a427846c1712089ac54db340545c5d5a3ce4679fae66d448627413"
+    },
+    {
+      "id": "react-optimistic-ui",
+      "title": "Как организовать оптимистичное обновление через useOptimistic?",
+      "contentHash": "a6739fce09a898df635fd003fabb0f200f411feed82eb3c02d742363dae3bb1f"
+    },
+    {
+      "id": "react-data-waterfalls",
+      "title": "Почему загрузка данных в дочерних эффектах может создавать waterfall?",
+      "contentHash": "cc7a042dd668148ecd5e193a671ccad783b04e4d12a808bdb8addac22db3ca7a"
+    },
+    {
+      "id": "react-suspense-first-mount-state",
+      "title": "Что происходит с локальным состоянием, если компонент при первом рендере попал в Suspense?",
+      "contentHash": "6981ae9ab65ca90d3bbe87cb3be57c1058ed58c2bf85fa32a23953f36fb80c6e"
+    },
+    {
+      "id": "react-transition-request-order",
+      "title": "Гарантирует ли startTransition правильный порядок завершения запросов?",
+      "contentHash": "cbeb23f1ddd900c5f95e98014d8b451c94c1e369cea880ce023583676e59e2e4"
+    },
+    {
+      "id": "react-async-ui-statuses",
+      "title": "Как различать загрузку, пустой ответ, ошибку и успешный результат в UI?",
+      "contentHash": "e6010bea00553121e6e062f10fb7c75f77a95a9552966a67a881753f5757a238"
+    },
+    {
+      "id": "react-async-http-status",
+      "title": "Почему fetch может завершиться успешно при HTTP 404 и как это учесть в React?",
+      "contentHash": "fdaa8efab93c5eb722f0f13411025b7c9567f59997e48dbd7cc062542e0cf8ce"
+    },
+    {
+      "id": "react-async-abort-controller-lifetime",
+      "title": "Что именно отменяет AbortController в эффекте и чего он не откатывает?",
+      "contentHash": "e44be892899bc38833938eb917f18fcdc371268fb3ee63bb346c1a7f87b234ad"
+    },
+    {
+      "id": "react-async-data-error-retry",
+      "title": "Как спроектировать повторную загрузку без потери полезных прежних данных?",
+      "contentHash": "99fd603b381654299733aab7fc633bd39287233042c8a5d5c7413eebdc6c5bb2"
+    },
+    {
+      "id": "react-async-dedup-cache-key",
+      "title": "Почему два компонента с одинаковыми данными могут отправить два запроса?",
+      "contentHash": "8a6819b3df35c1fe446ffd6afc79d24df9c503adb011b6fef00148da5c42f74a"
+    },
+    {
+      "id": "react-transition-cpu-boundary",
+      "title": "Почему startTransition не переносит тяжёлый синхронный расчёт в другой поток?",
+      "contentHash": "9837f7f5a09a47edd6fee26f2ddb1de8a4a21ac11cb45e8839e91b9be5a47306"
+    },
+    {
+      "id": "react-suspense-layout-effect-reconnect",
+      "title": "Что происходит с layout-эффектами, когда Suspense повторно скрывает показанный контент?",
+      "contentHash": "58dea6faa1d193a0cbced5e67bae586e16d6ca3eafd7f7913d329dafa06b4ec6"
+    },
+    {
+      "id": "react-optimistic-overlap-rebase",
+      "title": "Как обрабатывать несколько перекрывающихся оптимистичных изменений одной записи?",
+      "contentHash": "d2d6981f31a3d394e9385b2626759244a2a9e3655156362bb7e7671001614ab0"
+    }
+  ],
+  "notes": [
+    "Сохраняются все 300 ID, включая Redux и Zustand внутри React. Дорабатываются ответы, а не количество вопросов. Схожие формулировки сохраняются при разных учебных целях; связи указываются через канонические вопросы.",
+    "Завершено 2026-11-12: все 300 ответов прочитаны и расширены индивидуальными разборами; ID сохранены. Oxfmt, content:build и полный content:check успешны (1266 вопросов). Примеры, приложение, UI/server проверки, миграции и seed не запускались."
+  ]
+}

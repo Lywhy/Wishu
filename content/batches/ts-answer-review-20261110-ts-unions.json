@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "id": "ts-answer-review-20261110-ts-unions",
+  "title": "ts-answer-review-20261110-ts-unions",
+  "sectionId": "typescript",
+  "subsectionId": "ts-unions",
+  "currentPass": "answers",
+  "goalIds": ["core", "ts-union-types", "ts-intersection-types", "ts-union-of-functions"],
+  "questionIds": ["ts-union-types", "ts-intersection-types", "ts-union-of-functions"],
+  "scopePass": {
+    "status": "complete",
+    "remaining": []
+  },
+  "answerPass": {
+    "status": "complete",
+    "remaining": []
+  },
+  "baseline": [
+    {
+      "id": "ts-union-types",
+      "title": "Что означает union и какие операции доступны до сужения?",
+      "contentHash": "d6a19b9ddd8587b4aebe866c534241e3993c276c1a7cc8f5dccb094ec5118777"
+    },
+    {
+      "id": "ts-intersection-types",
+      "title": "Как intersection объединяет требования и что происходит с конфликтующими свойствами?",
+      "contentHash": "6d460e58183fc8661f29f5cacc03740b37ca53a9b6c56f10c86b9415d019d3a4"
+    },
+    {
+      "id": "ts-union-of-functions",
+      "title": "Почему union функций не равен функции с union-параметром?",
+      "contentHash": "78e46699287995d777865e1ef88579a69a356becfa3bed2ec695ee2ed3ad89d3"
+    }
+  ],
+  "notes": [
+    "Сохраняются все существующие ID. Раздел охватывает разные навыки проверки типов: похожая терминология не служит основанием для слияния. Текущая задача - редактура ответов, без добавления повторных определений.",
+    "Завершено: 161 индивидуальный разбор, прежние ID сохранены. Oxfmt, content:build (1266 вопросов), полный content:check успешны. Примеры, приложение, UI/server проверки и seed не выполнялись."
+  ]
+}

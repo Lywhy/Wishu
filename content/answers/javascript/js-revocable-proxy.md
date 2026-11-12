@@ -2,14 +2,29 @@
 
 <!-- wishu:answer-block -->
 
-### Механизм и границы
+### Как это работает
 
 Отзыв не уничтожает target и не забирает копии данных или прямые ссылки, которые были выданы раньше. Если handler уже передал наружу вложенный target-object, тот не становится автоматически отозванным.
 
 Это инструмент управления конкретным посредником, а не самостоятельная граница безопасности для произвольного недоверенного кода.
 
-<!-- wishu:answer-block -->
+### Пример и его разбор
 
-### Источник
+```javascript
+const target = { name: "Анна" }
+const { proxy, revoke } = Proxy.revocable(target, {})
+console.log(proxy.name) // Анна
+revoke()
+// proxy.name // TypeError
+console.log(target.name) // Оригинал существует.
+```
 
-[MDN: Global_Objects/Proxy/revocable](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Proxy/revocable).
+До revoke чтение имени проходит через посредника к target. После отзыва аналогичное чтение через proxy больше недоступно, но обращение к сохранённому target продолжает работать. Отзыв полезен для ограничения срока использования конкретного интерфейса, однако не отменяет уже выданные прямые ссылки и копии данных.
+
+### Типичная ошибка
+
+> Считать revoke удалением оригинала или отменой ранее скопированных значений.
+
+### Источники
+
+[MDN: Global_Objects/Proxy/revocable](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Proxy/revocable)

@@ -2,20 +2,43 @@
 
 <!-- wishu:answer-block -->
 
-### Механизм и границы
+### Как это работает
 
 Освобождение должно происходить при успехе и исключении. Определите порядок очереди, отмену ожидающего, reentrancy и риск deadlock. Локальный mutex не синхронизирует другие вкладки, процессы или клиентов сервера.
 
 Пример ниже показывает минимальную FIFO-сериализацию без reentrancy и отмены; повторно ожидать ту же секцию из неё самой нельзя.
 
-<!-- wishu:answer-block -->
+### Пример и его разбор
+
+```javascript
+function serialize() {
+  let tail = Promise.resolve()
+  return async (task) => {
+    const previous = tail
+    let release
+    tail = new Promise((resolve) => {
+      release = resolve
+    })
+    await previous
+    try {
+      return await task()
+    } finally {
+      release()
+    }
+  }
+}
+```
+
+Каждая задача запоминает прежний tail и создаёт новое ожидание для следующего участника. После завершения предыдущего она выполняется, а `finally` освобождает очередь даже при ошибке. Это локальная сериализация, поэтому она не защищает другие вкладки или сервер. Повторное ожидание той же секции изнутри самой задачи в таком минимальном контракте создаёт взаимную блокировку.
+
+### Типичная ошибка
+
+> Забывать `finally` и навсегда блокировать очередь после первой ошибки.
 
 ### Для закрепления
 
 - [Как возникает race condition в однопоточном JavaScript?](/questions/js-await-race-condition)
 
-<!-- wishu:answer-block -->
+### Источники
 
-### Источник
-
-[MDN: Global_Objects/Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise).
+[MDN: Global_Objects/Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)

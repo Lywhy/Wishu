@@ -2,21 +2,32 @@
 
 <!-- wishu:answer-block -->
 
-### Механизм и границы
+### Как это работает
 
 Поэтому передача вызова через proxy.method() может вызвать TypeError даже при пустом handler. Привязка метода к target иногда помогает конкретному API, но меняет receiver и не является универсально прозрачным решением.
 
 Продумайте, должны ли возвращаемые значения, идентичность функций, наследование и внутренние вызовы тоже проходить через посредник. Прокси не равен произвольному объектному декоратору без ограничений.
 
-<!-- wishu:answer-block -->
+### Пример и его разбор
+
+```javascript
+const map = new Map([["a", 1]])
+const proxy = new Proxy(map, {})
+// proxy.get("a") // TypeError: получатель не имеет нужного Map-слота.
+console.log(map.get.call(map, "a")) // 1
+```
+
+Чтение proxy.get находит метод `Map`, однако последующий вызов передаёт ему proxy как this. Внутреннего состояния `Map` у этого посредника нет, и проверка получателя завершается ошибкой. Явный вызов с исходным `Map` работает, потому что нужные внутренние данные принадлежат именно ему.
+
+### Типичная ошибка
+
+> Обещать полную прозрачность любого объекта после `new` Proxy(target, {}).
 
 ### Для закрепления
 
 - [Как Proxy перехватывает операции и что такое ловушки?](/questions/proxy-traps)
 - [Как работают #приватные элементы и доступны ли они подклассу?](/questions/class-private-elements)
 
-<!-- wishu:answer-block -->
+### Источники
 
-### Источник
-
-[MDN: Global_Objects/Proxy](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Proxy).
+[MDN: Global_Objects/Proxy](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Proxy)

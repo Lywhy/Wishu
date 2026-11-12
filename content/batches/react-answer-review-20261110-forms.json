@@ -1,0 +1,167 @@
+{
+  "schemaVersion": 1,
+  "id": "react-answer-review-20261110-forms",
+  "title": "react-answer-review-20261110-forms",
+  "sectionId": "react",
+  "subsectionId": "forms",
+  "currentPass": "answers",
+  "goalIds": [
+    "core",
+    "react-controlled-input",
+    "react-form-submit",
+    "react-accessible-fields",
+    "react-action-state",
+    "react-form-status",
+    "react-input-composition",
+    "react-select-textarea-values",
+    "react-file-input-contract",
+    "react-number-input-draft",
+    "react-form-reset-contract",
+    "react-form-checkbox-group",
+    "react-form-radio-group",
+    "react-form-submit-button-type",
+    "react-form-repeated-names",
+    "react-form-native-validity",
+    "react-form-readonly-disabled",
+    "react-form-submitter-intent",
+    "react-form-server-field-errors",
+    "react-form-keyboard-ime-submit",
+    "react-form-action-error-boundary"
+  ],
+  "questionIds": [
+    "react-controlled-input",
+    "react-form-submit",
+    "react-accessible-fields",
+    "react-action-state",
+    "react-form-status",
+    "react-input-composition",
+    "react-select-textarea-values",
+    "react-file-input-contract",
+    "react-number-input-draft",
+    "react-form-reset-contract",
+    "react-form-checkbox-group",
+    "react-form-radio-group",
+    "react-form-submit-button-type",
+    "react-form-repeated-names",
+    "react-form-native-validity",
+    "react-form-readonly-disabled",
+    "react-form-submitter-intent",
+    "react-form-server-field-errors",
+    "react-form-keyboard-ime-submit",
+    "react-form-action-error-boundary"
+  ],
+  "scopePass": {
+    "status": "complete",
+    "remaining": []
+  },
+  "answerPass": {
+    "status": "complete",
+    "remaining": []
+  },
+  "baseline": [
+    {
+      "id": "react-controlled-input",
+      "title": "Чем управляемое поле отличается от неуправляемого?",
+      "contentHash": "ace71d6319ee7e3716a09fc46d24afaa8e24fa61c83d89aba276cf0a60880b41"
+    },
+    {
+      "id": "react-form-submit",
+      "title": "Как обработать отправку формы и получить её данные?",
+      "contentHash": "8e04881d600a9147068b62e5ce6ce4f77bdd869e3792186f6c8fb92df0b1bcb9"
+    },
+    {
+      "id": "react-accessible-fields",
+      "title": "Как связать label и сообщение об ошибке с полем?",
+      "contentHash": "77086c2884960a2f00d85c915557f7bc15162ec38eb2be5bc70993c13fc2fed4"
+    },
+    {
+      "id": "react-action-state",
+      "title": "Как useActionState помогает обрабатывать форму в React 19?",
+      "contentHash": "20686c8dfa8266818f315dfcf8a8ccecc546e835cdfd7f60c091deb0d2ccb51d"
+    },
+    {
+      "id": "react-form-status",
+      "title": "Почему useFormStatus не видит форму из того же компонента?",
+      "contentHash": "1982fe9463d65433ccaf82d780cb2ae7b0e8eeb8d986205a66047b5c4a1818e8"
+    },
+    {
+      "id": "react-input-composition",
+      "title": "Почему форматирование управляемого поля может ломать каретку и IME-ввод?",
+      "contentHash": "afe111aef3951bb96e966b9d06177711411c1f9f4e8d94c30a89ab27aa322757"
+    },
+    {
+      "id": "react-select-textarea-values",
+      "title": "Как управлять select и textarea в React, включая multiple?",
+      "contentHash": "cab437595ee69eb675963767ca531f0e5c6d9812171ef2e19bec97e905d31e7a"
+    },
+    {
+      "id": "react-file-input-contract",
+      "title": "Как читать выбранные файлы в React и почему нельзя задавать путь через value?",
+      "contentHash": "e695f93c57d2ba00efab3b45c68cd1a4c30a8e58a83cf324ac0c755a61d5591e"
+    },
+    {
+      "id": "react-number-input-draft",
+      "title": "Почему число в input полезно хранить как строковый черновик?",
+      "contentHash": "accdc8846d4815448a62f0fd18f18b23c944bc0c28d03fe6661d2d5f33dccea5"
+    },
+    {
+      "id": "react-form-reset-contract",
+      "title": "Что сбрасывает form.reset() и как сбросить управляемые поля?",
+      "contentHash": "d89da3f836fcba298b21bd0c92c0f1113224b5cc42456a633ab63a9828a7ff7e"
+    },
+    {
+      "id": "react-form-checkbox-group",
+      "title": "Как управлять несколькими checkbox с независимыми значениями?",
+      "contentHash": "423b54404de2928f23fa74d7350a5db8f3c1c60de1fd884121eefb702eb54ac2"
+    },
+    {
+      "id": "react-form-radio-group",
+      "title": "Как связать группу radio с одним React-state?",
+      "contentHash": "15f694f00101b1f62452d0989cc1f2e61d1eb0b7af48d30a673a63febe68450a"
+    },
+    {
+      "id": "react-form-submit-button-type",
+      "title": "Почему вспомогательная кнопка внутри формы неожиданно отправляет данные?",
+      "contentHash": "0024de5256f8a12e4fd6d8d540cb01b2ffffe95a25d0c87bdaba2aaec606b2e3"
+    },
+    {
+      "id": "react-form-repeated-names",
+      "title": "Как прочитать несколько значений одного name через FormData?",
+      "contentHash": "22462098d386e32689a72e81528e8eac7fa63c8f64e89a203be3405460e19e4b"
+    },
+    {
+      "id": "react-form-native-validity",
+      "title": "Как использовать required и onInvalid вместе с React-состоянием ошибки?",
+      "contentHash": "851c09d84f33f036727fc068b55359389faba5c6217c0fa114092f56bb145c61"
+    },
+    {
+      "id": "react-form-readonly-disabled",
+      "title": "Чем readOnly отличается от disabled при редактировании и отправке формы?",
+      "contentHash": "b17d4c89c8574236ddbcc3e28de0c549466a4e2a5dfe885503b8f8a6c721ac6b"
+    },
+    {
+      "id": "react-form-submitter-intent",
+      "title": "Как различить несколько submit-кнопок одной формы?",
+      "contentHash": "8cf43d079612ccafedfcb07b12102a41022ff5bdff7d27d098b9e28fb130597f"
+    },
+    {
+      "id": "react-form-server-field-errors",
+      "title": "Как связать ошибки полей от сервера с текущей попыткой отправки?",
+      "contentHash": "dc7fb1f26626be6aa4aba7b39184c4dd17bf58a88b9f73f52c86d0b0e5ec5f09"
+    },
+    {
+      "id": "react-form-keyboard-ime-submit",
+      "title": "Почему Enter во время IME-композиции не должен преждевременно отправлять форму?",
+      "contentHash": "a698d258fe9e65730696765ada2be82e6ffd5fd6109dc0ce499a52d6afdd9f49"
+    },
+    {
+      "id": "react-form-action-error-boundary",
+      "title": "Какие ошибки React Action могут попасть в Error Boundary, а какие лучше вернуть как данные?",
+      "contentHash": "de06b2a0ef76254d2404be7bb36a5c06cf86d9e2fc2e2807798101ffe8e4431f"
+    }
+  ],
+  "notes": [
+    "Сохраняются все 300 ID, включая Redux и Zustand внутри React. Дорабатываются ответы, а не количество вопросов. Схожие формулировки сохраняются при разных учебных целях; связи указываются через канонические вопросы.",
+    "Завершено 2026-11-12: все 300 ответов прочитаны и расширены индивидуальными разборами; ID сохранены. Oxfmt, content:build и полный content:check успешны (1266 вопросов). Примеры, приложение, UI/server проверки, миграции и seed не запускались."
+  ]
+}

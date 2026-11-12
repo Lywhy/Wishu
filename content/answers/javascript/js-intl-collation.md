@@ -2,14 +2,26 @@
 
 <!-- wishu:answer-block -->
 
-### Механизм и границы
+### Как это работает
 
 Одинаковость по comparator не является универсальной идентичностью пользователя или ключа безопасности. Две строки могут считаться равными для поиска, но оставаться разными сохранёнными значениями.
 
 Для большой сортировки удобно создать formatter один раз. Используйте знак результата, а не жёсткое требование -1/1. Для машинного стабильного протокола отдельно определите порядок.
 
-<!-- wishu:answer-block -->
+### Пример и его разбор
 
-### Источник
+```javascript
+const compare = new Intl.Collator("en", { numeric: true, sensitivity: "base" }).compare
+console.log(compare("file2", "file10") < 0) // true
+console.log(compare("a", "A") === 0) // true для выбранной политики.
+```
 
-[MDN: Global_Objects/Intl/Collator](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/Collator).
+Numeric упорядочивает file2 перед file10, а sensitivity base делает a и A эквивалентными для выбранного сравнения. Это удобно для поиска или отображения. Для уникальности учётных записей такую эквивалентность нельзя использовать без отдельного предметного правила.
+
+### Типичная ошибка
+
+> Использовать мягкое поисковое сравнение как уникальный security-ключ аккаунта.
+
+### Источники
+
+[MDN: Global_Objects/Intl/Collator](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/Collator)

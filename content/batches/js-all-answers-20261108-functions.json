@@ -1,0 +1,294 @@
+{
+  "schemaVersion": 1,
+  "id": "js-all-answers-20261108-functions",
+  "title": "js-all-answers-20261108-functions",
+  "sectionId": "javascript",
+  "subsectionId": "functions",
+  "currentPass": "answers",
+  "goalIds": [
+    "core",
+    "function-declarations",
+    "arrow-functions",
+    "function-return",
+    "function-this",
+    "function-arguments",
+    "rest-parameters",
+    "default-parameters",
+    "closures",
+    "iife",
+    "function-constructor",
+    "call-apply",
+    "function-bind",
+    "lost-this",
+    "function-to-string",
+    "factory-functions",
+    "function-wrappers",
+    "generator-functions",
+    "iterator-protocols",
+    "closures-in-loops",
+    "strict-mode",
+    "callback-functions",
+    "callback-hell",
+    "sync-async-callbacks",
+    "recursion",
+    "tail-recursion",
+    "recursion-depth",
+    "higher-order-functions",
+    "pure-functions",
+    "stateless-functions",
+    "currying-partial-application",
+    "function-composition",
+    "function-memoization",
+    "debounce-throttle",
+    "js-default-parameter-scope",
+    "js-function-metadata",
+    "js-new-target-construction",
+    "js-cache-key-policy",
+    "js-graph-traversal-cycles"
+  ],
+  "questionIds": [
+    "function-declarations",
+    "arrow-functions",
+    "function-return",
+    "function-this",
+    "function-arguments",
+    "rest-parameters",
+    "default-parameters",
+    "closures",
+    "iife",
+    "function-constructor",
+    "call-apply",
+    "function-bind",
+    "lost-this",
+    "function-to-string",
+    "factory-functions",
+    "function-wrappers",
+    "generator-functions",
+    "iterator-protocols",
+    "closures-in-loops",
+    "strict-mode",
+    "callback-functions",
+    "callback-hell",
+    "sync-async-callbacks",
+    "recursion",
+    "tail-recursion",
+    "recursion-depth",
+    "higher-order-functions",
+    "pure-functions",
+    "stateless-functions",
+    "currying-partial-application",
+    "function-composition",
+    "function-memoization",
+    "debounce-throttle",
+    "js-default-parameter-scope",
+    "js-function-metadata",
+    "js-new-target-construction",
+    "js-cache-key-policy",
+    "js-graph-traversal-cycles"
+  ],
+  "scopePass": {
+    "status": "complete",
+    "remaining": []
+  },
+  "answerPass": {
+    "status": "complete",
+    "remaining": []
+  },
+  "baseline": [
+    {
+      "id": "function-declarations",
+      "title": "Чем отличаются Function Declaration и Function Expression?",
+      "contentHash": "a0b40e924992a38cce28905b66b417b042e615297880aa73cf514157a5657d2a"
+    },
+    {
+      "id": "arrow-functions",
+      "title": "Чем стрелочные функции отличаются от обычных и когда их не стоит использовать?",
+      "contentHash": "761e19e350d5afc6207d858892e1eb256819f7fdc584ef503fe3d18df53346b0"
+    },
+    {
+      "id": "function-return",
+      "title": "Что возвращает функция без return?",
+      "contentHash": "73c21d349054d41c22a466e27541b132a50d3d2072af9b9fcc94e63be92da3f1"
+    },
+    {
+      "id": "function-this",
+      "title": "От чего зависит this внутри функции?",
+      "contentHash": "e8cda2d121544f8b7efe3283295a4500d2932c9a6772d679487e6c5fd927b335"
+    },
+    {
+      "id": "function-arguments",
+      "title": "Что такое arguments и есть ли он у стрелочной функции?",
+      "contentHash": "9f4f33ee2dbd8c9e7048d1fbe61c5f0300f87ca7ac1e66dbb45ef1afc5efadb5"
+    },
+    {
+      "id": "rest-parameters",
+      "title": "Как работают rest-параметры и чем они отличаются от arguments?",
+      "contentHash": "a8d05d8737ed29a2e8bdb1b4a232dc1674eb36ee82291f24c31f4a4dc5e45f89"
+    },
+    {
+      "id": "default-parameters",
+      "title": "Когда срабатывают параметры по умолчанию?",
+      "contentHash": "1b3e004e062453fa4502615483b2df8a6a18f7d6f628cf47a247cc09069d6d3c"
+    },
+    {
+      "id": "closures",
+      "title": "Что такое замыкание и когда оно полезно?",
+      "contentHash": "bcdad61e6d0c7ea99bc2fdfa8e3130d9e98f185b46e20f232b49ab629c38eb4b"
+    },
+    {
+      "id": "iife",
+      "title": "Что такое IIFE и зачем её используют?",
+      "contentHash": "8c261d7c4a815b09bbe5c7aa84f9bad7a3631d01a62960888f601fb2575099b2"
+    },
+    {
+      "id": "function-constructor",
+      "title": "Как работает конструктор Function и чем он отличается от обычной функции?",
+      "contentHash": "eed8117a560d60c3167567bc558220559e2339e3cb71283f3fb403a6b464b24a"
+    },
+    {
+      "id": "call-apply",
+      "title": "Чем отличаются Function.prototype.call и apply?",
+      "contentHash": "2be12109f22d68abae970db8c71f397d5046509b48ca408f066bcdff3db5df2f"
+    },
+    {
+      "id": "function-bind",
+      "title": "Что возвращает bind и как он связывает this и аргументы?",
+      "contentHash": "03288e66025bccd74d1bfa8e5980a947d3472bb36e0ca447dcc550bd58e96de6"
+    },
+    {
+      "id": "lost-this",
+      "title": "Почему функция теряет this при передаче метода в callback?",
+      "contentHash": "04cdcb9f2904957cedf9d3da340501d322db4af55e8bd20bb5b40b44a5e6c1c7"
+    },
+    {
+      "id": "function-to-string",
+      "title": "Что возвращает toString у функции?",
+      "contentHash": "36b8dc5dbe777c022b3270c4d1b98cb8b1e6bb84309f79961d7f49fbef158eff"
+    },
+    {
+      "id": "factory-functions",
+      "title": "Что такое фабричная функция и чем она отличается от конструктора?",
+      "contentHash": "315493b209544bfd42ddf710cd25686c1069ff15333c83f658c14aede3707b3a"
+    },
+    {
+      "id": "function-wrappers",
+      "title": "Что такое функция-обёртка и как с её помощью декорировать поведение?",
+      "contentHash": "d26d990cbd52f257e89a56d9f119829031bc4793a9de89349b379d81b5531b74"
+    },
+    {
+      "id": "generator-functions",
+      "title": "Как работают function*, yield и return в генераторе?",
+      "contentHash": "fcd086dbbf7d8cca7e0021f69a7654d9fd46a234a210d941b99c01e67b1ba19c"
+    },
+    {
+      "id": "iterator-protocols",
+      "title": "Как связаны генераторы, итераторы и Symbol.iterator?",
+      "contentHash": "02442f80dd6035a4092a30b1c749e6114c06db6505324aa30febbeaa074c541c"
+    },
+    {
+      "id": "closures-in-loops",
+      "title": "Почему var в цикле приводит к неожиданным значениям в замыканиях?",
+      "contentHash": "8ebaf6f301a48fd6fa43dc60e096404f51030077add427edcde51eec64d20add"
+    },
+    {
+      "id": "strict-mode",
+      "title": "Что меняет \"use strict\" и где строгий режим уже включён?",
+      "contentHash": "82367652dce90389403c543360af0d7c4746898bd72c32c54c2acc69d9525d25"
+    },
+    {
+      "id": "callback-functions",
+      "title": "Что такое callback и кто определяет его аргументы?",
+      "contentHash": "cd4eeb549fe933fce81f94693ca618434ab0761082d8cc9204e6456b9792f25c"
+    },
+    {
+      "id": "callback-hell",
+      "title": "Что такое callback hell и как уменьшить вложенность?",
+      "contentHash": "ec363a771c5f076c506999112f7acc7a5610d3df52dae780016d6b963fefc8c3"
+    },
+    {
+      "id": "sync-async-callbacks",
+      "title": "Чем синхронный callback отличается от асинхронного?",
+      "contentHash": "653e804c2234103ac3f3dcc6bc649720a7db5d9ed29adf39039a2822e6d9cfa9"
+    },
+    {
+      "id": "recursion",
+      "title": "Что такое рекурсия и зачем ей базовый случай?",
+      "contentHash": "40a349d7d51b1f47ba71aecad91d6acb5c950a4ba8dd6eae02c6673f256a62c6"
+    },
+    {
+      "id": "tail-recursion",
+      "title": "Что такое хвостовая рекурсия и гарантирует ли она экономию стека?",
+      "contentHash": "95d7f443c46a5864807033252821badb034d931f35b45e3dfd6bda2c92fa8704"
+    },
+    {
+      "id": "recursion-depth",
+      "title": "Как избежать переполнения стека и заменить глубокую рекурсию циклом?",
+      "contentHash": "a5ad62e58f48478e0d7d65670420a1d267cb0c7ccb22d62748a44e3fcc6551d4"
+    },
+    {
+      "id": "higher-order-functions",
+      "title": "Что такое функция высшего порядка?",
+      "contentHash": "e0869de7d8f2b955f8ef765b3ae74dd2785e8286cf6cf3b02f8d7607e00f8b7f"
+    },
+    {
+      "id": "pure-functions",
+      "title": "Что такое чистая функция и какие действия считаются побочными эффектами?",
+      "contentHash": "674f108ab136ef81f9a19b644368caa9641756b7f191997212a5c09b08302600"
+    },
+    {
+      "id": "stateless-functions",
+      "title": "Что означает функция без состояния и обязательно ли она чистая?",
+      "contentHash": "13c5328116c1ccc5a7a10f08c1c687bcc44d907c8f728d0109b526beea745b18"
+    },
+    {
+      "id": "currying-partial-application",
+      "title": "Чем каррирование отличается от частичного применения?",
+      "contentHash": "be474efaccaa8fd81e29e8d32db0f6ae9177b0760e889f0552d6abd9f5bf97c0"
+    },
+    {
+      "id": "function-composition",
+      "title": "Что такое композиция функций и как реализовать compose?",
+      "contentHash": "41db140b095c893aebc6e2b8c28f853d8cb199f0f90cbb92e6656dcb37fc9fde"
+    },
+    {
+      "id": "function-memoization",
+      "title": "Что такое мемоизация и какие ограничения есть у кеша функции?",
+      "contentHash": "5bd1ddf1dc37f85946ecca24ae4eaacbab17c4212118ac8292a8e134dc196d7e"
+    },
+    {
+      "id": "debounce-throttle",
+      "title": "Чем debounce отличается от throttle?",
+      "contentHash": "cda28c20c4e9e6e662f5c0f6cb2b1f2ec5907fcac6aa48e3be0157fc5b666886"
+    },
+    {
+      "id": "js-default-parameter-scope",
+      "title": "В какой области вычисляются параметры по умолчанию?",
+      "contentHash": "986c3bcd35f24859e046e2b38412571daf994d31f981895d12e20de3f31d81c4"
+    },
+    {
+      "id": "js-function-metadata",
+      "title": "Что показывают length и name функции и почему это не строгий контракт вызова?",
+      "contentHash": "7b0ecfafd78fad78266501ac1132ef8aa49934623d3f66b4a290dced768ef178"
+    },
+    {
+      "id": "js-new-target-construction",
+      "title": "Как new.target и Reflect.construct отделяют вызываемый конструктор от создаваемого прототипа?",
+      "contentHash": "f1c0ca867454ba1d7e9e8c20cb83330f84ff29e38150d5f984877e6bb0223201"
+    },
+    {
+      "id": "js-cache-key-policy",
+      "title": "Как выбрать ключ мемоизации для нескольких аргументов и контекста вызова?",
+      "contentHash": "bb785cb5093b7af3fa390c1bf05df7a0bf58feb5ad592507bb3f0ffb6a967ef4"
+    },
+    {
+      "id": "js-graph-traversal-cycles",
+      "title": "Как обойти объектный граф с циклами и не обработать узел повторно?",
+      "contentHash": "b6b3cc628bc9b7d98eecb52db032c3c8fd26a4ad06ca21c170721d145f64078a"
+    }
+  ],
+  "notes": [
+    "Полный редакторский проход JavaScript: 346 ID сохраняются, добавлений/слияний нет. 12 ответов предыдущего пакета сохраняют готовый связный разбор. Остальным нужны индивидуальные пояснения к механизму и примеру, а не однотипная вводная фраза. Ответы ITBooster не используются.",
+    "Для оставшихся ответов подготовлены индивидуальные пояснения примеров; код перенесён в общий Markdown. В упражнениях на чтение кода условие сохранено отдельно. Примеры не запускались.",
+    "Завершено: Oxfmt, content:build, полный content:check. В платформе 1266 вопросов; в JavaScript сохранены 346 ID, обновлены оставшиеся 334 ответа, новых/удалённых ID нет. Код примеров и seed не выполнялись."
+  ]
+}

@@ -2,14 +2,37 @@
 
 <!-- wishu:answer-block -->
 
-### Механизм и границы
+### Как это работает
 
 Добавьте фигурные скобки вокруг тела ветви, если ей нужны собственные временные имена. Break управляет выходом из switch, но не создаёт scope.
 
 При переходе в другую ветвь объявление из невыполненной ветви не становится безопасно доступной переменной: действуют правила лексической инициализации. Не полагайтесь на порядок case как на последовательность создания всех let.
 
-<!-- wishu:answer-block -->
+### Пример и его разбор
 
-### Источник
+```javascript
+function label(kind) {
+  switch (kind) {
+    case "a": {
+      const text = "A"
+      return text
+    }
+    case "b": {
+      const text = "B"
+      return text
+    }
+    default:
+      return "?"
+  }
+}
+```
 
-[MDN: Statements/switch](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/switch).
+В примере фигурные скобки создают независимую область для каждого text, поэтому одинаковые имена не конфликтуют. Без этих блоков два const относились бы к одной области switch и привели бы к ошибке объявления. break или `return` меняют путь выполнения, но не устраняют статический конфликт имён внутри общей лексической области.
+
+### Типичная ошибка
+
+> Повторять одно const-имя в соседних case без блоков.
+
+### Источники
+
+[MDN: Statements/switch](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/switch)

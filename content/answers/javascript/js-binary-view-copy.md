@@ -1,21 +1,33 @@
-**Subarray создаёт представление на тот же буфер, а slice копирует выбранные элементы в новый буфер по своему контракту. Изменения через общее представление видны другим владельцам той же памяти.**
+**Subarray создаёт представление на тот же буфер, а `slice` копирует выбранные элементы в новый буфер по своему контракту. Изменения через общее представление видны другим владельцам той же памяти.**
 
 <!-- wishu:answer-block -->
 
-### Механизм и границы
+### Как это работает
 
 Небольшой subarray может удерживать весь большой ArrayBuffer. Для независимого хранения иногда нужна копия, даже если срез выглядит дешёвым.
 
 Не переносите правила обычного Array или серверного Buffer на все бинарные контейнеры: у них могут быть другие методы и соглашения.
 
-<!-- wishu:answer-block -->
+### Пример и его разбор
+
+```javascript
+const data = new Uint8Array([1, 2, 3])
+const view = data.subarray(1)
+const copy = data.slice(1)
+view[0] = 9
+console.log(data[1], copy[0]) // 9, 2
+```
+
+View и data обращаются к одним байтам, поэтому изменение view[0] видно как data[1]. Copy хранит собственную копию и сохраняет 2. Выбор между ними зависит от того, нужно ли разделять память или получить независимый снимок.
+
+### Типичная ошибка
+
+> Передать subarray как независимую копию и неожиданно получить взаимные изменения.
 
 ### Для закрепления
 
 - [Как связаны ArrayBuffer, TypedArray и DataView?](/questions/typed-arrays)
 
-<!-- wishu:answer-block -->
+### Источники
 
-### Источник
-
-[MDN: Global_Objects/TypedArray](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray).
+[MDN: Global_Objects/TypedArray](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray)

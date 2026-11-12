@@ -2,14 +2,26 @@
 
 <!-- wishu:answer-block -->
 
-### Механизм и границы
+### Как это работает
 
 Origin обычно определяется схемой, host и портом. Некоторые запросы требуют preflight, другие могут отправиться без него, но ответ останется недоступным. Для credentialed-доступа нужна согласованная серверная политика, а не один credentials: include.
 
 Mode: no-cors не делает ответ свободно читаемым: получается ограниченный opaque-контракт. Same-site у cookie и same-origin не являются одинаковыми границами. Сервер всё равно проверяет права и защищает изменяющие операции.
 
-<!-- wishu:answer-block -->
+### Пример и его разбор
 
-### Источник
+```javascript
+// fetch("https://api.example.org/data", { credentials: "include" })
+// Сервер должен разрешить подходящий origin и credentialed-доступ.
+// Добавление mode: "no-cors" не откроет response.json().
+```
 
-[MDN: CORS](https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/CORS).
+Credentials include лишь запрашивает отправку подходящих credentials и не выдаёт JavaScript право прочитать ответ. Это право должно соответствовать серверной CORS-политике. Opaque-ответ при no-cors не позволяет обойти ограничение и получить данные через json.
+
+### Типичная ошибка
+
+> Использовать CORS как единственную защиту серверного API или чинить ошибку через no-cors.
+
+### Источники
+
+[MDN: CORS](https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/CORS)

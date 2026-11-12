@@ -55,24 +55,6 @@ export function QuestionSubsectionPage() {
         meta={<p className="text-xs font-medium text-primary">{section.title}</p>}
         questionHeading
         headingProps={{ tabIndex: -1 }}
-        actions={
-          <Button
-            nativeButton={false}
-            variant="outline"
-            render={
-              <Link
-                to={
-                  "/questions/new?section=" +
-                  encodeURIComponent(section.id) +
-                  "&subsection=" +
-                  encodeURIComponent(subsection.id)
-                }
-              />
-            }
-          >
-            Добавить вопрос
-          </Button>
-        }
       />
       <div className="grid items-start gap-6 lg:grid-cols-[minmax(0,1fr)_280px]">
         <div className="min-w-0 space-y-3">

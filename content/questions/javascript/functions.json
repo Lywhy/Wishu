@@ -9,7 +9,7 @@
       "title": "Функции",
       "description": "Обзор и взаимосвязи навыков: Вызовы и аргументы, this, замыкания, генераторы, рекурсия и функциональные приёмы.",
       "requiredDifficulties": [],
-      "reviewed": false,
+      "reviewed": true,
       "priority": "core",
       "relatedSkillIds": [
         "function-declarations",
@@ -57,7 +57,7 @@
       "title": "Чем отличаются Function Declaration и Function Expression?",
       "description": "Объяснить и применить правило с учётом его границ: Объявление функции и вычисление выражения с функцией происходят по разным правилам.",
       "requiredDifficulties": ["Базовый"],
-      "reviewed": false,
+      "reviewed": true,
       "priority": "core",
       "relatedSkillIds": []
     },
@@ -66,7 +66,7 @@
       "title": "Чем стрелочные функции отличаются от обычных и когда их не стоит использовать?",
       "description": "Объяснить и применить правило с учётом его границ: Выбирайте стрелку, когда нужен внешний this, и обычную функцию, когда важен способ вызова.",
       "requiredDifficulties": ["Базовый"],
-      "reviewed": false,
+      "reviewed": true,
       "priority": "core",
       "relatedSkillIds": []
     },
@@ -75,7 +75,7 @@
       "title": "Что возвращает функция без return?",
       "description": "Объяснить и применить правило с учётом его границ: Фигурные скобки тела стрелки требуют явного return для возврата значения.",
       "requiredDifficulties": ["Базовый"],
-      "reviewed": false,
+      "reviewed": true,
       "priority": "core",
       "relatedSkillIds": []
     },
@@ -84,7 +84,7 @@
       "title": "От чего зависит this внутри функции?",
       "description": "Объяснить и применить правило с учётом его границ: Для обычной функции сначала покажите вызов, затем определите this.",
       "requiredDifficulties": ["Средний"],
-      "reviewed": false,
+      "reviewed": true,
       "priority": "core",
       "relatedSkillIds": []
     },
@@ -93,7 +93,7 @@
       "title": "Что такое arguments и есть ли он у стрелочной функции?",
       "description": "Объяснить и применить правило с учётом его границ: У стрелки нет собственного arguments; для её аргументов используйте параметры или rest.",
       "requiredDifficulties": ["Средний"],
-      "reviewed": false,
+      "reviewed": true,
       "priority": "core",
       "relatedSkillIds": []
     },
@@ -102,7 +102,7 @@
       "title": "Как работают rest-параметры и чем они отличаются от arguments?",
       "description": "Объяснить и применить правило с учётом его границ: Rest собирает оставшиеся аргументы в массив при входе в функцию.",
       "requiredDifficulties": ["Базовый"],
-      "reviewed": false,
+      "reviewed": true,
       "priority": "core",
       "relatedSkillIds": []
     },
@@ -111,7 +111,7 @@
       "title": "Когда срабатывают параметры по умолчанию?",
       "description": "Объяснить и применить правило с учётом его границ: Параметр по умолчанию реагирует на undefined, а не на все falsy-значения.",
       "requiredDifficulties": ["Базовый"],
-      "reviewed": false,
+      "reviewed": true,
       "priority": "core",
       "relatedSkillIds": []
     },
@@ -120,7 +120,7 @@
       "title": "Что такое замыкание и когда оно полезно?",
       "description": "Объяснить и применить правило с учётом его границ: Замыкание сохраняет связь функции с её лексическим окружением.",
       "requiredDifficulties": ["Базовый"],
-      "reviewed": false,
+      "reviewed": true,
       "priority": "core",
       "relatedSkillIds": []
     },
@@ -129,7 +129,7 @@
       "title": "Что такое IIFE и зачем её используют?",
       "description": "Объяснить и применить правило с учётом его границ: IIFE создаёт локальное окружение и сразу выполняет код инициализации.",
       "requiredDifficulties": ["Базовый"],
-      "reviewed": false,
+      "reviewed": true,
       "priority": "core",
       "relatedSkillIds": []
     },
@@ -138,7 +138,7 @@
       "title": "Как работает конструктор Function и чем он отличается от обычной функции?",
       "description": "Объяснить и применить правило с учётом его границ: Function компилирует строки как код и не захватывает локальные переменные.",
       "requiredDifficulties": ["Средний"],
-      "reviewed": false,
+      "reviewed": true,
       "priority": "core",
       "relatedSkillIds": []
     },
@@ -147,7 +147,7 @@
       "title": "Чем отличаются Function.prototype.call и apply?",
       "description": "Объяснить и применить правило с учётом его границ: call передаёт аргументы по отдельности, apply - одним массивоподобным списком.",
       "requiredDifficulties": ["Базовый"],
-      "reviewed": false,
+      "reviewed": true,
       "priority": "core",
       "relatedSkillIds": []
     },
@@ -156,7 +156,7 @@
       "title": "Что возвращает bind и как он связывает this и аргументы?",
       "description": "Объяснить и применить правило с учётом его границ: bind создаёт новую функцию с заранее заданным this и начальными аргументами.",
       "requiredDifficulties": ["Средний"],
-      "reviewed": false,
+      "reviewed": true,
       "priority": "core",
       "relatedSkillIds": []
     },
@@ -165,7 +165,7 @@
       "title": "Почему функция теряет this при передаче метода в callback?",
       "description": "Объяснить и применить правило с учётом его границ: Передача метода отдельно от объекта не сохраняет вызов в форме obj.method().",
       "requiredDifficulties": ["Базовый"],
-      "reviewed": false,
+      "reviewed": true,
       "priority": "core",
       "relatedSkillIds": []
     },
@@ -174,7 +174,7 @@
       "title": "Что возвращает toString у функции?",
       "description": "Объяснить и применить правило с учётом его границ: Текст функции не содержит её замыкание и не воспроизводит всё поведение.",
       "requiredDifficulties": ["Средний"],
-      "reviewed": false,
+      "reviewed": true,
       "priority": "core",
       "relatedSkillIds": []
     },
@@ -183,7 +183,7 @@
       "title": "Что такое фабричная функция и чем она отличается от конструктора?",
       "description": "Объяснить и применить правило с учётом его границ: Фабрика - функция, которая явно возвращает созданный ею объект.",
       "requiredDifficulties": ["Базовый"],
-      "reviewed": false,
+      "reviewed": true,
       "priority": "core",
       "relatedSkillIds": []
     },
@@ -192,7 +192,7 @@
       "title": "Что такое функция-обёртка и как с её помощью декорировать поведение?",
       "description": "Объяснить и применить правило с учётом его границ: Хорошая обёртка добавляет поведение, сохраняя оговорённый контракт вызова.",
       "requiredDifficulties": ["Средний"],
-      "reviewed": false,
+      "reviewed": true,
       "priority": "core",
       "relatedSkillIds": []
     },
@@ -201,7 +201,7 @@
       "title": "Как работают function*, yield и return в генераторе?",
       "description": "Объяснить и применить правило с учётом его границ: yield приостанавливает генератор, а return завершает его; next управляет продолжением.",
       "requiredDifficulties": ["Средний"],
-      "reviewed": false,
+      "reviewed": true,
       "priority": "core",
       "relatedSkillIds": []
     },
@@ -210,7 +210,7 @@
       "title": "Как связаны генераторы, итераторы и Symbol.iterator?",
       "description": "Объяснить и применить правило с учётом его границ: Итератор выдаёт очередное значение, а iterable предоставляет итератор для обхода.",
       "requiredDifficulties": ["Средний"],
-      "reviewed": false,
+      "reviewed": true,
       "priority": "core",
       "relatedSkillIds": []
     },
@@ -219,7 +219,7 @@
       "title": "Почему var в цикле приводит к неожиданным значениям в замыканиях?",
       "description": "Объяснить и применить правило с учётом его границ: Замыкания читают привязки; let в заголовке for даёт отдельную привязку каждой итерации.",
       "requiredDifficulties": ["Средний"],
-      "reviewed": false,
+      "reviewed": true,
       "priority": "core",
       "relatedSkillIds": []
     },
@@ -228,7 +228,7 @@
       "title": "Что меняет \"use strict\" и где строгий режим уже включён?",
       "description": "Объяснить и применить правило с учётом его границ: Строгий режим делает ряд ошибок явными; ES-модули используют его автоматически.",
       "requiredDifficulties": ["Средний"],
-      "reviewed": false,
+      "reviewed": true,
       "priority": "core",
       "relatedSkillIds": []
     },
@@ -237,7 +237,7 @@
       "title": "Что такое callback и кто определяет его аргументы?",
       "description": "Объяснить и применить правило с учётом его границ: Контракт callback задаёт тот код, который его вызывает.",
       "requiredDifficulties": ["Базовый"],
-      "reviewed": false,
+      "reviewed": true,
       "priority": "core",
       "relatedSkillIds": []
     },
@@ -246,7 +246,7 @@
       "title": "Что такое callback hell и как уменьшить вложенность?",
       "description": "Объяснить и применить правило с учётом его границ: Выражайте зависимые шаги явно и сохраняйте понятный путь обработки ошибок.",
       "requiredDifficulties": ["Средний"],
-      "reviewed": false,
+      "reviewed": true,
       "priority": "core",
       "relatedSkillIds": []
     },
@@ -255,7 +255,7 @@
       "title": "Чем синхронный callback отличается от асинхронного?",
       "description": "Объяснить и применить правило с учётом его границ: Смотрите на контракт принимающего API: callback не означает автоматически асинхронность.",
       "requiredDifficulties": ["Средний"],
-      "reviewed": false,
+      "reviewed": true,
       "priority": "core",
       "relatedSkillIds": []
     },
@@ -264,7 +264,7 @@
       "title": "Что такое рекурсия и зачем ей базовый случай?",
       "description": "Объяснить и применить правило с учётом его границ: Рекурсивный шаг должен уменьшать задачу и гарантированно приводить к базовому случаю.",
       "requiredDifficulties": ["Базовый"],
-      "reviewed": false,
+      "reviewed": true,
       "priority": "core",
       "relatedSkillIds": []
     },
@@ -273,7 +273,7 @@
       "title": "Что такое хвостовая рекурсия и гарантирует ли она экономию стека?",
       "description": "Объяснить и применить правило с учётом его границ: Хвостовая форма и фактическая оптимизация стека - разные вещи.",
       "requiredDifficulties": ["Средний"],
-      "reviewed": false,
+      "reviewed": true,
       "priority": "core",
       "relatedSkillIds": []
     },
@@ -282,7 +282,7 @@
       "title": "Как избежать переполнения стека и заменить глубокую рекурсию циклом?",
       "description": "Объяснить и применить правило с учётом его границ: Явный стек позволяет обойти большую глубину без соответствующей цепочки вызовов.",
       "requiredDifficulties": ["Средний"],
-      "reviewed": false,
+      "reviewed": true,
       "priority": "core",
       "relatedSkillIds": []
     },
@@ -291,7 +291,7 @@
       "title": "Что такое функция высшего порядка?",
       "description": "Объяснить и применить правило с учётом его границ: Функция высшего порядка работает с другими функциями как со значениями.",
       "requiredDifficulties": ["Базовый"],
-      "reviewed": false,
+      "reviewed": true,
       "priority": "core",
       "relatedSkillIds": []
     },
@@ -300,7 +300,7 @@
       "title": "Что такое чистая функция и какие действия считаются побочными эффектами?",
       "description": "Объяснить и применить правило с учётом его границ: Чистая функция вычисляет результат по входу и не меняет доступное снаружи состояние.",
       "requiredDifficulties": ["Базовый"],
-      "reviewed": false,
+      "reviewed": true,
       "priority": "core",
       "relatedSkillIds": []
     },
@@ -309,7 +309,7 @@
       "title": "Что означает функция без состояния и обязательно ли она чистая?",
       "description": "Объяснить и применить правило с учётом его границ: Отсутствие сохраняемого состояния и чистота функции - разные свойства.",
       "requiredDifficulties": ["Базовый"],
-      "reviewed": false,
+      "reviewed": true,
       "priority": "core",
       "relatedSkillIds": []
     },
@@ -318,7 +318,7 @@
       "title": "Чем каррирование отличается от частичного применения?",
       "description": "Объяснить и применить правило с учётом его границ: Каррирование меняет структуру вызова, а частичное применение фиксирует часть входа.",
       "requiredDifficulties": ["Средний"],
-      "reviewed": false,
+      "reviewed": true,
       "priority": "core",
       "relatedSkillIds": []
     },
@@ -327,7 +327,7 @@
       "title": "Что такое композиция функций и как реализовать compose?",
       "description": "Объяснить и применить правило с учётом его границ: В compose справа налево передаётся результат каждого шага следующему.",
       "requiredDifficulties": ["Средний"],
-      "reviewed": false,
+      "reviewed": true,
       "priority": "core",
       "relatedSkillIds": []
     },
@@ -336,7 +336,7 @@
       "title": "Что такое мемоизация и какие ограничения есть у кеша функции?",
       "description": "Объяснить и применить правило с учётом его границ: Мемоизация корректна, когда ключ полностью описывает значимые для результата входные данные.",
       "requiredDifficulties": ["Средний"],
-      "reviewed": false,
+      "reviewed": true,
       "priority": "core",
       "relatedSkillIds": []
     },
@@ -345,7 +345,7 @@
       "title": "Чем debounce отличается от throttle?",
       "description": "Объяснить и применить правило с учётом его границ: Debounce ждёт паузу, throttle ограничивает частоту во время потока событий.",
       "requiredDifficulties": ["Базовый"],
-      "reviewed": false,
+      "reviewed": true,
       "priority": "core",
       "relatedSkillIds": []
     },
@@ -354,7 +354,7 @@
       "title": "В какой области вычисляются параметры по умолчанию?",
       "description": "Объяснить и применить правило с учётом его границ: Default-параметр - исполняемое выражение с собственной последовательностью и областью видимости.",
       "requiredDifficulties": ["Средний"],
-      "reviewed": false,
+      "reviewed": true,
       "priority": "core",
       "relatedSkillIds": []
     },
@@ -363,7 +363,7 @@
       "title": "Что показывают length и name функции и почему это не строгий контракт вызова?",
       "description": "Объяснить и применить правило с учётом его границ: Метаданные функции описывают объявление, а не обеспечивают полноту её runtime-контракта.",
       "requiredDifficulties": ["Средний"],
-      "reviewed": false,
+      "reviewed": true,
       "priority": "core",
       "relatedSkillIds": []
     },
@@ -372,7 +372,7 @@
       "title": "Как new.target и Reflect.construct отделяют вызываемый конструктор от создаваемого прототипа?",
       "description": "Объяснить и применить правило с учётом его границ: Конструкторное выполнение и выбор newTarget имеют разные роли.",
       "requiredDifficulties": ["Продвинутый"],
-      "reviewed": false,
+      "reviewed": true,
       "priority": "core",
       "relatedSkillIds": []
     },
@@ -381,7 +381,7 @@
       "title": "Как выбрать ключ мемоизации для нескольких аргументов и контекста вызова?",
       "description": "Объяснить и применить правило с учётом его границ: Кеширование сохраняет корректность только при честной модели зависимостей и ключей.",
       "requiredDifficulties": ["Продвинутый"],
-      "reviewed": false,
+      "reviewed": true,
       "priority": "core",
       "relatedSkillIds": ["function-memoization", "js-inflight-cache"]
     },
@@ -390,7 +390,7 @@
       "title": "Как обойти объектный граф с циклами и не обработать узел повторно?",
       "description": "Объяснить и применить правило с учётом его границ: Граф обходят по определённым рёбрам с учётом идентичности и пределов.",
       "requiredDifficulties": ["Средний"],
-      "reviewed": false,
+      "reviewed": true,
       "priority": "core",
       "relatedSkillIds": []
     }
@@ -402,7 +402,6 @@
       "topic": "JavaScript",
       "difficulty": "Базовый",
       "summary": "Способы создания функции, имя и доступность до строки объявления.",
-      "code": "declared(); // \"FD\"\nfunction declared() { return \"FD\"; }\n\nconst expression = function internal() { return \"FE\"; };\nexpression(); // \"FE\"\nconst arrow = () => \"стрелочная\";",
       "takeaway": "Объявление функции и вычисление выражения с функцией происходят по разным правилам.",
       "moduleId": "javascript",
       "order": 0,
@@ -411,11 +410,11 @@
         "learningGoal": "Объяснить и применить правило с учётом его границ: Объявление функции и вычисление выражения с функцией происходят по разным правилам.",
         "keywords": ["JavaScript", "Функции"],
         "kind": "explanation",
-        "reviewStatus": "imported",
+        "reviewStatus": "ready",
         "goalIds": ["core", "function-declarations"],
         "relatedQuestionIds": [],
         "priority": "core",
-        "sourceRefs": []
+        "sourceRefs": ["ref-b3acdddd9b2a4647"]
       },
       "answerFile": "answers/javascript/function-declarations.md"
     },
@@ -425,7 +424,6 @@
       "topic": "JavaScript",
       "difficulty": "Базовый",
       "summary": "Лексический this, отсутствие конструктора и выбор формы функции.",
-      "code": "const user = {\n  name: \"Аня\",\n  greet() {\n    const readName = () => this.name;\n    return readName();\n  },\n};\nuser.greet(); // \"Аня\"\nconst makeUser = (name) => ({ name });",
       "takeaway": "Выбирайте стрелку, когда нужен внешний this, и обычную функцию, когда важен способ вызова.",
       "moduleId": "javascript",
       "order": 1,
@@ -434,11 +432,11 @@
         "learningGoal": "Объяснить и применить правило с учётом его границ: Выбирайте стрелку, когда нужен внешний this, и обычную функцию, когда важен способ вызова.",
         "keywords": ["JavaScript", "Функции"],
         "kind": "explanation",
-        "reviewStatus": "imported",
+        "reviewStatus": "ready",
         "goalIds": ["core", "arrow-functions"],
         "relatedQuestionIds": [],
         "priority": "core",
-        "sourceRefs": []
+        "sourceRefs": ["ref-b3acdddd9b2a4647"]
       },
       "answerFile": "answers/javascript/arrow-functions.md"
     },
@@ -448,7 +446,6 @@
       "topic": "JavaScript",
       "difficulty": "Базовый",
       "summary": "Неявный undefined, краткое тело стрелки и перенос строки после return.",
-      "code": "function noReturn() { const value = 1; }\nnoReturn(); // undefined\nconst concise = () => 42;\nconst block = () => { 42; };\nconcise(); // 42\nblock(); // undefined",
       "takeaway": "Фигурные скобки тела стрелки требуют явного return для возврата значения.",
       "moduleId": "javascript",
       "order": 2,
@@ -457,11 +454,11 @@
         "learningGoal": "Объяснить и применить правило с учётом его границ: Фигурные скобки тела стрелки требуют явного return для возврата значения.",
         "keywords": ["JavaScript", "Функции"],
         "kind": "explanation",
-        "reviewStatus": "imported",
+        "reviewStatus": "ready",
         "goalIds": ["core", "function-return"],
         "relatedQuestionIds": [],
         "priority": "core",
-        "sourceRefs": []
+        "sourceRefs": ["ref-b3acdddd9b2a4647"]
       },
       "answerFile": "answers/javascript/function-return.md"
     },
@@ -471,17 +468,15 @@
       "topic": "JavaScript",
       "difficulty": "Средний",
       "summary": "Способ вызова, строгий режим и лексический this стрелки.",
-      "code": "\"use strict\";\nconst user = {\n  name: \"Анна\",\n  read() { return this?.name; },\n};\nuser.read(); // \"Анна\"\nconst detached = user.read;\ndetached(); // undefined\ndetached.call(user); // \"Анна\"",
       "takeaway": "Для обычной функции сначала покажите вызов, затем определите this.",
       "moduleId": "javascript",
       "order": 3,
       "popular": false,
-      "pitfall": "Определять this по расположению функции в исходном файле вместо места вызова.",
       "editorial": {
         "learningGoal": "Объяснить и применить правило с учётом его границ: Для обычной функции сначала покажите вызов, затем определите this.",
         "keywords": ["JavaScript", "Функции"],
         "kind": "explanation",
-        "reviewStatus": "imported",
+        "reviewStatus": "ready",
         "goalIds": ["core", "function-this"],
         "relatedQuestionIds": [],
         "priority": "core",
@@ -495,7 +490,6 @@
       "topic": "JavaScript",
       "difficulty": "Средний",
       "summary": "Фактические аргументы, массивоподобный объект и внешняя область.",
-      "code": "function outer(value) {\n  const read = () => arguments[0];\n  return read();\n}\nouter(\"JS\"); // \"JS\"\nfunction collect() { return Array.from(arguments); }\ncollect(1, 2); // [1, 2]",
       "takeaway": "У стрелки нет собственного arguments; для её аргументов используйте параметры или rest.",
       "moduleId": "javascript",
       "order": 4,
@@ -504,11 +498,11 @@
         "learningGoal": "Объяснить и применить правило с учётом его границ: У стрелки нет собственного arguments; для её аргументов используйте параметры или rest.",
         "keywords": ["JavaScript", "Функции"],
         "kind": "explanation",
-        "reviewStatus": "imported",
+        "reviewStatus": "ready",
         "goalIds": ["core", "function-arguments"],
         "relatedQuestionIds": [],
         "priority": "core",
-        "sourceRefs": []
+        "sourceRefs": ["ref-b3acdddd9b2a4647"]
       },
       "answerFile": "answers/javascript/function-arguments.md"
     },
@@ -518,7 +512,6 @@
       "topic": "JavaScript",
       "difficulty": "Базовый",
       "summary": "Сбор оставшихся аргументов в массив и отличие от spread.",
-      "code": "function sum(label, ...values) {\n  return { label, total: values.reduce((total, value) => total + value, 0) };\n}\nsum(\"итог\", 2, 3); // { label: \"итог\", total: 5 }\nsum(\"пусто\"); // { label: \"пусто\", total: 0 }",
       "takeaway": "Rest собирает оставшиеся аргументы в массив при входе в функцию.",
       "moduleId": "javascript",
       "order": 5,
@@ -527,11 +520,11 @@
         "learningGoal": "Объяснить и применить правило с учётом его границ: Rest собирает оставшиеся аргументы в массив при входе в функцию.",
         "keywords": ["JavaScript", "Функции"],
         "kind": "explanation",
-        "reviewStatus": "imported",
+        "reviewStatus": "ready",
         "goalIds": ["core", "rest-parameters"],
         "relatedQuestionIds": [],
         "priority": "core",
-        "sourceRefs": []
+        "sourceRefs": ["ref-b3acdddd9b2a4647"]
       },
       "answerFile": "answers/javascript/rest-parameters.md"
     },
@@ -541,7 +534,6 @@
       "topic": "JavaScript",
       "difficulty": "Базовый",
       "summary": "Пропущенный аргумент, undefined и вычисление инициализаторов.",
-      "code": "function greet(name = \"гость\") { return `Привет, ${name}`; }\ngreet(); // \"Привет, гость\"\ngreet(undefined); // \"Привет, гость\"\ngreet(null); // \"Привет, null\"\nfunction pair(first, second = first) { return [first, second]; }\npair(3); // [3, 3]",
       "takeaway": "Параметр по умолчанию реагирует на undefined, а не на все falsy-значения.",
       "moduleId": "javascript",
       "order": 6,
@@ -550,11 +542,11 @@
         "learningGoal": "Объяснить и применить правило с учётом его границ: Параметр по умолчанию реагирует на undefined, а не на все falsy-значения.",
         "keywords": ["JavaScript", "Функции"],
         "kind": "explanation",
-        "reviewStatus": "imported",
+        "reviewStatus": "ready",
         "goalIds": ["core", "default-parameters"],
         "relatedQuestionIds": [],
         "priority": "core",
-        "sourceRefs": []
+        "sourceRefs": ["ref-b3acdddd9b2a4647"]
       },
       "answerFile": "answers/javascript/default-parameters.md"
     },
@@ -564,21 +556,19 @@
       "topic": "JavaScript",
       "difficulty": "Базовый",
       "summary": "Область видимости, лексическое окружение и доступ к внешним переменным.",
-      "code": "function createCounter() {\n  let count = 0;\n  return () => ++count;\n}\nconst a = createCounter();\nconst b = createCounter();\na(); // 1\na(); // 2\nb(); // 1 - другое окружение",
       "takeaway": "Замыкание сохраняет связь функции с её лексическим окружением.",
       "moduleId": "javascript",
       "order": 7,
       "popular": false,
-      "pitfall": "Считать, что функция запоминает только значение переменной на момент создания.",
       "editorial": {
         "learningGoal": "Объяснить и применить правило с учётом его границ: Замыкание сохраняет связь функции с её лексическим окружением.",
         "keywords": ["JavaScript", "Функции", "замыкание", "замыкания", "closure"],
         "kind": "explanation",
-        "reviewStatus": "imported",
+        "reviewStatus": "ready",
         "goalIds": ["core", "closures"],
         "relatedQuestionIds": [],
         "priority": "core",
-        "sourceRefs": []
+        "sourceRefs": ["ref-ff4f0797c5a73c27"]
       },
       "answerFile": "answers/javascript/closures.md"
     },
@@ -588,7 +578,6 @@
       "topic": "JavaScript",
       "difficulty": "Базовый",
       "summary": "Немедленный вызов выражения функции и изоляция переменных.",
-      "code": "const counter = (function () {\n  let value = 0;\n  return { next: () => ++value };\n})();\ncounter.next(); // 1\ncounter.next(); // 2",
       "takeaway": "IIFE создаёт локальное окружение и сразу выполняет код инициализации.",
       "moduleId": "javascript",
       "order": 8,
@@ -597,11 +586,11 @@
         "learningGoal": "Объяснить и применить правило с учётом его границ: IIFE создаёт локальное окружение и сразу выполняет код инициализации.",
         "keywords": ["JavaScript", "Функции"],
         "kind": "explanation",
-        "reviewStatus": "imported",
+        "reviewStatus": "ready",
         "goalIds": ["core", "iife"],
         "relatedQuestionIds": [],
         "priority": "core",
-        "sourceRefs": []
+        "sourceRefs": ["ref-b3acdddd9b2a4647"]
       },
       "answerFile": "answers/javascript/iife.md"
     },
@@ -611,7 +600,6 @@
       "topic": "JavaScript",
       "difficulty": "Средний",
       "summary": "Создание исполняемого кода из строк и глобальная область.",
-      "code": "const sum = new Function(\"a\", \"b\", \"return a + b;\");\nsum(2, 3); // 5\n// Предпочтительный вариант для известной операции:\nconst add = (a, b) => a + b;\nadd(2, 3); // 5",
       "takeaway": "Function компилирует строки как код и не захватывает локальные переменные.",
       "moduleId": "javascript",
       "order": 9,
@@ -620,11 +608,11 @@
         "learningGoal": "Объяснить и применить правило с учётом его границ: Function компилирует строки как код и не захватывает локальные переменные.",
         "keywords": ["JavaScript", "Функции"],
         "kind": "explanation",
-        "reviewStatus": "imported",
+        "reviewStatus": "ready",
         "goalIds": ["core", "function-constructor"],
         "relatedQuestionIds": [],
         "priority": "core",
-        "sourceRefs": []
+        "sourceRefs": ["ref-50e0ffa81cc7a55d"]
       },
       "answerFile": "answers/javascript/function-constructor.md"
     },
@@ -634,7 +622,6 @@
       "topic": "JavaScript",
       "difficulty": "Базовый",
       "summary": "Немедленный вызов с явным this и форма передачи аргументов.",
-      "code": "function total(a, b) { return this.base + a + b; }\nconst context = { base: 10 };\ntotal.call(context, 2, 3); // 15\ntotal.apply(context, [2, 3]); // 15\ntotal.apply(context, { 0: 2, 1: 3, length: 2 }); // 15",
       "takeaway": "call передаёт аргументы по отдельности, apply - одним массивоподобным списком.",
       "moduleId": "javascript",
       "order": 10,
@@ -643,11 +630,11 @@
         "learningGoal": "Объяснить и применить правило с учётом его границ: call передаёт аргументы по отдельности, apply - одним массивоподобным списком.",
         "keywords": ["JavaScript", "Функции", "прототип", "prototype"],
         "kind": "explanation",
-        "reviewStatus": "imported",
+        "reviewStatus": "ready",
         "goalIds": ["core", "call-apply"],
         "relatedQuestionIds": [],
         "priority": "core",
-        "sourceRefs": []
+        "sourceRefs": ["ref-e54a1a0eecced7af"]
       },
       "answerFile": "answers/javascript/call-apply.md"
     },
@@ -657,7 +644,6 @@
       "topic": "JavaScript",
       "difficulty": "Средний",
       "summary": "Отложенный вызов, привязанный контекст и частичное применение.",
-      "code": "function total(a, b) { return this.base + a + b; }\nconst withBase = total.bind({ base: 10 }, 2);\nwithBase(3); // 15\nwithBase.call({ base: 100 }, 3); // 15",
       "takeaway": "bind создаёт новую функцию с заранее заданным this и начальными аргументами.",
       "moduleId": "javascript",
       "order": 11,
@@ -666,11 +652,11 @@
         "learningGoal": "Объяснить и применить правило с учётом его границ: bind создаёт новую функцию с заранее заданным this и начальными аргументами.",
         "keywords": ["JavaScript", "Функции"],
         "kind": "explanation",
-        "reviewStatus": "imported",
+        "reviewStatus": "ready",
         "goalIds": ["core", "function-bind"],
         "relatedQuestionIds": [],
         "priority": "core",
-        "sourceRefs": []
+        "sourceRefs": ["ref-ea584f3f6b3e3b2b"]
       },
       "answerFile": "answers/javascript/function-bind.md"
     },
@@ -680,7 +666,6 @@
       "topic": "JavaScript",
       "difficulty": "Базовый",
       "summary": "Извлечение метода, новый способ вызова и сохранение контекста.",
-      "code": "const user = {\n  name: \"Аня\",\n  readName() { \"use strict\"; return this?.name; },\n};\nconst detached = user.readName;\ndetached(); // undefined\nconst bound = user.readName.bind(user);\nbound(); // \"Аня\"\nconst wrapped = () => user.readName();",
       "takeaway": "Передача метода отдельно от объекта не сохраняет вызов в форме obj.method().",
       "moduleId": "javascript",
       "order": 12,
@@ -689,11 +674,11 @@
         "learningGoal": "Объяснить и применить правило с учётом его границ: Передача метода отдельно от объекта не сохраняет вызов в форме obj.method().",
         "keywords": ["JavaScript", "Функции"],
         "kind": "explanation",
-        "reviewStatus": "imported",
+        "reviewStatus": "ready",
         "goalIds": ["core", "lost-this"],
         "relatedQuestionIds": [],
         "priority": "core",
-        "sourceRefs": []
+        "sourceRefs": ["ref-b3acdddd9b2a4647"]
       },
       "answerFile": "answers/javascript/lost-this.md"
     },
@@ -703,7 +688,6 @@
       "topic": "JavaScript",
       "difficulty": "Средний",
       "summary": "Представление исходного кода и ограничения сериализации.",
-      "code": "const makeAdder = (offset) => (value) => value + offset;\nconst addTwo = makeAdder(2);\naddTwo(3); // 5\naddTwo.toString(); // исходный текст внутренней стрелки, без значения offset\nMath.max.toString(); // представление встроенной функции с [native code]",
       "takeaway": "Текст функции не содержит её замыкание и не воспроизводит всё поведение.",
       "moduleId": "javascript",
       "order": 13,
@@ -712,11 +696,11 @@
         "learningGoal": "Объяснить и применить правило с учётом его границ: Текст функции не содержит её замыкание и не воспроизводит всё поведение.",
         "keywords": ["JavaScript", "Функции", "замыкание", "замыкания", "closure"],
         "kind": "explanation",
-        "reviewStatus": "imported",
+        "reviewStatus": "ready",
         "goalIds": ["core", "function-to-string"],
         "relatedQuestionIds": [],
         "priority": "core",
-        "sourceRefs": []
+        "sourceRefs": ["ref-8277423ab03f3779"]
       },
       "answerFile": "answers/javascript/function-to-string.md"
     },
@@ -726,7 +710,6 @@
       "topic": "JavaScript",
       "difficulty": "Базовый",
       "summary": "Возврат объектов без new и создание независимого состояния.",
-      "code": "function createCounter(start = 0) {\n  let value = start;\n  return { next: () => ++value };\n}\nconst first = createCounter();\nconst second = createCounter(10);\nfirst.next(); // 1\nsecond.next(); // 11",
       "takeaway": "Фабрика - функция, которая явно возвращает созданный ею объект.",
       "moduleId": "javascript",
       "order": 14,
@@ -735,11 +718,11 @@
         "learningGoal": "Объяснить и применить правило с учётом его границ: Фабрика - функция, которая явно возвращает созданный ею объект.",
         "keywords": ["JavaScript", "Функции"],
         "kind": "explanation",
-        "reviewStatus": "imported",
+        "reviewStatus": "ready",
         "goalIds": ["core", "factory-functions"],
         "relatedQuestionIds": [],
         "priority": "core",
-        "sourceRefs": []
+        "sourceRefs": ["ref-b3acdddd9b2a4647"]
       },
       "answerFile": "answers/javascript/factory-functions.md"
     },
@@ -749,7 +732,6 @@
       "topic": "JavaScript",
       "difficulty": "Средний",
       "summary": "Добавление действий вокруг вызова с сохранением контекста и результата.",
-      "code": "function withCallCount(fn) {\n  let calls = 0;\n  return function (...args) {\n    calls += 1;\n    console.log(\"Вызов\", calls);\n    return fn.apply(this, args);\n  };\n}\nconst sum = withCallCount((a, b) => a + b);\nsum(2, 3); // 5; также выводит счётчик",
       "takeaway": "Хорошая обёртка добавляет поведение, сохраняя оговорённый контракт вызова.",
       "moduleId": "javascript",
       "order": 15,
@@ -758,11 +740,11 @@
         "learningGoal": "Объяснить и применить правило с учётом его границ: Хорошая обёртка добавляет поведение, сохраняя оговорённый контракт вызова.",
         "keywords": ["JavaScript", "Функции"],
         "kind": "explanation",
-        "reviewStatus": "imported",
+        "reviewStatus": "ready",
         "goalIds": ["core", "function-wrappers"],
         "relatedQuestionIds": [],
         "priority": "core",
-        "sourceRefs": []
+        "sourceRefs": ["ref-b3acdddd9b2a4647"]
       },
       "answerFile": "answers/javascript/function-wrappers.md"
     },
@@ -772,7 +754,6 @@
       "topic": "JavaScript",
       "difficulty": "Средний",
       "summary": "Приостановка функции, обмен значениями через next и завершение генератора.",
-      "code": "function* exchange() {\n  const answer = yield \"вопрос\";\n  return answer;\n}\nconst iterator = exchange();\niterator.next(); // { value: \"вопрос\", done: false }\niterator.next(42); // { value: 42, done: true }\niterator.next(); // { value: undefined, done: true }",
       "takeaway": "yield приостанавливает генератор, а return завершает его; next управляет продолжением.",
       "moduleId": "javascript",
       "order": 16,
@@ -781,11 +762,11 @@
         "learningGoal": "Объяснить и применить правило с учётом его границ: yield приостанавливает генератор, а return завершает его; next управляет продолжением.",
         "keywords": ["JavaScript", "Функции"],
         "kind": "explanation",
-        "reviewStatus": "imported",
+        "reviewStatus": "ready",
         "goalIds": ["core", "generator-functions"],
         "relatedQuestionIds": [],
         "priority": "core",
-        "sourceRefs": []
+        "sourceRefs": ["ref-0de6860cdf90df78"]
       },
       "answerFile": "answers/javascript/generator-functions.md"
     },
@@ -795,7 +776,6 @@
       "topic": "JavaScript",
       "difficulty": "Средний",
       "summary": "Протокол получения значений и возможность обхода через for...of.",
-      "code": "const range = {\n  *[Symbol.iterator]() {\n    yield 1;\n    yield 2;\n  },\n};\n[...range]; // [1, 2]\n[...range]; // [1, 2]: каждый раз новый генератор\nconst iterator = range[Symbol.iterator]();\niterator[Symbol.iterator]() === iterator; // true",
       "takeaway": "Итератор выдаёт очередное значение, а iterable предоставляет итератор для обхода.",
       "moduleId": "javascript",
       "order": 17,
@@ -804,11 +784,11 @@
         "learningGoal": "Объяснить и применить правило с учётом его границ: Итератор выдаёт очередное значение, а iterable предоставляет итератор для обхода.",
         "keywords": ["JavaScript", "Функции"],
         "kind": "explanation",
-        "reviewStatus": "imported",
+        "reviewStatus": "ready",
         "goalIds": ["core", "iterator-protocols"],
         "relatedQuestionIds": [],
         "priority": "core",
-        "sourceRefs": []
+        "sourceRefs": ["ref-b3acdddd9b2a4647"]
       },
       "answerFile": "answers/javascript/iterator-protocols.md"
     },
@@ -818,7 +798,6 @@
       "topic": "JavaScript",
       "difficulty": "Средний",
       "summary": "Общая привязка счётчика и отдельные привязки let на итерациях.",
-      "code": "const shared = [];\nfor (var i = 0; i < 3; i += 1) shared.push(() => i);\nshared.map((read) => read()); // [3, 3, 3]\n\nconst separate = [];\nfor (let j = 0; j < 3; j += 1) separate.push(() => j);\nseparate.map((read) => read()); // [0, 1, 2]",
       "takeaway": "Замыкания читают привязки; let в заголовке for даёт отдельную привязку каждой итерации.",
       "moduleId": "javascript",
       "order": 18,
@@ -827,11 +806,11 @@
         "learningGoal": "Объяснить и применить правило с учётом его границ: Замыкания читают привязки; let в заголовке for даёт отдельную привязку каждой итерации.",
         "keywords": ["JavaScript", "Функции", "замыкание", "замыкания", "closure"],
         "kind": "explanation",
-        "reviewStatus": "imported",
+        "reviewStatus": "ready",
         "goalIds": ["core", "closures-in-loops"],
         "relatedQuestionIds": [],
         "priority": "core",
-        "sourceRefs": []
+        "sourceRefs": ["ref-b3acdddd9b2a4647"]
       },
       "answerFile": "answers/javascript/closures-in-loops.md"
     },
@@ -841,7 +820,6 @@
       "topic": "JavaScript",
       "difficulty": "Средний",
       "summary": "Более строгие правила выполнения и автоматическая строгость модулей.",
-      "code": "function readThis() {\n  \"use strict\";\n  return this;\n}\nreadThis(); // undefined\nreadThis.call(null); // null\n// В ES-модуле строгий режим уже включён без директивы.",
       "takeaway": "Строгий режим делает ряд ошибок явными; ES-модули используют его автоматически.",
       "moduleId": "javascript",
       "order": 19,
@@ -850,11 +828,11 @@
         "learningGoal": "Объяснить и применить правило с учётом его границ: Строгий режим делает ряд ошибок явными; ES-модули используют его автоматически.",
         "keywords": ["JavaScript", "Функции"],
         "kind": "explanation",
-        "reviewStatus": "imported",
+        "reviewStatus": "ready",
         "goalIds": ["core", "strict-mode"],
         "relatedQuestionIds": [],
         "priority": "core",
-        "sourceRefs": []
+        "sourceRefs": ["ref-b3acdddd9b2a4647"]
       },
       "answerFile": "answers/javascript/strict-mode.md"
     },
@@ -864,7 +842,6 @@
       "topic": "JavaScript",
       "difficulty": "Базовый",
       "summary": "Передача функции как значения и контракт вызывающего кода.",
-      "code": "function transform(value, callback) {\n  return callback(value, \"результат\");\n}\ntransform(3, (number, label) => `${label}: ${number * 2}`);\n// \"результат: 6\"\n[\"10\", \"11\"].map((text) => Number.parseInt(text, 10)); // [10, 11]",
       "takeaway": "Контракт callback задаёт тот код, который его вызывает.",
       "moduleId": "javascript",
       "order": 20,
@@ -873,11 +850,11 @@
         "learningGoal": "Объяснить и применить правило с учётом его границ: Контракт callback задаёт тот код, который его вызывает.",
         "keywords": ["JavaScript", "Функции"],
         "kind": "explanation",
-        "reviewStatus": "imported",
+        "reviewStatus": "ready",
         "goalIds": ["core", "callback-functions"],
         "relatedQuestionIds": [],
         "priority": "core",
-        "sourceRefs": []
+        "sourceRefs": ["ref-b3acdddd9b2a4647"]
       },
       "answerFile": "answers/javascript/callback-functions.md"
     },
@@ -887,7 +864,6 @@
       "topic": "JavaScript",
       "difficulty": "Средний",
       "summary": "Зависимые асинхронные шаги, читаемость и распространение ошибок.",
-      "code": "// Здесь оба сервиса уже возвращают Promise.\nasync function loadDashboard(userId, services) {\n  const user = await services.loadUser(userId);\n  const orders = await services.loadOrders(user.id);\n  return { user, orders };\n}\n// Ошибки передаются отклонением возвращаемого Promise.",
       "takeaway": "Выражайте зависимые шаги явно и сохраняйте понятный путь обработки ошибок.",
       "moduleId": "javascript",
       "order": 21,
@@ -896,11 +872,11 @@
         "learningGoal": "Объяснить и применить правило с учётом его границ: Выражайте зависимые шаги явно и сохраняйте понятный путь обработки ошибок.",
         "keywords": ["JavaScript", "Функции"],
         "kind": "explanation",
-        "reviewStatus": "imported",
+        "reviewStatus": "ready",
         "goalIds": ["core", "callback-hell"],
         "relatedQuestionIds": [],
         "priority": "core",
-        "sourceRefs": []
+        "sourceRefs": ["ref-b3acdddd9b2a4647"]
       },
       "answerFile": "answers/javascript/callback-hell.md"
     },
@@ -910,7 +886,6 @@
       "topic": "JavaScript",
       "difficulty": "Средний",
       "summary": "Момент вызова, порядок выполнения и ожидание Promise.",
-      "code": "const order = [];\n[1].forEach(() => order.push(\"callback\"));\norder.push(\"после forEach\");\norder; // [\"callback\", \"после forEach\"]\n\nasync function double(value) { return value * 2; }\nconst results = Promise.all([1, 2].map(double));\n// results - Promise, который выполнится массивом [2, 4].",
       "takeaway": "Смотрите на контракт принимающего API: callback не означает автоматически асинхронность.",
       "moduleId": "javascript",
       "order": 22,
@@ -919,11 +894,11 @@
         "learningGoal": "Объяснить и применить правило с учётом его границ: Смотрите на контракт принимающего API: callback не означает автоматически асинхронность.",
         "keywords": ["JavaScript", "Функции", "промис", "promise"],
         "kind": "explanation",
-        "reviewStatus": "imported",
+        "reviewStatus": "ready",
         "goalIds": ["core", "sync-async-callbacks"],
         "relatedQuestionIds": [],
         "priority": "core",
-        "sourceRefs": []
+        "sourceRefs": ["ref-b3acdddd9b2a4647"]
       },
       "answerFile": "answers/javascript/sync-async-callbacks.md"
     },
@@ -933,7 +908,6 @@
       "topic": "JavaScript",
       "difficulty": "Базовый",
       "summary": "Сведение задачи к меньшей и условие завершения вызовов.",
-      "code": "function factorial(n) {\n  if (!Number.isInteger(n) || n < 0) {\n    throw new RangeError(\"Нужно неотрицательное целое\");\n  }\n  if (n === 0) return 1;\n  return n * factorial(n - 1);\n}\nfactorial(5); // 120",
       "takeaway": "Рекурсивный шаг должен уменьшать задачу и гарантированно приводить к базовому случаю.",
       "moduleId": "javascript",
       "order": 23,
@@ -942,11 +916,11 @@
         "learningGoal": "Объяснить и применить правило с учётом его границ: Рекурсивный шаг должен уменьшать задачу и гарантированно приводить к базовому случаю.",
         "keywords": ["JavaScript", "Функции"],
         "kind": "explanation",
-        "reviewStatus": "imported",
+        "reviewStatus": "ready",
         "goalIds": ["core", "recursion"],
         "relatedQuestionIds": [],
         "priority": "core",
-        "sourceRefs": []
+        "sourceRefs": ["ref-b3acdddd9b2a4647"]
       },
       "answerFile": "answers/javascript/recursion.md"
     },
@@ -956,7 +930,6 @@
       "topic": "JavaScript",
       "difficulty": "Средний",
       "summary": "Хвостовая позиция, аккумулятор и поддержка оптимизации движком.",
-      "code": "\"use strict\";\nfunction factorialTail(n, accumulator = 1) {\n  if (!Number.isInteger(n) || n < 0) {\n    throw new RangeError(\"Нужно неотрицательное целое\");\n  }\n  if (n === 0) return accumulator;\n  return factorialTail(n - 1, accumulator * n);\n}\nfactorialTail(5); // 120",
       "takeaway": "Хвостовая форма и фактическая оптимизация стека - разные вещи.",
       "moduleId": "javascript",
       "order": 24,
@@ -965,11 +938,11 @@
         "learningGoal": "Объяснить и применить правило с учётом его границ: Хвостовая форма и фактическая оптимизация стека - разные вещи.",
         "keywords": ["JavaScript", "Функции"],
         "kind": "explanation",
-        "reviewStatus": "imported",
+        "reviewStatus": "ready",
         "goalIds": ["core", "tail-recursion"],
         "relatedQuestionIds": [],
         "priority": "core",
-        "sourceRefs": []
+        "sourceRefs": ["ref-b3acdddd9b2a4647"]
       },
       "answerFile": "answers/javascript/tail-recursion.md"
     },
@@ -979,7 +952,6 @@
       "topic": "JavaScript",
       "difficulty": "Средний",
       "summary": "Предел глубины вызовов и явное хранение незавершённых задач.",
-      "code": "// Каждый узел дерева имеет необязательный массив children.\nfunction countNodes(root) {\n  const pending = [root];\n  let count = 0;\n  while (pending.length > 0) {\n    const node = pending.pop();\n    count += 1;\n    for (const child of node.children ?? []) pending.push(child);\n  }\n  return count;\n}\ncountNodes({ children: [{}, {}] }); // 3",
       "takeaway": "Явный стек позволяет обойти большую глубину без соответствующей цепочки вызовов.",
       "moduleId": "javascript",
       "order": 25,
@@ -988,11 +960,11 @@
         "learningGoal": "Объяснить и применить правило с учётом его границ: Явный стек позволяет обойти большую глубину без соответствующей цепочки вызовов.",
         "keywords": ["JavaScript", "Функции"],
         "kind": "explanation",
-        "reviewStatus": "imported",
+        "reviewStatus": "ready",
         "goalIds": ["core", "recursion-depth"],
         "relatedQuestionIds": [],
         "priority": "core",
-        "sourceRefs": []
+        "sourceRefs": ["ref-b3acdddd9b2a4647"]
       },
       "answerFile": "answers/javascript/recursion-depth.md"
     },
@@ -1002,7 +974,6 @@
       "topic": "JavaScript",
       "difficulty": "Базовый",
       "summary": "Приём функций как аргументов и возврат новых функций.",
-      "code": "function createMultiplier(factor) {\n  return (value) => value * factor;\n}\nconst double = createMultiplier(2);\n[1, 2, 3].map(double); // [2, 4, 6]",
       "takeaway": "Функция высшего порядка работает с другими функциями как со значениями.",
       "moduleId": "javascript",
       "order": 26,
@@ -1011,11 +982,11 @@
         "learningGoal": "Объяснить и применить правило с учётом его границ: Функция высшего порядка работает с другими функциями как со значениями.",
         "keywords": ["JavaScript", "Функции"],
         "kind": "explanation",
-        "reviewStatus": "imported",
+        "reviewStatus": "ready",
         "goalIds": ["core", "higher-order-functions"],
         "relatedQuestionIds": [],
         "priority": "core",
-        "sourceRefs": []
+        "sourceRefs": ["ref-b3acdddd9b2a4647"]
       },
       "answerFile": "answers/javascript/higher-order-functions.md"
     },
@@ -1025,7 +996,6 @@
       "topic": "JavaScript",
       "difficulty": "Базовый",
       "summary": "Детерминированный результат и изменения за пределами вызова.",
-      "code": "function addItem(items, item) {\n  return [...items, item];\n}\nconst original = [1, 2];\nconst updated = addItem(original, 3);\noriginal; // [1, 2]\nupdated; // [1, 2, 3]",
       "takeaway": "Чистая функция вычисляет результат по входу и не меняет доступное снаружи состояние.",
       "moduleId": "javascript",
       "order": 27,
@@ -1034,11 +1004,11 @@
         "learningGoal": "Объяснить и применить правило с учётом его границ: Чистая функция вычисляет результат по входу и не меняет доступное снаружи состояние.",
         "keywords": ["JavaScript", "Функции"],
         "kind": "explanation",
-        "reviewStatus": "imported",
+        "reviewStatus": "ready",
         "goalIds": ["core", "pure-functions"],
         "relatedQuestionIds": [],
         "priority": "core",
-        "sourceRefs": []
+        "sourceRefs": ["ref-b3acdddd9b2a4647"]
       },
       "answerFile": "answers/javascript/pure-functions.md"
     },
@@ -1048,7 +1018,6 @@
       "topic": "JavaScript",
       "difficulty": "Базовый",
       "summary": "Данные между вызовами, скрытая память и зависимость от окружения.",
-      "code": "const increment = (value) => value + 1; // состояние передаётся явно\nconst currentTime = () => Date.now(); // не чистая: зависит от времени\nfunction createCounter() {\n  let value = 0;\n  return () => ++value; // состояние сохраняется в замыкании\n}",
       "takeaway": "Отсутствие сохраняемого состояния и чистота функции - разные свойства.",
       "moduleId": "javascript",
       "order": 28,
@@ -1057,11 +1026,11 @@
         "learningGoal": "Объяснить и применить правило с учётом его границ: Отсутствие сохраняемого состояния и чистота функции - разные свойства.",
         "keywords": ["JavaScript", "Функции"],
         "kind": "explanation",
-        "reviewStatus": "imported",
+        "reviewStatus": "ready",
         "goalIds": ["core", "stateless-functions"],
         "relatedQuestionIds": [],
         "priority": "core",
-        "sourceRefs": []
+        "sourceRefs": ["ref-b3acdddd9b2a4647"]
       },
       "answerFile": "answers/javascript/stateless-functions.md"
     },
@@ -1071,7 +1040,6 @@
       "topic": "JavaScript",
       "difficulty": "Средний",
       "summary": "Цепочка одноаргументных функций и фиксация части аргументов.",
-      "code": "const add = (a, b, c) => a + b + c;\nconst curriedAdd = (a) => (b) => (c) => add(a, b, c);\ncurriedAdd(1)(2)(3); // 6\n\nconst addOne = (b, c) => add(1, b, c);\naddOne(2, 3); // 6: частичное применение",
       "takeaway": "Каррирование меняет структуру вызова, а частичное применение фиксирует часть входа.",
       "moduleId": "javascript",
       "order": 29,
@@ -1080,11 +1048,11 @@
         "learningGoal": "Объяснить и применить правило с учётом его границ: Каррирование меняет структуру вызова, а частичное применение фиксирует часть входа.",
         "keywords": ["JavaScript", "Функции"],
         "kind": "explanation",
-        "reviewStatus": "imported",
+        "reviewStatus": "ready",
         "goalIds": ["core", "currying-partial-application"],
         "relatedQuestionIds": [],
         "priority": "core",
-        "sourceRefs": []
+        "sourceRefs": ["ref-b3acdddd9b2a4647"]
       },
       "answerFile": "answers/javascript/currying-partial-application.md"
     },
@@ -1094,7 +1062,6 @@
       "topic": "JavaScript",
       "difficulty": "Средний",
       "summary": "Передача результата между функциями и порядок вычислений.",
-      "code": "const compose = (...functions) => (value) =>\n  functions.reduceRight((result, fn) => fn(result), value);\n\nconst trim = (text) => text.trim();\nconst upper = (text) => text.toUpperCase();\nconst normalize = compose(upper, trim);\nnormalize(\"  js  \"); // \"JS\"\ncompose()(3); // 3",
       "takeaway": "В compose справа налево передаётся результат каждого шага следующему.",
       "moduleId": "javascript",
       "order": 30,
@@ -1103,11 +1070,11 @@
         "learningGoal": "Объяснить и применить правило с учётом его границ: В compose справа налево передаётся результат каждого шага следующему.",
         "keywords": ["JavaScript", "Функции"],
         "kind": "explanation",
-        "reviewStatus": "imported",
+        "reviewStatus": "ready",
         "goalIds": ["core", "function-composition"],
         "relatedQuestionIds": [],
         "priority": "core",
-        "sourceRefs": []
+        "sourceRefs": ["ref-b3acdddd9b2a4647"]
       },
       "answerFile": "answers/javascript/function-composition.md"
     },
@@ -1117,7 +1084,6 @@
       "topic": "JavaScript",
       "difficulty": "Средний",
       "summary": "Повторное использование результата, ключ кеша и расход памяти.",
-      "code": "function memoizeUnary(fn) {\n  const cache = new Map();\n  return (value) => {\n    if (cache.has(value)) return cache.get(value);\n    const result = fn(value);\n    cache.set(value, result);\n    return result;\n  };\n}\nconst square = memoizeUnary((value) => value * value);\nsquare(4); // 16\nsquare(4); // 16 из кеша",
       "takeaway": "Мемоизация корректна, когда ключ полностью описывает значимые для результата входные данные.",
       "moduleId": "javascript",
       "order": 31,
@@ -1126,11 +1092,11 @@
         "learningGoal": "Объяснить и применить правило с учётом его границ: Мемоизация корректна, когда ключ полностью описывает значимые для результата входные данные.",
         "keywords": ["JavaScript", "Функции", "мемоизация", "memoization"],
         "kind": "explanation",
-        "reviewStatus": "imported",
+        "reviewStatus": "ready",
         "goalIds": ["core", "function-memoization"],
         "relatedQuestionIds": [],
         "priority": "core",
-        "sourceRefs": []
+        "sourceRefs": ["ref-ff4f0797c5a73c27"]
       },
       "answerFile": "answers/javascript/function-memoization.md"
     },
@@ -1140,7 +1106,6 @@
       "topic": "JavaScript",
       "difficulty": "Базовый",
       "summary": "Частота событий, последняя попытка и ограничение темпа вызовов.",
-      "code": "// Простой trailing debounce, не полная библиотечная реализация.\nfunction debounce(fn, delay) {\n  let timer;\n  function wrapped(...args) {\n    clearTimeout(timer);\n    timer = setTimeout(() => fn.apply(this, args), delay);\n  }\n  wrapped.cancel = () => clearTimeout(timer);\n  return wrapped;\n}\n// wrapped.cancel() вызывают при завершении жизненного цикла.",
       "takeaway": "Debounce ждёт паузу, throttle ограничивает частоту во время потока событий.",
       "moduleId": "javascript",
       "order": 32,
@@ -1149,11 +1114,11 @@
         "learningGoal": "Объяснить и применить правило с учётом его границ: Debounce ждёт паузу, throttle ограничивает частоту во время потока событий.",
         "keywords": ["JavaScript", "Функции"],
         "kind": "explanation",
-        "reviewStatus": "imported",
+        "reviewStatus": "ready",
         "goalIds": ["core", "debounce-throttle"],
         "relatedQuestionIds": [],
         "priority": "core",
-        "sourceRefs": []
+        "sourceRefs": ["ref-b3acdddd9b2a4647"]
       },
       "answerFile": "answers/javascript/debounce-throttle.md"
     },
@@ -1162,9 +1127,7 @@
       "difficulty": "Средний",
       "title": "В какой области вычисляются параметры по умолчанию?",
       "summary": "Порядок инициализации параметров и недоступность объявлений тела функции.",
-      "code": "function pair(a = 1, b = a + 1) { return [a, b] }\nconsole.log(pair()) // [1, 2]\nfunction broken(a = b, b = 2) { return a }\n// broken() // ReferenceError: b ещё не инициализирован.",
       "takeaway": "Default-параметр - исполняемое выражение с собственной последовательностью и областью видимости.",
-      "pitfall": "Обращаться к более позднему параметру или функции из тела как к уже готовому default-окружению.",
       "topic": "JavaScript",
       "moduleId": "javascript",
       "popular": false,
@@ -1173,7 +1136,7 @@
         "learningGoal": "Объяснить и применить правило с учётом его границ: Default-параметр - исполняемое выражение с собственной последовательностью и областью видимости.",
         "keywords": ["JavaScript", "Функции"],
         "kind": "explanation",
-        "reviewStatus": "imported",
+        "reviewStatus": "ready",
         "goalIds": ["core", "js-default-parameter-scope"],
         "relatedQuestionIds": [],
         "priority": "core",
@@ -1186,9 +1149,7 @@
       "difficulty": "Средний",
       "title": "Что показывают length и name функции и почему это не строгий контракт вызова?",
       "summary": "Информация объявления, default/rest-параметры и ограничения интроспекции.",
-      "code": "function example(a, b = 1, ...rest) {}\nconsole.log(example.length) // 1\nconst handler = () => {}\nconsole.log(handler.name) // handler",
       "takeaway": "Метаданные функции описывают объявление, а не обеспечивают полноту её runtime-контракта.",
-      "pitfall": "Считать fn.length числом обязательных бизнес-аргументов или надёжным способом выбрать перегрузку.",
       "topic": "JavaScript",
       "moduleId": "javascript",
       "popular": false,
@@ -1197,7 +1158,7 @@
         "learningGoal": "Объяснить и применить правило с учётом его границ: Метаданные функции описывают объявление, а не обеспечивают полноту её runtime-контракта.",
         "keywords": ["JavaScript", "Функции"],
         "kind": "explanation",
-        "reviewStatus": "imported",
+        "reviewStatus": "ready",
         "goalIds": ["core", "js-function-metadata"],
         "relatedQuestionIds": [],
         "priority": "core",
@@ -1210,9 +1171,7 @@
       "difficulty": "Продвинутый",
       "title": "Как new.target и Reflect.construct отделяют вызываемый конструктор от создаваемого прототипа?",
       "summary": "Конструирование, тип newTarget и отличие от обычного вызова функции.",
-      "code": "function Base() { this.createdBy = new.target.name }\nfunction Other() {}\nconst value = Reflect.construct(Base, [], Other)\nconsole.log(Object.getPrototypeOf(value) === Other.prototype) // true\nconsole.log(value.createdBy) // Other",
       "takeaway": "Конструкторное выполнение и выбор newTarget имеют разные роли.",
-      "pitfall": "Подменять new C() вызовом C.call(object), ожидая те же private-поля и new.target.",
       "topic": "JavaScript",
       "moduleId": "javascript",
       "popular": false,
@@ -1221,7 +1180,7 @@
         "learningGoal": "Объяснить и применить правило с учётом его границ: Конструкторное выполнение и выбор newTarget имеют разные роли.",
         "keywords": ["JavaScript", "Функции", "прототип", "prototype"],
         "kind": "explanation",
-        "reviewStatus": "imported",
+        "reviewStatus": "ready",
         "goalIds": ["core", "js-new-target-construction"],
         "relatedQuestionIds": [],
         "priority": "core",
@@ -1234,9 +1193,7 @@
       "difficulty": "Продвинутый",
       "title": "Как выбрать ключ мемоизации для нескольких аргументов и контекста вызова?",
       "summary": "Идентичность объектов, value-сравнение и срок жизни результата.",
-      "code": "const a = { id: 1 }\nconst b = { id: 1 }\nconst cache = new WeakMap()\ncache.set(a, \"результат для a\")\nconsole.log(cache.has(b)) // false: другой объект.",
       "takeaway": "Кеширование сохраняет корректность только при честной модели зависимостей и ключей.",
-      "pitfall": "Мемоизировать нечистую функцию только по первому аргументу и получить устаревшие ответы.",
       "topic": "JavaScript",
       "moduleId": "javascript",
       "popular": false,
@@ -1245,7 +1202,7 @@
         "learningGoal": "Объяснить и применить правило с учётом его границ: Кеширование сохраняет корректность только при честной модели зависимостей и ключей.",
         "keywords": ["JavaScript", "Функции"],
         "kind": "explanation",
-        "reviewStatus": "imported",
+        "reviewStatus": "ready",
         "goalIds": ["core", "js-cache-key-policy"],
         "relatedQuestionIds": ["function-memoization", "js-inflight-cache"],
         "priority": "core",
@@ -1258,9 +1215,7 @@
       "difficulty": "Средний",
       "title": "Как обойти объектный граф с циклами и не обработать узел повторно?",
       "summary": "Объектная идентичность, visited-набор и явный стек.",
-      "code": "function countPlainNodes(root) {\n  const seen = new WeakSet(), stack = [root]\n  let count = 0\n  while (stack.length) {\n    const node = stack.pop()\n    if (!node || typeof node !== \"object\" || seen.has(node)) continue\n    seen.add(node); count++\n    for (const child of Object.values(node)) stack.push(child)\n  }\n  return count\n}",
       "takeaway": "Граф обходят по определённым рёбрам с учётом идентичности и пределов.",
-      "pitfall": "Применять рекурсивный обход всех values к любому неизвестному объекту без защиты от циклов.",
       "topic": "JavaScript",
       "moduleId": "javascript",
       "popular": false,
@@ -1269,7 +1224,7 @@
         "learningGoal": "Объяснить и применить правило с учётом его границ: Граф обходят по определённым рёбрам с учётом идентичности и пределов.",
         "keywords": ["JavaScript", "Функции"],
         "kind": "explanation",
-        "reviewStatus": "imported",
+        "reviewStatus": "ready",
         "goalIds": ["core", "js-graph-traversal-cycles"],
         "relatedQuestionIds": [],
         "priority": "core",

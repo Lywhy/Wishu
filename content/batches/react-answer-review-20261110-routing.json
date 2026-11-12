@@ -1,0 +1,139 @@
+{
+  "schemaVersion": 1,
+  "id": "react-answer-review-20261110-routing",
+  "title": "react-answer-review-20261110-routing",
+  "sectionId": "react",
+  "subsectionId": "routing",
+  "currentPass": "answers",
+  "goalIds": [
+    "core",
+    "react-router-browser-history",
+    "react-router-outlet-layout",
+    "react-router-index-route",
+    "react-router-params-string",
+    "react-router-link-navlink",
+    "react-router-search-params",
+    "react-router-replace-push",
+    "react-router-not-found",
+    "react-router-relative-links",
+    "react-router-loader-vs-effect",
+    "react-router-action-revalidation",
+    "react-router-location-state-limits",
+    "react-router-memory-tests",
+    "react-router-spa-host-fallback",
+    "react-router-request-cancellation",
+    "react-router-auth-server-boundary"
+  ],
+  "questionIds": [
+    "react-router-browser-history",
+    "react-router-outlet-layout",
+    "react-router-index-route",
+    "react-router-params-string",
+    "react-router-link-navlink",
+    "react-router-search-params",
+    "react-router-replace-push",
+    "react-router-not-found",
+    "react-router-relative-links",
+    "react-router-loader-vs-effect",
+    "react-router-action-revalidation",
+    "react-router-location-state-limits",
+    "react-router-memory-tests",
+    "react-router-spa-host-fallback",
+    "react-router-request-cancellation",
+    "react-router-auth-server-boundary"
+  ],
+  "scopePass": {
+    "status": "complete",
+    "remaining": []
+  },
+  "answerPass": {
+    "status": "complete",
+    "remaining": []
+  },
+  "baseline": [
+    {
+      "id": "react-router-browser-history",
+      "title": "Что делает BrowserRouter и чем клиентский переход отличается от полной загрузки документа?",
+      "contentHash": "8c66cfbe6a8b2e59d83cbfd3d56b8f3bae3d76eae8fbad2f678d2e415c2c2871"
+    },
+    {
+      "id": "react-router-outlet-layout",
+      "title": "Зачем нужен Outlet во вложенном маршруте?",
+      "contentHash": "cc976c417857790c6272297015043cd0f7a0ebae1438f0c00aa0713128afb0b4"
+    },
+    {
+      "id": "react-router-index-route",
+      "title": "Чем index route отличается от дочернего маршрута с path?",
+      "contentHash": "fcf9b423adba92787734a1194070c419e8b472ffc8e88d9690287033dc7ba2cd"
+    },
+    {
+      "id": "react-router-params-string",
+      "title": "Почему useParams возвращает строковые параметры, а не проверенные числа?",
+      "contentHash": "9f2957a67049cc2906991e5b9b9d2bd69976fce1cfbed938b46c2868be85e1ff"
+    },
+    {
+      "id": "react-router-link-navlink",
+      "title": "Когда нужен NavLink вместо Link?",
+      "contentHash": "e7d1cfa943aa34932255bd145d492ac0185ec344f0bc82d75d43ace26966668f"
+    },
+    {
+      "id": "react-router-search-params",
+      "title": "Как обновить один query-параметр, не потеряв остальные?",
+      "contentHash": "58f904dc82898a8bfa9cb2fbe74e5ffdc91adc6dbc6df024d444f2130ec76bc5"
+    },
+    {
+      "id": "react-router-replace-push",
+      "title": "Когда переход должен заменять запись истории, а когда добавлять новую?",
+      "contentHash": "6560201cc599f3e08ab3c9dd34d1940b1e97c1d75e34f99315a795b6021277ca"
+    },
+    {
+      "id": "react-router-not-found",
+      "title": "Как показать страницу 404 для неизвестного клиентского пути?",
+      "contentHash": "18ab80a15d7e2a8d822344b6f4e63c74c9dfe8910bec1c74a43b92a3280cbd5a"
+    },
+    {
+      "id": "react-router-relative-links",
+      "title": "От чего зависит относительный путь Link во вложенном маршруте?",
+      "contentHash": "ec44ce19aff8c7616a80f2c338f8072389130a9c20ec484ed3b721ff59db6066"
+    },
+    {
+      "id": "react-router-loader-vs-effect",
+      "title": "Чем loader Data Router отличается от загрузки в useEffect страницы?",
+      "contentHash": "33e5a7e168f0d935395bad82e0ea3d29465b35364522c9f972bec92cbdf23435"
+    },
+    {
+      "id": "react-router-action-revalidation",
+      "title": "Как action маршрута связан с последующей revalidation данных?",
+      "contentHash": "259f49d72de94d139511f812b0938ff13710d4cc939a83a45a292a271d90d3c0"
+    },
+    {
+      "id": "react-router-location-state-limits",
+      "title": "Почему location.state нельзя считать надёжной заменой URL или серверного хранения?",
+      "contentHash": "805f442605e538387aa550e5cb3bd872bb9a0475787e9dd6cf18e653077f2373"
+    },
+    {
+      "id": "react-router-memory-tests",
+      "title": "Как проверить переход и параметры маршрута через MemoryRouter?",
+      "contentHash": "816f440b153458d8bfd9b21c783400642c167f201263bb898a865197b99d1e65"
+    },
+    {
+      "id": "react-router-spa-host-fallback",
+      "title": "Почему клиентский маршрут работает по Link, но даёт 404 после обновления страницы?",
+      "contentHash": "37107622b8d000b2d898170ef9a960c92e4071530c3b66ec9fb0e19e2a534775"
+    },
+    {
+      "id": "react-router-request-cancellation",
+      "title": "Как Data Router обрабатывает конкурирующие навигации и что это значит для серверной мутации?",
+      "contentHash": "a2ed5ffe13a32065c25477559a477bc474a2c5b55c2ecb67345d6282f787b75d"
+    },
+    {
+      "id": "react-router-auth-server-boundary",
+      "title": "Почему защищённый клиентский маршрут не заменяет авторизацию loader или API?",
+      "contentHash": "cb1ba91a9a000665498fa2a3b49b567de408dcdbb0348e44926027c64f77b514"
+    }
+  ],
+  "notes": [
+    "Сохраняются все 300 ID, включая Redux и Zustand внутри React. Дорабатываются ответы, а не количество вопросов. Схожие формулировки сохраняются при разных учебных целях; связи указываются через канонические вопросы.",
+    "Завершено 2026-11-12: все 300 ответов прочитаны и расширены индивидуальными разборами; ID сохранены. Oxfmt, content:build и полный content:check успешны (1266 вопросов). Примеры, приложение, UI/server проверки, миграции и seed не запускались."
+  ]
+}

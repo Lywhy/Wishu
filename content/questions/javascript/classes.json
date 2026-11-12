@@ -9,7 +9,7 @@
       "title": "Классы",
       "description": "Обзор и взаимосвязи навыков: Конструкторы, поля, методы, наследование и приватные элементы.",
       "requiredDifficulties": [],
-      "reviewed": false,
+      "reviewed": true,
       "priority": "core",
       "relatedSkillIds": [
         "classes-prototypes",
@@ -32,7 +32,7 @@
       "title": "Что такое class и как классы связаны с функциями-конструкторами и прототипами?",
       "description": "Объяснить и применить правило с учётом его границ: Классы используют прототипы, одновременно задавая более строгий контракт создания и методов.",
       "requiredDifficulties": ["Базовый"],
-      "reviewed": false,
+      "reviewed": true,
       "priority": "core",
       "relatedSkillIds": []
     },
@@ -41,7 +41,7 @@
       "title": "Можно ли не писать constructor и сколько конструкторов может быть у класса?",
       "description": "Объяснить и применить правило с учётом его границ: У класса один синтаксический constructor, а варианты создания задаются обычной логикой.",
       "requiredDifficulties": ["Базовый"],
-      "reviewed": false,
+      "reviewed": true,
       "priority": "core",
       "relatedSkillIds": []
     },
@@ -50,7 +50,7 @@
       "title": "Что произойдёт при return из конструктора базового и производного класса?",
       "description": "Объяснить и применить правило с учётом его границ: Возврат объекта может заменить экземпляр, а возврат примитива зависит от вида конструктора.",
       "requiredDifficulties": ["Средний"],
-      "reviewed": false,
+      "reviewed": true,
       "priority": "core",
       "relatedSkillIds": []
     },
@@ -59,7 +59,7 @@
       "title": "Чем метод класса отличается от функции в свойстве и стрелочного поля?",
       "description": "Объяснить и применить правило с учётом его границ: Прототипный метод общий для экземпляров, а стрелочное поле создаётся и связывается отдельно.",
       "requiredDifficulties": ["Базовый"],
-      "reviewed": false,
+      "reviewed": true,
       "priority": "core",
       "relatedSkillIds": []
     },
@@ -68,7 +68,7 @@
       "title": "Как работает выражение класса const A = class {}?",
       "description": "Объяснить и применить правило с учётом его границ: Выражение класса создаёт конструктор как значение в момент вычисления.",
       "requiredDifficulties": ["Базовый"],
-      "reviewed": false,
+      "reviewed": true,
       "priority": "core",
       "relatedSkillIds": []
     },
@@ -77,7 +77,7 @@
       "title": "Как extends и super связывают классы?",
       "description": "Объяснить и применить правило с учётом его границ: Super вызывает родительское поведение на текущем экземпляре, а не создаёт второй объект-родитель.",
       "requiredDifficulties": ["Базовый"],
-      "reviewed": false,
+      "reviewed": true,
       "priority": "core",
       "relatedSkillIds": []
     },
@@ -86,7 +86,7 @@
       "title": "Как инициализируются поля класса и значения по умолчанию?",
       "description": "Объяснить и применить правило с учётом его границ: Инициализатор поля выполняется на каждом экземпляре в определённом порядке создания.",
       "requiredDifficulties": ["Базовый"],
-      "reviewed": false,
+      "reviewed": true,
       "priority": "core",
       "relatedSkillIds": []
     },
@@ -95,7 +95,7 @@
       "title": "Где находятся static-поля и как вызывать статический метод?",
       "description": "Объяснить и применить правило с учётом его границ: Статический метод принадлежит классу, а не каждому экземпляру.",
       "requiredDifficulties": ["Базовый"],
-      "reviewed": false,
+      "reviewed": true,
       "priority": "core",
       "relatedSkillIds": []
     },
@@ -104,7 +104,7 @@
       "title": "Как работают #приватные элементы и доступны ли они подклассу?",
       "description": "Объяснить и применить правило с учётом его границ: Приватность # определяется объявлением класса и проверкой экземпляра, а не строковым именем свойства.",
       "requiredDifficulties": ["Средний"],
-      "reviewed": false,
+      "reviewed": true,
       "priority": "core",
       "relatedSkillIds": []
     },
@@ -113,7 +113,7 @@
       "title": "Откуда super берёт родительский метод и что меняется при переносе метода?",
       "description": "Объяснить и применить правило с учётом его границ: Home object определяет поиск super, а this - получателя выполняемого метода.",
       "requiredDifficulties": ["Продвинутый"],
-      "reviewed": false,
+      "reviewed": true,
       "priority": "core",
       "relatedSkillIds": ["class-inheritance-super", "function-this"]
     },
@@ -122,7 +122,7 @@
       "title": "Почему Object.create(C.prototype) не заменяет new C()?",
       "description": "Объяснить и применить правило с учётом его границ: Правильный прототип - только часть корректного экземпляра.",
       "requiredDifficulties": ["Продвинутый"],
-      "reviewed": false,
+      "reviewed": true,
       "priority": "core",
       "relatedSkillIds": []
     },
@@ -131,7 +131,7 @@
       "title": "Как Symbol.species влияет на результаты методов наследника Array?",
       "description": "Объяснить и применить правило с учётом его границ: Способ создания результата встроенного метода является частью его отдельной спецификации.",
       "requiredDifficulties": ["Продвинутый"],
-      "reviewed": false,
+      "reviewed": true,
       "priority": "specialist",
       "relatedSkillIds": []
     },
@@ -140,7 +140,7 @@
       "title": "Почему унаследованный static-метод может не читать private static-поле?",
       "description": "Объяснить и применить правило с учётом его границ: Наследуемый метод не переносит private static-состояние на каждый класс-получатель.",
       "requiredDifficulties": ["Продвинутый"],
-      "reviewed": false,
+      "reviewed": true,
       "priority": "core",
       "relatedSkillIds": ["class-private-elements", "class-static"]
     }
@@ -152,7 +152,6 @@
       "topic": "JavaScript",
       "difficulty": "Базовый",
       "summary": "Синтаксис класса, наследование методов и отличия от обычной функции.",
-      "code": "class User {\n  constructor(name) { this.name = name; }\n  greet() { return this.name; }\n}\nconst user = new User(\"Аня\");\nObject.getPrototypeOf(user) === User.prototype; // true\nObject.hasOwn(user, \"greet\"); // false\ntypeof User; // \"function\"",
       "takeaway": "Классы используют прототипы, одновременно задавая более строгий контракт создания и методов.",
       "moduleId": "javascript",
       "order": 0,
@@ -161,11 +160,11 @@
         "learningGoal": "Объяснить и применить правило с учётом его границ: Классы используют прототипы, одновременно задавая более строгий контракт создания и методов.",
         "keywords": ["JavaScript", "Классы", "прототип", "prototype"],
         "kind": "explanation",
-        "reviewStatus": "imported",
+        "reviewStatus": "ready",
         "goalIds": ["core", "classes-prototypes"],
         "relatedQuestionIds": [],
         "priority": "core",
-        "sourceRefs": []
+        "sourceRefs": ["ref-4691a850f28cf413"]
       },
       "answerFile": "answers/javascript/classes-prototypes.md"
     },
@@ -175,7 +174,6 @@
       "topic": "JavaScript",
       "difficulty": "Базовый",
       "summary": "Инициализация экземпляра, неявный конструктор и выбор аргументов.",
-      "code": "class User {\n  constructor(name = \"гость\") { this.name = name; }\n  static guest() { return new User(); }\n}\nclass Admin extends User {}\nnew Admin(\"Аня\").name; // \"Аня\"\nUser.guest().name; // \"гость\"",
       "takeaway": "У класса один синтаксический constructor, а варианты создания задаются обычной логикой.",
       "moduleId": "javascript",
       "order": 1,
@@ -184,11 +182,11 @@
         "learningGoal": "Объяснить и применить правило с учётом его границ: У класса один синтаксический constructor, а варианты создания задаются обычной логикой.",
         "keywords": ["JavaScript", "Классы"],
         "kind": "explanation",
-        "reviewStatus": "imported",
+        "reviewStatus": "ready",
         "goalIds": ["core", "class-constructor"],
         "relatedQuestionIds": [],
         "priority": "core",
-        "sourceRefs": []
+        "sourceRefs": ["ref-4691a850f28cf413"]
       },
       "answerFile": "answers/javascript/class-constructor.md"
     },
@@ -198,7 +196,6 @@
       "topic": "JavaScript",
       "difficulty": "Средний",
       "summary": "Подмена экземпляра объектом и ограничения derived constructor.",
-      "code": "class Normal { constructor() { return 1; } }\nnew Normal() instanceof Normal; // true\nclass Replaced { constructor() { return { custom: true }; } }\nconst value = new Replaced();\nvalue.custom; // true\nvalue instanceof Replaced; // false",
       "takeaway": "Возврат объекта может заменить экземпляр, а возврат примитива зависит от вида конструктора.",
       "moduleId": "javascript",
       "order": 2,
@@ -207,11 +204,11 @@
         "learningGoal": "Объяснить и применить правило с учётом его границ: Возврат объекта может заменить экземпляр, а возврат примитива зависит от вида конструктора.",
         "keywords": ["JavaScript", "Классы"],
         "kind": "explanation",
-        "reviewStatus": "imported",
+        "reviewStatus": "ready",
         "goalIds": ["core", "constructor-return"],
         "relatedQuestionIds": [],
         "priority": "core",
-        "sourceRefs": []
+        "sourceRefs": ["ref-4691a850f28cf413"]
       },
       "answerFile": "answers/javascript/constructor-return.md"
     },
@@ -221,7 +218,6 @@
       "topic": "JavaScript",
       "difficulty": "Базовый",
       "summary": "Общий прототип, собственные поля и привязка this.",
-      "code": "class Counter {\n  value = 0;\n  read() { return this.value; }\n  boundRead = () => this.value;\n}\nconst first = new Counter();\nconst second = new Counter();\nfirst.read === second.read; // true\nfirst.boundRead === second.boundRead; // false",
       "takeaway": "Прототипный метод общий для экземпляров, а стрелочное поле создаётся и связывается отдельно.",
       "moduleId": "javascript",
       "order": 3,
@@ -230,11 +226,11 @@
         "learningGoal": "Объяснить и применить правило с учётом его границ: Прототипный метод общий для экземпляров, а стрелочное поле создаётся и связывается отдельно.",
         "keywords": ["JavaScript", "Классы", "прототип", "prototype"],
         "kind": "explanation",
-        "reviewStatus": "imported",
+        "reviewStatus": "ready",
         "goalIds": ["core", "class-methods-arrows"],
         "relatedQuestionIds": [],
         "priority": "core",
-        "sourceRefs": []
+        "sourceRefs": ["ref-4691a850f28cf413"]
       },
       "answerFile": "answers/javascript/class-methods-arrows.md"
     },
@@ -244,7 +240,6 @@
       "topic": "JavaScript",
       "difficulty": "Базовый",
       "summary": "Класс как значение, внутреннее имя и момент инициализации.",
-      "code": "const User = class InternalUser {\n  static create() { return new InternalUser(); }\n};\nconst user = User.create();\nuser instanceof User; // true\n// InternalUser снаружи выражения не является отдельной привязкой.",
       "takeaway": "Выражение класса создаёт конструктор как значение в момент вычисления.",
       "moduleId": "javascript",
       "order": 4,
@@ -253,11 +248,11 @@
         "learningGoal": "Объяснить и применить правило с учётом его границ: Выражение класса создаёт конструктор как значение в момент вычисления.",
         "keywords": ["JavaScript", "Классы"],
         "kind": "explanation",
-        "reviewStatus": "imported",
+        "reviewStatus": "ready",
         "goalIds": ["core", "class-expression"],
         "relatedQuestionIds": [],
         "priority": "core",
-        "sourceRefs": []
+        "sourceRefs": ["ref-4691a850f28cf413"]
       },
       "answerFile": "answers/javascript/class-expression.md"
     },
@@ -267,7 +262,6 @@
       "topic": "JavaScript",
       "difficulty": "Базовый",
       "summary": "Наследование экземпляров, статических членов и вызов родителя.",
-      "code": "class User {\n  constructor(name) { this.name = name; }\n  greet() { return this.name; }\n}\nclass Admin extends User {\n  constructor(name) { super(name); this.role = \"admin\"; }\n  greet() { return `Admin: ${super.greet()}`; }\n}\nnew Admin(\"Аня\").greet(); // \"Admin: Аня\"",
       "takeaway": "Super вызывает родительское поведение на текущем экземпляре, а не создаёт второй объект-родитель.",
       "moduleId": "javascript",
       "order": 5,
@@ -276,11 +270,11 @@
         "learningGoal": "Объяснить и применить правило с учётом его границ: Super вызывает родительское поведение на текущем экземпляре, а не создаёт второй объект-родитель.",
         "keywords": ["JavaScript", "Классы"],
         "kind": "explanation",
-        "reviewStatus": "imported",
+        "reviewStatus": "ready",
         "goalIds": ["core", "class-inheritance-super"],
         "relatedQuestionIds": [],
         "priority": "core",
-        "sourceRefs": []
+        "sourceRefs": ["ref-4691a850f28cf413"]
       },
       "answerFile": "answers/javascript/class-inheritance-super.md"
     },
@@ -290,7 +284,6 @@
       "topic": "JavaScript",
       "difficulty": "Базовый",
       "summary": "Порядок создания полей и отдельные объектные значения экземпляров.",
-      "code": "class Basket {\n  items = [];\n  label;\n}\nconst first = new Basket();\nconst second = new Basket();\nfirst.items.push(\"JS\");\nsecond.items.length; // 0\nfirst.label; // undefined",
       "takeaway": "Инициализатор поля выполняется на каждом экземпляре в определённом порядке создания.",
       "moduleId": "javascript",
       "order": 6,
@@ -299,11 +292,11 @@
         "learningGoal": "Объяснить и применить правило с учётом его границ: Инициализатор поля выполняется на каждом экземпляре в определённом порядке создания.",
         "keywords": ["JavaScript", "Классы"],
         "kind": "explanation",
-        "reviewStatus": "imported",
+        "reviewStatus": "ready",
         "goalIds": ["core", "class-fields"],
         "relatedQuestionIds": [],
         "priority": "core",
-        "sourceRefs": []
+        "sourceRefs": ["ref-4691a850f28cf413"]
       },
       "answerFile": "answers/javascript/class-fields.md"
     },
@@ -313,7 +306,6 @@
       "topic": "JavaScript",
       "difficulty": "Базовый",
       "summary": "Члены конструктора, фабрики и наследование статических методов.",
-      "code": "class User {\n  static kind = \"user\";\n  static create(name) { return new this(name); }\n  constructor(name) { this.name = name; }\n}\nUser.kind; // \"user\"\nUser.create(\"Аня\").name; // \"Аня\"\nnew User(\"Оля\").create; // undefined",
       "takeaway": "Статический метод принадлежит классу, а не каждому экземпляру.",
       "moduleId": "javascript",
       "order": 7,
@@ -322,11 +314,11 @@
         "learningGoal": "Объяснить и применить правило с учётом его границ: Статический метод принадлежит классу, а не каждому экземпляру.",
         "keywords": ["JavaScript", "Классы"],
         "kind": "explanation",
-        "reviewStatus": "imported",
+        "reviewStatus": "ready",
         "goalIds": ["core", "class-static"],
         "relatedQuestionIds": [],
         "priority": "core",
-        "sourceRefs": []
+        "sourceRefs": ["ref-4691a850f28cf413"]
       },
       "answerFile": "answers/javascript/class-static.md"
     },
@@ -336,7 +328,6 @@
       "topic": "JavaScript",
       "difficulty": "Средний",
       "summary": "Лексическое имя, проверка принадлежности и наследование поведения.",
-      "code": "class Counter {\n  #value = 0;\n  next() { return ++this.#value; }\n}\nclass Child extends Counter {}\nnew Child().next(); // 1: метод родителя имеет доступ\nconst counter = new Counter();\ncounter[\"#value\"]; // undefined: это другое, обычное имя свойства",
       "takeaway": "Приватность # определяется объявлением класса и проверкой экземпляра, а не строковым именем свойства.",
       "moduleId": "javascript",
       "order": 8,
@@ -345,7 +336,7 @@
         "learningGoal": "Объяснить и применить правило с учётом его границ: Приватность # определяется объявлением класса и проверкой экземпляра, а не строковым именем свойства.",
         "keywords": ["JavaScript", "Классы"],
         "kind": "explanation",
-        "reviewStatus": "imported",
+        "reviewStatus": "ready",
         "goalIds": ["core", "class-private-elements"],
         "relatedQuestionIds": [],
         "priority": "core",
@@ -358,9 +349,7 @@
       "difficulty": "Продвинутый",
       "title": "Откуда super берёт родительский метод и что меняется при переносе метода?",
       "summary": "Лексически закреплённый home object и динамический this вызова.",
-      "code": "const parent = { read() { return this.name } }\nconst source = { __proto__: parent, read() { return super.read() } }\nconst target = { name: \"другой\", read: source.read }\nconsole.log(target.read()) // другой: родитель найден через home object, this - target.",
       "takeaway": "Home object определяет поиск super, а this - получателя выполняемого метода.",
-      "pitfall": "Копировать метод с super и ожидать, что он автоматически станет наследовать новый прототип назначения.",
       "topic": "JavaScript",
       "moduleId": "javascript",
       "popular": false,
@@ -369,7 +358,7 @@
         "learningGoal": "Объяснить и применить правило с учётом его границ: Home object определяет поиск super, а this - получателя выполняемого метода.",
         "keywords": ["JavaScript", "Классы"],
         "kind": "explanation",
-        "reviewStatus": "imported",
+        "reviewStatus": "ready",
         "goalIds": ["core", "js-super-home-object"],
         "relatedQuestionIds": ["class-inheritance-super", "function-this"],
         "priority": "core",
@@ -382,9 +371,7 @@
       "difficulty": "Продвинутый",
       "title": "Почему Object.create(C.prototype) не заменяет new C()?",
       "summary": "Прототипная цепочка, constructor-инициализация и private brand.",
-      "code": "class Counter {\n  #value = 1\n  read() { return this.#value }\n}\nconst fake = Object.create(Counter.prototype)\nconsole.log(fake instanceof Counter) // true\n// fake.read() // TypeError: private brand не установлен.",
       "takeaway": "Правильный прототип - только часть корректного экземпляра.",
-      "pitfall": "Восстанавливать экземпляр класса одной заменой __proto__ после JSON.parse.",
       "topic": "JavaScript",
       "moduleId": "javascript",
       "popular": false,
@@ -393,7 +380,7 @@
         "learningGoal": "Объяснить и применить правило с учётом его границ: Правильный прототип - только часть корректного экземпляра.",
         "keywords": ["JavaScript", "Классы", "прототип", "prototype"],
         "kind": "explanation",
-        "reviewStatus": "imported",
+        "reviewStatus": "ready",
         "goalIds": ["core", "js-fake-class-instance"],
         "relatedQuestionIds": [],
         "priority": "core",
@@ -406,9 +393,7 @@
       "difficulty": "Продвинутый",
       "title": "Как Symbol.species влияет на результаты методов наследника Array?",
       "summary": "Создание производных контейнеров и различие старых и копирующих методов.",
-      "code": "class Items extends Array {\n  static get [Symbol.species]() { return Array }\n}\nconst items = new Items(1, 2)\nconst mapped = items.map(value => value * 2)\nconsole.log(mapped instanceof Items) // false",
       "takeaway": "Способ создания результата встроенного метода является частью его отдельной спецификации.",
-      "pitfall": "Считать все array-методы одинаковыми по species и типу результата.",
       "topic": "JavaScript",
       "moduleId": "javascript",
       "popular": false,
@@ -417,7 +402,7 @@
         "learningGoal": "Объяснить и применить правило с учётом его границ: Способ создания результата встроенного метода является частью его отдельной спецификации.",
         "keywords": ["JavaScript", "Классы"],
         "kind": "explanation",
-        "reviewStatus": "imported",
+        "reviewStatus": "ready",
         "goalIds": ["core", "js-array-species"],
         "relatedQuestionIds": [],
         "priority": "specialist",
@@ -430,9 +415,7 @@
       "difficulty": "Продвинутый",
       "title": "Почему унаследованный static-метод может не читать private static-поле?",
       "summary": "Получатель static-вызова и непередаваемая private brand конструктора.",
-      "code": "class Base {\n  static #value = 1\n  static read() { return this.#value }\n}\nclass Child extends Base {}\nconsole.log(Base.read()) // 1\n// Child.read() // TypeError: this - Child, private static-поле у Base.",
       "takeaway": "Наследуемый метод не переносит private static-состояние на каждый класс-получатель.",
-      "pitfall": "Считать private static обычным наследуемым data-свойством.",
       "topic": "JavaScript",
       "moduleId": "javascript",
       "popular": false,
@@ -441,7 +424,7 @@
         "learningGoal": "Объяснить и применить правило с учётом его границ: Наследуемый метод не переносит private static-состояние на каждый класс-получатель.",
         "keywords": ["JavaScript", "Классы"],
         "kind": "explanation",
-        "reviewStatus": "imported",
+        "reviewStatus": "ready",
         "goalIds": ["core", "js-static-private-receiver"],
         "relatedQuestionIds": ["class-private-elements", "class-static"],
         "priority": "core",

@@ -2,14 +2,27 @@
 
 <!-- wishu:answer-block -->
 
-### Механизм и границы
+### Как это работает
 
 Статическая и динамическая формы имеют свой синтаксис. Поддержка, MIME и правила host важны; legacy-варианты с assert не следует выдавать за универсальную текущую форму.
 
 Полученные данные всё равно требуют проверки предметного контракта. Успешная загрузка JSON-модуля не означает, что пользователь или сервер прислали ожидаемый объект.
 
-<!-- wishu:answer-block -->
+### Пример и его разбор
 
-### Источник
+```javascript
+// В среде с поддержкой JSON modules:
+// import config from "./config.json" with { type: "json" }
+// const module = await import("./config.json", { with: { type: "json" } })
+// module.default содержит экспорт JSON-модуля.
+```
 
-[MDN: Statements/import/with](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/import/with).
+Статическая форма получает default-экспорт напрямую, а динамическая сначала возвращает namespace с полем default. Атрибут type описывает загрузчику ожидаемый вид ресурса. После загрузки приложение всё равно проверяет структуру config, если от неё зависит дальнейшее поведение.
+
+### Типичная ошибка
+
+> Копировать синтаксис импортов между runtime без проверки их поддержки.
+
+### Источники
+
+[MDN: Statements/import/with](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/import/with)

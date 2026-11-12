@@ -12,14 +12,23 @@ const newTopic = (): TopicDraft => ({
   subsectionTitle: "",
   topics: "",
 })
-const newSuggestion = (page: FeedbackPage): SuggestionDraft => ({
+const newSuggestion = (): SuggestionDraft => ({
   id: crypto.randomUUID(),
-  mode: page === "interviews" ? "improvement" : "content",
+  mode: "improvement",
   details: "",
   items: [newTopic()],
 })
 interface Drafts {
   bug: BugDraft
+  questionBugs: Record<string, BugDraft>
+  startQuestionBug: (questionId: string, path: string, context: string) => void
+  updateQuestionBug: (
+    questionId: string,
+    patch: Partial<
+      Pick<BugDraft, "page" | "path" | "details" | "steps" | "expected" | "reason" | "fragment">
+    >,
+  ) => void
+  resetQuestionBug: (questionId: string) => void
   suggestions: Record<FeedbackPage, SuggestionDraft>
   updateBug: (patch: Partial<Omit<BugDraft, "id">>) => void
   updateSuggestion: (page: FeedbackPage, patch: Partial<Omit<SuggestionDraft, "id">>) => void
@@ -30,11 +39,59 @@ export const useFeedbackDrafts = create<Drafts>()(
   persist(
     (set) => ({
       bug: { id: crypto.randomUUID(), page: "other", path: "", details: "" },
+      questionBugs: {},
+      startQuestionBug: (questionId, path, context) =>
+        set((s) => {
+          const previous = s.questionBugs?.[questionId]
+          if (previous?.context === context) return s
+          return {
+            questionBugs: {
+              ...s.questionBugs,
+              [questionId]: {
+                ...previous,
+                id: crypto.randomUUID(),
+                page: "questions",
+                path,
+                context,
+                details: previous?.details ?? "",
+              },
+            },
+          }
+        }),
+      updateQuestionBug: (questionId, patch) =>
+        set((s) => {
+          const draft = s.questionBugs?.[questionId]
+          if (!draft) return s
+          return {
+            questionBugs: {
+              ...s.questionBugs,
+              [questionId]: { ...draft, ...patch, id: crypto.randomUUID() },
+            },
+          }
+        }),
+      resetQuestionBug: (questionId) =>
+        set((s) => {
+          const draft = s.questionBugs?.[questionId]
+          if (!draft) return s
+          return {
+            questionBugs: {
+              ...s.questionBugs,
+              [questionId]: {
+                ...draft,
+                id: crypto.randomUUID(),
+                details: "",
+                fragment: "",
+                steps: "",
+                expected: "",
+              },
+            },
+          }
+        }),
       suggestions: {
-        learn: newSuggestion("learn"),
-        questions: newSuggestion("questions"),
-        tasks: newSuggestion("tasks"),
-        interviews: newSuggestion("interviews"),
+        learn: newSuggestion(),
+        questions: newSuggestion(),
+        tasks: newSuggestion(),
+        interviews: newSuggestion(),
       },
       updateBug: (patch) => set((s) => ({ bug: { ...s.bug, ...patch, id: crypto.randomUUID() } })),
       updateSuggestion: (page, patch) =>
@@ -58,8 +115,17 @@ export const useFeedbackDrafts = create<Drafts>()(
       reset: (kind, page) =>
         set((s) =>
           kind === "bug"
-            ? { bug: { id: crypto.randomUUID(), page: s.bug.page, path: s.bug.path, details: "" } }
-            : { suggestions: { ...s.suggestions, [page]: newSuggestion(page) } },
+            ? {
+                bug: {
+                  id: crypto.randomUUID(),
+                  page: s.bug.page,
+                  path: s.bug.path,
+                  details: "",
+                  steps: "",
+                  expected: "",
+                },
+              }
+            : { suggestions: { ...s.suggestions, [page]: newSuggestion() } },
         ),
     }),
     {

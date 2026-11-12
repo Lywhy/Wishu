@@ -1,0 +1,132 @@
+{
+  "schemaVersion": 1,
+  "id": "ts-answer-review-20261110-ts-classes",
+  "title": "ts-answer-review-20261110-ts-classes",
+  "sectionId": "typescript",
+  "subsectionId": "ts-classes",
+  "currentPass": "answers",
+  "goalIds": [
+    "core",
+    "ts-class-members",
+    "ts-constructor-overloads",
+    "ts-class-visibility",
+    "ts-abstract-classes",
+    "ts-implements-extends",
+    "ts-generic-classes",
+    "ts-override-contract",
+    "ts-polymorphic-this",
+    "ts-decorators-models",
+    "ts-constructor-instance-sides",
+    "ts-static-generic-state",
+    "ts-this-based-guards",
+    "ts-mixin-constructor-contract",
+    "ts-accessor-read-write-types",
+    "ts-private-constructor-factory"
+  ],
+  "questionIds": [
+    "ts-class-members",
+    "ts-constructor-overloads",
+    "ts-class-visibility",
+    "ts-abstract-classes",
+    "ts-implements-extends",
+    "ts-generic-classes",
+    "ts-override-contract",
+    "ts-polymorphic-this",
+    "ts-decorators-models",
+    "ts-constructor-instance-sides",
+    "ts-static-generic-state",
+    "ts-this-based-guards",
+    "ts-mixin-constructor-contract",
+    "ts-accessor-read-write-types",
+    "ts-private-constructor-factory"
+  ],
+  "scopePass": {
+    "status": "complete",
+    "remaining": []
+  },
+  "answerPass": {
+    "status": "complete",
+    "remaining": []
+  },
+  "baseline": [
+    {
+      "id": "ts-class-members",
+      "title": "Что TypeScript добавляет к типизации полей, методов и конструктора класса?",
+      "contentHash": "6d5281649fcd7bb3c3e12beda542fb59fa03ae836a425f5c77fa39c2b599e37e"
+    },
+    {
+      "id": "ts-constructor-overloads",
+      "title": "Как объявить перегрузки конструктора, если runtime-конструктор один?",
+      "contentHash": "8de5109e9e66ac53038384b1316fcf00061fabfa47ca78062c8fb891c8e45bd5"
+    },
+    {
+      "id": "ts-class-visibility",
+      "title": "Как public, private и protected отличаются от JavaScript-приватности через #?",
+      "contentHash": "ad145ce4c6c5810ffd8033e8855cff7be3ea2c9e9c98c461628429636707a5fb"
+    },
+    {
+      "id": "ts-abstract-classes",
+      "title": "Для чего нужен abstract class и чем он отличается от интерфейса?",
+      "contentHash": "f894644f6d72ee75a27866f0a4faa32decc58e6e24b7aa9dd9b010917467ab52"
+    },
+    {
+      "id": "ts-implements-extends",
+      "title": "Чем implements отличается от extends?",
+      "contentHash": "35e3e37857c3eec164d2d236538a2c6e3f3207d20e9c3e830603ff461545d6af"
+    },
+    {
+      "id": "ts-generic-classes",
+      "title": "Как generic-класс связывает тип полей и методов экземпляра?",
+      "contentHash": "bf7760ad236a9cec0d5f922c260ad58741ab311a0c2274f164feef618ca08377"
+    },
+    {
+      "id": "ts-override-contract",
+      "title": "Зачем нужны override и noImplicitOverride?",
+      "contentHash": "d4e3948f6ec1a3cbdcc9f88becfebd482993fcaaf017dfc124ab21a2e12fe0c6"
+    },
+    {
+      "id": "ts-polymorphic-this",
+      "title": "Как полиморфный this сохраняет тип наследника в цепочке методов?",
+      "contentHash": "40d6b77c398459a59d74990968e0b9144c01e5d08307e672a92baf9a54034c90"
+    },
+    {
+      "id": "ts-decorators-models",
+      "title": "Чем современные декораторы TypeScript отличаются от legacy-декораторов?",
+      "contentHash": "92d2c3b5ff17d1f5ce1b3bd45bc76c91411cedbce7c16339ed11ea8e0feda306"
+    },
+    {
+      "id": "ts-constructor-instance-sides",
+      "title": "Чем тип экземпляра класса отличается от typeof Class?",
+      "contentHash": "4414f6660d423a5dc23aea45e32e295118e6161fe3fa3e168d889d03257901d3"
+    },
+    {
+      "id": "ts-static-generic-state",
+      "title": "Почему static-поле generic-класса не может принадлежать отдельному T?",
+      "contentHash": "a90d7ac4f6d9b84da7d2fff9b411245a83b2f5749b4c8e7caf930350eed4fce8"
+    },
+    {
+      "id": "ts-this-based-guards",
+      "title": "Как метод с this is уточняет состояние экземпляра?",
+      "contentHash": "c02b7a354414753b369064b450c79c10b1bb450c6f8ce7b45609ceb0e2ad1f92"
+    },
+    {
+      "id": "ts-mixin-constructor-contract",
+      "title": "Как типизируется mixin как функция над конструктором?",
+      "contentHash": "ee3d7a52e1387e6d511f380aa811d4e17b6a0d78e868e791c893817ed8b58cae"
+    },
+    {
+      "id": "ts-accessor-read-write-types",
+      "title": "Могут ли getter и setter описывать разные типы чтения и записи?",
+      "contentHash": "e126c5ae951f58046c721dcce1c656508c77cf442707346748a0c27a235a8f57"
+    },
+    {
+      "id": "ts-private-constructor-factory",
+      "title": "Зачем закрывать конструктор private и предоставлять статическую фабрику?",
+      "contentHash": "b3c8988b476655431ed99cf00e7ec7a74713e987d6cf833ae7c009ab5f71e85f"
+    }
+  ],
+  "notes": [
+    "Сохраняются все существующие ID. Раздел охватывает разные навыки проверки типов: похожая терминология не служит основанием для слияния. Текущая задача - редактура ответов, без добавления повторных определений.",
+    "Завершено: 161 индивидуальный разбор, прежние ID сохранены. Oxfmt, content:build (1266 вопросов), полный content:check успешны. Примеры, приложение, UI/server проверки и seed не выполнялись."
+  ]
+}

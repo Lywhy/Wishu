@@ -1,0 +1,77 @@
+{
+  "schemaVersion": 1,
+  "id": "js-all-answers-20261108-numbers",
+  "title": "js-all-answers-20261108-numbers",
+  "sectionId": "javascript",
+  "subsectionId": "numbers",
+  "currentPass": "answers",
+  "goalIds": [
+    "core",
+    "js-bitwise-width",
+    "js-safe-integers",
+    "js-numeric-parsing",
+    "js-rounding-directions",
+    "js-decimal-formatting",
+    "js-remainder-modulo",
+    "js-randomness-contract"
+  ],
+  "questionIds": [
+    "js-bitwise-width",
+    "js-safe-integers",
+    "js-numeric-parsing",
+    "js-rounding-directions",
+    "js-decimal-formatting",
+    "js-remainder-modulo",
+    "js-randomness-contract"
+  ],
+  "scopePass": {
+    "status": "complete",
+    "remaining": []
+  },
+  "answerPass": {
+    "status": "complete",
+    "remaining": []
+  },
+  "baseline": [
+    {
+      "id": "js-bitwise-width",
+      "title": "Почему побитовые операции над Number теряют старшие разряды?",
+      "contentHash": "f8e3f85f040691be44a863ccd53ab4d4067f3d42bf3a4fdad80c737709706b59"
+    },
+    {
+      "id": "js-safe-integers",
+      "title": "Что означает безопасное целое и когда нужен BigInt?",
+      "contentHash": "4bb32a2dcd70888a951caeedf2070c21a422fcd762977160a379ccda9f40dd5d"
+    },
+    {
+      "id": "js-numeric-parsing",
+      "title": "Как различаются Number, parseInt и parseFloat при разборе строки?",
+      "contentHash": "f3b34761e38819c06ccddfd0fe658a21c7938aca977f98751c06ef64caa86a24"
+    },
+    {
+      "id": "js-rounding-directions",
+      "title": "Чем floor, ceil, trunc и round отличаются на отрицательных числах?",
+      "contentHash": "203120fba6871c304bd50294d5038715ac05f4bbd3c03d9b1da483bf7b7676f7"
+    },
+    {
+      "id": "js-decimal-formatting",
+      "title": "Почему toFixed не является универсальной десятичной арифметикой?",
+      "contentHash": "bc68e21dae9e56d8f19d80afabf92e6dd552dcef925e17b81be2bb0a9e52e725"
+    },
+    {
+      "id": "js-remainder-modulo",
+      "title": "Почему % с отрицательным числом не всегда даёт ожидаемый циклический индекс?",
+      "contentHash": "1a6fbe1e1569f8fc95dc59a1315f46b3690b54e93b8e9010b89972b66d5e8ea5"
+    },
+    {
+      "id": "js-randomness-contract",
+      "title": "Когда Math.random недостаточно и как выбрать источник случайности?",
+      "contentHash": "2cab1ed3c690272dc87adbd74f6857f5c1d08056077803b7b18f5d98184cc5bf"
+    }
+  ],
+  "notes": [
+    "Полный редакторский проход JavaScript: 346 ID сохраняются, добавлений/слияний нет. 12 ответов предыдущего пакета сохраняют готовый связный разбор. Остальным нужны индивидуальные пояснения к механизму и примеру, а не однотипная вводная фраза. Ответы ITBooster не используются.",
+    "Для оставшихся ответов подготовлены индивидуальные пояснения примеров; код перенесён в общий Markdown. В упражнениях на чтение кода условие сохранено отдельно. Примеры не запускались.",
+    "Завершено: Oxfmt, content:build, полный content:check. В платформе 1266 вопросов; в JavaScript сохранены 346 ID, обновлены оставшиеся 334 ответа, новых/удалённых ID нет. Код примеров и seed не выполнялись."
+  ]
+}

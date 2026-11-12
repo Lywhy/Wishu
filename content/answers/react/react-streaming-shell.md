@@ -2,15 +2,13 @@
 
 <!-- wishu:answer-block -->
 
-### Как это работает
+#### Как это работает
 
-- В Node.js renderToPipeableStream предоставляет `onShellReady` для начала потока и `onAllReady` для сценариев, где хотят дождаться полного HTML.
+В Node.js `renderToPipeableStream` предоставляет `onShellReady` для начала потока и `onAllReady` для сценариев, где хотят дождаться полного HTML. После отправки заголовков нельзя свободно заменить HTTP-статус поздней ошибки. Обработку `onShellError` и журналирование onError продумывают до pipe.
 
-- После отправки заголовков нельзя свободно заменить HTTP-статус поздней ошибки. Обработку `onShellError` и журналирование onError продумывают до pipe.
+Потоковый SSR не равен Server Components и не устраняет необходимость клиентской гидратации интерактивной части. В Web Streams-средах используется другой API.
 
-- Потоковый SSR не равен Server Components и не устраняет необходимость клиентской гидратации интерактивной части. В Web Streams-средах используется другой API.
-
-### Пример
+#### Пример
 
 ```jsx
 const { pipe } = renderToPipeableStream(<App />, {
@@ -26,10 +24,14 @@ const { pipe } = renderToPipeableStream(<App />, {
 // response - HTTP-ответ Node.js; обработка abort опущена.
 ```
 
-### Типичная ошибка
+#### Разбор примера
+
+OnShellReady начинает отправку доступной оболочки, не ожидая всех Suspense-областей. OnShellError может ответить запасным документом до начала этого потока. После pipe стратегия поздней ошибки уже ограничена отправленными заголовками и доступной клиентской обработкой.
+
+#### Типичная ошибка
 
 Ждать `onAllReady` во всех случаях и затем считать, что пользователь получил преимущество ранней отправки shell.
 
-### Источники
+#### Источники
 
-- [React: server / renderToPipeableStream](https://react.dev/reference/react-dom/server/renderToPipeableStream)
+[React: streaming API](https://react.dev/reference/react-dom/server/renderToPipeableStream)

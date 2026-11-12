@@ -9,7 +9,7 @@
       "title": "DOM и браузерные API",
       "description": "Обзор и взаимосвязи навыков: Документ, события, формы, хранилища и другие возможности браузера.",
       "requiredDifficulties": [],
-      "reviewed": false,
+      "reviewed": true,
       "priority": "core",
       "relatedSkillIds": [
         "dom-tree",
@@ -56,7 +56,7 @@
       "title": "Что такое DOM-дерево и чем оно отличается от HTML?",
       "description": "Объяснить и применить правило с учётом его границ: DOM - текущее дерево объектов документа, а не неизменная копия исходной разметки.",
       "requiredDifficulties": ["Базовый"],
-      "reviewed": false,
+      "reviewed": true,
       "priority": "core",
       "relatedSkillIds": []
     },
@@ -65,7 +65,7 @@
       "title": "Чем window отличается от document?",
       "description": "Объяснить и применить правило с учётом его границ: Window описывает окружение страницы, document - её документ и узлы.",
       "requiredDifficulties": ["Базовый"],
-      "reviewed": false,
+      "reviewed": true,
       "priority": "core",
       "relatedSkillIds": []
     },
@@ -74,7 +74,7 @@
       "title": "Что предоставляет navigator и почему userAgent не заменяет проверку возможностей?",
       "description": "Объяснить и применить правило с учётом его границ: Navigator даёт сведения и точки входа в API, а поддержку проверяют по нужной возможности.",
       "requiredDifficulties": ["Базовый"],
-      "reviewed": false,
+      "reviewed": true,
       "priority": "core",
       "relatedSkillIds": []
     },
@@ -83,7 +83,7 @@
       "title": "Как location и History API управляют навигацией?",
       "description": "Объяснить и применить правило с учётом его границ: History меняет записи адреса и истории, но обновление интерфейса остаётся задачей приложения.",
       "requiredDifficulties": ["Базовый"],
-      "reviewed": false,
+      "reviewed": true,
       "priority": "core",
       "relatedSkillIds": []
     },
@@ -92,7 +92,7 @@
       "title": "Как выбирать DOM-элементы и чем статическая коллекция отличается от живой?",
       "description": "Объяснить и применить правило с учётом его границ: Выбор DOM может вернуть null или статическую коллекцию; это нужно учитывать до изменения элементов.",
       "requiredDifficulties": ["Базовый"],
-      "reviewed": false,
+      "reviewed": true,
       "priority": "core",
       "relatedSkillIds": []
     },
@@ -101,7 +101,7 @@
       "title": "Как создать, вставить и удалить DOM-элемент?",
       "description": "Объяснить и применить правило с учётом его границ: Создать узел и подключить его к документу - разные шаги.",
       "requiredDifficulties": ["Базовый"],
-      "reviewed": false,
+      "reviewed": true,
       "priority": "core",
       "relatedSkillIds": []
     },
@@ -110,7 +110,7 @@
       "title": "Что делает innerHTML и почему опасно вставлять недоверенную строку?",
       "description": "Объяснить и применить правило с учётом его границ: InnerHTML интерпретирует разметку; textContent подходит для показа обычных данных.",
       "requiredDifficulties": ["Базовый"],
-      "reviewed": false,
+      "reviewed": true,
       "priority": "core",
       "relatedSkillIds": []
     },
@@ -119,7 +119,7 @@
       "title": "Чем HTML-атрибут отличается от свойства DOM-элемента?",
       "description": "Объяснить и применить правило с учётом его границ: Атрибут может задавать начальную конфигурацию, а свойство хранить текущее состояние.",
       "requiredDifficulties": ["Базовый"],
-      "reviewed": false,
+      "reviewed": true,
       "priority": "core",
       "relatedSkillIds": []
     },
@@ -128,7 +128,7 @@
       "title": "Как работают data-* и dataset?",
       "description": "Объяснить и применить правило с учётом его границ: Dataset удобен для небольших строковых данных, типы которых определяет приложение.",
       "requiredDifficulties": ["Базовый"],
-      "reviewed": false,
+      "reviewed": true,
       "priority": "core",
       "relatedSkillIds": []
     },
@@ -137,7 +137,7 @@
       "title": "Как событие проходит фазы погружения, цели и всплытия?",
       "description": "Объяснить и применить правило с учётом его границ: Capture и bubbling описывают порядок доставки события по его пути.",
       "requiredDifficulties": ["Базовый"],
-      "reviewed": false,
+      "reviewed": true,
       "priority": "core",
       "relatedSkillIds": []
     },
@@ -146,7 +146,7 @@
       "title": "Чем addEventListener отличается от onclick и как удалить обработчик?",
       "description": "Объяснить и применить правило с учётом его границ: Для удаления важна идентичность обработчика, а AbortSignal помогает связать подписку с жизненным циклом.",
       "requiredDifficulties": ["Базовый"],
-      "reviewed": false,
+      "reviewed": true,
       "priority": "core",
       "relatedSkillIds": []
     },
@@ -155,7 +155,7 @@
       "title": "Как делегировать события и различать target и currentTarget?",
       "description": "Объяснить и применить правило с учётом его границ: Target помогает найти действие внутри контейнера, currentTarget указывает на сам объект подписки.",
       "requiredDifficulties": ["Базовый"],
-      "reviewed": false,
+      "reviewed": true,
       "priority": "core",
       "relatedSkillIds": []
     },
@@ -164,7 +164,7 @@
       "title": "Чем stopPropagation отличается от preventDefault и как отменить отправку формы?",
       "description": "Объяснить и применить правило с учётом его границ: Остановка доставки события не равна отмене действия по умолчанию.",
       "requiredDifficulties": ["Базовый"],
-      "reviewed": false,
+      "reviewed": true,
       "priority": "core",
       "relatedSkillIds": []
     },
@@ -173,7 +173,7 @@
       "title": "Что восстанавливает form.reset и чего он не сбрасывает?",
       "description": "Объяснить и применить правило с учётом его границ: Reset возвращает значения по умолчанию, а не произвольное исходное состояние интерфейса.",
       "requiredDifficulties": ["Базовый"],
-      "reviewed": false,
+      "reviewed": true,
       "priority": "core",
       "relatedSkillIds": []
     },
@@ -182,7 +182,7 @@
       "title": "Что нужно учитывать при await в обработчике DOM-события?",
       "description": "Объяснить и применить правило с учётом его границ: Событие не ждёт async-обработчик: отмену, ссылки и ошибки нужно организовать явно.",
       "requiredDifficulties": ["Базовый"],
-      "reviewed": false,
+      "reviewed": true,
       "priority": "core",
       "relatedSkillIds": []
     },
@@ -191,7 +191,7 @@
       "title": "Как блокировать прокрутку страницы и корректно возвращать её?",
       "description": "Объяснить и применить правило с учётом его границ: Блокировку скролла нужно снимать с восстановлением состояния и учётом других владельцев.",
       "requiredDifficulties": ["Базовый"],
-      "reviewed": false,
+      "reviewed": true,
       "priority": "core",
       "relatedSkillIds": []
     },
@@ -200,7 +200,7 @@
       "title": "Как IntersectionObserver определяет пересечение элемента с областью просмотра?",
       "description": "Объяснить и применить правило с учётом его границ: IntersectionObserver сообщает геометрические пересечения по порогам, а не гарантированное внимание пользователя.",
       "requiredDifficulties": ["Базовый"],
-      "reviewed": false,
+      "reviewed": true,
       "priority": "core",
       "relatedSkillIds": []
     },
@@ -209,7 +209,7 @@
       "title": "Какие изменения отслеживает MutationObserver?",
       "description": "Объяснить и применить правило с учётом его границ: MutationObserver отслеживает выбранные изменения DOM и требует ограниченного жизненного цикла.",
       "requiredDifficulties": ["Базовый"],
-      "reviewed": false,
+      "reviewed": true,
       "priority": "core",
       "relatedSkillIds": []
     },
@@ -218,7 +218,7 @@
       "title": "Чем localStorage отличается от sessionStorage?",
       "description": "Объяснить и применить правило с учётом его границ: LocalStorage обычно долговечнее, sessionStorage разделяет данные по вкладкам, но оба хранят строки синхронно.",
       "requiredDifficulties": ["Базовый"],
-      "reviewed": false,
+      "reviewed": true,
       "priority": "core",
       "relatedSkillIds": []
     },
@@ -227,7 +227,7 @@
       "title": "Как работает document.cookie и какие ограничения имеют cookies?",
       "description": "Объяснить и применить правило с учётом его границ: Cookie участвует в HTTP-обмене; доступ JavaScript и область отправки определяются разными атрибутами.",
       "requiredDifficulties": ["Базовый"],
-      "reviewed": false,
+      "reviewed": true,
       "priority": "core",
       "relatedSkillIds": []
     },
@@ -236,7 +236,7 @@
       "title": "Чем DOMContentLoaded отличается от load?",
       "description": "Объяснить и применить правило с учётом его границ: Выбирайте событие по нужной готовности и учитывайте, что оно могло уже произойти.",
       "requiredDifficulties": ["Базовый"],
-      "reviewed": false,
+      "reviewed": true,
       "priority": "core",
       "relatedSkillIds": []
     },
@@ -245,7 +245,7 @@
       "title": "Почему beforeunload и unload нельзя считать надёжным сохранением данных?",
       "description": "Объяснить и применить правило с учётом его границ: Уход со страницы нельзя использовать как единственную точку сохранения важного состояния.",
       "requiredDifficulties": ["Базовый"],
-      "reviewed": false,
+      "reviewed": true,
       "priority": "core",
       "relatedSkillIds": []
     },
@@ -254,7 +254,7 @@
       "title": "Чем defer и async у script отличаются и как влияет размещение в head?",
       "description": "Объяснить и применить правило с учётом его границ: Defer сохраняет порядок отложенных классических скриптов, async выбирает готовность загрузки.",
       "requiredDifficulties": ["Базовый"],
-      "reviewed": false,
+      "reviewed": true,
       "priority": "core",
       "relatedSkillIds": []
     },
@@ -263,7 +263,7 @@
       "title": "Для чего нужен Canvas API и чем рисунок отличается от DOM-элементов?",
       "description": "Объяснить и применить правило с учётом его границ: Canvas хранит рисунок, а не дерево отдельных DOM-элементов нарисованной сцены.",
       "requiredDifficulties": ["Базовый"],
-      "reviewed": false,
+      "reviewed": true,
       "priority": "core",
       "relatedSkillIds": []
     },
@@ -272,7 +272,7 @@
       "title": "Как Shadow DOM изолирует компонент и чем отличается от обычного DOM?",
       "description": "Объяснить и применить правило с учётом его границ: Shadow DOM создаёт границы структуры и стилей компонента, но не защитное хранилище.",
       "requiredDifficulties": ["Средний"],
-      "reviewed": false,
+      "reviewed": true,
       "priority": "core",
       "relatedSkillIds": []
     },
@@ -281,7 +281,7 @@
       "title": "Когда использовать IndexedDB вместо Web Storage?",
       "description": "Объяснить и применить правило с учётом его границ: Для записи в IndexedDB важен успех транзакции, а не только отдельного запроса.",
       "requiredDifficulties": ["Средний"],
-      "reviewed": false,
+      "reviewed": true,
       "priority": "core",
       "relatedSkillIds": []
     },
@@ -290,7 +290,7 @@
       "title": "Как связать время жизни подписок и запросов с экраном?",
       "description": "Объяснить и применить правило с учётом его границ: Явное время жизни ресурса надёжнее надежды на сборщик мусора.",
       "requiredDifficulties": ["Средний"],
-      "reviewed": false,
+      "reviewed": true,
       "priority": "core",
       "relatedSkillIds": []
     },
@@ -299,7 +299,7 @@
       "title": "Чем Node, Element и HTMLElement отличаются в DOM API?",
       "description": "Объяснить и применить правило с учётом его границ: Наличие узла в DOM не обещает интерфейс HTML-контрола.",
       "requiredDifficulties": ["Базовый"],
-      "reviewed": false,
+      "reviewed": true,
       "priority": "core",
       "relatedSkillIds": []
     },
@@ -308,7 +308,7 @@
       "title": "Как различаются getBoundingClientRect, clientHeight, offsetHeight и scrollHeight?",
       "description": "Объяснить и применить правило с учётом его границ: Сначала выберите коробку и систему координат, затем подходящую метрику.",
       "requiredDifficulties": ["Средний"],
-      "reviewed": false,
+      "reviewed": true,
       "priority": "core",
       "relatedSkillIds": []
     },
@@ -317,7 +317,7 @@
       "title": "Почему element.style и getComputedStyle показывают разные вещи?",
       "description": "Объяснить и применить правило с учётом его границ: Авторская декларация и разрешённое значение после каскада - разные представления.",
       "requiredDifficulties": ["Средний"],
-      "reviewed": false,
+      "reviewed": true,
       "priority": "core",
       "relatedSkillIds": []
     },
@@ -326,7 +326,7 @@
       "title": "Когда нужен ResizeObserver и как не создать цикл изменения размеров?",
       "description": "Объяснить и применить правило с учётом его границ: Наблюдение за размером не должно бесконтрольно вызывать собственную причину обновления.",
       "requiredDifficulties": ["Продвинутый"],
-      "reviewed": false,
+      "reviewed": true,
       "priority": "core",
       "relatedSkillIds": []
     },
@@ -335,7 +335,7 @@
       "title": "Как composed и composedPath меняют делегирование событий через Shadow DOM?",
       "description": "Объяснить и применить правило с учётом его границ: Делегирование через shadow-границу должно опираться на публичные события, а не скрытый DOM.",
       "requiredDifficulties": ["Продвинутый"],
-      "reviewed": false,
+      "reviewed": true,
       "priority": "core",
       "relatedSkillIds": ["shadow-dom", "dom-event-phases"]
     },
@@ -344,7 +344,7 @@
       "title": "Что гарантирует isTrusted и как dispatchEvent отличается от настоящего действия пользователя?",
       "description": "Объяснить и применить правило с учётом его границ: Программное событие вызывает обработчики, но не заменяет доверенный пользовательский сценарий.",
       "requiredDifficulties": ["Средний"],
-      "reviewed": false,
+      "reviewed": true,
       "priority": "core",
       "relatedSkillIds": []
     },
@@ -353,7 +353,7 @@
       "title": "Какие этапы жизненного цикла custom element нужны для корректной подписки и обновления?",
       "description": "Объяснить и применить правило с учётом его границ: Жизненный цикл и отражение атрибутов нужно реализовать как явный контракт компонента.",
       "requiredDifficulties": ["Средний"],
-      "reviewed": false,
+      "reviewed": true,
       "priority": "core",
       "relatedSkillIds": []
     },
@@ -362,7 +362,7 @@
       "title": "Как использовать произвольный id в querySelector без ошибки CSS-синтаксиса?",
       "description": "Объяснить и применить правило с учётом его границ: Структурный поиск по id и разбор CSS-программы имеют разные требования к входу.",
       "requiredDifficulties": ["Средний"],
-      "reviewed": false,
+      "reviewed": true,
       "priority": "core",
       "relatedSkillIds": []
     },
@@ -371,7 +371,7 @@
       "title": "Чем Range отличается от Selection и что означают offsets в DOM-диапазоне?",
       "description": "Объяснить и применить правило с учётом его границ: Диапазон DOM и видимое выделение опираются на узлы и точные единицы смещения.",
       "requiredDifficulties": ["Продвинутый"],
-      "reviewed": false,
+      "reviewed": true,
       "priority": "core",
       "relatedSkillIds": []
     },
@@ -380,7 +380,7 @@
       "title": "Почему Clipboard, fullscreen и похожие API могут отказать даже при наличии метода?",
       "description": "Объяснить и применить правило с учётом его границ: Feature detection, разрешение и успешное выполнение - три разные проверки.",
       "requiredDifficulties": ["Средний"],
-      "reviewed": false,
+      "reviewed": true,
       "priority": "core",
       "relatedSkillIds": []
     }
@@ -392,7 +392,6 @@
       "topic": "JavaScript",
       "difficulty": "Базовый",
       "summary": "Текст документа, узлы и изменяемая модель в памяти браузера.",
-      "code": "const container = document.createElement(\"div\");\ncontainer.append(\"текст\", document.createElement(\"span\"));\ncontainer.childNodes.length; // 2\ncontainer.children.length; // 1\ncontainer.firstChild.nodeType === Node.TEXT_NODE; // true",
       "takeaway": "DOM - текущее дерево объектов документа, а не неизменная копия исходной разметки.",
       "moduleId": "javascript",
       "order": 0,
@@ -401,11 +400,11 @@
         "learningGoal": "Объяснить и применить правило с учётом его границ: DOM - текущее дерево объектов документа, а не неизменная копия исходной разметки.",
         "keywords": ["JavaScript", "DOM и браузерные API"],
         "kind": "explanation",
-        "reviewStatus": "imported",
+        "reviewStatus": "ready",
         "goalIds": ["core", "dom-tree"],
         "relatedQuestionIds": [],
         "priority": "core",
-        "sourceRefs": []
+        "sourceRefs": ["ref-9f78f036ed3018f7"]
       },
       "answerFile": "answers/javascript/dom-tree.md"
     },
@@ -415,7 +414,6 @@
       "topic": "JavaScript",
       "difficulty": "Базовый",
       "summary": "Глобальное окружение окна и модель текущего документа.",
-      "code": "window.document === document; // true в скрипте страницы\ndocument.createElement(\"div\"); // создание элемента текущего документа\nwindow.setTimeout(() => console.log(\"позже\"), 0);\n// В Worker нельзя обращаться к window.document.",
       "takeaway": "Window описывает окружение страницы, document - её документ и узлы.",
       "moduleId": "javascript",
       "order": 1,
@@ -424,11 +422,11 @@
         "learningGoal": "Объяснить и применить правило с учётом его границ: Window описывает окружение страницы, document - её документ и узлы.",
         "keywords": ["JavaScript", "DOM и браузерные API"],
         "kind": "explanation",
-        "reviewStatus": "imported",
+        "reviewStatus": "ready",
         "goalIds": ["core", "window-document"],
         "relatedQuestionIds": [],
         "priority": "core",
-        "sourceRefs": []
+        "sourceRefs": ["ref-9f78f036ed3018f7"]
       },
       "answerFile": "answers/javascript/window-document.md"
     },
@@ -438,7 +436,6 @@
       "topic": "JavaScript",
       "difficulty": "Базовый",
       "summary": "Информация об окружении, доступ к API и ограничения эвристик.",
-      "code": "const language = navigator.language;\nconst supportsWorkers = \"serviceWorker\" in navigator;\nconst supportsClipboard = \"clipboard\" in navigator;\n// Наличие API не отменяет проверки разрешений и обработки ошибок вызова.",
       "takeaway": "Navigator даёт сведения и точки входа в API, а поддержку проверяют по нужной возможности.",
       "moduleId": "javascript",
       "order": 2,
@@ -447,11 +444,11 @@
         "learningGoal": "Объяснить и применить правило с учётом его границ: Navigator даёт сведения и точки входа в API, а поддержку проверяют по нужной возможности.",
         "keywords": ["JavaScript", "DOM и браузерные API"],
         "kind": "explanation",
-        "reviewStatus": "imported",
+        "reviewStatus": "ready",
         "goalIds": ["core", "navigator-api"],
         "relatedQuestionIds": [],
         "priority": "core",
-        "sourceRefs": []
+        "sourceRefs": ["ref-9f78f036ed3018f7"]
       },
       "answerFile": "answers/javascript/navigator-api.md"
     },
@@ -461,7 +458,6 @@
       "topic": "JavaScript",
       "difficulty": "Базовый",
       "summary": "Переход документа, адрес и записи истории без перезагрузки.",
-      "code": "function navigateLocally(path, renderRoute) {\n  history.pushState({ path }, \"\", path);\n  renderRoute(location.pathname);\n}\n// window.addEventListener(\"popstate\", ...) синхронизирует обратные переходы.",
       "takeaway": "History меняет записи адреса и истории, но обновление интерфейса остаётся задачей приложения.",
       "moduleId": "javascript",
       "order": 3,
@@ -470,7 +466,7 @@
         "learningGoal": "Объяснить и применить правило с учётом его границ: History меняет записи адреса и истории, но обновление интерфейса остаётся задачей приложения.",
         "keywords": ["JavaScript", "DOM и браузерные API"],
         "kind": "explanation",
-        "reviewStatus": "imported",
+        "reviewStatus": "ready",
         "goalIds": ["core", "history-location"],
         "relatedQuestionIds": [],
         "priority": "core",
@@ -484,7 +480,6 @@
       "topic": "JavaScript",
       "difficulty": "Базовый",
       "summary": "CSS-селекторы, отсутствие результата и обновление коллекций.",
-      "code": "function findItems(container) {\n  const nodes = container.querySelectorAll(\"[data-item]\");\n  return Array.from(nodes).map((node) => node.textContent);\n}\nconst selected = document.querySelector(\"#missing-element\");\n// Перед доступом к свойствам selected проверяют на null.",
       "takeaway": "Выбор DOM может вернуть null или статическую коллекцию; это нужно учитывать до изменения элементов.",
       "moduleId": "javascript",
       "order": 4,
@@ -493,11 +488,11 @@
         "learningGoal": "Объяснить и применить правило с учётом его границ: Выбор DOM может вернуть null или статическую коллекцию; это нужно учитывать до изменения элементов.",
         "keywords": ["JavaScript", "DOM и браузерные API"],
         "kind": "explanation",
-        "reviewStatus": "imported",
+        "reviewStatus": "ready",
         "goalIds": ["core", "dom-selectors"],
         "relatedQuestionIds": [],
         "priority": "core",
-        "sourceRefs": []
+        "sourceRefs": ["ref-9f78f036ed3018f7"]
       },
       "answerFile": "answers/javascript/dom-selectors.md"
     },
@@ -507,7 +502,6 @@
       "topic": "JavaScript",
       "difficulty": "Базовый",
       "summary": "Создание отдельно от вставки и время жизни связанных ресурсов.",
-      "code": "function addNotice(container, text) {\n  const notice = document.createElement(\"p\");\n  notice.textContent = text;\n  container.append(notice);\n  return () => notice.remove();\n}",
       "takeaway": "Создать узел и подключить его к документу - разные шаги.",
       "moduleId": "javascript",
       "order": 5,
@@ -516,11 +510,11 @@
         "learningGoal": "Объяснить и применить правило с учётом его границ: Создать узел и подключить его к документу - разные шаги.",
         "keywords": ["JavaScript", "DOM и браузерные API"],
         "kind": "explanation",
-        "reviewStatus": "imported",
+        "reviewStatus": "ready",
         "goalIds": ["core", "dom-create-remove"],
         "relatedQuestionIds": [],
         "priority": "core",
-        "sourceRefs": []
+        "sourceRefs": ["ref-9f78f036ed3018f7"]
       },
       "answerFile": "answers/javascript/dom-create-remove.md"
     },
@@ -530,7 +524,6 @@
       "topic": "JavaScript",
       "difficulty": "Базовый",
       "summary": "Разбор HTML, замена потомков и инъекция разметки.",
-      "code": "function showMessage(container, untrustedText) {\n  container.textContent = untrustedText;\n}\n// Строка с <img ...> здесь будет текстом, а не новым HTML-элементом.",
       "takeaway": "InnerHTML интерпретирует разметку; textContent подходит для показа обычных данных.",
       "moduleId": "javascript",
       "order": 6,
@@ -539,11 +532,11 @@
         "learningGoal": "Объяснить и применить правило с учётом его границ: InnerHTML интерпретирует разметку; textContent подходит для показа обычных данных.",
         "keywords": ["JavaScript", "DOM и браузерные API"],
         "kind": "explanation",
-        "reviewStatus": "imported",
+        "reviewStatus": "ready",
         "goalIds": ["core", "inner-html"],
         "relatedQuestionIds": [],
         "priority": "core",
-        "sourceRefs": []
+        "sourceRefs": ["ref-9f78f036ed3018f7"]
       },
       "answerFile": "answers/javascript/inner-html.md"
     },
@@ -553,7 +546,6 @@
       "topic": "JavaScript",
       "difficulty": "Базовый",
       "summary": "Исходная разметка, типизированное состояние и отражение атрибутов.",
-      "code": "const input = document.createElement(\"input\");\ninput.type = \"checkbox\";\ninput.setAttribute(\"checked\", \"false\");\ninput.defaultChecked; // true: атрибут присутствует\ninput.checked = false;\ninput.hasAttribute(\"checked\"); // true\ninput.checked; // false: текущее состояние",
       "takeaway": "Атрибут может задавать начальную конфигурацию, а свойство хранить текущее состояние.",
       "moduleId": "javascript",
       "order": 7,
@@ -562,11 +554,11 @@
         "learningGoal": "Объяснить и применить правило с учётом его границ: Атрибут может задавать начальную конфигурацию, а свойство хранить текущее состояние.",
         "keywords": ["JavaScript", "DOM и браузерные API"],
         "kind": "explanation",
-        "reviewStatus": "imported",
+        "reviewStatus": "ready",
         "goalIds": ["core", "dom-attributes-properties"],
         "relatedQuestionIds": [],
         "priority": "core",
-        "sourceRefs": []
+        "sourceRefs": ["ref-9f78f036ed3018f7"]
       },
       "answerFile": "answers/javascript/dom-attributes-properties.md"
     },
@@ -576,7 +568,6 @@
       "topic": "JavaScript",
       "difficulty": "Базовый",
       "summary": "Пользовательские атрибуты, camelCase и строковые значения.",
-      "code": "const button = document.createElement(\"button\");\nbutton.dataset.userId = 42;\nbutton.getAttribute(\"data-user-id\"); // \"42\"\nbutton.dataset.enabled = \"false\";\nconst enabled = button.dataset.enabled === \"true\"; // false\ndelete button.dataset.userId;",
       "takeaway": "Dataset удобен для небольших строковых данных, типы которых определяет приложение.",
       "moduleId": "javascript",
       "order": 8,
@@ -585,11 +576,11 @@
         "learningGoal": "Объяснить и применить правило с учётом его границ: Dataset удобен для небольших строковых данных, типы которых определяет приложение.",
         "keywords": ["JavaScript", "DOM и браузерные API"],
         "kind": "explanation",
-        "reviewStatus": "imported",
+        "reviewStatus": "ready",
         "goalIds": ["core", "dom-dataset"],
         "relatedQuestionIds": [],
         "priority": "core",
-        "sourceRefs": []
+        "sourceRefs": ["ref-9f78f036ed3018f7"]
       },
       "answerFile": "answers/javascript/dom-dataset.md"
     },
@@ -599,7 +590,6 @@
       "topic": "JavaScript",
       "difficulty": "Базовый",
       "summary": "Путь события, capture и ограничение bubbles.",
-      "code": "function observe(container) {\n  container.addEventListener(\"click\", () => console.log(\"capture\"), { capture: true });\n  container.addEventListener(\"click\", () => console.log(\"bubble\"));\n}\n// При клике на вложенную кнопку capture контейнера будет раньше bubble.",
       "takeaway": "Capture и bubbling описывают порядок доставки события по его пути.",
       "moduleId": "javascript",
       "order": 9,
@@ -608,11 +598,11 @@
         "learningGoal": "Объяснить и применить правило с учётом его границ: Capture и bubbling описывают порядок доставки события по его пути.",
         "keywords": ["JavaScript", "DOM и браузерные API"],
         "kind": "explanation",
-        "reviewStatus": "imported",
+        "reviewStatus": "ready",
         "goalIds": ["core", "dom-event-phases"],
         "relatedQuestionIds": [],
         "priority": "core",
-        "sourceRefs": []
+        "sourceRefs": ["ref-9f78f036ed3018f7"]
       },
       "answerFile": "answers/javascript/dom-event-phases.md"
     },
@@ -622,7 +612,6 @@
       "topic": "JavaScript",
       "difficulty": "Базовый",
       "summary": "Несколько подписок, идентичность функции и параметры удаления.",
-      "code": "function subscribe(button, onClick) {\n  const controller = new AbortController();\n  button.addEventListener(\"click\", onClick, { signal: controller.signal });\n  return () => controller.abort();\n}\n// Альтернатива: removeEventListener(\"click\", onClick) с той же функцией.",
       "takeaway": "Для удаления важна идентичность обработчика, а AbortSignal помогает связать подписку с жизненным циклом.",
       "moduleId": "javascript",
       "order": 10,
@@ -631,11 +620,11 @@
         "learningGoal": "Объяснить и применить правило с учётом его границ: Для удаления важна идентичность обработчика, а AbortSignal помогает связать подписку с жизненным циклом.",
         "keywords": ["JavaScript", "DOM и браузерные API"],
         "kind": "explanation",
-        "reviewStatus": "imported",
+        "reviewStatus": "ready",
         "goalIds": ["core", "dom-listeners"],
         "relatedQuestionIds": [],
         "priority": "core",
-        "sourceRefs": []
+        "sourceRefs": ["ref-9f78f036ed3018f7"]
       },
       "answerFile": "answers/javascript/dom-listeners.md"
     },
@@ -645,7 +634,6 @@
       "topic": "JavaScript",
       "difficulty": "Базовый",
       "summary": "Общий обработчик контейнера, исходная цель и поиск подходящего элемента.",
-      "code": "function delegate(container, onAction) {\n  container.addEventListener(\"click\", (event) => {\n    if (!(event.target instanceof Element)) return;\n    const button = event.target.closest(\"button[data-action]\");\n    if (!button || !container.contains(button)) return;\n    onAction(button.dataset.action);\n  });\n}",
       "takeaway": "Target помогает найти действие внутри контейнера, currentTarget указывает на сам объект подписки.",
       "moduleId": "javascript",
       "order": 11,
@@ -654,11 +642,11 @@
         "learningGoal": "Объяснить и применить правило с учётом его границ: Target помогает найти действие внутри контейнера, currentTarget указывает на сам объект подписки.",
         "keywords": ["JavaScript", "DOM и браузерные API"],
         "kind": "explanation",
-        "reviewStatus": "imported",
+        "reviewStatus": "ready",
         "goalIds": ["core", "event-delegation"],
         "relatedQuestionIds": [],
         "priority": "core",
-        "sourceRefs": []
+        "sourceRefs": ["ref-9f78f036ed3018f7"]
       },
       "answerFile": "answers/javascript/event-delegation.md"
     },
@@ -668,7 +656,6 @@
       "topic": "JavaScript",
       "difficulty": "Базовый",
       "summary": "Распространение события, действие браузера и синхронная отмена.",
-      "code": "function interceptForm(form, onSubmit) {\n  form.addEventListener(\"submit\", (event) => {\n    event.preventDefault();\n    onSubmit(new FormData(form));\n  });\n}",
       "takeaway": "Остановка доставки события не равна отмене действия по умолчанию.",
       "moduleId": "javascript",
       "order": 12,
@@ -677,11 +664,11 @@
         "learningGoal": "Объяснить и применить правило с учётом его границ: Остановка доставки события не равна отмене действия по умолчанию.",
         "keywords": ["JavaScript", "DOM и браузерные API"],
         "kind": "explanation",
-        "reviewStatus": "imported",
+        "reviewStatus": "ready",
         "goalIds": ["core", "event-cancellation"],
         "relatedQuestionIds": [],
         "priority": "core",
-        "sourceRefs": []
+        "sourceRefs": ["ref-9f78f036ed3018f7"]
       },
       "answerFile": "answers/javascript/event-cancellation.md"
     },
@@ -691,7 +678,6 @@
       "topic": "JavaScript",
       "difficulty": "Базовый",
       "summary": "Значения по умолчанию, событие reset и отдельное состояние приложения.",
-      "code": "const form = document.createElement(\"form\");\nconst input = document.createElement(\"input\");\ninput.defaultValue = \"начальное\";\nform.append(input);\ninput.value = \"изменено\";\nform.reset();\ninput.value; // \"начальное\"",
       "takeaway": "Reset возвращает значения по умолчанию, а не произвольное исходное состояние интерфейса.",
       "moduleId": "javascript",
       "order": 13,
@@ -700,11 +686,11 @@
         "learningGoal": "Объяснить и применить правило с учётом его границ: Reset возвращает значения по умолчанию, а не произвольное исходное состояние интерфейса.",
         "keywords": ["JavaScript", "DOM и браузерные API"],
         "kind": "explanation",
-        "reviewStatus": "imported",
+        "reviewStatus": "ready",
         "goalIds": ["core", "form-reset"],
         "relatedQuestionIds": [],
         "priority": "core",
-        "sourceRefs": []
+        "sourceRefs": ["ref-9f78f036ed3018f7"]
       },
       "answerFile": "answers/javascript/form-reset.md"
     },
@@ -714,7 +700,6 @@
       "topic": "JavaScript",
       "difficulty": "Базовый",
       "summary": "Синхронная доставка события, Promise обработчика и сохранение ссылок.",
-      "code": "function attachSave(button, save) {\n  button.addEventListener(\"click\", async (event) => {\n    const element = event.currentTarget;\n    element.disabled = true;\n    try { await save(); }\n    catch (error) { console.error(error); }\n    finally { element.disabled = false; }\n  });\n}",
       "takeaway": "Событие не ждёт async-обработчик: отмену, ссылки и ошибки нужно организовать явно.",
       "moduleId": "javascript",
       "order": 14,
@@ -723,11 +708,11 @@
         "learningGoal": "Объяснить и применить правило с учётом его границ: Событие не ждёт async-обработчик: отмену, ссылки и ошибки нужно организовать явно.",
         "keywords": ["JavaScript", "DOM и браузерные API", "промис", "promise"],
         "kind": "explanation",
-        "reviewStatus": "imported",
+        "reviewStatus": "ready",
         "goalIds": ["core", "async-event-handler"],
         "relatedQuestionIds": [],
         "priority": "core",
-        "sourceRefs": []
+        "sourceRefs": ["ref-9f78f036ed3018f7"]
       },
       "answerFile": "answers/javascript/async-event-handler.md"
     },
@@ -737,7 +722,6 @@
       "topic": "JavaScript",
       "difficulty": "Базовый",
       "summary": "Контейнер прокрутки, восстановление прежнего состояния и несколько диалогов.",
-      "code": "function lockPageScroll() {\n  const root = document.documentElement;\n  const wasLocked = root.classList.contains(\"overflow-hidden\");\n  root.classList.add(\"overflow-hidden\");\n  return () => {\n    if (!wasLocked) root.classList.remove(\"overflow-hidden\");\n  };\n}\n// Простой пример для одной блокировки; вложенные диалоги требуют общей координации.",
       "takeaway": "Блокировку скролла нужно снимать с восстановлением состояния и учётом других владельцев.",
       "moduleId": "javascript",
       "order": 15,
@@ -746,11 +730,11 @@
         "learningGoal": "Объяснить и применить правило с учётом его границ: Блокировку скролла нужно снимать с восстановлением состояния и учётом других владельцев.",
         "keywords": ["JavaScript", "DOM и браузерные API"],
         "kind": "explanation",
-        "reviewStatus": "imported",
+        "reviewStatus": "ready",
         "goalIds": ["core", "page-scroll-lock"],
         "relatedQuestionIds": [],
         "priority": "core",
-        "sourceRefs": []
+        "sourceRefs": ["ref-9f78f036ed3018f7"]
       },
       "answerFile": "answers/javascript/page-scroll-lock.md"
     },
@@ -760,7 +744,6 @@
       "topic": "JavaScript",
       "difficulty": "Базовый",
       "summary": "Асинхронное наблюдение, root, пороги и остановка подписки.",
-      "code": "function watchVisible(element, onVisible) {\n  const observer = new IntersectionObserver((entries) => {\n    for (const entry of entries) {\n      if (entry.isIntersecting) onVisible(entry.target);\n    }\n  }, { threshold: 0.25 });\n  observer.observe(element);\n  return () => observer.disconnect();\n}",
       "takeaway": "IntersectionObserver сообщает геометрические пересечения по порогам, а не гарантированное внимание пользователя.",
       "moduleId": "javascript",
       "order": 16,
@@ -769,11 +752,11 @@
         "learningGoal": "Объяснить и применить правило с учётом его границ: IntersectionObserver сообщает геометрические пересечения по порогам, а не гарантированное внимание пользователя.",
         "keywords": ["JavaScript", "DOM и браузерные API"],
         "kind": "explanation",
-        "reviewStatus": "imported",
+        "reviewStatus": "ready",
         "goalIds": ["core", "intersection-observer"],
         "relatedQuestionIds": [],
         "priority": "core",
-        "sourceRefs": []
+        "sourceRefs": ["ref-9f78f036ed3018f7"]
       },
       "answerFile": "answers/javascript/intersection-observer.md"
     },
@@ -783,7 +766,6 @@
       "topic": "JavaScript",
       "difficulty": "Базовый",
       "summary": "Узлы, атрибуты, текст и отложенная доставка записей.",
-      "code": "function watchState(element, onChange) {\n  const observer = new MutationObserver(onChange);\n  observer.observe(element, {\n    attributes: true, attributeFilter: [\"data-state\"],\n  });\n  return () => observer.disconnect();\n}",
       "takeaway": "MutationObserver отслеживает выбранные изменения DOM и требует ограниченного жизненного цикла.",
       "moduleId": "javascript",
       "order": 17,
@@ -792,7 +774,7 @@
         "learningGoal": "Объяснить и применить правило с учётом его границ: MutationObserver отслеживает выбранные изменения DOM и требует ограниченного жизненного цикла.",
         "keywords": ["JavaScript", "DOM и браузерные API"],
         "kind": "explanation",
-        "reviewStatus": "imported",
+        "reviewStatus": "ready",
         "goalIds": ["core", "mutation-observer"],
         "relatedQuestionIds": [],
         "priority": "core",
@@ -806,7 +788,6 @@
       "topic": "JavaScript",
       "difficulty": "Базовый",
       "summary": "Строковое синхронное хранилище, origin и время жизни данных.",
-      "code": "function savePreference(value) {\n  try {\n    localStorage.setItem(\"theme\", value);\n    return true;\n  } catch { return false; }\n}\n// sessionStorage.setItem(\"draft\", \"текст\") ограничивает данные сеансом вкладки.",
       "takeaway": "LocalStorage обычно долговечнее, sessionStorage разделяет данные по вкладкам, но оба хранят строки синхронно.",
       "moduleId": "javascript",
       "order": 18,
@@ -815,11 +796,11 @@
         "learningGoal": "Объяснить и применить правило с учётом его границ: LocalStorage обычно долговечнее, sessionStorage разделяет данные по вкладкам, но оба хранят строки синхронно.",
         "keywords": ["JavaScript", "DOM и браузерные API"],
         "kind": "explanation",
-        "reviewStatus": "imported",
+        "reviewStatus": "ready",
         "goalIds": ["core", "web-storage"],
         "relatedQuestionIds": [],
         "priority": "core",
-        "sourceRefs": []
+        "sourceRefs": ["ref-9f78f036ed3018f7"]
       },
       "answerFile": "answers/javascript/web-storage.md"
     },
@@ -829,7 +810,6 @@
       "topic": "JavaScript",
       "difficulty": "Базовый",
       "summary": "Чтение доступных пар, запись одной cookie и серверные атрибуты.",
-      "code": "function setThemeCookie(theme) {\n  document.cookie = `theme=${encodeURIComponent(theme)}; Path=/; SameSite=Lax`;\n}\n// Для удаления cookie той же области:\n// document.cookie = \"theme=; Path=/; Max-Age=0; SameSite=Lax\";\n// HttpOnly из JavaScript установить или прочитать нельзя.",
       "takeaway": "Cookie участвует в HTTP-обмене; доступ JavaScript и область отправки определяются разными атрибутами.",
       "moduleId": "javascript",
       "order": 19,
@@ -838,11 +818,11 @@
         "learningGoal": "Объяснить и применить правило с учётом его границ: Cookie участвует в HTTP-обмене; доступ JavaScript и область отправки определяются разными атрибутами.",
         "keywords": ["JavaScript", "DOM и браузерные API"],
         "kind": "explanation",
-        "reviewStatus": "imported",
+        "reviewStatus": "ready",
         "goalIds": ["core", "document-cookie"],
         "relatedQuestionIds": [],
         "priority": "core",
-        "sourceRefs": []
+        "sourceRefs": ["ref-9f78f036ed3018f7"]
       },
       "answerFile": "answers/javascript/document-cookie.md"
     },
@@ -852,7 +832,6 @@
       "topic": "JavaScript",
       "difficulty": "Базовый",
       "summary": "Готовность DOM, выполнение отложенных скриптов и загрузка ресурсов.",
-      "code": "function whenDomReady(initialize) {\n  if (document.readyState === \"loading\") {\n    document.addEventListener(\"DOMContentLoaded\", initialize, { once: true });\n  } else {\n    initialize();\n  }\n}",
       "takeaway": "Выбирайте событие по нужной готовности и учитывайте, что оно могло уже произойти.",
       "moduleId": "javascript",
       "order": 20,
@@ -861,11 +840,11 @@
         "learningGoal": "Объяснить и применить правило с учётом его границ: Выбирайте событие по нужной готовности и учитывайте, что оно могло уже произойти.",
         "keywords": ["JavaScript", "DOM и браузерные API"],
         "kind": "explanation",
-        "reviewStatus": "imported",
+        "reviewStatus": "ready",
         "goalIds": ["core", "document-ready-events"],
         "relatedQuestionIds": [],
         "priority": "core",
-        "sourceRefs": []
+        "sourceRefs": ["ref-9f78f036ed3018f7"]
       },
       "answerFile": "answers/javascript/document-ready-events.md"
     },
@@ -875,7 +854,6 @@
       "topic": "JavaScript",
       "difficulty": "Базовый",
       "summary": "Предупреждение о несохранённом, ограничения жизненного цикла и альтернативы.",
-      "code": "function warnUnsaved(event) {\n  event.preventDefault();\n  event.returnValue = \"\"; // совместимость со старыми реализациями\n}\n// Добавляют только при наличии несохранённых изменений:\n// window.addEventListener(\"beforeunload\", warnUnsaved);\n// После сохранения: window.removeEventListener(\"beforeunload\", warnUnsaved);",
       "takeaway": "Уход со страницы нельзя использовать как единственную точку сохранения важного состояния.",
       "moduleId": "javascript",
       "order": 21,
@@ -884,7 +862,7 @@
         "learningGoal": "Объяснить и применить правило с учётом его границ: Уход со страницы нельзя использовать как единственную точку сохранения важного состояния.",
         "keywords": ["JavaScript", "DOM и браузерные API"],
         "kind": "explanation",
-        "reviewStatus": "imported",
+        "reviewStatus": "ready",
         "goalIds": ["core", "page-exit-events"],
         "relatedQuestionIds": [],
         "priority": "core",
@@ -898,7 +876,6 @@
       "topic": "JavaScript",
       "difficulty": "Базовый",
       "summary": "Классические скрипты, блокировка парсера, порядок и модульный режим.",
-      "code": "// Пример HTML-разметки, а не вызовов JavaScript:\n// <script src=\"/dependent.js\" defer></script>\n// <script src=\"/independent.js\" async></script>\n// <script type=\"module\" src=\"/app.js\"></script>\n// Порядок исполнения выбирают по зависимостям приложения.",
       "takeaway": "Defer сохраняет порядок отложенных классических скриптов, async выбирает готовность загрузки.",
       "moduleId": "javascript",
       "order": 22,
@@ -907,11 +884,11 @@
         "learningGoal": "Объяснить и применить правило с учётом его границ: Defer сохраняет порядок отложенных классических скриптов, async выбирает готовность загрузки.",
         "keywords": ["JavaScript", "DOM и браузерные API"],
         "kind": "explanation",
-        "reviewStatus": "imported",
+        "reviewStatus": "ready",
         "goalIds": ["core", "script-loading"],
         "relatedQuestionIds": [],
         "priority": "core",
-        "sourceRefs": []
+        "sourceRefs": ["ref-9f78f036ed3018f7"]
       },
       "answerFile": "answers/javascript/script-loading.md"
     },
@@ -921,7 +898,6 @@
       "topic": "JavaScript",
       "difficulty": "Базовый",
       "summary": "Пиксельная поверхность, контекст рисования и доступность.",
-      "code": "const canvas = document.createElement(\"canvas\");\ncanvas.width = 200;\ncanvas.height = 100;\nconst context = canvas.getContext(\"2d\");\nif (context) {\n  context.fillStyle = \"blue\";\n  context.fillRect(10, 10, 80, 40);\n}",
       "takeaway": "Canvas хранит рисунок, а не дерево отдельных DOM-элементов нарисованной сцены.",
       "moduleId": "javascript",
       "order": 23,
@@ -930,11 +906,11 @@
         "learningGoal": "Объяснить и применить правило с учётом его границ: Canvas хранит рисунок, а не дерево отдельных DOM-элементов нарисованной сцены.",
         "keywords": ["JavaScript", "DOM и браузерные API"],
         "kind": "explanation",
-        "reviewStatus": "imported",
+        "reviewStatus": "ready",
         "goalIds": ["core", "canvas-api"],
         "relatedQuestionIds": [],
         "priority": "core",
-        "sourceRefs": []
+        "sourceRefs": ["ref-9f78f036ed3018f7"]
       },
       "answerFile": "answers/javascript/canvas-api.md"
     },
@@ -944,7 +920,6 @@
       "topic": "JavaScript",
       "difficulty": "Средний",
       "summary": "Теневой корень, границы стилей, слоты и события.",
-      "code": "const host = document.createElement(\"div\");\nconst root = host.attachShadow({ mode: \"open\" });\nconst label = document.createElement(\"span\");\nlabel.textContent = \"Внутри компонента\";\nroot.append(label);\nhost.shadowRoot === root; // true",
       "takeaway": "Shadow DOM создаёт границы структуры и стилей компонента, но не защитное хранилище.",
       "moduleId": "javascript",
       "order": 24,
@@ -953,11 +928,11 @@
         "learningGoal": "Объяснить и применить правило с учётом его границ: Shadow DOM создаёт границы структуры и стилей компонента, но не защитное хранилище.",
         "keywords": ["JavaScript", "DOM и браузерные API"],
         "kind": "explanation",
-        "reviewStatus": "imported",
+        "reviewStatus": "ready",
         "goalIds": ["core", "shadow-dom"],
         "relatedQuestionIds": [],
         "priority": "core",
-        "sourceRefs": []
+        "sourceRefs": ["ref-9f78f036ed3018f7"]
       },
       "answerFile": "answers/javascript/shadow-dom.md"
     },
@@ -967,7 +942,6 @@
       "topic": "JavaScript",
       "difficulty": "Средний",
       "summary": "Асинхронные объекты, индексы, транзакции и обновление схемы.",
-      "code": "// Предусловие: db открыт и содержит store \"items\" с подходящим ключом.\nfunction saveRecord(db, record) {\n  return new Promise((resolve, reject) => {\n    const tx = db.transaction(\"items\", \"readwrite\");\n    tx.objectStore(\"items\").put(record);\n    tx.oncomplete = () => resolve();\n    tx.onabort = () => reject(tx.error);\n  });\n}",
       "takeaway": "Для записи в IndexedDB важен успех транзакции, а не только отдельного запроса.",
       "moduleId": "javascript",
       "order": 25,
@@ -982,11 +956,11 @@
           "transaction"
         ],
         "kind": "explanation",
-        "reviewStatus": "imported",
+        "reviewStatus": "ready",
         "goalIds": ["core", "indexed-db"],
         "relatedQuestionIds": [],
         "priority": "core",
-        "sourceRefs": []
+        "sourceRefs": ["ref-9f78f036ed3018f7"]
       },
       "answerFile": "answers/javascript/indexed-db.md"
     },
@@ -994,9 +968,7 @@
       "id": "js-resource-lifetime",
       "title": "Как связать время жизни подписок и запросов с экраном?",
       "summary": "Организуйте явную очистку обработчиков, таймеров и асинхронной работы при уходе со страницы.",
-      "code": "function mountScreen(button) {\n  const controller = new AbortController()\n  const timer = setInterval(() => console.log('проверка'), 1000)\n  button.addEventListener('click', () => console.log('клик'), {\n    signal: controller.signal,\n  })\n  return () => {\n    controller.abort()\n    clearInterval(timer)\n  }\n}",
       "takeaway": "Явное время жизни ресурса надёжнее надежды на сборщик мусора.",
-      "pitfall": "Очищать только DOM, оставляя подписку, таймер или замыкание, удерживающее экран.",
       "topic": "JavaScript",
       "difficulty": "Средний",
       "moduleId": "javascript",
@@ -1006,11 +978,11 @@
         "learningGoal": "Объяснить и применить правило с учётом его границ: Явное время жизни ресурса надёжнее надежды на сборщик мусора.",
         "keywords": ["JavaScript", "DOM и браузерные API", "сборщик мусора", "garbage collection"],
         "kind": "explanation",
-        "reviewStatus": "imported",
+        "reviewStatus": "ready",
         "goalIds": ["core", "js-resource-lifetime"],
         "relatedQuestionIds": [],
         "priority": "core",
-        "sourceRefs": []
+        "sourceRefs": ["ref-9f78f036ed3018f7"]
       },
       "answerFile": "answers/javascript/js-resource-lifetime.md"
     },
@@ -1019,9 +991,7 @@
       "difficulty": "Базовый",
       "title": "Чем Node, Element и HTMLElement отличаются в DOM API?",
       "summary": "Общая иерархия узлов, текстовые узлы и интерфейс конкретного элемента.",
-      "code": "const block = document.createElement(\"div\")\nblock.append(\"текст\")\nconsole.log(block.firstChild.nodeType === Node.TEXT_NODE) // true\nconsole.log(block.children.length) // 0",
       "takeaway": "Наличие узла в DOM не обещает интерфейс HTML-контрола.",
-      "pitfall": "Обращаться к каждому childNode как к элементу с нужными атрибутами и value.",
       "topic": "JavaScript",
       "moduleId": "javascript",
       "popular": false,
@@ -1030,7 +1000,7 @@
         "learningGoal": "Объяснить и применить правило с учётом его границ: Наличие узла в DOM не обещает интерфейс HTML-контрола.",
         "keywords": ["JavaScript", "DOM и браузерные API"],
         "kind": "explanation",
-        "reviewStatus": "imported",
+        "reviewStatus": "ready",
         "goalIds": ["core", "js-dom-node-categories"],
         "relatedQuestionIds": [],
         "priority": "core",
@@ -1043,9 +1013,7 @@
       "difficulty": "Средний",
       "title": "Как различаются getBoundingClientRect, clientHeight, offsetHeight и scrollHeight?",
       "summary": "Коробки, система координат, прокручиваемое содержимое и округление.",
-      "code": "function measure(element) {\n  const rect = element.getBoundingClientRect()\n  return { topInViewport: rect.top, visibleBox: element.clientHeight, content: element.scrollHeight }\n}\n// Выбор величины определяется задачей, а не похожим названием.",
       "takeaway": "Сначала выберите коробку и систему координат, затем подходящую метрику.",
-      "pitfall": "Сравнивать разные метрики как будто они обязаны совпасть до пикселя.",
       "topic": "JavaScript",
       "moduleId": "javascript",
       "popular": false,
@@ -1054,7 +1022,7 @@
         "learningGoal": "Объяснить и применить правило с учётом его границ: Сначала выберите коробку и систему координат, затем подходящую метрику.",
         "keywords": ["JavaScript", "DOM и браузерные API"],
         "kind": "explanation",
-        "reviewStatus": "imported",
+        "reviewStatus": "ready",
         "goalIds": ["core", "js-dom-geometry"],
         "relatedQuestionIds": [],
         "priority": "core",
@@ -1067,9 +1035,7 @@
       "difficulty": "Средний",
       "title": "Почему element.style и getComputedStyle показывают разные вещи?",
       "summary": "Inline-декларации, каскадное разрешение и значения после вычисления.",
-      "code": "function colorOf(element) {\n  return getComputedStyle(element).color\n}\nfunction tokenOf(element) {\n  return getComputedStyle(element).getPropertyValue(\"--accent\").trim()\n}",
       "takeaway": "Авторская декларация и разрешённое значение после каскада - разные представления.",
-      "pitfall": "Читать только element.style и заключать, что CSS-класс не применился.",
       "topic": "JavaScript",
       "moduleId": "javascript",
       "popular": false,
@@ -1078,7 +1044,7 @@
         "learningGoal": "Объяснить и применить правило с учётом его границ: Авторская декларация и разрешённое значение после каскада - разные представления.",
         "keywords": ["JavaScript", "DOM и браузерные API"],
         "kind": "explanation",
-        "reviewStatus": "imported",
+        "reviewStatus": "ready",
         "goalIds": ["core", "js-computed-style-contract"],
         "relatedQuestionIds": [],
         "priority": "core",
@@ -1091,9 +1057,7 @@
       "difficulty": "Продвинутый",
       "title": "Когда нужен ResizeObserver и как не создать цикл изменения размеров?",
       "summary": "Изменение элемента без window.resize и обратная связь наблюдателя.",
-      "code": "const observer = new ResizeObserver(entries => {\n  for (const entry of entries) console.log(entry.contentRect.width)\n})\n// observer.observe(element)\n// При завершении: observer.disconnect()",
       "takeaway": "Наблюдение за размером не должно бесконтрольно вызывать собственную причину обновления.",
-      "pitfall": "Считать любое изменение DOM изменением размера или менять width на каждом уведомлении без проверки.",
       "topic": "JavaScript",
       "moduleId": "javascript",
       "popular": false,
@@ -1102,7 +1066,7 @@
         "learningGoal": "Объяснить и применить правило с учётом его границ: Наблюдение за размером не должно бесконтрольно вызывать собственную причину обновления.",
         "keywords": ["JavaScript", "DOM и браузерные API"],
         "kind": "explanation",
-        "reviewStatus": "imported",
+        "reviewStatus": "ready",
         "goalIds": ["core", "js-resize-observer-loops"],
         "relatedQuestionIds": [],
         "priority": "core",
@@ -1115,9 +1079,7 @@
       "difficulty": "Продвинутый",
       "title": "Как composed и composedPath меняют делегирование событий через Shadow DOM?",
       "summary": "Retargeting, граница shadow root и доступность внутреннего пути.",
-      "code": "const event = new CustomEvent(\"item-selected\", {\n  detail: { id: \"a\" }, bubbles: true, composed: true,\n})\n// Внутренний элемент: node.dispatchEvent(event)\n// Снаружи слушают публичный контракт item-selected.",
       "takeaway": "Делегирование через shadow-границу должно опираться на публичные события, а не скрытый DOM.",
-      "pitfall": "Ожидать, что target всегда укажет на самый внутренний исходный элемент.",
       "topic": "JavaScript",
       "moduleId": "javascript",
       "popular": false,
@@ -1126,7 +1088,7 @@
         "learningGoal": "Объяснить и применить правило с учётом его границ: Делегирование через shadow-границу должно опираться на публичные события, а не скрытый DOM.",
         "keywords": ["JavaScript", "DOM и браузерные API"],
         "kind": "explanation",
-        "reviewStatus": "imported",
+        "reviewStatus": "ready",
         "goalIds": ["core", "js-shadow-event-routing"],
         "relatedQuestionIds": ["shadow-dom", "dom-event-phases"],
         "priority": "core",
@@ -1139,9 +1101,7 @@
       "difficulty": "Средний",
       "title": "Что гарантирует isTrusted и как dispatchEvent отличается от настоящего действия пользователя?",
       "summary": "Синтетическое событие, синхронная доставка и отсутствие авторизации.",
-      "code": "const target = new EventTarget()\ntarget.addEventListener(\"ready\", event => console.log(event.isTrusted))\ntarget.dispatchEvent(new Event(\"ready\")) // false\n// Пользовательская активация и разрешения этим не создаются.",
       "takeaway": "Программное событие вызывает обработчики, но не заменяет доверенный пользовательский сценарий.",
-      "pitfall": "Использовать isTrusted как security-токен или ожидать разрешения Clipboard от искусственного click.",
       "topic": "JavaScript",
       "moduleId": "javascript",
       "popular": false,
@@ -1150,7 +1110,7 @@
         "learningGoal": "Объяснить и применить правило с учётом его границ: Программное событие вызывает обработчики, но не заменяет доверенный пользовательский сценарий.",
         "keywords": ["JavaScript", "DOM и браузерные API"],
         "kind": "explanation",
-        "reviewStatus": "imported",
+        "reviewStatus": "ready",
         "goalIds": ["core", "js-dispatch-trust"],
         "relatedQuestionIds": [],
         "priority": "core",
@@ -1163,9 +1123,7 @@
       "difficulty": "Средний",
       "title": "Какие этапы жизненного цикла custom element нужны для корректной подписки и обновления?",
       "summary": "Регистрация, connected/disconnected и наблюдаемые атрибуты.",
-      "code": "class HelloUser extends HTMLElement {\n  static observedAttributes = [\"label\"]\n  connectedCallback() { this.render() }\n  attributeChangedCallback() { this.render() }\n  render() { this.textContent = this.getAttribute(\"label\") ?? \"Привет\" }\n}\n// Один раз в нужном registry: customElements.define(\"hello-user\", HelloUser)",
       "takeaway": "Жизненный цикл и отражение атрибутов нужно реализовать как явный контракт компонента.",
-      "pitfall": "Считать connectedCallback одноразовым конструктором или любое JS-свойство наблюдаемым атрибутом.",
       "topic": "JavaScript",
       "moduleId": "javascript",
       "popular": false,
@@ -1174,7 +1132,7 @@
         "learningGoal": "Объяснить и применить правило с учётом его границ: Жизненный цикл и отражение атрибутов нужно реализовать как явный контракт компонента.",
         "keywords": ["JavaScript", "DOM и браузерные API"],
         "kind": "explanation",
-        "reviewStatus": "imported",
+        "reviewStatus": "ready",
         "goalIds": ["core", "js-custom-element-lifecycle"],
         "relatedQuestionIds": [],
         "priority": "core",
@@ -1187,9 +1145,7 @@
       "difficulty": "Средний",
       "title": "Как использовать произвольный id в querySelector без ошибки CSS-синтаксиса?",
       "summary": "Данные идентификатора и программа CSS-селектора.",
-      "code": "function byId(id) { return document.getElementById(id) }\nfunction bySelectorId(id) {\n  return document.querySelector(\"#\" + CSS.escape(id))\n}",
       "takeaway": "Структурный поиск по id и разбор CSS-программы имеют разные требования к входу.",
-      "pitfall": "Склеивать # с произвольным значением и считать любой id готовым селектором.",
       "topic": "JavaScript",
       "moduleId": "javascript",
       "popular": false,
@@ -1198,7 +1154,7 @@
         "learningGoal": "Объяснить и применить правило с учётом его границ: Структурный поиск по id и разбор CSS-программы имеют разные требования к входу.",
         "keywords": ["JavaScript", "DOM и браузерные API"],
         "kind": "explanation",
-        "reviewStatus": "imported",
+        "reviewStatus": "ready",
         "goalIds": ["core", "js-dynamic-selector-escaping"],
         "relatedQuestionIds": [],
         "priority": "core",
@@ -1211,9 +1167,7 @@
       "difficulty": "Продвинутый",
       "title": "Чем Range отличается от Selection и что означают offsets в DOM-диапазоне?",
       "summary": "Границы фрагмента и текущее пользовательское выделение.",
-      "code": "const node = document.createTextNode(\"hello\")\nconst range = document.createRange()\nrange.setStart(node, 1)\nrange.setEnd(node, 4)\nconsole.log(range.toString()) // ell",
       "takeaway": "Диапазон DOM и видимое выделение опираются на узлы и точные единицы смещения.",
-      "pitfall": "Принимать offset элемента за индекс символа его всего текстового содержимого.",
       "topic": "JavaScript",
       "moduleId": "javascript",
       "popular": false,
@@ -1222,7 +1176,7 @@
         "learningGoal": "Объяснить и применить правило с учётом его границ: Диапазон DOM и видимое выделение опираются на узлы и точные единицы смещения.",
         "keywords": ["JavaScript", "DOM и браузерные API"],
         "kind": "explanation",
-        "reviewStatus": "imported",
+        "reviewStatus": "ready",
         "goalIds": ["core", "js-range-selection"],
         "relatedQuestionIds": [],
         "priority": "core",
@@ -1235,9 +1189,7 @@
       "difficulty": "Средний",
       "title": "Почему Clipboard, fullscreen и похожие API могут отказать даже при наличии метода?",
       "summary": "Secure context, permissions, user activation и feature detection.",
-      "code": "async function copyText(text) {\n  if (!navigator.clipboard?.writeText) return false\n  try { await navigator.clipboard.writeText(text); return true }\n  catch { return false }\n}\n// Вызывать из подходящего взаимодействия; false требует понятного fallback.",
       "takeaway": "Feature detection, разрешение и успешное выполнение - три разные проверки.",
-      "pitfall": "Считать существование navigator.clipboard доказательством успешного доступа.",
       "topic": "JavaScript",
       "moduleId": "javascript",
       "popular": false,
@@ -1246,7 +1198,7 @@
         "learningGoal": "Объяснить и применить правило с учётом его границ: Feature detection, разрешение и успешное выполнение - три разные проверки.",
         "keywords": ["JavaScript", "DOM и браузерные API"],
         "kind": "explanation",
-        "reviewStatus": "imported",
+        "reviewStatus": "ready",
         "goalIds": ["core", "js-browser-activation"],
         "relatedQuestionIds": [],
         "priority": "core",

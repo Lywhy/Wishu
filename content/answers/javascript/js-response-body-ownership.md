@@ -2,14 +2,29 @@
 
 <!-- wishu:answer-block -->
 
-### Механизм и границы
+### Как это работает
 
 Если данные нужны в нескольких местах, часто достаточно один раз разобрать тело и передать результат. Clone не обещает бесплатной независимой копии любого объёма: при разной скорости потребителей может накапливаться буфер.
 
 HTTP-статус, доступность body и корректность JSON проверяются отдельно. Прочитать body ради логирования, а затем передать исходный Response другому читателю - частая ошибка middleware.
 
-<!-- wishu:answer-block -->
+### Пример и его разбор
 
-### Источник
+```javascript
+async function read(response) {
+  if (!response.ok) throw new Error("HTTP " + response.status)
+  const data = await response.json()
+  return { data, sameData: data }
+}
+// Для независимой ветви response.clone() вызывают до потребления тела.
+```
 
-[MDN: Response/clone](https://developer.mozilla.org/en-US/docs/Web/API/Response/clone).
+Read разбирает тело один раз и возвращает две ссылки на уже полученные данные. Это проще, чем дважды потреблять Response. Если требуется независимый поток для другого потребителя, clone создают заранее и учитывают возможное накопление данных при разной скорости чтения.
+
+### Типичная ошибка
+
+> Считать Response.json кешируемым `getter`, который можно вызывать неограниченно.
+
+### Источники
+
+[MDN: Response/clone](https://developer.mozilla.org/en-US/docs/Web/API/Response/clone)

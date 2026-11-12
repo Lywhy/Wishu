@@ -2,26 +2,33 @@
 
 <!-- wishu:answer-block -->
 
-#### Механизм и границы
+#### Как это работает
 
-- ShowConfig показывает итоговую конфигурацию после наследования.
-- ExplainFiles помогает понять присутствие файлов, traceResolution - поиск модулей и деклараций.
-- Сначала сократите область диагностики и сохраните существенный фрагмент; огромный лог без конкретного вопроса мало помогает.
+`showConfig` показывает итоговую конфигурацию после наследования. `explainFiles` помогает понять присутствие файлов, `traceResolution` - поиск модулей и деклараций.
+
+Сначала сократите область диагностики и сохраните существенный фрагмент; огромный лог без конкретного вопроса мало помогает.
 
 #### Пример
 
-```typescript
-// tsc -p tsconfig.json --showConfig
-// tsc -p tsconfig.json --explainFiles
-// tsc -p tsconfig.json --traceResolution
-// Это примеры команд; здесь они не запускались.
+```bash
+tsc -p tsconfig.json --showConfig
+tsc -p tsconfig.json --explainFiles
+tsc -p tsconfig.json --traceResolution
 ```
+
+#### Разбор примера
+
+Если неизвестно, откуда взялся глобальный тип, сначала смотрят итоговые options и включённые файлы. Если проблема в выбранном пакете или entrypoint, нужен traceResolution. Такой порядок связывает каждое наблюдение с конкретной гипотезой и не требует менять конфиг вслепую.
+
+#### Типичная ошибка
+
+> Менять aliases и types наугад, не выяснив фактическое разрешение.
 
 #### Для закрепления
 
 - [Как согласовать module, moduleResolution и aliases с реальной средой запуска?](/questions/ts-module-resolution)
 - [Как types и typeRoots помогают контролировать глобальные типы окружения?](/questions/ts-ambient-types-scope)
 
-#### Источник
+#### Источники
 
-[Документация TypeScript](https://www.typescriptlang.org/tsconfig/).
+[Документация TypeScript](https://www.typescriptlang.org/tsconfig/)

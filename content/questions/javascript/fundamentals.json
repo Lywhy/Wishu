@@ -9,7 +9,7 @@
       "title": "Основы языка",
       "description": "Обзор и взаимосвязи навыков: Типы данных, переменные, операторы, объекты и управление выполнением.",
       "requiredDifficulties": [],
-      "reviewed": false,
+      "reviewed": true,
       "priority": "core",
       "relatedSkillIds": [
         "data-types",
@@ -64,7 +64,7 @@
       "title": "Какие типы данных есть в JavaScript?",
       "description": "Объяснить и применить правило с учётом его границ: Сначала назовите восемь типов, затем поясните различие примитивов и объектов.",
       "requiredDifficulties": ["Базовый"],
-      "reviewed": false,
+      "reviewed": true,
       "priority": "core",
       "relatedSkillIds": []
     },
@@ -73,7 +73,7 @@
       "title": "Чем отличаются == и ===?",
       "description": "Объяснить и применить правило с учётом его границ: В ответе отделяйте приведение типов от сравнения объектных ссылок.",
       "requiredDifficulties": ["Базовый"],
-      "reviewed": false,
+      "reviewed": true,
       "priority": "core",
       "relatedSkillIds": []
     },
@@ -82,7 +82,7 @@
       "title": "Чем отличаются var, let и const?",
       "description": "Объяснить и применить правило с учётом его границ: Сравните область, доступ до инициализации и возможность переназначения.",
       "requiredDifficulties": ["Базовый"],
-      "reviewed": false,
+      "reviewed": true,
       "priority": "core",
       "relatedSkillIds": []
     },
@@ -91,7 +91,7 @@
       "title": "В чём разница между null и undefined?",
       "description": "Объяснить и применить правило с учётом его границ: Смысл null и undefined определяется контрактом данных, но это разные значения.",
       "requiredDifficulties": ["Базовый"],
-      "reviewed": false,
+      "reviewed": true,
       "priority": "core",
       "relatedSkillIds": []
     },
@@ -100,7 +100,7 @@
       "title": "Что такое область видимости переменной?",
       "description": "Объяснить и применить правило с учётом его границ: Доступные переменные определяются вложенностью областей в исходном коде.",
       "requiredDifficulties": ["Базовый"],
-      "reviewed": false,
+      "reviewed": true,
       "priority": "core",
       "relatedSkillIds": []
     },
@@ -109,7 +109,7 @@
       "title": "Что такое hoisting и что произойдёт при обращении к переменной до объявления?",
       "description": "Объяснить и применить правило с учётом его границ: Hoisting сам по себе не гарантирует доступность значения.",
       "requiredDifficulties": ["Средний"],
-      "reviewed": false,
+      "reviewed": true,
       "priority": "core",
       "relatedSkillIds": []
     },
@@ -118,7 +118,7 @@
       "title": "Что означает динамическая типизация JavaScript?",
       "description": "Объяснить и применить правило с учётом его границ: Тип есть у текущего значения, а не навсегда у переменной.",
       "requiredDifficulties": ["Базовый"],
-      "reviewed": false,
+      "reviewed": true,
       "priority": "core",
       "relatedSkillIds": []
     },
@@ -127,7 +127,7 @@
       "title": "Как работает typeof и почему typeof null возвращает \"object\"?",
       "description": "Объяснить и применить правило с учётом его границ: typeof полезен для первичной проверки, но null и массивы требуют отдельных проверок.",
       "requiredDifficulties": ["Базовый"],
-      "reviewed": false,
+      "reviewed": true,
       "priority": "core",
       "relatedSkillIds": []
     },
@@ -136,7 +136,7 @@
       "title": "Что такое NaN и как его правильно проверить?",
       "description": "Объяснить и применить правило с учётом его границ: Для проверки самого значения NaN используйте Number.isNaN.",
       "requiredDifficulties": ["Базовый"],
-      "reviewed": false,
+      "reviewed": true,
       "priority": "core",
       "relatedSkillIds": []
     },
@@ -145,7 +145,7 @@
       "title": "Как работают преобразования типов и почему [] == false даёт true?",
       "description": "Объяснить и применить правило с учётом его границ: Результат преобразования зависит от конкретной операции, а не только от значения.",
       "requiredDifficulties": ["Средний"],
-      "reviewed": false,
+      "reviewed": true,
       "priority": "core",
       "relatedSkillIds": []
     },
@@ -154,7 +154,7 @@
       "title": "Как объединять строки и использовать шаблонные литералы?",
       "description": "Объяснить и применить правило с учётом его границ: Шаблонные литералы делают вставку значений в текст наглядной.",
       "requiredDifficulties": ["Базовый"],
-      "reviewed": false,
+      "reviewed": true,
       "priority": "core",
       "relatedSkillIds": []
     },
@@ -163,7 +163,7 @@
       "title": "Чем отличаются префиксные и постфиксные ++ и --?",
       "description": "Объяснить и применить правило с учётом его границ: Префикс возвращает новое значение, постфикс - значение до изменения.",
       "requiredDifficulties": ["Базовый"],
-      "reviewed": false,
+      "reviewed": true,
       "priority": "core",
       "relatedSkillIds": []
     },
@@ -172,7 +172,7 @@
       "title": "Какие значения являются falsy и как работают ! и !!?",
       "description": "Объяснить и применить правило с учётом его границ: Пустые массивы и объекты truthy; для проверки их содержимого нужны другие условия.",
       "requiredDifficulties": ["Базовый"],
-      "reviewed": false,
+      "reviewed": true,
       "priority": "core",
       "relatedSkillIds": []
     },
@@ -181,7 +181,7 @@
       "title": "Как проверить наличие свойства и что возвращает отсутствующее свойство?",
       "description": "Объяснить и применить правило с учётом его границ: Отсутствующее свойство и существующее свойство со значением undefined - разные ситуации.",
       "requiredDifficulties": ["Базовый"],
-      "reviewed": false,
+      "reviewed": true,
       "priority": "core",
       "relatedSkillIds": []
     },
@@ -190,7 +190,7 @@
       "title": "Что делает оператор delete?",
       "description": "Объяснить и применить правило с учётом его границ: delete удаляет свойство, а не переменную и не выделенную память.",
       "requiredDifficulties": ["Средний"],
-      "reviewed": false,
+      "reviewed": true,
       "priority": "core",
       "relatedSkillIds": []
     },
@@ -199,7 +199,7 @@
       "title": "Как работает instanceof и какие у него ограничения?",
       "description": "Объяснить и применить правило с учётом его границ: instanceof проверяет связь с конкретным конструктором и его прототипом.",
       "requiredDifficulties": ["Средний"],
-      "reviewed": false,
+      "reviewed": true,
       "priority": "core",
       "relatedSkillIds": []
     },
@@ -208,7 +208,7 @@
       "title": "Как создать объект и что делает оператор new?",
       "description": "Объяснить и применить правило с учётом его границ: Способ создания объекта определяет его начальные свойства и прототип.",
       "requiredDifficulties": ["Средний"],
-      "reviewed": false,
+      "reviewed": true,
       "priority": "core",
       "relatedSkillIds": []
     },
@@ -217,7 +217,7 @@
       "title": "Для чего нужен оператор void?",
       "description": "Объяснить и применить правило с учётом его границ: void отбрасывает результат выражения, но сохраняет его выполнение.",
       "requiredDifficulties": ["Базовый"],
-      "reviewed": false,
+      "reviewed": true,
       "priority": "core",
       "relatedSkillIds": []
     },
@@ -226,7 +226,7 @@
       "title": "Когда использовать if, switch и тернарный оператор?",
       "description": "Объяснить и применить правило с учётом его границ: Тернарный оператор выбирает значение, а if и switch организуют ветви выполнения.",
       "requiredDifficulties": ["Базовый"],
-      "reviewed": false,
+      "reviewed": true,
       "priority": "core",
       "relatedSkillIds": []
     },
@@ -235,7 +235,7 @@
       "title": "Как работает && и какое значение он возвращает?",
       "description": "Объяснить и применить правило с учётом его границ: && возвращает один из операндов и может пропустить вычисление остальных.",
       "requiredDifficulties": ["Базовый"],
-      "reviewed": false,
+      "reviewed": true,
       "priority": "core",
       "relatedSkillIds": []
     },
@@ -244,7 +244,7 @@
       "title": "Чем оператор ?? отличается от ||?",
       "description": "Объяснить и применить правило с учётом его границ: Используйте ??, когда отсутствие значения означает именно null или undefined.",
       "requiredDifficulties": ["Базовый"],
-      "reviewed": false,
+      "reviewed": true,
       "priority": "core",
       "relatedSkillIds": []
     },
@@ -253,7 +253,7 @@
       "title": "Что такое JSON и как работают JSON.parse и JSON.stringify?",
       "description": "Объяснить и применить правило с учётом его границ: JSON передаёт ограниченный набор данных, а не все значения и возможности JavaScript.",
       "requiredDifficulties": ["Базовый"],
-      "reviewed": false,
+      "reviewed": true,
       "priority": "core",
       "relatedSkillIds": []
     },
@@ -262,7 +262,7 @@
       "title": "Как надёжно проверить, что значение является массивом?",
       "description": "Объяснить и применить правило с учётом его границ: Array.isArray проверяет сам массив, а не его внешнее сходство с ним.",
       "requiredDifficulties": ["Базовый"],
-      "reviewed": false,
+      "reviewed": true,
       "priority": "core",
       "relatedSkillIds": []
     },
@@ -271,7 +271,7 @@
       "title": "Как передаются примитивы и объекты: по значению или по ссылке?",
       "description": "Объяснить и применить правило с учётом его границ: Можно изменить общий объект через скопированную ссылку, но переназначение параметра остаётся локальным.",
       "requiredDifficulties": ["Средний"],
-      "reviewed": false,
+      "reviewed": true,
       "priority": "core",
       "relatedSkillIds": []
     },
@@ -280,7 +280,7 @@
       "title": "Что такое изменяемые и неизменяемые данные?",
       "description": "Объяснить и применить правило с учётом его границ: Новая внешняя оболочка ещё не означает независимость вложенных объектов.",
       "requiredDifficulties": ["Базовый"],
-      "reviewed": false,
+      "reviewed": true,
       "priority": "core",
       "relatedSkillIds": []
     },
@@ -289,7 +289,7 @@
       "title": "Что такое Symbol и где его используют?",
       "description": "Объяснить и применить правило с учётом его границ: Symbol даёт уникальный ключ, но не скрывает свойство от доступа.",
       "requiredDifficulties": ["Базовый"],
-      "reviewed": false,
+      "reviewed": true,
       "priority": "core",
       "relatedSkillIds": []
     },
@@ -298,7 +298,7 @@
       "title": "Чем BigInt отличается от Number?",
       "description": "Объяснить и применить правило с учётом его границ: BigInt выбирают для точных целых за пределами безопасного диапазона Number.",
       "requiredDifficulties": ["Средний"],
-      "reviewed": false,
+      "reviewed": true,
       "priority": "core",
       "relatedSkillIds": []
     },
@@ -307,7 +307,7 @@
       "title": "Как работает spread и насколько глубоко он копирует данные?",
       "description": "Объяснить и применить правило с учётом его границ: Spread разворачивает значения и создаёт только поверхностную копию.",
       "requiredDifficulties": ["Базовый"],
-      "reviewed": false,
+      "reviewed": true,
       "priority": "core",
       "relatedSkillIds": []
     },
@@ -316,7 +316,7 @@
       "title": "Как выбрасывать и обрабатывать ошибки в JavaScript?",
       "description": "Объяснить и применить правило с учётом его границ: Обрабатывайте ошибку там, где можно осмысленно восстановиться или передать её дальше.",
       "requiredDifficulties": ["Базовый"],
-      "reviewed": false,
+      "reviewed": true,
       "priority": "core",
       "relatedSkillIds": []
     },
@@ -325,7 +325,7 @@
       "title": "Как работает optional chaining (?.)?",
       "description": "Объяснить и применить правило с учётом его границ: Optional chaining защищает от null и undefined в указанных точках цепочки.",
       "requiredDifficulties": ["Базовый"],
-      "reviewed": false,
+      "reviewed": true,
       "priority": "core",
       "relatedSkillIds": []
     },
@@ -334,7 +334,7 @@
       "title": "Какие циклы есть в JavaScript и когда их использовать?",
       "description": "Объяснить и применить правило с учётом его границ: Выбор цикла зависит от условия повторения и способа получения очередного элемента.",
       "requiredDifficulties": ["Базовый"],
-      "reviewed": false,
+      "reviewed": true,
       "priority": "core",
       "relatedSkillIds": []
     },
@@ -343,7 +343,7 @@
       "title": "Чем отличаются break и continue и зачем break в switch?",
       "description": "Объяснить и применить правило с учётом его границ: break выходит из конструкции, continue пропускает остаток текущей итерации.",
       "requiredDifficulties": ["Базовый"],
-      "reviewed": false,
+      "reviewed": true,
       "priority": "core",
       "relatedSkillIds": []
     },
@@ -352,7 +352,7 @@
       "title": "Чем отличаются for...in и for...of?",
       "description": "Объяснить и применить правило с учётом его границ: for...in перечисляет ключи, for...of получает значения из итератора.",
       "requiredDifficulties": ["Базовый"],
-      "reviewed": false,
+      "reviewed": true,
       "priority": "core",
       "relatedSkillIds": []
     },
@@ -361,7 +361,7 @@
       "title": "Что такое метки и как они работают с break и continue?",
       "description": "Объяснить и применить правило с учётом его границ: Метка позволяет адресовать выход или продолжение конкретной внешней конструкции.",
       "requiredDifficulties": ["Средний"],
-      "reviewed": false,
+      "reviewed": true,
       "priority": "core",
       "relatedSkillIds": []
     },
@@ -370,7 +370,7 @@
       "title": "Как устроены глобальные переменные и чем они отличаются от свойств globalThis?",
       "description": "Объяснить и применить правило с учётом его границ: Не каждое верхнеуровневое объявление становится свойством глобального объекта.",
       "requiredDifficulties": ["Средний"],
-      "reviewed": false,
+      "reviewed": true,
       "priority": "core",
       "relatedSkillIds": []
     },
@@ -379,7 +379,7 @@
       "title": "Почему eval опасен и чем его заменить?",
       "description": "Объяснить и применить правило с учётом его границ: Для данных и выбора действий используйте явные API вместо выполнения строк.",
       "requiredDifficulties": ["Базовый"],
-      "reviewed": false,
+      "reviewed": true,
       "priority": "core",
       "relatedSkillIds": []
     },
@@ -388,7 +388,7 @@
       "title": "Почему 0.1 + 0.2 не равно 0.3 и как сравнивать дробные числа?",
       "description": "Объяснить и применить правило с учётом его границ: Сначала определите точность предметной области, затем представление и допуск.",
       "requiredDifficulties": ["Средний"],
-      "reviewed": false,
+      "reviewed": true,
       "priority": "core",
       "relatedSkillIds": []
     },
@@ -397,7 +397,7 @@
       "title": "Чем Object.is и SameValueZero отличаются от строгого равенства?",
       "description": "Объяснить и применить правило с учётом его границ: Выбирайте алгоритм сравнения с учётом NaN, знакового нуля и объектной идентичности.",
       "requiredDifficulties": ["Средний"],
-      "reviewed": false,
+      "reviewed": true,
       "priority": "core",
       "relatedSkillIds": []
     },
@@ -406,7 +406,7 @@
       "title": "Как автоматическая вставка точек с запятой влияет на return и начало следующей строки?",
       "description": "Объяснить и применить правило с учётом его границ: Перенос строки не всегда завершает выражение, но в ограниченных конструкциях меняет смысл.",
       "requiredDifficulties": ["Средний"],
-      "reviewed": false,
+      "reviewed": true,
       "priority": "core",
       "relatedSkillIds": []
     },
@@ -415,7 +415,7 @@
       "title": "Чем приоритет и ассоциативность отличаются от порядка вычисления операндов?",
       "description": "Объяснить и применить правило с учётом его границ: Отделяйте структуру выражения от того, когда реально выполняются его части.",
       "requiredDifficulties": ["Средний"],
-      "reviewed": false,
+      "reviewed": true,
       "priority": "core",
       "relatedSkillIds": []
     },
@@ -424,7 +424,7 @@
       "title": "Как ||=, &&= и ??= отличаются от обычного присваивания с логическим оператором?",
       "description": "Объяснить и применить правило с учётом его границ: Условная запись и однократная оценка ссылки отличают logical assignment от механической подстановки.",
       "requiredDifficulties": ["Средний"],
-      "reviewed": false,
+      "reviewed": true,
       "priority": "core",
       "relatedSkillIds": []
     },
@@ -433,7 +433,7 @@
       "title": "Что возвращает оператор запятая и почему он может менять this при вызове?",
       "description": "Объяснить и применить правило с учётом его границ: Запятая возвращает значение последнего выражения, а не сохраняет его форму обращения.",
       "requiredDifficulties": ["Средний"],
-      "reviewed": false,
+      "reviewed": true,
       "priority": "core",
       "relatedSkillIds": []
     },
@@ -442,7 +442,7 @@
       "title": "Почему let и const в разных case могут конфликтовать?",
       "description": "Объяснить и применить правило с учётом его границ: Область видимости создаёт блок, а не метка case.",
       "requiredDifficulties": ["Средний"],
-      "reviewed": false,
+      "reviewed": true,
       "priority": "core",
       "relatedSkillIds": []
     },
@@ -451,7 +451,7 @@
       "title": "Чем деструктурирующее присваивание отличается от объявления переменных?",
       "description": "Объяснить и применить правило с учётом его границ: Одинаковый шаблон может создавать имена или записывать в уже существующие цели.",
       "requiredDifficulties": ["Средний"],
-      "reviewed": false,
+      "reviewed": true,
       "priority": "core",
       "relatedSkillIds": []
     },
@@ -460,7 +460,7 @@
       "title": "Как у примитива появляются методы и почему запись свойства не сохраняется?",
       "description": "Объяснить и применить правило с учётом его границ: Методы примитивов не делают их изменяемыми объектами с постоянными собственными полями.",
       "requiredDifficulties": ["Средний"],
-      "reviewed": false,
+      "reviewed": true,
       "priority": "core",
       "relatedSkillIds": []
     }
@@ -472,21 +472,19 @@
       "topic": "JavaScript",
       "difficulty": "Базовый",
       "summary": "Примитивные значения, объекты и различия между ними.",
-      "code": "const values = [undefined, null, true, 42, 42n, \"JS\", Symbol(\"id\")];\nconst user = { name: \"Аня\" };\nconst items = [1, 2];\ntypeof items; // \"object\"\ntypeof (() => {}); // \"function\"",
       "takeaway": "Сначала назовите восемь типов, затем поясните различие примитивов и объектов.",
       "moduleId": "javascript",
       "order": 0,
       "popular": false,
-      "pitfall": "Считать массив отдельным типом языка или считать null объектом из-за typeof.",
       "editorial": {
         "learningGoal": "Объяснить и применить правило с учётом его границ: Сначала назовите восемь типов, затем поясните различие примитивов и объектов.",
         "keywords": ["JavaScript", "Основы языка"],
         "kind": "explanation",
-        "reviewStatus": "imported",
+        "reviewStatus": "ready",
         "goalIds": ["core", "data-types"],
         "relatedQuestionIds": [],
         "priority": "core",
-        "sourceRefs": []
+        "sourceRefs": ["ref-4e255e14bd38e89f"]
       },
       "answerFile": "answers/javascript/data-types.md"
     },
@@ -496,21 +494,19 @@
       "topic": "JavaScript",
       "difficulty": "Базовый",
       "summary": "Сравнение значений, преобразование типов и идентичность объектов.",
-      "code": "0 == \"0\"; // true\n0 === \"0\"; // false\n({}) === ({}); // false\nNaN === NaN; // false\nObject.is(NaN, NaN); // true",
       "takeaway": "В ответе отделяйте приведение типов от сравнения объектных ссылок.",
       "moduleId": "javascript",
       "order": 1,
       "popular": false,
-      "pitfall": "Объяснять == только фразой «сравнивает значения»: результат зависит от конкретных правил преобразования.",
       "editorial": {
         "learningGoal": "Объяснить и применить правило с учётом его границ: В ответе отделяйте приведение типов от сравнения объектных ссылок.",
         "keywords": ["JavaScript", "Основы языка"],
         "kind": "explanation",
-        "reviewStatus": "imported",
+        "reviewStatus": "ready",
         "goalIds": ["core", "equality"],
         "relatedQuestionIds": [],
         "priority": "core",
-        "sourceRefs": []
+        "sourceRefs": ["ref-9b3947e7db03d9af"]
       },
       "answerFile": "answers/javascript/equality.md"
     },
@@ -520,21 +516,19 @@
       "topic": "JavaScript",
       "difficulty": "Базовый",
       "summary": "Объявление переменных, область видимости и переназначение.",
-      "code": "const user = { name: \"Анна\" };\nuser.name = \"Ольга\"; // можно: изменяется объект\n// user = {}; // TypeError: переназначение const\n\n{ let value = 1; }\n// console.log(value); // ReferenceError: вне области блока",
       "takeaway": "Сравните область, доступ до инициализации и возможность переназначения.",
       "moduleId": "javascript",
       "order": 2,
       "popular": false,
-      "pitfall": "Путать запрет переназначения const с глубоким замораживанием объекта.",
       "editorial": {
         "learningGoal": "Объяснить и применить правило с учётом его границ: Сравните область, доступ до инициализации и возможность переназначения.",
         "keywords": ["JavaScript", "Основы языка"],
         "kind": "explanation",
-        "reviewStatus": "imported",
+        "reviewStatus": "ready",
         "goalIds": ["core", "variables"],
         "relatedQuestionIds": [],
         "priority": "core",
-        "sourceRefs": []
+        "sourceRefs": ["ref-29192a6e5679a260"]
       },
       "answerFile": "answers/javascript/variables.md"
     },
@@ -544,7 +538,6 @@
       "topic": "JavaScript",
       "difficulty": "Базовый",
       "summary": "Отсутствующее значение и намеренно заданное отсутствие.",
-      "code": "let value;\nvalue; // undefined\nconst selectedUser = null;\nnull === undefined; // false\nnull == undefined; // true",
       "takeaway": "Смысл null и undefined определяется контрактом данных, но это разные значения.",
       "moduleId": "javascript",
       "order": 3,
@@ -553,11 +546,11 @@
         "learningGoal": "Объяснить и применить правило с учётом его границ: Смысл null и undefined определяется контрактом данных, но это разные значения.",
         "keywords": ["JavaScript", "Основы языка"],
         "kind": "explanation",
-        "reviewStatus": "imported",
+        "reviewStatus": "ready",
         "goalIds": ["core", "null-undefined"],
         "relatedQuestionIds": [],
         "priority": "core",
-        "sourceRefs": []
+        "sourceRefs": ["ref-82448831799a053c"]
       },
       "answerFile": "answers/javascript/null-undefined.md"
     },
@@ -567,7 +560,6 @@
       "topic": "JavaScript",
       "difficulty": "Базовый",
       "summary": "Глобальная, модульная, функциональная и блочная области видимости.",
-      "code": "const name = \"внешнее\";\nfunction show() {\n  const name = \"внутреннее\";\n  return name;\n}\nshow(); // \"внутреннее\"\nname; // \"внешнее\"",
       "takeaway": "Доступные переменные определяются вложенностью областей в исходном коде.",
       "moduleId": "javascript",
       "order": 4,
@@ -576,11 +568,11 @@
         "learningGoal": "Объяснить и применить правило с учётом его границ: Доступные переменные определяются вложенностью областей в исходном коде.",
         "keywords": ["JavaScript", "Основы языка"],
         "kind": "explanation",
-        "reviewStatus": "imported",
+        "reviewStatus": "ready",
         "goalIds": ["core", "scope"],
         "relatedQuestionIds": [],
         "priority": "core",
-        "sourceRefs": []
+        "sourceRefs": ["ref-9c3744bdde463f3f"]
       },
       "answerFile": "answers/javascript/scope.md"
     },
@@ -590,21 +582,19 @@
       "topic": "JavaScript",
       "difficulty": "Средний",
       "summary": "Подготовка объявлений, undefined и временная мёртвая зона.",
-      "code": "console.log(count); // undefined\nvar count = 1;\n\n{\n  // console.log(value); // ReferenceError: TDZ\n  let value = 2;\n}",
       "takeaway": "Hoisting сам по себе не гарантирует доступность значения.",
       "moduleId": "javascript",
       "order": 5,
       "popular": false,
-      "pitfall": "Говорить «let и const не всплывают» без пояснения TDZ.",
       "editorial": {
         "learningGoal": "Объяснить и применить правило с учётом его границ: Hoisting сам по себе не гарантирует доступность значения.",
         "keywords": ["JavaScript", "Основы языка", "всплытие", "hoisting"],
         "kind": "explanation",
-        "reviewStatus": "imported",
+        "reviewStatus": "ready",
         "goalIds": ["core", "hoisting"],
         "relatedQuestionIds": [],
         "priority": "core",
-        "sourceRefs": []
+        "sourceRefs": ["ref-c3c7a8e97bce247c"]
       },
       "answerFile": "answers/javascript/hoisting.md"
     },
@@ -614,7 +604,6 @@
       "topic": "JavaScript",
       "difficulty": "Базовый",
       "summary": "Тип значения и возможность переназначить переменную значением другого типа.",
-      "code": "let value = 42;\ntypeof value; // \"number\"\nvalue = \"готово\";\ntypeof value; // \"string\"",
       "takeaway": "Тип есть у текущего значения, а не навсегда у переменной.",
       "moduleId": "javascript",
       "order": 6,
@@ -623,11 +612,11 @@
         "learningGoal": "Объяснить и применить правило с учётом его границ: Тип есть у текущего значения, а не навсегда у переменной.",
         "keywords": ["JavaScript", "Основы языка"],
         "kind": "explanation",
-        "reviewStatus": "imported",
+        "reviewStatus": "ready",
         "goalIds": ["core", "dynamic-typing"],
         "relatedQuestionIds": [],
         "priority": "core",
-        "sourceRefs": []
+        "sourceRefs": ["ref-4e255e14bd38e89f"]
       },
       "answerFile": "answers/javascript/dynamic-typing.md"
     },
@@ -637,7 +626,6 @@
       "topic": "JavaScript",
       "difficulty": "Базовый",
       "summary": "Определение типа и особые случаи оператора typeof.",
-      "code": "typeof null; // \"object\"\ntypeof NaN; // \"number\"\ntypeof []; // \"object\"\ntypeof (() => {}); // \"function\"\nArray.isArray([]); // true",
       "takeaway": "typeof полезен для первичной проверки, но null и массивы требуют отдельных проверок.",
       "moduleId": "javascript",
       "order": 7,
@@ -646,11 +634,11 @@
         "learningGoal": "Объяснить и применить правило с учётом его границ: typeof полезен для первичной проверки, но null и массивы требуют отдельных проверок.",
         "keywords": ["JavaScript", "Основы языка"],
         "kind": "explanation",
-        "reviewStatus": "imported",
+        "reviewStatus": "ready",
         "goalIds": ["core", "typeof"],
         "relatedQuestionIds": [],
         "priority": "core",
-        "sourceRefs": []
+        "sourceRefs": ["ref-15537932e2b290b3"]
       },
       "answerFile": "answers/javascript/typeof.md"
     },
@@ -660,7 +648,6 @@
       "topic": "JavaScript",
       "difficulty": "Базовый",
       "summary": "Нечисловой результат числовых операций и Number.isNaN.",
-      "code": "const result = Number(\"текст\");\nNumber.isNaN(result); // true\nNumber.isNaN(\"текст\"); // false\nisNaN(\"текст\"); // true\nNaN === NaN; // false",
       "takeaway": "Для проверки самого значения NaN используйте Number.isNaN.",
       "moduleId": "javascript",
       "order": 8,
@@ -669,11 +656,11 @@
         "learningGoal": "Объяснить и применить правило с учётом его границ: Для проверки самого значения NaN используйте Number.isNaN.",
         "keywords": ["JavaScript", "Основы языка"],
         "kind": "explanation",
-        "reviewStatus": "imported",
+        "reviewStatus": "ready",
         "goalIds": ["core", "nan"],
         "relatedQuestionIds": [],
         "priority": "core",
-        "sourceRefs": []
+        "sourceRefs": ["ref-dafe67af09a41cd4"]
       },
       "answerFile": "answers/javascript/nan.md"
     },
@@ -683,7 +670,6 @@
       "topic": "JavaScript",
       "difficulty": "Средний",
       "summary": "Явные преобразования и правила нестрогого сравнения.",
-      "code": "Number(\"42\"); // 42\nString(false); // \"false\"\n\"5\" - 1; // 4\n\"5\" + 1; // \"51\"\n[] == false; // true\nBoolean([]); // true",
       "takeaway": "Результат преобразования зависит от конкретной операции, а не только от значения.",
       "moduleId": "javascript",
       "order": 9,
@@ -692,11 +678,11 @@
         "learningGoal": "Объяснить и применить правило с учётом его границ: Результат преобразования зависит от конкретной операции, а не только от значения.",
         "keywords": ["JavaScript", "Основы языка"],
         "kind": "explanation",
-        "reviewStatus": "imported",
+        "reviewStatus": "ready",
         "goalIds": ["core", "type-coercion"],
         "relatedQuestionIds": [],
         "priority": "core",
-        "sourceRefs": []
+        "sourceRefs": ["ref-b7ef5baf3338b922"]
       },
       "answerFile": "answers/javascript/type-coercion.md"
     },
@@ -706,7 +692,6 @@
       "topic": "JavaScript",
       "difficulty": "Базовый",
       "summary": "Конкатенация, интерполяция выражений и многострочные строки.",
-      "code": "const name = \"Аня\";\nconst count = 3;\nconst message = `Привет, ${name}! Вопросов: ${count}.`;\n1 + 2 + \"3\"; // \"33\"\n\"1\" + 2 + 3; // \"123\"",
       "takeaway": "Шаблонные литералы делают вставку значений в текст наглядной.",
       "moduleId": "javascript",
       "order": 10,
@@ -715,11 +700,11 @@
         "learningGoal": "Объяснить и применить правило с учётом его границ: Шаблонные литералы делают вставку значений в текст наглядной.",
         "keywords": ["JavaScript", "Основы языка"],
         "kind": "explanation",
-        "reviewStatus": "imported",
+        "reviewStatus": "ready",
         "goalIds": ["core", "string-concatenation-templates"],
         "relatedQuestionIds": [],
         "priority": "core",
-        "sourceRefs": []
+        "sourceRefs": ["ref-b7ef5baf3338b922"]
       },
       "answerFile": "answers/javascript/string-concatenation-templates.md"
     },
@@ -729,7 +714,6 @@
       "topic": "JavaScript",
       "difficulty": "Базовый",
       "summary": "Изменение значения и результат выражения.",
-      "code": "let value = 1;\nconst before = value++; // before: 1, value: 2\nconst after = ++value; // after: 3, value: 3\nvalue--; // value: 2",
       "takeaway": "Префикс возвращает новое значение, постфикс - значение до изменения.",
       "moduleId": "javascript",
       "order": 11,
@@ -738,11 +722,11 @@
         "learningGoal": "Объяснить и применить правило с учётом его границ: Префикс возвращает новое значение, постфикс - значение до изменения.",
         "keywords": ["JavaScript", "Основы языка"],
         "kind": "explanation",
-        "reviewStatus": "imported",
+        "reviewStatus": "ready",
         "goalIds": ["core", "increment-decrement"],
         "relatedQuestionIds": [],
         "priority": "core",
-        "sourceRefs": []
+        "sourceRefs": ["ref-b7ef5baf3338b922"]
       },
       "answerFile": "answers/javascript/increment-decrement.md"
     },
@@ -752,7 +736,6 @@
       "topic": "JavaScript",
       "difficulty": "Базовый",
       "summary": "Преобразование к boolean и логическое отрицание.",
-      "code": "!0; // true\n!!\"JS\"; // true\n!![]; // true\n!!\" \"; // true\nBoolean(null); // false",
       "takeaway": "Пустые массивы и объекты truthy; для проверки их содержимого нужны другие условия.",
       "moduleId": "javascript",
       "order": 12,
@@ -761,11 +744,11 @@
         "learningGoal": "Объяснить и применить правило с учётом его границ: Пустые массивы и объекты truthy; для проверки их содержимого нужны другие условия.",
         "keywords": ["JavaScript", "Основы языка"],
         "kind": "explanation",
-        "reviewStatus": "imported",
+        "reviewStatus": "ready",
         "goalIds": ["core", "truthy-falsy"],
         "relatedQuestionIds": [],
         "priority": "core",
-        "sourceRefs": []
+        "sourceRefs": ["ref-b7ef5baf3338b922"]
       },
       "answerFile": "answers/javascript/truthy-falsy.md"
     },
@@ -775,7 +758,6 @@
       "topic": "JavaScript",
       "difficulty": "Базовый",
       "summary": "Чтение свойств, оператор in и проверка собственных свойств.",
-      "code": "const user = Object.create({ role: \"reader\" });\nuser.name = undefined;\nuser.missing; // undefined\n\"role\" in user; // true\nObject.hasOwn(user, \"role\"); // false\nObject.hasOwn(user, \"name\"); // true",
       "takeaway": "Отсутствующее свойство и существующее свойство со значением undefined - разные ситуации.",
       "moduleId": "javascript",
       "order": 13,
@@ -784,11 +766,11 @@
         "learningGoal": "Объяснить и применить правило с учётом его границ: Отсутствующее свойство и существующее свойство со значением undefined - разные ситуации.",
         "keywords": ["JavaScript", "Основы языка"],
         "kind": "explanation",
-        "reviewStatus": "imported",
+        "reviewStatus": "ready",
         "goalIds": ["core", "property-presence"],
         "relatedQuestionIds": [],
         "priority": "core",
-        "sourceRefs": []
+        "sourceRefs": ["ref-141b935012152fea"]
       },
       "answerFile": "answers/javascript/property-presence.md"
     },
@@ -798,7 +780,6 @@
       "topic": "JavaScript",
       "difficulty": "Средний",
       "summary": "Удаление свойства, конфигурируемость и разреженные массивы.",
-      "code": "const user = { name: \"Аня\" };\ndelete user.name; // true\nObject.hasOwn(user, \"name\"); // false\nconst items = [10, 20];\ndelete items[0];\nitems.length; // 2\n0 in items; // false",
       "takeaway": "delete удаляет свойство, а не переменную и не выделенную память.",
       "moduleId": "javascript",
       "order": 14,
@@ -807,11 +788,11 @@
         "learningGoal": "Объяснить и применить правило с учётом его границ: delete удаляет свойство, а не переменную и не выделенную память.",
         "keywords": ["JavaScript", "Основы языка"],
         "kind": "explanation",
-        "reviewStatus": "imported",
+        "reviewStatus": "ready",
         "goalIds": ["core", "delete-operator"],
         "relatedQuestionIds": [],
         "priority": "core",
-        "sourceRefs": []
+        "sourceRefs": ["ref-b7ef5baf3338b922"]
       },
       "answerFile": "answers/javascript/delete-operator.md"
     },
@@ -821,7 +802,6 @@
       "topic": "JavaScript",
       "difficulty": "Средний",
       "summary": "Проверка цепочки прототипов и принадлежность конструктору.",
-      "code": "class User {}\nconst user = new User();\nuser instanceof User; // true\nuser instanceof Object; // true\n[] instanceof Array; // true\nArray.isArray([]); // true",
       "takeaway": "instanceof проверяет связь с конкретным конструктором и его прототипом.",
       "moduleId": "javascript",
       "order": 15,
@@ -830,11 +810,11 @@
         "learningGoal": "Объяснить и применить правило с учётом его границ: instanceof проверяет связь с конкретным конструктором и его прототипом.",
         "keywords": ["JavaScript", "Основы языка", "прототип", "prototype"],
         "kind": "explanation",
-        "reviewStatus": "imported",
+        "reviewStatus": "ready",
         "goalIds": ["core", "instanceof-operator"],
         "relatedQuestionIds": [],
         "priority": "core",
-        "sourceRefs": []
+        "sourceRefs": ["ref-b7ef5baf3338b922"]
       },
       "answerFile": "answers/javascript/instanceof-operator.md"
     },
@@ -844,7 +824,6 @@
       "topic": "JavaScript",
       "difficulty": "Средний",
       "summary": "Литерал объекта, Object.create и вызов конструктора.",
-      "code": "const literal = { name: \"Аня\" };\nconst dictionary = Object.create(null);\nclass User {\n  constructor(name) { this.name = name; }\n}\nconst user = new User(\"Оля\");\nObject.getPrototypeOf(user) === User.prototype; // true",
       "takeaway": "Способ создания объекта определяет его начальные свойства и прототип.",
       "moduleId": "javascript",
       "order": 16,
@@ -853,11 +832,11 @@
         "learningGoal": "Объяснить и применить правило с учётом его границ: Способ создания объекта определяет его начальные свойства и прототип.",
         "keywords": ["JavaScript", "Основы языка", "прототип", "prototype"],
         "kind": "explanation",
-        "reviewStatus": "imported",
+        "reviewStatus": "ready",
         "goalIds": ["core", "object-creation-new"],
         "relatedQuestionIds": [],
         "priority": "core",
-        "sourceRefs": []
+        "sourceRefs": ["ref-b7ef5baf3338b922"]
       },
       "answerFile": "answers/javascript/object-creation-new.md"
     },
@@ -867,7 +846,6 @@
       "topic": "JavaScript",
       "difficulty": "Базовый",
       "summary": "Вычисление выражения с результатом undefined.",
-      "code": "let count = 0;\nconst result = void (count += 1);\ncount; // 1\nresult; // undefined\nvoid 0; // undefined",
       "takeaway": "void отбрасывает результат выражения, но сохраняет его выполнение.",
       "moduleId": "javascript",
       "order": 17,
@@ -876,11 +854,11 @@
         "learningGoal": "Объяснить и применить правило с учётом его границ: void отбрасывает результат выражения, но сохраняет его выполнение.",
         "keywords": ["JavaScript", "Основы языка"],
         "kind": "explanation",
-        "reviewStatus": "imported",
+        "reviewStatus": "ready",
         "goalIds": ["core", "void-operator"],
         "relatedQuestionIds": [],
         "priority": "core",
-        "sourceRefs": []
+        "sourceRefs": ["ref-b7ef5baf3338b922"]
       },
       "answerFile": "answers/javascript/void-operator.md"
     },
@@ -890,7 +868,6 @@
       "topic": "JavaScript",
       "difficulty": "Базовый",
       "summary": "Выбор ветви выполнения и условное выражение.",
-      "code": "const score = 80;\nconst result = score >= 60 ? \"зачёт\" : \"повторить\";\nif (score >= 90) {\n  console.log(\"отлично\");\n} else {\n  console.log(result);\n}",
       "takeaway": "Тернарный оператор выбирает значение, а if и switch организуют ветви выполнения.",
       "moduleId": "javascript",
       "order": 18,
@@ -899,11 +876,11 @@
         "learningGoal": "Объяснить и применить правило с учётом его границ: Тернарный оператор выбирает значение, а if и switch организуют ветви выполнения.",
         "keywords": ["JavaScript", "Основы языка"],
         "kind": "explanation",
-        "reviewStatus": "imported",
+        "reviewStatus": "ready",
         "goalIds": ["core", "conditional-statements"],
         "relatedQuestionIds": [],
         "priority": "core",
-        "sourceRefs": []
+        "sourceRefs": ["ref-b7ef5baf3338b922"]
       },
       "answerFile": "answers/javascript/conditional-statements.md"
     },
@@ -913,7 +890,6 @@
       "topic": "JavaScript",
       "difficulty": "Базовый",
       "summary": "Короткое замыкание и возврат исходного операнда.",
-      "code": "0 && \"готово\"; // 0\n\"JS\" && 42; // 42\nlet called = false;\nfalse && (called = true);\ncalled; // false",
       "takeaway": "&& возвращает один из операндов и может пропустить вычисление остальных.",
       "moduleId": "javascript",
       "order": 19,
@@ -922,11 +898,11 @@
         "learningGoal": "Объяснить и применить правило с учётом его границ: && возвращает один из операндов и может пропустить вычисление остальных.",
         "keywords": ["JavaScript", "Основы языка", "замыкание", "замыкания", "closure"],
         "kind": "explanation",
-        "reviewStatus": "imported",
+        "reviewStatus": "ready",
         "goalIds": ["core", "logical-and"],
         "relatedQuestionIds": [],
         "priority": "core",
-        "sourceRefs": []
+        "sourceRefs": ["ref-b7ef5baf3338b922"]
       },
       "answerFile": "answers/javascript/logical-and.md"
     },
@@ -936,7 +912,6 @@
       "topic": "JavaScript",
       "difficulty": "Базовый",
       "summary": "Значение по умолчанию для null и undefined.",
-      "code": "0 ?? 10; // 0\n0 || 10; // 10\n\"\" ?? \"нет текста\"; // \"\"\nnull ?? \"нет значения\"; // \"нет значения\"\n(null ?? false) || \"резерв\"; // \"резерв\"",
       "takeaway": "Используйте ??, когда отсутствие значения означает именно null или undefined.",
       "moduleId": "javascript",
       "order": 20,
@@ -945,11 +920,11 @@
         "learningGoal": "Объяснить и применить правило с учётом его границ: Используйте ??, когда отсутствие значения означает именно null или undefined.",
         "keywords": ["JavaScript", "Основы языка"],
         "kind": "explanation",
-        "reviewStatus": "imported",
+        "reviewStatus": "ready",
         "goalIds": ["core", "nullish-coalescing"],
         "relatedQuestionIds": [],
         "priority": "core",
-        "sourceRefs": []
+        "sourceRefs": ["ref-b7ef5baf3338b922"]
       },
       "answerFile": "answers/javascript/nullish-coalescing.md"
     },
@@ -959,7 +934,6 @@
       "topic": "JavaScript",
       "difficulty": "Базовый",
       "summary": "Текстовый формат данных, сериализация и ограничения.",
-      "code": "const text = JSON.stringify({ name: \"Аня\", active: true });\nconst user = JSON.parse(text);\nuser.name; // \"Аня\"\nJSON.stringify({ value: undefined }); // \"{}\"\nJSON.stringify([undefined, NaN]); // \"[null,null]\"",
       "takeaway": "JSON передаёт ограниченный набор данных, а не все значения и возможности JavaScript.",
       "moduleId": "javascript",
       "order": 21,
@@ -968,11 +942,11 @@
         "learningGoal": "Объяснить и применить правило с учётом его границ: JSON передаёт ограниченный набор данных, а не все значения и возможности JavaScript.",
         "keywords": ["JavaScript", "Основы языка"],
         "kind": "explanation",
-        "reviewStatus": "imported",
+        "reviewStatus": "ready",
         "goalIds": ["core", "json-format"],
         "relatedQuestionIds": [],
         "priority": "core",
-        "sourceRefs": []
+        "sourceRefs": ["ref-31a6feb5ec967b55"]
       },
       "answerFile": "answers/javascript/json-format.md"
     },
@@ -982,7 +956,6 @@
       "topic": "JavaScript",
       "difficulty": "Базовый",
       "summary": "Array.isArray и ограничения typeof и instanceof.",
-      "code": "Array.isArray([]); // true\nArray.isArray({ length: 0 }); // false\nArray.isArray(new Uint8Array(2)); // false\ntypeof []; // \"object\"",
       "takeaway": "Array.isArray проверяет сам массив, а не его внешнее сходство с ним.",
       "moduleId": "javascript",
       "order": 22,
@@ -991,11 +964,11 @@
         "learningGoal": "Объяснить и применить правило с учётом его границ: Array.isArray проверяет сам массив, а не его внешнее сходство с ним.",
         "keywords": ["JavaScript", "Основы языка"],
         "kind": "explanation",
-        "reviewStatus": "imported",
+        "reviewStatus": "ready",
         "goalIds": ["core", "array-detection"],
         "relatedQuestionIds": [],
         "priority": "core",
-        "sourceRefs": []
+        "sourceRefs": ["ref-b7ef5baf3338b922"]
       },
       "answerFile": "answers/javascript/array-detection.md"
     },
@@ -1005,7 +978,6 @@
       "topic": "JavaScript",
       "difficulty": "Средний",
       "summary": "Копирование значений, общая ссылка и изменение объекта.",
-      "code": "const user = { name: \"Аня\" };\nfunction change(value) {\n  value.name = \"Оля\";\n  value = { name: \"Ира\" };\n}\nchange(user);\nuser.name; // \"Оля\"",
       "takeaway": "Можно изменить общий объект через скопированную ссылку, но переназначение параметра остаётся локальным.",
       "moduleId": "javascript",
       "order": 23,
@@ -1014,11 +986,11 @@
         "learningGoal": "Объяснить и применить правило с учётом его границ: Можно изменить общий объект через скопированную ссылку, но переназначение параметра остаётся локальным.",
         "keywords": ["JavaScript", "Основы языка"],
         "kind": "explanation",
-        "reviewStatus": "imported",
+        "reviewStatus": "ready",
         "goalIds": ["core", "value-and-reference"],
         "relatedQuestionIds": [],
         "priority": "core",
-        "sourceRefs": []
+        "sourceRefs": ["ref-b7ef5baf3338b922"]
       },
       "answerFile": "answers/javascript/value-and-reference.md"
     },
@@ -1028,7 +1000,6 @@
       "topic": "JavaScript",
       "difficulty": "Базовый",
       "summary": "Изменение объекта, const и поверхностное копирование.",
-      "code": "const original = { nested: { count: 1 } };\nconst copy = { ...original };\ncopy.nested.count = 2;\noriginal.nested.count; // 2\nconst updated = { ...original, nested: { ...original.nested, count: 3 } };\noriginal.nested.count; // 2",
       "takeaway": "Новая внешняя оболочка ещё не означает независимость вложенных объектов.",
       "moduleId": "javascript",
       "order": 24,
@@ -1037,11 +1008,11 @@
         "learningGoal": "Объяснить и применить правило с учётом его границ: Новая внешняя оболочка ещё не означает независимость вложенных объектов.",
         "keywords": ["JavaScript", "Основы языка"],
         "kind": "explanation",
-        "reviewStatus": "imported",
+        "reviewStatus": "ready",
         "goalIds": ["core", "mutability"],
         "relatedQuestionIds": [],
         "priority": "core",
-        "sourceRefs": []
+        "sourceRefs": ["ref-b7ef5baf3338b922"]
       },
       "answerFile": "answers/javascript/mutability.md"
     },
@@ -1051,7 +1022,6 @@
       "topic": "JavaScript",
       "difficulty": "Базовый",
       "summary": "Уникальные примитивы, ключи свойств и глобальный реестр.",
-      "code": "Symbol(\"id\") === Symbol(\"id\"); // false\nSymbol.for(\"id\") === Symbol.for(\"id\"); // true\nconst id = Symbol(\"id\");\nconst user = { [id]: 1, name: \"Аня\" };\nObject.keys(user); // [\"name\"]\nuser[id]; // 1",
       "takeaway": "Symbol даёт уникальный ключ, но не скрывает свойство от доступа.",
       "moduleId": "javascript",
       "order": 25,
@@ -1060,11 +1030,11 @@
         "learningGoal": "Объяснить и применить правило с учётом его границ: Symbol даёт уникальный ключ, но не скрывает свойство от доступа.",
         "keywords": ["JavaScript", "Основы языка"],
         "kind": "explanation",
-        "reviewStatus": "imported",
+        "reviewStatus": "ready",
         "goalIds": ["core", "symbol"],
         "relatedQuestionIds": [],
         "priority": "core",
-        "sourceRefs": []
+        "sourceRefs": ["ref-507175799857eeec"]
       },
       "answerFile": "answers/javascript/symbol.md"
     },
@@ -1074,7 +1044,6 @@
       "topic": "JavaScript",
       "difficulty": "Средний",
       "summary": "Точность целых чисел и ограничения смешанной арифметики.",
-      "code": "Number.MAX_SAFE_INTEGER; // 9007199254740991\nconst large = BigInt(\"9007199254740993\");\nlarge + 1n; // 9007199254740994n\n5n / 2n; // 2n\n// large + 1; // TypeError",
       "takeaway": "BigInt выбирают для точных целых за пределами безопасного диапазона Number.",
       "moduleId": "javascript",
       "order": 26,
@@ -1083,11 +1052,11 @@
         "learningGoal": "Объяснить и применить правило с учётом его границ: BigInt выбирают для точных целых за пределами безопасного диапазона Number.",
         "keywords": ["JavaScript", "Основы языка"],
         "kind": "explanation",
-        "reviewStatus": "imported",
+        "reviewStatus": "ready",
         "goalIds": ["core", "bigint-number"],
         "relatedQuestionIds": [],
         "priority": "core",
-        "sourceRefs": []
+        "sourceRefs": ["ref-504f2e393ac67401"]
       },
       "answerFile": "answers/javascript/bigint-number.md"
     },
@@ -1097,7 +1066,6 @@
       "topic": "JavaScript",
       "difficulty": "Базовый",
       "summary": "Распаковка аргументов, элементов и свойств объекта.",
-      "code": "const values = [1, 2];\nconst all = [...values, 3];\nMath.max(...all); // 3\nconst original = { nested: { value: 1 } };\nconst copy = { ...original, active: true };\ncopy.nested === original.nested; // true",
       "takeaway": "Spread разворачивает значения и создаёт только поверхностную копию.",
       "moduleId": "javascript",
       "order": 27,
@@ -1106,11 +1074,11 @@
         "learningGoal": "Объяснить и применить правило с учётом его границ: Spread разворачивает значения и создаёт только поверхностную копию.",
         "keywords": ["JavaScript", "Основы языка"],
         "kind": "explanation",
-        "reviewStatus": "imported",
+        "reviewStatus": "ready",
         "goalIds": ["core", "spread"],
         "relatedQuestionIds": [],
         "priority": "core",
-        "sourceRefs": []
+        "sourceRefs": ["ref-b7ef5baf3338b922"]
       },
       "answerFile": "answers/javascript/spread.md"
     },
@@ -1120,7 +1088,6 @@
       "topic": "JavaScript",
       "difficulty": "Базовый",
       "summary": "throw, try...catch...finally и ошибки асинхронных операций.",
-      "code": "function parseAge(value) {\n  const age = Number(value);\n  if (!Number.isInteger(age) || age < 0) {\n    throw new RangeError(\"Нужен целый неотрицательный возраст\");\n  }\n  return age;\n}\ntry { parseAge(\"текст\"); } catch (error) { console.error(error); }",
       "takeaway": "Обрабатывайте ошибку там, где можно осмысленно восстановиться или передать её дальше.",
       "moduleId": "javascript",
       "order": 28,
@@ -1129,11 +1096,11 @@
         "learningGoal": "Объяснить и применить правило с учётом его границ: Обрабатывайте ошибку там, где можно осмысленно восстановиться или передать её дальше.",
         "keywords": ["JavaScript", "Основы языка"],
         "kind": "explanation",
-        "reviewStatus": "imported",
+        "reviewStatus": "ready",
         "goalIds": ["core", "error-handling"],
         "relatedQuestionIds": [],
         "priority": "core",
-        "sourceRefs": []
+        "sourceRefs": ["ref-2b9d04e7e02e70f4"]
       },
       "answerFile": "answers/javascript/error-handling.md"
     },
@@ -1143,7 +1110,6 @@
       "topic": "JavaScript",
       "difficulty": "Базовый",
       "summary": "Безопасный доступ при null и undefined и границы короткого замыкания.",
-      "code": "const user = { profile: null };\nuser.profile?.name; // undefined\nconst city = user.profile?.address?.city ?? \"не указан\";\nconst onSave = undefined;\nonSave?.(); // undefined",
       "takeaway": "Optional chaining защищает от null и undefined в указанных точках цепочки.",
       "moduleId": "javascript",
       "order": 29,
@@ -1152,11 +1118,11 @@
         "learningGoal": "Объяснить и применить правило с учётом его границ: Optional chaining защищает от null и undefined в указанных точках цепочки.",
         "keywords": ["JavaScript", "Основы языка", "замыкание", "замыкания", "closure"],
         "kind": "explanation",
-        "reviewStatus": "imported",
+        "reviewStatus": "ready",
         "goalIds": ["core", "optional-chaining"],
         "relatedQuestionIds": [],
         "priority": "core",
-        "sourceRefs": []
+        "sourceRefs": ["ref-b7ef5baf3338b922"]
       },
       "answerFile": "answers/javascript/optional-chaining.md"
     },
@@ -1166,7 +1132,6 @@
       "topic": "JavaScript",
       "difficulty": "Базовый",
       "summary": "for, while, do...while и способы обхода коллекций.",
-      "code": "for (let i = 0; i < 3; i += 1) {\n  console.log(i); // 0, затем 1, затем 2\n}\nlet attempts = 0;\ndo {\n  attempts += 1;\n} while (attempts < 1);",
       "takeaway": "Выбор цикла зависит от условия повторения и способа получения очередного элемента.",
       "moduleId": "javascript",
       "order": 30,
@@ -1175,11 +1140,11 @@
         "learningGoal": "Объяснить и применить правило с учётом его границ: Выбор цикла зависит от условия повторения и способа получения очередного элемента.",
         "keywords": ["JavaScript", "Основы языка"],
         "kind": "explanation",
-        "reviewStatus": "imported",
+        "reviewStatus": "ready",
         "goalIds": ["core", "loops"],
         "relatedQuestionIds": [],
         "priority": "core",
-        "sourceRefs": []
+        "sourceRefs": ["ref-b7ef5baf3338b922"]
       },
       "answerFile": "answers/javascript/loops.md"
     },
@@ -1189,7 +1154,6 @@
       "topic": "JavaScript",
       "difficulty": "Базовый",
       "summary": "Досрочный выход, пропуск итерации и переход между case.",
-      "code": "for (const value of [1, 2, 3, 4]) {\n  if (value === 2) continue;\n  if (value === 4) break;\n  console.log(value); // 1, затем 3\n}\nswitch (\"ready\") {\n  case \"ready\": console.log(\"готово\"); break;\n  default: console.log(\"ожидание\");\n}",
       "takeaway": "break выходит из конструкции, continue пропускает остаток текущей итерации.",
       "moduleId": "javascript",
       "order": 31,
@@ -1198,11 +1162,11 @@
         "learningGoal": "Объяснить и применить правило с учётом его границ: break выходит из конструкции, continue пропускает остаток текущей итерации.",
         "keywords": ["JavaScript", "Основы языка"],
         "kind": "explanation",
-        "reviewStatus": "imported",
+        "reviewStatus": "ready",
         "goalIds": ["core", "break-continue"],
         "relatedQuestionIds": [],
         "priority": "core",
-        "sourceRefs": []
+        "sourceRefs": ["ref-b7ef5baf3338b922"]
       },
       "answerFile": "answers/javascript/break-continue.md"
     },
@@ -1212,7 +1176,6 @@
       "topic": "JavaScript",
       "difficulty": "Базовый",
       "summary": "Перечисление ключей объекта и получение значений из итератора.",
-      "code": "const values = [\"a\", \"b\"];\nfor (const key in values) { console.log(key); } // \"0\", \"1\"\nfor (const value of values) { console.log(value); } // \"a\", \"b\"\nfor (const [key, value] of Object.entries({ name: \"Аня\" })) {\n  console.log(key, value);\n}",
       "takeaway": "for...in перечисляет ключи, for...of получает значения из итератора.",
       "moduleId": "javascript",
       "order": 32,
@@ -1221,11 +1184,11 @@
         "learningGoal": "Объяснить и применить правило с учётом его границ: for...in перечисляет ключи, for...of получает значения из итератора.",
         "keywords": ["JavaScript", "Основы языка"],
         "kind": "explanation",
-        "reviewStatus": "imported",
+        "reviewStatus": "ready",
         "goalIds": ["core", "for-in-for-of"],
         "relatedQuestionIds": [],
         "priority": "core",
-        "sourceRefs": []
+        "sourceRefs": ["ref-b7ef5baf3338b922"]
       },
       "answerFile": "answers/javascript/for-in-for-of.md"
     },
@@ -1235,7 +1198,6 @@
       "topic": "JavaScript",
       "difficulty": "Средний",
       "summary": "Именованные инструкции и управление вложенными циклами.",
-      "code": "outer: for (const row of [[1, 2], [3, 4]]) {\n  for (const value of row) {\n    if (value === 3) break outer;\n    console.log(value); // 1, затем 2\n  }\n}",
       "takeaway": "Метка позволяет адресовать выход или продолжение конкретной внешней конструкции.",
       "moduleId": "javascript",
       "order": 33,
@@ -1244,11 +1206,11 @@
         "learningGoal": "Объяснить и применить правило с учётом его границ: Метка позволяет адресовать выход или продолжение конкретной внешней конструкции.",
         "keywords": ["JavaScript", "Основы языка"],
         "kind": "explanation",
-        "reviewStatus": "imported",
+        "reviewStatus": "ready",
         "goalIds": ["core", "labels"],
         "relatedQuestionIds": [],
         "priority": "core",
-        "sourceRefs": []
+        "sourceRefs": ["ref-b7ef5baf3338b922"]
       },
       "answerFile": "answers/javascript/labels.md"
     },
@@ -1258,7 +1220,6 @@
       "topic": "JavaScript",
       "difficulty": "Средний",
       "summary": "Верхний уровень скрипта, модуля и глобальный объект.",
-      "code": "// Верхний уровень ES-модуля\nconst localToModule = 1;\nObject.hasOwn(globalThis, \"localToModule\"); // false\nglobalThis.wishuExample = 2;\nglobalThis.wishuExample; // 2\ndelete globalThis.wishuExample;",
       "takeaway": "Не каждое верхнеуровневое объявление становится свойством глобального объекта.",
       "moduleId": "javascript",
       "order": 34,
@@ -1267,11 +1228,11 @@
         "learningGoal": "Объяснить и применить правило с учётом его границ: Не каждое верхнеуровневое объявление становится свойством глобального объекта.",
         "keywords": ["JavaScript", "Основы языка"],
         "kind": "explanation",
-        "reviewStatus": "imported",
+        "reviewStatus": "ready",
         "goalIds": ["core", "global-variables"],
         "relatedQuestionIds": [],
         "priority": "core",
-        "sourceRefs": []
+        "sourceRefs": ["ref-b7ef5baf3338b922"]
       },
       "answerFile": "answers/javascript/global-variables.md"
     },
@@ -1281,7 +1242,6 @@
       "topic": "JavaScript",
       "difficulty": "Базовый",
       "summary": "Выполнение строк как кода, инъекции и безопасные альтернативы.",
-      "code": "const payload = JSON.parse(\"{\"name\":\"Аня\"}\");\nconst field = \"name\";\npayload[field]; // \"Аня\"\nconst actions = { greet: () => \"Привет\" };\nconst action = \"greet\";\nif (Object.hasOwn(actions, action)) actions[action]();",
       "takeaway": "Для данных и выбора действий используйте явные API вместо выполнения строк.",
       "moduleId": "javascript",
       "order": 35,
@@ -1290,11 +1250,11 @@
         "learningGoal": "Объяснить и применить правило с учётом его границ: Для данных и выбора действий используйте явные API вместо выполнения строк.",
         "keywords": ["JavaScript", "Основы языка"],
         "kind": "explanation",
-        "reviewStatus": "imported",
+        "reviewStatus": "ready",
         "goalIds": ["core", "eval-risks"],
         "relatedQuestionIds": [],
         "priority": "core",
-        "sourceRefs": []
+        "sourceRefs": ["ref-b7ef5baf3338b922"]
       },
       "answerFile": "answers/javascript/eval-risks.md"
     },
@@ -1304,21 +1264,19 @@
       "topic": "JavaScript",
       "difficulty": "Средний",
       "summary": "Двоичная плавающая точка, допуск сравнения и безопасные целые.",
-      "code": "0.1 + 0.2 === 0.3; // false\nfunction nearlyEqual(a, b, absolute = 1e-12, relative = 1e-12) {\n  return Math.abs(a - b) <= Math.max(absolute, relative * Math.max(Math.abs(a), Math.abs(b)));\n}\nnearlyEqual(0.1 + 0.2, 0.3); // true\n// Пример рассчитан на конечные числа; допуски выбирают под задачу.",
       "takeaway": "Сначала определите точность предметной области, затем представление и допуск.",
       "moduleId": "javascript",
       "order": 36,
       "popular": false,
-      "pitfall": "Безусловно использовать Number.EPSILON или toFixed для всех финансовых расчётов.",
       "editorial": {
         "learningGoal": "Объяснить и применить правило с учётом его границ: Сначала определите точность предметной области, затем представление и допуск.",
         "keywords": ["JavaScript", "Основы языка"],
         "kind": "explanation",
-        "reviewStatus": "imported",
+        "reviewStatus": "ready",
         "goalIds": ["core", "number-precision"],
         "relatedQuestionIds": [],
         "priority": "core",
-        "sourceRefs": []
+        "sourceRefs": ["ref-b7ef5baf3338b922"]
       },
       "answerFile": "answers/javascript/number-precision.md"
     },
@@ -1328,21 +1286,19 @@
       "topic": "JavaScript",
       "difficulty": "Средний",
       "summary": "Специальные случаи NaN и знакового нуля в сравнениях и коллекциях.",
-      "code": "[NaN].includes(NaN); // true\n[NaN].indexOf(NaN); // -1\nnew Set([NaN, NaN, +0, -0]).size; // 2\nObject.is(+0, -0); // false",
       "takeaway": "Выбирайте алгоритм сравнения с учётом NaN, знакового нуля и объектной идентичности.",
       "moduleId": "javascript",
       "order": 37,
       "popular": false,
-      "pitfall": "Ожидать, что все методы коллекций используют тот же алгоритм, что ===.",
       "editorial": {
         "learningGoal": "Объяснить и применить правило с учётом его границ: Выбирайте алгоритм сравнения с учётом NaN, знакового нуля и объектной идентичности.",
         "keywords": ["JavaScript", "Основы языка"],
         "kind": "explanation",
-        "reviewStatus": "imported",
+        "reviewStatus": "ready",
         "goalIds": ["core", "same-value-comparisons"],
         "relatedQuestionIds": [],
         "priority": "core",
-        "sourceRefs": []
+        "sourceRefs": ["ref-b7ef5baf3338b922"]
       },
       "answerFile": "answers/javascript/same-value-comparisons.md"
     },
@@ -1351,9 +1307,7 @@
       "difficulty": "Средний",
       "title": "Как автоматическая вставка точек с запятой влияет на return и начало следующей строки?",
       "summary": "Границы выражений, ограниченные переносы и неоднозначное продолжение инструкции.",
-      "code": "function make() {\n  return\n  { ready: true }\n}\n// Возвращается undefined, объект не является операндом return.\nconst values = [1, 2]\n;[3, 4].forEach(value => console.log(value))",
       "takeaway": "Перенос строки не всегда завершает выражение, но в ограниченных конструкциях меняет смысл.",
-      "pitfall": "Переносить значение return на следующую строку без открывающей скобки.",
       "topic": "JavaScript",
       "moduleId": "javascript",
       "popular": false,
@@ -1362,7 +1316,7 @@
         "learningGoal": "Объяснить и применить правило с учётом его границ: Перенос строки не всегда завершает выражение, но в ограниченных конструкциях меняет смысл.",
         "keywords": ["JavaScript", "Основы языка"],
         "kind": "explanation",
-        "reviewStatus": "imported",
+        "reviewStatus": "ready",
         "goalIds": ["core", "js-asi-boundaries"],
         "relatedQuestionIds": [],
         "priority": "core",
@@ -1375,9 +1329,7 @@
       "difficulty": "Средний",
       "title": "Чем приоритет и ассоциативность отличаются от порядка вычисления операндов?",
       "summary": "Построение выражения и порядок наблюдаемых побочных эффектов.",
-      "code": "const log = value => { console.log(value); return value }\nconst result = log(1) + log(2) * log(3)\n// Вызовы: 1, 2, 3; арифметический результат: 7.\nconst chosen = (null ?? false) || true",
       "takeaway": "Отделяйте структуру выражения от того, когда реально выполняются его части.",
-      "pitfall": "Утверждать, что умножение заставляет сначала вызвать функции его операндов.",
       "topic": "JavaScript",
       "moduleId": "javascript",
       "popular": false,
@@ -1386,7 +1338,7 @@
         "learningGoal": "Объяснить и применить правило с учётом его границ: Отделяйте структуру выражения от того, когда реально выполняются его части.",
         "keywords": ["JavaScript", "Основы языка"],
         "kind": "explanation",
-        "reviewStatus": "imported",
+        "reviewStatus": "ready",
         "goalIds": ["core", "js-operator-evaluation"],
         "relatedQuestionIds": [],
         "priority": "core",
@@ -1399,9 +1351,7 @@
       "difficulty": "Средний",
       "title": "Как ||=, &&= и ??= отличаются от обычного присваивания с логическим оператором?",
       "summary": "Однократное вычисление левой части и условная запись свойства.",
-      "code": "let writes = 0\nconst state = { get value() { return 1 }, set value(next) { writes++ } }\nstate.value ||= 10\nconsole.log(writes) // 0: присваивание не потребовалось.\nconst options = { retries: 0 }\noptions.retries ??= 3 // Ноль сохраняется.",
       "takeaway": "Условная запись и однократная оценка ссылки отличают logical assignment от механической подстановки.",
-      "pitfall": "Заменять ??= на ||= в настройках, где ноль или false допустимы.",
       "topic": "JavaScript",
       "moduleId": "javascript",
       "popular": false,
@@ -1410,7 +1360,7 @@
         "learningGoal": "Объяснить и применить правило с учётом его границ: Условная запись и однократная оценка ссылки отличают logical assignment от механической подстановки.",
         "keywords": ["JavaScript", "Основы языка"],
         "kind": "explanation",
-        "reviewStatus": "imported",
+        "reviewStatus": "ready",
         "goalIds": ["core", "js-logical-assignment"],
         "relatedQuestionIds": [],
         "priority": "core",
@@ -1423,9 +1373,7 @@
       "difficulty": "Средний",
       "title": "Что возвращает оператор запятая и почему он может менять this при вызове?",
       "summary": "Последовательное выполнение выражений и потеря ссылки на свойство.",
-      "code": "\"use strict\"\nconst object = { read() { return this } }\nconsole.log(object.read() === object) // true\nconsole.log((0, object.read)() === undefined) // true\nconst result = (1, 2, 3) // 3",
       "takeaway": "Запятая возвращает значение последнего выражения, а не сохраняет его форму обращения.",
-      "pitfall": "Считать все запятые в JavaScript одним и тем же оператором.",
       "topic": "JavaScript",
       "moduleId": "javascript",
       "popular": false,
@@ -1434,7 +1382,7 @@
         "learningGoal": "Объяснить и применить правило с учётом его границ: Запятая возвращает значение последнего выражения, а не сохраняет его форму обращения.",
         "keywords": ["JavaScript", "Основы языка"],
         "kind": "explanation",
-        "reviewStatus": "imported",
+        "reviewStatus": "ready",
         "goalIds": ["core", "js-comma-expression"],
         "relatedQuestionIds": [],
         "priority": "core",
@@ -1447,9 +1395,7 @@
       "difficulty": "Средний",
       "title": "Почему let и const в разных case могут конфликтовать?",
       "summary": "Общая лексическая область switch и отдельные блоки ветвей.",
-      "code": "function label(kind) {\n  switch (kind) {\n    case \"a\": { const text = \"A\"; return text }\n    case \"b\": { const text = \"B\"; return text }\n    default: return \"?\"\n  }\n}",
       "takeaway": "Область видимости создаёт блок, а не метка case.",
-      "pitfall": "Повторять одно const-имя в соседних case без блоков.",
       "topic": "JavaScript",
       "moduleId": "javascript",
       "popular": false,
@@ -1458,7 +1404,7 @@
         "learningGoal": "Объяснить и применить правило с учётом его границ: Область видимости создаёт блок, а не метка case.",
         "keywords": ["JavaScript", "Основы языка"],
         "kind": "explanation",
-        "reviewStatus": "imported",
+        "reviewStatus": "ready",
         "goalIds": ["core", "js-switch-lexical-scope"],
         "relatedQuestionIds": [],
         "priority": "core",
@@ -1471,9 +1417,7 @@
       "difficulty": "Средний",
       "title": "Чем деструктурирующее присваивание отличается от объявления переменных?",
       "summary": "Существующие привязки, default-выражения и неоднозначность фигурных скобок.",
-      "code": "let name = \"старое\"\n;({ name = \"по умолчанию\" } = { name: undefined })\nconst [first, ...rest] = [1, 2, 3]\nconsole.log(name, first, rest) // по умолчанию, 1, [2, 3]",
       "takeaway": "Одинаковый шаблон может создавать имена или записывать в уже существующие цели.",
-      "pitfall": "Ожидать default для null или писать объектное присваивание как самостоятельный блок.",
       "topic": "JavaScript",
       "moduleId": "javascript",
       "popular": false,
@@ -1482,7 +1426,7 @@
         "learningGoal": "Объяснить и применить правило с учётом его границ: Одинаковый шаблон может создавать имена или записывать в уже существующие цели.",
         "keywords": ["JavaScript", "Основы языка"],
         "kind": "explanation",
-        "reviewStatus": "imported",
+        "reviewStatus": "ready",
         "goalIds": ["core", "js-destructuring-assignment"],
         "relatedQuestionIds": [],
         "priority": "core",
@@ -1495,9 +1439,7 @@
       "difficulty": "Средний",
       "title": "Как у примитива появляются методы и почему запись свойства не сохраняется?",
       "summary": "Доступ к свойствам, временная object-семантика и отличие wrapper-объекта.",
-      "code": "console.log(\"hello\".toUpperCase()) // HELLO\nconsole.log(typeof new String(\"\")) // object\nconsole.log(Boolean(new Boolean(false))) // true: это объект.",
       "takeaway": "Методы примитивов не делают их изменяемыми объектами с постоянными собственными полями.",
-      "pitfall": "Создавать Boolean-обёртку и ожидать falsy, потому что внутри хранится false.",
       "topic": "JavaScript",
       "moduleId": "javascript",
       "popular": false,
@@ -1506,7 +1448,7 @@
         "learningGoal": "Объяснить и применить правило с учётом его границ: Методы примитивов не делают их изменяемыми объектами с постоянными собственными полями.",
         "keywords": ["JavaScript", "Основы языка"],
         "kind": "explanation",
-        "reviewStatus": "imported",
+        "reviewStatus": "ready",
         "goalIds": ["core", "js-primitive-boxing"],
         "relatedQuestionIds": [],
         "priority": "core",

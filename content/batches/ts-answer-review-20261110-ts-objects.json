@@ -1,0 +1,97 @@
+{
+  "schemaVersion": 1,
+  "id": "ts-answer-review-20261110-ts-objects",
+  "title": "ts-answer-review-20261110-ts-objects",
+  "sectionId": "typescript",
+  "subsectionId": "ts-objects",
+  "currentPass": "answers",
+  "goalIds": [
+    "core",
+    "ts-type-interface",
+    "ts-property-modifiers",
+    "ts-index-signature",
+    "ts-interface-extends",
+    "ts-interface-merging",
+    "ts-recursive-types",
+    "ts-runtime-object-keys",
+    "ts-weak-object-types",
+    "ts-spread-result-types",
+    "ts-template-index-signatures"
+  ],
+  "questionIds": [
+    "ts-type-interface",
+    "ts-property-modifiers",
+    "ts-index-signature",
+    "ts-interface-extends",
+    "ts-interface-merging",
+    "ts-recursive-types",
+    "ts-runtime-object-keys",
+    "ts-weak-object-types",
+    "ts-spread-result-types",
+    "ts-template-index-signatures"
+  ],
+  "scopePass": {
+    "status": "complete",
+    "remaining": []
+  },
+  "answerPass": {
+    "status": "complete",
+    "remaining": []
+  },
+  "baseline": [
+    {
+      "id": "ts-type-interface",
+      "title": "Чем type отличается от interface и как ими описывать объекты?",
+      "contentHash": "a3c693fc05c6061f689a547ede5bc6371627d67bd112d84fa91a1757509b0641"
+    },
+    {
+      "id": "ts-property-modifiers",
+      "title": "Как optional и readonly меняют контракт свойства?",
+      "contentHash": "5fe07be0b86a59bb6f89e43afcfac7a588cb8528143fcbb44b4859e96f975478"
+    },
+    {
+      "id": "ts-index-signature",
+      "title": "Как index signature описывает динамические ключи объекта?",
+      "contentHash": "b03be07f5a9ed3442b4c3ee0d43e0069996315c15bf544d3715ef3f253c33f95"
+    },
+    {
+      "id": "ts-interface-extends",
+      "title": "Как interface расширяет один или несколько объектных контрактов?",
+      "contentHash": "29eb854df266c2d3de7154fc1eacd99d62809bd1432b850ec5dff622d8edb889"
+    },
+    {
+      "id": "ts-interface-merging",
+      "title": "Что происходит при повторном объявлении interface с одним именем?",
+      "contentHash": "bf2a60a6b19c6cc011d1cee5c19c156b7bc26c389562f8def69920833c58fb14"
+    },
+    {
+      "id": "ts-recursive-types",
+      "title": "Как описывать рекурсивные типы и рекурсивные generic-структуры?",
+      "contentHash": "58d9f42e1a552c461464c13e4a9890fd8a79f1d0dfd5bbfe8e46233173e64276"
+    },
+    {
+      "id": "ts-runtime-object-keys",
+      "title": "Почему Object.keys возвращает string[], а не (keyof T)[]?",
+      "contentHash": "ed361561af8dfc357618a9a21e798c6c35ec77853be8dc8b1cc6e8917f5e37a6"
+    },
+    {
+      "id": "ts-weak-object-types",
+      "title": "Почему объект может не подходить типу, у которого все свойства optional?",
+      "contentHash": "2775b76b37b05de0af5d36a1726ab0397f343bfee4f0032d963609df93191a94"
+    },
+    {
+      "id": "ts-spread-result-types",
+      "title": "Как порядок spread влияет на выведенный тип результирующего объекта?",
+      "contentHash": "9c4e702b7876258aaab357e812c21dd95c7120ddec1db95273aedc6a53c672db"
+    },
+    {
+      "id": "ts-template-index-signatures",
+      "title": "Как разрешить динамические свойства только с заданным префиксом?",
+      "contentHash": "c43d601f3db67cbd50fd973443e640eb6828c698ba7fc394226c07716a569b0b"
+    }
+  ],
+  "notes": [
+    "Сохраняются все существующие ID. Раздел охватывает разные навыки проверки типов: похожая терминология не служит основанием для слияния. Текущая задача - редактура ответов, без добавления повторных определений.",
+    "Завершено: 161 индивидуальный разбор, прежние ID сохранены. Oxfmt, content:build (1266 вопросов), полный content:check успешны. Примеры, приложение, UI/server проверки и seed не выполнялись."
+  ]
+}

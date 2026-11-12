@@ -2,14 +2,26 @@
 
 <!-- wishu:answer-block -->
 
-### Механизм и границы
+### Как это работает
 
 Разницу и единицу выбирают отдельно с учётом часового пояса и UX. Numeric: auto позволяет словесные варианты там, где они предусмотрены locale, а always сохраняет числовую форму.
 
 Текст следует обновлять по подходящему расписанию и не хранить как единственный источник исходного timestamp.
 
-<!-- wishu:answer-block -->
+### Пример и его разбор
 
-### Источник
+```javascript
+const formatter = new Intl.RelativeTimeFormat("ru", { numeric: "auto" })
+console.log(formatter.format(-1, "day")) // вчера
+// Приложение отдельно решает, почему выбрано -1 day.
+```
 
-[MDN: Global_Objects/Intl/RelativeTimeFormat](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/RelativeTimeFormat).
+Значение -1 и единица day уже выбраны приложением. Formatter с numeric auto лишь превращает их в «вчера». Если исходные данные представлены двумя timestamp, расчёт календарной разницы и выбор часового пояса должны произойти до этого вызова.
+
+### Типичная ошибка
+
+> Делить любую разницу timestamp на 24 часа и считать полученное число календарным «вчера».
+
+### Источники
+
+[MDN: Global_Objects/Intl/RelativeTimeFormat](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/RelativeTimeFormat)

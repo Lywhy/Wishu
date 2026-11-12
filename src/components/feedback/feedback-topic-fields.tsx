@@ -1,3 +1,4 @@
+import type { TopicFieldErrors } from "@/lib/feedback-validation"
 import { useId } from "react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
@@ -21,6 +22,7 @@ export function FeedbackSelect({
   onChange,
   disabled,
   placeholder = "Выберите",
+  error,
 }: {
   id: string
   label: string
@@ -29,10 +31,11 @@ export function FeedbackSelect({
   onChange: (value: string) => void
   disabled?: boolean
   placeholder?: string
+  error?: string
 }) {
   return (
-    <div className="min-w-0 space-y-2">
-      <label htmlFor={id} className="text-sm font-medium">
+    <div className="min-w-0 space-y-3">
+      <label htmlFor={id} className="block text-sm font-medium">
         {label}
       </label>
       <Select
@@ -43,7 +46,12 @@ export function FeedbackSelect({
           if (v !== null) onChange(v)
         }}
       >
-        <SelectTrigger id={id} className="w-full">
+        <SelectTrigger
+          id={id}
+          className="w-full"
+          aria-invalid={!!error}
+          aria-describedby={error ? id + "-error" : undefined}
+        >
           <SelectValue placeholder={placeholder} />
         </SelectTrigger>
         <SelectContent>
@@ -54,6 +62,11 @@ export function FeedbackSelect({
           ))}
         </SelectContent>
       </Select>
+      {error && (
+        <p id={id + "-error"} role="alert" className="text-xs text-destructive">
+          {error}
+        </p>
+      )}
     </div>
   )
 }
@@ -64,6 +77,7 @@ export function FeedbackTopicFields({
   catalog,
   disabled,
   canRemove,
+  errors = {},
   onChange,
   onRemove,
 }: {
@@ -72,6 +86,7 @@ export function FeedbackTopicFields({
   catalog: QuestionCatalog
   disabled: boolean
   canRemove: boolean
+  errors?: TopicFieldErrors
   onChange: (patch: Partial<TopicDraft>) => void
   onRemove: () => void
 }) {
@@ -88,6 +103,7 @@ export function FeedbackTopicFields({
       <div className="grid gap-4 sm:grid-cols-2">
         <FeedbackSelect
           id={`${id}-group`}
+          error={errors.groupId}
           label="Группа"
           value={item.groupId}
           disabled={disabled}
@@ -104,6 +120,7 @@ export function FeedbackTopicFields({
         />
         <FeedbackSelect
           id={`${id}-section`}
+          error={errors.sectionId}
           label="Раздел"
           value={item.sectionId}
           disabled={disabled || !item.groupId}
@@ -117,22 +134,30 @@ export function FeedbackTopicFields({
         />
       </div>
       {item.sectionId === "__new" && (
-        <div className="space-y-2">
-          <label htmlFor={`${id}-section-title`} className="text-sm font-medium">
+        <div className="space-y-3">
+          <label htmlFor={`${id}-section-title`} className="block text-sm font-medium">
             Название нового раздела
           </label>
           <Input
             id={`${id}-section-title`}
+            aria-invalid={!!errors.sectionTitle}
+            aria-describedby={errors.sectionTitle ? `${id}-section-title-error` : undefined}
             value={item.sectionTitle}
             required
             maxLength={160}
             placeholder="Например, Web accessibility"
             onChange={(e) => onChange({ sectionTitle: e.target.value })}
           />
+          {errors.sectionTitle && (
+            <p id={`${id}-section-title-error`} role="alert" className="text-xs text-destructive">
+              {errors.sectionTitle}
+            </p>
+          )}
         </div>
       )}
       <FeedbackSelect
         id={`${id}-subsection`}
+        error={errors.subsectionId}
         label="Подраздел"
         value={item.subsectionId}
         disabled={disabled || !item.sectionId}
@@ -144,34 +169,51 @@ export function FeedbackTopicFields({
         onChange={(subsectionId) => onChange({ subsectionId, subsectionTitle: "" })}
       />
       {item.subsectionId === "__new" && (
-        <div className="space-y-2">
-          <label htmlFor={`${id}-subsection-title`} className="text-sm font-medium">
+        <div className="space-y-3">
+          <label htmlFor={`${id}-subsection-title`} className="block text-sm font-medium">
             Название нового подраздела
           </label>
           <Input
             id={`${id}-subsection-title`}
+            aria-invalid={!!errors.subsectionTitle}
+            aria-describedby={errors.subsectionTitle ? `${id}-subsection-title-error` : undefined}
             value={item.subsectionTitle}
             required
             maxLength={160}
             placeholder="Например, Работа с формами"
             onChange={(e) => onChange({ subsectionTitle: e.target.value })}
           />
+          {errors.subsectionTitle && (
+            <p
+              id={`${id}-subsection-title-error`}
+              role="alert"
+              className="text-xs text-destructive"
+            >
+              {errors.subsectionTitle}
+            </p>
+          )}
         </div>
       )}
-      <div className="space-y-2">
-        <label htmlFor={`${id}-topics`} className="text-sm font-medium">
+      <div className="space-y-3">
+        <label htmlFor={`${id}-topics`} className="block text-sm font-medium">
           Темы, которые стоит добавить
         </label>
         <Textarea
           id={`${id}-topics`}
+          aria-invalid={!!errors.topics}
+          aria-describedby={`${id}-hint${errors.topics ? ` ${id}-topics-error` : ""}`}
           value={item.topics}
           required
           maxLength={10000}
           className="min-h-28"
           placeholder="useState, обновление состояния, работа с формами"
-          aria-describedby={`${id}-hint`}
           onChange={(e) => onChange({ topics: e.target.value })}
         />
+        {errors.topics && (
+          <p id={`${id}-topics-error`} role="alert" className="text-xs text-destructive">
+            {errors.topics}
+          </p>
+        )}
         <p id={`${id}-hint`} className="text-xs leading-5 text-muted-foreground">
           Разделяйте темы запятой или переносом строки. До 50 тем, каждая - до 200 символов. Повторы
           объединяются.

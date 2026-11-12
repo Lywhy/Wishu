@@ -1,0 +1,104 @@
+{
+  "schemaVersion": 1,
+  "id": "ts-answer-review-20261110-ts-practices",
+  "title": "ts-answer-review-20261110-ts-practices",
+  "sectionId": "typescript",
+  "subsectionId": "ts-practices",
+  "currentPass": "answers",
+  "goalIds": [
+    "core",
+    "ts-strict-mode",
+    "ts-type-assertions",
+    "ts-diagnostic-directives",
+    "ts-global-augmentation",
+    "ts-type-complexity",
+    "ts-satisfies",
+    "ts-unchecked-index-access",
+    "ts-class-field-emit",
+    "ts-dom-boundaries",
+    "ts-type-contract-tests",
+    "ts-read-nested-diagnostics"
+  ],
+  "questionIds": [
+    "ts-strict-mode",
+    "ts-type-assertions",
+    "ts-diagnostic-directives",
+    "ts-global-augmentation",
+    "ts-type-complexity",
+    "ts-satisfies",
+    "ts-unchecked-index-access",
+    "ts-class-field-emit",
+    "ts-dom-boundaries",
+    "ts-type-contract-tests",
+    "ts-read-nested-diagnostics"
+  ],
+  "scopePass": {
+    "status": "complete",
+    "remaining": []
+  },
+  "answerPass": {
+    "status": "complete",
+    "remaining": []
+  },
+  "baseline": [
+    {
+      "id": "ts-strict-mode",
+      "title": "Чем strict в TypeScript отличается от выражения «строгая типизация»?",
+      "contentHash": "fbfd19b6acb543044a3e327b90558554dc7ab9d62d1daa7974e83693e11e58ca"
+    },
+    {
+      "id": "ts-type-assertions",
+      "title": "Что делает type assertion через as и чего он не проверяет?",
+      "contentHash": "ee320658372527238495b7ea441a131bf3dda00099251c43e42ca9dc3113bfeb"
+    },
+    {
+      "id": "ts-diagnostic-directives",
+      "title": "Чем @ts-ignore отличается от @ts-expect-error?",
+      "contentHash": "b3cdb4bffbca4735a24f774db0b7ec64723f8da26854c1d669e82c08eb22d462"
+    },
+    {
+      "id": "ts-global-augmentation",
+      "title": "Как расширять глобальные типы и объявления существующего модуля?",
+      "contentHash": "53c2b5d66e0c33bd16aea329c5014cd4d3321cbb6a643e80964f588ee7e7b48c"
+    },
+    {
+      "id": "ts-type-complexity",
+      "title": "Как распознать типизацию, которая усложняет API без полезной гарантии?",
+      "contentHash": "c21e7a0b689adc041d097ed450454422b0e9b0be32f0d3ed5b06b008a2f22184"
+    },
+    {
+      "id": "ts-satisfies",
+      "title": "Чем satisfies отличается от аннотации типа и as?",
+      "contentHash": "64cef6390af9f1f9d7eda58f3072d084de0660ddbd3a62fb19bcb4faa881538d"
+    },
+    {
+      "id": "ts-unchecked-index-access",
+      "title": "Что обнаруживает noUncheckedIndexedAccess при чтении массива и словаря?",
+      "contentHash": "545300592404cb0c23fcd4a9a3e1b3c43a69e5ffe85f64d5b4527a4fd49bb175"
+    },
+    {
+      "id": "ts-class-field-emit",
+      "title": "Почему useDefineForClassFields может изменить поведение полей класса?",
+      "contentHash": "752e1a97f18910c3c50d72be0a7e5dbce40f4e0b98a5a93e87340e429147ff34"
+    },
+    {
+      "id": "ts-dom-boundaries",
+      "title": "Как безопасно получить тип DOM-элемента и обработать EventTarget?",
+      "contentHash": "af0c99f8f361ac1b07f5942ed8e6306dfa5a9a4436a29e590b960f4e795935ff"
+    },
+    {
+      "id": "ts-type-contract-tests",
+      "title": "Как проверять типовой контракт отдельно от runtime-тестов?",
+      "contentHash": "1fa77a0450df173fc852f46a6cc86d04cbf561d158ad2c98b1afaae779c38672"
+    },
+    {
+      "id": "ts-read-nested-diagnostics",
+      "title": "Как разбирать длинное сообщение о несовместимости типов?",
+      "contentHash": "dbc9b57a0eca1bd25dfa066594ccc2c8afd42f71593ea44a0c3cc984217a1e74"
+    }
+  ],
+  "notes": [
+    "Сохраняются все существующие ID. Раздел охватывает разные навыки проверки типов: похожая терминология не служит основанием для слияния. Текущая задача - редактура ответов, без добавления повторных определений.",
+    "Завершено: 161 индивидуальный разбор, прежние ID сохранены. Oxfmt, content:build (1266 вопросов), полный content:check успешны. Примеры, приложение, UI/server проверки и seed не выполнялись."
+  ]
+}

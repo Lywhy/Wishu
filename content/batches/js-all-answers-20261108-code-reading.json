@@ -1,0 +1,168 @@
+{
+  "schemaVersion": 1,
+  "id": "js-all-answers-20261108-code-reading",
+  "title": "js-all-answers-20261108-code-reading",
+  "sectionId": "javascript",
+  "subsectionId": "code-reading",
+  "currentPass": "answers",
+  "goalIds": [
+    "core",
+    "js-output-microtasks",
+    "js-output-async-foreach",
+    "js-output-lost-this",
+    "js-output-shallow-copy",
+    "js-output-sparse-map",
+    "js-output-finally-return",
+    "js-output-promise-recovery",
+    "js-output-defaults",
+    "js-output-map-parser-arity",
+    "js-output-filled-aliases",
+    "js-output-assignment-setter",
+    "js-output-getter-receiver",
+    "js-output-inherited-readonly",
+    "js-output-delegated-return",
+    "js-output-derived-field-order",
+    "js-output-thenable-jobs",
+    "js-output-async-predicate",
+    "js-output-module-live-binding",
+    "js-output-primitive-hints",
+    "js-output-typeof-tdz"
+  ],
+  "questionIds": [
+    "js-output-microtasks",
+    "js-output-async-foreach",
+    "js-output-lost-this",
+    "js-output-shallow-copy",
+    "js-output-sparse-map",
+    "js-output-finally-return",
+    "js-output-promise-recovery",
+    "js-output-defaults",
+    "js-output-map-parser-arity",
+    "js-output-filled-aliases",
+    "js-output-assignment-setter",
+    "js-output-getter-receiver",
+    "js-output-inherited-readonly",
+    "js-output-delegated-return",
+    "js-output-derived-field-order",
+    "js-output-thenable-jobs",
+    "js-output-async-predicate",
+    "js-output-module-live-binding",
+    "js-output-primitive-hints",
+    "js-output-typeof-tdz"
+  ],
+  "scopePass": {
+    "status": "complete",
+    "remaining": []
+  },
+  "answerPass": {
+    "status": "complete",
+    "remaining": []
+  },
+  "baseline": [
+    {
+      "id": "js-output-microtasks",
+      "title": "В каком порядке выполнятся Promise, queueMicrotask и таймер?",
+      "contentHash": "d07be61ad3eb5fe2287ac0c188c787ca38643fedc61103037d7cc9fc71f86b17"
+    },
+    {
+      "id": "js-output-async-foreach",
+      "title": "Почему после forEach с async массив сначала пустой?",
+      "contentHash": "30bfad456fc032f044e9f623658787b37f1bdd133bb175d9c92799722ac501ec"
+    },
+    {
+      "id": "js-output-lost-this",
+      "title": "Что произойдёт с this после извлечения метода?",
+      "contentHash": "206129a52eeb38b52f33c23ebef3e1dacd4bce2057466bd56df3444d24a77e9d"
+    },
+    {
+      "id": "js-output-shallow-copy",
+      "title": "Какие изменения переживут поверхностное копирование?",
+      "contentHash": "c561cbf35642143f825829ef0b3aba70f9f5ea49a822223dfd00081a53a836fd"
+    },
+    {
+      "id": "js-output-sparse-map",
+      "title": "Как map обрабатывает пропуски в массиве?",
+      "contentHash": "104eb139db062c30acfe8976ec80f493e83bf45cd7e22b49a3da07dd3dcc05d0"
+    },
+    {
+      "id": "js-output-finally-return",
+      "title": "Как return из finally меняет результат функции?",
+      "contentHash": "e7b53e3f3373f6977a47d107d13fc30e9832bee924135f53a621bfa0b3221d3c"
+    },
+    {
+      "id": "js-output-promise-recovery",
+      "title": "Что получит then после catch и finally?",
+      "contentHash": "ac1fba548fe26c09294c8c0a69b36d564db835ad31a39fffd718def14d2693d8"
+    },
+    {
+      "id": "js-output-defaults",
+      "title": "Как различаются значения по умолчанию, || и ??",
+      "contentHash": "19a810a3541f2101ebe13492936e8622a3be32b8e1a6b466f9a2fa7f236164c1"
+    },
+    {
+      "id": "js-output-map-parser-arity",
+      "title": "Почему map с parseInt даёт неожиданные значения?",
+      "contentHash": "c4d42f9659c30ee3459af140efd4b6ae2bdf7838aa24a1611435c498dc446c87"
+    },
+    {
+      "id": "js-output-filled-aliases",
+      "title": "Какие строки матрицы изменятся после fill одним массивом?",
+      "contentHash": "5007832a5ef91eb6906880798b55e4ff1dfcc25d412ab4b491108c0c69b869a0"
+    },
+    {
+      "id": "js-output-assignment-setter",
+      "title": "Почему Object.assign и spread по-разному взаимодействуют с setter?",
+      "contentHash": "6f4a32923a7d7b76062710b589f555bd665d1c0cea70eba7d25c5f8b4374fe57"
+    },
+    {
+      "id": "js-output-getter-receiver",
+      "title": "Почему getter через неверно перенаправленный Proxy читает другое имя?",
+      "contentHash": "eb6aea9fd2379507e2e900b9f8f812a1acad378fdac82afd827c3eca57b7ef88"
+    },
+    {
+      "id": "js-output-inherited-readonly",
+      "title": "Можно ли обычным присваиванием затенить невritable поле прототипа?",
+      "contentHash": "db81289db18c9be0d26da12ce8918f0686c147aefe4aae5b8ca876b33063365b"
+    },
+    {
+      "id": "js-output-delegated-return",
+      "title": "Попадёт ли return подгенератора в spread внешнего генератора?",
+      "contentHash": "8c99eaf3fdc5f695f53c67a45563cbf1502724070ac15b9240777d33faff3e94"
+    },
+    {
+      "id": "js-output-derived-field-order",
+      "title": "Что увидит метод наследника, вызванный из конструктора родителя?",
+      "contentHash": "89b8f6b0c287902fa85a297114c35fba69814c947c685a3fe0fc846e9c7c8174"
+    },
+    {
+      "id": "js-output-thenable-jobs",
+      "title": "Когда Promise.resolve читает then и когда вызывает полученный метод?",
+      "contentHash": "8234dc059f0747ea2f4b74627130c39814d095ec74358bdbe9e8fb3d20218592"
+    },
+    {
+      "id": "js-output-async-predicate",
+      "title": "Что вернёт filter с async-предикатом?",
+      "contentHash": "63a9a793c20fc248bc02b4d8e7566ce5d0efe1d458a38f9c7b388f9dbd66c413"
+    },
+    {
+      "id": "js-output-module-live-binding",
+      "title": "Увидит ли импортёр изменение экспортированной переменной?",
+      "contentHash": "90c6d017d5ecaa4dbf20fd251684bd5e87553d971ed5bc900f5d148d833e54be"
+    },
+    {
+      "id": "js-output-primitive-hints",
+      "title": "Какие hints получит Symbol.toPrimitive в сложении, шаблоне и имени свойства?",
+      "contentHash": "279afa981bb6ec802bd23566d84f350c904a6cf7941990ab283ff4b5e1fc6702"
+    },
+    {
+      "id": "js-output-typeof-tdz",
+      "title": "Почему typeof иногда вызывает ReferenceError вместо строки?",
+      "contentHash": "9a132c574e56099609dba7e6e9cf5d6187ad771d48ff5eef39af326d93016fb9"
+    }
+  ],
+  "notes": [
+    "Полный редакторский проход JavaScript: 346 ID сохраняются, добавлений/слияний нет. 12 ответов предыдущего пакета сохраняют готовый связный разбор. Остальным нужны индивидуальные пояснения к механизму и примеру, а не однотипная вводная фраза. Ответы ITBooster не используются.",
+    "Для оставшихся ответов подготовлены индивидуальные пояснения примеров; код перенесён в общий Markdown. В упражнениях на чтение кода условие сохранено отдельно. Примеры не запускались.",
+    "Завершено: Oxfmt, content:build, полный content:check. В платформе 1266 вопросов; в JavaScript сохранены 346 ID, обновлены оставшиеся 334 ответа, новых/удалённых ID нет. Код примеров и seed не выполнялись."
+  ]
+}

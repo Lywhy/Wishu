@@ -1,0 +1,91 @@
+{
+  "schemaVersion": 1,
+  "id": "js-all-answers-20261108-regexp",
+  "title": "js-all-answers-20261108-regexp",
+  "sectionId": "javascript",
+  "subsectionId": "regexp",
+  "currentPass": "answers",
+  "goalIds": [
+    "core",
+    "js-regexp-dynamic-pattern",
+    "js-regexp-character-sets",
+    "js-regexp-quantifiers",
+    "js-regexp-captures",
+    "js-regexp-lookarounds",
+    "js-regexp-line-boundaries",
+    "js-regexp-result-apis",
+    "js-replacement-grammar",
+    "js-regexp-redos"
+  ],
+  "questionIds": [
+    "js-regexp-dynamic-pattern",
+    "js-regexp-character-sets",
+    "js-regexp-quantifiers",
+    "js-regexp-captures",
+    "js-regexp-lookarounds",
+    "js-regexp-line-boundaries",
+    "js-regexp-result-apis",
+    "js-replacement-grammar",
+    "js-regexp-redos"
+  ],
+  "scopePass": {
+    "status": "complete",
+    "remaining": []
+  },
+  "answerPass": {
+    "status": "complete",
+    "remaining": []
+  },
+  "baseline": [
+    {
+      "id": "js-regexp-dynamic-pattern",
+      "title": "Как безопасно вставить буквальный пользовательский текст в RegExp?",
+      "contentHash": "dd5e06994240d8db89c1dcaa601a821253b7a6255ba7d7f444ca917279950543"
+    },
+    {
+      "id": "js-regexp-character-sets",
+      "title": "Как символьные классы и Unicode-свойства меняют смысл шаблона?",
+      "contentHash": "52db5f73c6592f266c6b8a0918503d1eb63ac1266069024fd8d32d95b33bcfa8"
+    },
+    {
+      "id": "js-regexp-quantifiers",
+      "title": "Чем жадный квантификатор отличается от ленивого?",
+      "contentHash": "d026b3852b3af34b0c18f385fc78fd0a83eb1ed957de640c4b2fd1b692c3b31d"
+    },
+    {
+      "id": "js-regexp-captures",
+      "title": "Как различаются захватывающие, незахватывающие и именованные группы?",
+      "contentHash": "d7e0043cd564a62f373d4db7044b3aef8b3dca8a1ba6197a92fb13c2697d4489"
+    },
+    {
+      "id": "js-regexp-lookarounds",
+      "title": "Как lookahead и lookbehind проверяют контекст без включения его в совпадение?",
+      "contentHash": "0a9a627734249cb8f6e0536226eec197e82a7b156bef067bc8a17b34468c11df"
+    },
+    {
+      "id": "js-regexp-line-boundaries",
+      "title": "Как флаги m и s по-разному влияют на многострочный текст?",
+      "contentHash": "2395e72a9062e7620c6bfa08bd8b3f59ddc944d8c3e4f80fee6fc278e42ed763"
+    },
+    {
+      "id": "js-regexp-result-apis",
+      "title": "Когда выбирать exec, match, matchAll или test?",
+      "contentHash": "3c65990220891215961a5549eda427589e66d82e51beeac1c020740bc09704e3"
+    },
+    {
+      "id": "js-replacement-grammar",
+      "title": "Почему replacement-строка и функция в replace могут дать разный результат?",
+      "contentHash": "217735b57f48702de1d5802dfe282ba22a0f67c40ce669628ea2590c6b6caeef"
+    },
+    {
+      "id": "js-regexp-redos",
+      "title": "Как регулярное выражение может блокировать приложение на небольшом вводе?",
+      "contentHash": "0dbb71c3861dee843feb4629c3d390958332fde1a18cecc9a5059476306bf07f"
+    }
+  ],
+  "notes": [
+    "Полный редакторский проход JavaScript: 346 ID сохраняются, добавлений/слияний нет. 12 ответов предыдущего пакета сохраняют готовый связный разбор. Остальным нужны индивидуальные пояснения к механизму и примеру, а не однотипная вводная фраза. Ответы ITBooster не используются.",
+    "Для оставшихся ответов подготовлены индивидуальные пояснения примеров; код перенесён в общий Markdown. В упражнениях на чтение кода условие сохранено отдельно. Примеры не запускались.",
+    "Завершено: Oxfmt, content:build, полный content:check. В платформе 1266 вопросов; в JavaScript сохранены 346 ID, обновлены оставшиеся 334 ответа, новых/удалённых ID нет. Код примеров и seed не выполнялись."
+  ]
+}

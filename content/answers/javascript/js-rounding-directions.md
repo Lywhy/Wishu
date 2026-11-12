@@ -2,14 +2,27 @@
 
 <!-- wishu:answer-block -->
 
-### Механизм и границы
+### Как это работает
 
 Поэтому «округлить вниз» и «отбросить дробь» совпадают не для всех отрицательных значений. Некоторые операции могут дать -0, который заметен через Object.is или деление.
 
-Для финансового правила сначала зафиксируйте требования к половинам, знаку и масштабу, а не выбирайте Math.round по привычке.
+Для финансового правила сначала зафиксируйте требования к половинам, знаку и масштабу, а не выбирайте `Math.round` по привычке.
 
-<!-- wishu:answer-block -->
+### Пример и его разбор
 
-### Источник
+```javascript
+console.log(Math.floor(-1.7)) // -2
+console.log(Math.trunc(-1.7)) // -1
+console.log(Math.ceil(-1.7)) // -1
+console.log(Math.round(-1.5)) // -1
+```
 
-[MDN: Global_Objects/Math/round](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/round).
+На -1.7 floor даёт -2, а trunc и ceil дают -1 по разным правилам. Round для -1.5 тоже выбирает -1, поскольку точная половина направляется к плюс бесконечности. Слово «округление» без направления недостаточно описывает требование.
+
+### Типичная ошибка
+
+> Считать `Math.round` симметричным правилом «половина всегда от нуля».
+
+### Источники
+
+[MDN: Global_Objects/Math/round](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/round)

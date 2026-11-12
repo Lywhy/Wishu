@@ -2,7 +2,7 @@
 
 <!-- wishu:answer-block -->
 
-#### Механизм и границы
+#### Как это работает
 
 - Если `reducer` задан объектом { counter: counterReducer }, счётчик находится в state.counter. Имя `createSlice` не обязано совпадать с этим ключом.
 - Не создавайте новый store при каждом рендере оболочки: так сбрасываются данные и подписки. В клиентском приложении выбирают устойчивого владельца.
@@ -20,11 +20,19 @@ root.render(
 )
 ```
 
+#### Разбор примера
+
+Ключ counter в `configureStore` задаёт путь состояния: значение reducer будет находиться в state.counter. Provider передаёт экземпляр store потомкам, но не копирует его для каждого компонента. Создание нового store при каждом рендере оболочки сбрасывало бы данные и подписки; экземпляр должен жить столько, сколько соответствующая область приложения.
+
+#### Типичная ошибка
+
+> Читать state.value вместо state.counter.value или пересоздавать store в рендере.
+
 #### Для закрепления
 
 - [Почему пользовательское состояние SSR нельзя бездумно хранить в singleton-store модуля?](/questions/react-ssr-state-isolation)
 - [Как устроен поток данных Redux: store, action, dispatch и reducer?](/questions/redux-data-flow)
 
-#### Источник
+#### Источники
 
-[Redux: configureStore](https://redux-toolkit.js.org/api/configureStore).
+[Redux: configureStore](https://redux.js.org/toolkit/api/configureStore)

@@ -2,14 +2,28 @@
 
 <!-- wishu:answer-block -->
 
-### Механизм и границы
+### Как это работает
 
-String.raw в tagged template позволяет получить raw-части шаблона; подстановки при этом всё ещё вычисляются. При построении RegExp через строку есть два уровня разбора: JavaScript-литерал и регулярное выражение.
+`String.raw` в tagged template позволяет получить raw-части шаблона; подстановки при этом всё ещё вычисляются. При построении `RegExp` через строку есть два уровня разбора: JavaScript-литерал и регулярное выражение.
 
 Путь Windows, JSON, HTML и регулярное выражение имеют разные грамматики. Универсального «экранировать строку один раз для всего» нет.
 
-<!-- wishu:answer-block -->
+### Пример и его разбор
 
-### Источник
+```javascript
+const newline = "a\nb"
+const literalSlash = String.raw`a\nb`
+console.log(newline.length) // 3
+console.log(literalSlash.length) // 4
+const digits = new RegExp("\\d+")
+```
 
-[MDN: Global_Objects/String/raw](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/raw).
+В newline последовательность обратного слеша и n уже превратилась в один перевод строки. Raw сохраняет их как два символа, поэтому длины различаются. Для `new` `RegExp` сначала разбирается JS-строка и лишь затем шаблон, что объясняет дополнительный уровень обратных слешей.
+
+### Типичная ошибка
+
+> Считать видимые обратные слеши в исходном коде точным количеством слешей в runtime.
+
+### Источники
+
+[MDN: Global_Objects/String/raw](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/raw)

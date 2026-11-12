@@ -1,0 +1,287 @@
+{
+  "schemaVersion": 1,
+  "id": "js-all-answers-20261108-dom",
+  "title": "js-all-answers-20261108-dom",
+  "sectionId": "javascript",
+  "subsectionId": "dom",
+  "currentPass": "answers",
+  "goalIds": [
+    "core",
+    "dom-tree",
+    "window-document",
+    "navigator-api",
+    "history-location",
+    "dom-selectors",
+    "dom-create-remove",
+    "inner-html",
+    "dom-attributes-properties",
+    "dom-dataset",
+    "dom-event-phases",
+    "dom-listeners",
+    "event-delegation",
+    "event-cancellation",
+    "form-reset",
+    "async-event-handler",
+    "page-scroll-lock",
+    "intersection-observer",
+    "mutation-observer",
+    "web-storage",
+    "document-cookie",
+    "document-ready-events",
+    "page-exit-events",
+    "script-loading",
+    "canvas-api",
+    "shadow-dom",
+    "indexed-db",
+    "js-resource-lifetime",
+    "js-dom-node-categories",
+    "js-dom-geometry",
+    "js-computed-style-contract",
+    "js-resize-observer-loops",
+    "js-shadow-event-routing",
+    "js-dispatch-trust",
+    "js-custom-element-lifecycle",
+    "js-dynamic-selector-escaping",
+    "js-range-selection",
+    "js-browser-activation"
+  ],
+  "questionIds": [
+    "dom-tree",
+    "window-document",
+    "navigator-api",
+    "history-location",
+    "dom-selectors",
+    "dom-create-remove",
+    "inner-html",
+    "dom-attributes-properties",
+    "dom-dataset",
+    "dom-event-phases",
+    "dom-listeners",
+    "event-delegation",
+    "event-cancellation",
+    "form-reset",
+    "async-event-handler",
+    "page-scroll-lock",
+    "intersection-observer",
+    "mutation-observer",
+    "web-storage",
+    "document-cookie",
+    "document-ready-events",
+    "page-exit-events",
+    "script-loading",
+    "canvas-api",
+    "shadow-dom",
+    "indexed-db",
+    "js-resource-lifetime",
+    "js-dom-node-categories",
+    "js-dom-geometry",
+    "js-computed-style-contract",
+    "js-resize-observer-loops",
+    "js-shadow-event-routing",
+    "js-dispatch-trust",
+    "js-custom-element-lifecycle",
+    "js-dynamic-selector-escaping",
+    "js-range-selection",
+    "js-browser-activation"
+  ],
+  "scopePass": {
+    "status": "complete",
+    "remaining": []
+  },
+  "answerPass": {
+    "status": "complete",
+    "remaining": []
+  },
+  "baseline": [
+    {
+      "id": "dom-tree",
+      "title": "Что такое DOM-дерево и чем оно отличается от HTML?",
+      "contentHash": "43f82d163f66dde503dec8a31f3ad3e3d28e64fb718eb9e2ebff863fb3c4b377"
+    },
+    {
+      "id": "window-document",
+      "title": "Чем window отличается от document?",
+      "contentHash": "9bf5089f9f100b149b56867497b792f5693cfaa55589054ea92aecc3f0a5312f"
+    },
+    {
+      "id": "navigator-api",
+      "title": "Что предоставляет navigator и почему userAgent не заменяет проверку возможностей?",
+      "contentHash": "05426aa985a8fd4be85c9e3e60ac99edf6f7bcc5dc2871c8cde82a501b04326f"
+    },
+    {
+      "id": "history-location",
+      "title": "Как location и History API управляют навигацией?",
+      "contentHash": "a65525f88d9b7bd86a6b0471e6ede375e8a15fc64b4a0f80e38c13d3aead3f04"
+    },
+    {
+      "id": "dom-selectors",
+      "title": "Как выбирать DOM-элементы и чем статическая коллекция отличается от живой?",
+      "contentHash": "b38523da580eee50e6e24ed0ea730459b5bac6bf9c7bf26cae94947a17c0bb28"
+    },
+    {
+      "id": "dom-create-remove",
+      "title": "Как создать, вставить и удалить DOM-элемент?",
+      "contentHash": "5ae621fafb7920d8eec7c391304bda139d64eb2bd8be320ae4c9e912d4152217"
+    },
+    {
+      "id": "inner-html",
+      "title": "Что делает innerHTML и почему опасно вставлять недоверенную строку?",
+      "contentHash": "212fb4ce6c41cee44680729e266cfe43207ae767e1886986134f9e083c47fc7a"
+    },
+    {
+      "id": "dom-attributes-properties",
+      "title": "Чем HTML-атрибут отличается от свойства DOM-элемента?",
+      "contentHash": "86130cb6e2b975db0f3e06c59300723fa1b3a47b8a1abfd8fdf9988f90bb9d63"
+    },
+    {
+      "id": "dom-dataset",
+      "title": "Как работают data-* и dataset?",
+      "contentHash": "2099a10dc70cc3a46e6c720145aaae865b2b88ee7dfe6e7a82d89a3b3b954266"
+    },
+    {
+      "id": "dom-event-phases",
+      "title": "Как событие проходит фазы погружения, цели и всплытия?",
+      "contentHash": "b43ec55f00546e8d64de5a920a7a0225393a78fd6af4096ae77f8685761ec313"
+    },
+    {
+      "id": "dom-listeners",
+      "title": "Чем addEventListener отличается от onclick и как удалить обработчик?",
+      "contentHash": "3f73bc94142bcdc8c613a06291bca91d258409d871a3d2f5570aa4bc3fb77beb"
+    },
+    {
+      "id": "event-delegation",
+      "title": "Как делегировать события и различать target и currentTarget?",
+      "contentHash": "77054017fb05cabc3ad942f7fa8d485767cf7b7120c5587a15a97244aae6dbcb"
+    },
+    {
+      "id": "event-cancellation",
+      "title": "Чем stopPropagation отличается от preventDefault и как отменить отправку формы?",
+      "contentHash": "922519b97e3c76cb8906b87a003b3a7c0ca7aaa4a636d7f1410cc3817e1a4bf7"
+    },
+    {
+      "id": "form-reset",
+      "title": "Что восстанавливает form.reset и чего он не сбрасывает?",
+      "contentHash": "3584eb78e80c7f0b336fee4af51f196af77bb64586cc683f5102655ca2ca5d9a"
+    },
+    {
+      "id": "async-event-handler",
+      "title": "Что нужно учитывать при await в обработчике DOM-события?",
+      "contentHash": "766b3b42c2b94695d2870878099f9f820904a09fa87db03747eb3a4ce89cb9c1"
+    },
+    {
+      "id": "page-scroll-lock",
+      "title": "Как блокировать прокрутку страницы и корректно возвращать её?",
+      "contentHash": "734b8b0dc95b9060e269e643aea9b80b46ae49305a6a469ec2b6ab59514ff123"
+    },
+    {
+      "id": "intersection-observer",
+      "title": "Как IntersectionObserver определяет пересечение элемента с областью просмотра?",
+      "contentHash": "eb259309de0d924d1cc3e955cd3f3bc355c2e28f47aa736d14b9dc42d392ebea"
+    },
+    {
+      "id": "mutation-observer",
+      "title": "Какие изменения отслеживает MutationObserver?",
+      "contentHash": "244d96ac48246294af1c0651f81810d65b833e5ba38bfb66ab85c5882f4bca49"
+    },
+    {
+      "id": "web-storage",
+      "title": "Чем localStorage отличается от sessionStorage?",
+      "contentHash": "e2f58c1d0ce34fe562d2f641c25edddcfe64764b07666e6863a5ad6b972a9f0e"
+    },
+    {
+      "id": "document-cookie",
+      "title": "Как работает document.cookie и какие ограничения имеют cookies?",
+      "contentHash": "96f5956fd3f6d0de48d72a0e686e41645b5ea89a254a8c7e21bce1b3dc6dd3c1"
+    },
+    {
+      "id": "document-ready-events",
+      "title": "Чем DOMContentLoaded отличается от load?",
+      "contentHash": "b21bd0fbb3b3176df82a19b6855ef6bf3cc807373bcf8cadcae344b1b933b4cb"
+    },
+    {
+      "id": "page-exit-events",
+      "title": "Почему beforeunload и unload нельзя считать надёжным сохранением данных?",
+      "contentHash": "3d83f5250cb0e1876ee06fd64292cc4a79e296745210d0d5072f5ebfacc56be8"
+    },
+    {
+      "id": "script-loading",
+      "title": "Чем defer и async у script отличаются и как влияет размещение в head?",
+      "contentHash": "90b44b2681016efd5bcd9074cc296b314307aab07f7af8de7ab89b9ffa6b083e"
+    },
+    {
+      "id": "canvas-api",
+      "title": "Для чего нужен Canvas API и чем рисунок отличается от DOM-элементов?",
+      "contentHash": "663268be8cd5c83170b1fe7f2cf1a15f81aef78ab5498bda4f442e49eb4d9aad"
+    },
+    {
+      "id": "shadow-dom",
+      "title": "Как Shadow DOM изолирует компонент и чем отличается от обычного DOM?",
+      "contentHash": "e28b066734b9414f66cb832b296e83eb6db9266b3c4ac55219df5038184d6c0a"
+    },
+    {
+      "id": "indexed-db",
+      "title": "Когда использовать IndexedDB вместо Web Storage?",
+      "contentHash": "87bb4d1cd9e969e6af12c832d079c4647c020a2893e972b537114917dc2afc1f"
+    },
+    {
+      "id": "js-resource-lifetime",
+      "title": "Как связать время жизни подписок и запросов с экраном?",
+      "contentHash": "0beac28fe2568b104232a0c88146001f4b257413589889c60db02a6cabbbb52e"
+    },
+    {
+      "id": "js-dom-node-categories",
+      "title": "Чем Node, Element и HTMLElement отличаются в DOM API?",
+      "contentHash": "91d679f385f7870b0dff2982e7c8ad0d95cc4f667128ae9271e5b5d3a202faa0"
+    },
+    {
+      "id": "js-dom-geometry",
+      "title": "Как различаются getBoundingClientRect, clientHeight, offsetHeight и scrollHeight?",
+      "contentHash": "cea4325cbf1f5fb6d689c9f861d926d76334344eaecd1a9d1fb5db375dafb2e8"
+    },
+    {
+      "id": "js-computed-style-contract",
+      "title": "Почему element.style и getComputedStyle показывают разные вещи?",
+      "contentHash": "59cb7974cc062906ad3df6530d2403e383b33842cbd85623bf57689bb3d45597"
+    },
+    {
+      "id": "js-resize-observer-loops",
+      "title": "Когда нужен ResizeObserver и как не создать цикл изменения размеров?",
+      "contentHash": "694bca2d454b61fdbc925691b47848d4fd129d2f17c8297ae00fbfdcbf40228f"
+    },
+    {
+      "id": "js-shadow-event-routing",
+      "title": "Как composed и composedPath меняют делегирование событий через Shadow DOM?",
+      "contentHash": "393c6ab16f66d99cd6794228a823ca4275f6b5393202d6e3e3cf74e34fbfd60d"
+    },
+    {
+      "id": "js-dispatch-trust",
+      "title": "Что гарантирует isTrusted и как dispatchEvent отличается от настоящего действия пользователя?",
+      "contentHash": "35168c04436b6214e66ffc0a742c45344c6b7b63fd58b87516785f7e982f74f6"
+    },
+    {
+      "id": "js-custom-element-lifecycle",
+      "title": "Какие этапы жизненного цикла custom element нужны для корректной подписки и обновления?",
+      "contentHash": "47077e01723a00ac2a4f546a6139d7231ade0c77b0daf4b99a540e056e66e8fc"
+    },
+    {
+      "id": "js-dynamic-selector-escaping",
+      "title": "Как использовать произвольный id в querySelector без ошибки CSS-синтаксиса?",
+      "contentHash": "2a130c3e6710e43339a150a4c8a24f751e64a3a2e97c79d6c2a6b0dffb62a453"
+    },
+    {
+      "id": "js-range-selection",
+      "title": "Чем Range отличается от Selection и что означают offsets в DOM-диапазоне?",
+      "contentHash": "46baea9e0ab7aa73023dae0594962063aff0dc0d54b1fe5718b930d6fb463546"
+    },
+    {
+      "id": "js-browser-activation",
+      "title": "Почему Clipboard, fullscreen и похожие API могут отказать даже при наличии метода?",
+      "contentHash": "a528885fca23627abb7473021a619476b65cd480f40af5d66ab49c09baf073d2"
+    }
+  ],
+  "notes": [
+    "Полный редакторский проход JavaScript: 346 ID сохраняются, добавлений/слияний нет. 12 ответов предыдущего пакета сохраняют готовый связный разбор. Остальным нужны индивидуальные пояснения к механизму и примеру, а не однотипная вводная фраза. Ответы ITBooster не используются.",
+    "Для оставшихся ответов подготовлены индивидуальные пояснения примеров; код перенесён в общий Markdown. В упражнениях на чтение кода условие сохранено отдельно. Примеры не запускались.",
+    "Завершено: Oxfmt, content:build, полный content:check. В платформе 1266 вопросов; в JavaScript сохранены 346 ID, обновлены оставшиеся 334 ответа, новых/удалённых ID нет. Код примеров и seed не выполнялись."
+  ]
+}

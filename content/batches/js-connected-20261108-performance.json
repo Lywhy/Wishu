@@ -1,0 +1,120 @@
+{
+  "schemaVersion": 1,
+  "id": "js-connected-20261108-performance",
+  "title": "JavaScript: связные ответы после сравнения тем",
+  "sectionId": "javascript",
+  "subsectionId": "performance",
+  "currentPass": "complete",
+  "goalIds": ["core", "tree-shaking"],
+  "questionIds": ["tree-shaking"],
+  "scopePass": {
+    "status": "complete",
+    "remaining": []
+  },
+  "answerPass": {
+    "status": "complete",
+    "remaining": []
+  },
+  "baseline": [
+    {
+      "id": "performance-metrics",
+      "title": "Какие метрики описывают производительность страницы и что измеряют Core Web Vitals?",
+      "contentHash": "c317bc8bc28cf2b27928d341f6266f41125b1866a0a053fe9a7b69ff570189cf"
+    },
+    {
+      "id": "performance-bottleneck",
+      "title": "Как найти узкое место и учесть размер входных данных?",
+      "contentHash": "ea12e4f764b63e4b4e174630d878f15fcc319cb43d1be9e574d64e2768889d02"
+    },
+    {
+      "id": "cpu-io-bound",
+      "title": "Чем CPU-bound задача отличается от I/O-bound?",
+      "contentHash": "c07cc963dd999912b3533d5099055686b4497b3b275e14cf13dc1e9297da3779"
+    },
+    {
+      "id": "animation-frame",
+      "title": "Для чего requestAnimationFrame и почему он не равен таймеру на 16 мс?",
+      "contentHash": "6c4f48203bfa9dd34db43aa6c01077542ac0b7218166177b40844364b8242a16"
+    },
+    {
+      "id": "idle-callback",
+      "title": "Когда применять requestIdleCallback и какие у него ограничения?",
+      "contentHash": "595dd112c2fda491c81b5ec4f5792397158df24f43afc165e659d0423f1e0640"
+    },
+    {
+      "id": "memory-leaks",
+      "title": "Почему возникают утечки памяти в SPA и как очищать таймеры и подписки?",
+      "contentHash": "faa363cb9e84d7493a0719c6de85ae9bab9e6d9c40e50ac9176f876815029c69"
+    },
+    {
+      "id": "garbage-collection",
+      "title": "Как сборщик мусора определяет ненужные объекты и почему циклы не всегда утечка?",
+      "contentHash": "79d8e500e8be0162e5c03fb779b9bcdaf03cfc924d314d88e04cd001c386b9e8"
+    },
+    {
+      "id": "memory-profiling",
+      "title": "Как искать утечки через профилирование памяти?",
+      "contentHash": "fe9f613bf8aef692b5e0eae02b434501fae4dd812fa1aa77724ba55b4f611a5e"
+    },
+    {
+      "id": "layout-paint-batching",
+      "title": "Чем layout отличается от paint и зачем группировать чтения и изменения DOM?",
+      "contentHash": "57f4dedd1f23933c113eba91ebb78b52b80fcc14c91d0b7de61f94b8ec6c9e95"
+    },
+    {
+      "id": "virtual-dom",
+      "title": "Зачем используют virtual DOM и гарантирует ли он лучшую производительность?",
+      "contentHash": "1e63951b449ca999ef80131434d0c33b2aff77f15ede4b1bdcb8d0e3fda95a9b"
+    },
+    {
+      "id": "array-methods-performance",
+      "title": "Всегда ли цикл быстрее методов массива?",
+      "contentHash": "169d8b134e82e136f1c30b88370cf3e819b8c916a6bb649e1685ab989479adc1"
+    },
+    {
+      "id": "split-long-tasks",
+      "title": "Как разбить тяжёлую задачу и дать браузеру обработать ввод?",
+      "contentHash": "32ef5804a81be2d86237de651a4b1efac4eeb1f6ef2b2ae2c369a91712bf2c4d"
+    },
+    {
+      "id": "network-cost",
+      "title": "Как уменьшать стоимость HTTP-загрузок, не ориентируясь только на число запросов?",
+      "contentHash": "6bc4c46c39c53f12f45b576ab55726894db075f884c07a3428e1c6e610235ddf"
+    },
+    {
+      "id": "lazy-code-splitting",
+      "title": "Чем lazy loading отличается от code splitting?",
+      "contentHash": "5b121c54f654dd2d64c369ca3f7f182f0413d1765cd76a86c3a60f1e2c645276"
+    },
+    {
+      "id": "tree-shaking",
+      "title": "Что такое tree shaking и чем оно отличается от минификации?",
+      "contentHash": "2e3b40c8367f0ecd18104af249f9a2a301f9799d2f83070934f52b7376dec1c8"
+    },
+    {
+      "id": "measure-js-performance",
+      "title": "Как измерять время JavaScript-кода и не получить случайный результат?",
+      "contentHash": "d056ff18298aea5b5eb68e334904ceaa8a9092c8d3977bc42c97ce8244a65cbf"
+    },
+    {
+      "id": "js-jit-and-deoptimization",
+      "title": "Почему один и тот же JavaScript-код может иметь разную стоимость после прогрева?",
+      "contentHash": "44f38e94a2a285a65b0b3108eac21787814c4c6e2c46197cd13f42a257cd6710"
+    },
+    {
+      "id": "js-engine-object-shapes",
+      "title": "Как shapes объектов и elements kinds массивов влияют на оптимизации движка?",
+      "contentHash": "915cb9d81ad1f83885afcc7d43461bdda876db0f962ad1e251cff05650358499"
+    },
+    {
+      "id": "js-user-timing",
+      "title": "Как Performance marks и measures помогают измерить целую асинхронную операцию?",
+      "contentHash": "44e6e0a8e2a370d1914cf5b88295ebb7fd4d34621320499cd55f85e5bbf17b70"
+    }
+  ],
+  "notes": [
+    "В Zen Browser пользователя прочитаны 447 названий из 11 раскрытых разделов ITBooster. Ответы источника не открывались и не использовались. Сопоставлены метаданные всех 346 наших вопросов JavaScript. Самостоятельных отсутствующих тем по этому списку не выявлено; повторные определения не добавляются.",
+    "Полностью переработаны только указанные рабочие ID. Остальные ответы пока не проходили полный редакторский пересмотр.",
+    "Oxfmt, content:build и полный content:check прошли для 1266 вопросов. Примеры, приложение и seed не запускались. Все 346 исходных ID JavaScript сохранены."
+  ]
+}

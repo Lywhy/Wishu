@@ -1,0 +1,119 @@
+{
+  "schemaVersion": 1,
+  "id": "js-all-answers-20261108-classes",
+  "title": "js-all-answers-20261108-classes",
+  "sectionId": "javascript",
+  "subsectionId": "classes",
+  "currentPass": "answers",
+  "goalIds": [
+    "core",
+    "classes-prototypes",
+    "class-constructor",
+    "constructor-return",
+    "class-methods-arrows",
+    "class-expression",
+    "class-inheritance-super",
+    "class-fields",
+    "class-static",
+    "class-private-elements",
+    "js-super-home-object",
+    "js-fake-class-instance",
+    "js-array-species",
+    "js-static-private-receiver"
+  ],
+  "questionIds": [
+    "classes-prototypes",
+    "class-constructor",
+    "constructor-return",
+    "class-methods-arrows",
+    "class-expression",
+    "class-inheritance-super",
+    "class-fields",
+    "class-static",
+    "class-private-elements",
+    "js-super-home-object",
+    "js-fake-class-instance",
+    "js-array-species",
+    "js-static-private-receiver"
+  ],
+  "scopePass": {
+    "status": "complete",
+    "remaining": []
+  },
+  "answerPass": {
+    "status": "complete",
+    "remaining": []
+  },
+  "baseline": [
+    {
+      "id": "classes-prototypes",
+      "title": "Что такое class и как классы связаны с функциями-конструкторами и прототипами?",
+      "contentHash": "4e67ad602f692a1d0f302637565cfc77d0d4beef5e49f0a6404eec36cd331205"
+    },
+    {
+      "id": "class-constructor",
+      "title": "Можно ли не писать constructor и сколько конструкторов может быть у класса?",
+      "contentHash": "334dc00bdd749029eab4384220d3d6cab2a196e843063ed9b80bdf5d2f28760f"
+    },
+    {
+      "id": "constructor-return",
+      "title": "Что произойдёт при return из конструктора базового и производного класса?",
+      "contentHash": "8ff62f79a9b1c995cdc28d0ead62e4d075a894e3d37cedf810d72440ffd43856"
+    },
+    {
+      "id": "class-methods-arrows",
+      "title": "Чем метод класса отличается от функции в свойстве и стрелочного поля?",
+      "contentHash": "27bdf6dbe379f6d0749c623b03e139083f0ccace5c7b4b85316d65219a0e7156"
+    },
+    {
+      "id": "class-expression",
+      "title": "Как работает выражение класса const A = class {}?",
+      "contentHash": "91a5d415c710a792b1799aa5ec44d80b8f13bcaf0cd73960826c485497de39bd"
+    },
+    {
+      "id": "class-inheritance-super",
+      "title": "Как extends и super связывают классы?",
+      "contentHash": "7e786056672b4302322f0cb508f4b9461888ac139382024275dc1b986cb77cc3"
+    },
+    {
+      "id": "class-fields",
+      "title": "Как инициализируются поля класса и значения по умолчанию?",
+      "contentHash": "dc8468f978834222c7936a79cf1abad72cd95c5d3232b6f4deab30047acfc2c0"
+    },
+    {
+      "id": "class-static",
+      "title": "Где находятся static-поля и как вызывать статический метод?",
+      "contentHash": "9088b9a46a42b7b2058fc4eaf11de7ac9a6422b69c780cdd5bb6a0d0b70916aa"
+    },
+    {
+      "id": "class-private-elements",
+      "title": "Как работают #приватные элементы и доступны ли они подклассу?",
+      "contentHash": "8b82c3b576a195681196f0deae044bdd08c7877e67786ab927945a8456cca173"
+    },
+    {
+      "id": "js-super-home-object",
+      "title": "Откуда super берёт родительский метод и что меняется при переносе метода?",
+      "contentHash": "d4ee70cd26df1419e9fc81f1d55fbac5c270062836dc325cbfa75bf4c7c50984"
+    },
+    {
+      "id": "js-fake-class-instance",
+      "title": "Почему Object.create(C.prototype) не заменяет new C()?",
+      "contentHash": "4eef317ee6aec319e71721d74f4ba8acb9e4aa0730fe1ad114e631ce3d5e77b0"
+    },
+    {
+      "id": "js-array-species",
+      "title": "Как Symbol.species влияет на результаты методов наследника Array?",
+      "contentHash": "22f0bc65a9911f73d8a9938fa0f27c0203287e0d3bccd6a8491138e3e305a816"
+    },
+    {
+      "id": "js-static-private-receiver",
+      "title": "Почему унаследованный static-метод может не читать private static-поле?",
+      "contentHash": "95b06077cb0a1552d746535ae3aea95aaa625a04969a4b9bc19a4ab02c5a6dd1"
+    }
+  ],
+  "notes": [
+    "Полный редакторский проход JavaScript: 346 ID сохраняются, добавлений/слияний нет. 12 ответов предыдущего пакета сохраняют готовый связный разбор. Остальным нужны индивидуальные пояснения к механизму и примеру, а не однотипная вводная фраза. Ответы ITBooster не используются.",
+    "Для оставшихся ответов подготовлены индивидуальные пояснения примеров; код перенесён в общий Markdown. В упражнениях на чтение кода условие сохранено отдельно. Примеры не запускались.",
+    "Завершено: Oxfmt, content:build, полный content:check. В платформе 1266 вопросов; в JavaScript сохранены 346 ID, обновлены оставшиеся 334 ответа, новых/удалённых ID нет. Код примеров и seed не выполнялись."
+  ]
+}

@@ -2,7 +2,7 @@
 
 <!-- wishu:answer-block -->
 
-#### Механизм и границы
+#### Как это работает
 
 - Input `selectors` должны извлекать данные, а не создавать новый отфильтрованный массив при каждом вызове. Вычисление размещают в result function.
 - Экземпляр `selector` должен иметь понятный жизненный цикл. Его пересоздание внутри каждого рендера теряет полезность кеша.
@@ -16,11 +16,19 @@ const selectOpen = createSelector([(state: RootState) => state.tasks.items], (it
 )
 ```
 
+#### Разбор примера
+
+`createSelector` сохраняет результат вычисления, пока результаты входных selectors не изменились. Поэтому фильтрация выполняется заново при новой ссылке на items, а не просто при любом action. Если входной selector сам создаёт новый массив, полезность кеша теряется. Мемоизация оправдана для производного результата или дорогого расчёта; чтению одного поля обычно достаточно обычной функции.
+
+#### Типичная ошибка
+
+> Хранить filteredItems вторым источником истины вместо selector.
+
 #### Для закрепления
 
 - [Почему вычисляемые значения обычно не нужно хранить в state?](/questions/react-derived-state)
 - [Когда useSelector обновляет компонент и почему новый объект в selector мешает?](/questions/redux-selector-equality)
 
-#### Источник
+#### Источники
 
-[Redux: deriving data selectors](https://redux.js.org/usage/deriving-data-selectors).
+[Redux: deriving data selectors](https://redux.js.org/usage/deriving-data-selectors)

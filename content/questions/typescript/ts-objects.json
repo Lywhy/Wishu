@@ -9,7 +9,7 @@
       "title": "Объектные типы и интерфейсы",
       "description": "Обзор и взаимосвязи навыков: Type, interface, свойства, расширение контрактов и рекурсивные структуры.",
       "requiredDifficulties": [],
-      "reviewed": false,
+      "reviewed": true,
       "priority": "core",
       "relatedSkillIds": [
         "ts-type-interface",
@@ -29,7 +29,7 @@
       "title": "Чем type отличается от interface и как ими описывать объекты?",
       "description": "Объяснить и применить правило с учётом его границ: Type описывает произвольное выражение типа, interface - расширяемый объектный контракт.",
       "requiredDifficulties": ["Базовый"],
-      "reviewed": false,
+      "reviewed": true,
       "priority": "core",
       "relatedSkillIds": []
     },
@@ -38,7 +38,7 @@
       "title": "Как optional и readonly меняют контракт свойства?",
       "description": "Объяснить и применить правило с учётом его границ: Optional описывает возможное отсутствие, readonly ограничивает запись через конкретный тип.",
       "requiredDifficulties": ["Базовый"],
-      "reviewed": false,
+      "reviewed": true,
       "priority": "core",
       "relatedSkillIds": []
     },
@@ -47,7 +47,7 @@
       "title": "Как index signature описывает динамические ключи объекта?",
       "description": "Объяснить и применить правило с учётом его границ: Индексная сигнатура задаёт тип словаря, но не заполняет его и не гарантирует наличие записи.",
       "requiredDifficulties": ["Базовый"],
-      "reviewed": false,
+      "reviewed": true,
       "priority": "core",
       "relatedSkillIds": []
     },
@@ -56,7 +56,7 @@
       "title": "Как interface расширяет один или несколько объектных контрактов?",
       "description": "Объяснить и применить правило с учётом его границ: Extends объединяет совместимые требования объектных контрактов, не создавая реализацию.",
       "requiredDifficulties": ["Базовый"],
-      "reviewed": false,
+      "reviewed": true,
       "priority": "core",
       "relatedSkillIds": []
     },
@@ -65,7 +65,7 @@
       "title": "Что происходит при повторном объявлении interface с одним именем?",
       "description": "Объяснить и применить правило с учётом его границ: Слияние расширяет типовой контракт при согласованных объявлениях, но не создаёт данные.",
       "requiredDifficulties": ["Базовый"],
-      "reviewed": false,
+      "reviewed": true,
       "priority": "core",
       "relatedSkillIds": []
     },
@@ -74,7 +74,7 @@
       "title": "Как описывать рекурсивные типы и рекурсивные generic-структуры?",
       "description": "Объяснить и применить правило с учётом его границ: Рекурсивный тип описывает повторяемую форму, а не доказывает завершение обхода данных.",
       "requiredDifficulties": ["Базовый"],
-      "reviewed": false,
+      "reviewed": true,
       "priority": "core",
       "relatedSkillIds": []
     },
@@ -83,7 +83,7 @@
       "title": "Почему Object.keys возвращает string[], а не (keyof T)[]?",
       "description": "Объяснить и применить правило с учётом его границ: keyof описывает статический контракт, а Object.keys исследует реальный объект.",
       "requiredDifficulties": ["Средний"],
-      "reviewed": false,
+      "reviewed": true,
       "priority": "core",
       "relatedSkillIds": []
     },
@@ -122,7 +122,6 @@
       "topic": "TypeScript",
       "difficulty": "Базовый",
       "summary": "Псевдонимы, объектные контракты и расширение объявлений.",
-      "code": "type User = { id: number; name: string };\ninterface UserContract { id: number; name: string }\nconst user: User = { id: 1, name: \"Аня\" };\nconst sameShape: UserContract = user;\ntype Result = User | null;",
       "takeaway": "Type описывает произвольное выражение типа, interface - расширяемый объектный контракт.",
       "moduleId": "typescript",
       "order": 0,
@@ -131,11 +130,11 @@
         "learningGoal": "Объяснить и применить правило с учётом его границ: Type описывает произвольное выражение типа, interface - расширяемый объектный контракт.",
         "keywords": ["TypeScript", "Объектные типы и интерфейсы"],
         "kind": "explanation",
-        "reviewStatus": "imported",
+        "reviewStatus": "ready",
         "goalIds": ["core", "ts-type-interface"],
         "relatedQuestionIds": [],
         "priority": "core",
-        "sourceRefs": []
+        "sourceRefs": ["ref-e93a21d416404bfe"]
       },
       "answerFile": "answers/typescript/ts-type-interface.md"
     },
@@ -145,7 +144,6 @@
       "topic": "TypeScript",
       "difficulty": "Базовый",
       "summary": "Отсутствующее поле, запрет записи через ссылку и отдельные проверки конфигурации.",
-      "code": "type Settings = { readonly id: number; title?: string; nested: { count: number } };\nconst value: Settings = { id: 1, nested: { count: 0 } };\nvalue.nested.count += 1; // разрешено\nconst title: string | undefined = value.title;\n// value.id = 2 не разрешается статическим контрактом.",
       "takeaway": "Optional описывает возможное отсутствие, readonly ограничивает запись через конкретный тип.",
       "moduleId": "typescript",
       "order": 1,
@@ -154,11 +152,11 @@
         "learningGoal": "Объяснить и применить правило с учётом его границ: Optional описывает возможное отсутствие, readonly ограничивает запись через конкретный тип.",
         "keywords": ["TypeScript", "Объектные типы и интерфейсы"],
         "kind": "explanation",
-        "reviewStatus": "imported",
+        "reviewStatus": "ready",
         "goalIds": ["core", "ts-property-modifiers"],
         "relatedQuestionIds": [],
         "priority": "core",
-        "sourceRefs": []
+        "sourceRefs": ["ref-e93a21d416404bfe"]
       },
       "answerFile": "answers/typescript/ts-property-modifiers.md"
     },
@@ -168,7 +166,6 @@
       "topic": "TypeScript",
       "difficulty": "Базовый",
       "summary": "Словарь, совместимость именованных полей и неизвестное наличие ключа.",
-      "code": "interface Scores { [name: string]: number }\nconst scores: Scores = { Anna: 10 };\nconst score = scores[\"unknown\"];\n// С noUncheckedIndexedAccess тип score - number | undefined.\n// Runtime-значение отсутствующего поля - undefined.",
       "takeaway": "Индексная сигнатура задаёт тип словаря, но не заполняет его и не гарантирует наличие записи.",
       "moduleId": "typescript",
       "order": 2,
@@ -177,11 +174,11 @@
         "learningGoal": "Объяснить и применить правило с учётом его границ: Индексная сигнатура задаёт тип словаря, но не заполняет его и не гарантирует наличие записи.",
         "keywords": ["TypeScript", "Объектные типы и интерфейсы"],
         "kind": "explanation",
-        "reviewStatus": "imported",
+        "reviewStatus": "ready",
         "goalIds": ["core", "ts-index-signature"],
         "relatedQuestionIds": [],
         "priority": "core",
-        "sourceRefs": ["ref-e93a21d416404bfe"]
+        "sourceRefs": ["ref-d194e7b7f7d513dc", "ref-e93a21d416404bfe"]
       },
       "answerFile": "answers/typescript/ts-index-signature.md"
     },
@@ -191,7 +188,6 @@
       "topic": "TypeScript",
       "difficulty": "Базовый",
       "summary": "Наследование формы и проверка совместимости одноимённых членов.",
-      "code": "interface Named { name: string }\ninterface Identified { id: number }\ninterface User extends Named, Identified { active: boolean }\nconst user: User = { id: 1, name: \"Аня\", active: true };",
       "takeaway": "Extends объединяет совместимые требования объектных контрактов, не создавая реализацию.",
       "moduleId": "typescript",
       "order": 3,
@@ -200,11 +196,11 @@
         "learningGoal": "Объяснить и применить правило с учётом его границ: Extends объединяет совместимые требования объектных контрактов, не создавая реализацию.",
         "keywords": ["TypeScript", "Объектные типы и интерфейсы"],
         "kind": "explanation",
-        "reviewStatus": "imported",
+        "reviewStatus": "ready",
         "goalIds": ["core", "ts-interface-extends"],
         "relatedQuestionIds": [],
         "priority": "core",
-        "sourceRefs": []
+        "sourceRefs": ["ref-e93a21d416404bfe"]
       },
       "answerFile": "answers/typescript/ts-interface-extends.md"
     },
@@ -214,7 +210,6 @@
       "topic": "TypeScript",
       "difficulty": "Базовый",
       "summary": "Declaration merging и требования к совпадающим свойствам.",
-      "code": "interface Preferences { theme: string }\ninterface Preferences { language: string }\nconst value: Preferences = { theme: \"dark\", language: \"ru\" };\n// Это единый контракт с обоими полями, а не два разных объекта.",
       "takeaway": "Слияние расширяет типовой контракт при согласованных объявлениях, но не создаёт данные.",
       "moduleId": "typescript",
       "order": 4,
@@ -223,11 +218,11 @@
         "learningGoal": "Объяснить и применить правило с учётом его границ: Слияние расширяет типовой контракт при согласованных объявлениях, но не создаёт данные.",
         "keywords": ["TypeScript", "Объектные типы и интерфейсы"],
         "kind": "explanation",
-        "reviewStatus": "imported",
+        "reviewStatus": "ready",
         "goalIds": ["core", "ts-interface-merging"],
         "relatedQuestionIds": [],
         "priority": "core",
-        "sourceRefs": []
+        "sourceRefs": ["ref-4d18f3bf7d37dcc4"]
       },
       "answerFile": "answers/typescript/ts-interface-merging.md"
     },
@@ -237,7 +232,6 @@
       "topic": "TypeScript",
       "difficulty": "Базовый",
       "summary": "Деревья, самоссылка типа и границы сложности вычислений.",
-      "code": "type Tree<T> = {\n  value: T;\n  children: Tree<T>[];\n};\nconst tree: Tree<string> = {\n  value: \"root\", children: [{ value: \"leaf\", children: [] }],\n};",
       "takeaway": "Рекурсивный тип описывает повторяемую форму, а не доказывает завершение обхода данных.",
       "moduleId": "typescript",
       "order": 5,
@@ -246,11 +240,11 @@
         "learningGoal": "Объяснить и применить правило с учётом его границ: Рекурсивный тип описывает повторяемую форму, а не доказывает завершение обхода данных.",
         "keywords": ["TypeScript", "Объектные типы и интерфейсы"],
         "kind": "explanation",
-        "reviewStatus": "imported",
+        "reviewStatus": "ready",
         "goalIds": ["core", "ts-recursive-types"],
         "relatedQuestionIds": [],
         "priority": "core",
-        "sourceRefs": []
+        "sourceRefs": ["ref-e93a21d416404bfe"]
       },
       "answerFile": "answers/typescript/ts-recursive-types.md"
     },
@@ -258,9 +252,7 @@
       "id": "ts-runtime-object-keys",
       "title": "Почему Object.keys возвращает string[], а не (keyof T)[]?",
       "summary": "Разница между видимой статической формой объекта и его реальными перечисляемыми ключами.",
-      "code": "function inspect(value: { id: number }) {\n  return Object.keys(value)\n}\nconst full = { id: 1, secret: 'скрыто статическим типом' }\nconst keys = inspect(full) // Реальные ключи: id и secret\nconst selected = ['id'] as const // Явный набор для проекции",
       "takeaway": "keyof описывает статический контракт, а Object.keys исследует реальный объект.",
-      "pitfall": "Приводить ключи к keyof T и считать, что дополнительные runtime-поля исчезли.",
       "difficulty": "Средний",
       "topic": "TypeScript",
       "moduleId": "typescript",
@@ -270,7 +262,7 @@
         "learningGoal": "Объяснить и применить правило с учётом его границ: keyof описывает статический контракт, а Object.keys исследует реальный объект.",
         "keywords": ["TypeScript", "Объектные типы и интерфейсы"],
         "kind": "explanation",
-        "reviewStatus": "imported",
+        "reviewStatus": "ready",
         "goalIds": ["core", "ts-runtime-object-keys"],
         "relatedQuestionIds": [],
         "priority": "core",
@@ -286,7 +278,6 @@
       "summary": "Weak type detection и отсутствие общих свойств.",
       "answerFile": "answers/typescript/ts-weak-object-types.md",
       "takeaway": "Optional-поля не превращают предметный объектный контракт в произвольный словарь.",
-      "pitfall": "Ожидать совместимость любого объекта с типом из необязательных полей.",
       "moduleId": "typescript",
       "order": 7,
       "popular": false,
@@ -309,7 +300,6 @@
       "summary": "Перезапись полей и отличие нового объекта от intersection.",
       "answerFile": "answers/typescript/ts-spread-result-types.md",
       "takeaway": "Создание объекта с перезаписью и одновременное требование двух контрактов - разные операции.",
-      "pitfall": "Объяснять каждый spread как безусловный intersection.",
       "moduleId": "typescript",
       "order": 8,
       "popular": false,
@@ -332,7 +322,6 @@
       "summary": "Шаблонная index signature для data-* контрактов.",
       "answerFile": "answers/typescript/ts-template-index-signatures.md",
       "takeaway": "Динамические ключи можно ограничить предметным форматом вместо общего string.",
-      "pitfall": "Считать строковый шаблон полноценным парсером имени.",
       "moduleId": "typescript",
       "order": 9,
       "popular": false,

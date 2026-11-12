@@ -9,23 +9,38 @@ import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
+import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import type { QuestionCatalog } from "@/data/question-catalog"
 import { questionApi } from "@/lib/question-api"
 import {
-  downloadFeedback,
   feedbackPageForPath,
   feedbackPages,
   githubIssueForFeedback,
+  feedbackMessage,
+  normalizeFeedbackPath,
+  bugDetails,
   parseTopics,
+  bugReasons,
+  type BugReason,
   type BugPage,
   type FeedbackInput,
   type FeedbackPage,
   type FeedbackReceipt,
 } from "@/lib/platform-feedback"
+import { FeedbackDelivery } from "@/components/feedback/feedback-delivery"
+import { FeedbackScreenshots } from "@/components/feedback/feedback-screenshots"
+import { useFeedbackAttachments } from "@/stores/feedback-attachments"
+import type { FeedbackScreenshot } from "@/lib/feedback-attachments"
+import { validateFeedback, type FeedbackErrors } from "@/lib/feedback-validation"
 import { useFeedbackDrafts } from "@/stores/feedback-drafts"
 
 export function FeedbackPageView() {
+  const route = useLocation()
+  return <FeedbackForm key={route.search} />
+}
+
+function FeedbackForm() {
   const formId = useId()
   const route = useLocation()
   const origin = typeof route.state?.feedbackOrigin === "string" ? route.state.feedbackOrigin : ""
@@ -39,17 +54,43 @@ export function FeedbackPageView() {
   const [attempt, setAttempt] = useState(0)
   const [sending, setSending] = useState(false)
   const [error, setError] = useState("")
-  const [failedInput, setFailedInput] = useState<FeedbackInput | null>(null)
   const [receipt, setReceipt] = useState<FeedbackReceipt | null>(null)
+  const [prepared, setPrepared] = useState<FeedbackInput | null>(null)
+  const [validated, setValidated] = useState(false)
+  const [attachmentsBusy, setAttachmentsBusy] = useState(false)
+  const formRef = useRef<HTMLFormElement>(null)
   const submitting = useRef(false)
   const successHeading = useRef<HTMLHeadingElement>(null)
   useEffect(() => {
-    if (receipt) successHeading.current?.focus()
-  }, [receipt])
+    if (prepared || receipt) successHeading.current?.focus()
+  }, [prepared, receipt])
   const drafts = useFeedbackDrafts()
+  const questionId = new URLSearchParams(route.search).get("question")
+  const questionBug = questionId ? drafts.questionBugs?.[questionId] : undefined
+  const bug = questionBug ?? drafts.bug
+  function updateBug(
+    patch: Partial<
+      Pick<typeof bug, "page" | "path" | "details" | "steps" | "expected" | "reason" | "fragment">
+    >,
+  ) {
+    if (questionId && questionBug) drafts.updateQuestionBug(questionId, patch)
+    else drafts.updateBug(patch)
+  }
   const suggestion = drafts.suggestions[page]
   const content = kind === "suggestion" && suggestion.mode === "content" && page !== "interviews"
-  const github = receipt ? githubIssueForFeedback(receipt) : null
+  const attachmentKey =
+    kind === "bug" ? (questionBug ? "question:" + questionId : "bug") : "suggestion:" + page
+  const allAttachments = useFeedbackAttachments((state) => state.items)
+  const screenshots = allAttachments[attachmentKey] ?? []
+  function setScreenshots(images: FeedbackScreenshot[]) {
+    useFeedbackAttachments.getState().set(attachmentKey, images)
+  }
+  const fieldErrors: FeedbackErrors = validated
+    ? validateFeedback(kind, bug, suggestion, content, catalog)
+    : { topics: {} }
+  const outgoing = receipt ?? prepared
+  const github = outgoing ? githubIssueForFeedback(outgoing, catalog) : null
+  const message = outgoing ? feedbackMessage(outgoing, catalog) : null
   useEffect(() => {
     let active = true
     questionApi
@@ -68,67 +109,27 @@ export function FeedbackPageView() {
     }
   }, [attempt])
 
-  function validate(): string | null {
-    if (kind === "bug") {
-      if (drafts.bug.details.trim().length < 10)
-        return "Опишите проблему подробнее: не менее 10 символов."
-      if (drafts.bug.path && (!drafts.bug.path.startsWith("/") || /[?#\s]/.test(drafts.bug.path)))
-        return "Укажите путь страницы, например /questions, без параметров и личных данных."
-    } else if (!content && suggestion.details.trim().length < 10)
-      return "Опишите, что стоит улучшить: не менее 10 символов."
-    if (!content) return null
-    if (!catalog) return "Дождитесь загрузки каталога или повторите её."
-    const targets = new Set<string>()
-    for (const [index, item] of suggestion.items.entries()) {
-      const prefix = `Раздел ${index + 1}: `
-      const section = catalog.sections.find(
-        (s) => s.id === item.sectionId && s.group === item.groupId,
-      )
-      if (
-        !catalog.groups.some((g) => g.id === item.groupId) ||
-        (!section && item.sectionId !== "__new")
-      )
-        return prefix + "выберите группу и раздел."
-      if (item.sectionId === "__new" && !item.sectionTitle.trim())
-        return prefix + "укажите название нового раздела."
-      if (item.subsectionId === "__new" && !item.subsectionTitle.trim())
-        return prefix + "укажите название нового подраздела."
-      if (
-        !["__any", "__new"].includes(item.subsectionId) &&
-        !section?.subsections.some((s) => s.id === item.subsectionId)
-      )
-        return prefix + "выберите существующий подраздел."
-      const topics = parseTopics(item.topics)
-      if (!topics.length || topics.length > 50 || topics.some((t) => t.length > 200))
-        return prefix + "добавьте от 1 до 50 тем, до 200 символов в каждой."
-      const target = JSON.stringify([
-        item.groupId,
-        section?.title ?? item.sectionTitle.trim().toLocaleLowerCase("ru"),
-        item.subsectionId === "__new"
-          ? item.subsectionTitle.trim().toLocaleLowerCase("ru")
-          : item.subsectionId,
-      ])
-      if (targets.has(target)) return prefix + "этот раздел уже есть. Перенесите темы в один блок."
-      targets.add(target)
-    }
-    return null
-  }
-  async function submit(event: FormEvent<HTMLFormElement>) {
+  function submit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault()
-    if (submitting.current) return
-    const problem = validate()
-    if (problem) {
-      setError(problem)
+    if (submitting.current || attachmentsBusy) return
+    setValidated(true)
+    const issues = validateFeedback(kind, bug, suggestion, content, catalog)
+    if (issues.details || issues.path || issues.form || Object.keys(issues.topics).length) {
+      setError(issues.form ?? "")
+      window.requestAnimationFrame(() =>
+        formRef.current?.querySelector<HTMLElement>('[aria-invalid="true"]')?.focus(),
+      )
       return
     }
     const input: FeedbackInput =
       kind === "bug"
         ? {
-            ...drafts.bug,
+            id: bug.id,
+            page: bug.page,
             kind,
             mode: "improvement",
-            path: drafts.bug.path.trim(),
-            details: drafts.bug.details.trim(),
+            path: normalizeFeedbackPath(bug.path),
+            details: bugDetails(bug),
             items: [],
           }
         : {
@@ -153,7 +154,13 @@ export function FeedbackPageView() {
       setError("Обращение слишком большое. Разделите список на несколько обращений.")
       return
     }
-    setFailedInput(null)
+    setPrepared(input)
+    setReceipt(null)
+    setError("")
+  }
+  async function saveLocally() {
+    if (!prepared || submitting.current || receipt) return
+    const input = prepared
     submitting.current = true
     setSending(true)
     setError("")
@@ -163,7 +170,6 @@ export function FeedbackPageView() {
         throw new Error("Сервер не подтвердил сохранение. Повторите отправку.")
       setReceipt(saved)
     } catch (e) {
-      setFailedInput(input)
       setError(
         e instanceof Error ? e.message : "Не удалось сохранить обращение. Черновик сохранён.",
       )
@@ -173,9 +179,12 @@ export function FeedbackPageView() {
     }
   }
   function newRequest() {
-    drafts.reset(kind, page)
+    setScreenshots([])
+    setValidated(false)
+    if (kind === "bug" && questionId && questionBug) drafts.resetQuestionBug(questionId)
+    else drafts.reset(kind, page)
     setReceipt(null)
-    setFailedInput(null)
+    setPrepared(null)
     setError("")
   }
   return (
@@ -185,11 +194,11 @@ export function FeedbackPageView() {
       />
       <PageHeading
         title="Помогите улучшить Wishu"
-        description="Сообщите о проблеме или предложите материалы, которых не хватает для подготовки."
+        description="Опишите проблему или идею - мы подготовим сообщение, которое удобно передать автору."
       />
       <div className="grid items-start gap-6 lg:grid-cols-[minmax(0,1fr)_260px]">
         <AnimatedBlock className="min-w-0">
-          {receipt ? (
+          {outgoing && message ? (
             <Card className="gap-5 p-5 shadow-none sm:p-6">
               <div>
                 <h2
@@ -197,53 +206,54 @@ export function FeedbackPageView() {
                   tabIndex={-1}
                   className="text-lg font-semibold outline-none"
                 >
-                  Обращение сохранено
+                  {receipt ? "Обращение сохранено локально" : "Осталось передать автору"}
                 </h2>
                 <p className="mt-2 text-sm leading-6 text-muted-foreground">
-                  Оно находится на сервере этой установки Wishu. Для передачи автору откройте GitHub
-                  issue или скачайте JSON.
+                  {github
+                    ? "Откройте готовое обращение на GitHub и подтвердите публикацию. Можно добавить скриншот прямо там."
+                    : "Скопируйте готовый текст и отправьте автору привычным способом. Сохранять его на локальном сервере не обязательно."}
                 </p>
               </div>
-              <p className="text-xs break-all text-muted-foreground">Номер: {receipt.id}</p>
-              {github?.attachmentRequired && (
-                <p className="text-sm leading-6">
-                  Обращение большое. Скачайте JSON и приложите файл к issue, чтобы передать все
-                  темы.
-                </p>
-              )}
+              <FeedbackDelivery value={outgoing} catalog={catalog} screenshots={screenshots} />
               <div className="flex flex-wrap gap-2">
-                {github && (
-                  <Button
-                    nativeButton={false}
-                    render={
-                      <a
-                        href={github.url}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        aria-label="Открыть issue на GitHub в новой вкладке"
-                      />
-                    }
-                  >
-                    Открыть issue на GitHub
-                  </Button>
-                )}
-                <Button variant="outline" onClick={() => downloadFeedback(receipt)}>
-                  Скачать JSON
+                <Button
+                  variant="ghost"
+                  disabled={sending}
+                  onClick={() => {
+                    setPrepared(null)
+                    setReceipt(null)
+                    setError("")
+                  }}
+                >
+                  Изменить
                 </Button>
-                <Button variant="ghost" onClick={newRequest}>
+                <Button variant="ghost" disabled={sending} onClick={newRequest}>
                   Новое обращение
                 </Button>
               </div>
-              {!github && (
-                <p className="text-xs leading-5 text-muted-foreground">
-                  В этой установке не настроен адрес GitHub для обращений. Передайте автору
-                  скачанный файл удобным способом.
-                </p>
-              )}
-              <p className="text-xs leading-5 text-muted-foreground">
-                Открытие ссылки ещё не публикует issue. Проверьте текст на GitHub и подтвердите
-                отправку.
-              </p>
+              <Collapsible className="border-t pt-4">
+                <CollapsibleTrigger className="text-sm text-muted-foreground underline-offset-4 hover:text-foreground hover:underline">
+                  Сохранить копию в этой установке
+                </CollapsibleTrigger>
+                <CollapsibleContent className="space-y-3 pt-3">
+                  <p className="text-xs leading-5 text-muted-foreground">
+                    Локальное сохранение не передаёт обращение автору. Его можно использовать для
+                    резервной копии.
+                  </p>
+                  {receipt ? (
+                    <output className="block text-sm">Копия сохранена. Номер: {receipt.id}</output>
+                  ) : (
+                    <Button variant="outline" disabled={sending} onClick={() => void saveLocally()}>
+                      {sending ? "Сохраняем…" : "Сохранить локально"}
+                    </Button>
+                  )}
+                  {error && (
+                    <p role="alert" className="text-sm text-destructive">
+                      {error} Текст по-прежнему можно скопировать или скачать.
+                    </p>
+                  )}
+                </CollapsibleContent>
+              </Collapsible>
             </Card>
           ) : (
             <Card className="gap-5 p-4 shadow-none sm:p-6">
@@ -251,6 +261,7 @@ export function FeedbackPageView() {
                 value={kind}
                 onValueChange={(value) => {
                   if (!sending && (value === "bug" || value === "suggestion")) {
+                    setValidated(false)
                     setKind(value)
                     setError("")
                   }
@@ -265,63 +276,179 @@ export function FeedbackPageView() {
                     Предложить улучшение
                   </TabsTrigger>
                 </TabsList>
-                <form onSubmit={(e) => void submit(e)} className="space-y-5" aria-busy={sending}>
+                <form
+                  ref={formRef}
+                  noValidate
+                  onSubmit={submit}
+                  className="space-y-5"
+                  aria-busy={sending || attachmentsBusy}
+                >
                   <TabsContent value="bug" className="space-y-5">
+                    <FeedbackSelect
+                      id={formId + "-reason"}
+                      label="Тип проблемы"
+                      value={bug.reason ?? "other"}
+                      options={bugReasons}
+                      onChange={(value) => updateBug({ reason: value as BugReason })}
+                    />
+                    {bug.fragment && (
+                      <div className="space-y-3 rounded-xl border bg-muted/30 p-3">
+                        <p className="text-xs font-medium">Выделенный фрагмент</p>
+                        <blockquote className="max-h-32 overflow-y-auto border-l-2 border-primary/30 pl-3 text-sm whitespace-pre-wrap">
+                          {bug.fragment}
+                        </blockquote>
+                        <Button
+                          type="button"
+                          variant="ghost"
+                          size="sm"
+                          onClick={() => updateBug({ fragment: "" })}
+                        >
+                          Убрать фрагмент
+                        </Button>
+                      </div>
+                    )}
+                    {questionBug?.context && (
+                      <div className="space-y-3 rounded-xl border bg-muted/30 p-4">
+                        <p className="block text-sm font-medium">Сообщение об этом вопросе</p>
+                        <p className="text-sm leading-6 break-words whitespace-pre-line text-muted-foreground">
+                          {questionBug.context}
+                        </p>
+                        <p className="text-xs text-muted-foreground">
+                          Вопрос и раздел уже подставлены. Ниже напишите, что нужно исправить.
+                        </p>
+                        <Button
+                          nativeButton={false}
+                          variant="link"
+                          size="sm"
+                          render={
+                            <Link to={"/questions/" + encodeURIComponent(questionId ?? "")} />
+                          }
+                        >
+                          Вернуться к вопросу
+                        </Button>
+                      </div>
+                    )}
                     <FeedbackSelect
                       id={`${formId}-bug-page`}
                       label="Где возникла проблема"
-                      value={drafts.bug.page}
+                      value={bug.page}
                       options={[...feedbackPages, { value: "other", label: "Другая страница" }]}
                       disabled={sending}
                       onChange={(value) =>
-                        drafts.updateBug({
+                        updateBug({
                           page: value as BugPage,
                           path: value === "other" ? "" : value === "learn" ? "/learn" : `/${value}`,
                         })
                       }
                     />
-                    <div className="space-y-2">
-                      <label htmlFor={`${formId}-path`} className="text-sm font-medium">
-                        Путь страницы{" "}
+                    <div className="space-y-3">
+                      <label htmlFor={`${formId}-path`} className="block text-sm font-medium">
+                        Ссылка на страницу{" "}
                         <span className="font-normal text-muted-foreground">(необязательно)</span>
                       </label>
                       <Input
                         id={`${formId}-path`}
-                        value={drafts.bug.path}
-                        maxLength={500}
+                        value={bug.path}
+                        aria-invalid={!!fieldErrors.path}
+                        aria-describedby={fieldErrors.path ? formId + "-path-error" : undefined}
+                        maxLength={2000}
                         disabled={sending}
-                        placeholder="/questions/sections/react"
-                        onChange={(e) => drafts.updateBug({ path: e.target.value })}
+                        placeholder="Вставьте адрес из браузера или путь страницы"
+                        onChange={(e) => updateBug({ path: e.target.value })}
+                        onBlur={() => updateBug({ path: normalizeFeedbackPath(bug.path) })}
                       />
+                      {fieldErrors.path && (
+                        <p
+                          id={formId + "-path-error"}
+                          role="alert"
+                          className="text-xs text-destructive"
+                        >
+                          {fieldErrors.path}
+                        </p>
+                      )}
+                      <p className="text-xs text-muted-foreground">
+                        Адрес сервера и параметры ссылки не попадут в обращение.
+                      </p>
                     </div>
-                    <div className="space-y-2">
-                      <label htmlFor={`${formId}-bug-details`} className="text-sm font-medium">
-                        Описание проблемы
+                    <div className="space-y-3">
+                      <label
+                        htmlFor={`${formId}-bug-details`}
+                        className="block text-sm font-medium"
+                      >
+                        Что не работает
                       </label>
                       <Textarea
                         id={`${formId}-bug-details`}
-                        value={drafts.bug.details}
+                        value={bug.details}
                         required
                         minLength={10}
-                        maxLength={5000}
+                        maxLength={3000}
                         disabled={sending}
-                        className="min-h-44"
-                        placeholder={"Что вы делали?\nЧто произошло?\nКакого результата ожидали?"}
-                        onChange={(e) => drafts.updateBug({ details: e.target.value })}
+                        className="min-h-32"
+                        placeholder="Например: после проверки задачи результат не появился, кнопка осталась недоступной."
+                        aria-invalid={!!fieldErrors.details}
+                        aria-describedby={`${formId}-bug-hint${fieldErrors.details ? ` ${formId}-bug-error` : ""}`}
+                        onChange={(e) => updateBug({ details: e.target.value })}
                       />
-                      <p className="text-xs text-muted-foreground">
-                        Не менее 10 символов. {drafts.bug.details.length}/5000
+                      {fieldErrors.details && (
+                        <p
+                          id={formId + "-bug-error"}
+                          role="alert"
+                          className="text-xs text-destructive"
+                        >
+                          {fieldErrors.details}
+                        </p>
+                      )}
+                      <p id={`${formId}-bug-hint`} className="text-xs text-muted-foreground">
+                        Достаточно короткого описания. {bug.details.length}/3000
                       </p>
                     </div>
+                    <Collapsible>
+                      <CollapsibleTrigger className="text-sm font-medium text-muted-foreground underline-offset-4 hover:text-foreground hover:underline">
+                        Добавить детали для воспроизведения (необязательно)
+                      </CollapsibleTrigger>
+                      <CollapsibleContent className="space-y-4 pt-4">
+                        <div className="space-y-3">
+                          <label htmlFor={`${formId}-steps`} className="block text-sm font-medium">
+                            Как повторить
+                          </label>
+                          <Textarea
+                            id={`${formId}-steps`}
+                            value={bug.steps ?? ""}
+                            maxLength={1000}
+                            placeholder={
+                              "1. Открыл задачу\n2. Вставил решение\n3. Нажал «Проверить»"
+                            }
+                            onChange={(event) => updateBug({ steps: event.target.value })}
+                          />
+                        </div>
+                        <div className="space-y-3">
+                          <label
+                            htmlFor={`${formId}-expected`}
+                            className="block text-sm font-medium"
+                          >
+                            Как должно было сработать
+                          </label>
+                          <Textarea
+                            id={`${formId}-expected`}
+                            value={bug.expected ?? ""}
+                            maxLength={600}
+                            placeholder="Ожидал увидеть результаты тестов и сообщение об успешном решении."
+                            onChange={(event) => updateBug({ expected: event.target.value })}
+                          />
+                        </div>
+                      </CollapsibleContent>
+                    </Collapsible>
                   </TabsContent>
                   <TabsContent value="suggestion" className="space-y-5">
                     <FeedbackSelect
                       id={`${formId}-page`}
-                      label="Что дополним"
+                      label="К какой странице относится идея"
                       value={page}
                       options={feedbackPages}
                       disabled={sending}
                       onChange={(value) => {
+                        setValidated(false)
                         setPage(value as FeedbackPage)
                         setError("")
                       }}
@@ -358,6 +485,7 @@ export function FeedbackPageView() {
                               <FeedbackTopicFields
                                 key={item.key}
                                 item={item}
+                                errors={fieldErrors.topics[item.key]}
                                 index={index}
                                 catalog={catalog}
                                 disabled={sending}
@@ -414,15 +542,19 @@ export function FeedbackPageView() {
                         </p>
                       </>
                     )}
-                    <div className="space-y-2">
+                    <div className="space-y-3">
                       <label
                         htmlFor={`${formId}-suggestion-details`}
-                        className="text-sm font-medium"
+                        className="block text-sm font-medium"
                       >
                         {content ? "Комментарий для автора (необязательно)" : "Что стоит улучшить"}
                       </label>
                       <Textarea
                         id={`${formId}-suggestion-details`}
+                        aria-invalid={!!fieldErrors.details}
+                        aria-describedby={
+                          fieldErrors.details ? formId + "-suggestion-error" : undefined
+                        }
                         value={suggestion.details}
                         required={!content}
                         minLength={content ? undefined : 10}
@@ -437,34 +569,39 @@ export function FeedbackPageView() {
                         onChange={(e) => drafts.updateSuggestion(page, { details: e.target.value })}
                       />
                     </div>
+                    {fieldErrors.details && (
+                      <p
+                        id={formId + "-suggestion-error"}
+                        role="alert"
+                        className="text-xs text-destructive"
+                      >
+                        {fieldErrors.details}
+                      </p>
+                    )}
                   </TabsContent>
+                  <FeedbackScreenshots
+                    value={screenshots}
+                    onChange={setScreenshots}
+                    onBusyChange={setAttachmentsBusy}
+                  />
                   <div className="space-y-3 border-t pt-5">
                     {error && (
                       <div className="space-y-3">
                         <p role="alert" className="text-sm text-destructive">
                           {error}
                         </p>
-                        {failedInput && (
-                          <Button
-                            type="button"
-                            variant="outline"
-                            onClick={() => downloadFeedback(failedInput)}
-                          >
-                            Скачать неотправленное обращение
-                          </Button>
-                        )}
                       </div>
                     )}
                     <Button
                       type="submit"
-                      disabled={sending || (content && !catalog)}
+                      disabled={sending || attachmentsBusy || (content && !catalog)}
                       className="w-full sm:w-auto"
                     >
-                      {sending ? "Сохраняем…" : "Сохранить обращение"}
+                      Подготовить обращение
                     </Button>
                     <p className="text-xs leading-5 text-muted-foreground">
-                      Сначала сохраняем на сервере этой установки. Затем можно передать автору через
-                      GitHub или JSON. Не добавляйте пароли и личные данные.
+                      На следующем шаге - готовый текст и способы передачи. Черновик останется в
+                      браузере. Не добавляйте пароли и личные данные.
                     </p>
                   </div>
                 </form>
@@ -475,18 +612,11 @@ export function FeedbackPageView() {
         </AnimatedBlock>
         <AnimatedBlock introDelay={0.12} className="space-y-4 lg:sticky lg:top-24">
           <Card className="gap-3 p-5 shadow-none">
-            <h2 className="text-sm font-semibold">Общая база растёт вместе с вами</h2>
+            <h2 className="text-sm font-semibold">От описания до исправления</h2>
             <p className="text-xs leading-6 text-muted-foreground">
-              Автор проверит темы, объединит пересечения и подготовит материалы. После включения в
-              репозиторий они будут доступны другим пользователям.
+              Опишите проблему или идею, проверьте готовый текст и передайте автору через GitHub или
+              сообщением. Для бага особенно полезны шаги повторения и скриншот.
             </p>
-            <p className="text-xs leading-6 text-muted-foreground">
-              Это предложение для общей базы. Личный вопрос можно добавить отдельно со своим
-              ответом.
-            </p>
-            <Button nativeButton={false} variant="outline" render={<Link to="/questions/new" />}>
-              Добавить свой вопрос
-            </Button>
           </Card>
           <p className="px-1 text-xs leading-6 text-muted-foreground">
             Черновики хранятся в этом браузере. Для каждой страницы предложений сохраняется свой

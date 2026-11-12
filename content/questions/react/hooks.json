@@ -9,7 +9,7 @@
       "title": "Хуки и эффекты",
       "description": "Обзор и взаимосвязи навыков: Правила хуков, зависимости, cleanup, замыкания и синхронизация.",
       "requiredDifficulties": [],
-      "reviewed": false,
+      "reviewed": true,
       "priority": "core",
       "relatedSkillIds": [
         "react-hooks-rules",
@@ -61,7 +61,7 @@
       "title": "Чем отличаются useEffect без массива, с [] и с зависимостями?",
       "description": "Объяснить и применить правило с учётом его границ: Зависимости описывают данные синхронизации, а не желаемую частоту запуска.",
       "requiredDifficulties": ["Средний"],
-      "reviewed": false,
+      "reviewed": true,
       "priority": "core",
       "relatedSkillIds": []
     },
@@ -70,7 +70,7 @@
       "title": "Когда useEffect не нужен и чем его заменить?",
       "description": "Объяснить и применить правило с учётом его границ: Эффект используйте для внешней синхронизации, событие - для действия пользователя.",
       "requiredDifficulties": ["Средний"],
-      "reviewed": false,
+      "reviewed": true,
       "priority": "core",
       "relatedSkillIds": []
     },
@@ -79,7 +79,7 @@
       "title": "Что такое устаревшее замыкание в React?",
       "description": "Объяснить и применить правило с учётом его границ: Исправляйте причину захвата старых данных, а не отключайте проверку зависимостей.",
       "requiredDifficulties": ["Средний"],
-      "reviewed": false,
+      "reviewed": true,
       "priority": "core",
       "relatedSkillIds": []
     },
@@ -88,7 +88,7 @@
       "title": "Почему StrictMode повторно вызывает рендер и эффекты?",
       "description": "Объяснить и применить правило с учётом его границ: Код должен оставаться корректным после последовательности setup, cleanup, setup.",
       "requiredDifficulties": ["Средний"],
-      "reviewed": false,
+      "reviewed": true,
       "priority": "core",
       "relatedSkillIds": []
     },
@@ -97,7 +97,7 @@
       "title": "Когда нужен useLayoutEffect вместо useEffect?",
       "description": "Объяснить и применить правило с учётом его границ: Блокируйте paint только при необходимости измерить и поправить layout.",
       "requiredDifficulties": ["Продвинутый"],
-      "reviewed": false,
+      "reviewed": true,
       "priority": "core",
       "relatedSkillIds": []
     },
@@ -106,7 +106,7 @@
       "title": "Что переиспользует пользовательский хук: состояние или логику?",
       "description": "Объяснить и применить правило с учётом его границ: Пользовательские хуки разделяют логику, но не объединяют локальное состояние.",
       "requiredDifficulties": ["Средний"],
-      "reviewed": false,
+      "reviewed": true,
       "priority": "core",
       "relatedSkillIds": []
     },
@@ -115,7 +115,7 @@
       "title": "Когда useEffectEvent позволяет прочитать актуальное значение без пересоздания подписки?",
       "description": "Объяснить и применить правило с учётом его границ: Effect Event отделяет актуальные данные события от причин пересинхронизации внешней системы.",
       "requiredDifficulties": ["Средний"],
-      "reviewed": false,
+      "reviewed": true,
       "priority": "core",
       "relatedSkillIds": []
     },
@@ -318,11 +318,11 @@
         "learningGoal": "Объяснить и применить правило с учётом его границ: Зависимости описывают данные синхронизации, а не желаемую частоту запуска.",
         "keywords": ["React", "Хуки и эффекты"],
         "kind": "explanation",
-        "reviewStatus": "imported",
+        "reviewStatus": "ready",
         "goalIds": ["core", "react-effect-dependencies"],
         "relatedQuestionIds": [],
         "priority": "core",
-        "sourceRefs": []
+        "sourceRefs": ["ref-4d23b49b0284f9ac"]
       },
       "answerFile": "answers/react/react-effect-dependencies.md"
     },
@@ -340,11 +340,11 @@
         "learningGoal": "Объяснить и применить правило с учётом его границ: Эффект используйте для внешней синхронизации, событие - для действия пользователя.",
         "keywords": ["React", "Хуки и эффекты"],
         "kind": "explanation",
-        "reviewStatus": "imported",
+        "reviewStatus": "ready",
         "goalIds": ["core", "react-effect-not-needed"],
         "relatedQuestionIds": [],
         "priority": "core",
-        "sourceRefs": []
+        "sourceRefs": ["ref-8b892800e16f2524"]
       },
       "answerFile": "answers/react/react-effect-not-needed.md"
     },
@@ -354,7 +354,6 @@
       "topic": "React",
       "difficulty": "Средний",
       "summary": "Снимки рендера в таймерах, эффектах и callback.",
-      "code": "useEffect(() => {\n  const timer = setInterval(() => setCount(value => value + 1), 1000)\n  return () => clearInterval(timer)\n}, [])",
       "takeaway": "Исправляйте причину захвата старых данных, а не отключайте проверку зависимостей.",
       "moduleId": "react",
       "order": 4,
@@ -363,11 +362,11 @@
         "learningGoal": "Объяснить и применить правило с учётом его границ: Исправляйте причину захвата старых данных, а не отключайте проверку зависимостей.",
         "keywords": ["React", "Хуки и эффекты", "замыкание", "замыкания", "closure"],
         "kind": "explanation",
-        "reviewStatus": "imported",
+        "reviewStatus": "ready",
         "goalIds": ["core", "react-stale-closures"],
         "relatedQuestionIds": [],
         "priority": "core",
-        "sourceRefs": []
+        "sourceRefs": ["ref-9b3a5fb41ab11fb6"]
       },
       "answerFile": "answers/react/react-stale-closures.md"
     },
@@ -385,11 +384,11 @@
         "learningGoal": "Объяснить и применить правило с учётом его границ: Код должен оставаться корректным после последовательности setup, cleanup, setup.",
         "keywords": ["React", "Хуки и эффекты"],
         "kind": "explanation",
-        "reviewStatus": "imported",
+        "reviewStatus": "ready",
         "goalIds": ["core", "react-strict-mode"],
         "relatedQuestionIds": [],
         "priority": "core",
-        "sourceRefs": []
+        "sourceRefs": ["ref-0728709814762e98"]
       },
       "answerFile": "answers/react/react-strict-mode.md"
     },
@@ -407,11 +406,11 @@
         "learningGoal": "Объяснить и применить правило с учётом его границ: Блокируйте paint только при необходимости измерить и поправить layout.",
         "keywords": ["React", "Хуки и эффекты"],
         "kind": "explanation",
-        "reviewStatus": "imported",
+        "reviewStatus": "ready",
         "goalIds": ["core", "react-layout-effect"],
         "relatedQuestionIds": [],
         "priority": "core",
-        "sourceRefs": []
+        "sourceRefs": ["ref-41d47fa5469db173"]
       },
       "answerFile": "answers/react/react-layout-effect.md"
     },
@@ -421,7 +420,6 @@
       "topic": "React",
       "difficulty": "Средний",
       "summary": "Изоляция экземпляров и композиция хуков.",
-      "code": "function useToggle(initialValue = false) {\n  const [value, setValue] = useState(initialValue)\n  const toggle = () => setValue(current => !current)\n  return [value, toggle]\n}",
       "takeaway": "Пользовательские хуки разделяют логику, но не объединяют локальное состояние.",
       "moduleId": "react",
       "order": 7,
@@ -430,11 +428,11 @@
         "learningGoal": "Объяснить и применить правило с учётом его границ: Пользовательские хуки разделяют логику, но не объединяют локальное состояние.",
         "keywords": ["React", "Хуки и эффекты"],
         "kind": "explanation",
-        "reviewStatus": "imported",
+        "reviewStatus": "ready",
         "goalIds": ["core", "react-custom-hooks"],
         "relatedQuestionIds": [],
         "priority": "core",
-        "sourceRefs": []
+        "sourceRefs": ["ref-843b8436ddc64978"]
       },
       "answerFile": "answers/react/react-custom-hooks.md"
     },
@@ -442,9 +440,7 @@
       "id": "react-effect-events",
       "title": "Когда useEffectEvent позволяет прочитать актуальное значение без пересоздания подписки?",
       "summary": "Разделение реактивной синхронизации и нереактивной логики события эффекта.",
-      "code": "import { useEffect, useEffectEvent } from \"react\"\nfunction LogUpdates({ source, label }) {\n  const onUpdate = useEffectEvent(value => console.log(label, value))\n  useEffect(() => {\n    return source.subscribe(value => onUpdate(value))\n  }, [source])\n  return null\n}\n// source.subscribe возвращает отписку; label не определяет саму подписку.",
       "takeaway": "Effect Event отделяет актуальные данные события от причин пересинхронизации внешней системы.",
-      "pitfall": "Заменять им все зависимости эффекта или передавать Effect Event как обычный пользовательский callback.",
       "difficulty": "Средний",
       "topic": "React",
       "moduleId": "react",
@@ -454,7 +450,7 @@
         "learningGoal": "Объяснить и применить правило с учётом его границ: Effect Event отделяет актуальные данные события от причин пересинхронизации внешней системы.",
         "keywords": ["React", "Хуки и эффекты"],
         "kind": "explanation",
-        "reviewStatus": "imported",
+        "reviewStatus": "ready",
         "goalIds": ["core", "react-effect-events"],
         "relatedQuestionIds": [],
         "priority": "core",

@@ -1,0 +1,77 @@
+{
+  "schemaVersion": 1,
+  "id": "js-all-answers-20261108-intl",
+  "title": "js-all-answers-20261108-intl",
+  "sectionId": "javascript",
+  "subsectionId": "intl",
+  "currentPass": "answers",
+  "goalIds": [
+    "core",
+    "js-date-calendar-arithmetic",
+    "js-intl-date-format",
+    "js-intl-number-format",
+    "js-intl-collation",
+    "js-intl-plural-rules",
+    "js-intl-relative-time",
+    "js-intl-list-format"
+  ],
+  "questionIds": [
+    "js-date-calendar-arithmetic",
+    "js-intl-date-format",
+    "js-intl-number-format",
+    "js-intl-collation",
+    "js-intl-plural-rules",
+    "js-intl-relative-time",
+    "js-intl-list-format"
+  ],
+  "scopePass": {
+    "status": "complete",
+    "remaining": []
+  },
+  "answerPass": {
+    "status": "complete",
+    "remaining": []
+  },
+  "baseline": [
+    {
+      "id": "js-date-calendar-arithmetic",
+      "title": "Чем прибавление календарного дня отличается от прибавления 24 часов?",
+      "contentHash": "a443a6f82464f6ceaa199195022c4224a903e9cbb5409f85126c0a6d4eb4385e"
+    },
+    {
+      "id": "js-intl-date-format",
+      "title": "Как Intl.DateTimeFormat помогает явно выбрать локаль и часовой пояс?",
+      "contentHash": "082b6a41081566901f2fdb1e17d722e3480b1f8fb110c9a1f957a162a5b1504f"
+    },
+    {
+      "id": "js-intl-number-format",
+      "title": "Почему формат валюты лучше задавать через Intl.NumberFormat, а не конкатенацию?",
+      "contentHash": "1e2df8ef1d9c08419736da9c01f05ffba85b3ce3378162713c610d8400757646"
+    },
+    {
+      "id": "js-intl-collation",
+      "title": "Как настроить сравнение строк через Intl.Collator под конкретную задачу?",
+      "contentHash": "6e08ad4c96cb86ee5f871ffa0019db586922c0a53373662990ed10f64fe0ee3a"
+    },
+    {
+      "id": "js-intl-plural-rules",
+      "title": "Как PluralRules помогает выбрать форму слова и чего он не переводит?",
+      "contentHash": "a7d50a458a93dece69e99e6c5fb5a8fad7988258b3625499f5eca4cb225ba065"
+    },
+    {
+      "id": "js-intl-relative-time",
+      "title": "Почему RelativeTimeFormat не вычисляет разницу двух дат за вас?",
+      "contentHash": "76aaaa8196dd7d9ee6c1a304dbd16c712a8b042830b85c99a027bbc3f4b2e772"
+    },
+    {
+      "id": "js-intl-list-format",
+      "title": "Чем ListFormat отличается от array.join при выводе списка для пользователя?",
+      "contentHash": "53c171da7d5aaee3e0207de6f1446c5f83081d718b8f6eadc7fccd4857484303"
+    }
+  ],
+  "notes": [
+    "Полный редакторский проход JavaScript: 346 ID сохраняются, добавлений/слияний нет. 12 ответов предыдущего пакета сохраняют готовый связный разбор. Остальным нужны индивидуальные пояснения к механизму и примеру, а не однотипная вводная фраза. Ответы ITBooster не используются.",
+    "Для оставшихся ответов подготовлены индивидуальные пояснения примеров; код перенесён в общий Markdown. В упражнениях на чтение кода условие сохранено отдельно. Примеры не запускались.",
+    "Завершено: Oxfmt, content:build, полный content:check. В платформе 1266 вопросов; в JavaScript сохранены 346 ID, обновлены оставшиеся 334 ответа, новых/удалённых ID нет. Код примеров и seed не выполнялись."
+  ]
+}

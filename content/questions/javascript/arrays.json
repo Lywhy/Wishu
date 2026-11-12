@@ -9,7 +9,7 @@
       "title": "Массивы и структуры данных",
       "description": "Обзор и взаимосвязи навыков: Методы массивов, преобразования, вложенные данные, Map, Set и слабые коллекции.",
       "requiredDifficulties": [],
-      "reviewed": false,
+      "reviewed": true,
       "priority": "core",
       "relatedSkillIds": [
         "array-indexing",
@@ -47,7 +47,7 @@
       "title": "Как читать элементы массива по индексу и получить последний элемент?",
       "description": "Объяснить и применить правило с учётом его границ: Индексы начинаются с нуля; отрицательное смещение поддерживает at, а не обычные квадратные скобки.",
       "requiredDifficulties": ["Базовый"],
-      "reviewed": false,
+      "reviewed": true,
       "priority": "core",
       "relatedSkillIds": []
     },
@@ -56,7 +56,7 @@
       "title": "Как length связан с плотным и разрежённым массивом?",
       "description": "Объяснить и применить правило с учётом его границ: Пропуск означает отсутствие свойства, а length задаёт границу индексных позиций.",
       "requiredDifficulties": ["Средний"],
-      "reviewed": false,
+      "reviewed": true,
       "priority": "core",
       "relatedSkillIds": []
     },
@@ -65,7 +65,7 @@
       "title": "Как push, pop, shift и unshift меняют массив и чем push отличается от concat?",
       "description": "Объяснить и применить правило с учётом его границ: Методы концов меняют исходный массив, а concat создаёт новый.",
       "requiredDifficulties": ["Базовый"],
-      "reviewed": false,
+      "reviewed": true,
       "priority": "core",
       "relatedSkillIds": []
     },
@@ -74,7 +74,7 @@
       "title": "Чем отличаются slice, splice и toSpliced?",
       "description": "Объяснить и применить правило с учётом его границ: Slice выбирает диапазон, splice редактирует оригинал, toSpliced возвращает новый результат редактирования.",
       "requiredDifficulties": ["Базовый"],
-      "reviewed": false,
+      "reviewed": true,
       "priority": "core",
       "relatedSkillIds": []
     },
@@ -83,7 +83,7 @@
       "title": "Чем reverse отличается от toReversed?",
       "description": "Объяснить и применить правило с учётом его границ: Reverse переставляет элементы в оригинале, toReversed создаёт отдельный массив.",
       "requiredDifficulties": ["Базовый"],
-      "reviewed": false,
+      "reviewed": true,
       "priority": "core",
       "relatedSkillIds": []
     },
@@ -92,7 +92,7 @@
       "title": "Как сортировать числа и чем sort отличается от toSorted?",
       "description": "Объяснить и применить правило с учётом его границ: Уточните мутацию, правила сравнения и требования к компаратору.",
       "requiredDifficulties": ["Средний"],
-      "reviewed": false,
+      "reviewed": true,
       "priority": "core",
       "relatedSkillIds": []
     },
@@ -101,7 +101,7 @@
       "title": "Как join и split преобразуют массив и строку?",
       "description": "Объяснить и применить правило с учётом его границ: Join собирает строку из массива, split разбивает строку, но исходные данные восстанавливаются не всегда.",
       "requiredDifficulties": ["Базовый"],
-      "reviewed": false,
+      "reviewed": true,
       "priority": "core",
       "relatedSkillIds": []
     },
@@ -110,7 +110,7 @@
       "title": "Как работает map и что возвращает его callback?",
       "description": "Объяснить и применить правило с учётом его границ: Map строит новый массив из результатов callback, поэтому возвращаемое значение здесь обязательно для полезного преобразования.",
       "requiredDifficulties": ["Базовый"],
-      "reviewed": false,
+      "reviewed": true,
       "priority": "core",
       "relatedSkillIds": []
     },
@@ -119,7 +119,7 @@
       "title": "Чем filter отличается от find?",
       "description": "Объяснить и применить правило с учётом его границ: Filter нужен для всех совпадений, find - для первого подходящего элемента.",
       "requiredDifficulties": ["Базовый"],
-      "reviewed": false,
+      "reviewed": true,
       "priority": "core",
       "relatedSkillIds": []
     },
@@ -128,7 +128,7 @@
       "title": "Когда использовать forEach и какие у него ограничения?",
       "description": "Объяснить и применить правило с учётом его границ: ForEach выполняет действия и игнорирует результаты callback; он не заменяет управляемый цикл.",
       "requiredDifficulties": ["Базовый"],
-      "reviewed": false,
+      "reviewed": true,
       "priority": "core",
       "relatedSkillIds": []
     },
@@ -137,7 +137,7 @@
       "title": "Как работает reduce и зачем задавать начальное значение?",
       "description": "Объяснить и применить правило с учётом его границ: Каждый шаг reduce должен вернуть следующий аккумулятор; initialValue определяет старт и случай пустого массива.",
       "requiredDifficulties": ["Базовый"],
-      "reviewed": false,
+      "reviewed": true,
       "priority": "core",
       "relatedSkillIds": []
     },
@@ -146,7 +146,7 @@
       "title": "Чем some отличается от every и что они возвращают для пустого массива?",
       "description": "Объяснить и применить правило с учётом его границ: Some проверяет «хотя бы один», every - «все», причём на пустом массиве их результаты различаются.",
       "requiredDifficulties": ["Базовый"],
-      "reviewed": false,
+      "reviewed": true,
       "priority": "core",
       "relatedSkillIds": []
     },
@@ -155,7 +155,7 @@
       "title": "Чем flatMap отличается от map?",
       "description": "Объяснить и применить правило с учётом его границ: FlatMap раскрывает на один уровень массивы, возвращённые callback, и может менять число элементов.",
       "requiredDifficulties": ["Базовый"],
-      "reviewed": false,
+      "reviewed": true,
       "priority": "core",
       "relatedSkillIds": []
     },
@@ -164,7 +164,7 @@
       "title": "Как получить плоский массив из вложенного через flat?",
       "description": "Объяснить и применить правило с учётом его границ: Flat раскрывает вложенность массивов до заданной глубины, но не клонирует объекты.",
       "requiredDifficulties": ["Базовый"],
-      "reviewed": false,
+      "reviewed": true,
       "priority": "core",
       "relatedSkillIds": []
     },
@@ -173,7 +173,7 @@
       "title": "Что такое псевдомассив и как Array.from превращает его в массив?",
       "description": "Объяснить и применить правило с учётом его границ: Array.from превращает iterable или array-like в настоящий плотный массив.",
       "requiredDifficulties": ["Базовый"],
-      "reviewed": false,
+      "reviewed": true,
       "priority": "core",
       "relatedSkillIds": []
     },
@@ -182,7 +182,7 @@
       "title": "Чем Array.of отличается от Array при создании массива?",
       "description": "Объяснить и применить правило с учётом его границ: Array.of всегда воспринимает аргументы как элементы, включая единственное число.",
       "requiredDifficulties": ["Базовый"],
-      "reviewed": false,
+      "reviewed": true,
       "priority": "core",
       "relatedSkillIds": []
     },
@@ -191,7 +191,7 @@
       "title": "Что делает copyWithin и меняет ли он длину массива?",
       "description": "Объяснить и применить правило с учётом его границ: CopyWithin перезаписывает часть того же массива, сохраняя его длину.",
       "requiredDifficulties": ["Средний"],
-      "reviewed": false,
+      "reviewed": true,
       "priority": "core",
       "relatedSkillIds": []
     },
@@ -200,7 +200,7 @@
       "title": "Как пропускать элементы при деструктуризации массива?",
       "description": "Объяснить и применить правило с учётом его границ: Пустая позиция в шаблоне пропускает значение итератора, не меняя исходный массив.",
       "requiredDifficulties": ["Базовый"],
-      "reviewed": false,
+      "reviewed": true,
       "priority": "core",
       "relatedSkillIds": []
     },
@@ -209,7 +209,7 @@
       "title": "Как создать и обойти двумерный массив без общих строк?",
       "description": "Объяснить и применить правило с учётом его границ: Каждую строку матрицы нужно создавать отдельно, чтобы строки не делили один массив.",
       "requiredDifficulties": ["Базовый"],
-      "reviewed": false,
+      "reviewed": true,
       "priority": "core",
       "relatedSkillIds": []
     },
@@ -218,7 +218,7 @@
       "title": "Что такое Set и как он определяет уникальность значений?",
       "description": "Объяснить и применить правило с учётом его границ: Set устраняет одинаковые значения, но не сравнивает объекты по содержимому.",
       "requiredDifficulties": ["Базовый"],
-      "reviewed": false,
+      "reviewed": true,
       "priority": "core",
       "relatedSkillIds": []
     },
@@ -227,7 +227,7 @@
       "title": "Что такое Map и когда он удобнее обычного объекта?",
       "description": "Объяснить и применить правило с учётом его границ: Map хранит ключи как значения с собственной идентичностью, а не как строковые имена свойств.",
       "requiredDifficulties": ["Базовый"],
-      "reviewed": false,
+      "reviewed": true,
       "priority": "core",
       "relatedSkillIds": []
     },
@@ -236,7 +236,7 @@
       "title": "Чем WeakMap и WeakSet отличаются от Map и Set?",
       "description": "Объяснить и применить правило с учётом его границ: Слабые коллекции связывают данные с жизненным циклом известных объектов и не поддерживают общий перебор.",
       "requiredDifficulties": ["Средний"],
-      "reviewed": false,
+      "reviewed": true,
       "priority": "core",
       "relatedSkillIds": []
     },
@@ -245,7 +245,7 @@
       "title": "Как связаны ArrayBuffer, TypedArray и DataView?",
       "description": "Объяснить и применить правило с учётом его границ: Буфер хранит данные, представление определяет способ доступа к ним.",
       "requiredDifficulties": ["Средний"],
-      "reviewed": false,
+      "reviewed": true,
       "priority": "core",
       "relatedSkillIds": []
     },
@@ -254,7 +254,7 @@
       "title": "Что происходит, если менять массив во время map, forEach или filter?",
       "description": "Объяснить и применить правило с учётом его границ: Метод может фиксировать длину, но не копировать все будущие значения.",
       "requiredDifficulties": ["Средний"],
-      "reviewed": false,
+      "reviewed": true,
       "priority": "core",
       "relatedSkillIds": []
     },
@@ -263,7 +263,7 @@
       "title": "Как выбрать includes, indexOf, findIndex и findLast для поиска в массиве?",
       "description": "Объяснить и применить правило с учётом его границ: У поиска есть отдельные контракты равенства, направления и представления отсутствия.",
       "requiredDifficulties": ["Средний"],
-      "reviewed": false,
+      "reviewed": true,
       "priority": "core",
       "relatedSkillIds": ["array-filter-find", "same-value-comparisons"]
     },
@@ -272,7 +272,7 @@
       "title": "Чем Object.groupBy отличается от Map.groupBy?",
       "description": "Объяснить и применить правило с учётом его границ: Ключи групп и владение элементами нужно выбрать до выбора groupBy API.",
       "requiredDifficulties": ["Средний"],
-      "reviewed": false,
+      "reviewed": true,
       "priority": "core",
       "relatedSkillIds": []
     },
@@ -281,7 +281,7 @@
       "title": "Как изменение Map или Set во время обхода влияет на итератор?",
       "description": "Объяснить и применить правило с учётом его границ: Порядок вставки не означает неизменяемый снимок коллекции во время обхода.",
       "requiredDifficulties": ["Продвинутый"],
-      "reviewed": false,
+      "reviewed": true,
       "priority": "core",
       "relatedSkillIds": []
     },
@@ -290,7 +290,7 @@
       "title": "Как выполнять объединение и пересечение Set без изменения исходных множеств?",
       "description": "Объяснить и применить правило с учётом его границ: Операции над множествами сохраняют выбранные правила идентичности и владения.",
       "requiredDifficulties": ["Средний"],
-      "reviewed": false,
+      "reviewed": true,
       "priority": "core",
       "relatedSkillIds": []
     }
@@ -302,7 +302,6 @@
       "topic": "JavaScript",
       "difficulty": "Базовый",
       "summary": "Нулевая индексация, разные типы элементов, выход за границы и метод at.",
-      "code": "const values = [\"JS\", 42, { active: true }];\nvalues[0]; // \"JS\"\nvalues[1] = 43;\nvalues.at(-1); // { active: true }\nvalues[values.length - 1] === values.at(-1); // true\nvalues[10]; // undefined\nvalues[-1]; // undefined\n[].at(-1); // undefined",
       "takeaway": "Индексы начинаются с нуля; отрицательное смещение поддерживает at, а не обычные квадратные скобки.",
       "moduleId": "javascript",
       "order": 0,
@@ -311,11 +310,11 @@
         "learningGoal": "Объяснить и применить правило с учётом его границ: Индексы начинаются с нуля; отрицательное смещение поддерживает at, а не обычные квадратные скобки.",
         "keywords": ["JavaScript", "Массивы и структуры данных"],
         "kind": "explanation",
-        "reviewStatus": "imported",
+        "reviewStatus": "ready",
         "goalIds": ["core", "array-indexing"],
         "relatedQuestionIds": [],
         "priority": "core",
-        "sourceRefs": []
+        "sourceRefs": ["ref-f81a889fd09330d6"]
       },
       "answerFile": "answers/javascript/array-indexing.md"
     },
@@ -325,7 +324,6 @@
       "topic": "JavaScript",
       "difficulty": "Средний",
       "summary": "Длина, отсутствующие индексные свойства и ручное изменение length.",
-      "code": "const values = [10, 20];\nvalues.length = 4;\nvalues.length; // 4\n2 in values; // false\nvalues[2] = undefined;\n2 in values; // true\nvalues.length = 1;\nvalues; // [10]",
       "takeaway": "Пропуск означает отсутствие свойства, а length задаёт границу индексных позиций.",
       "moduleId": "javascript",
       "order": 1,
@@ -334,7 +332,7 @@
         "learningGoal": "Объяснить и применить правило с учётом его границ: Пропуск означает отсутствие свойства, а length задаёт границу индексных позиций.",
         "keywords": ["JavaScript", "Массивы и структуры данных"],
         "kind": "explanation",
-        "reviewStatus": "imported",
+        "reviewStatus": "ready",
         "goalIds": ["core", "array-length-holes"],
         "relatedQuestionIds": [],
         "priority": "core",
@@ -348,7 +346,6 @@
       "topic": "JavaScript",
       "difficulty": "Базовый",
       "summary": "Добавление и удаление на концах массива, возвращаемые значения и мутация.",
-      "code": "const values = [2, 3];\nvalues.push(4); // 3 - новая длина\nvalues.unshift(1); // 4 - новая длина\nvalues.pop(); // 4 - удалённый элемент\nvalues.shift(); // 1 - удалённый элемент\nvalues; // [2, 3]\nconst merged = values.concat([4, 5]);\nmerged; // [2, 3, 4, 5]\nvalues.push([4, 5]);\nvalues; // [2, 3, [4, 5]]",
       "takeaway": "Методы концов меняют исходный массив, а concat создаёт новый.",
       "moduleId": "javascript",
       "order": 2,
@@ -357,11 +354,11 @@
         "learningGoal": "Объяснить и применить правило с учётом его границ: Методы концов меняют исходный массив, а concat создаёт новый.",
         "keywords": ["JavaScript", "Массивы и структуры данных"],
         "kind": "explanation",
-        "reviewStatus": "imported",
+        "reviewStatus": "ready",
         "goalIds": ["core", "array-end-methods"],
         "relatedQuestionIds": [],
         "priority": "core",
-        "sourceRefs": []
+        "sourceRefs": ["ref-f81a889fd09330d6"]
       },
       "answerFile": "answers/javascript/array-end-methods.md"
     },
@@ -371,7 +368,6 @@
       "topic": "JavaScript",
       "difficulty": "Базовый",
       "summary": "Выборка диапазона, замена элементов и версия без изменения исходного массива.",
-      "code": "const values = [10, 20, 30, 40];\nvalues.slice(1, 3); // [20, 30]\nconst edited = values.toSpliced(1, 2, 99);\nedited; // [10, 99, 40]\nvalues; // [10, 20, 30, 40]\nconst removed = values.splice(1, 2, 99);\nremoved; // [20, 30]\nvalues; // [10, 99, 40]",
       "takeaway": "Slice выбирает диапазон, splice редактирует оригинал, toSpliced возвращает новый результат редактирования.",
       "moduleId": "javascript",
       "order": 3,
@@ -380,11 +376,11 @@
         "learningGoal": "Объяснить и применить правило с учётом его границ: Slice выбирает диапазон, splice редактирует оригинал, toSpliced возвращает новый результат редактирования.",
         "keywords": ["JavaScript", "Массивы и структуры данных"],
         "kind": "explanation",
-        "reviewStatus": "imported",
+        "reviewStatus": "ready",
         "goalIds": ["core", "array-slice-splice"],
         "relatedQuestionIds": [],
         "priority": "core",
-        "sourceRefs": []
+        "sourceRefs": ["ref-f81a889fd09330d6"]
       },
       "answerFile": "answers/javascript/array-slice-splice.md"
     },
@@ -394,7 +390,6 @@
       "topic": "JavaScript",
       "difficulty": "Базовый",
       "summary": "Обратный порядок, изменение исходного массива и поверхностная копия.",
-      "code": "const values = [1, 2, 3];\nconst reversed = values.toReversed();\nreversed; // [3, 2, 1]\nvalues; // [1, 2, 3]\nconst same = values.reverse();\nsame === values; // true\nvalues; // [3, 2, 1]",
       "takeaway": "Reverse переставляет элементы в оригинале, toReversed создаёт отдельный массив.",
       "moduleId": "javascript",
       "order": 4,
@@ -403,11 +398,11 @@
         "learningGoal": "Объяснить и применить правило с учётом его границ: Reverse переставляет элементы в оригинале, toReversed создаёт отдельный массив.",
         "keywords": ["JavaScript", "Массивы и структуры данных"],
         "kind": "explanation",
-        "reviewStatus": "imported",
+        "reviewStatus": "ready",
         "goalIds": ["core", "array-reverse"],
         "relatedQuestionIds": [],
         "priority": "core",
-        "sourceRefs": []
+        "sourceRefs": ["ref-f81a889fd09330d6"]
       },
       "answerFile": "answers/javascript/array-reverse.md"
     },
@@ -417,21 +412,19 @@
       "topic": "JavaScript",
       "difficulty": "Средний",
       "summary": "Функция сравнения, строковая сортировка по умолчанию и сохранение оригинала.",
-      "code": "const values = [10, 2, 1];\n[...values].sort(); // [1, 10, 2]\n[...values].sort((a, b) => a - b); // [1, 2, 10]\nvalues; // [10, 2, 1] - сортировали копии",
       "takeaway": "Уточните мутацию, правила сравнения и требования к компаратору.",
       "moduleId": "javascript",
       "order": 5,
       "popular": false,
-      "pitfall": "Возвращать a > b из компаратора: это не описывает отрицательное значение и согласованный порядок.",
       "editorial": {
         "learningGoal": "Объяснить и применить правило с учётом его границ: Уточните мутацию, правила сравнения и требования к компаратору.",
         "keywords": ["JavaScript", "Массивы и структуры данных"],
         "kind": "explanation",
-        "reviewStatus": "imported",
+        "reviewStatus": "ready",
         "goalIds": ["core", "array-sort"],
         "relatedQuestionIds": [],
         "priority": "core",
-        "sourceRefs": []
+        "sourceRefs": ["ref-f81a889fd09330d6"]
       },
       "answerFile": "answers/javascript/array-sort.md"
     },
@@ -441,7 +434,6 @@
       "topic": "JavaScript",
       "difficulty": "Базовый",
       "summary": "Объединение элементов, разделение строки и ограничения обратимости.",
-      "code": "const text = [\"JS\", \"TS\", \"React\"].join(\" / \");\ntext; // \"JS / TS / React\"\ntext.split(\" / \"); // [\"JS\", \"TS\", \"React\"]\n[1, null, undefined].join(\"|\"); // \"1||\"\n\"a,b,c\".split(\",\", 2); // [\"a\", \"b\"]",
       "takeaway": "Join собирает строку из массива, split разбивает строку, но исходные данные восстанавливаются не всегда.",
       "moduleId": "javascript",
       "order": 6,
@@ -450,11 +442,11 @@
         "learningGoal": "Объяснить и применить правило с учётом его границ: Join собирает строку из массива, split разбивает строку, но исходные данные восстанавливаются не всегда.",
         "keywords": ["JavaScript", "Массивы и структуры данных"],
         "kind": "explanation",
-        "reviewStatus": "imported",
+        "reviewStatus": "ready",
         "goalIds": ["core", "array-join-split"],
         "relatedQuestionIds": [],
         "priority": "core",
-        "sourceRefs": []
+        "sourceRefs": ["ref-f81a889fd09330d6"]
       },
       "answerFile": "answers/javascript/array-join-split.md"
     },
@@ -464,7 +456,6 @@
       "topic": "JavaScript",
       "difficulty": "Базовый",
       "summary": "Преобразование элементов, новый массив и пропуски.",
-      "code": "const users = [{ name: \"Аня\" }, { name: \"Оля\" }];\nconst names = users.map((user) => user.name);\nnames; // [\"Аня\", \"Оля\"]\nusers.length; // 2\nconst missingReturn = [1, 2].map((value) => { value * 2; });\nmissingReturn; // [undefined, undefined]",
       "takeaway": "Map строит новый массив из результатов callback, поэтому возвращаемое значение здесь обязательно для полезного преобразования.",
       "moduleId": "javascript",
       "order": 7,
@@ -473,11 +464,11 @@
         "learningGoal": "Объяснить и применить правило с учётом его границ: Map строит новый массив из результатов callback, поэтому возвращаемое значение здесь обязательно для полезного преобразования.",
         "keywords": ["JavaScript", "Массивы и структуры данных"],
         "kind": "explanation",
-        "reviewStatus": "imported",
+        "reviewStatus": "ready",
         "goalIds": ["core", "array-map"],
         "relatedQuestionIds": [],
         "priority": "core",
-        "sourceRefs": []
+        "sourceRefs": ["ref-f81a889fd09330d6"]
       },
       "answerFile": "answers/javascript/array-map.md"
     },
@@ -487,7 +478,6 @@
       "topic": "JavaScript",
       "difficulty": "Базовый",
       "summary": "Все совпадения, первое совпадение и результат при отсутствии элемента.",
-      "code": "const users = [{ id: 1, active: true }, { id: 2, active: true }];\nusers.filter((user) => user.active).length; // 2\nusers.find((user) => user.active).id; // 1\nusers.filter((user) => user.id === 3); // []\nusers.find((user) => user.id === 3); // undefined",
       "takeaway": "Filter нужен для всех совпадений, find - для первого подходящего элемента.",
       "moduleId": "javascript",
       "order": 8,
@@ -496,11 +486,11 @@
         "learningGoal": "Объяснить и применить правило с учётом его границ: Filter нужен для всех совпадений, find - для первого подходящего элемента.",
         "keywords": ["JavaScript", "Массивы и структуры данных"],
         "kind": "explanation",
-        "reviewStatus": "imported",
+        "reviewStatus": "ready",
         "goalIds": ["core", "array-filter-find"],
         "relatedQuestionIds": [],
         "priority": "core",
-        "sourceRefs": []
+        "sourceRefs": ["ref-f81a889fd09330d6"]
       },
       "answerFile": "answers/javascript/array-filter-find.md"
     },
@@ -510,7 +500,6 @@
       "topic": "JavaScript",
       "difficulty": "Базовый",
       "summary": "Обход ради действий, отсутствие результата преобразования и досрочного выхода.",
-      "code": "const visited = [];\nconst result = [1, 2, 3].forEach((value) => {\n  if (value === 2) return;\n  visited.push(value);\n});\nvisited; // [1, 3]\nresult; // undefined",
       "takeaway": "ForEach выполняет действия и игнорирует результаты callback; он не заменяет управляемый цикл.",
       "moduleId": "javascript",
       "order": 9,
@@ -519,11 +508,11 @@
         "learningGoal": "Объяснить и применить правило с учётом его границ: ForEach выполняет действия и игнорирует результаты callback; он не заменяет управляемый цикл.",
         "keywords": ["JavaScript", "Массивы и структуры данных"],
         "kind": "explanation",
-        "reviewStatus": "imported",
+        "reviewStatus": "ready",
         "goalIds": ["core", "array-for-each"],
         "relatedQuestionIds": [],
         "priority": "core",
-        "sourceRefs": []
+        "sourceRefs": ["ref-f81a889fd09330d6"]
       },
       "answerFile": "answers/javascript/array-for-each.md"
     },
@@ -533,7 +522,6 @@
       "topic": "JavaScript",
       "difficulty": "Базовый",
       "summary": "Накопление результата, аккумулятор и пустой массив.",
-      "code": "const total = [10, 20, 30].reduce((sum, value) => sum + value, 0);\ntotal; // 60\n[].reduce((sum, value) => sum + value, 0); // 0\nconst quantities = [{ count: 2 }, { count: 3 }];\nquantities.reduce((sum, item) => sum + item.count, 0); // 5",
       "takeaway": "Каждый шаг reduce должен вернуть следующий аккумулятор; initialValue определяет старт и случай пустого массива.",
       "moduleId": "javascript",
       "order": 10,
@@ -542,11 +530,11 @@
         "learningGoal": "Объяснить и применить правило с учётом его границ: Каждый шаг reduce должен вернуть следующий аккумулятор; initialValue определяет старт и случай пустого массива.",
         "keywords": ["JavaScript", "Массивы и структуры данных"],
         "kind": "explanation",
-        "reviewStatus": "imported",
+        "reviewStatus": "ready",
         "goalIds": ["core", "array-reduce"],
         "relatedQuestionIds": [],
         "priority": "core",
-        "sourceRefs": []
+        "sourceRefs": ["ref-f81a889fd09330d6"]
       },
       "answerFile": "answers/javascript/array-reduce.md"
     },
@@ -556,7 +544,6 @@
       "topic": "JavaScript",
       "difficulty": "Базовый",
       "summary": "Проверка существования, проверка всех элементов и короткое замыкание.",
-      "code": "const values = [2, 4, 6];\nvalues.some((value) => value > 5); // true\nvalues.every((value) => value % 2 === 0); // true\n[].some(() => true); // false\n[].every(() => false); // true",
       "takeaway": "Some проверяет «хотя бы один», every - «все», причём на пустом массиве их результаты различаются.",
       "moduleId": "javascript",
       "order": 11,
@@ -571,11 +558,11 @@
           "closure"
         ],
         "kind": "explanation",
-        "reviewStatus": "imported",
+        "reviewStatus": "ready",
         "goalIds": ["core", "array-some-every"],
         "relatedQuestionIds": [],
         "priority": "core",
-        "sourceRefs": []
+        "sourceRefs": ["ref-f81a889fd09330d6"]
       },
       "answerFile": "answers/javascript/array-some-every.md"
     },
@@ -585,7 +572,6 @@
       "topic": "JavaScript",
       "difficulty": "Базовый",
       "summary": "Преобразование одного элемента в несколько и раскрытие одного уровня.",
-      "code": "const values = [1, 2];\nvalues.map((value) => [value, value * 10]); // [[1, 10], [2, 20]]\nvalues.flatMap((value) => [value, value * 10]); // [1, 10, 2, 20]\n[1, 2, 3].flatMap((value) => value % 2 === 0 ? [] : [value]); // [1, 3]\n[1].flatMap(() => [[2, 3]]); // [[2, 3]]",
       "takeaway": "FlatMap раскрывает на один уровень массивы, возвращённые callback, и может менять число элементов.",
       "moduleId": "javascript",
       "order": 12,
@@ -594,11 +580,11 @@
         "learningGoal": "Объяснить и применить правило с учётом его границ: FlatMap раскрывает на один уровень массивы, возвращённые callback, и может менять число элементов.",
         "keywords": ["JavaScript", "Массивы и структуры данных"],
         "kind": "explanation",
-        "reviewStatus": "imported",
+        "reviewStatus": "ready",
         "goalIds": ["core", "array-flat-map"],
         "relatedQuestionIds": [],
         "priority": "core",
-        "sourceRefs": []
+        "sourceRefs": ["ref-f81a889fd09330d6"]
       },
       "answerFile": "answers/javascript/array-flat-map.md"
     },
@@ -608,7 +594,6 @@
       "topic": "JavaScript",
       "difficulty": "Базовый",
       "summary": "Глубина раскрытия, пропуски и сохранение ссылок на объекты.",
-      "code": "const nested = [1, [2, [3]]];\nnested.flat(); // [1, 2, [3]]\nnested.flat(2); // [1, 2, 3]\nnested; // [1, [2, [3]]]\nconst item = { id: 1 };\n[[item]].flat()[0] === item; // true",
       "takeaway": "Flat раскрывает вложенность массивов до заданной глубины, но не клонирует объекты.",
       "moduleId": "javascript",
       "order": 13,
@@ -617,11 +602,11 @@
         "learningGoal": "Объяснить и применить правило с учётом его границ: Flat раскрывает вложенность массивов до заданной глубины, но не клонирует объекты.",
         "keywords": ["JavaScript", "Массивы и структуры данных"],
         "kind": "explanation",
-        "reviewStatus": "imported",
+        "reviewStatus": "ready",
         "goalIds": ["core", "array-flat"],
         "relatedQuestionIds": [],
         "priority": "core",
-        "sourceRefs": []
+        "sourceRefs": ["ref-f81a889fd09330d6"]
       },
       "answerFile": "answers/javascript/array-flat.md"
     },
@@ -631,7 +616,6 @@
       "topic": "JavaScript",
       "difficulty": "Базовый",
       "summary": "Array-like, iterable, преобразование элементов и заполнение отсутствующих позиций.",
-      "code": "const arrayLike = { 0: \"a\", 1: \"b\", length: 2 };\nconst values = Array.from(arrayLike);\nvalues; // [\"a\", \"b\"]\nArray.isArray(values); // true\nArray.from({ length: 3 }, (_, index) => index); // [0, 1, 2]\nArray.from(new Set([1, 1, 2])); // [1, 2]",
       "takeaway": "Array.from превращает iterable или array-like в настоящий плотный массив.",
       "moduleId": "javascript",
       "order": 14,
@@ -640,11 +624,11 @@
         "learningGoal": "Объяснить и применить правило с учётом его границ: Array.from превращает iterable или array-like в настоящий плотный массив.",
         "keywords": ["JavaScript", "Массивы и структуры данных"],
         "kind": "explanation",
-        "reviewStatus": "imported",
+        "reviewStatus": "ready",
         "goalIds": ["core", "array-from"],
         "relatedQuestionIds": [],
         "priority": "core",
-        "sourceRefs": []
+        "sourceRefs": ["ref-f81a889fd09330d6"]
       },
       "answerFile": "answers/javascript/array-from.md"
     },
@@ -654,7 +638,6 @@
       "topic": "JavaScript",
       "difficulty": "Базовый",
       "summary": "Переданные элементы и особое значение одного числового аргумента.",
-      "code": "Array.of(3); // [3]\nArray.of(1, 2); // [1, 2]\nconst holes = Array(3);\nholes.length; // 3\n0 in holes; // false\nArray.of(); // []",
       "takeaway": "Array.of всегда воспринимает аргументы как элементы, включая единственное число.",
       "moduleId": "javascript",
       "order": 15,
@@ -663,11 +646,11 @@
         "learningGoal": "Объяснить и применить правило с учётом его границ: Array.of всегда воспринимает аргументы как элементы, включая единственное число.",
         "keywords": ["JavaScript", "Массивы и структуры данных"],
         "kind": "explanation",
-        "reviewStatus": "imported",
+        "reviewStatus": "ready",
         "goalIds": ["core", "array-of"],
         "relatedQuestionIds": [],
         "priority": "core",
-        "sourceRefs": []
+        "sourceRefs": ["ref-f81a889fd09330d6"]
       },
       "answerFile": "answers/javascript/array-of.md"
     },
@@ -677,7 +660,6 @@
       "topic": "JavaScript",
       "difficulty": "Средний",
       "summary": "Копирование диапазона внутри того же массива и перезапись элементов.",
-      "code": "const values = [1, 2, 3, 4, 5];\nconst result = values.copyWithin(1, 3);\nvalues; // [1, 4, 5, 4, 5]\nvalues.length; // 5\nresult === values; // true\n[1, 2, 3, 4].copyWithin(1, 0, 3); // [1, 1, 2, 3]",
       "takeaway": "CopyWithin перезаписывает часть того же массива, сохраняя его длину.",
       "moduleId": "javascript",
       "order": 16,
@@ -686,11 +668,11 @@
         "learningGoal": "Объяснить и применить правило с учётом его границ: CopyWithin перезаписывает часть того же массива, сохраняя его длину.",
         "keywords": ["JavaScript", "Массивы и структуры данных"],
         "kind": "explanation",
-        "reviewStatus": "imported",
+        "reviewStatus": "ready",
         "goalIds": ["core", "array-copy-within"],
         "relatedQuestionIds": [],
         "priority": "core",
-        "sourceRefs": []
+        "sourceRefs": ["ref-ae9ab6fd54024685"]
       },
       "answerFile": "answers/javascript/array-copy-within.md"
     },
@@ -700,7 +682,6 @@
       "topic": "JavaScript",
       "difficulty": "Базовый",
       "summary": "Позиционные пропуски, значения по умолчанию и остаток элементов.",
-      "code": "const values = [10, 20, 30, 40];\nconst [first, , third, ...rest] = values;\nfirst; // 10\nthird; // 30\nrest; // [40]\nconst [fallback = \"нет\"] = [];\nfallback; // \"нет\"\nvalues; // [10, 20, 30, 40]",
       "takeaway": "Пустая позиция в шаблоне пропускает значение итератора, не меняя исходный массив.",
       "moduleId": "javascript",
       "order": 17,
@@ -709,11 +690,11 @@
         "learningGoal": "Объяснить и применить правило с учётом его границ: Пустая позиция в шаблоне пропускает значение итератора, не меняя исходный массив.",
         "keywords": ["JavaScript", "Массивы и структуры данных"],
         "kind": "explanation",
-        "reviewStatus": "imported",
+        "reviewStatus": "ready",
         "goalIds": ["core", "array-destructuring"],
         "relatedQuestionIds": [],
         "priority": "core",
-        "sourceRefs": []
+        "sourceRefs": ["ref-f81a889fd09330d6"]
       },
       "answerFile": "answers/javascript/array-destructuring.md"
     },
@@ -723,7 +704,6 @@
       "topic": "JavaScript",
       "difficulty": "Базовый",
       "summary": "Массив массивов, вложенные циклы и независимые ссылки строк.",
-      "code": "const matrix = Array.from({ length: 2 }, () => Array(3).fill(0));\nmatrix[0][1] = 5;\nmatrix[1][1]; // 0\nlet total = 0;\nfor (const row of matrix) {\n  for (const value of row) total += value;\n}\ntotal; // 5\nconst sharedRows = Array(2).fill([]);\nsharedRows[0] === sharedRows[1]; // true",
       "takeaway": "Каждую строку матрицы нужно создавать отдельно, чтобы строки не делили один массив.",
       "moduleId": "javascript",
       "order": 18,
@@ -732,11 +712,11 @@
         "learningGoal": "Объяснить и применить правило с учётом его границ: Каждую строку матрицы нужно создавать отдельно, чтобы строки не делили один массив.",
         "keywords": ["JavaScript", "Массивы и структуры данных"],
         "kind": "explanation",
-        "reviewStatus": "imported",
+        "reviewStatus": "ready",
         "goalIds": ["core", "array-matrices"],
         "relatedQuestionIds": [],
         "priority": "core",
-        "sourceRefs": []
+        "sourceRefs": ["ref-f81a889fd09330d6"]
       },
       "answerFile": "answers/javascript/array-matrices.md"
     },
@@ -746,7 +726,6 @@
       "topic": "JavaScript",
       "difficulty": "Базовый",
       "summary": "Коллекция уникальных значений, порядок добавления и сравнение.",
-      "code": "const values = new Set([1, 1, 2, NaN, NaN]);\nvalues.size; // 3\nvalues.has(2); // true\n[...values]; // [1, 2, NaN]\nconst item = { id: 1 };\nnew Set([item, item]).size; // 1\nnew Set([{ id: 1 }, { id: 1 }]).size; // 2",
       "takeaway": "Set устраняет одинаковые значения, но не сравнивает объекты по содержимому.",
       "moduleId": "javascript",
       "order": 19,
@@ -755,11 +734,11 @@
         "learningGoal": "Объяснить и применить правило с учётом его границ: Set устраняет одинаковые значения, но не сравнивает объекты по содержимому.",
         "keywords": ["JavaScript", "Массивы и структуры данных"],
         "kind": "explanation",
-        "reviewStatus": "imported",
+        "reviewStatus": "ready",
         "goalIds": ["core", "set-collection"],
         "relatedQuestionIds": [],
         "priority": "core",
-        "sourceRefs": []
+        "sourceRefs": ["ref-f81a889fd09330d6"]
       },
       "answerFile": "answers/javascript/set-collection.md"
     },
@@ -769,7 +748,6 @@
       "topic": "JavaScript",
       "difficulty": "Базовый",
       "summary": "Ключи любых типов, явные операции и отличие записей от свойств.",
-      "code": "const user = { id: 1 };\nconst roles = new Map();\nroles.set(user, \"admin\");\nroles.get(user); // \"admin\"\nroles.get({ id: 1 }); // undefined: другой объект\nroles.size; // 1\nconst optional = new Map([[\"value\", undefined]]);\noptional.has(\"value\"); // true",
       "takeaway": "Map хранит ключи как значения с собственной идентичностью, а не как строковые имена свойств.",
       "moduleId": "javascript",
       "order": 20,
@@ -778,7 +756,7 @@
         "learningGoal": "Объяснить и применить правило с учётом его границ: Map хранит ключи как значения с собственной идентичностью, а не как строковые имена свойств.",
         "keywords": ["JavaScript", "Массивы и структуры данных"],
         "kind": "explanation",
-        "reviewStatus": "imported",
+        "reviewStatus": "ready",
         "goalIds": ["core", "map-vs-object"],
         "relatedQuestionIds": [],
         "priority": "core",
@@ -792,7 +770,6 @@
       "topic": "JavaScript",
       "difficulty": "Средний",
       "summary": "Слабое удержание ключей и значений, ограничения типов и отсутствие перебора.",
-      "code": "const object = {};\nconst metadata = new WeakMap();\nmetadata.set(object, { visited: true });\nmetadata.get(object).visited; // true\nconst visited = new WeakSet();\nvisited.add(object);\nvisited.has(object); // true\nvisited.delete(object); // true\n// Этот пример не предполагает запуск сборщика мусора.",
       "takeaway": "Слабые коллекции связывают данные с жизненным циклом известных объектов и не поддерживают общий перебор.",
       "moduleId": "javascript",
       "order": 21,
@@ -801,11 +778,11 @@
         "learningGoal": "Объяснить и применить правило с учётом его границ: Слабые коллекции связывают данные с жизненным циклом известных объектов и не поддерживают общий перебор.",
         "keywords": ["JavaScript", "Массивы и структуры данных"],
         "kind": "explanation",
-        "reviewStatus": "imported",
+        "reviewStatus": "ready",
         "goalIds": ["core", "weak-collections"],
         "relatedQuestionIds": [],
         "priority": "core",
-        "sourceRefs": []
+        "sourceRefs": ["ref-f81a889fd09330d6"]
       },
       "answerFile": "answers/javascript/weak-collections.md"
     },
@@ -815,21 +792,19 @@
       "topic": "JavaScript",
       "difficulty": "Средний",
       "summary": "Хранение байтов, типизированные представления и порядок байтов.",
-      "code": "const buffer = new ArrayBuffer(4);\nconst bytes = new Uint8Array(buffer);\nconst view = new DataView(buffer);\nview.setUint16(0, 0x1234, false); // big-endian\nArray.from(bytes); // [18, 52, 0, 0]\nbytes[0] = 0;\nview.getUint16(0, false); // 52",
       "takeaway": "Буфер хранит данные, представление определяет способ доступа к ним.",
       "moduleId": "javascript",
       "order": 22,
       "popular": false,
-      "pitfall": "Считать TypedArray независимой копией переданного буфера или полагаться на порядок байтов платформы в протоколе.",
       "editorial": {
         "learningGoal": "Объяснить и применить правило с учётом его границ: Буфер хранит данные, представление определяет способ доступа к ним.",
         "keywords": ["JavaScript", "Массивы и структуры данных"],
         "kind": "explanation",
-        "reviewStatus": "imported",
+        "reviewStatus": "ready",
         "goalIds": ["core", "typed-arrays"],
         "relatedQuestionIds": [],
         "priority": "core",
-        "sourceRefs": []
+        "sourceRefs": ["ref-f81a889fd09330d6"]
       },
       "answerFile": "answers/javascript/typed-arrays.md"
     },
@@ -838,9 +813,7 @@
       "difficulty": "Средний",
       "title": "Что происходит, если менять массив во время map, forEach или filter?",
       "summary": "Исходная длина обхода, ещё не прочитанные позиции и пропущенные элементы.",
-      "code": "const values = [1, 2, 3]\nconst seen = []\nvalues.forEach((value, index) => {\n  seen.push(value)\n  if (index === 0) { values[1] = 20; values.push(4) }\n})\nconsole.log(seen) // [1, 20, 3]",
       "takeaway": "Метод может фиксировать длину, но не копировать все будущие значения.",
-      "pitfall": "Мутировать вход внутри callback, рассчитывая на интуитивно универсальный снимок.",
       "topic": "JavaScript",
       "moduleId": "javascript",
       "popular": false,
@@ -849,7 +822,7 @@
         "learningGoal": "Объяснить и применить правило с учётом его границ: Метод может фиксировать длину, но не копировать все будущие значения.",
         "keywords": ["JavaScript", "Массивы и структуры данных"],
         "kind": "explanation",
-        "reviewStatus": "imported",
+        "reviewStatus": "ready",
         "goalIds": ["core", "js-array-callback-mutation"],
         "relatedQuestionIds": [],
         "priority": "core",
@@ -862,9 +835,7 @@
       "difficulty": "Средний",
       "title": "Как выбрать includes, indexOf, findIndex и findLast для поиска в массиве?",
       "summary": "Равенство значения, предикат, позиция и направление поиска.",
-      "code": "const values = [NaN, 1, 2, 1]\nconsole.log(values.includes(NaN)) // true\nconsole.log(values.indexOf(NaN)) // -1\nconsole.log(values.findLastIndex(value => value === 1)) // 3",
       "takeaway": "У поиска есть отдельные контракты равенства, направления и представления отсутствия.",
-      "pitfall": "Считать includes полной boolean-обёрткой над indexOf для любого значения.",
       "topic": "JavaScript",
       "moduleId": "javascript",
       "popular": false,
@@ -873,7 +844,7 @@
         "learningGoal": "Объяснить и применить правило с учётом его границ: У поиска есть отдельные контракты равенства, направления и представления отсутствия.",
         "keywords": ["JavaScript", "Массивы и структуры данных"],
         "kind": "explanation",
-        "reviewStatus": "imported",
+        "reviewStatus": "ready",
         "goalIds": ["core", "js-array-search-contracts"],
         "relatedQuestionIds": ["array-filter-find", "same-value-comparisons"],
         "priority": "core",
@@ -886,9 +857,7 @@
       "difficulty": "Средний",
       "title": "Чем Object.groupBy отличается от Map.groupBy?",
       "summary": "Тип ключа группы, результат без прототипа и сохранение ссылок на элементы.",
-      "code": "const items = [{ team: \"a\", id: 1 }, { team: \"a\", id: 2 }]\nconst groups = Object.groupBy(items, item => item.team)\nconsole.log(Object.getPrototypeOf(groups)) // null\nconsole.log(groups.a[0] === items[0]) // true",
       "takeaway": "Ключи групп и владение элементами нужно выбрать до выбора groupBy API.",
-      "pitfall": "Ожидать глубоких копий или сохранения объектного ключа в Object.groupBy.",
       "topic": "JavaScript",
       "moduleId": "javascript",
       "popular": false,
@@ -897,7 +866,7 @@
         "learningGoal": "Объяснить и применить правило с учётом его границ: Ключи групп и владение элементами нужно выбрать до выбора groupBy API.",
         "keywords": ["JavaScript", "Массивы и структуры данных", "прототип", "prototype"],
         "kind": "explanation",
-        "reviewStatus": "imported",
+        "reviewStatus": "ready",
         "goalIds": ["core", "js-standard-grouping"],
         "relatedQuestionIds": [],
         "priority": "core",
@@ -910,9 +879,7 @@
       "difficulty": "Продвинутый",
       "title": "Как изменение Map или Set во время обхода влияет на итератор?",
       "summary": "Живой обход, удаление и повторное добавление записей.",
-      "code": "const values = new Set([1, 2])\nconst seen = []\nfor (const value of values) {\n  seen.push(value)\n  if (value === 1) values.add(3)\n}\nconsole.log(seen) // [1, 2, 3]",
       "takeaway": "Порядок вставки не означает неизменяемый снимок коллекции во время обхода.",
-      "pitfall": "Добавлять новые записи в текущий обход и ожидать фиксированного числа итераций.",
       "topic": "JavaScript",
       "moduleId": "javascript",
       "popular": false,
@@ -921,7 +888,7 @@
         "learningGoal": "Объяснить и применить правило с учётом его границ: Порядок вставки не означает неизменяемый снимок коллекции во время обхода.",
         "keywords": ["JavaScript", "Массивы и структуры данных"],
         "kind": "explanation",
-        "reviewStatus": "imported",
+        "reviewStatus": "ready",
         "goalIds": ["core", "js-map-set-live-iteration"],
         "relatedQuestionIds": [],
         "priority": "core",
@@ -934,9 +901,7 @@
       "difficulty": "Средний",
       "title": "Как выполнять объединение и пересечение Set без изменения исходных множеств?",
       "summary": "Union, intersection, difference и проверки отношений множеств.",
-      "code": "const a = new Set([1, 2])\nconst b = new Set([2, 3])\nconsole.log([...a.intersection(b)]) // [2]\nconsole.log([...a.union(b)]) // [1, 2, 3]\nconsole.log(a.size) // 2",
       "takeaway": "Операции над множествами сохраняют выбранные правила идентичности и владения.",
-      "pitfall": "Считать одинаковые по содержимому объекты одинаковыми Set-элементами.",
       "topic": "JavaScript",
       "moduleId": "javascript",
       "popular": false,
@@ -945,7 +910,7 @@
         "learningGoal": "Объяснить и применить правило с учётом его границ: Операции над множествами сохраняют выбранные правила идентичности и владения.",
         "keywords": ["JavaScript", "Массивы и структуры данных"],
         "kind": "explanation",
-        "reviewStatus": "imported",
+        "reviewStatus": "ready",
         "goalIds": ["core", "js-set-algebra"],
         "relatedQuestionIds": [],
         "priority": "core",

@@ -2,14 +2,26 @@
 
 <!-- wishu:answer-block -->
 
-### Механизм и границы
+### Как это работает
 
 Это полезно для извлечения фрагмента с нужным окружением. Но нулевая ширина не означает нулевую вычислительную стоимость; сложные вложенные проверки могут сделать шаблон непонятным и дорогим.
 
 Проверяйте поддержку lookbehind и особенности Unicode в нужном runtime. Иногда явный захват с простым шаблоном лучше сложного lookaround.
 
-<!-- wishu:answer-block -->
+### Пример и его разбор
 
-### Источник
+```javascript
+const text = "USD 42"
+console.log(text.match(/(?<=USD )\d+/)[0]) // 42
+console.log("12px".match(/\d+(?=px)/)[0]) // 12
+```
 
-[MDN: Regular_expressions/Lookahead_assertion](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Regular_expressions/Lookahead_assertion).
+Lookbehind проверяет наличие USD слева, но итоговый match содержит только 42. Lookahead аналогично требует px справа, не добавляя его к числу. Проверенный контекст влияет на допустимость совпадения, а не обязательно на границы возвращаемого текста.
+
+### Типичная ошибка
+
+> Ожидать, что все символы проверенного контекста обязательно войдут в match[0].
+
+### Источники
+
+[MDN: Regular_expressions/Lookahead_assertion](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Regular_expressions/Lookahead_assertion)

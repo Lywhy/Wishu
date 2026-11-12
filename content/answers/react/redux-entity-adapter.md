@@ -2,7 +2,7 @@
 
 <!-- wishu:answer-block -->
 
-#### Механизм и границы
+#### Как это работает
 
 - У сущности нужен стабильный ID; `selectId` позволяет выбрать другое поле. `sortComparer` задаёт поддерживаемый порядок `ids`.
 - Полученные операции удобно использовать в `createSlice`. Обновления полей имеют свой контракт и не означают произвольный глубокий merge любого объекта.
@@ -16,10 +16,18 @@ const tasksAdapter = createEntityAdapter<Task>()
 const initialState = tasksAdapter.getInitialState({ selectedId: null as string | null })
 ```
 
+#### Разбор примера
+
+Adapter создаёт согласованную форму ids и entities и предоставляет операции над коллекцией. В примере selectedId остаётся отдельным полем UI, а не вторым хранилищем выбранного объекта. Получать запись можно по идентификатору, не перебирая весь массив. Adapter не загружает данные самостоятельно и не связывает автоматически копии одной сущности в разных query-ответах.
+
+#### Типичная ошибка
+
+> Считать adapter полноценной ORM или ожидать глубокого слияния вложенных полей.
+
 #### Для закрепления
 
 - [Когда сущности в состоянии лучше хранить по ID, а не копировать в разные ветви?](/questions/react-normalized-state)
 
-#### Источник
+#### Источники
 
-[Redux: createEntityAdapter](https://redux-toolkit.js.org/api/createEntityAdapter).
+[Redux: createEntityAdapter](https://redux.js.org/toolkit/api/createEntityAdapter)

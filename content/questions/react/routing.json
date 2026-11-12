@@ -9,7 +9,7 @@
       "title": "Маршрутизация в React",
       "description": "URL, вложенные маршруты, навигация и жизненный цикл данных.",
       "requiredDifficulties": [],
-      "reviewed": false,
+      "reviewed": true,
       "priority": "core",
       "relatedSkillIds": [
         "react-router-browser-history",

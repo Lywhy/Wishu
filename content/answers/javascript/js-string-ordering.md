@@ -2,14 +2,26 @@
 
 <!-- wishu:answer-block -->
 
-### Механизм и границы
+### Как это работает
 
-Для пользовательской сортировки применяют Intl.Collator с нужными locale и options. Результат compare интерпретируют по знаку: нельзя требовать ровно -1 или 1.
+Для пользовательской сортировки применяют `Intl.Collator` с нужными locale и options. Результат compare интерпретируют по знаку: нельзя требовать ровно -1 или 1.
 
 Для протокольных ключей и детерминированного машинного порядка локаль, наоборот, может быть неуместна. Не смешивайте пользовательский порядок и порядок сериализации.
 
-<!-- wishu:answer-block -->
+### Пример и его разбор
 
-### Источник
+```javascript
+console.log("10" < "2") // true
+const collator = new Intl.Collator("ru", { numeric: true })
+const sorted = ["item10", "item2"].toSorted(collator.compare)
+```
 
-[MDN: Global_Objects/Intl/Collator](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/Collator).
+При обычном сравнении «10» оказывается раньше «2» по первым кодовым единицам. Collator с numeric учитывает числовые части, поэтому item2 располагается раньше item10. Это выбранный пользовательский порядок, а не изменение правил сравнения строк в самом языке.
+
+### Типичная ошибка
+
+> Сортировать строковые номера обычным сравнением и ждать числового результата.
+
+### Источники
+
+[MDN: Global_Objects/Intl/Collator](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/Collator)

@@ -3,9 +3,36 @@
 <!-- wishu:answer-block -->
 
 ### План очистки
+
 1. Сохраните ссылку на callback, если используете removeEventListener, либо передайте signal при подписке.
-2. Храните ID таймеров и вызывайте clearTimeout или clearInterval.
-3. Передайте AbortSignal поддерживающей его операции; отмена не распространяется автоматически на произвольный Promise.
+2. Храните ID таймеров и вызывайте `clearTimeout` или clearInterval.
+3. Передайте `AbortSignal` поддерживающей его операции; отмена не распространяется автоматически на произвольный Promise.
 4. Вызывайте disconnect у наблюдателя и close у соединения, когда это требуется контрактом API.
 
 Очистка должна быть безопасна при повторном вызове. Дополнительно защищайте запись устаревшего результата, если операцию нельзя отменить. Проверьте многократное открытие и закрытие экрана: число активных ресурсов не должно нарастать.
+
+### Пример и его разбор
+
+```javascript
+function mountScreen(button) {
+  const controller = new AbortController()
+  const timer = setInterval(() => console.log("проверка"), 1000)
+  button.addEventListener("click", () => console.log("клик"), {
+    signal: controller.signal,
+  })
+  return () => {
+    controller.abort()
+    clearInterval(timer)
+  }
+}
+```
+
+MountScreen возвращает единую очистку для двух разных ресурсов: подписки и интервала. Удаление кнопки само по себе не вызвало бы clearInterval. Такой явный владелец упрощает повторное открытие экрана и предотвращает накопление фоновой работы.
+
+### Типичная ошибка
+
+> Очищать только DOM, оставляя подписку, таймер или замыкание, удерживающее экран.
+
+### Источники
+
+[MDN: API / Document Object Model](https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model)

@@ -2,10 +2,34 @@
 
 <!-- wishu:answer-block -->
 
+#### Как это работает
+
 Создавайте бренд в узкой функции после проверки нужного инварианта. Локальное as в такой функции фиксирует соглашение о проверке, но не становится автоматически доказанным для любого произвольного приведения.
 
 При сериализации бренд теряется: после чтения из сети или хранилища данные нужно снова проверить. Бренд полезен против случайного смешивания ролей, но не обеспечивает криптографическую подлинность и не защищает от намеренного обхода через as или any.
 
-<!-- wishu:answer-block -->
+#### Пример
 
-[Документация TypeScript](https://www.typescriptlang.org/docs/handbook/type-compatibility.html).
+```typescript
+declare const idBrand: unique symbol
+type UserId = string & { readonly [idBrand]: "UserId" }
+type OrderId = string & { readonly [idBrand]: "OrderId" }
+
+function parseUserId(value: string): UserId {
+  if (!/^user_[a-z0-9]+$/.test(value)) throw new TypeError("Неверный UserId")
+  return value as UserId
+}
+// Функция, принимающая UserId, не должна принимать OrderId.
+```
+
+#### Разбор примера
+
+ParseUserId сначала проверяет формат user_, затем в одном месте присваивает бренду типовое значение. В runtime это по-прежнему строка без символического поля: `declare` не создаёт idBrand как реальное значение. Если нужно действительно читать метку объекта в runtime, потребуется другая реализация.
+
+#### Типичная ошибка
+
+> Расставлять as UserId по всему приложению и считать, что идентификаторы проверены.
+
+#### Источники
+
+[Документация TypeScript](https://www.typescriptlang.org/docs/handbook/type-compatibility.html)

@@ -1,0 +1,77 @@
+{
+  "schemaVersion": 1,
+  "id": "js-all-answers-20261108-binary",
+  "title": "js-all-answers-20261108-binary",
+  "sectionId": "javascript",
+  "subsectionId": "binary",
+  "currentPass": "answers",
+  "goalIds": [
+    "core",
+    "js-binary-view-copy",
+    "js-buffer-detachment",
+    "js-data-view-endianness",
+    "js-utf8-binary",
+    "js-blob-file-url",
+    "js-atomics-shared-state",
+    "js-atomic-waiting"
+  ],
+  "questionIds": [
+    "js-binary-view-copy",
+    "js-buffer-detachment",
+    "js-data-view-endianness",
+    "js-utf8-binary",
+    "js-blob-file-url",
+    "js-atomics-shared-state",
+    "js-atomic-waiting"
+  ],
+  "scopePass": {
+    "status": "complete",
+    "remaining": []
+  },
+  "answerPass": {
+    "status": "complete",
+    "remaining": []
+  },
+  "baseline": [
+    {
+      "id": "js-binary-view-copy",
+      "title": "Чем subarray отличается от slice у TypedArray?",
+      "contentHash": "e2addb2193b5968a6f2e3b7e4de843dcbfc96b2caa1073a28cc9f361f24a19d8"
+    },
+    {
+      "id": "js-buffer-detachment",
+      "title": "Что происходит с ArrayBuffer и его представлениями после передачи владения?",
+      "contentHash": "fbcab24398b3805d542acd698c8aee50888fd244494cf3a1009d1a70c3833aaf"
+    },
+    {
+      "id": "js-data-view-endianness",
+      "title": "Когда нужен DataView и почему порядок байтов нужно задавать явно?",
+      "contentHash": "49abf48341e5b66d607dbfc6c7a327b00b8aa527212fe161c55cef4bf349ad05"
+    },
+    {
+      "id": "js-utf8-binary",
+      "title": "Как TextEncoder и TextDecoder связывают JavaScript-строку с UTF-8 байтами?",
+      "contentHash": "52090c586f4ad2fe3958f25bd8a38a6be8f55ea0791e73ccec2c832dd070e1b1"
+    },
+    {
+      "id": "js-blob-file-url",
+      "title": "Чем Blob, File и object URL отличаются от ArrayBuffer и обычной ссылки?",
+      "contentHash": "d09c8f7f7ec9d8dbf7a8beb58682065e4c912e7809fc3184d653288732a37af2"
+    },
+    {
+      "id": "js-atomics-shared-state",
+      "title": "Зачем нужны Atomics при совместной работе с SharedArrayBuffer?",
+      "contentHash": "518f72091175ee7f279bd2e2ff7f2cf8954ccc91bf4551be3d353ef325d4b3a1"
+    },
+    {
+      "id": "js-atomic-waiting",
+      "title": "Чем Atomics.wait отличается от waitAsync и почему нельзя блокировать UI?",
+      "contentHash": "2ecacb12ee271bbc7d449333058da58c44ca66e0c141190d755d654fa6bcdf1a"
+    }
+  ],
+  "notes": [
+    "Полный редакторский проход JavaScript: 346 ID сохраняются, добавлений/слияний нет. 12 ответов предыдущего пакета сохраняют готовый связный разбор. Остальным нужны индивидуальные пояснения к механизму и примеру, а не однотипная вводная фраза. Ответы ITBooster не используются.",
+    "Для оставшихся ответов подготовлены индивидуальные пояснения примеров; код перенесён в общий Markdown. В упражнениях на чтение кода условие сохранено отдельно. Примеры не запускались.",
+    "Завершено: Oxfmt, content:build, полный content:check. В платформе 1266 вопросов; в JavaScript сохранены 346 ID, обновлены оставшиеся 334 ответа, новых/удалённых ID нет. Код примеров и seed не выполнялись."
+  ]
+}
