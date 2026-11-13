@@ -11,7 +11,18 @@
   try {
     const stored = JSON.parse(localStorage.getItem("wishu-interface-settings") || "null")
     const palette = stored?.state?.palette
-    if (["coffee", "supabase", "react-bits", "shadcn"].includes(palette))
+    if (
+      [
+        "coffee",
+        "supabase",
+        "react-bits",
+        "shadcn",
+        "github",
+        "chatgpt",
+        "claude",
+        "pinterest",
+      ].includes(palette)
+    )
       document.documentElement.dataset.palette = palette
   } catch {
     // The default palette remains available without storage.

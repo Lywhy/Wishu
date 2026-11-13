@@ -8,7 +8,6 @@ import { SessionBanner } from "@/pages/study-session-page"
 import { CatalogScrollRestoration } from "@/components/experience/catalog-scroll-restoration"
 import { useFeedbackDrafts } from "@/stores/feedback-drafts"
 import { feedbackPageForPath } from "@/lib/platform-feedback"
-import { MessageSquare } from "lucide-react"
 import { Link, NavLink, Outlet, useLocation } from "react-router-dom"
 import { Button } from "@/components/ui/button"
 import { cn } from "@/lib/utils"
@@ -18,6 +17,7 @@ const navigation = [
   { to: "/questions", title: "Вопросы" },
   { to: "/tasks", title: "Задачи" },
   { to: "/interviews", title: "Собеседования" },
+  { to: "/feedback", title: "Баги и предложения" },
 ]
 
 export function AppLayout() {
@@ -70,6 +70,16 @@ export function AppLayout() {
               <NavLink
                 key={to}
                 to={to === "/questions" ? to + questionSearch : to}
+                state={to === "/feedback" ? { feedbackOrigin: pathname } : undefined}
+                onClick={
+                  to === "/feedback"
+                    ? () => {
+                        const draft = useFeedbackDrafts.getState()
+                        if (pathname !== "/feedback" && !draft.bug.details.trim())
+                          draft.updateBug({ page: feedbackPageForPath(pathname), path: pathname })
+                      }
+                    : undefined
+                }
                 className={({ isActive }) =>
                   cn(
                     "flex shrink-0 items-center border-b-2 px-1 py-4 text-xs font-medium transition-colors duration-150 outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-inset motion-reduce:transition-none sm:text-sm lg:py-0",
@@ -85,22 +95,6 @@ export function AppLayout() {
           </nav>
           <div className="flex items-center gap-1 sm:gap-3">
             <GlobalSearch />
-            <Button
-              nativeButton={false}
-              variant="outline"
-              size="icon"
-              aria-current={pathname === "/feedback" ? "page" : undefined}
-              aria-label="Баги и предложения"
-              title="Баги и предложения"
-              render={<Link to="/feedback" state={{ feedbackOrigin: pathname }} />}
-              onClick={() => {
-                const draft = useFeedbackDrafts.getState()
-                if (pathname !== "/feedback" && !draft.bug.details.trim())
-                  draft.updateBug({ page: feedbackPageForPath(pathname), path: pathname })
-              }}
-            >
-              <MessageSquare aria-hidden="true" />
-            </Button>
             <InterfaceSettings />
           </div>
         </div>

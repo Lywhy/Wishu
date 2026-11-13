@@ -3,6 +3,7 @@ import { useReducedMotion } from "motion/react"
 import { useInterfaceSettings } from "@/stores/interface-settings"
 import { useTheme } from "@/lib/theme-context"
 import { interfacePalettes } from "@/lib/interface-palettes"
+import { cn } from "@/lib/utils"
 
 const GradientASCII = lazy(() => import("@/components/GradientASCII"))
 
@@ -13,13 +14,17 @@ export function GradientBackground() {
   const mode = useInterfaceSettings((state) => state.background)
   const paletteId = useInterfaceSettings((state) => state.palette)
   const palette = interfacePalettes.find((item) => item.id === paletteId) ?? interfacePalettes[0]
+  const subtle = "subtleBackground" in palette && palette.subtleBackground
   const still = reducedMotion || mode === "static"
   if (mode === "off") return null
 
   return (
     <div
       aria-hidden="true"
-      className="pointer-events-none fixed inset-0 -z-10 overflow-hidden mask-[radial-gradient(ellipse_at_center,rgba(0,0,0,0.12)_20%,black_90%)] opacity-25 select-none dark:opacity-35"
+      className={cn(
+        "pointer-events-none fixed inset-0 -z-10 overflow-hidden mask-[radial-gradient(ellipse_at_center,rgba(0,0,0,0.12)_20%,black_90%)] select-none",
+        subtle ? "opacity-[0.04] dark:opacity-[0.06]" : "opacity-25 dark:opacity-35",
+      )}
     >
       <Suspense fallback={null}>
         <GradientASCII
