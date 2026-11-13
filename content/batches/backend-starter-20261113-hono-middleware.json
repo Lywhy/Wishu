@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "id": "backend-starter-20261113-hono-middleware",
+  "title": "hono / Middleware и контекст",
+  "sectionId": "hono",
+  "subsectionId": "middleware",
+  "currentPass": "complete",
+  "goalIds": [
+    "hono-middleware-order",
+    "hono-request-variables",
+    "hono-error-boundaries",
+    "hono-cors-auth-boundary"
+  ],
+  "questionIds": [
+    "hono-middleware-order",
+    "hono-request-variables",
+    "hono-error-boundaries",
+    "hono-cors-auth-boundary"
+  ],
+  "scopePass": {
+    "status": "complete",
+    "remaining": []
+  },
+  "answerPass": {
+    "status": "complete",
+    "remaining": []
+  },
+  "baseline": [],
+  "notes": [
+    "Начальная подборка, без обещания полного покрытия. Цели сопоставлены с Node.js и NestJS; похожие механизмы разных языков оставлены отдельно. Примеры не выполнялись.",
+    "Oxfmt, content:build и полный content:check пройдены: 1298 вопросов; новые +32, изменённых/удалённых прежних нет. UI/server проверки и примеры не запускались."
+  ]
+}

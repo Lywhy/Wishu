@@ -1,0 +1,35 @@
+{
+  "schemaVersion": 1,
+  "id": "backend-starter-20261113-go-types-memory",
+  "title": "go / Типы и память",
+  "sectionId": "go",
+  "subsectionId": "types-memory",
+  "currentPass": "complete",
+  "goalIds": [
+    "go-array-slice-alias",
+    "go-map-contract",
+    "go-pointer-value",
+    "go-interface-typed-nil",
+    "go-method-receivers"
+  ],
+  "questionIds": [
+    "go-array-slice-alias",
+    "go-map-contract",
+    "go-pointer-value",
+    "go-interface-typed-nil",
+    "go-method-receivers"
+  ],
+  "scopePass": {
+    "status": "complete",
+    "remaining": []
+  },
+  "answerPass": {
+    "status": "complete",
+    "remaining": []
+  },
+  "baseline": [],
+  "notes": [
+    "Начальная подборка, без обещания полного покрытия. Цели сопоставлены с Node.js и NestJS; похожие механизмы разных языков оставлены отдельно. Примеры не выполнялись.",
+    "Oxfmt, content:build и полный content:check пройдены: 1298 вопросов; новые +32, изменённых/удалённых прежних нет. UI/server проверки и примеры не запускались."
+  ]
+}

@@ -1,0 +1,165 @@
+{
+  "$schema": "../question-bundle.schema.json",
+  "sectionId": "go",
+  "subsectionId": "http-services",
+  "scope": "Обработчики, тайм-ауты, JSON, транзакции и завершение.",
+  "coverageGoals": [
+    {
+      "id": "go-http-handler",
+      "title": "Как устроен HTTP-handler в стандартной библиотеке Go?",
+      "description": "Момент начала ответа ограничивает дальнейшие изменения статуса и заголовков.",
+      "requiredDifficulties": ["Базовый"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "go-http-timeout-context",
+      "title": "Чем тайм-аут HTTP-клиента отличается от отмены входящего запроса?",
+      "description": "Тайм-ауты и отмена должны сопровождать всю цепочку зависимостей.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "go-json-http-validation",
+      "title": "Почему успешный JSON Decode в Go не равен валидации запроса?",
+      "description": "Разбор формата, проверка схемы и бизнес-валидация - разные этапы.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "go-sql-transaction",
+      "title": "Как database/sql связывает транзакцию и Context?",
+      "description": "Атомарность определяется границей Tx и подтверждённым завершением.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "go-http-graceful-shutdown",
+      "title": "Как корректно завершить HTTP-сервер Go?",
+      "description": "Graceful shutdown - согласованный жизненный цикл всего сервиса.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    }
+  ],
+  "questions": [
+    {
+      "id": "go-http-handler",
+      "title": "Как устроен HTTP-handler в стандартной библиотеке Go?",
+      "topic": "Go",
+      "difficulty": "Базовый",
+      "summary": "Момент начала ответа ограничивает дальнейшие изменения статуса и заголовков.",
+      "takeaway": "Момент начала ответа ограничивает дальнейшие изменения статуса и заголовков.",
+      "moduleId": "go",
+      "order": 0,
+      "popular": false,
+      "answerFile": "answers/go/go-http-handler.md",
+      "editorial": {
+        "learningGoal": "Как устроен HTTP-handler в стандартной библиотеке Go?",
+        "keywords": ["go", "HTTP и серверные сервисы", "go-http-handler"],
+        "kind": "explanation",
+        "reviewStatus": "ready",
+        "goalIds": ["go-http-handler"],
+        "relatedQuestionIds": [],
+        "priority": "core",
+        "sourceRefs": ["ref-75405f80decc5677"]
+      }
+    },
+    {
+      "id": "go-http-timeout-context",
+      "title": "Чем тайм-аут HTTP-клиента отличается от отмены входящего запроса?",
+      "topic": "Go",
+      "difficulty": "Средний",
+      "summary": "Тайм-ауты и отмена должны сопровождать всю цепочку зависимостей.",
+      "takeaway": "Тайм-ауты и отмена должны сопровождать всю цепочку зависимостей.",
+      "moduleId": "go",
+      "order": 1,
+      "popular": false,
+      "answerFile": "answers/go/go-http-timeout-context.md",
+      "editorial": {
+        "learningGoal": "Чем тайм-аут HTTP-клиента отличается от отмены входящего запроса?",
+        "keywords": ["go", "HTTP и серверные сервисы", "go-http-timeout-context"],
+        "kind": "explanation",
+        "reviewStatus": "ready",
+        "goalIds": ["go-http-timeout-context"],
+        "relatedQuestionIds": ["go-http-handler"],
+        "priority": "core",
+        "sourceRefs": ["ref-d6cc64da2391b37e"]
+      }
+    },
+    {
+      "id": "go-json-http-validation",
+      "title": "Почему успешный JSON Decode в Go не равен валидации запроса?",
+      "topic": "Go",
+      "difficulty": "Средний",
+      "summary": "Разбор формата, проверка схемы и бизнес-валидация - разные этапы.",
+      "takeaway": "Разбор формата, проверка схемы и бизнес-валидация - разные этапы.",
+      "moduleId": "go",
+      "order": 2,
+      "popular": false,
+      "answerFile": "answers/go/go-json-http-validation.md",
+      "editorial": {
+        "learningGoal": "Почему успешный JSON Decode в Go не равен валидации запроса?",
+        "keywords": ["go", "HTTP и серверные сервисы", "go-json-http-validation"],
+        "kind": "explanation",
+        "reviewStatus": "ready",
+        "goalIds": ["go-json-http-validation"],
+        "relatedQuestionIds": ["go-http-timeout-context"],
+        "priority": "core",
+        "sourceRefs": ["ref-1f5798b5e9513249"]
+      }
+    },
+    {
+      "id": "go-sql-transaction",
+      "title": "Как database/sql связывает транзакцию и Context?",
+      "topic": "Go",
+      "difficulty": "Средний",
+      "summary": "Атомарность определяется границей Tx и подтверждённым завершением.",
+      "takeaway": "Атомарность определяется границей Tx и подтверждённым завершением.",
+      "moduleId": "go",
+      "order": 3,
+      "popular": false,
+      "answerFile": "answers/go/go-sql-transaction.md",
+      "editorial": {
+        "learningGoal": "Как database/sql связывает транзакцию и Context?",
+        "keywords": ["go", "HTTP и серверные сервисы", "go-sql-transaction"],
+        "kind": "explanation",
+        "reviewStatus": "ready",
+        "goalIds": ["go-sql-transaction"],
+        "relatedQuestionIds": ["go-json-http-validation"],
+        "priority": "core",
+        "sourceRefs": ["ref-434f464279905eb8"]
+      }
+    },
+    {
+      "id": "go-http-graceful-shutdown",
+      "title": "Как корректно завершить HTTP-сервер Go?",
+      "topic": "Go",
+      "difficulty": "Средний",
+      "summary": "Graceful shutdown - согласованный жизненный цикл всего сервиса.",
+      "takeaway": "Graceful shutdown - согласованный жизненный цикл всего сервиса.",
+      "moduleId": "go",
+      "order": 4,
+      "popular": false,
+      "answerFile": "answers/go/go-http-graceful-shutdown.md",
+      "editorial": {
+        "learningGoal": "Как корректно завершить HTTP-сервер Go?",
+        "keywords": ["go", "HTTP и серверные сервисы", "go-http-graceful-shutdown"],
+        "kind": "explanation",
+        "reviewStatus": "ready",
+        "goalIds": ["go-http-graceful-shutdown"],
+        "relatedQuestionIds": ["node-graceful-shutdown", "go-sql-transaction"],
+        "priority": "core",
+        "sourceRefs": ["ref-31d6f66dcd4194a7"]
+      }
+    }
+  ]
+}

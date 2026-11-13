@@ -1,0 +1,134 @@
+{
+  "$schema": "../question-bundle.schema.json",
+  "sectionId": "hono",
+  "subsectionId": "middleware",
+  "scope": "Порядок обработки, данные запроса, ошибки и безопасность.",
+  "coverageGoals": [
+    {
+      "id": "hono-middleware-order",
+      "title": "Как работает await next() в middleware Hono?",
+      "description": "Middleware оборачивает дальнейшую обработку и должно явно управлять продолжением.",
+      "requiredDifficulties": ["Базовый"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "hono-request-variables",
+      "title": "Как передавать данные между middleware и обработчиком без глобальных переменных?",
+      "description": "Данные запроса должны иметь область жизни запроса.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "hono-error-boundaries",
+      "title": "Чем onError отличается от notFound в Hono?",
+      "description": "Разделяйте отсутствие маршрута, ожидаемый отказ и внутренний сбой.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "hono-cors-auth-boundary",
+      "title": "Почему CORS middleware в Hono не заменяет авторизацию?",
+      "description": "CORS - браузерный протокол доступа, а не контроль полномочий.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    }
+  ],
+  "questions": [
+    {
+      "id": "hono-middleware-order",
+      "title": "Как работает await next() в middleware Hono?",
+      "topic": "Hono",
+      "difficulty": "Базовый",
+      "summary": "Middleware оборачивает дальнейшую обработку и должно явно управлять продолжением.",
+      "takeaway": "Middleware оборачивает дальнейшую обработку и должно явно управлять продолжением.",
+      "moduleId": "hono",
+      "order": 0,
+      "popular": false,
+      "answerFile": "answers/hono/hono-middleware-order.md",
+      "editorial": {
+        "learningGoal": "Как работает await next() в middleware Hono?",
+        "keywords": ["hono", "Middleware и контекст", "hono-middleware-order"],
+        "kind": "explanation",
+        "reviewStatus": "ready",
+        "goalIds": ["hono-middleware-order"],
+        "relatedQuestionIds": ["nest-middleware-guard"],
+        "priority": "core",
+        "sourceRefs": ["ref-88a9997a53c18a99"]
+      }
+    },
+    {
+      "id": "hono-request-variables",
+      "title": "Как передавать данные между middleware и обработчиком без глобальных переменных?",
+      "topic": "Hono",
+      "difficulty": "Средний",
+      "summary": "Данные запроса должны иметь область жизни запроса.",
+      "takeaway": "Данные запроса должны иметь область жизни запроса.",
+      "moduleId": "hono",
+      "order": 1,
+      "popular": false,
+      "answerFile": "answers/hono/hono-request-variables.md",
+      "editorial": {
+        "learningGoal": "Как передавать данные между middleware и обработчиком без глобальных переменных?",
+        "keywords": ["hono", "Middleware и контекст", "hono-request-variables"],
+        "kind": "explanation",
+        "reviewStatus": "ready",
+        "goalIds": ["hono-request-variables"],
+        "relatedQuestionIds": ["hono-middleware-order"],
+        "priority": "core",
+        "sourceRefs": ["ref-61d7bb02aab3806f"]
+      }
+    },
+    {
+      "id": "hono-error-boundaries",
+      "title": "Чем onError отличается от notFound в Hono?",
+      "topic": "Hono",
+      "difficulty": "Средний",
+      "summary": "Разделяйте отсутствие маршрута, ожидаемый отказ и внутренний сбой.",
+      "takeaway": "Разделяйте отсутствие маршрута, ожидаемый отказ и внутренний сбой.",
+      "moduleId": "hono",
+      "order": 2,
+      "popular": false,
+      "answerFile": "answers/hono/hono-error-boundaries.md",
+      "editorial": {
+        "learningGoal": "Чем onError отличается от notFound в Hono?",
+        "keywords": ["hono", "Middleware и контекст", "hono-error-boundaries"],
+        "kind": "explanation",
+        "reviewStatus": "ready",
+        "goalIds": ["hono-error-boundaries"],
+        "relatedQuestionIds": ["hono-request-variables"],
+        "priority": "core",
+        "sourceRefs": ["ref-433fc3bbf8e12194"]
+      }
+    },
+    {
+      "id": "hono-cors-auth-boundary",
+      "title": "Почему CORS middleware в Hono не заменяет авторизацию?",
+      "topic": "Hono",
+      "difficulty": "Средний",
+      "summary": "CORS - браузерный протокол доступа, а не контроль полномочий.",
+      "takeaway": "CORS - браузерный протокол доступа, а не контроль полномочий.",
+      "moduleId": "hono",
+      "order": 3,
+      "popular": false,
+      "answerFile": "answers/hono/hono-cors-auth-boundary.md",
+      "editorial": {
+        "learningGoal": "Почему CORS middleware в Hono не заменяет авторизацию?",
+        "keywords": ["hono", "Middleware и контекст", "hono-cors-auth-boundary"],
+        "kind": "explanation",
+        "reviewStatus": "ready",
+        "goalIds": ["hono-cors-auth-boundary"],
+        "relatedQuestionIds": ["hono-error-boundaries"],
+        "priority": "core",
+        "sourceRefs": ["ref-cae4c0744ee73dc5"]
+      }
+    }
+  ]
+}

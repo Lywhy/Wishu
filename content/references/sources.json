@@ -6049,6 +6049,268 @@
       "caveats": [
         "Пакет 2026-11-08: браузерные возможности и политики приватности зависят от реализации, версии, secure context и настроек пользователя. Примеры и сценарии разобраны редактором, но не запускались. checkedAt установлен только для открытых источников; null не означает проверенную доступность. Статус ready подтверждает редакторскую готовность, а не полноту всех собеседований."
       ]
+    },
+    {
+      "sectionId": "hono",
+      "subsectionId": "routing",
+      "scope": "Web API, запуск в Node.js, параметры и ответы.",
+      "sources": [
+        {
+          "id": "ref-83184d2c8ee5f06b",
+          "title": "Hono: nodejs",
+          "url": "https://hono.dev/docs/getting-started/nodejs",
+          "checkedAt": "2026-11-13"
+        },
+        {
+          "id": "ref-e2fbda20d3e7c897",
+          "title": "Hono: request",
+          "url": "https://hono.dev/docs/api/request",
+          "checkedAt": "2026-11-13"
+        },
+        {
+          "id": "ref-61d7bb02aab3806f",
+          "title": "Hono: context",
+          "url": "https://hono.dev/docs/api/context",
+          "checkedAt": "2026-11-13"
+        },
+        {
+          "id": "ref-12b37d3a493a4ae9",
+          "title": "Hono: routing",
+          "url": "https://hono.dev/docs/api/routing",
+          "checkedAt": "2026-11-13"
+        }
+      ],
+      "caveats": [
+        "Примеры TypeScript относятся к Hono и Web API; адаптер и доступные зависимости зависят от runtime."
+      ]
+    },
+    {
+      "sectionId": "hono",
+      "subsectionId": "middleware",
+      "scope": "Порядок обработки, данные запроса, ошибки и безопасность.",
+      "sources": [
+        {
+          "id": "ref-88a9997a53c18a99",
+          "title": "Hono: middleware",
+          "url": "https://hono.dev/docs/guides/middleware",
+          "checkedAt": "2026-11-13"
+        },
+        {
+          "id": "ref-61d7bb02aab3806f",
+          "title": "Hono: context",
+          "url": "https://hono.dev/docs/api/context",
+          "checkedAt": "2026-11-13"
+        },
+        {
+          "id": "ref-433fc3bbf8e12194",
+          "title": "Hono: hono",
+          "url": "https://hono.dev/docs/api/hono",
+          "checkedAt": "2026-11-13"
+        },
+        {
+          "id": "ref-cae4c0744ee73dc5",
+          "title": "Hono: cors",
+          "url": "https://hono.dev/docs/middleware/builtin/cors",
+          "checkedAt": "2026-11-13"
+        }
+      ],
+      "caveats": [
+        "Примеры TypeScript относятся к Hono и Web API; адаптер и доступные зависимости зависят от runtime."
+      ]
+    },
+    {
+      "sectionId": "hono",
+      "subsectionId": "api-contracts",
+      "scope": "Валидация, тело Request, тестирование и типизированный клиент.",
+      "sources": [
+        {
+          "id": "ref-bcf3046da7d47cd2",
+          "title": "Hono: validation",
+          "url": "https://hono.dev/docs/guides/validation",
+          "checkedAt": "2026-11-13"
+        },
+        {
+          "id": "ref-e2fbda20d3e7c897",
+          "title": "Hono: request",
+          "url": "https://hono.dev/docs/api/request",
+          "checkedAt": "2026-11-13"
+        },
+        {
+          "id": "ref-2a0e4577fc4a6de4",
+          "title": "Hono: testing",
+          "url": "https://hono.dev/docs/guides/testing",
+          "checkedAt": "2026-11-13"
+        },
+        {
+          "id": "ref-5607e8e300cc298f",
+          "title": "Hono: rpc",
+          "url": "https://hono.dev/docs/guides/rpc",
+          "checkedAt": "2026-11-13"
+        }
+      ],
+      "caveats": [
+        "Примеры TypeScript относятся к Hono и Web API; адаптер и доступные зависимости зависят от runtime."
+      ]
+    },
+    {
+      "sectionId": "go",
+      "subsectionId": "fundamentals",
+      "scope": "Модули, объявления, функции, ошибки и defer.",
+      "sources": [
+        {
+          "id": "ref-d2e3346738637265",
+          "title": "Go: create-module",
+          "url": "https://go.dev/doc/tutorial/create-module",
+          "checkedAt": "2026-11-13"
+        },
+        {
+          "id": "ref-57b12584701c06bc",
+          "title": "Go: effective_go / declarations",
+          "url": "https://go.dev/doc/effective_go#declarations",
+          "checkedAt": "2026-11-13"
+        },
+        {
+          "id": "ref-9073c233be3931aa",
+          "title": "Go: effective_go / multiple-returns",
+          "url": "https://go.dev/doc/effective_go#multiple-returns",
+          "checkedAt": "2026-11-13"
+        },
+        {
+          "id": "ref-f63de84edb6d2d0e",
+          "title": "Go: errors",
+          "url": "https://pkg.go.dev/errors",
+          "checkedAt": "2026-11-13"
+        },
+        {
+          "id": "ref-b1e074df967b741c",
+          "title": "Go: effective_go / defer",
+          "url": "https://go.dev/doc/effective_go#defer",
+          "checkedAt": "2026-11-13"
+        }
+      ],
+      "caveats": [
+        "Фрагменты Go показывают механизм; необходимые импорты и окружающая функция оговорены в ответах. Изменения переменных цикла требуют языковой версии Go 1.22+."
+      ]
+    },
+    {
+      "sectionId": "go",
+      "subsectionId": "types-memory",
+      "scope": "Коллекции, указатели, интерфейсы и методы.",
+      "sources": [
+        {
+          "id": "ref-b27f67f5be253621",
+          "title": "Go: slices-intro",
+          "url": "https://go.dev/blog/slices-intro",
+          "checkedAt": "2026-11-13"
+        },
+        {
+          "id": "ref-d94c61e2b59f69bf",
+          "title": "Go: maps",
+          "url": "https://go.dev/blog/maps",
+          "checkedAt": "2026-11-13"
+        },
+        {
+          "id": "ref-0ddb6b8e0b226b22",
+          "title": "Go: faq / stack_or_heap",
+          "url": "https://go.dev/doc/faq#stack_or_heap",
+          "checkedAt": "2026-11-13"
+        },
+        {
+          "id": "ref-8319d5b662eeff47",
+          "title": "Go: faq / nil_error",
+          "url": "https://go.dev/doc/faq#nil_error",
+          "checkedAt": "2026-11-13"
+        },
+        {
+          "id": "ref-9a9482f8bf5e0fcd",
+          "title": "Go: effective_go / pointers_vs_values",
+          "url": "https://go.dev/doc/effective_go#pointers_vs_values",
+          "checkedAt": "2026-11-13"
+        }
+      ],
+      "caveats": [
+        "Фрагменты Go показывают механизм; необходимые импорты и окружающая функция оговорены в ответах. Изменения переменных цикла требуют языковой версии Go 1.22+."
+      ]
+    },
+    {
+      "sectionId": "go",
+      "subsectionId": "concurrency",
+      "scope": "Goroutines, каналы, отмена, синхронизация и области переменных.",
+      "sources": [
+        {
+          "id": "ref-5a0f1a5799f8b2a8",
+          "title": "Go: effective_go / goroutines",
+          "url": "https://go.dev/doc/effective_go#goroutines",
+          "checkedAt": "2026-11-13"
+        },
+        {
+          "id": "ref-f36bc12bc70b0b5e",
+          "title": "Go: effective_go / channels",
+          "url": "https://go.dev/doc/effective_go#channels",
+          "checkedAt": "2026-11-13"
+        },
+        {
+          "id": "ref-9f4585eb17376bb2",
+          "title": "Go: context",
+          "url": "https://go.dev/blog/context",
+          "checkedAt": "2026-11-13"
+        },
+        {
+          "id": "ref-280b2212d91119b5",
+          "title": "Go: sync",
+          "url": "https://pkg.go.dev/sync",
+          "checkedAt": "2026-11-13"
+        },
+        {
+          "id": "ref-9c90a4a8d65bb595",
+          "title": "Go: loopvar-preview",
+          "url": "https://go.dev/blog/loopvar-preview",
+          "checkedAt": "2026-11-13"
+        }
+      ],
+      "caveats": [
+        "Фрагменты Go показывают механизм; необходимые импорты и окружающая функция оговорены в ответах. Изменения переменных цикла требуют языковой версии Go 1.22+."
+      ]
+    },
+    {
+      "sectionId": "go",
+      "subsectionId": "http-services",
+      "scope": "Обработчики, тайм-ауты, JSON, транзакции и завершение.",
+      "sources": [
+        {
+          "id": "ref-75405f80decc5677",
+          "title": "Go: http",
+          "url": "https://pkg.go.dev/net/http",
+          "checkedAt": "2026-11-13"
+        },
+        {
+          "id": "ref-d6cc64da2391b37e",
+          "title": "Go: http / NewRequestWithContext",
+          "url": "https://pkg.go.dev/net/http#NewRequestWithContext",
+          "checkedAt": "2026-11-13"
+        },
+        {
+          "id": "ref-1f5798b5e9513249",
+          "title": "Go: json",
+          "url": "https://pkg.go.dev/encoding/json",
+          "checkedAt": "2026-11-13"
+        },
+        {
+          "id": "ref-434f464279905eb8",
+          "title": "Go: execute-transactions",
+          "url": "https://go.dev/doc/database/execute-transactions",
+          "checkedAt": "2026-11-13"
+        },
+        {
+          "id": "ref-31d6f66dcd4194a7",
+          "title": "Go: http / Server.Shutdown",
+          "url": "https://pkg.go.dev/net/http#Server.Shutdown",
+          "checkedAt": "2026-11-13"
+        }
+      ],
+      "caveats": [
+        "Фрагменты Go показывают механизм; необходимые импорты и окружающая функция оговорены в ответах. Изменения переменных цикла требуют языковой версии Go 1.22+."
+      ]
     }
   ]
 }

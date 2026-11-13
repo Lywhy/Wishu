@@ -2963,6 +2963,108 @@
         "zustand-v5-selector-fallback"
       ],
       "reason": "Прочитаны текущие ответы и примеры. Сохранены ID, порядок и учебные цели. Добавлены индивидуальные связные разборы, недостающие примеры и существенные границы гарантий. Markdown объединяет объяснение, код и ошибки без дублирующих полей. Примеры не выполнялись."
+    },
+    {
+      "id": "backend-starter-20261113-hono-routing",
+      "date": "2026-11-13",
+      "type": "separate",
+      "sectionId": "hono",
+      "subsectionId": "routing",
+      "questionIds": [
+        "hono-runtime-fetch",
+        "hono-params-query",
+        "hono-response-contract",
+        "hono-route-composition"
+      ],
+      "reason": "Новый раздел и самостоятельные учебные цели hono. Общие понятия HTTP и конкурентности раскрываются через конкретные API языка/фреймворка, без копирования существующих ответов Node.js/NestJS. Связанные канонические вопросы указаны в метаданных. Это начальное наполнение, а не полное покрытие."
+    },
+    {
+      "id": "backend-starter-20261113-hono-middleware",
+      "date": "2026-11-13",
+      "type": "separate",
+      "sectionId": "hono",
+      "subsectionId": "middleware",
+      "questionIds": [
+        "hono-middleware-order",
+        "hono-request-variables",
+        "hono-error-boundaries",
+        "hono-cors-auth-boundary"
+      ],
+      "reason": "Новый раздел и самостоятельные учебные цели hono. Общие понятия HTTP и конкурентности раскрываются через конкретные API языка/фреймворка, без копирования существующих ответов Node.js/NestJS. Связанные канонические вопросы указаны в метаданных. Это начальное наполнение, а не полное покрытие."
+    },
+    {
+      "id": "backend-starter-20261113-hono-api-contracts",
+      "date": "2026-11-13",
+      "type": "separate",
+      "sectionId": "hono",
+      "subsectionId": "api-contracts",
+      "questionIds": [
+        "hono-json-validation",
+        "hono-request-body-once",
+        "hono-request-tests",
+        "hono-rpc-contract"
+      ],
+      "reason": "Новый раздел и самостоятельные учебные цели hono. Общие понятия HTTP и конкурентности раскрываются через конкретные API языка/фреймворка, без копирования существующих ответов Node.js/NestJS. Связанные канонические вопросы указаны в метаданных. Это начальное наполнение, а не полное покрытие."
+    },
+    {
+      "id": "backend-starter-20261113-go-fundamentals",
+      "date": "2026-11-13",
+      "type": "separate",
+      "sectionId": "go",
+      "subsectionId": "fundamentals",
+      "questionIds": [
+        "go-module-package",
+        "go-zero-declaration",
+        "go-functions-results",
+        "go-errors-wrap",
+        "go-defer-order"
+      ],
+      "reason": "Новый раздел и самостоятельные учебные цели go. Общие понятия HTTP и конкурентности раскрываются через конкретные API языка/фреймворка, без копирования существующих ответов Node.js/NestJS. Связанные канонические вопросы указаны в метаданных. Это начальное наполнение, а не полное покрытие."
+    },
+    {
+      "id": "backend-starter-20261113-go-types-memory",
+      "date": "2026-11-13",
+      "type": "separate",
+      "sectionId": "go",
+      "subsectionId": "types-memory",
+      "questionIds": [
+        "go-array-slice-alias",
+        "go-map-contract",
+        "go-pointer-value",
+        "go-interface-typed-nil",
+        "go-method-receivers"
+      ],
+      "reason": "Новый раздел и самостоятельные учебные цели go. Общие понятия HTTP и конкурентности раскрываются через конкретные API языка/фреймворка, без копирования существующих ответов Node.js/NestJS. Связанные канонические вопросы указаны в метаданных. Это начальное наполнение, а не полное покрытие."
+    },
+    {
+      "id": "backend-starter-20261113-go-concurrency",
+      "date": "2026-11-13",
+      "type": "separate",
+      "sectionId": "go",
+      "subsectionId": "concurrency",
+      "questionIds": [
+        "go-goroutine-lifetime",
+        "go-channel-select",
+        "go-context-cancellation",
+        "go-mutex-waitgroup",
+        "go-loop-variables"
+      ],
+      "reason": "Новый раздел и самостоятельные учебные цели go. Общие понятия HTTP и конкурентности раскрываются через конкретные API языка/фреймворка, без копирования существующих ответов Node.js/NestJS. Связанные канонические вопросы указаны в метаданных. Это начальное наполнение, а не полное покрытие."
+    },
+    {
+      "id": "backend-starter-20261113-go-http-services",
+      "date": "2026-11-13",
+      "type": "separate",
+      "sectionId": "go",
+      "subsectionId": "http-services",
+      "questionIds": [
+        "go-http-handler",
+        "go-http-timeout-context",
+        "go-json-http-validation",
+        "go-sql-transaction",
+        "go-http-graceful-shutdown"
+      ],
+      "reason": "Новый раздел и самостоятельные учебные цели go. Общие понятия HTTP и конкурентности раскрываются через конкретные API языка/фреймворка, без копирования существующих ответов Node.js/NestJS. Связанные канонические вопросы указаны в метаданных. Это начальное наполнение, а не полное покрытие."
     }
   ]
 }

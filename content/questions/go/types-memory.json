@@ -1,0 +1,165 @@
+{
+  "$schema": "../question-bundle.schema.json",
+  "sectionId": "go",
+  "subsectionId": "types-memory",
+  "scope": "Коллекции, указатели, интерфейсы и методы.",
+  "coverageGoals": [
+    {
+      "id": "go-array-slice-alias",
+      "title": "Чем массив отличается от slice и почему append может изменить общую память?",
+      "description": "Различайте копию описания slice и независимость его данных.",
+      "requiredDifficulties": ["Базовый"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "go-map-contract",
+      "title": "Как работают nil map, проверка наличия ключа и конкурентный доступ?",
+      "description": "Zero value и отсутствие ключа - разные состояния.",
+      "requiredDifficulties": ["Базовый"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "go-pointer-value",
+      "title": "Как указатели Go позволяют менять данные и означают ли они обязательное размещение в heap?",
+      "description": "Указатель задаёт доступ к значению, а размещение памяти - отдельный вопрос.",
+      "requiredDifficulties": ["Базовый"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "go-interface-typed-nil",
+      "title": "Почему интерфейс Go с nil-указателем может быть не равен nil?",
+      "description": "Пустой интерфейс и интерфейс с типизированным nil различаются.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "go-method-receivers",
+      "title": "Как value receiver и pointer receiver влияют на методы и реализацию интерфейса?",
+      "description": "Удобный синтаксис вызова не отменяет набор методов типа.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    }
+  ],
+  "questions": [
+    {
+      "id": "go-array-slice-alias",
+      "title": "Чем массив отличается от slice и почему append может изменить общую память?",
+      "topic": "Go",
+      "difficulty": "Базовый",
+      "summary": "Различайте копию описания slice и независимость его данных.",
+      "takeaway": "Различайте копию описания slice и независимость его данных.",
+      "moduleId": "go",
+      "order": 0,
+      "popular": false,
+      "answerFile": "answers/go/go-array-slice-alias.md",
+      "editorial": {
+        "learningGoal": "Чем массив отличается от slice и почему append может изменить общую память?",
+        "keywords": ["go", "Типы и память", "go-array-slice-alias"],
+        "kind": "explanation",
+        "reviewStatus": "ready",
+        "goalIds": ["go-array-slice-alias"],
+        "relatedQuestionIds": [],
+        "priority": "core",
+        "sourceRefs": ["ref-b27f67f5be253621"]
+      }
+    },
+    {
+      "id": "go-map-contract",
+      "title": "Как работают nil map, проверка наличия ключа и конкурентный доступ?",
+      "topic": "Go",
+      "difficulty": "Базовый",
+      "summary": "Zero value и отсутствие ключа - разные состояния.",
+      "takeaway": "Zero value и отсутствие ключа - разные состояния.",
+      "moduleId": "go",
+      "order": 1,
+      "popular": false,
+      "answerFile": "answers/go/go-map-contract.md",
+      "editorial": {
+        "learningGoal": "Как работают nil map, проверка наличия ключа и конкурентный доступ?",
+        "keywords": ["go", "Типы и память", "go-map-contract"],
+        "kind": "explanation",
+        "reviewStatus": "ready",
+        "goalIds": ["go-map-contract"],
+        "relatedQuestionIds": ["go-array-slice-alias"],
+        "priority": "core",
+        "sourceRefs": ["ref-d94c61e2b59f69bf"]
+      }
+    },
+    {
+      "id": "go-pointer-value",
+      "title": "Как указатели Go позволяют менять данные и означают ли они обязательное размещение в heap?",
+      "topic": "Go",
+      "difficulty": "Базовый",
+      "summary": "Указатель задаёт доступ к значению, а размещение памяти - отдельный вопрос.",
+      "takeaway": "Указатель задаёт доступ к значению, а размещение памяти - отдельный вопрос.",
+      "moduleId": "go",
+      "order": 2,
+      "popular": false,
+      "answerFile": "answers/go/go-pointer-value.md",
+      "editorial": {
+        "learningGoal": "Как указатели Go позволяют менять данные и означают ли они обязательное размещение в heap?",
+        "keywords": ["go", "Типы и память", "go-pointer-value"],
+        "kind": "explanation",
+        "reviewStatus": "ready",
+        "goalIds": ["go-pointer-value"],
+        "relatedQuestionIds": ["go-map-contract"],
+        "priority": "core",
+        "sourceRefs": ["ref-0ddb6b8e0b226b22"]
+      }
+    },
+    {
+      "id": "go-interface-typed-nil",
+      "title": "Почему интерфейс Go с nil-указателем может быть не равен nil?",
+      "topic": "Go",
+      "difficulty": "Средний",
+      "summary": "Пустой интерфейс и интерфейс с типизированным nil различаются.",
+      "takeaway": "Пустой интерфейс и интерфейс с типизированным nil различаются.",
+      "moduleId": "go",
+      "order": 3,
+      "popular": false,
+      "answerFile": "answers/go/go-interface-typed-nil.md",
+      "editorial": {
+        "learningGoal": "Почему интерфейс Go с nil-указателем может быть не равен nil?",
+        "keywords": ["go", "Типы и память", "go-interface-typed-nil"],
+        "kind": "explanation",
+        "reviewStatus": "ready",
+        "goalIds": ["go-interface-typed-nil"],
+        "relatedQuestionIds": ["go-pointer-value"],
+        "priority": "core",
+        "sourceRefs": ["ref-8319d5b662eeff47"]
+      }
+    },
+    {
+      "id": "go-method-receivers",
+      "title": "Как value receiver и pointer receiver влияют на методы и реализацию интерфейса?",
+      "topic": "Go",
+      "difficulty": "Средний",
+      "summary": "Удобный синтаксис вызова не отменяет набор методов типа.",
+      "takeaway": "Удобный синтаксис вызова не отменяет набор методов типа.",
+      "moduleId": "go",
+      "order": 4,
+      "popular": false,
+      "answerFile": "answers/go/go-method-receivers.md",
+      "editorial": {
+        "learningGoal": "Как value receiver и pointer receiver влияют на методы и реализацию интерфейса?",
+        "keywords": ["go", "Типы и память", "go-method-receivers"],
+        "kind": "explanation",
+        "reviewStatus": "ready",
+        "goalIds": ["go-method-receivers"],
+        "relatedQuestionIds": ["go-interface-typed-nil"],
+        "priority": "core",
+        "sourceRefs": ["ref-9a9482f8bf5e0fcd"]
+      }
+    }
+  ]
+}

@@ -1,0 +1,134 @@
+{
+  "$schema": "../question-bundle.schema.json",
+  "sectionId": "hono",
+  "subsectionId": "routing",
+  "scope": "Web API, запуск в Node.js, параметры и ответы.",
+  "coverageGoals": [
+    {
+      "id": "hono-runtime-fetch",
+      "title": "Что такое Hono и как его приложение запускается в Node.js?",
+      "description": "Отделяйте переносимый обработчик от адаптера среды исполнения.",
+      "requiredDifficulties": ["Базовый"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "hono-params-query",
+      "title": "Как читать параметры пути и query-параметры в Hono?",
+      "description": "Параметры HTTP являются недоверенным вводом, даже когда маршрут типизирован.",
+      "requiredDifficulties": ["Базовый"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "hono-response-contract",
+      "title": "Что должен возвращать обработчик Hono и как задать статус ответа?",
+      "description": "Возвращайте ответ явно и согласуйте статус с реальным исходом.",
+      "requiredDifficulties": ["Базовый"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "hono-route-composition",
+      "title": "Как разделять маршруты Hono по модулям?",
+      "description": "Композиция связывает готовые определения путей в предсказуемом порядке.",
+      "requiredDifficulties": ["Базовый"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    }
+  ],
+  "questions": [
+    {
+      "id": "hono-runtime-fetch",
+      "title": "Что такое Hono и как его приложение запускается в Node.js?",
+      "topic": "Hono",
+      "difficulty": "Базовый",
+      "summary": "Отделяйте переносимый обработчик от адаптера среды исполнения.",
+      "takeaway": "Отделяйте переносимый обработчик от адаптера среды исполнения.",
+      "moduleId": "hono",
+      "order": 0,
+      "popular": false,
+      "answerFile": "answers/hono/hono-runtime-fetch.md",
+      "editorial": {
+        "learningGoal": "Что такое Hono и как его приложение запускается в Node.js?",
+        "keywords": ["hono", "Приложение и маршруты", "hono-runtime-fetch"],
+        "kind": "explanation",
+        "reviewStatus": "ready",
+        "goalIds": ["hono-runtime-fetch"],
+        "relatedQuestionIds": ["node-fs-sync"],
+        "priority": "core",
+        "sourceRefs": ["ref-83184d2c8ee5f06b"]
+      }
+    },
+    {
+      "id": "hono-params-query",
+      "title": "Как читать параметры пути и query-параметры в Hono?",
+      "topic": "Hono",
+      "difficulty": "Базовый",
+      "summary": "Параметры HTTP являются недоверенным вводом, даже когда маршрут типизирован.",
+      "takeaway": "Параметры HTTP являются недоверенным вводом, даже когда маршрут типизирован.",
+      "moduleId": "hono",
+      "order": 1,
+      "popular": false,
+      "answerFile": "answers/hono/hono-params-query.md",
+      "editorial": {
+        "learningGoal": "Как читать параметры пути и query-параметры в Hono?",
+        "keywords": ["hono", "Приложение и маршруты", "hono-params-query"],
+        "kind": "explanation",
+        "reviewStatus": "ready",
+        "goalIds": ["hono-params-query"],
+        "relatedQuestionIds": ["hono-runtime-fetch"],
+        "priority": "core",
+        "sourceRefs": ["ref-e2fbda20d3e7c897"]
+      }
+    },
+    {
+      "id": "hono-response-contract",
+      "title": "Что должен возвращать обработчик Hono и как задать статус ответа?",
+      "topic": "Hono",
+      "difficulty": "Базовый",
+      "summary": "Возвращайте ответ явно и согласуйте статус с реальным исходом.",
+      "takeaway": "Возвращайте ответ явно и согласуйте статус с реальным исходом.",
+      "moduleId": "hono",
+      "order": 2,
+      "popular": false,
+      "answerFile": "answers/hono/hono-response-contract.md",
+      "editorial": {
+        "learningGoal": "Что должен возвращать обработчик Hono и как задать статус ответа?",
+        "keywords": ["hono", "Приложение и маршруты", "hono-response-contract"],
+        "kind": "explanation",
+        "reviewStatus": "ready",
+        "goalIds": ["hono-response-contract"],
+        "relatedQuestionIds": ["hono-params-query"],
+        "priority": "core",
+        "sourceRefs": ["ref-61d7bb02aab3806f"]
+      }
+    },
+    {
+      "id": "hono-route-composition",
+      "title": "Как разделять маршруты Hono по модулям?",
+      "topic": "Hono",
+      "difficulty": "Базовый",
+      "summary": "Композиция связывает готовые определения путей в предсказуемом порядке.",
+      "takeaway": "Композиция связывает готовые определения путей в предсказуемом порядке.",
+      "moduleId": "hono",
+      "order": 3,
+      "popular": false,
+      "answerFile": "answers/hono/hono-route-composition.md",
+      "editorial": {
+        "learningGoal": "Как разделять маршруты Hono по модулям?",
+        "keywords": ["hono", "Приложение и маршруты", "hono-route-composition"],
+        "kind": "explanation",
+        "reviewStatus": "ready",
+        "goalIds": ["hono-route-composition"],
+        "relatedQuestionIds": ["hono-response-contract"],
+        "priority": "core",
+        "sourceRefs": ["ref-12b37d3a493a4ae9"]
+      }
+    }
+  ]
+}

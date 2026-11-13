@@ -1,0 +1,35 @@
+{
+  "schemaVersion": 1,
+  "id": "backend-starter-20261113-go-http-services",
+  "title": "go / HTTP и серверные сервисы",
+  "sectionId": "go",
+  "subsectionId": "http-services",
+  "currentPass": "complete",
+  "goalIds": [
+    "go-http-handler",
+    "go-http-timeout-context",
+    "go-json-http-validation",
+    "go-sql-transaction",
+    "go-http-graceful-shutdown"
+  ],
+  "questionIds": [
+    "go-http-handler",
+    "go-http-timeout-context",
+    "go-json-http-validation",
+    "go-sql-transaction",
+    "go-http-graceful-shutdown"
+  ],
+  "scopePass": {
+    "status": "complete",
+    "remaining": []
+  },
+  "answerPass": {
+    "status": "complete",
+    "remaining": []
+  },
+  "baseline": [],
+  "notes": [
+    "Начальная подборка, без обещания полного покрытия. Цели сопоставлены с Node.js и NestJS; похожие механизмы разных языков оставлены отдельно. Примеры не выполнялись.",
+    "Oxfmt, content:build и полный content:check пройдены: 1298 вопросов; новые +32, изменённых/удалённых прежних нет. UI/server проверки и примеры не запускались."
+  ]
+}

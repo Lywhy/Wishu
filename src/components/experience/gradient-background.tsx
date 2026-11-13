@@ -2,16 +2,17 @@ import { lazy, Suspense } from "react"
 import { useReducedMotion } from "motion/react"
 import { useInterfaceSettings } from "@/stores/interface-settings"
 import { useTheme } from "@/lib/theme-context"
+import { interfacePalettes } from "@/lib/interface-palettes"
 
 const GradientASCII = lazy(() => import("@/components/GradientASCII"))
-const coffeeDark = ["#352419", "#65432e", "#a47750", "#d7ad85"]
-const coffeeLight = ["#e6cfb6", "#cfa77e", "#a57853", "#795038"]
 
 export function GradientBackground() {
   const { theme } = useTheme()
   const reducedMotion = useReducedMotion()
   const dark = theme === "dark"
   const mode = useInterfaceSettings((state) => state.background)
+  const paletteId = useInterfaceSettings((state) => state.palette)
+  const palette = interfacePalettes.find((item) => item.id === paletteId) ?? interfacePalettes[0]
   const still = reducedMotion || mode === "static"
   if (mode === "off") return null
 
@@ -23,7 +24,7 @@ export function GradientBackground() {
       <Suspense fallback={null}>
         <GradientASCII
           key={still ? "still" : "motion"}
-          colors={dark ? coffeeDark : coffeeLight}
+          colors={[...(dark ? palette.dark : palette.light)]}
           // Visual defaults live in GradientASCII; only theme and motion policy override them.
           speed={still ? 0 : undefined}
           flicker={still ? 0 : undefined}

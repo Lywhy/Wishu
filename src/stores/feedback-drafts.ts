@@ -81,6 +81,7 @@ export const useFeedbackDrafts = create<Drafts>()(
                 id: crypto.randomUUID(),
                 details: "",
                 fragment: "",
+                reason: "answer",
                 steps: "",
                 expected: "",
               },

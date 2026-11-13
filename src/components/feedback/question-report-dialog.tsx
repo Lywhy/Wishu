@@ -33,18 +33,34 @@ export function QuestionReportDialog({
   path: string
 }) {
   const id = useId()
+  const [session, setSession] = useState(0)
   const [open, setOpen] = useState(false)
   const [prepared, setPrepared] = useState<FeedbackInput | null>(null)
   const [error, setError] = useState("")
+  const uploadEpoch = useRef(0)
   const allScreenshots = useFeedbackAttachments((state) => state.items)
   const screenshots = allScreenshots[`question:${questionId}`] ?? []
   function setScreenshots(images: FeedbackScreenshot[]) {
-    useFeedbackAttachments.getState().set(`question:${questionId}`, images)
+    if (session === uploadEpoch.current)
+      useFeedbackAttachments.getState().set(`question:${questionId}`, images)
   }
   const [busy, setBusy] = useState(false)
   const fragment = useRef("")
   const details = useRef<HTMLTextAreaElement>(null)
   const draft = useFeedbackDrafts((state) => state.questionBugs?.[questionId])
+  function changeOpen(value: boolean) {
+    if (!value) {
+      uploadEpoch.current += 1
+      useFeedbackDrafts.getState().resetQuestionBug(questionId)
+      useFeedbackAttachments.getState().set("question:" + questionId, [])
+      fragment.current = ""
+      setPrepared(null)
+      setError("")
+      setBusy(false)
+      setSession((previous) => previous + 1)
+    }
+    setOpen(value)
+  }
   function capture() {
     const selection = window.getSelection()
     const answer = document.querySelector("[data-question-answer]")
@@ -103,7 +119,7 @@ export function QuestionReportDialog({
     })
   }
   return (
-    <Dialog open={open} onOpenChange={setOpen}>
+    <Dialog open={open} onOpenChange={changeOpen}>
       <DialogTrigger
         render={
           <Button
@@ -191,9 +207,12 @@ export function QuestionReportDialog({
                 )}
               </div>
               <FeedbackScreenshots
+                key={session}
                 value={screenshots}
                 onChange={setScreenshots}
-                onBusyChange={setBusy}
+                onBusyChange={(value) => {
+                  if (session === uploadEpoch.current) setBusy(value)
+                }}
               />
               <div className="flex flex-wrap gap-2 border-t pt-4">
                 <Button type="submit" disabled={busy}>
@@ -201,6 +220,7 @@ export function QuestionReportDialog({
                 </Button>
                 <Button
                   nativeButton={false}
+                  disabled={busy}
                   variant="ghost"
                   render={
                     <Link

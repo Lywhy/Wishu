@@ -1,0 +1,134 @@
+{
+  "$schema": "../question-bundle.schema.json",
+  "sectionId": "hono",
+  "subsectionId": "api-contracts",
+  "scope": "Валидация, тело Request, тестирование и типизированный клиент.",
+  "coverageGoals": [
+    {
+      "id": "hono-json-validation",
+      "title": "Как валидировать JSON-тело и получить проверенные данные в Hono?",
+      "description": "Типы описывают контракт, runtime-валидатор проверяет фактический ввод.",
+      "requiredDifficulties": ["Базовый"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "hono-request-body-once",
+      "title": "Почему чтение тела запроса в middleware требует осторожности?",
+      "description": "Назначайте явного владельца чтения тела и различайте исходные байты и объект.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "hono-request-tests",
+      "title": "Как проверить маршруты Hono без прослушивания сетевого порта?",
+      "description": "Тестируйте HTTP-контракт через приложение, а инфраструктуру - отдельным уровнем.",
+      "requiredDifficulties": ["Базовый"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "hono-rpc-contract",
+      "title": "Что даёт RPC-клиент Hono и почему тип AppType не заменяет runtime-проверки?",
+      "description": "RPC-тип ускоряет согласование кода, но не устраняет границы сети и доверия.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    }
+  ],
+  "questions": [
+    {
+      "id": "hono-json-validation",
+      "title": "Как валидировать JSON-тело и получить проверенные данные в Hono?",
+      "topic": "Hono",
+      "difficulty": "Базовый",
+      "summary": "Типы описывают контракт, runtime-валидатор проверяет фактический ввод.",
+      "takeaway": "Типы описывают контракт, runtime-валидатор проверяет фактический ввод.",
+      "moduleId": "hono",
+      "order": 0,
+      "popular": false,
+      "answerFile": "answers/hono/hono-json-validation.md",
+      "editorial": {
+        "learningGoal": "Как валидировать JSON-тело и получить проверенные данные в Hono?",
+        "keywords": ["hono", "Контракты и проверка API", "hono-json-validation"],
+        "kind": "explanation",
+        "reviewStatus": "ready",
+        "goalIds": ["hono-json-validation"],
+        "relatedQuestionIds": [],
+        "priority": "core",
+        "sourceRefs": ["ref-bcf3046da7d47cd2"]
+      }
+    },
+    {
+      "id": "hono-request-body-once",
+      "title": "Почему чтение тела запроса в middleware требует осторожности?",
+      "topic": "Hono",
+      "difficulty": "Средний",
+      "summary": "Назначайте явного владельца чтения тела и различайте исходные байты и объект.",
+      "takeaway": "Назначайте явного владельца чтения тела и различайте исходные байты и объект.",
+      "moduleId": "hono",
+      "order": 1,
+      "popular": false,
+      "answerFile": "answers/hono/hono-request-body-once.md",
+      "editorial": {
+        "learningGoal": "Почему чтение тела запроса в middleware требует осторожности?",
+        "keywords": ["hono", "Контракты и проверка API", "hono-request-body-once"],
+        "kind": "explanation",
+        "reviewStatus": "ready",
+        "goalIds": ["hono-request-body-once"],
+        "relatedQuestionIds": ["hono-json-validation"],
+        "priority": "core",
+        "sourceRefs": ["ref-e2fbda20d3e7c897"]
+      }
+    },
+    {
+      "id": "hono-request-tests",
+      "title": "Как проверить маршруты Hono без прослушивания сетевого порта?",
+      "topic": "Hono",
+      "difficulty": "Базовый",
+      "summary": "Тестируйте HTTP-контракт через приложение, а инфраструктуру - отдельным уровнем.",
+      "takeaway": "Тестируйте HTTP-контракт через приложение, а инфраструктуру - отдельным уровнем.",
+      "moduleId": "hono",
+      "order": 2,
+      "popular": false,
+      "answerFile": "answers/hono/hono-request-tests.md",
+      "editorial": {
+        "learningGoal": "Как проверить маршруты Hono без прослушивания сетевого порта?",
+        "keywords": ["hono", "Контракты и проверка API", "hono-request-tests"],
+        "kind": "explanation",
+        "reviewStatus": "ready",
+        "goalIds": ["hono-request-tests"],
+        "relatedQuestionIds": ["react-test-network-contract", "hono-request-body-once"],
+        "priority": "core",
+        "sourceRefs": ["ref-2a0e4577fc4a6de4"]
+      }
+    },
+    {
+      "id": "hono-rpc-contract",
+      "title": "Что даёт RPC-клиент Hono и почему тип AppType не заменяет runtime-проверки?",
+      "topic": "Hono",
+      "difficulty": "Средний",
+      "summary": "RPC-тип ускоряет согласование кода, но не устраняет границы сети и доверия.",
+      "takeaway": "RPC-тип ускоряет согласование кода, но не устраняет границы сети и доверия.",
+      "moduleId": "hono",
+      "order": 3,
+      "popular": false,
+      "answerFile": "answers/hono/hono-rpc-contract.md",
+      "editorial": {
+        "learningGoal": "Что даёт RPC-клиент Hono и почему тип AppType не заменяет runtime-проверки?",
+        "keywords": ["hono", "Контракты и проверка API", "hono-rpc-contract"],
+        "kind": "explanation",
+        "reviewStatus": "ready",
+        "goalIds": ["hono-rpc-contract"],
+        "relatedQuestionIds": ["hono-request-tests"],
+        "priority": "core",
+        "sourceRefs": ["ref-5607e8e300cc298f"]
+      }
+    }
+  ]
+}

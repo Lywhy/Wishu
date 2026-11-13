@@ -1,4 +1,4 @@
-import { SlidersHorizontal } from "lucide-react"
+import { Settings, Sun, Moon } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import {
   Sheet,
@@ -10,9 +10,13 @@ import {
 import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group"
 import { useInterfaceSettings } from "@/stores/interface-settings"
 import { LocalSaveNotice } from "@/components/experience/local-save-notice"
+import { useTheme } from "@/lib/theme-context"
+import { interfacePalettes, isInterfacePalette } from "@/lib/interface-palettes"
+import { Badge } from "@/components/ui/badge"
 
 export function InterfaceSettings() {
   const settings = useInterfaceSettings()
+  const { theme, setTheme } = useTheme()
   return (
     <Sheet>
       <SheetTrigger
@@ -25,11 +29,75 @@ export function InterfaceSettings() {
           />
         }
       >
-        <SlidersHorizontal aria-hidden="true" />
+        <Settings aria-hidden="true" />
       </SheetTrigger>
       <SheetContent>
         <SheetTitle>Вид и чтение</SheetTitle>
         <SheetDescription>Настройте фон и оформление ответов и лекций под себя.</SheetDescription>
+        <div className="grid grid-cols-2 items-start gap-3">
+          <div className="space-y-3">
+            <p className="text-sm font-medium" id="interface-mode-label">
+              Режим
+            </p>
+            <Button
+              className="w-full"
+              variant="outline"
+              aria-label={theme === "dark" ? "Включить светлый режим" : "Включить тёмный режим"}
+              onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+            >
+              {theme === "dark" ? <Moon aria-hidden="true" /> : <Sun aria-hidden="true" />}
+              {theme === "dark" ? "Тёмный" : "Светлый"}
+            </Button>
+          </div>
+          <div className="space-y-3">
+            <p className="text-sm font-medium" id="interface-language-label">
+              Язык
+            </p>
+            <Button
+              className="w-full"
+              variant="outline"
+              disabled
+              aria-labelledby="interface-language-label"
+              aria-describedby="interface-language-status"
+            >
+              Русский
+            </Button>
+            <Badge
+              id="interface-language-status"
+              variant="outline"
+              className="text-muted-foreground"
+            >
+              В разработке
+            </Badge>
+          </div>
+        </div>
+        <fieldset className="space-y-3 border-t pt-4">
+          <legend className="text-sm font-medium">Цветовая тема</legend>
+          <ToggleGroup
+            aria-label="Цветовая тема"
+            variant="outline"
+            className="grid w-full grid-cols-2"
+            value={[settings.palette]}
+            onValueChange={(values) => {
+              const value = values[0]
+              if (value && isInterfacePalette(value)) settings.setPalette(value)
+            }}
+          >
+            {interfacePalettes.map((palette) => (
+              <ToggleGroupItem
+                key={palette.id}
+                value={palette.id}
+                className="h-12 justify-start gap-2 px-3"
+              >
+                <span
+                  aria-hidden="true"
+                  className={`size-3 shrink-0 rounded-full ${palette.swatch}`}
+                />
+                {palette.title}
+              </ToggleGroupItem>
+            ))}
+          </ToggleGroup>
+        </fieldset>
         <fieldset className="space-y-3">
           <legend className="mb-3 text-sm font-medium">Фон сайта</legend>
           <ToggleGroup
@@ -100,7 +168,7 @@ export function InterfaceSettings() {
             материале.
           </p>
         </div>
-        <LocalSaveNotice area="interface" />
+        <LocalSaveNotice area="interface" errorsOnly />
         <Button variant="outline" onClick={settings.reset}>
           Вернуть стандартный вид
         </Button>

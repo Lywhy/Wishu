@@ -8,11 +8,10 @@ import { SessionBanner } from "@/pages/study-session-page"
 import { CatalogScrollRestoration } from "@/components/experience/catalog-scroll-restoration"
 import { useFeedbackDrafts } from "@/stores/feedback-drafts"
 import { feedbackPageForPath } from "@/lib/platform-feedback"
-import { MessageSquare, Moon, Sun } from "lucide-react"
+import { MessageSquare } from "lucide-react"
 import { Link, NavLink, Outlet, useLocation } from "react-router-dom"
 import { Button } from "@/components/ui/button"
 import { cn } from "@/lib/utils"
-import { useTheme } from "@/lib/theme-context"
 
 const navigation = [
   { to: "/learn", title: "Обучение" },
@@ -22,7 +21,6 @@ const navigation = [
 ]
 
 export function AppLayout() {
-  const { theme, setTheme } = useTheme()
   const questionSearch = useQuestionExperience(
     (state) => state.listVisits["/questions"]?.search ?? "",
   )
@@ -104,15 +102,6 @@ export function AppLayout() {
               <MessageSquare aria-hidden="true" />
             </Button>
             <InterfaceSettings />
-            <Button
-              variant="outline"
-              size="icon"
-              onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-              aria-label={theme === "dark" ? "Включить светлую тему" : "Включить тёмную тему"}
-              title={theme === "dark" ? "Включить светлую тему" : "Включить тёмную тему"}
-            >
-              {theme === "dark" ? <Sun aria-hidden="true" /> : <Moon aria-hidden="true" />}
-            </Button>
           </div>
         </div>
       </header>

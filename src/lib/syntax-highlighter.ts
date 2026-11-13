@@ -8,6 +8,7 @@ import html from "shiki/langs/html.mjs"
 import css from "shiki/langs/css.mjs"
 import json from "shiki/langs/json.mjs"
 import sql from "shiki/langs/sql.mjs"
+import go from "shiki/langs/go.mjs"
 import java from "shiki/langs/java.mjs"
 import vue from "shiki/langs/vue.mjs"
 import dockerfile from "shiki/langs/dockerfile.mjs"
@@ -24,6 +25,7 @@ export type CodeLanguage =
   | "css"
   | "json"
   | "sql"
+  | "go"
   | "java"
   | "vue"
   | "dockerfile"
@@ -45,6 +47,7 @@ export function highlightCode(code: string, language: CodeLanguage, theme: "ligh
       json,
       sql,
       java,
+      go,
       vue,
       dockerfile,
       shellscript,
@@ -68,6 +71,8 @@ const languageAliases: Record<string, CodeLanguage> = {
   json: "json",
   sql: "sql",
   java: "java",
+  go: "go",
+  golang: "go",
   vue: "vue",
   dockerfile: "dockerfile",
   shellscript: "shellscript",
@@ -88,6 +93,8 @@ export function codeLanguageFor(topic: string, code: string, languageHint?: stri
   }
   if (topic === "React" || topic === "Next.js") return "tsx"
   if (topic === "TypeScript" || topic === "NestJS") return "typescript"
+  if (topic === "Go") return "go"
+  if (topic === "Hono") return "typescript"
   if (topic === "Java") return "java"
   if (topic === "Vue") return code.trimStart().startsWith("<") ? "vue" : "javascript"
   if (topic === "Git" || topic === "Redis") return "shellscript"

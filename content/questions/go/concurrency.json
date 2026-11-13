@@ -1,0 +1,165 @@
+{
+  "$schema": "../question-bundle.schema.json",
+  "sectionId": "go",
+  "subsectionId": "concurrency",
+  "scope": "Goroutines, каналы, отмена, синхронизация и области переменных.",
+  "coverageGoals": [
+    {
+      "id": "go-goroutine-lifetime",
+      "title": "Что такое goroutine и как управлять её временем жизни?",
+      "description": "Каждый запуск требует понятного пути завершения.",
+      "requiredDifficulties": ["Базовый"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "go-channel-select",
+      "title": "Чем отличаются буферизованный канал, закрытие канала и select?",
+      "description": "Согласуйте владение закрытием и не путайте сигнал завершения с нулевым значением.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "go-context-cancellation",
+      "title": "Как context.Context передаёт отмену и deadline в Go?",
+      "description": "Отмена работает как договор между участниками операции.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "go-mutex-waitgroup",
+      "title": "Зачем нужны Mutex и WaitGroup и почему это разные задачи?",
+      "description": "Согласованность данных и завершение работ требуют разных механизмов.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "go-loop-variables",
+      "title": "Как изменился захват переменных цикла в Go 1.22?",
+      "description": "Анализ захвата начинается с версии языка и владельца переменной.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    }
+  ],
+  "questions": [
+    {
+      "id": "go-goroutine-lifetime",
+      "title": "Что такое goroutine и как управлять её временем жизни?",
+      "topic": "Go",
+      "difficulty": "Базовый",
+      "summary": "Каждый запуск требует понятного пути завершения.",
+      "takeaway": "Каждый запуск требует понятного пути завершения.",
+      "moduleId": "go",
+      "order": 0,
+      "popular": false,
+      "answerFile": "answers/go/go-goroutine-lifetime.md",
+      "editorial": {
+        "learningGoal": "Что такое goroutine и как управлять её временем жизни?",
+        "keywords": ["go", "Конкурентность", "go-goroutine-lifetime"],
+        "kind": "explanation",
+        "reviewStatus": "ready",
+        "goalIds": ["go-goroutine-lifetime"],
+        "relatedQuestionIds": [],
+        "priority": "core",
+        "sourceRefs": ["ref-5a0f1a5799f8b2a8"]
+      }
+    },
+    {
+      "id": "go-channel-select",
+      "title": "Чем отличаются буферизованный канал, закрытие канала и select?",
+      "topic": "Go",
+      "difficulty": "Средний",
+      "summary": "Согласуйте владение закрытием и не путайте сигнал завершения с нулевым значением.",
+      "takeaway": "Согласуйте владение закрытием и не путайте сигнал завершения с нулевым значением.",
+      "moduleId": "go",
+      "order": 1,
+      "popular": false,
+      "answerFile": "answers/go/go-channel-select.md",
+      "editorial": {
+        "learningGoal": "Чем отличаются буферизованный канал, закрытие канала и select?",
+        "keywords": ["go", "Конкурентность", "go-channel-select"],
+        "kind": "explanation",
+        "reviewStatus": "ready",
+        "goalIds": ["go-channel-select"],
+        "relatedQuestionIds": ["go-goroutine-lifetime"],
+        "priority": "core",
+        "sourceRefs": ["ref-f36bc12bc70b0b5e"]
+      }
+    },
+    {
+      "id": "go-context-cancellation",
+      "title": "Как context.Context передаёт отмену и deadline в Go?",
+      "topic": "Go",
+      "difficulty": "Средний",
+      "summary": "Отмена работает как договор между участниками операции.",
+      "takeaway": "Отмена работает как договор между участниками операции.",
+      "moduleId": "go",
+      "order": 2,
+      "popular": false,
+      "answerFile": "answers/go/go-context-cancellation.md",
+      "editorial": {
+        "learningGoal": "Как context.Context передаёт отмену и deadline в Go?",
+        "keywords": ["go", "Конкурентность", "go-context-cancellation"],
+        "kind": "explanation",
+        "reviewStatus": "ready",
+        "goalIds": ["go-context-cancellation"],
+        "relatedQuestionIds": ["go-channel-select"],
+        "priority": "core",
+        "sourceRefs": ["ref-9f4585eb17376bb2"]
+      }
+    },
+    {
+      "id": "go-mutex-waitgroup",
+      "title": "Зачем нужны Mutex и WaitGroup и почему это разные задачи?",
+      "topic": "Go",
+      "difficulty": "Средний",
+      "summary": "Согласованность данных и завершение работ требуют разных механизмов.",
+      "takeaway": "Согласованность данных и завершение работ требуют разных механизмов.",
+      "moduleId": "go",
+      "order": 3,
+      "popular": false,
+      "answerFile": "answers/go/go-mutex-waitgroup.md",
+      "editorial": {
+        "learningGoal": "Зачем нужны Mutex и WaitGroup и почему это разные задачи?",
+        "keywords": ["go", "Конкурентность", "go-mutex-waitgroup"],
+        "kind": "explanation",
+        "reviewStatus": "ready",
+        "goalIds": ["go-mutex-waitgroup"],
+        "relatedQuestionIds": ["go-context-cancellation"],
+        "priority": "core",
+        "sourceRefs": ["ref-280b2212d91119b5"]
+      }
+    },
+    {
+      "id": "go-loop-variables",
+      "title": "Как изменился захват переменных цикла в Go 1.22?",
+      "topic": "Go",
+      "difficulty": "Средний",
+      "summary": "Анализ захвата начинается с версии языка и владельца переменной.",
+      "takeaway": "Анализ захвата начинается с версии языка и владельца переменной.",
+      "moduleId": "go",
+      "order": 4,
+      "popular": false,
+      "answerFile": "answers/go/go-loop-variables.md",
+      "editorial": {
+        "learningGoal": "Как изменился захват переменных цикла в Go 1.22?",
+        "keywords": ["go", "Конкурентность", "go-loop-variables"],
+        "kind": "explanation",
+        "reviewStatus": "ready",
+        "goalIds": ["go-loop-variables"],
+        "relatedQuestionIds": ["go-mutex-waitgroup"],
+        "priority": "core",
+        "sourceRefs": ["ref-9c90a4a8d65bb595"]
+      }
+    }
+  ]
+}

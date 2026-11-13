@@ -1,0 +1,165 @@
+{
+  "$schema": "../question-bundle.schema.json",
+  "sectionId": "go",
+  "subsectionId": "fundamentals",
+  "scope": "Модули, объявления, функции, ошибки и defer.",
+  "coverageGoals": [
+    {
+      "id": "go-module-package",
+      "title": "Чем модуль Go отличается от пакета?",
+      "description": "Пакет организует код, модуль - версионирование и зависимости.",
+      "requiredDifficulties": ["Базовый"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "go-zero-declaration",
+      "title": "Как работают var, := и нулевые значения в Go?",
+      "description": "Нулевое значение определено типом; := также влияет на область видимости.",
+      "requiredDifficulties": ["Базовый"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "go-functions-results",
+      "title": "Как функции Go возвращают несколько значений и зачем возвращать error отдельно?",
+      "description": "Несколько результатов делают исход явным, но требуют обработки на стороне вызова.",
+      "requiredDifficulties": ["Базовый"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "go-errors-wrap",
+      "title": "Как оборачивать ошибки Go и проверять их через errors.Is и errors.As?",
+      "description": "Сохраняйте причину ошибки и отделяйте её идентичность от формулировки.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "go-defer-order",
+      "title": "Когда выполняется defer и когда вычисляются его аргументы?",
+      "description": "Defer привязан к функции, а захват аргумента и переменной - разные механизмы.",
+      "requiredDifficulties": ["Базовый"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    }
+  ],
+  "questions": [
+    {
+      "id": "go-module-package",
+      "title": "Чем модуль Go отличается от пакета?",
+      "topic": "Go",
+      "difficulty": "Базовый",
+      "summary": "Пакет организует код, модуль - версионирование и зависимости.",
+      "takeaway": "Пакет организует код, модуль - версионирование и зависимости.",
+      "moduleId": "go",
+      "order": 0,
+      "popular": false,
+      "answerFile": "answers/go/go-module-package.md",
+      "editorial": {
+        "learningGoal": "Чем модуль Go отличается от пакета?",
+        "keywords": ["go", "Основы Go", "go-module-package"],
+        "kind": "explanation",
+        "reviewStatus": "ready",
+        "goalIds": ["go-module-package"],
+        "relatedQuestionIds": [],
+        "priority": "core",
+        "sourceRefs": ["ref-d2e3346738637265"]
+      }
+    },
+    {
+      "id": "go-zero-declaration",
+      "title": "Как работают var, := и нулевые значения в Go?",
+      "topic": "Go",
+      "difficulty": "Базовый",
+      "summary": "Нулевое значение определено типом; := также влияет на область видимости.",
+      "takeaway": "Нулевое значение определено типом; := также влияет на область видимости.",
+      "moduleId": "go",
+      "order": 1,
+      "popular": false,
+      "answerFile": "answers/go/go-zero-declaration.md",
+      "editorial": {
+        "learningGoal": "Как работают var, := и нулевые значения в Go?",
+        "keywords": ["go", "Основы Go", "go-zero-declaration"],
+        "kind": "explanation",
+        "reviewStatus": "ready",
+        "goalIds": ["go-zero-declaration"],
+        "relatedQuestionIds": ["go-module-package"],
+        "priority": "core",
+        "sourceRefs": ["ref-57b12584701c06bc"]
+      }
+    },
+    {
+      "id": "go-functions-results",
+      "title": "Как функции Go возвращают несколько значений и зачем возвращать error отдельно?",
+      "topic": "Go",
+      "difficulty": "Базовый",
+      "summary": "Несколько результатов делают исход явным, но требуют обработки на стороне вызова.",
+      "takeaway": "Несколько результатов делают исход явным, но требуют обработки на стороне вызова.",
+      "moduleId": "go",
+      "order": 2,
+      "popular": false,
+      "answerFile": "answers/go/go-functions-results.md",
+      "editorial": {
+        "learningGoal": "Как функции Go возвращают несколько значений и зачем возвращать error отдельно?",
+        "keywords": ["go", "Основы Go", "go-functions-results"],
+        "kind": "explanation",
+        "reviewStatus": "ready",
+        "goalIds": ["go-functions-results"],
+        "relatedQuestionIds": ["go-zero-declaration"],
+        "priority": "core",
+        "sourceRefs": ["ref-9073c233be3931aa"]
+      }
+    },
+    {
+      "id": "go-errors-wrap",
+      "title": "Как оборачивать ошибки Go и проверять их через errors.Is и errors.As?",
+      "topic": "Go",
+      "difficulty": "Средний",
+      "summary": "Сохраняйте причину ошибки и отделяйте её идентичность от формулировки.",
+      "takeaway": "Сохраняйте причину ошибки и отделяйте её идентичность от формулировки.",
+      "moduleId": "go",
+      "order": 3,
+      "popular": false,
+      "answerFile": "answers/go/go-errors-wrap.md",
+      "editorial": {
+        "learningGoal": "Как оборачивать ошибки Go и проверять их через errors.Is и errors.As?",
+        "keywords": ["go", "Основы Go", "go-errors-wrap"],
+        "kind": "explanation",
+        "reviewStatus": "ready",
+        "goalIds": ["go-errors-wrap"],
+        "relatedQuestionIds": ["go-functions-results"],
+        "priority": "core",
+        "sourceRefs": ["ref-f63de84edb6d2d0e"]
+      }
+    },
+    {
+      "id": "go-defer-order",
+      "title": "Когда выполняется defer и когда вычисляются его аргументы?",
+      "topic": "Go",
+      "difficulty": "Базовый",
+      "summary": "Defer привязан к функции, а захват аргумента и переменной - разные механизмы.",
+      "takeaway": "Defer привязан к функции, а захват аргумента и переменной - разные механизмы.",
+      "moduleId": "go",
+      "order": 4,
+      "popular": false,
+      "answerFile": "answers/go/go-defer-order.md",
+      "editorial": {
+        "learningGoal": "Когда выполняется defer и когда вычисляются его аргументы?",
+        "keywords": ["go", "Основы Go", "go-defer-order"],
+        "kind": "explanation",
+        "reviewStatus": "ready",
+        "goalIds": ["go-defer-order"],
+        "relatedQuestionIds": ["go-errors-wrap"],
+        "priority": "core",
+        "sourceRefs": ["ref-b1e074df967b741c"]
+      }
+    }
+  ]
+}

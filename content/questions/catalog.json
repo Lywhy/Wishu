@@ -25,6 +25,12 @@
       "title": "Базы данных",
       "description": "Запросы, хранение и организация данных.",
       "order": 3
+    },
+    {
+      "id": "design",
+      "title": "Дизайн",
+      "description": "Инструменты проектирования интерфейсов и совместной работы.",
+      "order": 4
     }
   ],
   "sections": [
@@ -197,6 +203,36 @@
       "mark": "RD",
       "order": 16,
       "inDevelopment": false
+    },
+    {
+      "id": "hono",
+      "title": "Hono",
+      "description": "Лёгкие HTTP-приложения на JavaScript и TypeScript: маршруты, middleware и API.",
+      "groupId": "backend",
+      "moduleId": "hono",
+      "mark": "HO",
+      "order": 17,
+      "inDevelopment": false
+    },
+    {
+      "id": "go",
+      "title": "Go",
+      "description": "Основы языка, типы, конкурентность и серверные HTTP-сервисы.",
+      "groupId": "backend",
+      "moduleId": "go",
+      "mark": "GO",
+      "order": 18,
+      "inDevelopment": false
+    },
+    {
+      "id": "figma",
+      "title": "Figma",
+      "description": "Макеты, компоненты и совместная работа над дизайном интерфейсов.",
+      "groupId": "design",
+      "moduleId": "figma",
+      "mark": "FI",
+      "order": 19,
+      "inDevelopment": true
     }
   ],
   "subsections": [
@@ -1046,6 +1082,55 @@
       "title": "Realtime, Workers и offline",
       "description": "Транспорты сообщений, восстановление соединения и Service Worker.",
       "order": 12
+    },
+    {
+      "id": "routing",
+      "sectionId": "hono",
+      "title": "Приложение и маршруты",
+      "description": "Web API, запуск в Node.js, параметры и ответы.",
+      "order": 0
+    },
+    {
+      "id": "middleware",
+      "sectionId": "hono",
+      "title": "Middleware и контекст",
+      "description": "Порядок обработки, данные запроса, ошибки и безопасность.",
+      "order": 1
+    },
+    {
+      "id": "api-contracts",
+      "sectionId": "hono",
+      "title": "Контракты и проверка API",
+      "description": "Валидация, тело Request, тестирование и типизированный клиент.",
+      "order": 2
+    },
+    {
+      "id": "fundamentals",
+      "sectionId": "go",
+      "title": "Основы Go",
+      "description": "Модули, объявления, функции, ошибки и defer.",
+      "order": 0
+    },
+    {
+      "id": "types-memory",
+      "sectionId": "go",
+      "title": "Типы и память",
+      "description": "Коллекции, указатели, интерфейсы и методы.",
+      "order": 1
+    },
+    {
+      "id": "concurrency",
+      "sectionId": "go",
+      "title": "Конкурентность",
+      "description": "Goroutines, каналы, отмена, синхронизация и области переменных.",
+      "order": 2
+    },
+    {
+      "id": "http-services",
+      "sectionId": "go",
+      "title": "HTTP и серверные сервисы",
+      "description": "Обработчики, тайм-ауты, JSON, транзакции и завершение.",
+      "order": 3
     }
   ]
 }

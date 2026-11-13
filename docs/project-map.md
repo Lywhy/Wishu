@@ -118,3 +118,5 @@ content/questions/catalog.json + <section>/<subsection>.json
 Редактура 300 ответов React, включая Redux и Zustand: [отчёт от 2026-11-12](react-answer-review-2026-11-12.md). Существующие ID сохранены.
 
 Быстрый отчёт о вопросе: components/feedback/question-report-dialog.tsx. Общая передача: feedback-delivery.tsx; скриншоты: feedback-screenshots.tsx, lib/feedback-attachments.ts, stores/feedback-attachments.ts (только память). Полевая валидация: lib/feedback-validation.ts. Меню передачи: ui/dropdown-menu.tsx (shadcn base-nova). [Поток и ограничения изображений](platform-feedback.md).
+
+Палитры и настройки: lib/interface-palettes.ts, stores/interface-settings.ts, components/experience/interface-settings.tsx, components/theme-provider.tsx, public/theme.js и токены index.css. ReUI File Upload: hooks/use-file-upload.ts. [Изменения 2026-11-13, контент Hono/Go и проверки](interface-palettes-and-backend-2026-11-13.md).

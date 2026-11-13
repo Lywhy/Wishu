@@ -478,6 +478,46 @@
       ]
     },
     {
+      "id": "hono",
+      "title": "Hono",
+      "subsections": [
+        {
+          "id": "routing",
+          "title": "Приложение и маршруты"
+        },
+        {
+          "id": "middleware",
+          "title": "Middleware и контекст"
+        },
+        {
+          "id": "api-contracts",
+          "title": "Контракты и проверка API"
+        }
+      ]
+    },
+    {
+      "id": "go",
+      "title": "Go",
+      "subsections": [
+        {
+          "id": "fundamentals",
+          "title": "Основы Go"
+        },
+        {
+          "id": "types-memory",
+          "title": "Типы и память"
+        },
+        {
+          "id": "concurrency",
+          "title": "Конкурентность"
+        },
+        {
+          "id": "http-services",
+          "title": "HTTP и серверные сервисы"
+        }
+      ]
+    },
+    {
       "id": "git",
       "title": "Git",
       "subsections": [
@@ -586,6 +626,11 @@
           "title": "Надёжность и обслуживание"
         }
       ]
+    },
+    {
+      "id": "figma",
+      "title": "Figma",
+      "subsections": []
     }
   ],
   "questions": [
@@ -20161,6 +20206,518 @@
       "priority": "core",
       "contentHash": "b15b97056de133c19a2389fd98bbfc95159fa661dc02c7ed4933e792af8a4820",
       "answerFile": "answers/java/java-thread-safety.md"
+    },
+    {
+      "id": "hono-runtime-fetch",
+      "title": "Что такое Hono и как его приложение запускается в Node.js?",
+      "learningGoal": "Что такое Hono и как его приложение запускается в Node.js?",
+      "sectionId": "hono",
+      "subsectionId": "routing",
+      "keywords": [
+        "hono",
+        "Приложение и маршруты",
+        "hono-runtime-fetch"
+      ],
+      "difficulty": "Базовый",
+      "priority": "core",
+      "contentHash": "6475a987cce0effd25975569db697ee9544622cc3cb8750fabd8a0eca4a52402",
+      "answerFile": "answers/hono/hono-runtime-fetch.md"
+    },
+    {
+      "id": "hono-params-query",
+      "title": "Как читать параметры пути и query-параметры в Hono?",
+      "learningGoal": "Как читать параметры пути и query-параметры в Hono?",
+      "sectionId": "hono",
+      "subsectionId": "routing",
+      "keywords": [
+        "hono",
+        "Приложение и маршруты",
+        "hono-params-query"
+      ],
+      "difficulty": "Базовый",
+      "priority": "core",
+      "contentHash": "500c24fb31c6847a5d379fe20f3f631cd044cc681e9b043b72eb724b254f4893",
+      "answerFile": "answers/hono/hono-params-query.md"
+    },
+    {
+      "id": "hono-response-contract",
+      "title": "Что должен возвращать обработчик Hono и как задать статус ответа?",
+      "learningGoal": "Что должен возвращать обработчик Hono и как задать статус ответа?",
+      "sectionId": "hono",
+      "subsectionId": "routing",
+      "keywords": [
+        "hono",
+        "Приложение и маршруты",
+        "hono-response-contract"
+      ],
+      "difficulty": "Базовый",
+      "priority": "core",
+      "contentHash": "5f200cae3fbb515310932ffa5b33d7da93dbec9611fc5dd7d1bf6701931c1616",
+      "answerFile": "answers/hono/hono-response-contract.md"
+    },
+    {
+      "id": "hono-route-composition",
+      "title": "Как разделять маршруты Hono по модулям?",
+      "learningGoal": "Как разделять маршруты Hono по модулям?",
+      "sectionId": "hono",
+      "subsectionId": "routing",
+      "keywords": [
+        "hono",
+        "Приложение и маршруты",
+        "hono-route-composition"
+      ],
+      "difficulty": "Базовый",
+      "priority": "core",
+      "contentHash": "d270b28c079d8de5de9c6e9d9f9b2035e25f03edac0226be3979ccb071f4b699",
+      "answerFile": "answers/hono/hono-route-composition.md"
+    },
+    {
+      "id": "hono-middleware-order",
+      "title": "Как работает await next() в middleware Hono?",
+      "learningGoal": "Как работает await next() в middleware Hono?",
+      "sectionId": "hono",
+      "subsectionId": "middleware",
+      "keywords": [
+        "hono",
+        "Middleware и контекст",
+        "hono-middleware-order"
+      ],
+      "difficulty": "Базовый",
+      "priority": "core",
+      "contentHash": "dd43a6ac6a495f0c8512c1fcd8eb85a356437445f46c14ce080751c60102ea8c",
+      "answerFile": "answers/hono/hono-middleware-order.md"
+    },
+    {
+      "id": "hono-request-variables",
+      "title": "Как передавать данные между middleware и обработчиком без глобальных переменных?",
+      "learningGoal": "Как передавать данные между middleware и обработчиком без глобальных переменных?",
+      "sectionId": "hono",
+      "subsectionId": "middleware",
+      "keywords": [
+        "hono",
+        "Middleware и контекст",
+        "hono-request-variables"
+      ],
+      "difficulty": "Средний",
+      "priority": "core",
+      "contentHash": "33fe47f4d59e350445a89d87cf028b90c15a4b4f3e0ffff0f244f785fddbd991",
+      "answerFile": "answers/hono/hono-request-variables.md"
+    },
+    {
+      "id": "hono-error-boundaries",
+      "title": "Чем onError отличается от notFound в Hono?",
+      "learningGoal": "Чем onError отличается от notFound в Hono?",
+      "sectionId": "hono",
+      "subsectionId": "middleware",
+      "keywords": [
+        "hono",
+        "Middleware и контекст",
+        "hono-error-boundaries"
+      ],
+      "difficulty": "Средний",
+      "priority": "core",
+      "contentHash": "93da01a33f3053bb2a0aa59adce0645257c2af1bd3934da07ec32c2b445ea527",
+      "answerFile": "answers/hono/hono-error-boundaries.md"
+    },
+    {
+      "id": "hono-cors-auth-boundary",
+      "title": "Почему CORS middleware в Hono не заменяет авторизацию?",
+      "learningGoal": "Почему CORS middleware в Hono не заменяет авторизацию?",
+      "sectionId": "hono",
+      "subsectionId": "middleware",
+      "keywords": [
+        "hono",
+        "Middleware и контекст",
+        "hono-cors-auth-boundary"
+      ],
+      "difficulty": "Средний",
+      "priority": "core",
+      "contentHash": "b7a00347df6828edf148055060ad951cec604575c8a517eb1d8d363604dd8192",
+      "answerFile": "answers/hono/hono-cors-auth-boundary.md"
+    },
+    {
+      "id": "hono-json-validation",
+      "title": "Как валидировать JSON-тело и получить проверенные данные в Hono?",
+      "learningGoal": "Как валидировать JSON-тело и получить проверенные данные в Hono?",
+      "sectionId": "hono",
+      "subsectionId": "api-contracts",
+      "keywords": [
+        "hono",
+        "Контракты и проверка API",
+        "hono-json-validation"
+      ],
+      "difficulty": "Базовый",
+      "priority": "core",
+      "contentHash": "d06152875fe861d7c794bef7190e5ffc431fa8e8049c12c13653155616d0c35b",
+      "answerFile": "answers/hono/hono-json-validation.md"
+    },
+    {
+      "id": "hono-request-body-once",
+      "title": "Почему чтение тела запроса в middleware требует осторожности?",
+      "learningGoal": "Почему чтение тела запроса в middleware требует осторожности?",
+      "sectionId": "hono",
+      "subsectionId": "api-contracts",
+      "keywords": [
+        "hono",
+        "Контракты и проверка API",
+        "hono-request-body-once"
+      ],
+      "difficulty": "Средний",
+      "priority": "core",
+      "contentHash": "1522c85c9312f8d490eded14ecaf938c77a216118f90ac71f33b76cb5aa84ba8",
+      "answerFile": "answers/hono/hono-request-body-once.md"
+    },
+    {
+      "id": "hono-request-tests",
+      "title": "Как проверить маршруты Hono без прослушивания сетевого порта?",
+      "learningGoal": "Как проверить маршруты Hono без прослушивания сетевого порта?",
+      "sectionId": "hono",
+      "subsectionId": "api-contracts",
+      "keywords": [
+        "hono",
+        "Контракты и проверка API",
+        "hono-request-tests"
+      ],
+      "difficulty": "Базовый",
+      "priority": "core",
+      "contentHash": "a2d0270c8f4cddf999b531de8a3395b5cdf3f209c2492150464cc7f07923a080",
+      "answerFile": "answers/hono/hono-request-tests.md"
+    },
+    {
+      "id": "hono-rpc-contract",
+      "title": "Что даёт RPC-клиент Hono и почему тип AppType не заменяет runtime-проверки?",
+      "learningGoal": "Что даёт RPC-клиент Hono и почему тип AppType не заменяет runtime-проверки?",
+      "sectionId": "hono",
+      "subsectionId": "api-contracts",
+      "keywords": [
+        "hono",
+        "Контракты и проверка API",
+        "hono-rpc-contract"
+      ],
+      "difficulty": "Средний",
+      "priority": "core",
+      "contentHash": "4d9a3e041d5c94cd781c52c11de3e202ba8352364eb8b89d7dd7e186aee9bce9",
+      "answerFile": "answers/hono/hono-rpc-contract.md"
+    },
+    {
+      "id": "go-module-package",
+      "title": "Чем модуль Go отличается от пакета?",
+      "learningGoal": "Чем модуль Go отличается от пакета?",
+      "sectionId": "go",
+      "subsectionId": "fundamentals",
+      "keywords": [
+        "go",
+        "Основы Go",
+        "go-module-package"
+      ],
+      "difficulty": "Базовый",
+      "priority": "core",
+      "contentHash": "6058aa35aa5d86bcc411f41d367ceeecffa844040d1176e0047dd769bf6276b0",
+      "answerFile": "answers/go/go-module-package.md"
+    },
+    {
+      "id": "go-zero-declaration",
+      "title": "Как работают var, := и нулевые значения в Go?",
+      "learningGoal": "Как работают var, := и нулевые значения в Go?",
+      "sectionId": "go",
+      "subsectionId": "fundamentals",
+      "keywords": [
+        "go",
+        "Основы Go",
+        "go-zero-declaration"
+      ],
+      "difficulty": "Базовый",
+      "priority": "core",
+      "contentHash": "b9474df3e619310e9afbf8614bb8ebe8dd5022c6bb786fde3d65a4b1491c6cfc",
+      "answerFile": "answers/go/go-zero-declaration.md"
+    },
+    {
+      "id": "go-functions-results",
+      "title": "Как функции Go возвращают несколько значений и зачем возвращать error отдельно?",
+      "learningGoal": "Как функции Go возвращают несколько значений и зачем возвращать error отдельно?",
+      "sectionId": "go",
+      "subsectionId": "fundamentals",
+      "keywords": [
+        "go",
+        "Основы Go",
+        "go-functions-results"
+      ],
+      "difficulty": "Базовый",
+      "priority": "core",
+      "contentHash": "de5ed13f8b7856e0dda27765fec8211aabb90108deefe427e1bc0d82bb84f4a1",
+      "answerFile": "answers/go/go-functions-results.md"
+    },
+    {
+      "id": "go-errors-wrap",
+      "title": "Как оборачивать ошибки Go и проверять их через errors.Is и errors.As?",
+      "learningGoal": "Как оборачивать ошибки Go и проверять их через errors.Is и errors.As?",
+      "sectionId": "go",
+      "subsectionId": "fundamentals",
+      "keywords": [
+        "go",
+        "Основы Go",
+        "go-errors-wrap"
+      ],
+      "difficulty": "Средний",
+      "priority": "core",
+      "contentHash": "f3e75fdc4d9a35b72448ea064071037fc7cfe3820412cbe1f156a1e054d546bb",
+      "answerFile": "answers/go/go-errors-wrap.md"
+    },
+    {
+      "id": "go-defer-order",
+      "title": "Когда выполняется defer и когда вычисляются его аргументы?",
+      "learningGoal": "Когда выполняется defer и когда вычисляются его аргументы?",
+      "sectionId": "go",
+      "subsectionId": "fundamentals",
+      "keywords": [
+        "go",
+        "Основы Go",
+        "go-defer-order"
+      ],
+      "difficulty": "Базовый",
+      "priority": "core",
+      "contentHash": "80e4f3fc09f96a1c32e9549e8996a2782332984b43a8f412cb16c41db9cfcd6b",
+      "answerFile": "answers/go/go-defer-order.md"
+    },
+    {
+      "id": "go-array-slice-alias",
+      "title": "Чем массив отличается от slice и почему append может изменить общую память?",
+      "learningGoal": "Чем массив отличается от slice и почему append может изменить общую память?",
+      "sectionId": "go",
+      "subsectionId": "types-memory",
+      "keywords": [
+        "go",
+        "Типы и память",
+        "go-array-slice-alias"
+      ],
+      "difficulty": "Базовый",
+      "priority": "core",
+      "contentHash": "26c77f6212c4a417c99b41fe1575f27751803fa4ef458e9788f3b8ea6c544f7c",
+      "answerFile": "answers/go/go-array-slice-alias.md"
+    },
+    {
+      "id": "go-map-contract",
+      "title": "Как работают nil map, проверка наличия ключа и конкурентный доступ?",
+      "learningGoal": "Как работают nil map, проверка наличия ключа и конкурентный доступ?",
+      "sectionId": "go",
+      "subsectionId": "types-memory",
+      "keywords": [
+        "go",
+        "Типы и память",
+        "go-map-contract"
+      ],
+      "difficulty": "Базовый",
+      "priority": "core",
+      "contentHash": "74088b9fbbd594e61a77c0b86bec3974d0c0b267597c3822b6997542040c05fc",
+      "answerFile": "answers/go/go-map-contract.md"
+    },
+    {
+      "id": "go-pointer-value",
+      "title": "Как указатели Go позволяют менять данные и означают ли они обязательное размещение в heap?",
+      "learningGoal": "Как указатели Go позволяют менять данные и означают ли они обязательное размещение в heap?",
+      "sectionId": "go",
+      "subsectionId": "types-memory",
+      "keywords": [
+        "go",
+        "Типы и память",
+        "go-pointer-value"
+      ],
+      "difficulty": "Базовый",
+      "priority": "core",
+      "contentHash": "7af4a054cbdb4ddf25446fc91625ea184a6f71bf038c6b029f852f8be20fcc95",
+      "answerFile": "answers/go/go-pointer-value.md"
+    },
+    {
+      "id": "go-interface-typed-nil",
+      "title": "Почему интерфейс Go с nil-указателем может быть не равен nil?",
+      "learningGoal": "Почему интерфейс Go с nil-указателем может быть не равен nil?",
+      "sectionId": "go",
+      "subsectionId": "types-memory",
+      "keywords": [
+        "go",
+        "Типы и память",
+        "go-interface-typed-nil"
+      ],
+      "difficulty": "Средний",
+      "priority": "core",
+      "contentHash": "086394ded8ac1ba4a4f74efc2cb641f9c7f3c5207e7dbb172f81011f811c67e4",
+      "answerFile": "answers/go/go-interface-typed-nil.md"
+    },
+    {
+      "id": "go-method-receivers",
+      "title": "Как value receiver и pointer receiver влияют на методы и реализацию интерфейса?",
+      "learningGoal": "Как value receiver и pointer receiver влияют на методы и реализацию интерфейса?",
+      "sectionId": "go",
+      "subsectionId": "types-memory",
+      "keywords": [
+        "go",
+        "Типы и память",
+        "go-method-receivers"
+      ],
+      "difficulty": "Средний",
+      "priority": "core",
+      "contentHash": "26a90d69aca032d67d1586f45379255732f871d906608700275540e7a5b49720",
+      "answerFile": "answers/go/go-method-receivers.md"
+    },
+    {
+      "id": "go-goroutine-lifetime",
+      "title": "Что такое goroutine и как управлять её временем жизни?",
+      "learningGoal": "Что такое goroutine и как управлять её временем жизни?",
+      "sectionId": "go",
+      "subsectionId": "concurrency",
+      "keywords": [
+        "go",
+        "Конкурентность",
+        "go-goroutine-lifetime"
+      ],
+      "difficulty": "Базовый",
+      "priority": "core",
+      "contentHash": "5c9103de7539707d243dcfcf7b8ce5991e3b7ee2edd0c0c9bb0931cb31848788",
+      "answerFile": "answers/go/go-goroutine-lifetime.md"
+    },
+    {
+      "id": "go-channel-select",
+      "title": "Чем отличаются буферизованный канал, закрытие канала и select?",
+      "learningGoal": "Чем отличаются буферизованный канал, закрытие канала и select?",
+      "sectionId": "go",
+      "subsectionId": "concurrency",
+      "keywords": [
+        "go",
+        "Конкурентность",
+        "go-channel-select"
+      ],
+      "difficulty": "Средний",
+      "priority": "core",
+      "contentHash": "876898cc4b17374de7d29c87317371653763a8689370bfed7d9f2d3a7c2a63f0",
+      "answerFile": "answers/go/go-channel-select.md"
+    },
+    {
+      "id": "go-context-cancellation",
+      "title": "Как context.Context передаёт отмену и deadline в Go?",
+      "learningGoal": "Как context.Context передаёт отмену и deadline в Go?",
+      "sectionId": "go",
+      "subsectionId": "concurrency",
+      "keywords": [
+        "go",
+        "Конкурентность",
+        "go-context-cancellation"
+      ],
+      "difficulty": "Средний",
+      "priority": "core",
+      "contentHash": "e3a3973f507fd708761568987449c01e7c45d8edba40c1387e89e99e914b7634",
+      "answerFile": "answers/go/go-context-cancellation.md"
+    },
+    {
+      "id": "go-mutex-waitgroup",
+      "title": "Зачем нужны Mutex и WaitGroup и почему это разные задачи?",
+      "learningGoal": "Зачем нужны Mutex и WaitGroup и почему это разные задачи?",
+      "sectionId": "go",
+      "subsectionId": "concurrency",
+      "keywords": [
+        "go",
+        "Конкурентность",
+        "go-mutex-waitgroup"
+      ],
+      "difficulty": "Средний",
+      "priority": "core",
+      "contentHash": "ec11f5d091e01118908d3547592e3e5da6140f1aeda5177d231a679ec209bb54",
+      "answerFile": "answers/go/go-mutex-waitgroup.md"
+    },
+    {
+      "id": "go-loop-variables",
+      "title": "Как изменился захват переменных цикла в Go 1.22?",
+      "learningGoal": "Как изменился захват переменных цикла в Go 1.22?",
+      "sectionId": "go",
+      "subsectionId": "concurrency",
+      "keywords": [
+        "go",
+        "Конкурентность",
+        "go-loop-variables"
+      ],
+      "difficulty": "Средний",
+      "priority": "core",
+      "contentHash": "e385cb08ad2fda9bc21a8dc5fa12a3fde728310fd87d5029c7c0011e2ba3826e",
+      "answerFile": "answers/go/go-loop-variables.md"
+    },
+    {
+      "id": "go-http-handler",
+      "title": "Как устроен HTTP-handler в стандартной библиотеке Go?",
+      "learningGoal": "Как устроен HTTP-handler в стандартной библиотеке Go?",
+      "sectionId": "go",
+      "subsectionId": "http-services",
+      "keywords": [
+        "go",
+        "HTTP и серверные сервисы",
+        "go-http-handler"
+      ],
+      "difficulty": "Базовый",
+      "priority": "core",
+      "contentHash": "b7205a9c8dbd10cc4844c268d850813ccdd9771f245e8b35b1829f19c5ff93f6",
+      "answerFile": "answers/go/go-http-handler.md"
+    },
+    {
+      "id": "go-http-timeout-context",
+      "title": "Чем тайм-аут HTTP-клиента отличается от отмены входящего запроса?",
+      "learningGoal": "Чем тайм-аут HTTP-клиента отличается от отмены входящего запроса?",
+      "sectionId": "go",
+      "subsectionId": "http-services",
+      "keywords": [
+        "go",
+        "HTTP и серверные сервисы",
+        "go-http-timeout-context"
+      ],
+      "difficulty": "Средний",
+      "priority": "core",
+      "contentHash": "f2268a40f5cee480fa36b2a00df08920cd42d51c68544a5ee33b36ecac32faa7",
+      "answerFile": "answers/go/go-http-timeout-context.md"
+    },
+    {
+      "id": "go-json-http-validation",
+      "title": "Почему успешный JSON Decode в Go не равен валидации запроса?",
+      "learningGoal": "Почему успешный JSON Decode в Go не равен валидации запроса?",
+      "sectionId": "go",
+      "subsectionId": "http-services",
+      "keywords": [
+        "go",
+        "HTTP и серверные сервисы",
+        "go-json-http-validation"
+      ],
+      "difficulty": "Средний",
+      "priority": "core",
+      "contentHash": "7610d0b019f54e27dbc8609f7d330866726e30072cd5c5b77bc949592682b9f4",
+      "answerFile": "answers/go/go-json-http-validation.md"
+    },
+    {
+      "id": "go-sql-transaction",
+      "title": "Как database/sql связывает транзакцию и Context?",
+      "learningGoal": "Как database/sql связывает транзакцию и Context?",
+      "sectionId": "go",
+      "subsectionId": "http-services",
+      "keywords": [
+        "go",
+        "HTTP и серверные сервисы",
+        "go-sql-transaction"
+      ],
+      "difficulty": "Средний",
+      "priority": "core",
+      "contentHash": "d2b3db89547b0b4c9a740fc38e537010ead49cfce154cff5e62464d1ab3d17a3",
+      "answerFile": "answers/go/go-sql-transaction.md"
+    },
+    {
+      "id": "go-http-graceful-shutdown",
+      "title": "Как корректно завершить HTTP-сервер Go?",
+      "learningGoal": "Как корректно завершить HTTP-сервер Go?",
+      "sectionId": "go",
+      "subsectionId": "http-services",
+      "keywords": [
+        "go",
+        "HTTP и серверные сервисы",
+        "go-http-graceful-shutdown"
+      ],
+      "difficulty": "Средний",
+      "priority": "core",
+      "contentHash": "2b813e56f8eaf337931db86782fce29136567d585630f707bd6f53077efe7a16",
+      "answerFile": "answers/go/go-http-graceful-shutdown.md"
     },
     {
       "id": "git-index",
