@@ -1,0 +1,58 @@
+{
+  "schemaVersion": 1,
+  "id": "vue-foundations-20261113-reactivity",
+  "title": "Vue 3: Реактивность",
+  "sectionId": "vue",
+  "subsectionId": "reactivity",
+  "currentPass": "complete",
+  "goalIds": [
+    "core",
+    "vue-ref-reactive",
+    "vue-computed",
+    "vue-destructure",
+    "vue-dependency-tracking",
+    "vue-ref-unwrapping",
+    "vue-shallow-state",
+    "vue-readonly-raw",
+    "vue-next-tick"
+  ],
+  "questionIds": [
+    "vue-ref-reactive",
+    "vue-computed",
+    "vue-destructure",
+    "vue-dependency-tracking",
+    "vue-ref-unwrapping",
+    "vue-shallow-state",
+    "vue-readonly-raw",
+    "vue-next-tick"
+  ],
+  "scopePass": {
+    "status": "complete",
+    "remaining": []
+  },
+  "answerPass": {
+    "status": "complete",
+    "remaining": []
+  },
+  "baseline": [
+    {
+      "id": "vue-ref-reactive",
+      "title": "Чем ref отличается от reactive?",
+      "contentHash": "ec42098525ba06f99dac373acd8814660cfda6df0e9adecab1eafdf57bbfb389"
+    },
+    {
+      "id": "vue-computed",
+      "title": "Чем computed отличается от метода в шаблоне?",
+      "contentHash": "85dcac807f98cee289e2b5a8be0c23fd473c7e4458f8db2f5ebbe5306bea9939"
+    },
+    {
+      "id": "vue-destructure",
+      "title": "Когда деструктуризация reactive теряет реактивную связь?",
+      "contentHash": "10d089026652083c97b6895e00dae89e7c3264628bb9bd335d9433e997bc1bea"
+    }
+  ],
+  "notes": [
+    "Базовая матрица Vue 3. Vue 2, Nuxt, внутренности renderer и расширенные плагины вне пакета. Старые ответы сохранены целиком, к ним добавлены примеры и уточнения. Примеры не выполнялись.",
+    "Проверены форматирование, content:report (+48 ~12 -0, кандидатов дублей 0), content:build и полная content:check (1346 вопросов). Все 12 исходных ответов сохранены целиком; прежние карточки и порядок сохранены. Вопросы и структура вне Vue семантически не изменились. PostgreSQL, приложение и примеры не запускались."
+  ]
+}

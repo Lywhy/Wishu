@@ -1,0 +1,58 @@
+{
+  "schemaVersion": 1,
+  "id": "vue-foundations-20261113-communication",
+  "title": "Vue 3: Взаимодействие компонентов",
+  "sectionId": "vue",
+  "subsectionId": "communication",
+  "currentPass": "complete",
+  "goalIds": [
+    "core",
+    "vue-props-events",
+    "vue-v-model",
+    "vue-slots",
+    "vue-prop-contract",
+    "vue-component-events",
+    "vue-fallthrough-attrs",
+    "vue-provide-inject",
+    "vue-component-expose"
+  ],
+  "questionIds": [
+    "vue-props-events",
+    "vue-v-model",
+    "vue-slots",
+    "vue-prop-contract",
+    "vue-component-events",
+    "vue-fallthrough-attrs",
+    "vue-provide-inject",
+    "vue-component-expose"
+  ],
+  "scopePass": {
+    "status": "complete",
+    "remaining": []
+  },
+  "answerPass": {
+    "status": "complete",
+    "remaining": []
+  },
+  "baseline": [
+    {
+      "id": "vue-props-events",
+      "title": "Почему дочерний компонент не должен изменять props?",
+      "contentHash": "0b06cfd4a4939bd13ad94d3c8254ec92aff99bb698e4f84defe701bf011a1cfb"
+    },
+    {
+      "id": "vue-v-model",
+      "title": "Как устроен v-model у собственного компонента?",
+      "contentHash": "44a65c94702c12a3690870c2789c3ddc275ba6c9b9929554d20c66975a6e8791"
+    },
+    {
+      "id": "vue-slots",
+      "title": "Что передают обычные и scoped slots?",
+      "contentHash": "1abead2cb1f3b6f1f764b05ab4360380d4fd9c7b9a8edd377ae0644ead19c449"
+    }
+  ],
+  "notes": [
+    "Базовая матрица Vue 3. Vue 2, Nuxt, внутренности renderer и расширенные плагины вне пакета. Старые ответы сохранены целиком, к ним добавлены примеры и уточнения. Примеры не выполнялись.",
+    "Проверены форматирование, content:report (+48 ~12 -0, кандидатов дублей 0), content:build и полная content:check (1346 вопросов). Все 12 исходных ответов сохранены целиком; прежние карточки и порядок сохранены. Вопросы и структура вне Vue семантически не изменились. PostgreSQL, приложение и примеры не запускались."
+  ]
+}

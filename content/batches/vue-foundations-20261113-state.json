@@ -1,0 +1,36 @@
+{
+  "schemaVersion": 1,
+  "id": "vue-foundations-20261113-state",
+  "title": "Vue 3: Управление состоянием",
+  "sectionId": "vue",
+  "subsectionId": "state",
+  "currentPass": "complete",
+  "goalIds": [
+    "core",
+    "vue-state-ownership",
+    "vue-pinia-store",
+    "vue-pinia-refs",
+    "vue-pinia-actions-getters",
+    "vue-pinia-reset-persist"
+  ],
+  "questionIds": [
+    "vue-state-ownership",
+    "vue-pinia-store",
+    "vue-pinia-refs",
+    "vue-pinia-actions-getters",
+    "vue-pinia-reset-persist"
+  ],
+  "scopePass": {
+    "status": "complete",
+    "remaining": []
+  },
+  "answerPass": {
+    "status": "complete",
+    "remaining": []
+  },
+  "baseline": [],
+  "notes": [
+    "Базовая матрица Vue 3. Vue 2, Nuxt, внутренности renderer и расширенные плагины вне пакета. Старые ответы сохранены целиком, к ним добавлены примеры и уточнения. Примеры не выполнялись.",
+    "Проверены форматирование, content:report (+48 ~12 -0, кандидатов дублей 0), content:build и полная content:check (1346 вопросов). Все 12 исходных ответов сохранены целиком; прежние карточки и порядок сохранены. Вопросы и структура вне Vue семантически не изменились. PostgreSQL, приложение и примеры не запускались."
+  ]
+}

@@ -1,0 +1,185 @@
+{
+  "$schema": "../question-bundle.schema.json",
+  "sectionId": "vue",
+  "subsectionId": "state",
+  "scope": "Владение состоянием и базовые контракты Pinia, reset и persistence.",
+  "coverageGoals": [
+    {
+      "id": "core",
+      "title": "Управление состоянием",
+      "description": "Владение состоянием и базовые контракты Pinia, reset и persistence.",
+      "requiredDifficulties": [],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": [
+        "vue-state-ownership",
+        "vue-pinia-store",
+        "vue-pinia-refs",
+        "vue-pinia-actions-getters",
+        "vue-pinia-reset-persist"
+      ]
+    },
+    {
+      "id": "vue-state-ownership",
+      "title": "Когда достаточно props/composable, а когда нужен Pinia store?",
+      "description": "Храните состояние у ближайшего владельца, способного обеспечить его контракт.",
+      "requiredDifficulties": ["Базовый"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "vue-pinia-store",
+      "title": "Как создать Pinia store и чем отличаются Option Store и Setup Store?",
+      "description": "DefineStore описывает хранилище, useStore получает его экземпляр в Pinia.",
+      "requiredDifficulties": ["Базовый"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "vue-pinia-refs",
+      "title": "Почему деструктуризация Pinia store теряет обновления и зачем storeToRefs?",
+      "description": "Состояние и getters извлекайте через storeToRefs, actions - напрямую.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "vue-pinia-actions-getters",
+      "title": "Чем getters отличаются от actions и как обновлять state Pinia?",
+      "description": "Getter вычисляет значение, action выполняет действие с понятным результатом.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "vue-pinia-reset-persist",
+      "title": "Сохраняет ли Pinia состояние после refresh и как делать reset?",
+      "description": "Persistence и reset нужно проектировать явно для каждого типа store.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    }
+  ],
+  "questions": [
+    {
+      "id": "vue-state-ownership",
+      "title": "Когда достаточно props/composable, а когда нужен Pinia store?",
+      "topic": "Управление состоянием",
+      "difficulty": "Базовый",
+      "summary": "Владение локальными, общими и серверными данными.",
+      "takeaway": "Храните состояние у ближайшего владельца, способного обеспечить его контракт.",
+      "moduleId": "vue",
+      "order": 0,
+      "popular": false,
+      "answerFile": "answers/vue/vue-state-ownership.md",
+      "pitfall": "Переносить все временные значения в глобальный store или считать каждый вызов composable общим хранилищем.",
+      "editorial": {
+        "learningGoal": "Храните состояние у ближайшего владельца, способного обеспечить его контракт.",
+        "keywords": ["Vue 3", "Управление состоянием", "state-ownership"],
+        "kind": "explanation",
+        "reviewStatus": "ready",
+        "goalIds": ["core", "vue-state-ownership"],
+        "relatedQuestionIds": [],
+        "priority": "core",
+        "sourceRefs": ["vue-state-ownership-docs"]
+      }
+    },
+    {
+      "id": "vue-pinia-store",
+      "title": "Как создать Pinia store и чем отличаются Option Store и Setup Store?",
+      "topic": "Управление состоянием",
+      "difficulty": "Базовый",
+      "summary": "createPinia, defineStore и состояние приложения.",
+      "takeaway": "DefineStore описывает хранилище, useStore получает его экземпляр в Pinia.",
+      "moduleId": "vue",
+      "order": 1,
+      "popular": false,
+      "answerFile": "answers/vue/vue-pinia-store.md",
+      "pitfall": "Считать defineStore самим экземпляром или прятать нужное Pinia состояние внутри Setup Store, не возвращая его.",
+      "editorial": {
+        "learningGoal": "DefineStore описывает хранилище, useStore получает его экземпляр в Pinia.",
+        "keywords": ["Vue 3", "Управление состоянием", "pinia-store"],
+        "kind": "explanation",
+        "reviewStatus": "ready",
+        "goalIds": ["core", "vue-pinia-store"],
+        "relatedQuestionIds": [],
+        "priority": "core",
+        "sourceRefs": ["vue-pinia-store-docs"]
+      }
+    },
+    {
+      "id": "vue-pinia-refs",
+      "title": "Почему деструктуризация Pinia store теряет обновления и зачем storeToRefs?",
+      "topic": "Управление состоянием",
+      "difficulty": "Средний",
+      "summary": "Реактивные свойства store и отдельно извлекаемые actions.",
+      "takeaway": "Состояние и getters извлекайте через storeToRefs, actions - напрямую.",
+      "moduleId": "vue",
+      "order": 2,
+      "popular": false,
+      "answerFile": "answers/vue/vue-pinia-refs.md",
+      "pitfall": "Передавать actions через storeToRefs или ожидать реактивности примитивного снимка из store.",
+      "editorial": {
+        "learningGoal": "Состояние и getters извлекайте через storeToRefs, actions - напрямую.",
+        "keywords": ["Vue 3", "Управление состоянием", "pinia-refs"],
+        "kind": "explanation",
+        "reviewStatus": "ready",
+        "goalIds": ["core", "vue-pinia-refs"],
+        "relatedQuestionIds": ["vue-destructure"],
+        "priority": "core",
+        "sourceRefs": ["vue-pinia-refs-docs"]
+      }
+    },
+    {
+      "id": "vue-pinia-actions-getters",
+      "title": "Чем getters отличаются от actions и как обновлять state Pinia?",
+      "topic": "Управление состоянием",
+      "difficulty": "Средний",
+      "summary": "Вычисления, команды и явные изменения состояния.",
+      "takeaway": "Getter вычисляет значение, action выполняет действие с понятным результатом.",
+      "moduleId": "vue",
+      "order": 3,
+      "popular": false,
+      "answerFile": "answers/vue/vue-pinia-actions-getters.md",
+      "pitfall": "Отправлять запрос из getter или считать async action защищённым от конкурентных вызовов автоматически.",
+      "editorial": {
+        "learningGoal": "Getter вычисляет значение, action выполняет действие с понятным результатом.",
+        "keywords": ["Vue 3", "Управление состоянием", "pinia-actions-getters"],
+        "kind": "explanation",
+        "reviewStatus": "ready",
+        "goalIds": ["core", "vue-pinia-actions-getters"],
+        "relatedQuestionIds": [],
+        "priority": "core",
+        "sourceRefs": ["vue-pinia-actions-getters-docs"]
+      }
+    },
+    {
+      "id": "vue-pinia-reset-persist",
+      "title": "Сохраняет ли Pinia состояние после refresh и как делать reset?",
+      "topic": "Управление состоянием",
+      "difficulty": "Средний",
+      "summary": "Сброс состояния, persistence и граница доверия storage.",
+      "takeaway": "Persistence и reset нужно проектировать явно для каждого типа store.",
+      "moduleId": "vue",
+      "order": 4,
+      "popular": false,
+      "answerFile": "answers/vue/vue-pinia-reset-persist.md",
+      "pitfall": "Ожидать встроенной persistence или хранить секреты в localStorage, считая store защищённым контейнером.",
+      "editorial": {
+        "learningGoal": "Persistence и reset нужно проектировать явно для каждого типа store.",
+        "keywords": ["Vue 3", "Управление состоянием", "pinia-reset-persist"],
+        "kind": "explanation",
+        "reviewStatus": "ready",
+        "goalIds": ["core", "vue-pinia-reset-persist"],
+        "relatedQuestionIds": [],
+        "priority": "core",
+        "sourceRefs": ["vue-pinia-reset-persist-docs"]
+      }
+    }
+  ]
+}

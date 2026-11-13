@@ -2,41 +2,95 @@
   "$schema": "../question-bundle.schema.json",
   "sectionId": "vue",
   "subsectionId": "reactivity",
-  "scope": "Ref, reactive и вычисляемые значения.",
+  "scope": "Ref/Proxy, зависимости, computed, деструктуризация, shallow/raw и очередь DOM.",
   "coverageGoals": [
     {
       "id": "core",
       "title": "Реактивность",
-      "description": "Обзор и взаимосвязи навыков: Ref, reactive и вычисляемые значения.",
+      "description": "Ref/Proxy, зависимости, computed, деструктуризация, shallow/raw и очередь DOM.",
       "requiredDifficulties": [],
-      "reviewed": false,
+      "reviewed": true,
       "priority": "core",
-      "relatedSkillIds": ["vue-ref-reactive", "vue-computed", "vue-destructure"]
+      "relatedSkillIds": [
+        "vue-ref-reactive",
+        "vue-computed",
+        "vue-destructure",
+        "vue-dependency-tracking",
+        "vue-ref-unwrapping",
+        "vue-shallow-state",
+        "vue-readonly-raw",
+        "vue-next-tick"
+      ]
     },
     {
       "id": "vue-ref-reactive",
       "title": "Чем ref отличается от reactive?",
-      "description": "Объяснить и применить правило с учётом его границ: Ref удобен для заменяемого значения, reactive - для реактивного объекта.",
+      "description": "Ref удобен для заменяемого значения, reactive - для объекта со стабильной ссылкой.",
       "requiredDifficulties": ["Базовый"],
-      "reviewed": false,
+      "reviewed": true,
       "priority": "core",
       "relatedSkillIds": []
     },
     {
       "id": "vue-computed",
       "title": "Чем computed отличается от метода в шаблоне?",
-      "description": "Объяснить и применить правило с учётом его границ: Computed хранит производное значение, а не выполняет команду.",
+      "description": "Computed описывает данные, а не выполняет команду.",
       "requiredDifficulties": ["Средний"],
-      "reviewed": false,
+      "reviewed": true,
       "priority": "core",
       "relatedSkillIds": []
     },
     {
       "id": "vue-destructure",
       "title": "Когда деструктуризация reactive теряет реактивную связь?",
-      "description": "Объяснить и применить правило с учётом его границ: Различайте копию значения и ссылку на реактивное свойство.",
+      "description": "Передавайте реактивный доступ к свойству, если нужны будущие изменения.",
       "requiredDifficulties": ["Средний"],
-      "reviewed": false,
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "vue-dependency-tracking",
+      "title": "Как Vue узнаёт, что нужно пересчитать computed или обновить компонент?",
+      "description": "Реактивность связывает выполненное чтение с активным эффектом.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "vue-ref-unwrapping",
+      "title": "Где ref разворачивается автоматически, а где нужен .value?",
+      "description": "Автоматическое разворачивание зависит от места доступа.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "vue-shallow-state",
+      "title": "Когда нужны shallowRef и shallowReactive?",
+      "description": "Shallow требует явного обновления на отслеживаемой границе.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "vue-readonly-raw",
+      "title": "Для чего нужны readonly, toRaw и markRaw?",
+      "description": "Readonly задаёт интерфейс доступа, raw API требуют контроля владения.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "vue-next-tick",
+      "title": "Почему DOM не меняется сразу после записи в ref и что гарантирует nextTick?",
+      "description": "NextTick ожидает обновления Vue, а не завершения всей асинхронной работы.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": true,
       "priority": "core",
       "relatedSkillIds": []
     }
@@ -53,16 +107,16 @@
       "moduleId": "vue",
       "order": 0,
       "popular": false,
-      "pitfall": "Передать примитив в reactive или потерять связь со свойством, извлекая его текущее примитивное значение. Для самостоятельного значения используйте ref.",
+      "pitfall": "Присваивать новый объект переменной reactive и ожидать переноса всех старых зависимостей.",
       "editorial": {
-        "learningGoal": "Объяснить и применить правило с учётом его границ: Ref удобен для заменяемого значения, reactive - для реактивного объекта.",
-        "keywords": ["Vue", "Реактивность"],
+        "learningGoal": "Ref удобен для заменяемого значения, reactive - для объекта со стабильной ссылкой.",
+        "keywords": ["Vue 3", "Реактивность", "ref-reactive"],
         "kind": "explanation",
-        "reviewStatus": "imported",
+        "reviewStatus": "ready",
         "goalIds": ["core", "vue-ref-reactive"],
         "relatedQuestionIds": [],
         "priority": "core",
-        "sourceRefs": []
+        "sourceRefs": ["vue-ref-reactive-docs"]
       },
       "answerFile": "answers/vue/vue-ref-reactive.md"
     },
@@ -78,16 +132,17 @@
       "order": 1,
       "popular": false,
       "editorial": {
-        "learningGoal": "Объяснить и применить правило с учётом его границ: Computed хранит производное значение, а не выполняет команду.",
-        "keywords": ["Vue", "Реактивность"],
+        "learningGoal": "Computed описывает данные, а не выполняет команду.",
+        "keywords": ["Vue 3", "Реактивность", "computed"],
         "kind": "explanation",
-        "reviewStatus": "imported",
+        "reviewStatus": "ready",
         "goalIds": ["core", "vue-computed"],
         "relatedQuestionIds": [],
         "priority": "core",
-        "sourceRefs": []
+        "sourceRefs": ["vue-computed-docs"]
       },
-      "answerFile": "answers/vue/vue-computed.md"
+      "answerFile": "answers/vue/vue-computed.md",
+      "pitfall": "Делать async getter и ожидать, что computed автоматически станет состоянием загрузки Promise."
     },
     {
       "id": "vue-destructure",
@@ -101,16 +156,132 @@
       "order": 2,
       "popular": false,
       "editorial": {
-        "learningGoal": "Объяснить и применить правило с учётом его границ: Различайте копию значения и ссылку на реактивное свойство.",
-        "keywords": ["Vue", "Реактивность"],
+        "learningGoal": "Передавайте реактивный доступ к свойству, если нужны будущие изменения.",
+        "keywords": ["Vue 3", "Реактивность", "destructure"],
         "kind": "explanation",
-        "reviewStatus": "imported",
+        "reviewStatus": "ready",
         "goalIds": ["core", "vue-destructure"],
         "relatedQuestionIds": [],
         "priority": "core",
-        "sourceRefs": []
+        "sourceRefs": ["vue-destructure-docs"]
       },
-      "answerFile": "answers/vue/vue-destructure.md"
+      "answerFile": "answers/vue/vue-destructure.md",
+      "pitfall": "Распространять компиляторную поддержку defineProps на обычный reactive или передавать в функцию уже прочитанный примитив."
+    },
+    {
+      "id": "vue-dependency-tracking",
+      "title": "Как Vue узнаёт, что нужно пересчитать computed или обновить компонент?",
+      "topic": "Реактивность",
+      "difficulty": "Средний",
+      "summary": "Отслеживание чтений и уведомление при записи.",
+      "takeaway": "Реактивность связывает выполненное чтение с активным эффектом.",
+      "moduleId": "vue",
+      "order": 3,
+      "popular": false,
+      "answerFile": "answers/vue/vue-dependency-tracking.md",
+      "pitfall": "Считать, что Vue статически наблюдает за всеми переменными файла или за любым присваиванием в JavaScript.",
+      "editorial": {
+        "learningGoal": "Реактивность связывает выполненное чтение с активным эффектом.",
+        "keywords": ["Vue 3", "Реактивность", "dependency-tracking"],
+        "kind": "explanation",
+        "reviewStatus": "ready",
+        "goalIds": ["core", "vue-dependency-tracking"],
+        "relatedQuestionIds": ["vue-computed"],
+        "priority": "core",
+        "sourceRefs": ["vue-dependency-tracking-docs"]
+      }
+    },
+    {
+      "id": "vue-ref-unwrapping",
+      "title": "Где ref разворачивается автоматически, а где нужен .value?",
+      "topic": "Реактивность",
+      "difficulty": "Средний",
+      "summary": "Шаблон верхнего уровня, свойства объектов и элементы коллекций.",
+      "takeaway": "Автоматическое разворачивание зависит от места доступа.",
+      "moduleId": "vue",
+      "order": 4,
+      "popular": false,
+      "answerFile": "answers/vue/vue-ref-unwrapping.md",
+      "pitfall": "Писать items[0] + 1, предполагая, что элемент массива уже является числом.",
+      "editorial": {
+        "learningGoal": "Автоматическое разворачивание зависит от места доступа.",
+        "keywords": ["Vue 3", "Реактивность", "ref-unwrapping"],
+        "kind": "explanation",
+        "reviewStatus": "ready",
+        "goalIds": ["core", "vue-ref-unwrapping"],
+        "relatedQuestionIds": [],
+        "priority": "core",
+        "sourceRefs": ["vue-ref-unwrapping-docs"]
+      }
+    },
+    {
+      "id": "vue-shallow-state",
+      "title": "Когда нужны shallowRef и shallowReactive?",
+      "topic": "Реактивность",
+      "difficulty": "Средний",
+      "summary": "Реактивность верхнего уровня для внешних или крупных структур.",
+      "takeaway": "Shallow требует явного обновления на отслеживаемой границе.",
+      "moduleId": "vue",
+      "order": 5,
+      "popular": false,
+      "answerFile": "answers/vue/vue-shallow-state.md",
+      "pitfall": "Выбирать shallow как бесплатное ускорение, сохранив ожидание глубокой реактивности.",
+      "editorial": {
+        "learningGoal": "Shallow требует явного обновления на отслеживаемой границе.",
+        "keywords": ["Vue 3", "Реактивность", "shallow-state"],
+        "kind": "explanation",
+        "reviewStatus": "ready",
+        "goalIds": ["core", "vue-shallow-state"],
+        "relatedQuestionIds": [],
+        "priority": "core",
+        "sourceRefs": ["vue-shallow-state-docs"]
+      }
+    },
+    {
+      "id": "vue-readonly-raw",
+      "title": "Для чего нужны readonly, toRaw и markRaw?",
+      "topic": "Реактивность",
+      "difficulty": "Средний",
+      "summary": "Ограничение мутаций и границы Proxy.",
+      "takeaway": "Readonly задаёт интерфейс доступа, raw API требуют контроля владения.",
+      "moduleId": "vue",
+      "order": 6,
+      "popular": false,
+      "answerFile": "answers/vue/vue-readonly-raw.md",
+      "pitfall": "Смешивать raw и Proxy в сравнениях по ссылке или считать readonly защитой серверных данных.",
+      "editorial": {
+        "learningGoal": "Readonly задаёт интерфейс доступа, raw API требуют контроля владения.",
+        "keywords": ["Vue 3", "Реактивность", "readonly-raw"],
+        "kind": "explanation",
+        "reviewStatus": "ready",
+        "goalIds": ["core", "vue-readonly-raw"],
+        "relatedQuestionIds": [],
+        "priority": "core",
+        "sourceRefs": ["vue-readonly-raw-docs"]
+      }
+    },
+    {
+      "id": "vue-next-tick",
+      "title": "Почему DOM не меняется сразу после записи в ref и что гарантирует nextTick?",
+      "topic": "Реактивность",
+      "difficulty": "Средний",
+      "summary": "Пакетирование обновлений и ожидание Vue DOM flush.",
+      "takeaway": "NextTick ожидает обновления Vue, а не завершения всей асинхронной работы.",
+      "moduleId": "vue",
+      "order": 7,
+      "popular": false,
+      "answerFile": "answers/vue/vue-next-tick.md",
+      "pitfall": "Заменять nextTick случайным setTimeout или ожидать от nextTick сетевого ответа.",
+      "editorial": {
+        "learningGoal": "NextTick ожидает обновления Vue, а не завершения всей асинхронной работы.",
+        "keywords": ["Vue 3", "Реактивность", "next-tick"],
+        "kind": "explanation",
+        "reviewStatus": "ready",
+        "goalIds": ["core", "vue-next-tick"],
+        "relatedQuestionIds": [],
+        "priority": "core",
+        "sourceRefs": ["vue-next-tick-docs"]
+      }
     }
   ]
 }

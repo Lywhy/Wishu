@@ -1,13 +1,13 @@
 {
   "schemaVersion": 1,
   "totals": {
-    "questions": 1298,
+    "questions": 1346,
     "drafts": 0,
-    "imported": 192,
+    "imported": 180,
     "difficulties": {
-      "Базовый": 506,
-      "Средний": 634,
-      "Продвинутый": 158
+      "Базовый": 523,
+      "Средний": 664,
+      "Продвинутый": 159
     }
   },
   "sections": [
@@ -28035,29 +28035,55 @@
         {
           "id": "templates",
           "title": "Компоненты и шаблоны",
-          "scope": "Single-File Components, условия и списки.",
+          "scope": "SFC, запуск приложения, привязки, формы, списки, стили и встроенные компоненты.",
           "goals": [
             {
               "id": "core",
               "title": "Компоненты и шаблоны",
-              "description": "Обзор и взаимосвязи навыков: Single-File Components, условия и списки.",
+              "description": "SFC, запуск приложения, привязки, формы, списки, стили и встроенные компоненты.",
               "requiredDifficulties": [],
-              "reviewed": false,
+              "reviewed": true,
               "priority": "core",
               "relatedSkillIds": [
                 "vue-sfc",
                 "vue-if-show",
-                "vue-list-keys"
+                "vue-list-keys",
+                "vue-application-mount",
+                "vue-template-bindings",
+                "vue-class-style",
+                "vue-dom-events",
+                "vue-native-model",
+                "vue-component-registration",
+                "vue-scoped-css",
+                "vue-template-refs",
+                "vue-dynamic-component",
+                "vue-keep-alive",
+                "vue-teleport",
+                "vue-transitions",
+                "vue-async-component"
               ],
-              "status": "needs-review",
+              "status": "covered",
               "questionIds": [
                 "vue-sfc",
                 "vue-if-show",
-                "vue-list-keys"
+                "vue-list-keys",
+                "vue-application-mount",
+                "vue-template-bindings",
+                "vue-class-style",
+                "vue-dom-events",
+                "vue-native-model",
+                "vue-component-registration",
+                "vue-scoped-css",
+                "vue-template-refs",
+                "vue-dynamic-component",
+                "vue-keep-alive",
+                "vue-teleport",
+                "vue-transitions",
+                "vue-async-component"
               ],
               "difficulties": {
-                "Базовый": 2,
-                "Средний": 1,
+                "Базовый": 9,
+                "Средний": 7,
                 "Продвинутый": 0
               },
               "missingDifficulties": []
@@ -28065,14 +28091,14 @@
             {
               "id": "vue-sfc",
               "title": "Как устроен Single-File Component во Vue 3?",
-              "description": "Объяснить и применить правило с учётом его границ: SFC объединяет части компонента и компилируется инструментами Vue.",
+              "description": "SFC описывает компонент, а не отдельную страницу или singleton.",
               "requiredDifficulties": [
                 "Базовый"
               ],
-              "reviewed": false,
+              "reviewed": true,
               "priority": "core",
               "relatedSkillIds": [],
-              "status": "needs-review",
+              "status": "covered",
               "questionIds": [
                 "vue-sfc"
               ],
@@ -28086,14 +28112,14 @@
             {
               "id": "vue-if-show",
               "title": "Чем v-if отличается от v-show?",
-              "description": "Объяснить и применить правило с учётом его границ: Скрытие через display не равно размонтированию.",
+              "description": "Выбирайте директиву с учётом времени жизни компонента.",
               "requiredDifficulties": [
                 "Базовый"
               ],
-              "reviewed": false,
+              "reviewed": true,
               "priority": "core",
               "relatedSkillIds": [],
-              "status": "needs-review",
+              "status": "covered",
               "questionIds": [
                 "vue-if-show"
               ],
@@ -28107,16 +28133,289 @@
             {
               "id": "vue-list-keys",
               "title": "Зачем Vue нужен key в v-for и почему не стоит совмещать v-if и v-for?",
-              "description": "Объяснить и применить правило с учётом его границ: Фильтруйте данные отдельно, задавайте ключ по идентичности записи.",
+              "description": "Ключ описывает запись, а не её позицию в массиве.",
               "requiredDifficulties": [
                 "Средний"
               ],
-              "reviewed": false,
+              "reviewed": true,
               "priority": "core",
               "relatedSkillIds": [],
-              "status": "needs-review",
+              "status": "covered",
               "questionIds": [
                 "vue-list-keys"
+              ],
+              "difficulties": {
+                "Базовый": 0,
+                "Средний": 1,
+                "Продвинутый": 0
+              },
+              "missingDifficulties": []
+            },
+            {
+              "id": "vue-application-mount",
+              "title": "Как создать приложение Vue и подключить корневой компонент?",
+              "description": "Настраивайте приложение до mount и различайте приложение и компонент.",
+              "requiredDifficulties": [
+                "Базовый"
+              ],
+              "reviewed": true,
+              "priority": "core",
+              "relatedSkillIds": [],
+              "status": "covered",
+              "questionIds": [
+                "vue-application-mount"
+              ],
+              "difficulties": {
+                "Базовый": 1,
+                "Средний": 0,
+                "Продвинутый": 0
+              },
+              "missingDifficulties": []
+            },
+            {
+              "id": "vue-template-bindings",
+              "title": "Чем интерполяция отличается от v-bind и v-html?",
+              "description": "Выбирайте привязку по назначению значения и границе доверия.",
+              "requiredDifficulties": [
+                "Базовый"
+              ],
+              "reviewed": true,
+              "priority": "core",
+              "relatedSkillIds": [],
+              "status": "covered",
+              "questionIds": [
+                "vue-template-bindings"
+              ],
+              "difficulties": {
+                "Базовый": 1,
+                "Средний": 0,
+                "Продвинутый": 0
+              },
+              "missingDifficulties": []
+            },
+            {
+              "id": "vue-class-style",
+              "title": "Как задавать динамические class и style во Vue?",
+              "description": "Оформление выводится из состояния, а не меняется вручную параллельно Vue.",
+              "requiredDifficulties": [
+                "Базовый"
+              ],
+              "reviewed": true,
+              "priority": "core",
+              "relatedSkillIds": [],
+              "status": "covered",
+              "questionIds": [
+                "vue-class-style"
+              ],
+              "difficulties": {
+                "Базовый": 1,
+                "Средний": 0,
+                "Продвинутый": 0
+              },
+              "missingDifficulties": []
+            },
+            {
+              "id": "vue-dom-events",
+              "title": "Как работают @click, $event и модификаторы DOM-событий?",
+              "description": "Модификаторы выражают поведение DOM-события, а не бизнес-логику.",
+              "requiredDifficulties": [
+                "Базовый"
+              ],
+              "reviewed": true,
+              "priority": "core",
+              "relatedSkillIds": [],
+              "status": "covered",
+              "questionIds": [
+                "vue-dom-events"
+              ],
+              "difficulties": {
+                "Базовый": 1,
+                "Средний": 0,
+                "Продвинутый": 0
+              },
+              "missingDifficulties": []
+            },
+            {
+              "id": "vue-native-model",
+              "title": "Как v-model работает с input, checkbox и select?",
+              "description": "Начальное значение формы задаётся в реактивном состоянии.",
+              "requiredDifficulties": [
+                "Базовый"
+              ],
+              "reviewed": true,
+              "priority": "core",
+              "relatedSkillIds": [],
+              "status": "covered",
+              "questionIds": [
+                "vue-native-model"
+              ],
+              "difficulties": {
+                "Базовый": 1,
+                "Средний": 0,
+                "Продвинутый": 0
+              },
+              "missingDifficulties": []
+            },
+            {
+              "id": "vue-component-registration",
+              "title": "Как регистрировать и использовать дочерние компоненты?",
+              "description": "Зависимости компонента лучше видеть в его локальных импортах.",
+              "requiredDifficulties": [
+                "Базовый"
+              ],
+              "reviewed": true,
+              "priority": "core",
+              "relatedSkillIds": [],
+              "status": "covered",
+              "questionIds": [
+                "vue-component-registration"
+              ],
+              "difficulties": {
+                "Базовый": 1,
+                "Средний": 0,
+                "Продвинутый": 0
+              },
+              "missingDifficulties": []
+            },
+            {
+              "id": "vue-scoped-css",
+              "title": "Как scoped CSS ограничивает стили и зачем нужен :deep()?",
+              "description": "Scoped изолирует селекторы сборкой, но не отменяет CSS-каскад.",
+              "requiredDifficulties": [
+                "Средний"
+              ],
+              "reviewed": true,
+              "priority": "core",
+              "relatedSkillIds": [],
+              "status": "covered",
+              "questionIds": [
+                "vue-scoped-css"
+              ],
+              "difficulties": {
+                "Базовый": 0,
+                "Средний": 1,
+                "Продвинутый": 0
+              },
+              "missingDifficulties": []
+            },
+            {
+              "id": "vue-template-refs",
+              "title": "Когда нужен template ref и когда доступен DOM?",
+              "description": "Template ref дополняет декларативный UI для операций вроде focus.",
+              "requiredDifficulties": [
+                "Средний"
+              ],
+              "reviewed": true,
+              "priority": "core",
+              "relatedSkillIds": [],
+              "status": "covered",
+              "questionIds": [
+                "vue-template-refs"
+              ],
+              "difficulties": {
+                "Базовый": 0,
+                "Средний": 1,
+                "Продвинутый": 0
+              },
+              "missingDifficulties": []
+            },
+            {
+              "id": "vue-dynamic-component",
+              "title": "Как component :is переключает компоненты и что происходит с их состоянием?",
+              "description": "Переключение типа обычно пересоздаёт компонент; key управляет идентичностью.",
+              "requiredDifficulties": [
+                "Средний"
+              ],
+              "reviewed": true,
+              "priority": "core",
+              "relatedSkillIds": [],
+              "status": "covered",
+              "questionIds": [
+                "vue-dynamic-component"
+              ],
+              "difficulties": {
+                "Базовый": 0,
+                "Средний": 1,
+                "Продвинутый": 0
+              },
+              "missingDifficulties": []
+            },
+            {
+              "id": "vue-keep-alive",
+              "title": "Чем KeepAlive отличается от v-show и обычного переключения компонента?",
+              "description": "Кешированный компонент не уничтожен, но может быть неактивен.",
+              "requiredDifficulties": [
+                "Средний"
+              ],
+              "reviewed": true,
+              "priority": "core",
+              "relatedSkillIds": [],
+              "status": "covered",
+              "questionIds": [
+                "vue-keep-alive"
+              ],
+              "difficulties": {
+                "Базовый": 0,
+                "Средний": 1,
+                "Продвинутый": 0
+              },
+              "missingDifficulties": []
+            },
+            {
+              "id": "vue-teleport",
+              "title": "Что меняет Teleport в DOM и в дереве компонентов?",
+              "description": "Teleport переносит DOM, сохраняя компонентные связи.",
+              "requiredDifficulties": [
+                "Средний"
+              ],
+              "reviewed": true,
+              "priority": "core",
+              "relatedSkillIds": [],
+              "status": "covered",
+              "questionIds": [
+                "vue-teleport"
+              ],
+              "difficulties": {
+                "Базовый": 0,
+                "Средний": 1,
+                "Продвинутый": 0
+              },
+              "missingDifficulties": []
+            },
+            {
+              "id": "vue-transitions",
+              "title": "Для чего нужны Transition и TransitionGroup?",
+              "description": "Анимация привязывается к изменению дерева и идентичности элементов.",
+              "requiredDifficulties": [
+                "Базовый"
+              ],
+              "reviewed": true,
+              "priority": "core",
+              "relatedSkillIds": [],
+              "status": "covered",
+              "questionIds": [
+                "vue-transitions"
+              ],
+              "difficulties": {
+                "Базовый": 1,
+                "Средний": 0,
+                "Продвинутый": 0
+              },
+              "missingDifficulties": []
+            },
+            {
+              "id": "vue-async-component",
+              "title": "Как загружать компонент асинхронно и чем это отличается от ленивого маршрута?",
+              "description": "Ленивая загрузка откладывает загрузку кода, но требует состояния ожидания и ошибки.",
+              "requiredDifficulties": [
+                "Средний"
+              ],
+              "reviewed": true,
+              "priority": "core",
+              "relatedSkillIds": [],
+              "status": "covered",
+              "questionIds": [
+                "vue-async-component"
               ],
               "difficulties": {
                 "Базовый": 0,
@@ -28130,29 +28429,39 @@
         {
           "id": "reactivity",
           "title": "Реактивность",
-          "scope": "Ref, reactive и вычисляемые значения.",
+          "scope": "Ref/Proxy, зависимости, computed, деструктуризация, shallow/raw и очередь DOM.",
           "goals": [
             {
               "id": "core",
               "title": "Реактивность",
-              "description": "Обзор и взаимосвязи навыков: Ref, reactive и вычисляемые значения.",
+              "description": "Ref/Proxy, зависимости, computed, деструктуризация, shallow/raw и очередь DOM.",
               "requiredDifficulties": [],
-              "reviewed": false,
+              "reviewed": true,
               "priority": "core",
               "relatedSkillIds": [
                 "vue-ref-reactive",
                 "vue-computed",
-                "vue-destructure"
+                "vue-destructure",
+                "vue-dependency-tracking",
+                "vue-ref-unwrapping",
+                "vue-shallow-state",
+                "vue-readonly-raw",
+                "vue-next-tick"
               ],
-              "status": "needs-review",
+              "status": "covered",
               "questionIds": [
                 "vue-ref-reactive",
                 "vue-computed",
-                "vue-destructure"
+                "vue-destructure",
+                "vue-dependency-tracking",
+                "vue-ref-unwrapping",
+                "vue-shallow-state",
+                "vue-readonly-raw",
+                "vue-next-tick"
               ],
               "difficulties": {
                 "Базовый": 1,
-                "Средний": 2,
+                "Средний": 7,
                 "Продвинутый": 0
               },
               "missingDifficulties": []
@@ -28160,14 +28469,14 @@
             {
               "id": "vue-ref-reactive",
               "title": "Чем ref отличается от reactive?",
-              "description": "Объяснить и применить правило с учётом его границ: Ref удобен для заменяемого значения, reactive - для реактивного объекта.",
+              "description": "Ref удобен для заменяемого значения, reactive - для объекта со стабильной ссылкой.",
               "requiredDifficulties": [
                 "Базовый"
               ],
-              "reviewed": false,
+              "reviewed": true,
               "priority": "core",
               "relatedSkillIds": [],
-              "status": "needs-review",
+              "status": "covered",
               "questionIds": [
                 "vue-ref-reactive"
               ],
@@ -28181,14 +28490,14 @@
             {
               "id": "vue-computed",
               "title": "Чем computed отличается от метода в шаблоне?",
-              "description": "Объяснить и применить правило с учётом его границ: Computed хранит производное значение, а не выполняет команду.",
+              "description": "Computed описывает данные, а не выполняет команду.",
               "requiredDifficulties": [
                 "Средний"
               ],
-              "reviewed": false,
+              "reviewed": true,
               "priority": "core",
               "relatedSkillIds": [],
-              "status": "needs-review",
+              "status": "covered",
               "questionIds": [
                 "vue-computed"
               ],
@@ -28202,16 +28511,121 @@
             {
               "id": "vue-destructure",
               "title": "Когда деструктуризация reactive теряет реактивную связь?",
-              "description": "Объяснить и применить правило с учётом его границ: Различайте копию значения и ссылку на реактивное свойство.",
+              "description": "Передавайте реактивный доступ к свойству, если нужны будущие изменения.",
               "requiredDifficulties": [
                 "Средний"
               ],
-              "reviewed": false,
+              "reviewed": true,
               "priority": "core",
               "relatedSkillIds": [],
-              "status": "needs-review",
+              "status": "covered",
               "questionIds": [
                 "vue-destructure"
+              ],
+              "difficulties": {
+                "Базовый": 0,
+                "Средний": 1,
+                "Продвинутый": 0
+              },
+              "missingDifficulties": []
+            },
+            {
+              "id": "vue-dependency-tracking",
+              "title": "Как Vue узнаёт, что нужно пересчитать computed или обновить компонент?",
+              "description": "Реактивность связывает выполненное чтение с активным эффектом.",
+              "requiredDifficulties": [
+                "Средний"
+              ],
+              "reviewed": true,
+              "priority": "core",
+              "relatedSkillIds": [],
+              "status": "covered",
+              "questionIds": [
+                "vue-dependency-tracking"
+              ],
+              "difficulties": {
+                "Базовый": 0,
+                "Средний": 1,
+                "Продвинутый": 0
+              },
+              "missingDifficulties": []
+            },
+            {
+              "id": "vue-ref-unwrapping",
+              "title": "Где ref разворачивается автоматически, а где нужен .value?",
+              "description": "Автоматическое разворачивание зависит от места доступа.",
+              "requiredDifficulties": [
+                "Средний"
+              ],
+              "reviewed": true,
+              "priority": "core",
+              "relatedSkillIds": [],
+              "status": "covered",
+              "questionIds": [
+                "vue-ref-unwrapping"
+              ],
+              "difficulties": {
+                "Базовый": 0,
+                "Средний": 1,
+                "Продвинутый": 0
+              },
+              "missingDifficulties": []
+            },
+            {
+              "id": "vue-shallow-state",
+              "title": "Когда нужны shallowRef и shallowReactive?",
+              "description": "Shallow требует явного обновления на отслеживаемой границе.",
+              "requiredDifficulties": [
+                "Средний"
+              ],
+              "reviewed": true,
+              "priority": "core",
+              "relatedSkillIds": [],
+              "status": "covered",
+              "questionIds": [
+                "vue-shallow-state"
+              ],
+              "difficulties": {
+                "Базовый": 0,
+                "Средний": 1,
+                "Продвинутый": 0
+              },
+              "missingDifficulties": []
+            },
+            {
+              "id": "vue-readonly-raw",
+              "title": "Для чего нужны readonly, toRaw и markRaw?",
+              "description": "Readonly задаёт интерфейс доступа, raw API требуют контроля владения.",
+              "requiredDifficulties": [
+                "Средний"
+              ],
+              "reviewed": true,
+              "priority": "core",
+              "relatedSkillIds": [],
+              "status": "covered",
+              "questionIds": [
+                "vue-readonly-raw"
+              ],
+              "difficulties": {
+                "Базовый": 0,
+                "Средний": 1,
+                "Продвинутый": 0
+              },
+              "missingDifficulties": []
+            },
+            {
+              "id": "vue-next-tick",
+              "title": "Почему DOM не меняется сразу после записи в ref и что гарантирует nextTick?",
+              "description": "NextTick ожидает обновления Vue, а не завершения всей асинхронной работы.",
+              "requiredDifficulties": [
+                "Средний"
+              ],
+              "reviewed": true,
+              "priority": "core",
+              "relatedSkillIds": [],
+              "status": "covered",
+              "questionIds": [
+                "vue-next-tick"
               ],
               "difficulties": {
                 "Базовый": 0,
@@ -28225,29 +28639,39 @@
         {
           "id": "communication",
           "title": "Взаимодействие компонентов",
-          "scope": "Props, события и слоты.",
+          "scope": "Props, emits, модели, слоты, attrs, provide/inject и публичный API.",
           "goals": [
             {
               "id": "core",
               "title": "Взаимодействие компонентов",
-              "description": "Обзор и взаимосвязи навыков: Props, события и слоты.",
+              "description": "Props, emits, модели, слоты, attrs, provide/inject и публичный API.",
               "requiredDifficulties": [],
-              "reviewed": false,
+              "reviewed": true,
               "priority": "core",
               "relatedSkillIds": [
                 "vue-props-events",
                 "vue-v-model",
-                "vue-slots"
+                "vue-slots",
+                "vue-prop-contract",
+                "vue-component-events",
+                "vue-fallthrough-attrs",
+                "vue-provide-inject",
+                "vue-component-expose"
               ],
-              "status": "needs-review",
+              "status": "covered",
               "questionIds": [
                 "vue-props-events",
                 "vue-v-model",
-                "vue-slots"
+                "vue-slots",
+                "vue-prop-contract",
+                "vue-component-events",
+                "vue-fallthrough-attrs",
+                "vue-provide-inject",
+                "vue-component-expose"
               ],
               "difficulties": {
-                "Базовый": 1,
-                "Средний": 2,
+                "Базовый": 3,
+                "Средний": 5,
                 "Продвинутый": 0
               },
               "missingDifficulties": []
@@ -28255,14 +28679,14 @@
             {
               "id": "vue-props-events",
               "title": "Почему дочерний компонент не должен изменять props?",
-              "description": "Объяснить и применить правило с учётом его границ: Владелец данных обновляет их в ответ на событие ребёнка.",
+              "description": "Владелец состояния обновляет его в ответ на событие ребёнка.",
               "requiredDifficulties": [
                 "Базовый"
               ],
-              "reviewed": false,
+              "reviewed": true,
               "priority": "core",
               "relatedSkillIds": [],
-              "status": "needs-review",
+              "status": "covered",
               "questionIds": [
                 "vue-props-events"
               ],
@@ -28276,14 +28700,14 @@
             {
               "id": "vue-v-model",
               "title": "Как устроен v-model у собственного компонента?",
-              "description": "Объяснить и применить правило с учётом его границ: V-model - согласованный контракт передачи значения и уведомления.",
+              "description": "V-model - согласованный контракт значения и уведомления.",
               "requiredDifficulties": [
                 "Средний"
               ],
-              "reviewed": false,
+              "reviewed": true,
               "priority": "core",
               "relatedSkillIds": [],
-              "status": "needs-review",
+              "status": "covered",
               "questionIds": [
                 "vue-v-model"
               ],
@@ -28297,16 +28721,121 @@
             {
               "id": "vue-slots",
               "title": "Что передают обычные и scoped slots?",
-              "description": "Объяснить и применить правило с учётом его границ: Слот передаёт разметку, slot props передают доступные ей данные.",
+              "description": "Слот передаёт разметку, slot props дают ей доступ к данным ребёнка.",
               "requiredDifficulties": [
                 "Средний"
               ],
-              "reviewed": false,
+              "reviewed": true,
               "priority": "core",
               "relatedSkillIds": [],
-              "status": "needs-review",
+              "status": "covered",
               "questionIds": [
                 "vue-slots"
+              ],
+              "difficulties": {
+                "Базовый": 0,
+                "Средний": 1,
+                "Продвинутый": 0
+              },
+              "missingDifficulties": []
+            },
+            {
+              "id": "vue-prop-contract",
+              "title": "Как объявлять типы, обязательность и значения по умолчанию props?",
+              "description": "Prop должен иметь понятные тип, обязательность и начальное значение.",
+              "requiredDifficulties": [
+                "Базовый"
+              ],
+              "reviewed": true,
+              "priority": "core",
+              "relatedSkillIds": [],
+              "status": "covered",
+              "questionIds": [
+                "vue-prop-contract"
+              ],
+              "difficulties": {
+                "Базовый": 1,
+                "Средний": 0,
+                "Продвинутый": 0
+              },
+              "missingDifficulties": []
+            },
+            {
+              "id": "vue-component-events",
+              "title": "Всплывают ли события компонентов и зачем объявлять emits?",
+              "description": "Событие компонента слышит непосредственный слушатель его контракта.",
+              "requiredDifficulties": [
+                "Базовый"
+              ],
+              "reviewed": true,
+              "priority": "core",
+              "relatedSkillIds": [],
+              "status": "covered",
+              "questionIds": [
+                "vue-component-events"
+              ],
+              "difficulties": {
+                "Базовый": 1,
+                "Средний": 0,
+                "Продвинутый": 0
+              },
+              "missingDifficulties": []
+            },
+            {
+              "id": "vue-fallthrough-attrs",
+              "title": "Что такое fallthrough attrs и как передать их на нужный элемент?",
+              "description": "Обёртка должна явно определять адресата внешних атрибутов.",
+              "requiredDifficulties": [
+                "Средний"
+              ],
+              "reviewed": true,
+              "priority": "core",
+              "relatedSkillIds": [],
+              "status": "covered",
+              "questionIds": [
+                "vue-fallthrough-attrs"
+              ],
+              "difficulties": {
+                "Базовый": 0,
+                "Средний": 1,
+                "Продвинутый": 0
+              },
+              "missingDifficulties": []
+            },
+            {
+              "id": "vue-provide-inject",
+              "title": "Когда provide/inject удобнее цепочки props?",
+              "description": "Inject получает зависимость ближайшего провайдера, сохраняя её контракт.",
+              "requiredDifficulties": [
+                "Средний"
+              ],
+              "reviewed": true,
+              "priority": "core",
+              "relatedSkillIds": [],
+              "status": "covered",
+              "questionIds": [
+                "vue-provide-inject"
+              ],
+              "difficulties": {
+                "Базовый": 0,
+                "Средний": 1,
+                "Продвинутый": 0
+              },
+              "missingDifficulties": []
+            },
+            {
+              "id": "vue-component-expose",
+              "title": "Когда нужен defineExpose и почему ref на компонент не заменяет props/events?",
+              "description": "Expose оставляет небольшой публичный API для императивных операций.",
+              "requiredDifficulties": [
+                "Средний"
+              ],
+              "reviewed": true,
+              "priority": "core",
+              "relatedSkillIds": [],
+              "status": "covered",
+              "questionIds": [
+                "vue-component-expose"
               ],
               "difficulties": {
                 "Базовый": 0,
@@ -28320,44 +28849,58 @@
         {
           "id": "composition",
           "title": "Composition API",
-          "scope": "Наблюдатели, composables и жизненный цикл.",
+          "scope": "Setup, макросы, watchers, lifecycle, composables, запросы, директивы и плагины.",
           "goals": [
             {
               "id": "core",
               "title": "Composition API",
-              "description": "Обзор и взаимосвязи навыков: Наблюдатели, composables и жизненный цикл.",
+              "description": "Setup, макросы, watchers, lifecycle, composables, запросы, директивы и плагины.",
               "requiredDifficulties": [],
-              "reviewed": false,
+              "reviewed": true,
               "priority": "core",
               "relatedSkillIds": [
                 "vue-watch",
                 "vue-lifecycle-cleanup",
-                "vue-composables"
+                "vue-composables",
+                "vue-options-composition",
+                "vue-script-setup-macros",
+                "vue-watch-depth",
+                "vue-watch-flush-stop",
+                "vue-request-race",
+                "vue-custom-directive",
+                "vue-plugins"
               ],
-              "status": "needs-review",
+              "status": "covered",
               "questionIds": [
                 "vue-watch",
                 "vue-lifecycle-cleanup",
-                "vue-composables"
+                "vue-composables",
+                "vue-options-composition",
+                "vue-script-setup-macros",
+                "vue-watch-depth",
+                "vue-watch-flush-stop",
+                "vue-request-race",
+                "vue-custom-directive",
+                "vue-plugins"
               ],
               "difficulties": {
-                "Базовый": 0,
-                "Средний": 3,
-                "Продвинутый": 0
+                "Базовый": 3,
+                "Средний": 6,
+                "Продвинутый": 1
               },
               "missingDifficulties": []
             },
             {
               "id": "vue-watch",
               "title": "Чем watch отличается от watchEffect?",
-              "description": "Объяснить и применить правило с учётом его границ: Выбирайте источник наблюдения и явно управляйте ресурсами.",
+              "description": "Выбирайте watcher для побочного действия, computed - для производных данных.",
               "requiredDifficulties": [
                 "Средний"
               ],
-              "reviewed": false,
+              "reviewed": true,
               "priority": "core",
               "relatedSkillIds": [],
-              "status": "needs-review",
+              "status": "covered",
               "questionIds": [
                 "vue-watch"
               ],
@@ -28371,14 +28914,14 @@
             {
               "id": "vue-lifecycle-cleanup",
               "title": "Когда использовать onMounted и onUnmounted?",
-              "description": "Объяснить и применить правило с учётом его границ: Привязывайте создание и освобождение ресурсов к экземпляру компонента.",
+              "description": "Создание ресурса должно иметь симметричное освобождение у владельца.",
               "requiredDifficulties": [
                 "Средний"
               ],
-              "reviewed": false,
+              "reviewed": true,
               "priority": "core",
               "relatedSkillIds": [],
-              "status": "needs-review",
+              "status": "covered",
               "questionIds": [
                 "vue-lifecycle-cleanup"
               ],
@@ -28392,16 +28935,655 @@
             {
               "id": "vue-composables",
               "title": "Что такое composable и разделяют ли его вызовы состояние?",
-              "description": "Объяснить и применить правило с учётом его границ: Область создания состояния определяет, кто его разделяет.",
+              "description": "Место создания ref определяет, кто разделяет состояние.",
               "requiredDifficulties": [
                 "Средний"
               ],
-              "reviewed": false,
+              "reviewed": true,
               "priority": "core",
               "relatedSkillIds": [],
-              "status": "needs-review",
+              "status": "covered",
               "questionIds": [
                 "vue-composables"
+              ],
+              "difficulties": {
+                "Базовый": 0,
+                "Средний": 1,
+                "Продвинутый": 0
+              },
+              "missingDifficulties": []
+            },
+            {
+              "id": "vue-options-composition",
+              "title": "Чем Options API отличается от Composition API и как работает setup?",
+              "description": "Выбор API меняет организацию логики, а не отменяет правила Vue.",
+              "requiredDifficulties": [
+                "Базовый"
+              ],
+              "reviewed": true,
+              "priority": "core",
+              "relatedSkillIds": [],
+              "status": "covered",
+              "questionIds": [
+                "vue-options-composition"
+              ],
+              "difficulties": {
+                "Базовый": 1,
+                "Средний": 0,
+                "Продвинутый": 0
+              },
+              "missingDifficulties": []
+            },
+            {
+              "id": "vue-script-setup-macros",
+              "title": "Чем defineProps и defineEmits отличаются от обычных функций?",
+              "description": "Макросы script setup описывают компонент на этапе компиляции.",
+              "requiredDifficulties": [
+                "Базовый"
+              ],
+              "reviewed": true,
+              "priority": "core",
+              "relatedSkillIds": [],
+              "status": "covered",
+              "questionIds": [
+                "vue-script-setup-macros"
+              ],
+              "difficulties": {
+                "Базовый": 1,
+                "Средний": 0,
+                "Продвинутый": 0
+              },
+              "missingDifficulties": []
+            },
+            {
+              "id": "vue-watch-depth",
+              "title": "Как работает deep watch и почему oldValue иногда совпадает с newValue?",
+              "description": "Глубокое наблюдение обнаруживает мутации, но не сохраняет историю объекта.",
+              "requiredDifficulties": [
+                "Средний"
+              ],
+              "reviewed": true,
+              "priority": "core",
+              "relatedSkillIds": [],
+              "status": "covered",
+              "questionIds": [
+                "vue-watch-depth"
+              ],
+              "difficulties": {
+                "Базовый": 0,
+                "Средний": 1,
+                "Продвинутый": 0
+              },
+              "missingDifficulties": []
+            },
+            {
+              "id": "vue-watch-flush-stop",
+              "title": "Когда выполняется watcher относительно DOM и когда его нужно остановить?",
+              "description": "Выбирайте фазу watcher по его задаче и контролируйте время жизни.",
+              "requiredDifficulties": [
+                "Средний"
+              ],
+              "reviewed": true,
+              "priority": "core",
+              "relatedSkillIds": [],
+              "status": "covered",
+              "questionIds": [
+                "vue-watch-flush-stop"
+              ],
+              "difficulties": {
+                "Базовый": 0,
+                "Средний": 1,
+                "Продвинутый": 0
+              },
+              "missingDifficulties": []
+            },
+            {
+              "id": "vue-request-race",
+              "title": "Как не дать устаревшему запросу перезаписать результат нового watcher?",
+              "description": "Публикуйте результат только пока запрос принадлежит текущему наблюдению.",
+              "requiredDifficulties": [
+                "Продвинутый"
+              ],
+              "reviewed": true,
+              "priority": "core",
+              "relatedSkillIds": [],
+              "status": "covered",
+              "questionIds": [
+                "vue-request-race"
+              ],
+              "difficulties": {
+                "Базовый": 0,
+                "Средний": 0,
+                "Продвинутый": 1
+              },
+              "missingDifficulties": []
+            },
+            {
+              "id": "vue-custom-directive",
+              "title": "Когда писать custom directive, а когда компонент или composable?",
+              "description": "Директива инкапсулирует DOM-операцию, а не весь интерфейс.",
+              "requiredDifficulties": [
+                "Средний"
+              ],
+              "reviewed": true,
+              "priority": "core",
+              "relatedSkillIds": [],
+              "status": "covered",
+              "questionIds": [
+                "vue-custom-directive"
+              ],
+              "difficulties": {
+                "Базовый": 0,
+                "Средний": 1,
+                "Продвинутый": 0
+              },
+              "missingDifficulties": []
+            },
+            {
+              "id": "vue-plugins",
+              "title": "Что делает app.use и что должен устанавливать плагин Vue?",
+              "description": "Плагин настраивает приложение, а не заменяет локальные зависимости.",
+              "requiredDifficulties": [
+                "Базовый"
+              ],
+              "reviewed": true,
+              "priority": "core",
+              "relatedSkillIds": [],
+              "status": "covered",
+              "questionIds": [
+                "vue-plugins"
+              ],
+              "difficulties": {
+                "Базовый": 1,
+                "Средний": 0,
+                "Продвинутый": 0
+              },
+              "missingDifficulties": []
+            }
+          ]
+        },
+        {
+          "id": "routing",
+          "title": "Маршрутизация",
+          "scope": "Базовые контракты Vue Router: адреса, параметры, вложенность, guards и history.",
+          "goals": [
+            {
+              "id": "core",
+              "title": "Маршрутизация",
+              "description": "Базовые контракты Vue Router: адреса, параметры, вложенность, guards и history.",
+              "requiredDifficulties": [],
+              "reviewed": true,
+              "priority": "core",
+              "relatedSkillIds": [
+                "vue-router-basics",
+                "vue-route-router",
+                "vue-route-params-reuse",
+                "vue-nested-routes",
+                "vue-route-guards",
+                "vue-router-history"
+              ],
+              "status": "covered",
+              "questionIds": [
+                "vue-router-basics",
+                "vue-route-router",
+                "vue-route-params-reuse",
+                "vue-nested-routes",
+                "vue-route-guards",
+                "vue-router-history"
+              ],
+              "difficulties": {
+                "Базовый": 2,
+                "Средний": 4,
+                "Продвинутый": 0
+              },
+              "missingDifficulties": []
+            },
+            {
+              "id": "vue-router-basics",
+              "title": "Как подключить Vue Router и связать RouterLink с RouterView?",
+              "description": "URL выбирает компонент через маршрутизатор.",
+              "requiredDifficulties": [
+                "Базовый"
+              ],
+              "reviewed": true,
+              "priority": "core",
+              "relatedSkillIds": [],
+              "status": "covered",
+              "questionIds": [
+                "vue-router-basics"
+              ],
+              "difficulties": {
+                "Базовый": 1,
+                "Средний": 0,
+                "Продвинутый": 0
+              },
+              "missingDifficulties": []
+            },
+            {
+              "id": "vue-route-router",
+              "title": "Чем useRoute отличается от useRouter и как делать push/replace?",
+              "description": "Route описывает адрес, router управляет переходами.",
+              "requiredDifficulties": [
+                "Базовый"
+              ],
+              "reviewed": true,
+              "priority": "core",
+              "relatedSkillIds": [],
+              "status": "covered",
+              "questionIds": [
+                "vue-route-router"
+              ],
+              "difficulties": {
+                "Базовый": 1,
+                "Средний": 0,
+                "Продвинутый": 0
+              },
+              "missingDifficulties": []
+            },
+            {
+              "id": "vue-route-params-reuse",
+              "title": "Почему переход /users/1 -> /users/2 не вызывает onMounted заново?",
+              "description": "Наблюдайте нужный параметр, если от него зависит загрузка.",
+              "requiredDifficulties": [
+                "Средний"
+              ],
+              "reviewed": true,
+              "priority": "core",
+              "relatedSkillIds": [],
+              "status": "covered",
+              "questionIds": [
+                "vue-route-params-reuse"
+              ],
+              "difficulties": {
+                "Базовый": 0,
+                "Средний": 1,
+                "Продвинутый": 0
+              },
+              "missingDifficulties": []
+            },
+            {
+              "id": "vue-nested-routes",
+              "title": "Как устроены вложенные маршруты, layout и страница 404?",
+              "description": "Вложенность URL и место отрисовки описываются согласованно.",
+              "requiredDifficulties": [
+                "Средний"
+              ],
+              "reviewed": true,
+              "priority": "core",
+              "relatedSkillIds": [],
+              "status": "covered",
+              "questionIds": [
+                "vue-nested-routes"
+              ],
+              "difficulties": {
+                "Базовый": 0,
+                "Средний": 1,
+                "Продвинутый": 0
+              },
+              "missingDifficulties": []
+            },
+            {
+              "id": "vue-route-guards",
+              "title": "Как guards отменяют или перенаправляют переход и защищают ли они API?",
+              "description": "Guard управляет интерфейсом; доступ к данным проверяется сервером.",
+              "requiredDifficulties": [
+                "Средний"
+              ],
+              "reviewed": true,
+              "priority": "core",
+              "relatedSkillIds": [],
+              "status": "covered",
+              "questionIds": [
+                "vue-route-guards"
+              ],
+              "difficulties": {
+                "Базовый": 0,
+                "Средний": 1,
+                "Продвинутый": 0
+              },
+              "missingDifficulties": []
+            },
+            {
+              "id": "vue-router-history",
+              "title": "Чем history mode отличается от hash mode и почему после refresh бывает 404?",
+              "description": "Прямой вход по маршруту должен возвращать оболочку SPA.",
+              "requiredDifficulties": [
+                "Средний"
+              ],
+              "reviewed": true,
+              "priority": "core",
+              "relatedSkillIds": [],
+              "status": "covered",
+              "questionIds": [
+                "vue-router-history"
+              ],
+              "difficulties": {
+                "Базовый": 0,
+                "Средний": 1,
+                "Продвинутый": 0
+              },
+              "missingDifficulties": []
+            }
+          ]
+        },
+        {
+          "id": "state",
+          "title": "Управление состоянием",
+          "scope": "Владение состоянием и базовые контракты Pinia, reset и persistence.",
+          "goals": [
+            {
+              "id": "core",
+              "title": "Управление состоянием",
+              "description": "Владение состоянием и базовые контракты Pinia, reset и persistence.",
+              "requiredDifficulties": [],
+              "reviewed": true,
+              "priority": "core",
+              "relatedSkillIds": [
+                "vue-state-ownership",
+                "vue-pinia-store",
+                "vue-pinia-refs",
+                "vue-pinia-actions-getters",
+                "vue-pinia-reset-persist"
+              ],
+              "status": "covered",
+              "questionIds": [
+                "vue-state-ownership",
+                "vue-pinia-store",
+                "vue-pinia-refs",
+                "vue-pinia-actions-getters",
+                "vue-pinia-reset-persist"
+              ],
+              "difficulties": {
+                "Базовый": 2,
+                "Средний": 3,
+                "Продвинутый": 0
+              },
+              "missingDifficulties": []
+            },
+            {
+              "id": "vue-state-ownership",
+              "title": "Когда достаточно props/composable, а когда нужен Pinia store?",
+              "description": "Храните состояние у ближайшего владельца, способного обеспечить его контракт.",
+              "requiredDifficulties": [
+                "Базовый"
+              ],
+              "reviewed": true,
+              "priority": "core",
+              "relatedSkillIds": [],
+              "status": "covered",
+              "questionIds": [
+                "vue-state-ownership"
+              ],
+              "difficulties": {
+                "Базовый": 1,
+                "Средний": 0,
+                "Продвинутый": 0
+              },
+              "missingDifficulties": []
+            },
+            {
+              "id": "vue-pinia-store",
+              "title": "Как создать Pinia store и чем отличаются Option Store и Setup Store?",
+              "description": "DefineStore описывает хранилище, useStore получает его экземпляр в Pinia.",
+              "requiredDifficulties": [
+                "Базовый"
+              ],
+              "reviewed": true,
+              "priority": "core",
+              "relatedSkillIds": [],
+              "status": "covered",
+              "questionIds": [
+                "vue-pinia-store"
+              ],
+              "difficulties": {
+                "Базовый": 1,
+                "Средний": 0,
+                "Продвинутый": 0
+              },
+              "missingDifficulties": []
+            },
+            {
+              "id": "vue-pinia-refs",
+              "title": "Почему деструктуризация Pinia store теряет обновления и зачем storeToRefs?",
+              "description": "Состояние и getters извлекайте через storeToRefs, actions - напрямую.",
+              "requiredDifficulties": [
+                "Средний"
+              ],
+              "reviewed": true,
+              "priority": "core",
+              "relatedSkillIds": [],
+              "status": "covered",
+              "questionIds": [
+                "vue-pinia-refs"
+              ],
+              "difficulties": {
+                "Базовый": 0,
+                "Средний": 1,
+                "Продвинутый": 0
+              },
+              "missingDifficulties": []
+            },
+            {
+              "id": "vue-pinia-actions-getters",
+              "title": "Чем getters отличаются от actions и как обновлять state Pinia?",
+              "description": "Getter вычисляет значение, action выполняет действие с понятным результатом.",
+              "requiredDifficulties": [
+                "Средний"
+              ],
+              "reviewed": true,
+              "priority": "core",
+              "relatedSkillIds": [],
+              "status": "covered",
+              "questionIds": [
+                "vue-pinia-actions-getters"
+              ],
+              "difficulties": {
+                "Базовый": 0,
+                "Средний": 1,
+                "Продвинутый": 0
+              },
+              "missingDifficulties": []
+            },
+            {
+              "id": "vue-pinia-reset-persist",
+              "title": "Сохраняет ли Pinia состояние после refresh и как делать reset?",
+              "description": "Persistence и reset нужно проектировать явно для каждого типа store.",
+              "requiredDifficulties": [
+                "Средний"
+              ],
+              "reviewed": true,
+              "priority": "core",
+              "relatedSkillIds": [],
+              "status": "covered",
+              "questionIds": [
+                "vue-pinia-reset-persist"
+              ],
+              "difficulties": {
+                "Базовый": 0,
+                "Средний": 1,
+                "Продвинутый": 0
+              },
+              "missingDifficulties": []
+            }
+          ]
+        },
+        {
+          "id": "engineering",
+          "title": "Практика разработки",
+          "scope": "TypeScript, тестирование, SSR, безопасность, производительность и ошибки.",
+          "goals": [
+            {
+              "id": "core",
+              "title": "Практика разработки",
+              "description": "TypeScript, тестирование, SSR, безопасность, производительность и ошибки.",
+              "requiredDifficulties": [],
+              "reviewed": true,
+              "priority": "core",
+              "relatedSkillIds": [
+                "vue-typescript-contracts",
+                "vue-component-testing",
+                "vue-composable-testing",
+                "vue-ssr-hydration",
+                "vue-ui-security",
+                "vue-performance-basics",
+                "vue-error-handling"
+              ],
+              "status": "covered",
+              "questionIds": [
+                "vue-typescript-contracts",
+                "vue-component-testing",
+                "vue-composable-testing",
+                "vue-ssr-hydration",
+                "vue-ui-security",
+                "vue-performance-basics",
+                "vue-error-handling"
+              ],
+              "difficulties": {
+                "Базовый": 1,
+                "Средний": 6,
+                "Продвинутый": 0
+              },
+              "missingDifficulties": []
+            },
+            {
+              "id": "vue-typescript-contracts",
+              "title": "Как типизировать props, emits и template refs в Vue?",
+              "description": "TypeScript проверяет обращения в коде, но не достоверность внешнего JSON.",
+              "requiredDifficulties": [
+                "Средний"
+              ],
+              "reviewed": true,
+              "priority": "core",
+              "relatedSkillIds": [],
+              "status": "covered",
+              "questionIds": [
+                "vue-typescript-contracts"
+              ],
+              "difficulties": {
+                "Базовый": 0,
+                "Средний": 1,
+                "Продвинутый": 0
+              },
+              "missingDifficulties": []
+            },
+            {
+              "id": "vue-component-testing",
+              "title": "Что проверять в тесте Vue-компонента и зачем await trigger/setProps?",
+              "description": "Проверяйте пользовательский контракт, ожидая соответствующий тип работы.",
+              "requiredDifficulties": [
+                "Средний"
+              ],
+              "reviewed": true,
+              "priority": "core",
+              "relatedSkillIds": [],
+              "status": "covered",
+              "questionIds": [
+                "vue-component-testing"
+              ],
+              "difficulties": {
+                "Базовый": 0,
+                "Средний": 1,
+                "Продвинутый": 0
+              },
+              "missingDifficulties": []
+            },
+            {
+              "id": "vue-composable-testing",
+              "title": "Как тестировать composable с lifecycle или inject?",
+              "description": "Тестовый способ вызова должен воспроизводить зависимости composable.",
+              "requiredDifficulties": [
+                "Средний"
+              ],
+              "reviewed": true,
+              "priority": "core",
+              "relatedSkillIds": [],
+              "status": "covered",
+              "questionIds": [
+                "vue-composable-testing"
+              ],
+              "difficulties": {
+                "Базовый": 0,
+                "Средний": 1,
+                "Продвинутый": 0
+              },
+              "missingDifficulties": []
+            },
+            {
+              "id": "vue-ssr-hydration",
+              "title": "Что такое SSR и hydration во Vue и откуда берутся mismatch?",
+              "description": "Первый клиентский рендер должен соответствовать серверной разметке.",
+              "requiredDifficulties": [
+                "Средний"
+              ],
+              "reviewed": true,
+              "priority": "core",
+              "relatedSkillIds": [],
+              "status": "covered",
+              "questionIds": [
+                "vue-ssr-hydration"
+              ],
+              "difficulties": {
+                "Базовый": 0,
+                "Средний": 1,
+                "Продвинутый": 0
+              },
+              "missingDifficulties": []
+            },
+            {
+              "id": "vue-ui-security",
+              "title": "От каких XSS-ошибок защищает Vue и где защита заканчивается?",
+              "description": "Недоверенные данные не должны становиться исполняемым шаблоном.",
+              "requiredDifficulties": [
+                "Базовый"
+              ],
+              "reviewed": true,
+              "priority": "core",
+              "relatedSkillIds": [],
+              "status": "covered",
+              "questionIds": [
+                "vue-ui-security"
+              ],
+              "difficulties": {
+                "Базовый": 1,
+                "Средний": 0,
+                "Продвинутый": 0
+              },
+              "missingDifficulties": []
+            },
+            {
+              "id": "vue-performance-basics",
+              "title": "Как искать и устранять лишнюю работу при обновлении Vue-интерфейса?",
+              "description": "Оптимизируйте подтверждённую причину задержки, сохраняя корректность.",
+              "requiredDifficulties": [
+                "Средний"
+              ],
+              "reviewed": true,
+              "priority": "core",
+              "relatedSkillIds": [],
+              "status": "covered",
+              "questionIds": [
+                "vue-performance-basics"
+              ],
+              "difficulties": {
+                "Базовый": 0,
+                "Средний": 1,
+                "Продвинутый": 0
+              },
+              "missingDifficulties": []
+            },
+            {
+              "id": "vue-error-handling",
+              "title": "Как разделять ошибки запросов, компонентов и загрузки async-компонента?",
+              "description": "Ошибка должна иметь владельца, понятный UI и путь восстановления.",
+              "requiredDifficulties": [
+                "Средний"
+              ],
+              "reviewed": true,
+              "priority": "core",
+              "relatedSkillIds": [],
+              "status": "covered",
+              "questionIds": [
+                "vue-error-handling"
               ],
               "difficulties": {
                 "Базовый": 0,

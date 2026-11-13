@@ -4188,7 +4188,7 @@
     {
       "sectionId": "vue",
       "subsectionId": "templates",
-      "scope": "Single-File Components, условия и списки.",
+      "scope": "SFC, запуск приложения, привязки, формы, списки, стили и встроенные компоненты.",
       "sources": [
         {
           "title": "Официальная документация раздела",
@@ -4196,14 +4196,112 @@
           "checkedAt": null,
           "notes": "Начальная точка поиска, не замена источнику конкретного технического утверждения.",
           "id": "ref-5510303a749a5e68"
+        },
+        {
+          "id": "vue-sfc-docs",
+          "title": "Официальная документация: Как устроен Single-File Component во Vue 3?",
+          "url": "https://vuejs.org/guide/scaling-up/sfc.html",
+          "checkedAt": null
+        },
+        {
+          "id": "vue-if-show-docs",
+          "title": "Официальная документация: Чем v-if отличается от v-show?",
+          "url": "https://vuejs.org/guide/essentials/conditional.html",
+          "checkedAt": null
+        },
+        {
+          "id": "vue-list-keys-docs",
+          "title": "Официальная документация: Зачем Vue нужен key в v-for и почему не стоит совмещать v-if и v-for?",
+          "url": "https://vuejs.org/guide/essentials/list.html",
+          "checkedAt": null
+        },
+        {
+          "id": "vue-application-mount-docs",
+          "title": "Официальная документация: Как создать приложение Vue и подключить корневой компонент?",
+          "url": "https://vuejs.org/guide/essentials/application.html",
+          "checkedAt": null
+        },
+        {
+          "id": "vue-template-bindings-docs",
+          "title": "Официальная документация: Чем интерполяция отличается от v-bind и v-html?",
+          "url": "https://vuejs.org/guide/essentials/template-syntax.html",
+          "checkedAt": null
+        },
+        {
+          "id": "vue-class-style-docs",
+          "title": "Официальная документация: Как задавать динамические class и style во Vue?",
+          "url": "https://vuejs.org/guide/essentials/class-and-style.html",
+          "checkedAt": null
+        },
+        {
+          "id": "vue-dom-events-docs",
+          "title": "Официальная документация: Как работают @click, $event и модификаторы DOM-событий?",
+          "url": "https://vuejs.org/guide/essentials/event-handling.html",
+          "checkedAt": null
+        },
+        {
+          "id": "vue-native-model-docs",
+          "title": "Официальная документация: Как v-model работает с input, checkbox и select?",
+          "url": "https://vuejs.org/guide/essentials/forms.html",
+          "checkedAt": null
+        },
+        {
+          "id": "vue-component-registration-docs",
+          "title": "Официальная документация: Как регистрировать и использовать дочерние компоненты?",
+          "url": "https://vuejs.org/guide/components/registration.html",
+          "checkedAt": null
+        },
+        {
+          "id": "vue-scoped-css-docs",
+          "title": "Официальная документация: Как scoped CSS ограничивает стили и зачем нужен :deep()?",
+          "url": "https://vuejs.org/api/sfc-css-features.html",
+          "checkedAt": null
+        },
+        {
+          "id": "vue-template-refs-docs",
+          "title": "Официальная документация: Когда нужен template ref и когда доступен DOM?",
+          "url": "https://vuejs.org/guide/essentials/template-refs.html",
+          "checkedAt": null
+        },
+        {
+          "id": "vue-dynamic-component-docs",
+          "title": "Официальная документация: Как component :is переключает компоненты и что происходит с их состоянием?",
+          "url": "https://vuejs.org/guide/essentials/component-basics.html",
+          "checkedAt": null
+        },
+        {
+          "id": "vue-keep-alive-docs",
+          "title": "Официальная документация: Чем KeepAlive отличается от v-show и обычного переключения компонента?",
+          "url": "https://vuejs.org/guide/built-ins/keep-alive.html",
+          "checkedAt": null
+        },
+        {
+          "id": "vue-teleport-docs",
+          "title": "Официальная документация: Что меняет Teleport в DOM и в дереве компонентов?",
+          "url": "https://vuejs.org/guide/built-ins/teleport.html",
+          "checkedAt": null
+        },
+        {
+          "id": "vue-transitions-docs",
+          "title": "Официальная документация: Для чего нужны Transition и TransitionGroup?",
+          "url": "https://vuejs.org/guide/built-ins/transition.html",
+          "checkedAt": null
+        },
+        {
+          "id": "vue-async-component-docs",
+          "title": "Официальная документация: Как загружать компонент асинхронно и чем это отличается от ленивого маршрута?",
+          "url": "https://vuejs.org/guide/components/async.html",
+          "checkedAt": null
         }
       ],
-      "caveats": []
+      "caveats": [
+        "Базовый пакет Vue 3. defineModel требует 3.4+, reactive props destructure и onWatcherCleanup - 3.5+. Примеры разобраны статически и не выполнялись. Vue 2 и Nuxt вне границ пакета."
+      ]
     },
     {
       "sectionId": "vue",
       "subsectionId": "reactivity",
-      "scope": "Ref, reactive и вычисляемые значения.",
+      "scope": "Ref/Proxy, зависимости, computed, деструктуризация, shallow/raw и очередь DOM.",
       "sources": [
         {
           "title": "Официальная документация раздела",
@@ -4211,14 +4309,64 @@
           "checkedAt": null,
           "notes": "Начальная точка поиска, не замена источнику конкретного технического утверждения.",
           "id": "ref-5510303a749a5e68"
+        },
+        {
+          "id": "vue-ref-reactive-docs",
+          "title": "Официальная документация: Чем ref отличается от reactive?",
+          "url": "https://vuejs.org/guide/essentials/reactivity-fundamentals.html",
+          "checkedAt": null
+        },
+        {
+          "id": "vue-computed-docs",
+          "title": "Официальная документация: Чем computed отличается от метода в шаблоне?",
+          "url": "https://vuejs.org/guide/essentials/computed.html",
+          "checkedAt": null
+        },
+        {
+          "id": "vue-destructure-docs",
+          "title": "Официальная документация: Когда деструктуризация reactive теряет реактивную связь?",
+          "url": "https://vuejs.org/guide/components/props.html",
+          "checkedAt": null
+        },
+        {
+          "id": "vue-dependency-tracking-docs",
+          "title": "Официальная документация: Как Vue узнаёт, что нужно пересчитать computed или обновить компонент?",
+          "url": "https://vuejs.org/guide/extras/reactivity-in-depth.html",
+          "checkedAt": null
+        },
+        {
+          "id": "vue-ref-unwrapping-docs",
+          "title": "Официальная документация: Где ref разворачивается автоматически, а где нужен .value?",
+          "url": "https://vuejs.org/guide/essentials/reactivity-fundamentals.html",
+          "checkedAt": null
+        },
+        {
+          "id": "vue-shallow-state-docs",
+          "title": "Официальная документация: Когда нужны shallowRef и shallowReactive?",
+          "url": "https://vuejs.org/api/reactivity-advanced.html",
+          "checkedAt": null
+        },
+        {
+          "id": "vue-readonly-raw-docs",
+          "title": "Официальная документация: Для чего нужны readonly, toRaw и markRaw?",
+          "url": "https://vuejs.org/api/reactivity-advanced.html",
+          "checkedAt": null
+        },
+        {
+          "id": "vue-next-tick-docs",
+          "title": "Официальная документация: Почему DOM не меняется сразу после записи в ref и что гарантирует nextTick?",
+          "url": "https://vuejs.org/api/general.html#nexttick",
+          "checkedAt": null
         }
       ],
-      "caveats": []
+      "caveats": [
+        "Базовый пакет Vue 3. defineModel требует 3.4+, reactive props destructure и onWatcherCleanup - 3.5+. Примеры разобраны статически и не выполнялись. Vue 2 и Nuxt вне границ пакета."
+      ]
     },
     {
       "sectionId": "vue",
       "subsectionId": "communication",
-      "scope": "Props, события и слоты.",
+      "scope": "Props, emits, модели, слоты, attrs, provide/inject и публичный API.",
       "sources": [
         {
           "title": "Официальная документация раздела",
@@ -4226,14 +4374,64 @@
           "checkedAt": null,
           "notes": "Начальная точка поиска, не замена источнику конкретного технического утверждения.",
           "id": "ref-5510303a749a5e68"
+        },
+        {
+          "id": "vue-props-events-docs",
+          "title": "Официальная документация: Почему дочерний компонент не должен изменять props?",
+          "url": "https://vuejs.org/guide/components/props.html",
+          "checkedAt": null
+        },
+        {
+          "id": "vue-v-model-docs",
+          "title": "Официальная документация: Как устроен v-model у собственного компонента?",
+          "url": "https://vuejs.org/guide/components/v-model.html",
+          "checkedAt": null
+        },
+        {
+          "id": "vue-slots-docs",
+          "title": "Официальная документация: Что передают обычные и scoped slots?",
+          "url": "https://vuejs.org/guide/components/slots.html",
+          "checkedAt": null
+        },
+        {
+          "id": "vue-prop-contract-docs",
+          "title": "Официальная документация: Как объявлять типы, обязательность и значения по умолчанию props?",
+          "url": "https://vuejs.org/guide/components/props.html",
+          "checkedAt": null
+        },
+        {
+          "id": "vue-component-events-docs",
+          "title": "Официальная документация: Всплывают ли события компонентов и зачем объявлять emits?",
+          "url": "https://vuejs.org/guide/components/events.html",
+          "checkedAt": null
+        },
+        {
+          "id": "vue-fallthrough-attrs-docs",
+          "title": "Официальная документация: Что такое fallthrough attrs и как передать их на нужный элемент?",
+          "url": "https://vuejs.org/guide/components/attrs.html",
+          "checkedAt": null
+        },
+        {
+          "id": "vue-provide-inject-docs",
+          "title": "Официальная документация: Когда provide/inject удобнее цепочки props?",
+          "url": "https://vuejs.org/guide/components/provide-inject.html",
+          "checkedAt": null
+        },
+        {
+          "id": "vue-component-expose-docs",
+          "title": "Официальная документация: Когда нужен defineExpose и почему ref на компонент не заменяет props/events?",
+          "url": "https://vuejs.org/api/sfc-script-setup.html#defineexpose",
+          "checkedAt": null
         }
       ],
-      "caveats": []
+      "caveats": [
+        "Базовый пакет Vue 3. defineModel требует 3.4+, reactive props destructure и onWatcherCleanup - 3.5+. Примеры разобраны статически и не выполнялись. Vue 2 и Nuxt вне границ пакета."
+      ]
     },
     {
       "sectionId": "vue",
       "subsectionId": "composition",
-      "scope": "Наблюдатели, composables и жизненный цикл.",
+      "scope": "Setup, макросы, watchers, lifecycle, composables, запросы, директивы и плагины.",
       "sources": [
         {
           "title": "Официальная документация раздела",
@@ -4241,9 +4439,71 @@
           "checkedAt": null,
           "notes": "Начальная точка поиска, не замена источнику конкретного технического утверждения.",
           "id": "ref-5510303a749a5e68"
+        },
+        {
+          "id": "vue-watch-docs",
+          "title": "Официальная документация: Чем watch отличается от watchEffect?",
+          "url": "https://vuejs.org/guide/essentials/watchers.html",
+          "checkedAt": null
+        },
+        {
+          "id": "vue-lifecycle-cleanup-docs",
+          "title": "Официальная документация: Когда использовать onMounted и onUnmounted?",
+          "url": "https://vuejs.org/guide/essentials/lifecycle.html",
+          "checkedAt": null
+        },
+        {
+          "id": "vue-composables-docs",
+          "title": "Официальная документация: Что такое composable и разделяют ли его вызовы состояние?",
+          "url": "https://vuejs.org/guide/reusability/composables.html",
+          "checkedAt": null
+        },
+        {
+          "id": "vue-options-composition-docs",
+          "title": "Официальная документация: Чем Options API отличается от Composition API и как работает setup?",
+          "url": "https://vuejs.org/guide/introduction.html#api-styles",
+          "checkedAt": null
+        },
+        {
+          "id": "vue-script-setup-macros-docs",
+          "title": "Официальная документация: Чем defineProps и defineEmits отличаются от обычных функций?",
+          "url": "https://vuejs.org/api/sfc-script-setup.html",
+          "checkedAt": null
+        },
+        {
+          "id": "vue-watch-depth-docs",
+          "title": "Официальная документация: Как работает deep watch и почему oldValue иногда совпадает с newValue?",
+          "url": "https://vuejs.org/guide/essentials/watchers.html#deep-watchers",
+          "checkedAt": null
+        },
+        {
+          "id": "vue-watch-flush-stop-docs",
+          "title": "Официальная документация: Когда выполняется watcher относительно DOM и когда его нужно остановить?",
+          "url": "https://vuejs.org/guide/essentials/watchers.html#callback-flush-timing",
+          "checkedAt": null
+        },
+        {
+          "id": "vue-request-race-docs",
+          "title": "Официальная документация: Как не дать устаревшему запросу перезаписать результат нового watcher?",
+          "url": "https://vuejs.org/guide/essentials/watchers.html#side-effect-cleanup",
+          "checkedAt": null
+        },
+        {
+          "id": "vue-custom-directive-docs",
+          "title": "Официальная документация: Когда писать custom directive, а когда компонент или composable?",
+          "url": "https://vuejs.org/guide/reusability/custom-directives.html",
+          "checkedAt": null
+        },
+        {
+          "id": "vue-plugins-docs",
+          "title": "Официальная документация: Что делает app.use и что должен устанавливать плагин Vue?",
+          "url": "https://vuejs.org/guide/reusability/plugins.html",
+          "checkedAt": null
         }
       ],
-      "caveats": []
+      "caveats": [
+        "Базовый пакет Vue 3. defineModel требует 3.4+, reactive props destructure и onWatcherCleanup - 3.5+. Примеры разобраны статически и не выполнялись. Vue 2 и Nuxt вне границ пакета."
+      ]
     },
     {
       "sectionId": "nextjs",
@@ -6310,6 +6570,144 @@
       ],
       "caveats": [
         "Фрагменты Go показывают механизм; необходимые импорты и окружающая функция оговорены в ответах. Изменения переменных цикла требуют языковой версии Go 1.22+."
+      ]
+    },
+    {
+      "sectionId": "vue",
+      "subsectionId": "routing",
+      "scope": "Базовые контракты Vue Router: адреса, параметры, вложенность, guards и history.",
+      "sources": [
+        {
+          "id": "vue-router-basics-docs",
+          "title": "Официальная документация: Как подключить Vue Router и связать RouterLink с RouterView?",
+          "url": "https://router.vuejs.org/guide/",
+          "checkedAt": null
+        },
+        {
+          "id": "vue-route-router-docs",
+          "title": "Официальная документация: Чем useRoute отличается от useRouter и как делать push/replace?",
+          "url": "https://router.vuejs.org/guide/essentials/navigation.html",
+          "checkedAt": null
+        },
+        {
+          "id": "vue-route-params-reuse-docs",
+          "title": "Официальная документация: Почему переход /users/1 -> /users/2 не вызывает onMounted заново?",
+          "url": "https://router.vuejs.org/guide/essentials/dynamic-matching.html",
+          "checkedAt": null
+        },
+        {
+          "id": "vue-nested-routes-docs",
+          "title": "Официальная документация: Как устроены вложенные маршруты, layout и страница 404?",
+          "url": "https://router.vuejs.org/guide/essentials/nested-routes.html",
+          "checkedAt": null
+        },
+        {
+          "id": "vue-route-guards-docs",
+          "title": "Официальная документация: Как guards отменяют или перенаправляют переход и защищают ли они API?",
+          "url": "https://router.vuejs.org/guide/advanced/navigation-guards.html",
+          "checkedAt": null
+        },
+        {
+          "id": "vue-router-history-docs",
+          "title": "Официальная документация: Чем history mode отличается от hash mode и почему после refresh бывает 404?",
+          "url": "https://router.vuejs.org/guide/essentials/history-mode.html",
+          "checkedAt": null
+        }
+      ],
+      "caveats": [
+        "Базовый пакет Vue 3. defineModel требует 3.4+, reactive props destructure и onWatcherCleanup - 3.5+. Примеры разобраны статически и не выполнялись. Vue 2 и Nuxt вне границ пакета."
+      ]
+    },
+    {
+      "sectionId": "vue",
+      "subsectionId": "state",
+      "scope": "Владение состоянием и базовые контракты Pinia, reset и persistence.",
+      "sources": [
+        {
+          "id": "vue-state-ownership-docs",
+          "title": "Официальная документация: Когда достаточно props/composable, а когда нужен Pinia store?",
+          "url": "https://vuejs.org/guide/scaling-up/state-management.html",
+          "checkedAt": null
+        },
+        {
+          "id": "vue-pinia-store-docs",
+          "title": "Официальная документация: Как создать Pinia store и чем отличаются Option Store и Setup Store?",
+          "url": "https://pinia.vuejs.org/core-concepts.html",
+          "checkedAt": null
+        },
+        {
+          "id": "vue-pinia-refs-docs",
+          "title": "Официальная документация: Почему деструктуризация Pinia store теряет обновления и зачем storeToRefs?",
+          "url": "https://pinia.vuejs.org/core-concepts.html#destructuring-from-a-store",
+          "checkedAt": null
+        },
+        {
+          "id": "vue-pinia-actions-getters-docs",
+          "title": "Официальная документация: Чем getters отличаются от actions и как обновлять state Pinia?",
+          "url": "https://pinia.vuejs.org/core-concepts/actions.html",
+          "checkedAt": null
+        },
+        {
+          "id": "vue-pinia-reset-persist-docs",
+          "title": "Официальная документация: Сохраняет ли Pinia состояние после refresh и как делать reset?",
+          "url": "https://pinia.vuejs.org/core-concepts/state.html",
+          "checkedAt": null
+        }
+      ],
+      "caveats": [
+        "Базовый пакет Vue 3. defineModel требует 3.4+, reactive props destructure и onWatcherCleanup - 3.5+. Примеры разобраны статически и не выполнялись. Vue 2 и Nuxt вне границ пакета."
+      ]
+    },
+    {
+      "sectionId": "vue",
+      "subsectionId": "engineering",
+      "scope": "TypeScript, тестирование, SSR, безопасность, производительность и ошибки.",
+      "sources": [
+        {
+          "id": "vue-typescript-contracts-docs",
+          "title": "Официальная документация: Как типизировать props, emits и template refs в Vue?",
+          "url": "https://vuejs.org/guide/typescript/composition-api.html",
+          "checkedAt": null
+        },
+        {
+          "id": "vue-component-testing-docs",
+          "title": "Официальная документация: Что проверять в тесте Vue-компонента и зачем await trigger/setProps?",
+          "url": "https://test-utils.vuejs.org/guide/advanced/async-suspense.html",
+          "checkedAt": null
+        },
+        {
+          "id": "vue-composable-testing-docs",
+          "title": "Официальная документация: Как тестировать composable с lifecycle или inject?",
+          "url": "https://vuejs.org/guide/scaling-up/testing.html#testing-composables",
+          "checkedAt": null
+        },
+        {
+          "id": "vue-ssr-hydration-docs",
+          "title": "Официальная документация: Что такое SSR и hydration во Vue и откуда берутся mismatch?",
+          "url": "https://vuejs.org/guide/scaling-up/ssr.html",
+          "checkedAt": null
+        },
+        {
+          "id": "vue-ui-security-docs",
+          "title": "Официальная документация: От каких XSS-ошибок защищает Vue и где защита заканчивается?",
+          "url": "https://vuejs.org/guide/best-practices/security.html",
+          "checkedAt": null
+        },
+        {
+          "id": "vue-performance-basics-docs",
+          "title": "Официальная документация: Как искать и устранять лишнюю работу при обновлении Vue-интерфейса?",
+          "url": "https://vuejs.org/guide/best-practices/performance.html",
+          "checkedAt": null
+        },
+        {
+          "id": "vue-error-handling-docs",
+          "title": "Официальная документация: Как разделять ошибки запросов, компонентов и загрузки async-компонента?",
+          "url": "https://vuejs.org/api/composition-api-lifecycle.html#onerrorcaptured",
+          "checkedAt": null
+        }
+      ],
+      "caveats": [
+        "Базовый пакет Vue 3. defineModel требует 3.4+, reactive props destructure и onWatcherCleanup - 3.5+. Примеры разобраны статически и не выполнялись. Vue 2 и Nuxt вне границ пакета."
       ]
     }
   ]

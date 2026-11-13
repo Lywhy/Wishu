@@ -1,0 +1,74 @@
+{
+  "schemaVersion": 1,
+  "id": "vue-foundations-20261113-templates",
+  "title": "Vue 3: Компоненты и шаблоны",
+  "sectionId": "vue",
+  "subsectionId": "templates",
+  "currentPass": "complete",
+  "goalIds": [
+    "core",
+    "vue-sfc",
+    "vue-if-show",
+    "vue-list-keys",
+    "vue-application-mount",
+    "vue-template-bindings",
+    "vue-class-style",
+    "vue-dom-events",
+    "vue-native-model",
+    "vue-component-registration",
+    "vue-scoped-css",
+    "vue-template-refs",
+    "vue-dynamic-component",
+    "vue-keep-alive",
+    "vue-teleport",
+    "vue-transitions",
+    "vue-async-component"
+  ],
+  "questionIds": [
+    "vue-sfc",
+    "vue-if-show",
+    "vue-list-keys",
+    "vue-application-mount",
+    "vue-template-bindings",
+    "vue-class-style",
+    "vue-dom-events",
+    "vue-native-model",
+    "vue-component-registration",
+    "vue-scoped-css",
+    "vue-template-refs",
+    "vue-dynamic-component",
+    "vue-keep-alive",
+    "vue-teleport",
+    "vue-transitions",
+    "vue-async-component"
+  ],
+  "scopePass": {
+    "status": "complete",
+    "remaining": []
+  },
+  "answerPass": {
+    "status": "complete",
+    "remaining": []
+  },
+  "baseline": [
+    {
+      "id": "vue-sfc",
+      "title": "Как устроен Single-File Component во Vue 3?",
+      "contentHash": "a49ed0ff00023ad54a9b24b4f4b260c58e4df1898762e8fca43060ee816ecea7"
+    },
+    {
+      "id": "vue-if-show",
+      "title": "Чем v-if отличается от v-show?",
+      "contentHash": "06149c3a6175bcdb0f7956d3cb2b98c704cfb21d463596ae519eb1d50c342d29"
+    },
+    {
+      "id": "vue-list-keys",
+      "title": "Зачем Vue нужен key в v-for и почему не стоит совмещать v-if и v-for?",
+      "contentHash": "49c54d8e2db77abc6d5d33ae03f1193ede3848edf018ef19fc898b98e5538e70"
+    }
+  ],
+  "notes": [
+    "Базовая матрица Vue 3. Vue 2, Nuxt, внутренности renderer и расширенные плагины вне пакета. Старые ответы сохранены целиком, к ним добавлены примеры и уточнения. Примеры не выполнялись.",
+    "Проверены форматирование, content:report (+48 ~12 -0, кандидатов дублей 0), content:build и полная content:check (1346 вопросов). Все 12 исходных ответов сохранены целиком; прежние карточки и порядок сохранены. Вопросы и структура вне Vue семантически не изменились. PostgreSQL, приложение и примеры не запускались."
+  ]
+}

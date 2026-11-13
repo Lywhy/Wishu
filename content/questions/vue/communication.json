@@ -2,41 +2,95 @@
   "$schema": "../question-bundle.schema.json",
   "sectionId": "vue",
   "subsectionId": "communication",
-  "scope": "Props, события и слоты.",
+  "scope": "Props, emits, модели, слоты, attrs, provide/inject и публичный API.",
   "coverageGoals": [
     {
       "id": "core",
       "title": "Взаимодействие компонентов",
-      "description": "Обзор и взаимосвязи навыков: Props, события и слоты.",
+      "description": "Props, emits, модели, слоты, attrs, provide/inject и публичный API.",
       "requiredDifficulties": [],
-      "reviewed": false,
+      "reviewed": true,
       "priority": "core",
-      "relatedSkillIds": ["vue-props-events", "vue-v-model", "vue-slots"]
+      "relatedSkillIds": [
+        "vue-props-events",
+        "vue-v-model",
+        "vue-slots",
+        "vue-prop-contract",
+        "vue-component-events",
+        "vue-fallthrough-attrs",
+        "vue-provide-inject",
+        "vue-component-expose"
+      ]
     },
     {
       "id": "vue-props-events",
       "title": "Почему дочерний компонент не должен изменять props?",
-      "description": "Объяснить и применить правило с учётом его границ: Владелец данных обновляет их в ответ на событие ребёнка.",
+      "description": "Владелец состояния обновляет его в ответ на событие ребёнка.",
       "requiredDifficulties": ["Базовый"],
-      "reviewed": false,
+      "reviewed": true,
       "priority": "core",
       "relatedSkillIds": []
     },
     {
       "id": "vue-v-model",
       "title": "Как устроен v-model у собственного компонента?",
-      "description": "Объяснить и применить правило с учётом его границ: V-model - согласованный контракт передачи значения и уведомления.",
+      "description": "V-model - согласованный контракт значения и уведомления.",
       "requiredDifficulties": ["Средний"],
-      "reviewed": false,
+      "reviewed": true,
       "priority": "core",
       "relatedSkillIds": []
     },
     {
       "id": "vue-slots",
       "title": "Что передают обычные и scoped slots?",
-      "description": "Объяснить и применить правило с учётом его границ: Слот передаёт разметку, slot props передают доступные ей данные.",
+      "description": "Слот передаёт разметку, slot props дают ей доступ к данным ребёнка.",
       "requiredDifficulties": ["Средний"],
-      "reviewed": false,
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "vue-prop-contract",
+      "title": "Как объявлять типы, обязательность и значения по умолчанию props?",
+      "description": "Prop должен иметь понятные тип, обязательность и начальное значение.",
+      "requiredDifficulties": ["Базовый"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "vue-component-events",
+      "title": "Всплывают ли события компонентов и зачем объявлять emits?",
+      "description": "Событие компонента слышит непосредственный слушатель его контракта.",
+      "requiredDifficulties": ["Базовый"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "vue-fallthrough-attrs",
+      "title": "Что такое fallthrough attrs и как передать их на нужный элемент?",
+      "description": "Обёртка должна явно определять адресата внешних атрибутов.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "vue-provide-inject",
+      "title": "Когда provide/inject удобнее цепочки props?",
+      "description": "Inject получает зависимость ближайшего провайдера, сохраняя её контракт.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "vue-component-expose",
+      "title": "Когда нужен defineExpose и почему ref на компонент не заменяет props/events?",
+      "description": "Expose оставляет небольшой публичный API для императивных операций.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": true,
       "priority": "core",
       "relatedSkillIds": []
     }
@@ -53,16 +107,17 @@
       "order": 0,
       "popular": false,
       "editorial": {
-        "learningGoal": "Объяснить и применить правило с учётом его границ: Владелец данных обновляет их в ответ на событие ребёнка.",
-        "keywords": ["Vue", "Взаимодействие компонентов"],
+        "learningGoal": "Владелец состояния обновляет его в ответ на событие ребёнка.",
+        "keywords": ["Vue 3", "Взаимодействие компонентов", "props-events"],
         "kind": "explanation",
-        "reviewStatus": "imported",
+        "reviewStatus": "ready",
         "goalIds": ["core", "vue-props-events"],
         "relatedQuestionIds": [],
         "priority": "core",
-        "sourceRefs": []
+        "sourceRefs": ["vue-props-events-docs"]
       },
-      "answerFile": "answers/vue/vue-props-events.md"
+      "answerFile": "answers/vue/vue-props-events.md",
+      "pitfall": "Копировать prop один раз и ожидать дальнейшей синхронизации или мутировать вложенные поля чужого объекта неявно."
     },
     {
       "id": "vue-v-model",
@@ -75,16 +130,17 @@
       "order": 1,
       "popular": false,
       "editorial": {
-        "learningGoal": "Объяснить и применить правило с учётом его границ: V-model - согласованный контракт передачи значения и уведомления.",
-        "keywords": ["Vue", "Взаимодействие компонентов"],
+        "learningGoal": "V-model - согласованный контракт значения и уведомления.",
+        "keywords": ["Vue 3", "Взаимодействие компонентов", "v-model"],
         "kind": "explanation",
-        "reviewStatus": "imported",
+        "reviewStatus": "ready",
         "goalIds": ["core", "vue-v-model"],
         "relatedQuestionIds": [],
         "priority": "core",
-        "sourceRefs": []
+        "sourceRefs": ["vue-v-model-docs"]
       },
-      "answerFile": "answers/vue/vue-v-model.md"
+      "answerFile": "answers/vue/vue-v-model.md",
+      "pitfall": "Ожидать, что мутация вложенного объекта модели обязательно отправит update:modelValue: явная замена делает уведомление понятнее."
     },
     {
       "id": "vue-slots",
@@ -97,16 +153,132 @@
       "order": 2,
       "popular": false,
       "editorial": {
-        "learningGoal": "Объяснить и применить правило с учётом его границ: Слот передаёт разметку, slot props передают доступные ей данные.",
-        "keywords": ["Vue", "Взаимодействие компонентов"],
+        "learningGoal": "Слот передаёт разметку, slot props дают ей доступ к данным ребёнка.",
+        "keywords": ["Vue 3", "Взаимодействие компонентов", "slots"],
         "kind": "explanation",
-        "reviewStatus": "imported",
+        "reviewStatus": "ready",
         "goalIds": ["core", "vue-slots"],
         "relatedQuestionIds": [],
         "priority": "core",
-        "sourceRefs": []
+        "sourceRefs": ["vue-slots-docs"]
       },
-      "answerFile": "answers/vue/vue-slots.md"
+      "answerFile": "answers/vue/vue-slots.md",
+      "pitfall": "Обращаться в слоте к item ребёнка без передачи slot props или путать slot props с обычными props компонента."
+    },
+    {
+      "id": "vue-prop-contract",
+      "title": "Как объявлять типы, обязательность и значения по умолчанию props?",
+      "topic": "Взаимодействие компонентов",
+      "difficulty": "Базовый",
+      "summary": "Публичный контракт компонента и runtime-проверки.",
+      "takeaway": "Prop должен иметь понятные тип, обязательность и начальное значение.",
+      "moduleId": "vue",
+      "order": 3,
+      "popular": false,
+      "answerFile": "answers/vue/vue-prop-contract.md",
+      "pitfall": "Писать default: [] или передавать disabled=\"false\", ожидая логическое false.",
+      "editorial": {
+        "learningGoal": "Prop должен иметь понятные тип, обязательность и начальное значение.",
+        "keywords": ["Vue 3", "Взаимодействие компонентов", "prop-contract"],
+        "kind": "explanation",
+        "reviewStatus": "ready",
+        "goalIds": ["core", "vue-prop-contract"],
+        "relatedQuestionIds": [],
+        "priority": "core",
+        "sourceRefs": ["vue-prop-contract-docs"]
+      }
+    },
+    {
+      "id": "vue-component-events",
+      "title": "Всплывают ли события компонентов и зачем объявлять emits?",
+      "topic": "Взаимодействие компонентов",
+      "difficulty": "Базовый",
+      "summary": "Явный событийный API без DOM-всплытия.",
+      "takeaway": "Событие компонента слышит непосредственный слушатель его контракта.",
+      "moduleId": "vue",
+      "order": 4,
+      "popular": false,
+      "answerFile": "answers/vue/vue-component-events.md",
+      "pitfall": "Ожидать автоматического получения события внука или дублировать нативный click и emit из-за неописанного контракта.",
+      "editorial": {
+        "learningGoal": "Событие компонента слышит непосредственный слушатель его контракта.",
+        "keywords": ["Vue 3", "Взаимодействие компонентов", "component-events"],
+        "kind": "explanation",
+        "reviewStatus": "ready",
+        "goalIds": ["core", "vue-component-events"],
+        "relatedQuestionIds": [],
+        "priority": "core",
+        "sourceRefs": ["vue-component-events-docs"]
+      }
+    },
+    {
+      "id": "vue-fallthrough-attrs",
+      "title": "Что такое fallthrough attrs и как передать их на нужный элемент?",
+      "topic": "Взаимодействие компонентов",
+      "difficulty": "Средний",
+      "summary": "Необъявленные атрибуты, listeners и несколько корней.",
+      "takeaway": "Обёртка должна явно определять адресата внешних атрибутов.",
+      "moduleId": "vue",
+      "order": 5,
+      "popular": false,
+      "answerFile": "answers/vue/vue-fallthrough-attrs.md",
+      "pitfall": "Передавать все attrs сразу нескольким узлам и получать повторные обработчики или дублированные id.",
+      "editorial": {
+        "learningGoal": "Обёртка должна явно определять адресата внешних атрибутов.",
+        "keywords": ["Vue 3", "Взаимодействие компонентов", "fallthrough-attrs"],
+        "kind": "explanation",
+        "reviewStatus": "ready",
+        "goalIds": ["core", "vue-fallthrough-attrs"],
+        "relatedQuestionIds": [],
+        "priority": "core",
+        "sourceRefs": ["vue-fallthrough-attrs-docs"]
+      }
+    },
+    {
+      "id": "vue-provide-inject",
+      "title": "Когда provide/inject удобнее цепочки props?",
+      "topic": "Взаимодействие компонентов",
+      "difficulty": "Средний",
+      "summary": "Зависимости поддерева и ближайший провайдер.",
+      "takeaway": "Inject получает зависимость ближайшего провайдера, сохраняя её контракт.",
+      "moduleId": "vue",
+      "order": 6,
+      "popular": false,
+      "answerFile": "answers/vue/vue-provide-inject.md",
+      "pitfall": "Создавать Symbol заново на каждой стороне или использовать inject как бесконтрольный глобальный store.",
+      "editorial": {
+        "learningGoal": "Inject получает зависимость ближайшего провайдера, сохраняя её контракт.",
+        "keywords": ["Vue 3", "Взаимодействие компонентов", "provide-inject"],
+        "kind": "explanation",
+        "reviewStatus": "ready",
+        "goalIds": ["core", "vue-provide-inject"],
+        "relatedQuestionIds": [],
+        "priority": "core",
+        "sourceRefs": ["vue-provide-inject-docs"]
+      }
+    },
+    {
+      "id": "vue-component-expose",
+      "title": "Когда нужен defineExpose и почему ref на компонент не заменяет props/events?",
+      "topic": "Взаимодействие компонентов",
+      "difficulty": "Средний",
+      "summary": "Ограниченный императивный интерфейс ребёнка.",
+      "takeaway": "Expose оставляет небольшой публичный API для императивных операций.",
+      "moduleId": "vue",
+      "order": 7,
+      "popular": false,
+      "answerFile": "answers/vue/vue-component-expose.md",
+      "pitfall": "Раскрывать всё внутреннее состояние и связывать родителя с реализацией каждого поля.",
+      "editorial": {
+        "learningGoal": "Expose оставляет небольшой публичный API для императивных операций.",
+        "keywords": ["Vue 3", "Взаимодействие компонентов", "component-expose"],
+        "kind": "explanation",
+        "reviewStatus": "ready",
+        "goalIds": ["core", "vue-component-expose"],
+        "relatedQuestionIds": [],
+        "priority": "core",
+        "sourceRefs": ["vue-component-expose-docs"]
+      }
     }
   ]
 }

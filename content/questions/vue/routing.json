@@ -1,0 +1,218 @@
+{
+  "$schema": "../question-bundle.schema.json",
+  "sectionId": "vue",
+  "subsectionId": "routing",
+  "scope": "Базовые контракты Vue Router: адреса, параметры, вложенность, guards и history.",
+  "coverageGoals": [
+    {
+      "id": "core",
+      "title": "Маршрутизация",
+      "description": "Базовые контракты Vue Router: адреса, параметры, вложенность, guards и history.",
+      "requiredDifficulties": [],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": [
+        "vue-router-basics",
+        "vue-route-router",
+        "vue-route-params-reuse",
+        "vue-nested-routes",
+        "vue-route-guards",
+        "vue-router-history"
+      ]
+    },
+    {
+      "id": "vue-router-basics",
+      "title": "Как подключить Vue Router и связать RouterLink с RouterView?",
+      "description": "URL выбирает компонент через маршрутизатор.",
+      "requiredDifficulties": ["Базовый"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "vue-route-router",
+      "title": "Чем useRoute отличается от useRouter и как делать push/replace?",
+      "description": "Route описывает адрес, router управляет переходами.",
+      "requiredDifficulties": ["Базовый"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "vue-route-params-reuse",
+      "title": "Почему переход /users/1 -> /users/2 не вызывает onMounted заново?",
+      "description": "Наблюдайте нужный параметр, если от него зависит загрузка.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "vue-nested-routes",
+      "title": "Как устроены вложенные маршруты, layout и страница 404?",
+      "description": "Вложенность URL и место отрисовки описываются согласованно.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "vue-route-guards",
+      "title": "Как guards отменяют или перенаправляют переход и защищают ли они API?",
+      "description": "Guard управляет интерфейсом; доступ к данным проверяется сервером.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "vue-router-history",
+      "title": "Чем history mode отличается от hash mode и почему после refresh бывает 404?",
+      "description": "Прямой вход по маршруту должен возвращать оболочку SPA.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    }
+  ],
+  "questions": [
+    {
+      "id": "vue-router-basics",
+      "title": "Как подключить Vue Router и связать RouterLink с RouterView?",
+      "topic": "Маршрутизация",
+      "difficulty": "Базовый",
+      "summary": "Таблица маршрутов, переходы и место вывода страницы.",
+      "takeaway": "URL выбирает компонент через маршрутизатор.",
+      "moduleId": "vue",
+      "order": 0,
+      "popular": false,
+      "answerFile": "answers/vue/vue-router-basics.md",
+      "pitfall": "Ожидать вывода страницы без RouterView или использовать href для каждого внутреннего перехода, перезагружая приложение.",
+      "editorial": {
+        "learningGoal": "URL выбирает компонент через маршрутизатор.",
+        "keywords": ["Vue 3", "Маршрутизация", "router-basics"],
+        "kind": "explanation",
+        "reviewStatus": "ready",
+        "goalIds": ["core", "vue-router-basics"],
+        "relatedQuestionIds": [],
+        "priority": "core",
+        "sourceRefs": ["vue-router-basics-docs"]
+      }
+    },
+    {
+      "id": "vue-route-router",
+      "title": "Чем useRoute отличается от useRouter и как делать push/replace?",
+      "topic": "Маршрутизация",
+      "difficulty": "Базовый",
+      "summary": "Текущее местоположение и команды навигации.",
+      "takeaway": "Route описывает адрес, router управляет переходами.",
+      "moduleId": "vue",
+      "order": 1,
+      "popular": false,
+      "answerFile": "answers/vue/vue-route-router.md",
+      "pitfall": "Мутировать route.params как способ перехода или ожидать от push наличия успешно загруженных данных страницы.",
+      "editorial": {
+        "learningGoal": "Route описывает адрес, router управляет переходами.",
+        "keywords": ["Vue 3", "Маршрутизация", "route-router"],
+        "kind": "explanation",
+        "reviewStatus": "ready",
+        "goalIds": ["core", "vue-route-router"],
+        "relatedQuestionIds": [],
+        "priority": "core",
+        "sourceRefs": ["vue-route-router-docs"]
+      }
+    },
+    {
+      "id": "vue-route-params-reuse",
+      "title": "Почему переход /users/1 -> /users/2 не вызывает onMounted заново?",
+      "topic": "Маршрутизация",
+      "difficulty": "Средний",
+      "summary": "Переиспользование экземпляра при изменении параметра маршрута.",
+      "takeaway": "Наблюдайте нужный параметр, если от него зависит загрузка.",
+      "moduleId": "vue",
+      "order": 2,
+      "popular": false,
+      "answerFile": "answers/vue/vue-route-params-reuse.md",
+      "pitfall": "Без необходимости принудительно пересоздавать всё приложение через key вместо обработки изменившегося входа.",
+      "editorial": {
+        "learningGoal": "Наблюдайте нужный параметр, если от него зависит загрузка.",
+        "keywords": ["Vue 3", "Маршрутизация", "route-params-reuse"],
+        "kind": "explanation",
+        "reviewStatus": "ready",
+        "goalIds": ["core", "vue-route-params-reuse"],
+        "relatedQuestionIds": ["vue-request-race"],
+        "priority": "core",
+        "sourceRefs": ["vue-route-params-reuse-docs"]
+      }
+    },
+    {
+      "id": "vue-nested-routes",
+      "title": "Как устроены вложенные маршруты, layout и страница 404?",
+      "topic": "Маршрутизация",
+      "difficulty": "Средний",
+      "summary": "Дерево routes и соответствующие RouterView.",
+      "takeaway": "Вложенность URL и место отрисовки описываются согласованно.",
+      "moduleId": "vue",
+      "order": 3,
+      "popular": false,
+      "answerFile": "answers/vue/vue-nested-routes.md",
+      "pitfall": "Задавать дочерний path с начальным /, ожидая относительный адрес, или забывать внутренний RouterView.",
+      "editorial": {
+        "learningGoal": "Вложенность URL и место отрисовки описываются согласованно.",
+        "keywords": ["Vue 3", "Маршрутизация", "nested-routes"],
+        "kind": "explanation",
+        "reviewStatus": "ready",
+        "goalIds": ["core", "vue-nested-routes"],
+        "relatedQuestionIds": [],
+        "priority": "core",
+        "sourceRefs": ["vue-nested-routes-docs"]
+      }
+    },
+    {
+      "id": "vue-route-guards",
+      "title": "Как guards отменяют или перенаправляют переход и защищают ли они API?",
+      "topic": "Маршрутизация",
+      "difficulty": "Средний",
+      "summary": "Навигационный контроль без подмены серверной авторизации.",
+      "takeaway": "Guard управляет интерфейсом; доступ к данным проверяется сервером.",
+      "moduleId": "vue",
+      "order": 4,
+      "popular": false,
+      "answerFile": "answers/vue/vue-route-guards.md",
+      "pitfall": "Считать meta.requiresAuth серверной защитой или смешивать return и многократный вызов next.",
+      "editorial": {
+        "learningGoal": "Guard управляет интерфейсом; доступ к данным проверяется сервером.",
+        "keywords": ["Vue 3", "Маршрутизация", "route-guards"],
+        "kind": "explanation",
+        "reviewStatus": "ready",
+        "goalIds": ["core", "vue-route-guards"],
+        "relatedQuestionIds": [],
+        "priority": "core",
+        "sourceRefs": ["vue-route-guards-docs"]
+      }
+    },
+    {
+      "id": "vue-router-history",
+      "title": "Чем history mode отличается от hash mode и почему после refresh бывает 404?",
+      "topic": "Маршрутизация",
+      "difficulty": "Средний",
+      "summary": "Клиентская навигация и настройка сервера статики.",
+      "takeaway": "Прямой вход по маршруту должен возвращать оболочку SPA.",
+      "moduleId": "vue",
+      "order": 5,
+      "popular": false,
+      "answerFile": "answers/vue/vue-router-history.md",
+      "pitfall": "Исправлять серверный 404 добавлением нового клиентского компонента без настройки отдачи index.html.",
+      "editorial": {
+        "learningGoal": "Прямой вход по маршруту должен возвращать оболочку SPA.",
+        "keywords": ["Vue 3", "Маршрутизация", "router-history"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "goalIds": ["core", "vue-router-history"],
+        "relatedQuestionIds": [],
+        "priority": "core",
+        "sourceRefs": ["vue-router-history-docs"]
+      }
+    }
+  ]
+}

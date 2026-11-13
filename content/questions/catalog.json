@@ -117,7 +117,7 @@
     {
       "id": "vue",
       "title": "Vue",
-      "description": "Vue 3: шаблоны, реактивность, компоненты и Composition API.",
+      "description": "Vue 3: компоненты, реактивность, Composition API, Vue Router, Pinia и практика разработки.",
       "groupId": "frontend",
       "moduleId": "vue",
       "mark": "V",
@@ -548,28 +548,28 @@
       "id": "templates",
       "sectionId": "vue",
       "title": "Компоненты и шаблоны",
-      "description": "Single-File Components, условия и списки.",
+      "description": "SFC, запуск приложения, привязки, формы, списки, стили и встроенные компоненты.",
       "order": 0
     },
     {
       "id": "reactivity",
       "sectionId": "vue",
       "title": "Реактивность",
-      "description": "Ref, reactive и вычисляемые значения.",
+      "description": "Ref/Proxy, зависимости, computed, деструктуризация, shallow/raw и очередь DOM.",
       "order": 1
     },
     {
       "id": "communication",
       "sectionId": "vue",
       "title": "Взаимодействие компонентов",
-      "description": "Props, события и слоты.",
+      "description": "Props, emits, модели, слоты, attrs, provide/inject и публичный API.",
       "order": 2
     },
     {
       "id": "composition",
       "sectionId": "vue",
       "title": "Composition API",
-      "description": "Наблюдатели, composables и жизненный цикл.",
+      "description": "Setup, макросы, watchers, lifecycle, composables, запросы, директивы и плагины.",
       "order": 3
     },
     {
@@ -1131,6 +1131,27 @@
       "title": "HTTP и серверные сервисы",
       "description": "Обработчики, тайм-ауты, JSON, транзакции и завершение.",
       "order": 3
+    },
+    {
+      "id": "routing",
+      "sectionId": "vue",
+      "title": "Маршрутизация",
+      "description": "Базовые контракты Vue Router: адреса, параметры, вложенность, guards и history.",
+      "order": 4
+    },
+    {
+      "id": "state",
+      "sectionId": "vue",
+      "title": "Управление состоянием",
+      "description": "Владение состоянием и базовые контракты Pinia, reset и persistence.",
+      "order": 5
+    },
+    {
+      "id": "engineering",
+      "sectionId": "vue",
+      "title": "Практика разработки",
+      "description": "TypeScript, тестирование, SSR, безопасность, производительность и ошибки.",
+      "order": 6
     }
   ]
 }

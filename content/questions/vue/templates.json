@@ -2,41 +2,175 @@
   "$schema": "../question-bundle.schema.json",
   "sectionId": "vue",
   "subsectionId": "templates",
-  "scope": "Single-File Components, условия и списки.",
+  "scope": "SFC, запуск приложения, привязки, формы, списки, стили и встроенные компоненты.",
   "coverageGoals": [
     {
       "id": "core",
       "title": "Компоненты и шаблоны",
-      "description": "Обзор и взаимосвязи навыков: Single-File Components, условия и списки.",
+      "description": "SFC, запуск приложения, привязки, формы, списки, стили и встроенные компоненты.",
       "requiredDifficulties": [],
-      "reviewed": false,
+      "reviewed": true,
       "priority": "core",
-      "relatedSkillIds": ["vue-sfc", "vue-if-show", "vue-list-keys"]
+      "relatedSkillIds": [
+        "vue-sfc",
+        "vue-if-show",
+        "vue-list-keys",
+        "vue-application-mount",
+        "vue-template-bindings",
+        "vue-class-style",
+        "vue-dom-events",
+        "vue-native-model",
+        "vue-component-registration",
+        "vue-scoped-css",
+        "vue-template-refs",
+        "vue-dynamic-component",
+        "vue-keep-alive",
+        "vue-teleport",
+        "vue-transitions",
+        "vue-async-component"
+      ]
     },
     {
       "id": "vue-sfc",
       "title": "Как устроен Single-File Component во Vue 3?",
-      "description": "Объяснить и применить правило с учётом его границ: SFC объединяет части компонента и компилируется инструментами Vue.",
+      "description": "SFC описывает компонент, а не отдельную страницу или singleton.",
       "requiredDifficulties": ["Базовый"],
-      "reviewed": false,
+      "reviewed": true,
       "priority": "core",
       "relatedSkillIds": []
     },
     {
       "id": "vue-if-show",
       "title": "Чем v-if отличается от v-show?",
-      "description": "Объяснить и применить правило с учётом его границ: Скрытие через display не равно размонтированию.",
+      "description": "Выбирайте директиву с учётом времени жизни компонента.",
       "requiredDifficulties": ["Базовый"],
-      "reviewed": false,
+      "reviewed": true,
       "priority": "core",
       "relatedSkillIds": []
     },
     {
       "id": "vue-list-keys",
       "title": "Зачем Vue нужен key в v-for и почему не стоит совмещать v-if и v-for?",
-      "description": "Объяснить и применить правило с учётом его границ: Фильтруйте данные отдельно, задавайте ключ по идентичности записи.",
+      "description": "Ключ описывает запись, а не её позицию в массиве.",
       "requiredDifficulties": ["Средний"],
-      "reviewed": false,
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "vue-application-mount",
+      "title": "Как создать приложение Vue и подключить корневой компонент?",
+      "description": "Настраивайте приложение до mount и различайте приложение и компонент.",
+      "requiredDifficulties": ["Базовый"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "vue-template-bindings",
+      "title": "Чем интерполяция отличается от v-bind и v-html?",
+      "description": "Выбирайте привязку по назначению значения и границе доверия.",
+      "requiredDifficulties": ["Базовый"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "vue-class-style",
+      "title": "Как задавать динамические class и style во Vue?",
+      "description": "Оформление выводится из состояния, а не меняется вручную параллельно Vue.",
+      "requiredDifficulties": ["Базовый"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "vue-dom-events",
+      "title": "Как работают @click, $event и модификаторы DOM-событий?",
+      "description": "Модификаторы выражают поведение DOM-события, а не бизнес-логику.",
+      "requiredDifficulties": ["Базовый"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "vue-native-model",
+      "title": "Как v-model работает с input, checkbox и select?",
+      "description": "Начальное значение формы задаётся в реактивном состоянии.",
+      "requiredDifficulties": ["Базовый"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "vue-component-registration",
+      "title": "Как регистрировать и использовать дочерние компоненты?",
+      "description": "Зависимости компонента лучше видеть в его локальных импортах.",
+      "requiredDifficulties": ["Базовый"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "vue-scoped-css",
+      "title": "Как scoped CSS ограничивает стили и зачем нужен :deep()?",
+      "description": "Scoped изолирует селекторы сборкой, но не отменяет CSS-каскад.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "vue-template-refs",
+      "title": "Когда нужен template ref и когда доступен DOM?",
+      "description": "Template ref дополняет декларативный UI для операций вроде focus.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "vue-dynamic-component",
+      "title": "Как component :is переключает компоненты и что происходит с их состоянием?",
+      "description": "Переключение типа обычно пересоздаёт компонент; key управляет идентичностью.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "vue-keep-alive",
+      "title": "Чем KeepAlive отличается от v-show и обычного переключения компонента?",
+      "description": "Кешированный компонент не уничтожен, но может быть неактивен.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "vue-teleport",
+      "title": "Что меняет Teleport в DOM и в дереве компонентов?",
+      "description": "Teleport переносит DOM, сохраняя компонентные связи.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "vue-transitions",
+      "title": "Для чего нужны Transition и TransitionGroup?",
+      "description": "Анимация привязывается к изменению дерева и идентичности элементов.",
+      "requiredDifficulties": ["Базовый"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "vue-async-component",
+      "title": "Как загружать компонент асинхронно и чем это отличается от ленивого маршрута?",
+      "description": "Ленивая загрузка откладывает загрузку кода, но требует состояния ожидания и ошибки.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": true,
       "priority": "core",
       "relatedSkillIds": []
     }
@@ -53,16 +187,17 @@
       "order": 0,
       "popular": false,
       "editorial": {
-        "learningGoal": "Объяснить и применить правило с учётом его границ: SFC объединяет части компонента и компилируется инструментами Vue.",
-        "keywords": ["Vue", "Компоненты и шаблоны"],
+        "learningGoal": "SFC описывает компонент, а не отдельную страницу или singleton.",
+        "keywords": ["Vue 3", "Компоненты и шаблоны", "sfc"],
         "kind": "explanation",
-        "reviewStatus": "imported",
+        "reviewStatus": "ready",
         "goalIds": ["core", "vue-sfc"],
         "relatedQuestionIds": [],
         "priority": "core",
-        "sourceRefs": []
+        "sourceRefs": ["vue-sfc-docs"]
       },
-      "answerFile": "answers/vue/vue-sfc.md"
+      "answerFile": "answers/vue/vue-sfc.md",
+      "pitfall": "Считать, что scoped создаёт Shadow DOM или что все экземпляры разделяют переменные setup."
     },
     {
       "id": "vue-if-show",
@@ -75,16 +210,17 @@
       "order": 1,
       "popular": false,
       "editorial": {
-        "learningGoal": "Объяснить и применить правило с учётом его границ: Скрытие через display не равно размонтированию.",
-        "keywords": ["Vue", "Компоненты и шаблоны"],
+        "learningGoal": "Выбирайте директиву с учётом времени жизни компонента.",
+        "keywords": ["Vue 3", "Компоненты и шаблоны", "if-show"],
         "kind": "explanation",
-        "reviewStatus": "imported",
+        "reviewStatus": "ready",
         "goalIds": ["core", "vue-if-show"],
         "relatedQuestionIds": [],
         "priority": "core",
-        "sourceRefs": []
+        "sourceRefs": ["vue-if-show-docs"]
       },
-      "answerFile": "answers/vue/vue-if-show.md"
+      "answerFile": "answers/vue/vue-if-show.md",
+      "pitfall": "Ожидать, что скрытие через v-show остановит таймер или отправку запросов."
     },
     {
       "id": "vue-list-keys",
@@ -98,16 +234,316 @@
       "order": 2,
       "popular": false,
       "editorial": {
-        "learningGoal": "Объяснить и применить правило с учётом его границ: Фильтруйте данные отдельно, задавайте ключ по идентичности записи.",
-        "keywords": ["Vue", "Компоненты и шаблоны"],
+        "learningGoal": "Ключ описывает запись, а не её позицию в массиве.",
+        "keywords": ["Vue 3", "Компоненты и шаблоны", "list-keys"],
         "kind": "explanation",
-        "reviewStatus": "imported",
+        "reviewStatus": "ready",
         "goalIds": ["core", "vue-list-keys"],
         "relatedQuestionIds": [],
         "priority": "core",
-        "sourceRefs": []
+        "sourceRefs": ["vue-list-keys-docs"]
       },
-      "answerFile": "answers/vue/vue-list-keys.md"
+      "answerFile": "answers/vue/vue-list-keys.md",
+      "pitfall": "Генерировать key через Math.random() при каждом рендере: это заставляет пересоздавать экземпляры."
+    },
+    {
+      "id": "vue-application-mount",
+      "title": "Как создать приложение Vue и подключить корневой компонент?",
+      "topic": "Компоненты и шаблоны",
+      "difficulty": "Базовый",
+      "summary": "createApp, mount и граница приложения.",
+      "takeaway": "Настраивайте приложение до mount и различайте приложение и компонент.",
+      "moduleId": "vue",
+      "order": 3,
+      "popular": false,
+      "answerFile": "answers/vue/vue-application-mount.md",
+      "pitfall": "Вызывать app.use после mount и ожидать, что уже созданные компоненты будут инициализированы заново.",
+      "editorial": {
+        "learningGoal": "Настраивайте приложение до mount и различайте приложение и компонент.",
+        "keywords": ["Vue 3", "Компоненты и шаблоны", "application-mount"],
+        "kind": "explanation",
+        "reviewStatus": "ready",
+        "goalIds": ["core", "vue-application-mount"],
+        "relatedQuestionIds": [],
+        "priority": "core",
+        "sourceRefs": ["vue-application-mount-docs"]
+      }
+    },
+    {
+      "id": "vue-template-bindings",
+      "title": "Чем интерполяция отличается от v-bind и v-html?",
+      "topic": "Компоненты и шаблоны",
+      "difficulty": "Базовый",
+      "summary": "Текст, атрибуты и доверенная HTML-разметка.",
+      "takeaway": "Выбирайте привязку по назначению значения и границе доверия.",
+      "moduleId": "vue",
+      "order": 4,
+      "popular": false,
+      "answerFile": "answers/vue/vue-template-bindings.md",
+      "pitfall": "Выводить пользовательский ввод через v-html без надёжной очистки; экранирование интерполяции здесь не применяется.",
+      "editorial": {
+        "learningGoal": "Выбирайте привязку по назначению значения и границе доверия.",
+        "keywords": ["Vue 3", "Компоненты и шаблоны", "template-bindings"],
+        "kind": "explanation",
+        "reviewStatus": "ready",
+        "goalIds": ["core", "vue-template-bindings"],
+        "relatedQuestionIds": [],
+        "priority": "core",
+        "sourceRefs": ["vue-template-bindings-docs"]
+      }
+    },
+    {
+      "id": "vue-class-style",
+      "title": "Как задавать динамические class и style во Vue?",
+      "topic": "Компоненты и шаблоны",
+      "difficulty": "Базовый",
+      "summary": "Объектные и массивные привязки оформления.",
+      "takeaway": "Оформление выводится из состояния, а не меняется вручную параллельно Vue.",
+      "moduleId": "vue",
+      "order": 5,
+      "popular": false,
+      "answerFile": "answers/vue/vue-class-style.md",
+      "pitfall": "Одновременно изменять classList вручную и управлять теми же классами из шаблона.",
+      "editorial": {
+        "learningGoal": "Оформление выводится из состояния, а не меняется вручную параллельно Vue.",
+        "keywords": ["Vue 3", "Компоненты и шаблоны", "class-style"],
+        "kind": "explanation",
+        "reviewStatus": "ready",
+        "goalIds": ["core", "vue-class-style"],
+        "relatedQuestionIds": [],
+        "priority": "core",
+        "sourceRefs": ["vue-class-style-docs"]
+      }
+    },
+    {
+      "id": "vue-dom-events",
+      "title": "Как работают @click, $event и модификаторы DOM-событий?",
+      "topic": "Компоненты и шаблоны",
+      "difficulty": "Базовый",
+      "summary": "Обработчики, аргументы и контракт DOM-события.",
+      "takeaway": "Модификаторы выражают поведение DOM-события, а не бизнес-логику.",
+      "moduleId": "vue",
+      "order": 6,
+      "popular": false,
+      "answerFile": "answers/vue/vue-dom-events.md",
+      "pitfall": "Считать .stop и .prevent взаимозаменяемыми: отмена навигации и остановка всплытия решают разные задачи.",
+      "editorial": {
+        "learningGoal": "Модификаторы выражают поведение DOM-события, а не бизнес-логику.",
+        "keywords": ["Vue 3", "Компоненты и шаблоны", "dom-events"],
+        "kind": "explanation",
+        "reviewStatus": "ready",
+        "goalIds": ["core", "vue-dom-events"],
+        "relatedQuestionIds": [],
+        "priority": "core",
+        "sourceRefs": ["vue-dom-events-docs"]
+      }
+    },
+    {
+      "id": "vue-native-model",
+      "title": "Как v-model работает с input, checkbox и select?",
+      "topic": "Компоненты и шаблоны",
+      "difficulty": "Базовый",
+      "summary": "Источник состояния формы и особенности контролов.",
+      "takeaway": "Начальное значение формы задаётся в реактивном состоянии.",
+      "moduleId": "vue",
+      "order": 7,
+      "popular": false,
+      "answerFile": "answers/vue/vue-native-model.md",
+      "pitfall": "Ожидать, что value в HTML переопределит начальную модель, или считать .number полноценной валидацией.",
+      "editorial": {
+        "learningGoal": "Начальное значение формы задаётся в реактивном состоянии.",
+        "keywords": ["Vue 3", "Компоненты и шаблоны", "native-model"],
+        "kind": "explanation",
+        "reviewStatus": "ready",
+        "goalIds": ["core", "vue-native-model"],
+        "relatedQuestionIds": [],
+        "priority": "core",
+        "sourceRefs": ["vue-native-model-docs"]
+      }
+    },
+    {
+      "id": "vue-component-registration",
+      "title": "Как регистрировать и использовать дочерние компоненты?",
+      "topic": "Компоненты и шаблоны",
+      "difficulty": "Базовый",
+      "summary": "Локальные импорты и глобальная регистрация.",
+      "takeaway": "Зависимости компонента лучше видеть в его локальных импортах.",
+      "moduleId": "vue",
+      "order": 8,
+      "popular": false,
+      "answerFile": "answers/vue/vue-component-registration.md",
+      "pitfall": "Считать импорт родителя автоматической глобальной регистрацией для всего дерева.",
+      "editorial": {
+        "learningGoal": "Зависимости компонента лучше видеть в его локальных импортах.",
+        "keywords": ["Vue 3", "Компоненты и шаблоны", "component-registration"],
+        "kind": "explanation",
+        "reviewStatus": "ready",
+        "goalIds": ["core", "vue-component-registration"],
+        "relatedQuestionIds": [],
+        "priority": "core",
+        "sourceRefs": ["vue-component-registration-docs"]
+      }
+    },
+    {
+      "id": "vue-scoped-css",
+      "title": "Как scoped CSS ограничивает стили и зачем нужен :deep()?",
+      "topic": "Компоненты и шаблоны",
+      "difficulty": "Средний",
+      "summary": "Преобразованные селекторы без Shadow DOM.",
+      "takeaway": "Scoped изолирует селекторы сборкой, но не отменяет CSS-каскад.",
+      "moduleId": "vue",
+      "order": 9,
+      "popular": false,
+      "answerFile": "answers/vue/vue-scoped-css.md",
+      "pitfall": "Использовать :deep() повсеместно вместо публичных props, CSS-переменных и предусмотренных классов.",
+      "editorial": {
+        "learningGoal": "Scoped изолирует селекторы сборкой, но не отменяет CSS-каскад.",
+        "keywords": ["Vue 3", "Компоненты и шаблоны", "scoped-css"],
+        "kind": "explanation",
+        "reviewStatus": "ready",
+        "goalIds": ["core", "vue-scoped-css"],
+        "relatedQuestionIds": [],
+        "priority": "core",
+        "sourceRefs": ["vue-scoped-css-docs"]
+      }
+    },
+    {
+      "id": "vue-template-refs",
+      "title": "Когда нужен template ref и когда доступен DOM?",
+      "topic": "Компоненты и шаблоны",
+      "difficulty": "Средний",
+      "summary": "Императивный доступ к элементу после монтирования.",
+      "takeaway": "Template ref дополняет декларативный UI для операций вроде focus.",
+      "moduleId": "vue",
+      "order": 10,
+      "popular": false,
+      "answerFile": "answers/vue/vue-template-refs.md",
+      "pitfall": "Обращаться к input.value.focus() прямо в setup или игнорировать исчезновение элемента.",
+      "editorial": {
+        "learningGoal": "Template ref дополняет декларативный UI для операций вроде focus.",
+        "keywords": ["Vue 3", "Компоненты и шаблоны", "template-refs"],
+        "kind": "explanation",
+        "reviewStatus": "ready",
+        "goalIds": ["core", "vue-template-refs"],
+        "relatedQuestionIds": [],
+        "priority": "core",
+        "sourceRefs": ["vue-template-refs-docs"]
+      }
+    },
+    {
+      "id": "vue-dynamic-component",
+      "title": "Как component :is переключает компоненты и что происходит с их состоянием?",
+      "topic": "Компоненты и шаблоны",
+      "difficulty": "Средний",
+      "summary": "Динамический тип компонента и идентичность экземпляра.",
+      "takeaway": "Переключение типа обычно пересоздаёт компонент; key управляет идентичностью.",
+      "moduleId": "vue",
+      "order": 11,
+      "popular": false,
+      "answerFile": "answers/vue/vue-dynamic-component.md",
+      "pitfall": "Передавать произвольное имя импорта строкой и ожидать, что Vue найдёт его без регистрации.",
+      "editorial": {
+        "learningGoal": "Переключение типа обычно пересоздаёт компонент; key управляет идентичностью.",
+        "keywords": ["Vue 3", "Компоненты и шаблоны", "dynamic-component"],
+        "kind": "explanation",
+        "reviewStatus": "ready",
+        "goalIds": ["core", "vue-dynamic-component"],
+        "relatedQuestionIds": ["vue-keep-alive"],
+        "priority": "core",
+        "sourceRefs": ["vue-dynamic-component-docs"]
+      }
+    },
+    {
+      "id": "vue-keep-alive",
+      "title": "Чем KeepAlive отличается от v-show и обычного переключения компонента?",
+      "topic": "Компоненты и шаблоны",
+      "difficulty": "Средний",
+      "summary": "Кеширование экземпляров и хуки активации.",
+      "takeaway": "Кешированный компонент не уничтожен, но может быть неактивен.",
+      "moduleId": "vue",
+      "order": 12,
+      "popular": false,
+      "answerFile": "answers/vue/vue-keep-alive.md",
+      "pitfall": "Рассчитывать на onUnmounted при каждом уходе со вкладки и оставлять активный polling в кеше.",
+      "editorial": {
+        "learningGoal": "Кешированный компонент не уничтожен, но может быть неактивен.",
+        "keywords": ["Vue 3", "Компоненты и шаблоны", "keep-alive"],
+        "kind": "explanation",
+        "reviewStatus": "ready",
+        "goalIds": ["core", "vue-keep-alive"],
+        "relatedQuestionIds": [],
+        "priority": "core",
+        "sourceRefs": ["vue-keep-alive-docs"]
+      }
+    },
+    {
+      "id": "vue-teleport",
+      "title": "Что меняет Teleport в DOM и в дереве компонентов?",
+      "topic": "Компоненты и шаблоны",
+      "difficulty": "Средний",
+      "summary": "Другая DOM-позиция при сохранении логического родителя.",
+      "takeaway": "Teleport переносит DOM, сохраняя компонентные связи.",
+      "moduleId": "vue",
+      "order": 13,
+      "popular": false,
+      "answerFile": "answers/vue/vue-teleport.md",
+      "pitfall": "Ожидать, что перенос автоматически решит focus trap или сохранит CSS-наследование прежнего DOM-родителя.",
+      "editorial": {
+        "learningGoal": "Teleport переносит DOM, сохраняя компонентные связи.",
+        "keywords": ["Vue 3", "Компоненты и шаблоны", "teleport"],
+        "kind": "explanation",
+        "reviewStatus": "ready",
+        "goalIds": ["core", "vue-teleport"],
+        "relatedQuestionIds": [],
+        "priority": "core",
+        "sourceRefs": ["vue-teleport-docs"]
+      }
+    },
+    {
+      "id": "vue-transitions",
+      "title": "Для чего нужны Transition и TransitionGroup?",
+      "topic": "Компоненты и шаблоны",
+      "difficulty": "Базовый",
+      "summary": "Анимация входа, выхода и изменения списка.",
+      "takeaway": "Анимация привязывается к изменению дерева и идентичности элементов.",
+      "moduleId": "vue",
+      "order": 14,
+      "popular": false,
+      "answerFile": "answers/vue/vue-transitions.md",
+      "pitfall": "Применять Transition к нескольким несвязанным корням или использовать нестабильные ключи списка.",
+      "editorial": {
+        "learningGoal": "Анимация привязывается к изменению дерева и идентичности элементов.",
+        "keywords": ["Vue 3", "Компоненты и шаблоны", "transitions"],
+        "kind": "explanation",
+        "reviewStatus": "ready",
+        "goalIds": ["core", "vue-transitions"],
+        "relatedQuestionIds": [],
+        "priority": "core",
+        "sourceRefs": ["vue-transitions-docs"]
+      }
+    },
+    {
+      "id": "vue-async-component",
+      "title": "Как загружать компонент асинхронно и чем это отличается от ленивого маршрута?",
+      "topic": "Компоненты и шаблоны",
+      "difficulty": "Средний",
+      "summary": "defineAsyncComponent и разделение кода.",
+      "takeaway": "Ленивая загрузка откладывает загрузку кода, но требует состояния ожидания и ошибки.",
+      "moduleId": "vue",
+      "order": 15,
+      "popular": false,
+      "answerFile": "answers/vue/vue-async-component.md",
+      "pitfall": "Создавать новую async-оболочку при каждом рендере или считать Suspense обработчиком всех ошибок.",
+      "editorial": {
+        "learningGoal": "Ленивая загрузка откладывает загрузку кода, но требует состояния ожидания и ошибки.",
+        "keywords": ["Vue 3", "Компоненты и шаблоны", "async-component"],
+        "kind": "explanation",
+        "reviewStatus": "ready",
+        "goalIds": ["core", "vue-async-component"],
+        "relatedQuestionIds": [],
+        "priority": "core",
+        "sourceRefs": ["vue-async-component-docs"]
+      }
     }
   ]
 }

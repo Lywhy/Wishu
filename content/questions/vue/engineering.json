@@ -1,0 +1,251 @@
+{
+  "$schema": "../question-bundle.schema.json",
+  "sectionId": "vue",
+  "subsectionId": "engineering",
+  "scope": "TypeScript, тестирование, SSR, безопасность, производительность и ошибки.",
+  "coverageGoals": [
+    {
+      "id": "core",
+      "title": "Практика разработки",
+      "description": "TypeScript, тестирование, SSR, безопасность, производительность и ошибки.",
+      "requiredDifficulties": [],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": [
+        "vue-typescript-contracts",
+        "vue-component-testing",
+        "vue-composable-testing",
+        "vue-ssr-hydration",
+        "vue-ui-security",
+        "vue-performance-basics",
+        "vue-error-handling"
+      ]
+    },
+    {
+      "id": "vue-typescript-contracts",
+      "title": "Как типизировать props, emits и template refs в Vue?",
+      "description": "TypeScript проверяет обращения в коде, но не достоверность внешнего JSON.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "vue-component-testing",
+      "title": "Что проверять в тесте Vue-компонента и зачем await trigger/setProps?",
+      "description": "Проверяйте пользовательский контракт, ожидая соответствующий тип работы.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "vue-composable-testing",
+      "title": "Как тестировать composable с lifecycle или inject?",
+      "description": "Тестовый способ вызова должен воспроизводить зависимости composable.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "vue-ssr-hydration",
+      "title": "Что такое SSR и hydration во Vue и откуда берутся mismatch?",
+      "description": "Первый клиентский рендер должен соответствовать серверной разметке.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "vue-ui-security",
+      "title": "От каких XSS-ошибок защищает Vue и где защита заканчивается?",
+      "description": "Недоверенные данные не должны становиться исполняемым шаблоном.",
+      "requiredDifficulties": ["Базовый"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "vue-performance-basics",
+      "title": "Как искать и устранять лишнюю работу при обновлении Vue-интерфейса?",
+      "description": "Оптимизируйте подтверждённую причину задержки, сохраняя корректность.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "vue-error-handling",
+      "title": "Как разделять ошибки запросов, компонентов и загрузки async-компонента?",
+      "description": "Ошибка должна иметь владельца, понятный UI и путь восстановления.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    }
+  ],
+  "questions": [
+    {
+      "id": "vue-typescript-contracts",
+      "title": "Как типизировать props, emits и template refs в Vue?",
+      "topic": "Практика разработки",
+      "difficulty": "Средний",
+      "summary": "Типовой контракт компонента без подмены runtime-валидации.",
+      "takeaway": "TypeScript проверяет обращения в коде, но не достоверность внешнего JSON.",
+      "moduleId": "vue",
+      "order": 0,
+      "popular": false,
+      "answerFile": "answers/vue/vue-typescript-contracts.md",
+      "pitfall": "Приводить ответ API через as User и считать это проверкой данных во время выполнения.",
+      "editorial": {
+        "learningGoal": "TypeScript проверяет обращения в коде, но не достоверность внешнего JSON.",
+        "keywords": ["Vue 3", "Практика разработки", "typescript-contracts"],
+        "kind": "explanation",
+        "reviewStatus": "ready",
+        "goalIds": ["core", "vue-typescript-contracts"],
+        "relatedQuestionIds": [],
+        "priority": "core",
+        "sourceRefs": ["vue-typescript-contracts-docs"]
+      }
+    },
+    {
+      "id": "vue-component-testing",
+      "title": "Что проверять в тесте Vue-компонента и зачем await trigger/setProps?",
+      "topic": "Практика разработки",
+      "difficulty": "Средний",
+      "summary": "Наблюдаемое поведение и асинхронное обновление DOM.",
+      "takeaway": "Проверяйте пользовательский контракт, ожидая соответствующий тип работы.",
+      "moduleId": "vue",
+      "order": 1,
+      "popular": false,
+      "answerFile": "answers/vue/vue-component-testing.md",
+      "pitfall": "Проверять DOM сразу после действия, сравнивать только snapshots или мокать саму логику, ради которой написан тест.",
+      "editorial": {
+        "learningGoal": "Проверяйте пользовательский контракт, ожидая соответствующий тип работы.",
+        "keywords": ["Vue 3", "Практика разработки", "component-testing"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "goalIds": ["core", "vue-component-testing"],
+        "relatedQuestionIds": [],
+        "priority": "core",
+        "sourceRefs": ["vue-component-testing-docs"]
+      }
+    },
+    {
+      "id": "vue-composable-testing",
+      "title": "Как тестировать composable с lifecycle или inject?",
+      "topic": "Практика разработки",
+      "difficulty": "Средний",
+      "summary": "Чистая реактивная логика и компонентный контекст.",
+      "takeaway": "Тестовый способ вызова должен воспроизводить зависимости composable.",
+      "moduleId": "vue",
+      "order": 2,
+      "popular": false,
+      "answerFile": "answers/vue/vue-composable-testing.md",
+      "pitfall": "Вызывать onMounted-зависимый composable вне компонента и принимать отсутствие эффекта за дефект его логики.",
+      "editorial": {
+        "learningGoal": "Тестовый способ вызова должен воспроизводить зависимости composable.",
+        "keywords": ["Vue 3", "Практика разработки", "composable-testing"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "goalIds": ["core", "vue-composable-testing"],
+        "relatedQuestionIds": ["vue-composables"],
+        "priority": "core",
+        "sourceRefs": ["vue-composable-testing-docs"]
+      }
+    },
+    {
+      "id": "vue-ssr-hydration",
+      "title": "Что такое SSR и hydration во Vue и откуда берутся mismatch?",
+      "topic": "Практика разработки",
+      "difficulty": "Средний",
+      "summary": "Серверный HTML и согласование с клиентским деревом.",
+      "takeaway": "Первый клиентский рендер должен соответствовать серверной разметке.",
+      "moduleId": "vue",
+      "order": 3,
+      "popular": false,
+      "answerFile": "answers/vue/vue-ssr-hydration.md",
+      "pitfall": "Использовать window при импорте модуля или скрывать mismatch вместо устранения разных исходных данных.",
+      "editorial": {
+        "learningGoal": "Первый клиентский рендер должен соответствовать серверной разметке.",
+        "keywords": ["Vue 3", "Практика разработки", "ssr-hydration"],
+        "kind": "explanation",
+        "reviewStatus": "ready",
+        "goalIds": ["core", "vue-ssr-hydration"],
+        "relatedQuestionIds": [],
+        "priority": "core",
+        "sourceRefs": ["vue-ssr-hydration-docs"]
+      }
+    },
+    {
+      "id": "vue-ui-security",
+      "title": "От каких XSS-ошибок защищает Vue и где защита заканчивается?",
+      "topic": "Практика разработки",
+      "difficulty": "Базовый",
+      "summary": "Экранирование текста и опасные границы шаблонов, HTML и URL.",
+      "takeaway": "Недоверенные данные не должны становиться исполняемым шаблоном.",
+      "moduleId": "vue",
+      "order": 4,
+      "popular": false,
+      "answerFile": "answers/vue/vue-ui-security.md",
+      "pitfall": "Переходить с интерполяции на v-html ради форматирования комментария без модели доверия и очистки.",
+      "editorial": {
+        "learningGoal": "Недоверенные данные не должны становиться исполняемым шаблоном.",
+        "keywords": ["Vue 3", "Практика разработки", "ui-security"],
+        "kind": "explanation",
+        "reviewStatus": "ready",
+        "goalIds": ["core", "vue-ui-security"],
+        "relatedQuestionIds": [],
+        "priority": "core",
+        "sourceRefs": ["vue-ui-security-docs"]
+      }
+    },
+    {
+      "id": "vue-performance-basics",
+      "title": "Как искать и устранять лишнюю работу при обновлении Vue-интерфейса?",
+      "topic": "Практика разработки",
+      "difficulty": "Средний",
+      "summary": "Измерение, стабильные входы и объём рендера.",
+      "takeaway": "Оптимизируйте подтверждённую причину задержки, сохраняя корректность.",
+      "moduleId": "vue",
+      "order": 5,
+      "popular": false,
+      "answerFile": "answers/vue/vue-performance-basics.md",
+      "pitfall": "Добавлять мемоизацию до измерения, создавать новые объекты props без необходимости или считать computed кешем любых произвольных вызовов.",
+      "editorial": {
+        "learningGoal": "Оптимизируйте подтверждённую причину задержки, сохраняя корректность.",
+        "keywords": ["Vue 3", "Практика разработки", "performance-basics"],
+        "kind": "explanation",
+        "reviewStatus": "ready",
+        "goalIds": ["core", "vue-performance-basics"],
+        "relatedQuestionIds": [],
+        "priority": "core",
+        "sourceRefs": ["vue-performance-basics-docs"]
+      }
+    },
+    {
+      "id": "vue-error-handling",
+      "title": "Как разделять ошибки запросов, компонентов и загрузки async-компонента?",
+      "topic": "Практика разработки",
+      "difficulty": "Средний",
+      "summary": "Локальное состояние ошибки и границы наблюдения Vue.",
+      "takeaway": "Ошибка должна иметь владельца, понятный UI и путь восстановления.",
+      "moduleId": "vue",
+      "order": 6,
+      "popular": false,
+      "answerFile": "answers/vue/vue-error-handling.md",
+      "pitfall": "Рендерить того же падающего ребёнка внутри fallback или отправлять в лог чувствительные пользовательские данные.",
+      "editorial": {
+        "learningGoal": "Ошибка должна иметь владельца, понятный UI и путь восстановления.",
+        "keywords": ["Vue 3", "Практика разработки", "error-handling"],
+        "kind": "explanation",
+        "reviewStatus": "ready",
+        "goalIds": ["core", "vue-error-handling"],
+        "relatedQuestionIds": [],
+        "priority": "core",
+        "sourceRefs": ["vue-error-handling-docs"]
+      }
+    }
+  ]
+}

@@ -2,41 +2,115 @@
   "$schema": "../question-bundle.schema.json",
   "sectionId": "vue",
   "subsectionId": "composition",
-  "scope": "Наблюдатели, composables и жизненный цикл.",
+  "scope": "Setup, макросы, watchers, lifecycle, composables, запросы, директивы и плагины.",
   "coverageGoals": [
     {
       "id": "core",
       "title": "Composition API",
-      "description": "Обзор и взаимосвязи навыков: Наблюдатели, composables и жизненный цикл.",
+      "description": "Setup, макросы, watchers, lifecycle, composables, запросы, директивы и плагины.",
       "requiredDifficulties": [],
-      "reviewed": false,
+      "reviewed": true,
       "priority": "core",
-      "relatedSkillIds": ["vue-watch", "vue-lifecycle-cleanup", "vue-composables"]
+      "relatedSkillIds": [
+        "vue-watch",
+        "vue-lifecycle-cleanup",
+        "vue-composables",
+        "vue-options-composition",
+        "vue-script-setup-macros",
+        "vue-watch-depth",
+        "vue-watch-flush-stop",
+        "vue-request-race",
+        "vue-custom-directive",
+        "vue-plugins"
+      ]
     },
     {
       "id": "vue-watch",
       "title": "Чем watch отличается от watchEffect?",
-      "description": "Объяснить и применить правило с учётом его границ: Выбирайте источник наблюдения и явно управляйте ресурсами.",
+      "description": "Выбирайте watcher для побочного действия, computed - для производных данных.",
       "requiredDifficulties": ["Средний"],
-      "reviewed": false,
+      "reviewed": true,
       "priority": "core",
       "relatedSkillIds": []
     },
     {
       "id": "vue-lifecycle-cleanup",
       "title": "Когда использовать onMounted и onUnmounted?",
-      "description": "Объяснить и применить правило с учётом его границ: Привязывайте создание и освобождение ресурсов к экземпляру компонента.",
+      "description": "Создание ресурса должно иметь симметричное освобождение у владельца.",
       "requiredDifficulties": ["Средний"],
-      "reviewed": false,
+      "reviewed": true,
       "priority": "core",
       "relatedSkillIds": []
     },
     {
       "id": "vue-composables",
       "title": "Что такое composable и разделяют ли его вызовы состояние?",
-      "description": "Объяснить и применить правило с учётом его границ: Область создания состояния определяет, кто его разделяет.",
+      "description": "Место создания ref определяет, кто разделяет состояние.",
       "requiredDifficulties": ["Средний"],
-      "reviewed": false,
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "vue-options-composition",
+      "title": "Чем Options API отличается от Composition API и как работает setup?",
+      "description": "Выбор API меняет организацию логики, а не отменяет правила Vue.",
+      "requiredDifficulties": ["Базовый"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "vue-script-setup-macros",
+      "title": "Чем defineProps и defineEmits отличаются от обычных функций?",
+      "description": "Макросы script setup описывают компонент на этапе компиляции.",
+      "requiredDifficulties": ["Базовый"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "vue-watch-depth",
+      "title": "Как работает deep watch и почему oldValue иногда совпадает с newValue?",
+      "description": "Глубокое наблюдение обнаруживает мутации, но не сохраняет историю объекта.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "vue-watch-flush-stop",
+      "title": "Когда выполняется watcher относительно DOM и когда его нужно остановить?",
+      "description": "Выбирайте фазу watcher по его задаче и контролируйте время жизни.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "vue-request-race",
+      "title": "Как не дать устаревшему запросу перезаписать результат нового watcher?",
+      "description": "Публикуйте результат только пока запрос принадлежит текущему наблюдению.",
+      "requiredDifficulties": ["Продвинутый"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "vue-custom-directive",
+      "title": "Когда писать custom directive, а когда компонент или composable?",
+      "description": "Директива инкапсулирует DOM-операцию, а не весь интерфейс.",
+      "requiredDifficulties": ["Средний"],
+      "reviewed": true,
+      "priority": "core",
+      "relatedSkillIds": []
+    },
+    {
+      "id": "vue-plugins",
+      "title": "Что делает app.use и что должен устанавливать плагин Vue?",
+      "description": "Плагин настраивает приложение, а не заменяет локальные зависимости.",
+      "requiredDifficulties": ["Базовый"],
+      "reviewed": true,
       "priority": "core",
       "relatedSkillIds": []
     }
@@ -53,16 +127,17 @@
       "order": 0,
       "popular": false,
       "editorial": {
-        "learningGoal": "Объяснить и применить правило с учётом его границ: Выбирайте источник наблюдения и явно управляйте ресурсами.",
-        "keywords": ["Vue", "Composition API"],
+        "learningGoal": "Выбирайте watcher для побочного действия, computed - для производных данных.",
+        "keywords": ["Vue 3", "Composition API", "watch"],
         "kind": "explanation",
-        "reviewStatus": "imported",
+        "reviewStatus": "ready",
         "goalIds": ["core", "vue-watch"],
         "relatedQuestionIds": [],
         "priority": "core",
-        "sourceRefs": []
+        "sourceRefs": ["vue-watch-docs"]
       },
-      "answerFile": "answers/vue/vue-watch.md"
+      "answerFile": "answers/vue/vue-watch.md",
+      "pitfall": "Синхронизировать через watch состояние, которое можно напрямую вычислить, или считать async watchEffect отслеживающим все чтения после await."
     },
     {
       "id": "vue-lifecycle-cleanup",
@@ -75,16 +150,17 @@
       "order": 1,
       "popular": false,
       "editorial": {
-        "learningGoal": "Объяснить и применить правило с учётом его границ: Привязывайте создание и освобождение ресурсов к экземпляру компонента.",
-        "keywords": ["Vue", "Composition API"],
+        "learningGoal": "Создание ресурса должно иметь симметричное освобождение у владельца.",
+        "keywords": ["Vue 3", "Composition API", "lifecycle-cleanup"],
         "kind": "explanation",
-        "reviewStatus": "imported",
+        "reviewStatus": "ready",
         "goalIds": ["core", "vue-lifecycle-cleanup"],
         "relatedQuestionIds": [],
         "priority": "core",
-        "sourceRefs": []
+        "sourceRefs": ["vue-lifecycle-cleanup-docs"]
       },
-      "answerFile": "answers/vue/vue-lifecycle-cleanup.md"
+      "answerFile": "answers/vue/vue-lifecycle-cleanup.md",
+      "pitfall": "Регистрировать хук в setTimeout или освобождать только таймер, оставляя подписки того же компонента."
     },
     {
       "id": "vue-composables",
@@ -97,16 +173,178 @@
       "order": 2,
       "popular": false,
       "editorial": {
-        "learningGoal": "Объяснить и применить правило с учётом его границ: Область создания состояния определяет, кто его разделяет.",
-        "keywords": ["Vue", "Composition API"],
+        "learningGoal": "Место создания ref определяет, кто разделяет состояние.",
+        "keywords": ["Vue 3", "Composition API", "composables"],
         "kind": "explanation",
-        "reviewStatus": "imported",
+        "reviewStatus": "ready",
         "goalIds": ["core", "vue-composables"],
         "relatedQuestionIds": [],
         "priority": "core",
-        "sourceRefs": []
+        "sourceRefs": ["vue-composables-docs"]
       },
-      "answerFile": "answers/vue/vue-composables.md"
+      "answerFile": "answers/vue/vue-composables.md",
+      "pitfall": "Выносить ref в модуль ради переиспользования функции и неожиданно делать все экземпляры общими."
+    },
+    {
+      "id": "vue-options-composition",
+      "title": "Чем Options API отличается от Composition API и как работает setup?",
+      "topic": "Composition API",
+      "difficulty": "Базовый",
+      "summary": "Два способа организации одного реактивного компонента.",
+      "takeaway": "Выбор API меняет организацию логики, а не отменяет правила Vue.",
+      "moduleId": "vue",
+      "order": 3,
+      "popular": false,
+      "answerFile": "answers/vue/vue-options-composition.md",
+      "pitfall": "Использовать this в setup или механически смешивать оба стиля, не определив владельца данных.",
+      "editorial": {
+        "learningGoal": "Выбор API меняет организацию логики, а не отменяет правила Vue.",
+        "keywords": ["Vue 3", "Composition API", "options-composition"],
+        "kind": "explanation",
+        "reviewStatus": "ready",
+        "goalIds": ["core", "vue-options-composition"],
+        "relatedQuestionIds": [],
+        "priority": "core",
+        "sourceRefs": ["vue-options-composition-docs"]
+      }
+    },
+    {
+      "id": "vue-script-setup-macros",
+      "title": "Чем defineProps и defineEmits отличаются от обычных функций?",
+      "topic": "Composition API",
+      "difficulty": "Базовый",
+      "summary": "Компиляторные макросы и выполнение на экземпляр.",
+      "takeaway": "Макросы script setup описывают компонент на этапе компиляции.",
+      "moduleId": "vue",
+      "order": 4,
+      "popular": false,
+      "answerFile": "answers/vue/vue-script-setup-macros.md",
+      "pitfall": "Вызывать defineProps в if или объявлять default через значение локального ref.",
+      "editorial": {
+        "learningGoal": "Макросы script setup описывают компонент на этапе компиляции.",
+        "keywords": ["Vue 3", "Composition API", "script-setup-macros"],
+        "kind": "explanation",
+        "reviewStatus": "ready",
+        "goalIds": ["core", "vue-script-setup-macros"],
+        "relatedQuestionIds": [],
+        "priority": "core",
+        "sourceRefs": ["vue-script-setup-macros-docs"]
+      }
+    },
+    {
+      "id": "vue-watch-depth",
+      "title": "Как работает deep watch и почему oldValue иногда совпадает с newValue?",
+      "topic": "Composition API",
+      "difficulty": "Средний",
+      "summary": "Обход вложенности без автоматического снимка объекта.",
+      "takeaway": "Глубокое наблюдение обнаруживает мутации, но не сохраняет историю объекта.",
+      "moduleId": "vue",
+      "order": 5,
+      "popular": false,
+      "answerFile": "answers/vue/vue-watch-depth.md",
+      "pitfall": "Использовать deep как универсальный diff и ожидать независимую копию oldValue.",
+      "editorial": {
+        "learningGoal": "Глубокое наблюдение обнаруживает мутации, но не сохраняет историю объекта.",
+        "keywords": ["Vue 3", "Composition API", "watch-depth"],
+        "kind": "explanation",
+        "reviewStatus": "ready",
+        "goalIds": ["core", "vue-watch-depth"],
+        "relatedQuestionIds": [],
+        "priority": "core",
+        "sourceRefs": ["vue-watch-depth-docs"]
+      }
+    },
+    {
+      "id": "vue-watch-flush-stop",
+      "title": "Когда выполняется watcher относительно DOM и когда его нужно остановить?",
+      "topic": "Composition API",
+      "difficulty": "Средний",
+      "summary": "flush, пакетирование и принадлежность эффектов.",
+      "takeaway": "Выбирайте фазу watcher по его задаче и контролируйте время жизни.",
+      "moduleId": "vue",
+      "order": 6,
+      "popular": false,
+      "answerFile": "answers/vue/vue-watch-flush-stop.md",
+      "pitfall": "Читать собственный DOM из watcher по умолчанию или создавать бесконтрольные watchers после асинхронной загрузки.",
+      "editorial": {
+        "learningGoal": "Выбирайте фазу watcher по его задаче и контролируйте время жизни.",
+        "keywords": ["Vue 3", "Composition API", "watch-flush-stop"],
+        "kind": "explanation",
+        "reviewStatus": "ready",
+        "goalIds": ["core", "vue-watch-flush-stop"],
+        "relatedQuestionIds": [],
+        "priority": "core",
+        "sourceRefs": ["vue-watch-flush-stop-docs"]
+      }
+    },
+    {
+      "id": "vue-request-race",
+      "title": "Как не дать устаревшему запросу перезаписать результат нового watcher?",
+      "topic": "Composition API",
+      "difficulty": "Продвинутый",
+      "summary": "Cleanup, отмена запроса и проверка актуальности результата.",
+      "takeaway": "Публикуйте результат только пока запрос принадлежит текущему наблюдению.",
+      "moduleId": "vue",
+      "order": 7,
+      "popular": false,
+      "answerFile": "answers/vue/vue-request-race.md",
+      "pitfall": "Защитить только запись data, оставив старому finally возможность выключить loading нового запроса.",
+      "editorial": {
+        "learningGoal": "Публикуйте результат только пока запрос принадлежит текущему наблюдению.",
+        "keywords": ["Vue 3", "Composition API", "request-race"],
+        "kind": "application",
+        "reviewStatus": "ready",
+        "goalIds": ["core", "vue-request-race"],
+        "relatedQuestionIds": ["vue-watch"],
+        "priority": "core",
+        "sourceRefs": ["vue-request-race-docs"]
+      }
+    },
+    {
+      "id": "vue-custom-directive",
+      "title": "Когда писать custom directive, а когда компонент или composable?",
+      "topic": "Composition API",
+      "difficulty": "Средний",
+      "summary": "Низкоуровневое поведение DOM без собственной разметки.",
+      "takeaway": "Директива инкапсулирует DOM-операцию, а не весь интерфейс.",
+      "moduleId": "vue",
+      "order": 8,
+      "popular": false,
+      "answerFile": "answers/vue/vue-custom-directive.md",
+      "pitfall": "Превращать директиву в скрытый компонент с собственным сложным деревом и бизнес-состоянием.",
+      "editorial": {
+        "learningGoal": "Директива инкапсулирует DOM-операцию, а не весь интерфейс.",
+        "keywords": ["Vue 3", "Composition API", "custom-directive"],
+        "kind": "explanation",
+        "reviewStatus": "ready",
+        "goalIds": ["core", "vue-custom-directive"],
+        "relatedQuestionIds": [],
+        "priority": "core",
+        "sourceRefs": ["vue-custom-directive-docs"]
+      }
+    },
+    {
+      "id": "vue-plugins",
+      "title": "Что делает app.use и что должен устанавливать плагин Vue?",
+      "topic": "Composition API",
+      "difficulty": "Базовый",
+      "summary": "Расширение конкретного приложения до монтирования.",
+      "takeaway": "Плагин настраивает приложение, а не заменяет локальные зависимости.",
+      "moduleId": "vue",
+      "order": 9,
+      "popular": false,
+      "answerFile": "answers/vue/vue-plugins.md",
+      "pitfall": "Создавать плагин только ради регистрации каждой локальной функции или делить пользовательское состояние всех SSR-запросов.",
+      "editorial": {
+        "learningGoal": "Плагин настраивает приложение, а не заменяет локальные зависимости.",
+        "keywords": ["Vue 3", "Composition API", "plugins"],
+        "kind": "explanation",
+        "reviewStatus": "ready",
+        "goalIds": ["core", "vue-plugins"],
+        "relatedQuestionIds": [],
+        "priority": "core",
+        "sourceRefs": ["vue-plugins-docs"]
+      }
     }
   ]
 }

@@ -3065,6 +3065,171 @@
         "go-http-graceful-shutdown"
       ],
       "reason": "Новый раздел и самостоятельные учебные цели go. Общие понятия HTTP и конкурентности раскрываются через конкретные API языка/фреймворка, без копирования существующих ответов Node.js/NestJS. Связанные канонические вопросы указаны в метаданных. Это начальное наполнение, а не полное покрытие."
+    },
+    {
+      "id": "vue-foundations-20261113-templates-expand",
+      "date": "2026-11-13",
+      "type": "expand",
+      "sectionId": "vue",
+      "subsectionId": "templates",
+      "questionIds": ["vue-sfc", "vue-if-show", "vue-list-keys"],
+      "reason": "Существующие ответы сохранены целиком и дополнены примерами, границами и типичными ошибками. ID, порядок и исходные карточки сохранены.",
+      "notes": "Матрица описывает выбранный базовый охват, а не гарантию подготовки ко всем собеседованиям. Нет объединений или удаления вопросов."
+    },
+    {
+      "id": "vue-foundations-20261113-templates-separate",
+      "date": "2026-11-13",
+      "type": "separate",
+      "sectionId": "vue",
+      "subsectionId": "templates",
+      "questionIds": [
+        "vue-application-mount",
+        "vue-template-bindings",
+        "vue-class-style",
+        "vue-dom-events",
+        "vue-native-model",
+        "vue-component-registration",
+        "vue-scoped-css",
+        "vue-template-refs",
+        "vue-dynamic-component",
+        "vue-keep-alive",
+        "vue-teleport",
+        "vue-transitions",
+        "vue-async-component"
+      ],
+      "reason": "Новые самостоятельные навыки базовой работы с Vue 3. Общие понятия JavaScript, HTTP и CSS рассматриваются только в контексте Vue; Router и Pinia выделены отдельно.",
+      "notes": "Матрица описывает выбранный базовый охват, а не гарантию подготовки ко всем собеседованиям. Нет объединений или удаления вопросов."
+    },
+    {
+      "id": "vue-foundations-20261113-reactivity-expand",
+      "date": "2026-11-13",
+      "type": "expand",
+      "sectionId": "vue",
+      "subsectionId": "reactivity",
+      "questionIds": ["vue-ref-reactive", "vue-computed", "vue-destructure"],
+      "reason": "Существующие ответы сохранены целиком и дополнены примерами, границами и типичными ошибками. ID, порядок и исходные карточки сохранены.",
+      "notes": "Матрица описывает выбранный базовый охват, а не гарантию подготовки ко всем собеседованиям. Нет объединений или удаления вопросов."
+    },
+    {
+      "id": "vue-foundations-20261113-reactivity-separate",
+      "date": "2026-11-13",
+      "type": "separate",
+      "sectionId": "vue",
+      "subsectionId": "reactivity",
+      "questionIds": [
+        "vue-dependency-tracking",
+        "vue-ref-unwrapping",
+        "vue-shallow-state",
+        "vue-readonly-raw",
+        "vue-next-tick"
+      ],
+      "reason": "Новые самостоятельные навыки базовой работы с Vue 3. Общие понятия JavaScript, HTTP и CSS рассматриваются только в контексте Vue; Router и Pinia выделены отдельно.",
+      "notes": "Матрица описывает выбранный базовый охват, а не гарантию подготовки ко всем собеседованиям. Нет объединений или удаления вопросов."
+    },
+    {
+      "id": "vue-foundations-20261113-communication-expand",
+      "date": "2026-11-13",
+      "type": "expand",
+      "sectionId": "vue",
+      "subsectionId": "communication",
+      "questionIds": ["vue-props-events", "vue-v-model", "vue-slots"],
+      "reason": "Существующие ответы сохранены целиком и дополнены примерами, границами и типичными ошибками. ID, порядок и исходные карточки сохранены.",
+      "notes": "Матрица описывает выбранный базовый охват, а не гарантию подготовки ко всем собеседованиям. Нет объединений или удаления вопросов."
+    },
+    {
+      "id": "vue-foundations-20261113-communication-separate",
+      "date": "2026-11-13",
+      "type": "separate",
+      "sectionId": "vue",
+      "subsectionId": "communication",
+      "questionIds": [
+        "vue-prop-contract",
+        "vue-component-events",
+        "vue-fallthrough-attrs",
+        "vue-provide-inject",
+        "vue-component-expose"
+      ],
+      "reason": "Новые самостоятельные навыки базовой работы с Vue 3. Общие понятия JavaScript, HTTP и CSS рассматриваются только в контексте Vue; Router и Pinia выделены отдельно.",
+      "notes": "Матрица описывает выбранный базовый охват, а не гарантию подготовки ко всем собеседованиям. Нет объединений или удаления вопросов."
+    },
+    {
+      "id": "vue-foundations-20261113-composition-expand",
+      "date": "2026-11-13",
+      "type": "expand",
+      "sectionId": "vue",
+      "subsectionId": "composition",
+      "questionIds": ["vue-watch", "vue-lifecycle-cleanup", "vue-composables"],
+      "reason": "Существующие ответы сохранены целиком и дополнены примерами, границами и типичными ошибками. ID, порядок и исходные карточки сохранены.",
+      "notes": "Матрица описывает выбранный базовый охват, а не гарантию подготовки ко всем собеседованиям. Нет объединений или удаления вопросов."
+    },
+    {
+      "id": "vue-foundations-20261113-composition-separate",
+      "date": "2026-11-13",
+      "type": "separate",
+      "sectionId": "vue",
+      "subsectionId": "composition",
+      "questionIds": [
+        "vue-options-composition",
+        "vue-script-setup-macros",
+        "vue-watch-depth",
+        "vue-watch-flush-stop",
+        "vue-request-race",
+        "vue-custom-directive",
+        "vue-plugins"
+      ],
+      "reason": "Новые самостоятельные навыки базовой работы с Vue 3. Общие понятия JavaScript, HTTP и CSS рассматриваются только в контексте Vue; Router и Pinia выделены отдельно.",
+      "notes": "Матрица описывает выбранный базовый охват, а не гарантию подготовки ко всем собеседованиям. Нет объединений или удаления вопросов."
+    },
+    {
+      "id": "vue-foundations-20261113-routing-separate",
+      "date": "2026-11-13",
+      "type": "separate",
+      "sectionId": "vue",
+      "subsectionId": "routing",
+      "questionIds": [
+        "vue-router-basics",
+        "vue-route-router",
+        "vue-route-params-reuse",
+        "vue-nested-routes",
+        "vue-route-guards",
+        "vue-router-history"
+      ],
+      "reason": "Новые самостоятельные навыки базовой работы с Vue 3. Общие понятия JavaScript, HTTP и CSS рассматриваются только в контексте Vue; Router и Pinia выделены отдельно.",
+      "notes": "Матрица описывает выбранный базовый охват, а не гарантию подготовки ко всем собеседованиям. Нет объединений или удаления вопросов."
+    },
+    {
+      "id": "vue-foundations-20261113-state-separate",
+      "date": "2026-11-13",
+      "type": "separate",
+      "sectionId": "vue",
+      "subsectionId": "state",
+      "questionIds": [
+        "vue-state-ownership",
+        "vue-pinia-store",
+        "vue-pinia-refs",
+        "vue-pinia-actions-getters",
+        "vue-pinia-reset-persist"
+      ],
+      "reason": "Новые самостоятельные навыки базовой работы с Vue 3. Общие понятия JavaScript, HTTP и CSS рассматриваются только в контексте Vue; Router и Pinia выделены отдельно.",
+      "notes": "Матрица описывает выбранный базовый охват, а не гарантию подготовки ко всем собеседованиям. Нет объединений или удаления вопросов."
+    },
+    {
+      "id": "vue-foundations-20261113-engineering-separate",
+      "date": "2026-11-13",
+      "type": "separate",
+      "sectionId": "vue",
+      "subsectionId": "engineering",
+      "questionIds": [
+        "vue-typescript-contracts",
+        "vue-component-testing",
+        "vue-composable-testing",
+        "vue-ssr-hydration",
+        "vue-ui-security",
+        "vue-performance-basics",
+        "vue-error-handling"
+      ],
+      "reason": "Новые самостоятельные навыки базовой работы с Vue 3. Общие понятия JavaScript, HTTP и CSS рассматриваются только в контексте Vue; Router и Pinia выделены отдельно.",
+      "notes": "Матрица описывает выбранный базовый охват, а не гарантию подготовки ко всем собеседованиям. Нет объединений или удаления вопросов."
     }
   ]
 }

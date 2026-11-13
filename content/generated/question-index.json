@@ -342,6 +342,18 @@
         {
           "id": "composition",
           "title": "Composition API"
+        },
+        {
+          "id": "routing",
+          "title": "Маршрутизация"
+        },
+        {
+          "id": "state",
+          "title": "Управление состоянием"
+        },
+        {
+          "id": "engineering",
+          "title": "Практика разработки"
         }
       ]
     },
@@ -39552,24 +39564,32 @@
       "subsectionId": "templates",
       "title": "Как устроен Single-File Component во Vue 3?",
       "difficulty": "Базовый",
-      "learningGoal": "Объяснить и применить правило с учётом его границ: SFC объединяет части компонента и компилируется инструментами Vue.",
+      "learningGoal": "SFC описывает компонент, а не отдельную страницу или singleton.",
       "keywords": [
-        "Vue",
-        "Компоненты и шаблоны"
+        "Vue 3",
+        "Компоненты и шаблоны",
+        "sfc"
       ],
       "kind": "explanation",
-      "reviewStatus": "imported",
+      "reviewStatus": "ready",
       "goalIds": [
         "core",
         "vue-sfc"
       ],
       "relatedQuestionIds": [],
       "priority": "core",
-      "sourceRefs": [],
-      "sources": [],
+      "sourceRefs": [
+        "vue-sfc-docs"
+      ],
+      "sources": [
+        {
+          "title": "Официальная документация: Как устроен Single-File Component во Vue 3?",
+          "url": "https://vuejs.org/guide/scaling-up/sfc.html"
+        }
+      ],
       "sourceFile": "content/questions/vue/templates.json",
       "answerFile": "answers/vue/vue-sfc.md",
-      "contentHash": "a49ed0ff00023ad54a9b24b4f4b260c58e4df1898762e8fca43060ee816ecea7"
+      "contentHash": "27d3494d0535b6eca49270491ae348b01ee93fd02ad7eb853cfd7c8bb0271f6b"
     },
     {
       "id": "vue-if-show",
@@ -39577,24 +39597,32 @@
       "subsectionId": "templates",
       "title": "Чем v-if отличается от v-show?",
       "difficulty": "Базовый",
-      "learningGoal": "Объяснить и применить правило с учётом его границ: Скрытие через display не равно размонтированию.",
+      "learningGoal": "Выбирайте директиву с учётом времени жизни компонента.",
       "keywords": [
-        "Vue",
-        "Компоненты и шаблоны"
+        "Vue 3",
+        "Компоненты и шаблоны",
+        "if-show"
       ],
       "kind": "explanation",
-      "reviewStatus": "imported",
+      "reviewStatus": "ready",
       "goalIds": [
         "core",
         "vue-if-show"
       ],
       "relatedQuestionIds": [],
       "priority": "core",
-      "sourceRefs": [],
-      "sources": [],
+      "sourceRefs": [
+        "vue-if-show-docs"
+      ],
+      "sources": [
+        {
+          "title": "Официальная документация: Чем v-if отличается от v-show?",
+          "url": "https://vuejs.org/guide/essentials/conditional.html"
+        }
+      ],
       "sourceFile": "content/questions/vue/templates.json",
       "answerFile": "answers/vue/vue-if-show.md",
-      "contentHash": "06149c3a6175bcdb0f7956d3cb2b98c704cfb21d463596ae519eb1d50c342d29"
+      "contentHash": "c8c3368fef897a9be69026b67b6749b565946e2b20407de4ada4c42c820e949f"
     },
     {
       "id": "vue-list-keys",
@@ -39602,24 +39630,463 @@
       "subsectionId": "templates",
       "title": "Зачем Vue нужен key в v-for и почему не стоит совмещать v-if и v-for?",
       "difficulty": "Средний",
-      "learningGoal": "Объяснить и применить правило с учётом его границ: Фильтруйте данные отдельно, задавайте ключ по идентичности записи.",
+      "learningGoal": "Ключ описывает запись, а не её позицию в массиве.",
       "keywords": [
-        "Vue",
-        "Компоненты и шаблоны"
+        "Vue 3",
+        "Компоненты и шаблоны",
+        "list-keys"
       ],
       "kind": "explanation",
-      "reviewStatus": "imported",
+      "reviewStatus": "ready",
       "goalIds": [
         "core",
         "vue-list-keys"
       ],
       "relatedQuestionIds": [],
       "priority": "core",
-      "sourceRefs": [],
-      "sources": [],
+      "sourceRefs": [
+        "vue-list-keys-docs"
+      ],
+      "sources": [
+        {
+          "title": "Официальная документация: Зачем Vue нужен key в v-for и почему не стоит совмещать v-if и v-for?",
+          "url": "https://vuejs.org/guide/essentials/list.html"
+        }
+      ],
       "sourceFile": "content/questions/vue/templates.json",
       "answerFile": "answers/vue/vue-list-keys.md",
-      "contentHash": "49c54d8e2db77abc6d5d33ae03f1193ede3848edf018ef19fc898b98e5538e70"
+      "contentHash": "358d90a96b01c7ee64ec881dc61bf866ff97a06ff53f2d61888c12d19cc6086c"
+    },
+    {
+      "id": "vue-application-mount",
+      "sectionId": "vue",
+      "subsectionId": "templates",
+      "title": "Как создать приложение Vue и подключить корневой компонент?",
+      "difficulty": "Базовый",
+      "learningGoal": "Настраивайте приложение до mount и различайте приложение и компонент.",
+      "keywords": [
+        "Vue 3",
+        "Компоненты и шаблоны",
+        "application-mount"
+      ],
+      "kind": "explanation",
+      "reviewStatus": "ready",
+      "goalIds": [
+        "core",
+        "vue-application-mount"
+      ],
+      "relatedQuestionIds": [],
+      "priority": "core",
+      "sourceRefs": [
+        "vue-application-mount-docs"
+      ],
+      "sources": [
+        {
+          "title": "Официальная документация: Как создать приложение Vue и подключить корневой компонент?",
+          "url": "https://vuejs.org/guide/essentials/application.html"
+        }
+      ],
+      "sourceFile": "content/questions/vue/templates.json",
+      "answerFile": "answers/vue/vue-application-mount.md",
+      "contentHash": "9ad429f4238bfff51c3ea7a6f7366894ff32e8bf7c41f8ce7eb63d7d8d9bab93"
+    },
+    {
+      "id": "vue-template-bindings",
+      "sectionId": "vue",
+      "subsectionId": "templates",
+      "title": "Чем интерполяция отличается от v-bind и v-html?",
+      "difficulty": "Базовый",
+      "learningGoal": "Выбирайте привязку по назначению значения и границе доверия.",
+      "keywords": [
+        "Vue 3",
+        "Компоненты и шаблоны",
+        "template-bindings"
+      ],
+      "kind": "explanation",
+      "reviewStatus": "ready",
+      "goalIds": [
+        "core",
+        "vue-template-bindings"
+      ],
+      "relatedQuestionIds": [],
+      "priority": "core",
+      "sourceRefs": [
+        "vue-template-bindings-docs"
+      ],
+      "sources": [
+        {
+          "title": "Официальная документация: Чем интерполяция отличается от v-bind и v-html?",
+          "url": "https://vuejs.org/guide/essentials/template-syntax.html"
+        }
+      ],
+      "sourceFile": "content/questions/vue/templates.json",
+      "answerFile": "answers/vue/vue-template-bindings.md",
+      "contentHash": "7d0667970ce08d7f93a88ae673bde6b6418aa9de241babb553f3f08aece1dc61"
+    },
+    {
+      "id": "vue-class-style",
+      "sectionId": "vue",
+      "subsectionId": "templates",
+      "title": "Как задавать динамические class и style во Vue?",
+      "difficulty": "Базовый",
+      "learningGoal": "Оформление выводится из состояния, а не меняется вручную параллельно Vue.",
+      "keywords": [
+        "Vue 3",
+        "Компоненты и шаблоны",
+        "class-style"
+      ],
+      "kind": "explanation",
+      "reviewStatus": "ready",
+      "goalIds": [
+        "core",
+        "vue-class-style"
+      ],
+      "relatedQuestionIds": [],
+      "priority": "core",
+      "sourceRefs": [
+        "vue-class-style-docs"
+      ],
+      "sources": [
+        {
+          "title": "Официальная документация: Как задавать динамические class и style во Vue?",
+          "url": "https://vuejs.org/guide/essentials/class-and-style.html"
+        }
+      ],
+      "sourceFile": "content/questions/vue/templates.json",
+      "answerFile": "answers/vue/vue-class-style.md",
+      "contentHash": "c22be6a004af06e22c40677850886bac23c90f97adf7937c38f6ec12c5465d25"
+    },
+    {
+      "id": "vue-dom-events",
+      "sectionId": "vue",
+      "subsectionId": "templates",
+      "title": "Как работают @click, $event и модификаторы DOM-событий?",
+      "difficulty": "Базовый",
+      "learningGoal": "Модификаторы выражают поведение DOM-события, а не бизнес-логику.",
+      "keywords": [
+        "Vue 3",
+        "Компоненты и шаблоны",
+        "dom-events"
+      ],
+      "kind": "explanation",
+      "reviewStatus": "ready",
+      "goalIds": [
+        "core",
+        "vue-dom-events"
+      ],
+      "relatedQuestionIds": [],
+      "priority": "core",
+      "sourceRefs": [
+        "vue-dom-events-docs"
+      ],
+      "sources": [
+        {
+          "title": "Официальная документация: Как работают @click, $event и модификаторы DOM-событий?",
+          "url": "https://vuejs.org/guide/essentials/event-handling.html"
+        }
+      ],
+      "sourceFile": "content/questions/vue/templates.json",
+      "answerFile": "answers/vue/vue-dom-events.md",
+      "contentHash": "c16e698be33a27653c250002e3c860bcbf34236c25b7d250b472e3583b9cea8f"
+    },
+    {
+      "id": "vue-native-model",
+      "sectionId": "vue",
+      "subsectionId": "templates",
+      "title": "Как v-model работает с input, checkbox и select?",
+      "difficulty": "Базовый",
+      "learningGoal": "Начальное значение формы задаётся в реактивном состоянии.",
+      "keywords": [
+        "Vue 3",
+        "Компоненты и шаблоны",
+        "native-model"
+      ],
+      "kind": "explanation",
+      "reviewStatus": "ready",
+      "goalIds": [
+        "core",
+        "vue-native-model"
+      ],
+      "relatedQuestionIds": [],
+      "priority": "core",
+      "sourceRefs": [
+        "vue-native-model-docs"
+      ],
+      "sources": [
+        {
+          "title": "Официальная документация: Как v-model работает с input, checkbox и select?",
+          "url": "https://vuejs.org/guide/essentials/forms.html"
+        }
+      ],
+      "sourceFile": "content/questions/vue/templates.json",
+      "answerFile": "answers/vue/vue-native-model.md",
+      "contentHash": "0cbc3fd90c7d52c27c32fb7a0337a153df365ac51aabcb320166c6e5f085f6be"
+    },
+    {
+      "id": "vue-component-registration",
+      "sectionId": "vue",
+      "subsectionId": "templates",
+      "title": "Как регистрировать и использовать дочерние компоненты?",
+      "difficulty": "Базовый",
+      "learningGoal": "Зависимости компонента лучше видеть в его локальных импортах.",
+      "keywords": [
+        "Vue 3",
+        "Компоненты и шаблоны",
+        "component-registration"
+      ],
+      "kind": "explanation",
+      "reviewStatus": "ready",
+      "goalIds": [
+        "core",
+        "vue-component-registration"
+      ],
+      "relatedQuestionIds": [],
+      "priority": "core",
+      "sourceRefs": [
+        "vue-component-registration-docs"
+      ],
+      "sources": [
+        {
+          "title": "Официальная документация: Как регистрировать и использовать дочерние компоненты?",
+          "url": "https://vuejs.org/guide/components/registration.html"
+        }
+      ],
+      "sourceFile": "content/questions/vue/templates.json",
+      "answerFile": "answers/vue/vue-component-registration.md",
+      "contentHash": "09cafcb816721979b454ff7722502d14bdfc671b13a1021923f14d35b106e718"
+    },
+    {
+      "id": "vue-scoped-css",
+      "sectionId": "vue",
+      "subsectionId": "templates",
+      "title": "Как scoped CSS ограничивает стили и зачем нужен :deep()?",
+      "difficulty": "Средний",
+      "learningGoal": "Scoped изолирует селекторы сборкой, но не отменяет CSS-каскад.",
+      "keywords": [
+        "Vue 3",
+        "Компоненты и шаблоны",
+        "scoped-css"
+      ],
+      "kind": "explanation",
+      "reviewStatus": "ready",
+      "goalIds": [
+        "core",
+        "vue-scoped-css"
+      ],
+      "relatedQuestionIds": [],
+      "priority": "core",
+      "sourceRefs": [
+        "vue-scoped-css-docs"
+      ],
+      "sources": [
+        {
+          "title": "Официальная документация: Как scoped CSS ограничивает стили и зачем нужен :deep()?",
+          "url": "https://vuejs.org/api/sfc-css-features.html"
+        }
+      ],
+      "sourceFile": "content/questions/vue/templates.json",
+      "answerFile": "answers/vue/vue-scoped-css.md",
+      "contentHash": "eae1890a0234032fe144fd5796b0130c66618aa8ced874666722545e2f3197b0"
+    },
+    {
+      "id": "vue-template-refs",
+      "sectionId": "vue",
+      "subsectionId": "templates",
+      "title": "Когда нужен template ref и когда доступен DOM?",
+      "difficulty": "Средний",
+      "learningGoal": "Template ref дополняет декларативный UI для операций вроде focus.",
+      "keywords": [
+        "Vue 3",
+        "Компоненты и шаблоны",
+        "template-refs"
+      ],
+      "kind": "explanation",
+      "reviewStatus": "ready",
+      "goalIds": [
+        "core",
+        "vue-template-refs"
+      ],
+      "relatedQuestionIds": [],
+      "priority": "core",
+      "sourceRefs": [
+        "vue-template-refs-docs"
+      ],
+      "sources": [
+        {
+          "title": "Официальная документация: Когда нужен template ref и когда доступен DOM?",
+          "url": "https://vuejs.org/guide/essentials/template-refs.html"
+        }
+      ],
+      "sourceFile": "content/questions/vue/templates.json",
+      "answerFile": "answers/vue/vue-template-refs.md",
+      "contentHash": "f5c3748fc17354e9af8d825e841c9ccfa3e48aa628dc695e88148c1e9c522a22"
+    },
+    {
+      "id": "vue-dynamic-component",
+      "sectionId": "vue",
+      "subsectionId": "templates",
+      "title": "Как component :is переключает компоненты и что происходит с их состоянием?",
+      "difficulty": "Средний",
+      "learningGoal": "Переключение типа обычно пересоздаёт компонент; key управляет идентичностью.",
+      "keywords": [
+        "Vue 3",
+        "Компоненты и шаблоны",
+        "dynamic-component"
+      ],
+      "kind": "explanation",
+      "reviewStatus": "ready",
+      "goalIds": [
+        "core",
+        "vue-dynamic-component"
+      ],
+      "relatedQuestionIds": [
+        "vue-keep-alive"
+      ],
+      "priority": "core",
+      "sourceRefs": [
+        "vue-dynamic-component-docs"
+      ],
+      "sources": [
+        {
+          "title": "Официальная документация: Как component :is переключает компоненты и что происходит с их состоянием?",
+          "url": "https://vuejs.org/guide/essentials/component-basics.html"
+        }
+      ],
+      "sourceFile": "content/questions/vue/templates.json",
+      "answerFile": "answers/vue/vue-dynamic-component.md",
+      "contentHash": "7636d4753ae37db887e551dbc57c174c03d113a8575ef4d570c119705bcf7a63"
+    },
+    {
+      "id": "vue-keep-alive",
+      "sectionId": "vue",
+      "subsectionId": "templates",
+      "title": "Чем KeepAlive отличается от v-show и обычного переключения компонента?",
+      "difficulty": "Средний",
+      "learningGoal": "Кешированный компонент не уничтожен, но может быть неактивен.",
+      "keywords": [
+        "Vue 3",
+        "Компоненты и шаблоны",
+        "keep-alive"
+      ],
+      "kind": "explanation",
+      "reviewStatus": "ready",
+      "goalIds": [
+        "core",
+        "vue-keep-alive"
+      ],
+      "relatedQuestionIds": [],
+      "priority": "core",
+      "sourceRefs": [
+        "vue-keep-alive-docs"
+      ],
+      "sources": [
+        {
+          "title": "Официальная документация: Чем KeepAlive отличается от v-show и обычного переключения компонента?",
+          "url": "https://vuejs.org/guide/built-ins/keep-alive.html"
+        }
+      ],
+      "sourceFile": "content/questions/vue/templates.json",
+      "answerFile": "answers/vue/vue-keep-alive.md",
+      "contentHash": "58d333ecca36566b387096745a9efc89fe68f6be53dc1d5ce5a3cfcc64afaf64"
+    },
+    {
+      "id": "vue-teleport",
+      "sectionId": "vue",
+      "subsectionId": "templates",
+      "title": "Что меняет Teleport в DOM и в дереве компонентов?",
+      "difficulty": "Средний",
+      "learningGoal": "Teleport переносит DOM, сохраняя компонентные связи.",
+      "keywords": [
+        "Vue 3",
+        "Компоненты и шаблоны",
+        "teleport"
+      ],
+      "kind": "explanation",
+      "reviewStatus": "ready",
+      "goalIds": [
+        "core",
+        "vue-teleport"
+      ],
+      "relatedQuestionIds": [],
+      "priority": "core",
+      "sourceRefs": [
+        "vue-teleport-docs"
+      ],
+      "sources": [
+        {
+          "title": "Официальная документация: Что меняет Teleport в DOM и в дереве компонентов?",
+          "url": "https://vuejs.org/guide/built-ins/teleport.html"
+        }
+      ],
+      "sourceFile": "content/questions/vue/templates.json",
+      "answerFile": "answers/vue/vue-teleport.md",
+      "contentHash": "5d21cc4934464f54e3701bf303085c94582e8bb26c58d98e784f8ce0b5fceb7c"
+    },
+    {
+      "id": "vue-transitions",
+      "sectionId": "vue",
+      "subsectionId": "templates",
+      "title": "Для чего нужны Transition и TransitionGroup?",
+      "difficulty": "Базовый",
+      "learningGoal": "Анимация привязывается к изменению дерева и идентичности элементов.",
+      "keywords": [
+        "Vue 3",
+        "Компоненты и шаблоны",
+        "transitions"
+      ],
+      "kind": "explanation",
+      "reviewStatus": "ready",
+      "goalIds": [
+        "core",
+        "vue-transitions"
+      ],
+      "relatedQuestionIds": [],
+      "priority": "core",
+      "sourceRefs": [
+        "vue-transitions-docs"
+      ],
+      "sources": [
+        {
+          "title": "Официальная документация: Для чего нужны Transition и TransitionGroup?",
+          "url": "https://vuejs.org/guide/built-ins/transition.html"
+        }
+      ],
+      "sourceFile": "content/questions/vue/templates.json",
+      "answerFile": "answers/vue/vue-transitions.md",
+      "contentHash": "5a307297a28ac0ece8b3be5ec8783d61ce7e132fa7ba699b691dc6c78fc8614b"
+    },
+    {
+      "id": "vue-async-component",
+      "sectionId": "vue",
+      "subsectionId": "templates",
+      "title": "Как загружать компонент асинхронно и чем это отличается от ленивого маршрута?",
+      "difficulty": "Средний",
+      "learningGoal": "Ленивая загрузка откладывает загрузку кода, но требует состояния ожидания и ошибки.",
+      "keywords": [
+        "Vue 3",
+        "Компоненты и шаблоны",
+        "async-component"
+      ],
+      "kind": "explanation",
+      "reviewStatus": "ready",
+      "goalIds": [
+        "core",
+        "vue-async-component"
+      ],
+      "relatedQuestionIds": [],
+      "priority": "core",
+      "sourceRefs": [
+        "vue-async-component-docs"
+      ],
+      "sources": [
+        {
+          "title": "Официальная документация: Как загружать компонент асинхронно и чем это отличается от ленивого маршрута?",
+          "url": "https://vuejs.org/guide/components/async.html"
+        }
+      ],
+      "sourceFile": "content/questions/vue/templates.json",
+      "answerFile": "answers/vue/vue-async-component.md",
+      "contentHash": "8e3b7f7471e38a4ba7d1cf1a47844d10de452eb6a3de4ada7813301b28c65054"
     },
     {
       "id": "vue-ref-reactive",
@@ -39627,24 +40094,32 @@
       "subsectionId": "reactivity",
       "title": "Чем ref отличается от reactive?",
       "difficulty": "Базовый",
-      "learningGoal": "Объяснить и применить правило с учётом его границ: Ref удобен для заменяемого значения, reactive - для реактивного объекта.",
+      "learningGoal": "Ref удобен для заменяемого значения, reactive - для объекта со стабильной ссылкой.",
       "keywords": [
-        "Vue",
-        "Реактивность"
+        "Vue 3",
+        "Реактивность",
+        "ref-reactive"
       ],
       "kind": "explanation",
-      "reviewStatus": "imported",
+      "reviewStatus": "ready",
       "goalIds": [
         "core",
         "vue-ref-reactive"
       ],
       "relatedQuestionIds": [],
       "priority": "core",
-      "sourceRefs": [],
-      "sources": [],
+      "sourceRefs": [
+        "vue-ref-reactive-docs"
+      ],
+      "sources": [
+        {
+          "title": "Официальная документация: Чем ref отличается от reactive?",
+          "url": "https://vuejs.org/guide/essentials/reactivity-fundamentals.html"
+        }
+      ],
       "sourceFile": "content/questions/vue/reactivity.json",
       "answerFile": "answers/vue/vue-ref-reactive.md",
-      "contentHash": "ec42098525ba06f99dac373acd8814660cfda6df0e9adecab1eafdf57bbfb389"
+      "contentHash": "47b645e9a380974e8c0fd2bb485909612d8e80301d8fdedda98778c94db4c4ca"
     },
     {
       "id": "vue-computed",
@@ -39652,24 +40127,32 @@
       "subsectionId": "reactivity",
       "title": "Чем computed отличается от метода в шаблоне?",
       "difficulty": "Средний",
-      "learningGoal": "Объяснить и применить правило с учётом его границ: Computed хранит производное значение, а не выполняет команду.",
+      "learningGoal": "Computed описывает данные, а не выполняет команду.",
       "keywords": [
-        "Vue",
-        "Реактивность"
+        "Vue 3",
+        "Реактивность",
+        "computed"
       ],
       "kind": "explanation",
-      "reviewStatus": "imported",
+      "reviewStatus": "ready",
       "goalIds": [
         "core",
         "vue-computed"
       ],
       "relatedQuestionIds": [],
       "priority": "core",
-      "sourceRefs": [],
-      "sources": [],
+      "sourceRefs": [
+        "vue-computed-docs"
+      ],
+      "sources": [
+        {
+          "title": "Официальная документация: Чем computed отличается от метода в шаблоне?",
+          "url": "https://vuejs.org/guide/essentials/computed.html"
+        }
+      ],
       "sourceFile": "content/questions/vue/reactivity.json",
       "answerFile": "answers/vue/vue-computed.md",
-      "contentHash": "85dcac807f98cee289e2b5a8be0c23fd473c7e4458f8db2f5ebbe5306bea9939"
+      "contentHash": "06914380ab34c549ff7a287469a11534b39d19c084a1f291130ba474eae84007"
     },
     {
       "id": "vue-destructure",
@@ -39677,24 +40160,199 @@
       "subsectionId": "reactivity",
       "title": "Когда деструктуризация reactive теряет реактивную связь?",
       "difficulty": "Средний",
-      "learningGoal": "Объяснить и применить правило с учётом его границ: Различайте копию значения и ссылку на реактивное свойство.",
+      "learningGoal": "Передавайте реактивный доступ к свойству, если нужны будущие изменения.",
       "keywords": [
-        "Vue",
-        "Реактивность"
+        "Vue 3",
+        "Реактивность",
+        "destructure"
       ],
       "kind": "explanation",
-      "reviewStatus": "imported",
+      "reviewStatus": "ready",
       "goalIds": [
         "core",
         "vue-destructure"
       ],
       "relatedQuestionIds": [],
       "priority": "core",
-      "sourceRefs": [],
-      "sources": [],
+      "sourceRefs": [
+        "vue-destructure-docs"
+      ],
+      "sources": [
+        {
+          "title": "Официальная документация: Когда деструктуризация reactive теряет реактивную связь?",
+          "url": "https://vuejs.org/guide/components/props.html"
+        }
+      ],
       "sourceFile": "content/questions/vue/reactivity.json",
       "answerFile": "answers/vue/vue-destructure.md",
-      "contentHash": "10d089026652083c97b6895e00dae89e7c3264628bb9bd335d9433e997bc1bea"
+      "contentHash": "cd58774c77cc043bfb11e1c1ce06ccf80dc471fbe6859bc1d86d17c0a11d0b67"
+    },
+    {
+      "id": "vue-dependency-tracking",
+      "sectionId": "vue",
+      "subsectionId": "reactivity",
+      "title": "Как Vue узнаёт, что нужно пересчитать computed или обновить компонент?",
+      "difficulty": "Средний",
+      "learningGoal": "Реактивность связывает выполненное чтение с активным эффектом.",
+      "keywords": [
+        "Vue 3",
+        "Реактивность",
+        "dependency-tracking"
+      ],
+      "kind": "explanation",
+      "reviewStatus": "ready",
+      "goalIds": [
+        "core",
+        "vue-dependency-tracking"
+      ],
+      "relatedQuestionIds": [
+        "vue-computed"
+      ],
+      "priority": "core",
+      "sourceRefs": [
+        "vue-dependency-tracking-docs"
+      ],
+      "sources": [
+        {
+          "title": "Официальная документация: Как Vue узнаёт, что нужно пересчитать computed или обновить компонент?",
+          "url": "https://vuejs.org/guide/extras/reactivity-in-depth.html"
+        }
+      ],
+      "sourceFile": "content/questions/vue/reactivity.json",
+      "answerFile": "answers/vue/vue-dependency-tracking.md",
+      "contentHash": "0b228e79945a39a782451e0b6658658aaf5ca5842975e5c4b1575e7c5fd84ed6"
+    },
+    {
+      "id": "vue-ref-unwrapping",
+      "sectionId": "vue",
+      "subsectionId": "reactivity",
+      "title": "Где ref разворачивается автоматически, а где нужен .value?",
+      "difficulty": "Средний",
+      "learningGoal": "Автоматическое разворачивание зависит от места доступа.",
+      "keywords": [
+        "Vue 3",
+        "Реактивность",
+        "ref-unwrapping"
+      ],
+      "kind": "explanation",
+      "reviewStatus": "ready",
+      "goalIds": [
+        "core",
+        "vue-ref-unwrapping"
+      ],
+      "relatedQuestionIds": [],
+      "priority": "core",
+      "sourceRefs": [
+        "vue-ref-unwrapping-docs"
+      ],
+      "sources": [
+        {
+          "title": "Официальная документация: Где ref разворачивается автоматически, а где нужен .value?",
+          "url": "https://vuejs.org/guide/essentials/reactivity-fundamentals.html"
+        }
+      ],
+      "sourceFile": "content/questions/vue/reactivity.json",
+      "answerFile": "answers/vue/vue-ref-unwrapping.md",
+      "contentHash": "28e4a11d60e59362d19792822ab5161368784a6950a63df7880d241da9e3fe30"
+    },
+    {
+      "id": "vue-shallow-state",
+      "sectionId": "vue",
+      "subsectionId": "reactivity",
+      "title": "Когда нужны shallowRef и shallowReactive?",
+      "difficulty": "Средний",
+      "learningGoal": "Shallow требует явного обновления на отслеживаемой границе.",
+      "keywords": [
+        "Vue 3",
+        "Реактивность",
+        "shallow-state"
+      ],
+      "kind": "explanation",
+      "reviewStatus": "ready",
+      "goalIds": [
+        "core",
+        "vue-shallow-state"
+      ],
+      "relatedQuestionIds": [],
+      "priority": "core",
+      "sourceRefs": [
+        "vue-shallow-state-docs"
+      ],
+      "sources": [
+        {
+          "title": "Официальная документация: Когда нужны shallowRef и shallowReactive?",
+          "url": "https://vuejs.org/api/reactivity-advanced.html"
+        }
+      ],
+      "sourceFile": "content/questions/vue/reactivity.json",
+      "answerFile": "answers/vue/vue-shallow-state.md",
+      "contentHash": "0aa67ed697095f1d0e49a3745b113afa284218067a9f55207f8a30a13ea78407"
+    },
+    {
+      "id": "vue-readonly-raw",
+      "sectionId": "vue",
+      "subsectionId": "reactivity",
+      "title": "Для чего нужны readonly, toRaw и markRaw?",
+      "difficulty": "Средний",
+      "learningGoal": "Readonly задаёт интерфейс доступа, raw API требуют контроля владения.",
+      "keywords": [
+        "Vue 3",
+        "Реактивность",
+        "readonly-raw"
+      ],
+      "kind": "explanation",
+      "reviewStatus": "ready",
+      "goalIds": [
+        "core",
+        "vue-readonly-raw"
+      ],
+      "relatedQuestionIds": [],
+      "priority": "core",
+      "sourceRefs": [
+        "vue-readonly-raw-docs"
+      ],
+      "sources": [
+        {
+          "title": "Официальная документация: Для чего нужны readonly, toRaw и markRaw?",
+          "url": "https://vuejs.org/api/reactivity-advanced.html"
+        }
+      ],
+      "sourceFile": "content/questions/vue/reactivity.json",
+      "answerFile": "answers/vue/vue-readonly-raw.md",
+      "contentHash": "b79aa73b9aa814793059d884893b192f679276ba80e006636b009480693413a0"
+    },
+    {
+      "id": "vue-next-tick",
+      "sectionId": "vue",
+      "subsectionId": "reactivity",
+      "title": "Почему DOM не меняется сразу после записи в ref и что гарантирует nextTick?",
+      "difficulty": "Средний",
+      "learningGoal": "NextTick ожидает обновления Vue, а не завершения всей асинхронной работы.",
+      "keywords": [
+        "Vue 3",
+        "Реактивность",
+        "next-tick"
+      ],
+      "kind": "explanation",
+      "reviewStatus": "ready",
+      "goalIds": [
+        "core",
+        "vue-next-tick"
+      ],
+      "relatedQuestionIds": [],
+      "priority": "core",
+      "sourceRefs": [
+        "vue-next-tick-docs"
+      ],
+      "sources": [
+        {
+          "title": "Официальная документация: Почему DOM не меняется сразу после записи в ref и что гарантирует nextTick?",
+          "url": "https://vuejs.org/api/general.html#nexttick"
+        }
+      ],
+      "sourceFile": "content/questions/vue/reactivity.json",
+      "answerFile": "answers/vue/vue-next-tick.md",
+      "contentHash": "8a8464f7b56804526deff0501fc991bc6ba13f29143b20436978bea2caa45410"
     },
     {
       "id": "vue-props-events",
@@ -39702,24 +40360,32 @@
       "subsectionId": "communication",
       "title": "Почему дочерний компонент не должен изменять props?",
       "difficulty": "Базовый",
-      "learningGoal": "Объяснить и применить правило с учётом его границ: Владелец данных обновляет их в ответ на событие ребёнка.",
+      "learningGoal": "Владелец состояния обновляет его в ответ на событие ребёнка.",
       "keywords": [
-        "Vue",
-        "Взаимодействие компонентов"
+        "Vue 3",
+        "Взаимодействие компонентов",
+        "props-events"
       ],
       "kind": "explanation",
-      "reviewStatus": "imported",
+      "reviewStatus": "ready",
       "goalIds": [
         "core",
         "vue-props-events"
       ],
       "relatedQuestionIds": [],
       "priority": "core",
-      "sourceRefs": [],
-      "sources": [],
+      "sourceRefs": [
+        "vue-props-events-docs"
+      ],
+      "sources": [
+        {
+          "title": "Официальная документация: Почему дочерний компонент не должен изменять props?",
+          "url": "https://vuejs.org/guide/components/props.html"
+        }
+      ],
       "sourceFile": "content/questions/vue/communication.json",
       "answerFile": "answers/vue/vue-props-events.md",
-      "contentHash": "0b06cfd4a4939bd13ad94d3c8254ec92aff99bb698e4f84defe701bf011a1cfb"
+      "contentHash": "7ac49fec26cc28d78b002eeef204f82d5b911e3513832f3d57c8904327003fca"
     },
     {
       "id": "vue-v-model",
@@ -39727,24 +40393,32 @@
       "subsectionId": "communication",
       "title": "Как устроен v-model у собственного компонента?",
       "difficulty": "Средний",
-      "learningGoal": "Объяснить и применить правило с учётом его границ: V-model - согласованный контракт передачи значения и уведомления.",
+      "learningGoal": "V-model - согласованный контракт значения и уведомления.",
       "keywords": [
-        "Vue",
-        "Взаимодействие компонентов"
+        "Vue 3",
+        "Взаимодействие компонентов",
+        "v-model"
       ],
       "kind": "explanation",
-      "reviewStatus": "imported",
+      "reviewStatus": "ready",
       "goalIds": [
         "core",
         "vue-v-model"
       ],
       "relatedQuestionIds": [],
       "priority": "core",
-      "sourceRefs": [],
-      "sources": [],
+      "sourceRefs": [
+        "vue-v-model-docs"
+      ],
+      "sources": [
+        {
+          "title": "Официальная документация: Как устроен v-model у собственного компонента?",
+          "url": "https://vuejs.org/guide/components/v-model.html"
+        }
+      ],
       "sourceFile": "content/questions/vue/communication.json",
       "answerFile": "answers/vue/vue-v-model.md",
-      "contentHash": "44a65c94702c12a3690870c2789c3ddc275ba6c9b9929554d20c66975a6e8791"
+      "contentHash": "7ac575eb46a485ed411174a4577b64db1427b95890d03300e2c3a9525a6838c9"
     },
     {
       "id": "vue-slots",
@@ -39752,24 +40426,197 @@
       "subsectionId": "communication",
       "title": "Что передают обычные и scoped slots?",
       "difficulty": "Средний",
-      "learningGoal": "Объяснить и применить правило с учётом его границ: Слот передаёт разметку, slot props передают доступные ей данные.",
+      "learningGoal": "Слот передаёт разметку, slot props дают ей доступ к данным ребёнка.",
       "keywords": [
-        "Vue",
-        "Взаимодействие компонентов"
+        "Vue 3",
+        "Взаимодействие компонентов",
+        "slots"
       ],
       "kind": "explanation",
-      "reviewStatus": "imported",
+      "reviewStatus": "ready",
       "goalIds": [
         "core",
         "vue-slots"
       ],
       "relatedQuestionIds": [],
       "priority": "core",
-      "sourceRefs": [],
-      "sources": [],
+      "sourceRefs": [
+        "vue-slots-docs"
+      ],
+      "sources": [
+        {
+          "title": "Официальная документация: Что передают обычные и scoped slots?",
+          "url": "https://vuejs.org/guide/components/slots.html"
+        }
+      ],
       "sourceFile": "content/questions/vue/communication.json",
       "answerFile": "answers/vue/vue-slots.md",
-      "contentHash": "1abead2cb1f3b6f1f764b05ab4360380d4fd9c7b9a8edd377ae0644ead19c449"
+      "contentHash": "c43af2a40767ba63e79df4e182d1ff41cb85ff9d20a418e1182064ebf42dff16"
+    },
+    {
+      "id": "vue-prop-contract",
+      "sectionId": "vue",
+      "subsectionId": "communication",
+      "title": "Как объявлять типы, обязательность и значения по умолчанию props?",
+      "difficulty": "Базовый",
+      "learningGoal": "Prop должен иметь понятные тип, обязательность и начальное значение.",
+      "keywords": [
+        "Vue 3",
+        "Взаимодействие компонентов",
+        "prop-contract"
+      ],
+      "kind": "explanation",
+      "reviewStatus": "ready",
+      "goalIds": [
+        "core",
+        "vue-prop-contract"
+      ],
+      "relatedQuestionIds": [],
+      "priority": "core",
+      "sourceRefs": [
+        "vue-prop-contract-docs"
+      ],
+      "sources": [
+        {
+          "title": "Официальная документация: Как объявлять типы, обязательность и значения по умолчанию props?",
+          "url": "https://vuejs.org/guide/components/props.html"
+        }
+      ],
+      "sourceFile": "content/questions/vue/communication.json",
+      "answerFile": "answers/vue/vue-prop-contract.md",
+      "contentHash": "2e348f412f942f0552a4ba4917b45dfa12bc2a1d4d34cbb4afd4675b354c84cf"
+    },
+    {
+      "id": "vue-component-events",
+      "sectionId": "vue",
+      "subsectionId": "communication",
+      "title": "Всплывают ли события компонентов и зачем объявлять emits?",
+      "difficulty": "Базовый",
+      "learningGoal": "Событие компонента слышит непосредственный слушатель его контракта.",
+      "keywords": [
+        "Vue 3",
+        "Взаимодействие компонентов",
+        "component-events"
+      ],
+      "kind": "explanation",
+      "reviewStatus": "ready",
+      "goalIds": [
+        "core",
+        "vue-component-events"
+      ],
+      "relatedQuestionIds": [],
+      "priority": "core",
+      "sourceRefs": [
+        "vue-component-events-docs"
+      ],
+      "sources": [
+        {
+          "title": "Официальная документация: Всплывают ли события компонентов и зачем объявлять emits?",
+          "url": "https://vuejs.org/guide/components/events.html"
+        }
+      ],
+      "sourceFile": "content/questions/vue/communication.json",
+      "answerFile": "answers/vue/vue-component-events.md",
+      "contentHash": "76eefd201d38476019d18f04e6447558c7bb78a8e6b28506a4606dc9797d65cf"
+    },
+    {
+      "id": "vue-fallthrough-attrs",
+      "sectionId": "vue",
+      "subsectionId": "communication",
+      "title": "Что такое fallthrough attrs и как передать их на нужный элемент?",
+      "difficulty": "Средний",
+      "learningGoal": "Обёртка должна явно определять адресата внешних атрибутов.",
+      "keywords": [
+        "Vue 3",
+        "Взаимодействие компонентов",
+        "fallthrough-attrs"
+      ],
+      "kind": "explanation",
+      "reviewStatus": "ready",
+      "goalIds": [
+        "core",
+        "vue-fallthrough-attrs"
+      ],
+      "relatedQuestionIds": [],
+      "priority": "core",
+      "sourceRefs": [
+        "vue-fallthrough-attrs-docs"
+      ],
+      "sources": [
+        {
+          "title": "Официальная документация: Что такое fallthrough attrs и как передать их на нужный элемент?",
+          "url": "https://vuejs.org/guide/components/attrs.html"
+        }
+      ],
+      "sourceFile": "content/questions/vue/communication.json",
+      "answerFile": "answers/vue/vue-fallthrough-attrs.md",
+      "contentHash": "63866118455af8b2ae703f5a14d753e4d7b4fe3e3e55dd11ddfe413789c5170d"
+    },
+    {
+      "id": "vue-provide-inject",
+      "sectionId": "vue",
+      "subsectionId": "communication",
+      "title": "Когда provide/inject удобнее цепочки props?",
+      "difficulty": "Средний",
+      "learningGoal": "Inject получает зависимость ближайшего провайдера, сохраняя её контракт.",
+      "keywords": [
+        "Vue 3",
+        "Взаимодействие компонентов",
+        "provide-inject"
+      ],
+      "kind": "explanation",
+      "reviewStatus": "ready",
+      "goalIds": [
+        "core",
+        "vue-provide-inject"
+      ],
+      "relatedQuestionIds": [],
+      "priority": "core",
+      "sourceRefs": [
+        "vue-provide-inject-docs"
+      ],
+      "sources": [
+        {
+          "title": "Официальная документация: Когда provide/inject удобнее цепочки props?",
+          "url": "https://vuejs.org/guide/components/provide-inject.html"
+        }
+      ],
+      "sourceFile": "content/questions/vue/communication.json",
+      "answerFile": "answers/vue/vue-provide-inject.md",
+      "contentHash": "54c57c62077a567895ea0376aa8ca14f596b1a669364fc393fe3692d679fa664"
+    },
+    {
+      "id": "vue-component-expose",
+      "sectionId": "vue",
+      "subsectionId": "communication",
+      "title": "Когда нужен defineExpose и почему ref на компонент не заменяет props/events?",
+      "difficulty": "Средний",
+      "learningGoal": "Expose оставляет небольшой публичный API для императивных операций.",
+      "keywords": [
+        "Vue 3",
+        "Взаимодействие компонентов",
+        "component-expose"
+      ],
+      "kind": "explanation",
+      "reviewStatus": "ready",
+      "goalIds": [
+        "core",
+        "vue-component-expose"
+      ],
+      "relatedQuestionIds": [],
+      "priority": "core",
+      "sourceRefs": [
+        "vue-component-expose-docs"
+      ],
+      "sources": [
+        {
+          "title": "Официальная документация: Когда нужен defineExpose и почему ref на компонент не заменяет props/events?",
+          "url": "https://vuejs.org/api/sfc-script-setup.html#defineexpose"
+        }
+      ],
+      "sourceFile": "content/questions/vue/communication.json",
+      "answerFile": "answers/vue/vue-component-expose.md",
+      "contentHash": "abf89097a7f0f26753a2508ec25a3b98bc53e89915f299ad31b6613c5395d851"
     },
     {
       "id": "vue-watch",
@@ -39777,24 +40624,32 @@
       "subsectionId": "composition",
       "title": "Чем watch отличается от watchEffect?",
       "difficulty": "Средний",
-      "learningGoal": "Объяснить и применить правило с учётом его границ: Выбирайте источник наблюдения и явно управляйте ресурсами.",
+      "learningGoal": "Выбирайте watcher для побочного действия, computed - для производных данных.",
       "keywords": [
-        "Vue",
-        "Composition API"
+        "Vue 3",
+        "Composition API",
+        "watch"
       ],
       "kind": "explanation",
-      "reviewStatus": "imported",
+      "reviewStatus": "ready",
       "goalIds": [
         "core",
         "vue-watch"
       ],
       "relatedQuestionIds": [],
       "priority": "core",
-      "sourceRefs": [],
-      "sources": [],
+      "sourceRefs": [
+        "vue-watch-docs"
+      ],
+      "sources": [
+        {
+          "title": "Официальная документация: Чем watch отличается от watchEffect?",
+          "url": "https://vuejs.org/guide/essentials/watchers.html"
+        }
+      ],
       "sourceFile": "content/questions/vue/composition.json",
       "answerFile": "answers/vue/vue-watch.md",
-      "contentHash": "fa15dd1c5742a400c714d0f27e318d7e4e3fd4aca8d1bbdc2c7b18a4cb9cdbc4"
+      "contentHash": "309b0cbca15f3558900fc30aef5da95ce948cf6d714d1c8181d5feeb7a4c6bbc"
     },
     {
       "id": "vue-lifecycle-cleanup",
@@ -39802,24 +40657,32 @@
       "subsectionId": "composition",
       "title": "Когда использовать onMounted и onUnmounted?",
       "difficulty": "Средний",
-      "learningGoal": "Объяснить и применить правило с учётом его границ: Привязывайте создание и освобождение ресурсов к экземпляру компонента.",
+      "learningGoal": "Создание ресурса должно иметь симметричное освобождение у владельца.",
       "keywords": [
-        "Vue",
-        "Composition API"
+        "Vue 3",
+        "Composition API",
+        "lifecycle-cleanup"
       ],
       "kind": "explanation",
-      "reviewStatus": "imported",
+      "reviewStatus": "ready",
       "goalIds": [
         "core",
         "vue-lifecycle-cleanup"
       ],
       "relatedQuestionIds": [],
       "priority": "core",
-      "sourceRefs": [],
-      "sources": [],
+      "sourceRefs": [
+        "vue-lifecycle-cleanup-docs"
+      ],
+      "sources": [
+        {
+          "title": "Официальная документация: Когда использовать onMounted и onUnmounted?",
+          "url": "https://vuejs.org/guide/essentials/lifecycle.html"
+        }
+      ],
       "sourceFile": "content/questions/vue/composition.json",
       "answerFile": "answers/vue/vue-lifecycle-cleanup.md",
-      "contentHash": "f2309cc700510228bb2260fac5de50ef294e4978d523792815c75755d16d6482"
+      "contentHash": "8a24aff8f69c1da43c29a7c5f03be77ff44862a2b7bd18984b0f9d786ac0f6da"
     },
     {
       "id": "vue-composables",
@@ -39827,24 +40690,865 @@
       "subsectionId": "composition",
       "title": "Что такое composable и разделяют ли его вызовы состояние?",
       "difficulty": "Средний",
-      "learningGoal": "Объяснить и применить правило с учётом его границ: Область создания состояния определяет, кто его разделяет.",
+      "learningGoal": "Место создания ref определяет, кто разделяет состояние.",
       "keywords": [
-        "Vue",
-        "Composition API"
+        "Vue 3",
+        "Composition API",
+        "composables"
       ],
       "kind": "explanation",
-      "reviewStatus": "imported",
+      "reviewStatus": "ready",
       "goalIds": [
         "core",
         "vue-composables"
       ],
       "relatedQuestionIds": [],
       "priority": "core",
-      "sourceRefs": [],
-      "sources": [],
+      "sourceRefs": [
+        "vue-composables-docs"
+      ],
+      "sources": [
+        {
+          "title": "Официальная документация: Что такое composable и разделяют ли его вызовы состояние?",
+          "url": "https://vuejs.org/guide/reusability/composables.html"
+        }
+      ],
       "sourceFile": "content/questions/vue/composition.json",
       "answerFile": "answers/vue/vue-composables.md",
-      "contentHash": "b894722b252d16fffcd7b7f3c0bb12960af915ebb3ec630fbbba5403415a3bc9"
+      "contentHash": "040f87268452ab587486c7b68def6659b9b4d5c3e9cce247ea3c8d65d379adab"
+    },
+    {
+      "id": "vue-options-composition",
+      "sectionId": "vue",
+      "subsectionId": "composition",
+      "title": "Чем Options API отличается от Composition API и как работает setup?",
+      "difficulty": "Базовый",
+      "learningGoal": "Выбор API меняет организацию логики, а не отменяет правила Vue.",
+      "keywords": [
+        "Vue 3",
+        "Composition API",
+        "options-composition"
+      ],
+      "kind": "explanation",
+      "reviewStatus": "ready",
+      "goalIds": [
+        "core",
+        "vue-options-composition"
+      ],
+      "relatedQuestionIds": [],
+      "priority": "core",
+      "sourceRefs": [
+        "vue-options-composition-docs"
+      ],
+      "sources": [
+        {
+          "title": "Официальная документация: Чем Options API отличается от Composition API и как работает setup?",
+          "url": "https://vuejs.org/guide/introduction.html#api-styles"
+        }
+      ],
+      "sourceFile": "content/questions/vue/composition.json",
+      "answerFile": "answers/vue/vue-options-composition.md",
+      "contentHash": "cffc63ff686bd557f06997326a8f87b8ce559312103079a07a74f3d9b86243c1"
+    },
+    {
+      "id": "vue-script-setup-macros",
+      "sectionId": "vue",
+      "subsectionId": "composition",
+      "title": "Чем defineProps и defineEmits отличаются от обычных функций?",
+      "difficulty": "Базовый",
+      "learningGoal": "Макросы script setup описывают компонент на этапе компиляции.",
+      "keywords": [
+        "Vue 3",
+        "Composition API",
+        "script-setup-macros"
+      ],
+      "kind": "explanation",
+      "reviewStatus": "ready",
+      "goalIds": [
+        "core",
+        "vue-script-setup-macros"
+      ],
+      "relatedQuestionIds": [],
+      "priority": "core",
+      "sourceRefs": [
+        "vue-script-setup-macros-docs"
+      ],
+      "sources": [
+        {
+          "title": "Официальная документация: Чем defineProps и defineEmits отличаются от обычных функций?",
+          "url": "https://vuejs.org/api/sfc-script-setup.html"
+        }
+      ],
+      "sourceFile": "content/questions/vue/composition.json",
+      "answerFile": "answers/vue/vue-script-setup-macros.md",
+      "contentHash": "776d2447e8d74064e6b807b786ae590c389564f81d4786f4c6442dfc12686184"
+    },
+    {
+      "id": "vue-watch-depth",
+      "sectionId": "vue",
+      "subsectionId": "composition",
+      "title": "Как работает deep watch и почему oldValue иногда совпадает с newValue?",
+      "difficulty": "Средний",
+      "learningGoal": "Глубокое наблюдение обнаруживает мутации, но не сохраняет историю объекта.",
+      "keywords": [
+        "Vue 3",
+        "Composition API",
+        "watch-depth"
+      ],
+      "kind": "explanation",
+      "reviewStatus": "ready",
+      "goalIds": [
+        "core",
+        "vue-watch-depth"
+      ],
+      "relatedQuestionIds": [],
+      "priority": "core",
+      "sourceRefs": [
+        "vue-watch-depth-docs"
+      ],
+      "sources": [
+        {
+          "title": "Официальная документация: Как работает deep watch и почему oldValue иногда совпадает с newValue?",
+          "url": "https://vuejs.org/guide/essentials/watchers.html#deep-watchers"
+        }
+      ],
+      "sourceFile": "content/questions/vue/composition.json",
+      "answerFile": "answers/vue/vue-watch-depth.md",
+      "contentHash": "0256fe20b8fd88dbd12359c6b935a8ea4dc1997b4e8aeef8834c073caa5865f3"
+    },
+    {
+      "id": "vue-watch-flush-stop",
+      "sectionId": "vue",
+      "subsectionId": "composition",
+      "title": "Когда выполняется watcher относительно DOM и когда его нужно остановить?",
+      "difficulty": "Средний",
+      "learningGoal": "Выбирайте фазу watcher по его задаче и контролируйте время жизни.",
+      "keywords": [
+        "Vue 3",
+        "Composition API",
+        "watch-flush-stop"
+      ],
+      "kind": "explanation",
+      "reviewStatus": "ready",
+      "goalIds": [
+        "core",
+        "vue-watch-flush-stop"
+      ],
+      "relatedQuestionIds": [],
+      "priority": "core",
+      "sourceRefs": [
+        "vue-watch-flush-stop-docs"
+      ],
+      "sources": [
+        {
+          "title": "Официальная документация: Когда выполняется watcher относительно DOM и когда его нужно остановить?",
+          "url": "https://vuejs.org/guide/essentials/watchers.html#callback-flush-timing"
+        }
+      ],
+      "sourceFile": "content/questions/vue/composition.json",
+      "answerFile": "answers/vue/vue-watch-flush-stop.md",
+      "contentHash": "9e2c735ac328c66f0fc95f8f31dac981b53f672a2ddd252b30f5a9f0ba0e3eb3"
+    },
+    {
+      "id": "vue-request-race",
+      "sectionId": "vue",
+      "subsectionId": "composition",
+      "title": "Как не дать устаревшему запросу перезаписать результат нового watcher?",
+      "difficulty": "Продвинутый",
+      "learningGoal": "Публикуйте результат только пока запрос принадлежит текущему наблюдению.",
+      "keywords": [
+        "Vue 3",
+        "Composition API",
+        "request-race"
+      ],
+      "kind": "application",
+      "reviewStatus": "ready",
+      "goalIds": [
+        "core",
+        "vue-request-race"
+      ],
+      "relatedQuestionIds": [
+        "vue-watch"
+      ],
+      "priority": "core",
+      "sourceRefs": [
+        "vue-request-race-docs"
+      ],
+      "sources": [
+        {
+          "title": "Официальная документация: Как не дать устаревшему запросу перезаписать результат нового watcher?",
+          "url": "https://vuejs.org/guide/essentials/watchers.html#side-effect-cleanup"
+        }
+      ],
+      "sourceFile": "content/questions/vue/composition.json",
+      "answerFile": "answers/vue/vue-request-race.md",
+      "contentHash": "f63037890b1144ec0a103043f4a8acf720dfc5d4af0736a4ca318331cd12f662"
+    },
+    {
+      "id": "vue-custom-directive",
+      "sectionId": "vue",
+      "subsectionId": "composition",
+      "title": "Когда писать custom directive, а когда компонент или composable?",
+      "difficulty": "Средний",
+      "learningGoal": "Директива инкапсулирует DOM-операцию, а не весь интерфейс.",
+      "keywords": [
+        "Vue 3",
+        "Composition API",
+        "custom-directive"
+      ],
+      "kind": "explanation",
+      "reviewStatus": "ready",
+      "goalIds": [
+        "core",
+        "vue-custom-directive"
+      ],
+      "relatedQuestionIds": [],
+      "priority": "core",
+      "sourceRefs": [
+        "vue-custom-directive-docs"
+      ],
+      "sources": [
+        {
+          "title": "Официальная документация: Когда писать custom directive, а когда компонент или composable?",
+          "url": "https://vuejs.org/guide/reusability/custom-directives.html"
+        }
+      ],
+      "sourceFile": "content/questions/vue/composition.json",
+      "answerFile": "answers/vue/vue-custom-directive.md",
+      "contentHash": "e284253636eb58ef97fb7e3e02e56b5745c0210bf742fd63df3863576e853ea1"
+    },
+    {
+      "id": "vue-plugins",
+      "sectionId": "vue",
+      "subsectionId": "composition",
+      "title": "Что делает app.use и что должен устанавливать плагин Vue?",
+      "difficulty": "Базовый",
+      "learningGoal": "Плагин настраивает приложение, а не заменяет локальные зависимости.",
+      "keywords": [
+        "Vue 3",
+        "Composition API",
+        "plugins"
+      ],
+      "kind": "explanation",
+      "reviewStatus": "ready",
+      "goalIds": [
+        "core",
+        "vue-plugins"
+      ],
+      "relatedQuestionIds": [],
+      "priority": "core",
+      "sourceRefs": [
+        "vue-plugins-docs"
+      ],
+      "sources": [
+        {
+          "title": "Официальная документация: Что делает app.use и что должен устанавливать плагин Vue?",
+          "url": "https://vuejs.org/guide/reusability/plugins.html"
+        }
+      ],
+      "sourceFile": "content/questions/vue/composition.json",
+      "answerFile": "answers/vue/vue-plugins.md",
+      "contentHash": "355e0aa16c826c6614288df4473086ab68f6a589ac6551eafa527381d344b158"
+    },
+    {
+      "id": "vue-router-basics",
+      "sectionId": "vue",
+      "subsectionId": "routing",
+      "title": "Как подключить Vue Router и связать RouterLink с RouterView?",
+      "difficulty": "Базовый",
+      "learningGoal": "URL выбирает компонент через маршрутизатор.",
+      "keywords": [
+        "Vue 3",
+        "Маршрутизация",
+        "router-basics"
+      ],
+      "kind": "explanation",
+      "reviewStatus": "ready",
+      "goalIds": [
+        "core",
+        "vue-router-basics"
+      ],
+      "relatedQuestionIds": [],
+      "priority": "core",
+      "sourceRefs": [
+        "vue-router-basics-docs"
+      ],
+      "sources": [
+        {
+          "title": "Официальная документация: Как подключить Vue Router и связать RouterLink с RouterView?",
+          "url": "https://router.vuejs.org/guide/"
+        }
+      ],
+      "sourceFile": "content/questions/vue/routing.json",
+      "answerFile": "answers/vue/vue-router-basics.md",
+      "contentHash": "c7517b89b175afcf34a4a8299b8761d52970295247a9e67b66fbb02ffc4ee6fc"
+    },
+    {
+      "id": "vue-route-router",
+      "sectionId": "vue",
+      "subsectionId": "routing",
+      "title": "Чем useRoute отличается от useRouter и как делать push/replace?",
+      "difficulty": "Базовый",
+      "learningGoal": "Route описывает адрес, router управляет переходами.",
+      "keywords": [
+        "Vue 3",
+        "Маршрутизация",
+        "route-router"
+      ],
+      "kind": "explanation",
+      "reviewStatus": "ready",
+      "goalIds": [
+        "core",
+        "vue-route-router"
+      ],
+      "relatedQuestionIds": [],
+      "priority": "core",
+      "sourceRefs": [
+        "vue-route-router-docs"
+      ],
+      "sources": [
+        {
+          "title": "Официальная документация: Чем useRoute отличается от useRouter и как делать push/replace?",
+          "url": "https://router.vuejs.org/guide/essentials/navigation.html"
+        }
+      ],
+      "sourceFile": "content/questions/vue/routing.json",
+      "answerFile": "answers/vue/vue-route-router.md",
+      "contentHash": "8a7e20f78f3d6990d268dac05f3b3c7cdb0981342e84061438eb112f2bdace0f"
+    },
+    {
+      "id": "vue-route-params-reuse",
+      "sectionId": "vue",
+      "subsectionId": "routing",
+      "title": "Почему переход /users/1 -> /users/2 не вызывает onMounted заново?",
+      "difficulty": "Средний",
+      "learningGoal": "Наблюдайте нужный параметр, если от него зависит загрузка.",
+      "keywords": [
+        "Vue 3",
+        "Маршрутизация",
+        "route-params-reuse"
+      ],
+      "kind": "explanation",
+      "reviewStatus": "ready",
+      "goalIds": [
+        "core",
+        "vue-route-params-reuse"
+      ],
+      "relatedQuestionIds": [
+        "vue-request-race"
+      ],
+      "priority": "core",
+      "sourceRefs": [
+        "vue-route-params-reuse-docs"
+      ],
+      "sources": [
+        {
+          "title": "Официальная документация: Почему переход /users/1 -> /users/2 не вызывает onMounted заново?",
+          "url": "https://router.vuejs.org/guide/essentials/dynamic-matching.html"
+        }
+      ],
+      "sourceFile": "content/questions/vue/routing.json",
+      "answerFile": "answers/vue/vue-route-params-reuse.md",
+      "contentHash": "d27eb166ca1c77e6d8acc648e158eb95c3e09c9e81f6513f8f65542cbe8b4fe7"
+    },
+    {
+      "id": "vue-nested-routes",
+      "sectionId": "vue",
+      "subsectionId": "routing",
+      "title": "Как устроены вложенные маршруты, layout и страница 404?",
+      "difficulty": "Средний",
+      "learningGoal": "Вложенность URL и место отрисовки описываются согласованно.",
+      "keywords": [
+        "Vue 3",
+        "Маршрутизация",
+        "nested-routes"
+      ],
+      "kind": "explanation",
+      "reviewStatus": "ready",
+      "goalIds": [
+        "core",
+        "vue-nested-routes"
+      ],
+      "relatedQuestionIds": [],
+      "priority": "core",
+      "sourceRefs": [
+        "vue-nested-routes-docs"
+      ],
+      "sources": [
+        {
+          "title": "Официальная документация: Как устроены вложенные маршруты, layout и страница 404?",
+          "url": "https://router.vuejs.org/guide/essentials/nested-routes.html"
+        }
+      ],
+      "sourceFile": "content/questions/vue/routing.json",
+      "answerFile": "answers/vue/vue-nested-routes.md",
+      "contentHash": "363bdad2e77a01d52382237fa1cb250a7f22e3dacce4ba86d428d2224beb36f4"
+    },
+    {
+      "id": "vue-route-guards",
+      "sectionId": "vue",
+      "subsectionId": "routing",
+      "title": "Как guards отменяют или перенаправляют переход и защищают ли они API?",
+      "difficulty": "Средний",
+      "learningGoal": "Guard управляет интерфейсом; доступ к данным проверяется сервером.",
+      "keywords": [
+        "Vue 3",
+        "Маршрутизация",
+        "route-guards"
+      ],
+      "kind": "explanation",
+      "reviewStatus": "ready",
+      "goalIds": [
+        "core",
+        "vue-route-guards"
+      ],
+      "relatedQuestionIds": [],
+      "priority": "core",
+      "sourceRefs": [
+        "vue-route-guards-docs"
+      ],
+      "sources": [
+        {
+          "title": "Официальная документация: Как guards отменяют или перенаправляют переход и защищают ли они API?",
+          "url": "https://router.vuejs.org/guide/advanced/navigation-guards.html"
+        }
+      ],
+      "sourceFile": "content/questions/vue/routing.json",
+      "answerFile": "answers/vue/vue-route-guards.md",
+      "contentHash": "19a74c1949ecb7203d6f889bc7fd7efa542240ffeeec5008c7fee0c380ee213a"
+    },
+    {
+      "id": "vue-router-history",
+      "sectionId": "vue",
+      "subsectionId": "routing",
+      "title": "Чем history mode отличается от hash mode и почему после refresh бывает 404?",
+      "difficulty": "Средний",
+      "learningGoal": "Прямой вход по маршруту должен возвращать оболочку SPA.",
+      "keywords": [
+        "Vue 3",
+        "Маршрутизация",
+        "router-history"
+      ],
+      "kind": "application",
+      "reviewStatus": "ready",
+      "goalIds": [
+        "core",
+        "vue-router-history"
+      ],
+      "relatedQuestionIds": [],
+      "priority": "core",
+      "sourceRefs": [
+        "vue-router-history-docs"
+      ],
+      "sources": [
+        {
+          "title": "Официальная документация: Чем history mode отличается от hash mode и почему после refresh бывает 404?",
+          "url": "https://router.vuejs.org/guide/essentials/history-mode.html"
+        }
+      ],
+      "sourceFile": "content/questions/vue/routing.json",
+      "answerFile": "answers/vue/vue-router-history.md",
+      "contentHash": "ba250af38ce4f520d82e79979cd9a4eaee9ab800ce83658b21dac4713ec6a13e"
+    },
+    {
+      "id": "vue-state-ownership",
+      "sectionId": "vue",
+      "subsectionId": "state",
+      "title": "Когда достаточно props/composable, а когда нужен Pinia store?",
+      "difficulty": "Базовый",
+      "learningGoal": "Храните состояние у ближайшего владельца, способного обеспечить его контракт.",
+      "keywords": [
+        "Vue 3",
+        "Управление состоянием",
+        "state-ownership"
+      ],
+      "kind": "explanation",
+      "reviewStatus": "ready",
+      "goalIds": [
+        "core",
+        "vue-state-ownership"
+      ],
+      "relatedQuestionIds": [],
+      "priority": "core",
+      "sourceRefs": [
+        "vue-state-ownership-docs"
+      ],
+      "sources": [
+        {
+          "title": "Официальная документация: Когда достаточно props/composable, а когда нужен Pinia store?",
+          "url": "https://vuejs.org/guide/scaling-up/state-management.html"
+        }
+      ],
+      "sourceFile": "content/questions/vue/state.json",
+      "answerFile": "answers/vue/vue-state-ownership.md",
+      "contentHash": "6a9beed3ba96d333ac8b78b0cc94554ddbebaab5f37ecea79afca3131d7f3c7c"
+    },
+    {
+      "id": "vue-pinia-store",
+      "sectionId": "vue",
+      "subsectionId": "state",
+      "title": "Как создать Pinia store и чем отличаются Option Store и Setup Store?",
+      "difficulty": "Базовый",
+      "learningGoal": "DefineStore описывает хранилище, useStore получает его экземпляр в Pinia.",
+      "keywords": [
+        "Vue 3",
+        "Управление состоянием",
+        "pinia-store"
+      ],
+      "kind": "explanation",
+      "reviewStatus": "ready",
+      "goalIds": [
+        "core",
+        "vue-pinia-store"
+      ],
+      "relatedQuestionIds": [],
+      "priority": "core",
+      "sourceRefs": [
+        "vue-pinia-store-docs"
+      ],
+      "sources": [
+        {
+          "title": "Официальная документация: Как создать Pinia store и чем отличаются Option Store и Setup Store?",
+          "url": "https://pinia.vuejs.org/core-concepts.html"
+        }
+      ],
+      "sourceFile": "content/questions/vue/state.json",
+      "answerFile": "answers/vue/vue-pinia-store.md",
+      "contentHash": "cf1b98362af8ab67ddcd1c22e975da2ba3d0a1748e3f8965e55e7545ec86a61d"
+    },
+    {
+      "id": "vue-pinia-refs",
+      "sectionId": "vue",
+      "subsectionId": "state",
+      "title": "Почему деструктуризация Pinia store теряет обновления и зачем storeToRefs?",
+      "difficulty": "Средний",
+      "learningGoal": "Состояние и getters извлекайте через storeToRefs, actions - напрямую.",
+      "keywords": [
+        "Vue 3",
+        "Управление состоянием",
+        "pinia-refs"
+      ],
+      "kind": "explanation",
+      "reviewStatus": "ready",
+      "goalIds": [
+        "core",
+        "vue-pinia-refs"
+      ],
+      "relatedQuestionIds": [
+        "vue-destructure"
+      ],
+      "priority": "core",
+      "sourceRefs": [
+        "vue-pinia-refs-docs"
+      ],
+      "sources": [
+        {
+          "title": "Официальная документация: Почему деструктуризация Pinia store теряет обновления и зачем storeToRefs?",
+          "url": "https://pinia.vuejs.org/core-concepts.html#destructuring-from-a-store"
+        }
+      ],
+      "sourceFile": "content/questions/vue/state.json",
+      "answerFile": "answers/vue/vue-pinia-refs.md",
+      "contentHash": "375f5bb7b7773d3a2e4dc25b7e149be06de8b790fa528e75678f0a1a6d228cd2"
+    },
+    {
+      "id": "vue-pinia-actions-getters",
+      "sectionId": "vue",
+      "subsectionId": "state",
+      "title": "Чем getters отличаются от actions и как обновлять state Pinia?",
+      "difficulty": "Средний",
+      "learningGoal": "Getter вычисляет значение, action выполняет действие с понятным результатом.",
+      "keywords": [
+        "Vue 3",
+        "Управление состоянием",
+        "pinia-actions-getters"
+      ],
+      "kind": "explanation",
+      "reviewStatus": "ready",
+      "goalIds": [
+        "core",
+        "vue-pinia-actions-getters"
+      ],
+      "relatedQuestionIds": [],
+      "priority": "core",
+      "sourceRefs": [
+        "vue-pinia-actions-getters-docs"
+      ],
+      "sources": [
+        {
+          "title": "Официальная документация: Чем getters отличаются от actions и как обновлять state Pinia?",
+          "url": "https://pinia.vuejs.org/core-concepts/actions.html"
+        }
+      ],
+      "sourceFile": "content/questions/vue/state.json",
+      "answerFile": "answers/vue/vue-pinia-actions-getters.md",
+      "contentHash": "a05bea8ad3c775c05839b0578929fc0863091c874161847d18b232be8cc27118"
+    },
+    {
+      "id": "vue-pinia-reset-persist",
+      "sectionId": "vue",
+      "subsectionId": "state",
+      "title": "Сохраняет ли Pinia состояние после refresh и как делать reset?",
+      "difficulty": "Средний",
+      "learningGoal": "Persistence и reset нужно проектировать явно для каждого типа store.",
+      "keywords": [
+        "Vue 3",
+        "Управление состоянием",
+        "pinia-reset-persist"
+      ],
+      "kind": "explanation",
+      "reviewStatus": "ready",
+      "goalIds": [
+        "core",
+        "vue-pinia-reset-persist"
+      ],
+      "relatedQuestionIds": [],
+      "priority": "core",
+      "sourceRefs": [
+        "vue-pinia-reset-persist-docs"
+      ],
+      "sources": [
+        {
+          "title": "Официальная документация: Сохраняет ли Pinia состояние после refresh и как делать reset?",
+          "url": "https://pinia.vuejs.org/core-concepts/state.html"
+        }
+      ],
+      "sourceFile": "content/questions/vue/state.json",
+      "answerFile": "answers/vue/vue-pinia-reset-persist.md",
+      "contentHash": "907842d858bc831154f1028ededf0041a3a7da67b236dc5ef01f93bf6b50c32c"
+    },
+    {
+      "id": "vue-typescript-contracts",
+      "sectionId": "vue",
+      "subsectionId": "engineering",
+      "title": "Как типизировать props, emits и template refs в Vue?",
+      "difficulty": "Средний",
+      "learningGoal": "TypeScript проверяет обращения в коде, но не достоверность внешнего JSON.",
+      "keywords": [
+        "Vue 3",
+        "Практика разработки",
+        "typescript-contracts"
+      ],
+      "kind": "explanation",
+      "reviewStatus": "ready",
+      "goalIds": [
+        "core",
+        "vue-typescript-contracts"
+      ],
+      "relatedQuestionIds": [],
+      "priority": "core",
+      "sourceRefs": [
+        "vue-typescript-contracts-docs"
+      ],
+      "sources": [
+        {
+          "title": "Официальная документация: Как типизировать props, emits и template refs в Vue?",
+          "url": "https://vuejs.org/guide/typescript/composition-api.html"
+        }
+      ],
+      "sourceFile": "content/questions/vue/engineering.json",
+      "answerFile": "answers/vue/vue-typescript-contracts.md",
+      "contentHash": "06f9302c66f2842c6174967ee50804cdb5aa2709d8eaea3f4460ddce3ecef7bc"
+    },
+    {
+      "id": "vue-component-testing",
+      "sectionId": "vue",
+      "subsectionId": "engineering",
+      "title": "Что проверять в тесте Vue-компонента и зачем await trigger/setProps?",
+      "difficulty": "Средний",
+      "learningGoal": "Проверяйте пользовательский контракт, ожидая соответствующий тип работы.",
+      "keywords": [
+        "Vue 3",
+        "Практика разработки",
+        "component-testing"
+      ],
+      "kind": "application",
+      "reviewStatus": "ready",
+      "goalIds": [
+        "core",
+        "vue-component-testing"
+      ],
+      "relatedQuestionIds": [],
+      "priority": "core",
+      "sourceRefs": [
+        "vue-component-testing-docs"
+      ],
+      "sources": [
+        {
+          "title": "Официальная документация: Что проверять в тесте Vue-компонента и зачем await trigger/setProps?",
+          "url": "https://test-utils.vuejs.org/guide/advanced/async-suspense.html"
+        }
+      ],
+      "sourceFile": "content/questions/vue/engineering.json",
+      "answerFile": "answers/vue/vue-component-testing.md",
+      "contentHash": "91f128869c118c4f3c7a13c2dcd6a9a27514163dece06bb516496e2e71fea228"
+    },
+    {
+      "id": "vue-composable-testing",
+      "sectionId": "vue",
+      "subsectionId": "engineering",
+      "title": "Как тестировать composable с lifecycle или inject?",
+      "difficulty": "Средний",
+      "learningGoal": "Тестовый способ вызова должен воспроизводить зависимости composable.",
+      "keywords": [
+        "Vue 3",
+        "Практика разработки",
+        "composable-testing"
+      ],
+      "kind": "application",
+      "reviewStatus": "ready",
+      "goalIds": [
+        "core",
+        "vue-composable-testing"
+      ],
+      "relatedQuestionIds": [
+        "vue-composables"
+      ],
+      "priority": "core",
+      "sourceRefs": [
+        "vue-composable-testing-docs"
+      ],
+      "sources": [
+        {
+          "title": "Официальная документация: Как тестировать composable с lifecycle или inject?",
+          "url": "https://vuejs.org/guide/scaling-up/testing.html#testing-composables"
+        }
+      ],
+      "sourceFile": "content/questions/vue/engineering.json",
+      "answerFile": "answers/vue/vue-composable-testing.md",
+      "contentHash": "200733a3af58e04d9fbe84f3355bbd6ba135424a040a5e3ccadf6584a3fc2be1"
+    },
+    {
+      "id": "vue-ssr-hydration",
+      "sectionId": "vue",
+      "subsectionId": "engineering",
+      "title": "Что такое SSR и hydration во Vue и откуда берутся mismatch?",
+      "difficulty": "Средний",
+      "learningGoal": "Первый клиентский рендер должен соответствовать серверной разметке.",
+      "keywords": [
+        "Vue 3",
+        "Практика разработки",
+        "ssr-hydration"
+      ],
+      "kind": "explanation",
+      "reviewStatus": "ready",
+      "goalIds": [
+        "core",
+        "vue-ssr-hydration"
+      ],
+      "relatedQuestionIds": [],
+      "priority": "core",
+      "sourceRefs": [
+        "vue-ssr-hydration-docs"
+      ],
+      "sources": [
+        {
+          "title": "Официальная документация: Что такое SSR и hydration во Vue и откуда берутся mismatch?",
+          "url": "https://vuejs.org/guide/scaling-up/ssr.html"
+        }
+      ],
+      "sourceFile": "content/questions/vue/engineering.json",
+      "answerFile": "answers/vue/vue-ssr-hydration.md",
+      "contentHash": "33e67fc173674154239d42bfec41f989dca823005cea0003d0372d4981cb261e"
+    },
+    {
+      "id": "vue-ui-security",
+      "sectionId": "vue",
+      "subsectionId": "engineering",
+      "title": "От каких XSS-ошибок защищает Vue и где защита заканчивается?",
+      "difficulty": "Базовый",
+      "learningGoal": "Недоверенные данные не должны становиться исполняемым шаблоном.",
+      "keywords": [
+        "Vue 3",
+        "Практика разработки",
+        "ui-security"
+      ],
+      "kind": "explanation",
+      "reviewStatus": "ready",
+      "goalIds": [
+        "core",
+        "vue-ui-security"
+      ],
+      "relatedQuestionIds": [],
+      "priority": "core",
+      "sourceRefs": [
+        "vue-ui-security-docs"
+      ],
+      "sources": [
+        {
+          "title": "Официальная документация: От каких XSS-ошибок защищает Vue и где защита заканчивается?",
+          "url": "https://vuejs.org/guide/best-practices/security.html"
+        }
+      ],
+      "sourceFile": "content/questions/vue/engineering.json",
+      "answerFile": "answers/vue/vue-ui-security.md",
+      "contentHash": "89928c7bc017044d3f4bcf9165714b6cfcca6ed97994c39c5db2bed0598d8d09"
+    },
+    {
+      "id": "vue-performance-basics",
+      "sectionId": "vue",
+      "subsectionId": "engineering",
+      "title": "Как искать и устранять лишнюю работу при обновлении Vue-интерфейса?",
+      "difficulty": "Средний",
+      "learningGoal": "Оптимизируйте подтверждённую причину задержки, сохраняя корректность.",
+      "keywords": [
+        "Vue 3",
+        "Практика разработки",
+        "performance-basics"
+      ],
+      "kind": "explanation",
+      "reviewStatus": "ready",
+      "goalIds": [
+        "core",
+        "vue-performance-basics"
+      ],
+      "relatedQuestionIds": [],
+      "priority": "core",
+      "sourceRefs": [
+        "vue-performance-basics-docs"
+      ],
+      "sources": [
+        {
+          "title": "Официальная документация: Как искать и устранять лишнюю работу при обновлении Vue-интерфейса?",
+          "url": "https://vuejs.org/guide/best-practices/performance.html"
+        }
+      ],
+      "sourceFile": "content/questions/vue/engineering.json",
+      "answerFile": "answers/vue/vue-performance-basics.md",
+      "contentHash": "f3c100c14d0a7f7e24bf0b3a72270e9f54f038631f0ff82e79cdd4ed1e7fe5e2"
+    },
+    {
+      "id": "vue-error-handling",
+      "sectionId": "vue",
+      "subsectionId": "engineering",
+      "title": "Как разделять ошибки запросов, компонентов и загрузки async-компонента?",
+      "difficulty": "Средний",
+      "learningGoal": "Ошибка должна иметь владельца, понятный UI и путь восстановления.",
+      "keywords": [
+        "Vue 3",
+        "Практика разработки",
+        "error-handling"
+      ],
+      "kind": "explanation",
+      "reviewStatus": "ready",
+      "goalIds": [
+        "core",
+        "vue-error-handling"
+      ],
+      "relatedQuestionIds": [],
+      "priority": "core",
+      "sourceRefs": [
+        "vue-error-handling-docs"
+      ],
+      "sources": [
+        {
+          "title": "Официальная документация: Как разделять ошибки запросов, компонентов и загрузки async-компонента?",
+          "url": "https://vuejs.org/api/composition-api-lifecycle.html#onerrorcaptured"
+        }
+      ],
+      "sourceFile": "content/questions/vue/engineering.json",
+      "answerFile": "answers/vue/vue-error-handling.md",
+      "contentHash": "464be3a3ed3e682d5cc64d8659f880a6390c44b5986f485dd3decc9d32dcf03d"
     },
     {
       "id": "next-app-router",

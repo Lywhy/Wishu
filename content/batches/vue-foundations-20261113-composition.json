@@ -1,0 +1,62 @@
+{
+  "schemaVersion": 1,
+  "id": "vue-foundations-20261113-composition",
+  "title": "Vue 3: Composition API",
+  "sectionId": "vue",
+  "subsectionId": "composition",
+  "currentPass": "complete",
+  "goalIds": [
+    "core",
+    "vue-watch",
+    "vue-lifecycle-cleanup",
+    "vue-composables",
+    "vue-options-composition",
+    "vue-script-setup-macros",
+    "vue-watch-depth",
+    "vue-watch-flush-stop",
+    "vue-request-race",
+    "vue-custom-directive",
+    "vue-plugins"
+  ],
+  "questionIds": [
+    "vue-watch",
+    "vue-lifecycle-cleanup",
+    "vue-composables",
+    "vue-options-composition",
+    "vue-script-setup-macros",
+    "vue-watch-depth",
+    "vue-watch-flush-stop",
+    "vue-request-race",
+    "vue-custom-directive",
+    "vue-plugins"
+  ],
+  "scopePass": {
+    "status": "complete",
+    "remaining": []
+  },
+  "answerPass": {
+    "status": "complete",
+    "remaining": []
+  },
+  "baseline": [
+    {
+      "id": "vue-watch",
+      "title": "Чем watch отличается от watchEffect?",
+      "contentHash": "fa15dd1c5742a400c714d0f27e318d7e4e3fd4aca8d1bbdc2c7b18a4cb9cdbc4"
+    },
+    {
+      "id": "vue-lifecycle-cleanup",
+      "title": "Когда использовать onMounted и onUnmounted?",
+      "contentHash": "f2309cc700510228bb2260fac5de50ef294e4978d523792815c75755d16d6482"
+    },
+    {
+      "id": "vue-composables",
+      "title": "Что такое composable и разделяют ли его вызовы состояние?",
+      "contentHash": "b894722b252d16fffcd7b7f3c0bb12960af915ebb3ec630fbbba5403415a3bc9"
+    }
+  ],
+  "notes": [
+    "Базовая матрица Vue 3. Vue 2, Nuxt, внутренности renderer и расширенные плагины вне пакета. Старые ответы сохранены целиком, к ним добавлены примеры и уточнения. Примеры не выполнялись.",
+    "Проверены форматирование, content:report (+48 ~12 -0, кандидатов дублей 0), content:build и полная content:check (1346 вопросов). Все 12 исходных ответов сохранены целиком; прежние карточки и порядок сохранены. Вопросы и структура вне Vue семантически не изменились. PostgreSQL, приложение и примеры не запускались."
+  ]
+}
