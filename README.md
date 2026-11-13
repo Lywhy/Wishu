@@ -1,128 +1,75 @@
 # Wishu
 
-Локальная платформа для подготовки к собеседованиям: обучение с практикой, вопросы с ответами, задачи с проверкой решений и трекер собеседований. Общая база вопросов хранится в репозитории и загружается в PostgreSQL при инициализации.
+Все команды выполняются из корня проекта в PowerShell. Копируйте `.env` только при первой настройке, не перезаписывая существующие файлы.
 
-Стек: React, TypeScript, Vite, shadcn, Tailwind, Zustand, NestJS и PostgreSQL.
+## Локальный запуск
 
-## Быстрый старт в VS Code
+Нужны Node.js 24, pnpm 12.11.2 и Docker Desktop для PostgreSQL.
 
-Нужны Node.js 24, pnpm 12.11.2 и работающий Docker Desktop. Откройте корень проекта в VS Code и выполните в терминале PowerShell:
+1. Установите зависимости и подготовьте окружение:
 
 ```powershell
+npm install --global pnpm@12.11.2
 pnpm install
 Copy-Item .env.example .env
 Copy-Item server/.env.example server/.env
-docker compose up -d postgres
+```
+
+Параметры `POSTGRES_USER`, `POSTGRES_PASSWORD`, `POSTGRES_DB`, `POSTGRES_PORT` в `.env` должны совпадать с `PGUSER`, `PGPASSWORD`, `PGDATABASE`, `PGPORT` в `server/.env`. В примерах всё уже согласовано.
+
+2. Запустите базу, создайте таблицы и загрузите вопросы:
+
+```powershell
+docker compose up -d --wait postgres
 pnpm db:init
+```
+
+Если PostgreSQL уже установлен локально, укажите его параметры в `server/.env` и пропустите запуск контейнера.
+
+3. Запустите frontend и API:
+
+```powershell
 pnpm dev:all
 ```
 
-Откройте http://localhost:5173. Копируйте примеры окружения только при первой установке, не перезаписывая рабочие файлы. Для повторного запуска достаточно поднять PostgreSQL и выполнить pnpm dev:all.
+Откройте [http://localhost:5173](http://localhost:5173).
 
-[Полная инструкция локального запуска и варианта с API в Docker](docs/local-setup.md). Текущий Docker-профиль запускает API и PostgreSQL; UI работает через Vite.
+Для повторного запуска достаточно поднять PostgreSQL и выполнить `pnpm dev:all`. После обновления проекта выполните `pnpm install` и `pnpm db:init` перед запуском.
 
-## Баги, предложения и общая база
+Остановка: `Ctrl+C`, затем `docker compose stop postgres`, если база запущена в Docker.
 
-Кнопка в шапке открывает формы багов и предложений. Можно предложить темы сразу для нескольких разделов, включая новые подразделы. Обращения сохраняются на сервере установки и экспортируются в JSON. Для передачи автору через подготовленный GitHub issue задайте публичную переменную VITE_FEEDBACK_GITHUB_REPOSITORY=owner/repository в корневом .env. Токен не нужен; публикацию пользователь подтверждает на GitHub.
+## Запуск через Docker
 
-Материалы включаются в общую базу после редакторской проверки. Получив обновления репозитория, выполните pnpm db:migrate и pnpm db:seed. [Как работают обращения](docs/platform-feedback.md).
+Нужен Docker Desktop с Docker Compose. Node.js и pnpm на компьютере не требуются. Frontend, API и PostgreSQL работают в контейнерах.
 
-## Линтинг и форматирование
+1. Подготовьте окружение:
 
-Проект использует Oxlint для React/TypeScript и Oxfmt для форматирования.
-
-```sh
-pnpm lint
-pnpm lint:fix
-pnpm format:check
-pnpm format
+```powershell
+Copy-Item .env.example .env
 ```
 
-`lint` и `format:check` проверяют файлы без изменений. `lint:fix` применяет
-доступные безопасные исправления, `format` форматирует проект.
+2. Соберите API и подготовьте базу:
 
-Настройки находятся в `.oxlintrc.json` и `.oxfmtrc.json`. Правила корректности
-и вызова хуков считаются ошибками; зависимости хуков и ограничения экспорта
-для Fast Refresh - предупреждениями. Для `src/components/ui` отключено только
-ограничение экспорта Fast Refresh: компоненты shadcn могут экспортировать варианты
-вместе с компонентом.
-
-Форматирование: 2 пробела, двойные кавычки, без точек с запятой, ширина строки
-100 символов и окончания строк LF. Tailwind-классы сортируются с учётом
-`src/index.css`, включая вызовы `cn`, `clsx` и `cva`.
-Сборки, зависимости и coverage исключены; lock-файл не форматируется.
-
-Приложение, линтеры, сборки и проверки UI/сервера запускает пользователь. Агент может форматировать изменённые файлы и выполнять разрешённые контентные инструменты.
-
-## Проверка Tailwind-стилей
-
-Установлен @shadcn/lint и зарегистрирован как JS-плагин существующего Oxlint. Команда для frontend:
-
-```sh
-pnpm lint:styles
+```powershell
+docker compose --profile app build
+docker compose up -d --wait postgres
+docker compose --profile app run --rm api node dist/database/cli.js init
 ```
 
-Проверка также входит в pnpm lint, pnpm lint:ui и pnpm check:ui. В .oxlintrc.json для src включено правило shadcn/no-unknown-classes в режиме предупреждений. Тема и каталог компонентов обнаруживаются через components.json, src/index.css и корневой alias @/ в tsconfig.json. Готовые UI-компоненты тоже проверяются.
+3. Запустите приложение:
 
-Правила запрета произвольных размеров, палитр, inline styles и переопределений компонентов пока не включены: проект использует их для макетов, статусов, категорий и редактора. Настройка не меняет существующее оформление. [Подключение, границы и настройка правил](docs/style-lint.md).
-
-## shadcn MCP
-
-Настройки проекта: `.codex/config.toml` для Codex и `.vscode/mcp.json` для
-VS Code / GitHub Copilot. Используется установленный в проекте `shadcn`
-из `node_modules`; перед подключением нужно установить зависимости через `pnpm install`.
-
-Открывайте Wishu как корневую папку проекта. Запускайте Codex из этой папки:
-конфигурация использует относительный путь к локальному CLI. Codex загружает
-проектные настройки только для доверенных проектов. После добавления настроек
-перезапустите клиент Codex. В VS Code откройте `.vscode/mcp.json` и нажмите Start
-рядом с сервером shadcn.
-
-MCP использует существующий `components.json`. Для стандартного реестра
-shadcn/ui дополнительные настройки и токены не требуются.
-
-Настройки добавлены без запуска MCP-сервера; подключение проверяет пользователь.
-
-Документация: https://ui.shadcn.com/docs/mcp
-
-## Серверная часть
-
-В `server/` добавлена основа NestJS с PostgreSQL, проверкой окружения,
-CORS, валидацией DTO и маршрутами `/api/health`, `/api/health/ready`.
-Frontend и сервер объединены через pnpm workspace; frontend остался в `src/`.
-
-Инструкция настройки окружения, локального запуска, Docker и ручной проверки:
-[server/README.md](server/README.md).
-
-Основные команды из корня: `pnpm dev:server`, `pnpm build:server`,
-`pnpm start:server`, `pnpm typecheck:server`. Прежние `pnpm dev` и `pnpm build`
-относятся к frontend.
-
-## Совместный запуск UI и API
-
-После настройки окружения и запуска PostgreSQL выполните из корня проекта:
-
-```sh
-pnpm dev:all
+```powershell
+docker compose --profile app up -d --wait
 ```
 
-Команда параллельно запускает Vite и NestJS в режиме разработки, помечая
-сообщения как UI и API. Ctrl+C останавливает оба процесса; завершение одного
-процесса также останавливает второй. PostgreSQL запускается отдельно командой
-`docker compose up -d postgres` и продолжает работать после остановки UI/API.
+Откройте [http://localhost:5173](http://localhost:5173). Порт frontend можно изменить через `WEB_PORT` в `.env`.
 
-## Подготовка вопросов
+Для повторного запуска выполните `docker compose --profile app up -d --wait`. После обновления проекта повторите шаги 2 и 3: `init` применяет новые миграции и обновляет общие вопросы, сохраняя пользовательские данные.
 
-Вопросы редактируются в `content/questions/<sectionId>/<subsectionId>.json`. Для поиска, матрицы покрытия, черновиков, сборки и проверки доступны команды `content:find`, `content:report`, `content:build`, `content:check`. Собранный seed совместим с текущим сервером. Полный процесс: [docs/question-content-workflow.md](docs/question-content-workflow.md).
+Остановка с сохранением базы:
 
-## Навигация и быстрые доработки
+```powershell
+docker compose --profile app down
+```
 
-[Карта проекта](docs/project-map.md), [шаблоны доработок](docs/development-recipes.md), [быстрые команды](docs/development-workflow.md). Для черновиков вопросов: content:new и content:import. Для отдельных областей: check:ui, check:server, check:content; полный набор: check:all. Эти команды не запускают приложение и не записывают данные в PostgreSQL.
-
-## Обновлённый контентный цикл
-
-С 2026-11-07 контентные команды разрешены агенту. Ответы находятся в content/answers, подробные навыки - в coverageGoals, источники - в content/references/sources.json, решения - в content/decisions.json, планы - в content/batches. Отчёт по умолчанию сравнивает только изменения; --all включает полный обзор. [Актуальная инструкция](docs/content-workflow-v2.md) уточняет прежние ограничения запуска и формат импорта. Приложение и seed запускает пользователь.
-
-## Компактный контекст
-
-По умолчанию вывод короткий, подробности включаются параметрами. Find/context используют компактный lookup; show открывает ответ по ID. Batch хранит рабочие ID и хеши, источники доступны через sourceRefs. [Текущий процесс](docs/lean-content-workflow.md) уточняет параметры и заменяет прежние примеры подробного вывода по умолчанию.
+Локальный запуск и Docker используют одни и те же порты, поэтому запускайте один вариант за раз.

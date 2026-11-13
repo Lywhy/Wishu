@@ -19,7 +19,7 @@ services:
       start_period: 10s
 
   api:
-    profiles: ["api"]
+    profiles: ["api", "app"]
     build:
       context: .
       dockerfile: server/Dockerfile
@@ -49,6 +49,25 @@ services:
       timeout: 10s
       retries: 5
       start_period: 15s
+
+  web:
+    profiles: ["app"]
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        VITE_FEEDBACK_GITHUB_REPOSITORY: ${VITE_FEEDBACK_GITHUB_REPOSITORY:-}
+    ports:
+      - "127.0.0.1:${WEB_PORT:-5173}:80"
+    depends_on:
+      api:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD", "wget", "-q", "--spider", "http://127.0.0.1/"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 5s
 
 volumes:
   postgres_data:
